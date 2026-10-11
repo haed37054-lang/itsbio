@@ -45,7 +45,7 @@ export function createAbmCrisprSearchForm(doc: Document, kind: CrisprSearchKind)
 
   const button = doc.createElement("button");
   button.type = "submit";
-  button.textContent = "Search ↗";
+  button.textContent = "Search";
   button.setAttribute("aria-label", `Search ABM ${SEARCH_LABELS[kind]} products (opens in a new tab)`);
   form.append(input, button);
   return form;

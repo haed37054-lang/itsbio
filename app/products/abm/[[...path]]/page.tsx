@@ -45,6 +45,7 @@ import "../abm-3d-landing.css";
 import "../abm-cellular-category.css";
 import "../abm-crispr-official.css";
 import "../abm-crispr-source.css";
+import "../abm-titer-official.css";
 
 export const revalidate = 300;
 
@@ -1688,8 +1689,8 @@ export default async function AbmProductsPathPage({
           </aside>
 
           <main className="min-w-0">
-            {!is3dLandingFidelity && !hasEmbeddedCategoryHero ? <h1 className="text-3xl font-bold tracking-tight text-neutral-900">{pageTitle}</h1> : null}
-            {!is3dLandingFidelity && !hasEmbeddedCellularHero && !hasEmbeddedCrisprHero ? <CategoryLinkRail brandKey={brandKey} nodes={categoryRailNodes} /> : null}
+            {!is3dLandingFidelity && !hasEmbeddedCategoryHero && !isTiterLanding ? <h1 className="text-3xl font-bold tracking-tight text-neutral-900">{pageTitle}</h1> : null}
+            {!is3dLandingFidelity && !hasEmbeddedCellularHero && !hasEmbeddedCrisprHero && !isTiterLanding ? <CategoryLinkRail brandKey={brandKey} nodes={categoryRailNodes} /> : null}
 
             {isKent && productsInCategory.length ? (
               <div className="mt-6">

@@ -377,10 +377,14 @@ assert.deepEqual(Array.from(titerDoc.querySelectorAll("table tbody tr"), row => 
   ["qPCR Retrovirus Titer Kit", "G949", "Retrovirus", "RT-qPCR", "100 rxn"],
 ]);
 assert.equal(titerDoc.querySelectorAll("details").length, 6);
-assert.equal(titerDoc.querySelectorAll("figure img").length, 3);
+assert.equal(titerDoc.querySelectorAll(".data-grid img").length, 3);
 assert.equal(titerDoc.querySelectorAll("img").length, 5);
 assert.equal(titerDoc.querySelectorAll('a[href^="https://doi.org/"]').length, 3);
-assert.equal(titerDoc.querySelectorAll('a[href^="/products/abm/staged/product/"]').length, 12);
+assert.equal(titerDoc.querySelectorAll('a[href^="/products/abm/staged/product/"]').length, 9);
+assert.equal(titerDoc.querySelectorAll('a[data-titer-preview]').length, 3);
+assert.equal(titerDoc.querySelectorAll('script,iframe,form,.product-price').length, 0);
+assert.equal(titerDoc.querySelectorAll('main').length, 0, 'the embedded category must not nest a main landmark');
+assert.equal(titerDoc.querySelector('.data-grid img')?.getAttribute('src'), '/images/abm/titer-workflow-time.png');
 for (const anchor of titerDoc.querySelectorAll('a[href^="#"]')) {
   assert.ok(titerDoc.getElementById(anchor.getAttribute("href").slice(1)), "in-page navigation has a destination");
 }

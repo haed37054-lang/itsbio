@@ -36,8 +36,8 @@ const OFFICIAL_GENETIC_TREE: CanonicalNode[] = [
     node("AAV Vectors & Virus", ["AAV Vectors and Virus", "AAV Vectors and Viruses"]),
     node("Adenovirus", ["Adenoviral Virus"]),
     node("siRNA", ["siRNA Libraries"], [
-      node("siRNA Lentivirus", ["siRNA Lentiviral"]),
-      node("siRNA AAV"),
+      node("siRNA Lentivirus", ["siRNA Lentiviral", "Lentivirus siRNA Library"]),
+      node("siRNA AAV", ["AAV siRNA Library"]),
       node("siRNA dsRNA Oligo", ["siRNA Oligo", "dsRNA Oligo"]),
     ]),
     node("miRNA", ["microRNA"]),

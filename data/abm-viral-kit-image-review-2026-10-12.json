@@ -1,0 +1,571 @@
+{
+  "checkedAt": "2026-10-12",
+  "method": "SHA-1 of downloaded official gallery files compared with existing Sanity asset hashes; AAV100 uses the current official VDS map.",
+  "products": [
+    {
+      "sku": "G931",
+      "url": "https://www.abmgood.com/qpcr-adeno-associated-virus-titration-titer-kit-g931.html",
+      "images": [
+        {
+          "height": 251,
+          "src": "https://www.abmgood.com/assets/product/t/i/titer-kit-product-photos.png",
+          "width": 303,
+          "sha1": "157ad6c7716277f70cd058689bd00648bada1cad",
+          "matched": true
+        },
+        {
+          "height": 963,
+          "src": "https://www.abmgood.com/assets/product/g/9/g931-qpcr-aav-titer-kit-data1.png",
+          "width": 1920,
+          "sha1": "542e8b263db7a34be5ed204690d98ad311081e37",
+          "matched": true
+        },
+        {
+          "height": 1440,
+          "src": "https://www.abmgood.com/assets/product/upload/OSQbGm6PnW3tDbg5rPEJ0bF4n44WmNSLvKse4Fqn.jpg",
+          "width": 2101,
+          "sha1": "584dbaa85241d895d89922277a2dfa3b885e6310",
+          "matched": true
+        }
+      ]
+    },
+    {
+      "sku": "G949",
+      "url": "https://www.abmgood.com/qpcr-retrovirus-titration-titer-kit-g949.html",
+      "images": [
+        {
+          "height": 251,
+          "src": "https://www.abmgood.com/assets/product/t/i/titer-kit-product-photos_2.png",
+          "width": 303,
+          "sha1": "157ad6c7716277f70cd058689bd00648bada1cad",
+          "matched": true
+        }
+      ]
+    },
+    {
+      "sku": "LV999",
+      "url": "https://www.abmgood.com/speedy-lentivirus-purification-lv999.html",
+      "images": [
+        {
+          "height": 338,
+          "src": "https://www.abmgood.com/assets/product/upload/hCDeyVCDof4n4rwXbI3UFpVrvsyOdjM9GZAMqUi0.jpg",
+          "width": 576,
+          "sha1": "4d8a3d81deb22e5c9d7154c9eb2d72c4f1352e4f",
+          "matched": true
+        }
+      ]
+    },
+    {
+      "sku": "Lenti-Bundle-2",
+      "url": "https://www.abmgood.com/2nd-Generation-Lentivirus-Bundle-2.html",
+      "images": [
+        {
+          "height": 1200,
+          "src": "https://www.abmgood.com/assets/product/upload/zzRN62NDslFOHsowLsfdNOyxZ7fAbOTmzmTT5Yzj.jpg",
+          "width": 1800,
+          "sha1": "cf8c44c36ef2438f13d2ed93f2a3f795b396414d",
+          "matched": true
+        },
+        {
+          "height": 3583,
+          "src": "https://www.abmgood.com/assets/product/upload/aMpROXMXr2BcSYPAYr8iu9Ka64UceDrbJwE6VLLS.jpg",
+          "width": 6619,
+          "sha1": "df74aa8a24d574494cf76e04203305068664834e",
+          "matched": true
+        },
+        {
+          "height": 222,
+          "src": "https://www.abmgood.com/assets/product/upload/rKBvOR5gXgeP4I55Kow53UFAEMmB9yTgCp28Qk7h.png",
+          "width": 652,
+          "sha1": "008930dda7adc1c1bb496f91858e360c77f9d207",
+          "matched": true
+        },
+        {
+          "height": 1200,
+          "src": "https://www.abmgood.com/assets/product/upload/azEst4Los667ApNmORa7MB0petDOxUWh9u7E7LYR.jpg",
+          "width": 1660,
+          "sha1": "e524467335aaf751bdb9f6c57b722daf10d4758c",
+          "matched": true
+        },
+        {
+          "height": 900,
+          "src": "https://www.abmgood.com/assets/product/upload/aGS3gw1B9U5NOTzXbEnRdWgWx13l9QvqcKbO7cfP.jpg",
+          "width": 1129,
+          "sha1": "5560afcec863aeb9dffd523ac73928cb9628c9cd",
+          "matched": true
+        },
+        {
+          "height": 900,
+          "src": "https://www.abmgood.com/assets/product/upload/kCiRWX58zbYFXl7yMLrGsdwPc2jresdLEbxNVmH6.jpg",
+          "width": 1129,
+          "sha1": "c92a7a8967d62cc4d5dbdcdab4f096424720f157",
+          "matched": true
+        }
+      ]
+    },
+    {
+      "sku": "Lenti-Bundle-3",
+      "url": "https://www.abmgood.com/3rd-Generation-Lentivirus-Bundle-3.html",
+      "images": [
+        {
+          "height": 1200,
+          "src": "https://www.abmgood.com/assets/product/upload/C7PNl5vTpXe8cme52q6cAjhwjWZWhdZvHMKpgISq.jpg",
+          "width": 1800,
+          "sha1": "cf8c44c36ef2438f13d2ed93f2a3f795b396414d",
+          "matched": true
+        },
+        {
+          "height": 3583,
+          "src": "https://www.abmgood.com/assets/product/upload/Iac2VLpcXM4RMV7devRcEk0mdsTPljCwBzgnyIK4.jpg",
+          "width": 6619,
+          "sha1": "35da2c880ee0ab3fe32ab098fd65f40934f3dc96",
+          "matched": true
+        },
+        {
+          "height": 222,
+          "src": "https://www.abmgood.com/assets/product/upload/631mM3zCg43gHbNd2JEDdNJjos2sgHEaJgJkx2CA.png",
+          "width": 652,
+          "sha1": "008930dda7adc1c1bb496f91858e360c77f9d207",
+          "matched": true
+        },
+        {
+          "height": 1200,
+          "src": "https://www.abmgood.com/assets/product/upload/6xGTneaxHvObLe27N8cUrk6IIzLgrHLPpcG3Hl9D.jpg",
+          "width": 1660,
+          "sha1": "e524467335aaf751bdb9f6c57b722daf10d4758c",
+          "matched": true
+        },
+        {
+          "height": 900,
+          "src": "https://www.abmgood.com/assets/product/upload/gFAPhZQ66pSF4iUQ5O5nQySkhO9PH2X6PfH7tSMn.jpg",
+          "width": 1129,
+          "sha1": "5560afcec863aeb9dffd523ac73928cb9628c9cd",
+          "matched": true
+        },
+        {
+          "height": 900,
+          "src": "https://www.abmgood.com/assets/product/upload/1Lhn1BvXHhE5dw9MOU5vibUJ8LGgh8UiIBq6437r.jpg",
+          "width": 1129,
+          "sha1": "c92a7a8967d62cc4d5dbdcdab4f096424720f157",
+          "matched": true
+        }
+      ]
+    },
+    {
+      "sku": "LV003",
+      "url": "https://www.abmgood.com/2nd-generation-packaging-system-mix-lv003.html",
+      "images": [
+        {
+          "height": 3583,
+          "src": "https://www.abmgood.com/assets/product/upload/HjVC3oI1ySdjlJQgjFV5f7RUby36PbZVufAf4pGj.jpg",
+          "width": 6619,
+          "sha1": "df74aa8a24d574494cf76e04203305068664834e",
+          "matched": true
+        },
+        {
+          "height": 3024,
+          "src": "https://www.abmgood.com/assets/product/upload/YNG8FRFx7quSNGmnfVR2TTH6P87IAZ2wpeppI04y.png",
+          "width": 3024,
+          "sha1": "845d22d442b891d47b0736eab02df1ef1ab44a6f",
+          "matched": true
+        }
+      ]
+    },
+    {
+      "sku": "LV053-G2500",
+      "url": "https://www.abmgood.com/3rd-generation-packaging-mix-dnafectin-LV053-G2500.html",
+      "images": [
+        {
+          "height": 3583,
+          "src": "https://www.abmgood.com/assets/product/upload/C2ZMVRoN57xrO1yBkOZMTVBdDOdBuFv3wUyLXeMt.jpg",
+          "width": 6619,
+          "sha1": "35da2c880ee0ab3fe32ab098fd65f40934f3dc96",
+          "matched": true
+        },
+        {
+          "height": 1200,
+          "src": "https://www.abmgood.com/assets/product/upload/N3KX6XwHAoSlR20rTdQ9jk8iWxNUVXrqjDYlzOLQ.jpg",
+          "width": 1660,
+          "sha1": "e524467335aaf751bdb9f6c57b722daf10d4758c",
+          "matched": true
+        }
+      ]
+    },
+    {
+      "sku": "LV003-G2500",
+      "url": "https://www.abmgood.com/2nd-generation-packaging-mix-dnafectin-LV003-G2500.html",
+      "images": [
+        {
+          "height": 3583,
+          "src": "https://www.abmgood.com/assets/product/upload/B7tnDu0VRquEfCb44brsPtirEtpBUN9xGAlBgRLS.jpg",
+          "width": 6619,
+          "sha1": "df74aa8a24d574494cf76e04203305068664834e",
+          "matched": true
+        },
+        {
+          "height": 1200,
+          "src": "https://www.abmgood.com/assets/product/upload/IzqUKicfe6vdPPoORFwsibjdA5qEbv1STCVaEc72.jpg",
+          "width": 1660,
+          "sha1": "e524467335aaf751bdb9f6c57b722daf10d4758c",
+          "matched": true
+        }
+      ]
+    },
+    {
+      "sku": "LV900",
+      "url": "https://www.abmgood.com/qpcr-lentivirus-titration-titer-kit.html",
+      "images": [
+        {
+          "height": 1200,
+          "src": "https://www.abmgood.com/assets/product/l/v/lv900-lentivirus-titratinon-kit.jpg",
+          "width": 1800,
+          "sha1": "cf8c44c36ef2438f13d2ed93f2a3f795b396414d",
+          "matched": true
+        },
+        {
+          "height": 900,
+          "src": "https://www.abmgood.com/assets/product/l/v/lv900-qpcr-lentivirus-titer-kit_data2.jpg",
+          "width": 1129,
+          "sha1": "c92a7a8967d62cc4d5dbdcdab4f096424720f157",
+          "matched": true
+        },
+        {
+          "height": 1460,
+          "src": "https://www.abmgood.com/assets/product/upload/WV5YUHF8Z1qhZfTOiOrO9PrmTYTI3n3pEJTIDYfW.jpg",
+          "width": 2101,
+          "sha1": "a7bab61c56021ac101b1702c809b47925a6ddc3c",
+          "matched": true
+        }
+      ]
+    },
+    {
+      "sku": "E-510",
+      "url": "https://www.abmgood.com/retro-combo-mix-e-510.html",
+      "images": [
+        {
+          "height": 3024,
+          "src": "https://www.abmgood.com/assets/product/upload/Q6XcFY1yNBCVgXCvvSW1BL9DnYIVYXJWX8DASd6j.png",
+          "width": 3024,
+          "sha1": "ae3ddda30acacea93468e151412a23623611a28e",
+          "matched": true
+        }
+      ]
+    },
+    {
+      "sku": "G516",
+      "url": "https://www.abmgood.com/aaviralentry-transduction-enhancer.html",
+      "images": [
+        {
+          "height": 251,
+          "src": "https://www.abmgood.com/assets/product/v/i/viralentry-transduction-enhancer-product-img-large_1.png",
+          "width": 303,
+          "sha1": "9b9964b0a112481ab6f5cfabe4e115a66895db09",
+          "matched": true
+        },
+        {
+          "height": 1552,
+          "src": "https://www.abmgood.com/assets/product/upload/aJtvTYLapjx5Olr2tpCGSTKXIiI1us62k7RaBnXw.jpg",
+          "width": 2101,
+          "sha1": "e51053508f06fd95a9efa121669e1379682236f7",
+          "matched": true
+        }
+      ]
+    },
+    {
+      "sku": "AAV1002",
+      "url": "https://www.abmgood.com/aav-packaging-mix-serotype-2-aav1002.html",
+      "images": [
+        {
+          "height": 3024,
+          "src": "https://www.abmgood.com/assets/product/upload/kyWzd0ozUlaWIKmDrHQaFt2qKGbVJDaHJ6XcR1d8.png",
+          "width": 3024,
+          "sha1": "ae3ddda30acacea93468e151412a23623611a28e",
+          "matched": true
+        }
+      ]
+    },
+    {
+      "sku": "AAV1003",
+      "url": "https://www.abmgood.com/aav-packaging-mix-serotype-3-aav1003.html",
+      "images": [
+        {
+          "height": 3024,
+          "src": "https://www.abmgood.com/assets/product/upload/EMAgXxAzAm7pBRzWpz7WaXs3Yd0UiuBGdCKV5z8O.png",
+          "width": 3024,
+          "sha1": "ae3ddda30acacea93468e151412a23623611a28e",
+          "matched": true
+        }
+      ]
+    },
+    {
+      "sku": "AAV1004",
+      "url": "https://www.abmgood.com/aav-packaging-mix-serotype-4-aav1004.html",
+      "images": [
+        {
+          "height": 3024,
+          "src": "https://www.abmgood.com/assets/product/upload/1INR7xDz77hUImYyO8TBsCMgVwqBvVaykfxzhcym.png",
+          "width": 3024,
+          "sha1": "ae3ddda30acacea93468e151412a23623611a28e",
+          "matched": true
+        }
+      ]
+    },
+    {
+      "sku": "AAV1001",
+      "url": "https://www.abmgood.com/aav-packaging-mix-serotype-1-aav1001.html",
+      "images": [
+        {
+          "height": 3024,
+          "src": "https://www.abmgood.com/assets/product/upload/opctX1YOCIWdP0fPXX8Xm1mHOtceBJCE3Vl0q1vs.png",
+          "width": 3024,
+          "sha1": "ae3ddda30acacea93468e151412a23623611a28e",
+          "matched": true
+        }
+      ]
+    },
+    {
+      "sku": "AAV1006",
+      "url": "https://www.abmgood.com/aav-packaging-mix-serotype-6-aav1006.html",
+      "images": [
+        {
+          "height": 3024,
+          "src": "https://www.abmgood.com/assets/product/upload/VkxoGkVZwgGgEgaxoDvrJjPCW3l32Rk067v4eMbt.png",
+          "width": 3024,
+          "sha1": "ae3ddda30acacea93468e151412a23623611a28e",
+          "matched": true
+        }
+      ]
+    },
+    {
+      "sku": "AAV1005",
+      "url": "https://www.abmgood.com/aav-packaging-mix-serotype-5-aav1005.html",
+      "images": [
+        {
+          "height": 3024,
+          "src": "https://www.abmgood.com/assets/product/upload/DZYQAZm1MAPRIs2j0Zty4vYy5oQ4ePVGlQ21RYcQ.png",
+          "width": 3024,
+          "sha1": "ae3ddda30acacea93468e151412a23623611a28e",
+          "matched": true
+        }
+      ]
+    },
+    {
+      "sku": "LV900-G515",
+      "url": "https://www.abmgood.com/qPCR-Lentivirus-Titer-Kit-ViralEntry-Bundle-LV900-G515.html",
+      "images": [
+        {
+          "height": 1200,
+          "src": "https://www.abmgood.com/assets/product/upload/Uhj66c23jqYu9wcHAobSc0oPB5QudY3ijskK3uho.jpg",
+          "width": 1800,
+          "sha1": "cf8c44c36ef2438f13d2ed93f2a3f795b396414d",
+          "matched": true
+        },
+        {
+          "height": 900,
+          "src": "https://www.abmgood.com/assets/product/upload/RoPjAX3wmaCXWnVgXGWq5tMWiKZ4mwahnTDcwoC4.jpg",
+          "width": 1129,
+          "sha1": "5560afcec863aeb9dffd523ac73928cb9628c9cd",
+          "matched": true
+        },
+        {
+          "height": 900,
+          "src": "https://www.abmgood.com/assets/product/upload/fIOK8lNLAIxeNpVLPOKInEEUZ7q2TaBdONMWzDAz.jpg",
+          "width": 1129,
+          "sha1": "c92a7a8967d62cc4d5dbdcdab4f096424720f157",
+          "matched": true
+        },
+        {
+          "height": 266,
+          "src": "https://www.abmgood.com/assets/product/upload/yCJECefbr4Vgw3Ce5YqZQI5MW3HY9XD05rgKFKJY.png",
+          "width": 300,
+          "sha1": "b22b731ac89c7d4b6294b27ec37fd6412a6c507f",
+          "matched": true
+        },
+        {
+          "height": 816,
+          "src": "https://www.abmgood.com/assets/product/upload/01KMVpXPuJmJm3PxuH0NBDnpK4a6GwAm5t3GbekI.jpg",
+          "width": 1920,
+          "sha1": "747d8fda86f298dfb1df2f669d5f1a16b1598833",
+          "matched": true
+        }
+      ]
+    },
+    {
+      "sku": "Lenti-Bundle-4",
+      "url": "https://www.abmgood.com/3rd-Generation-Lentivirus-Bundle-4.html",
+      "images": [
+        {
+          "height": 1200,
+          "src": "https://www.abmgood.com/assets/product/upload/MJhyiAPuuROFdFAEIoNjnz5zLIvQvJIsFlwMYESy.jpg",
+          "width": 1800,
+          "sha1": "cf8c44c36ef2438f13d2ed93f2a3f795b396414d",
+          "matched": true
+        },
+        {
+          "height": 3583,
+          "src": "https://www.abmgood.com/assets/product/upload/4UTssERjkEQJ4V9TJFkalxO5D6tPEEgoPtqLJUuA.jpg",
+          "width": 6619,
+          "sha1": "35da2c880ee0ab3fe32ab098fd65f40934f3dc96",
+          "matched": true
+        },
+        {
+          "height": 222,
+          "src": "https://www.abmgood.com/assets/product/upload/4oHGIuJ6vjpm5SHTy3bzhf1uizj06VZwJUzVpy13.png",
+          "width": 652,
+          "sha1": "008930dda7adc1c1bb496f91858e360c77f9d207",
+          "matched": true
+        },
+        {
+          "height": 1200,
+          "src": "https://www.abmgood.com/assets/product/upload/OqQfRP4Y0q4ZjZlGRv4GRJnp8ziSlvqBnYWTf0Hn.jpg",
+          "width": 1660,
+          "sha1": "e524467335aaf751bdb9f6c57b722daf10d4758c",
+          "matched": true
+        },
+        {
+          "height": 816,
+          "src": "https://www.abmgood.com/assets/product/upload/2l2BRH0CDzGXngFP4UdtqfCN3wgTuFOSPES6IrPC.jpg",
+          "width": 1920,
+          "sha1": "747d8fda86f298dfb1df2f669d5f1a16b1598833",
+          "matched": true
+        },
+        {
+          "height": 900,
+          "src": "https://www.abmgood.com/assets/product/upload/s9IVtpTIwyFY9ooRvxwi12aZNYOvcQ4KIgzhohDd.jpg",
+          "width": 1129,
+          "sha1": "5560afcec863aeb9dffd523ac73928cb9628c9cd",
+          "matched": true
+        },
+        {
+          "height": 900,
+          "src": "https://www.abmgood.com/assets/product/upload/lnUt7az54FTr4rCxjZuAJiLVHzOr7qhWHcaUoMpR.jpg",
+          "width": 1129,
+          "sha1": "c92a7a8967d62cc4d5dbdcdab4f096424720f157",
+          "matched": true
+        }
+      ]
+    },
+    {
+      "sku": "AAV100",
+      "url": "https://www.abmgood.com/aav-serotype-blasta-kit-high-titer-aav100.html",
+      "mapUrl": "https://www.abmgood.com/vds/viewer/cat/414",
+      "images": [],
+      "change": "Replace legacy image with current official Vector Design Studio map"
+    },
+    {
+      "sku": "LV053",
+      "url": "https://www.abmgood.com/3rd-generation-packaging-system-mix-lv053.html",
+      "images": [
+        {
+          "height": 3583,
+          "src": "https://www.abmgood.com/assets/product/upload/XLsbWjcEswBRFtRlopIQY0SnJXoULjIG3RJGpwGz.jpg",
+          "width": 6619,
+          "sha1": "35da2c880ee0ab3fe32ab098fd65f40934f3dc96",
+          "matched": true
+        },
+        {
+          "height": 3024,
+          "src": "https://www.abmgood.com/assets/product/upload/OgIK8nEOWDaS6mWCA61phB95cIsWKrZBdA5s2Wr7.png",
+          "width": 3024,
+          "sha1": "845d22d442b891d47b0736eab02df1ef1ab44a6f",
+          "matched": true
+        }
+      ]
+    },
+    {
+      "sku": "LV998",
+      "url": "https://www.abmgood.com/ultra-pure-lentivirus-purification-kit-lv998.html",
+      "images": [
+        {
+          "height": 6163,
+          "src": "https://www.abmgood.com/assets/product/upload/P7a5P4LtPcdebwkPwucOJhI72f3251VN36VU2B3u.png",
+          "width": 10116,
+          "sha1": "13ba3d4de9e5a463bb5926d6ce17557633a8ca0c",
+          "matched": true
+        }
+      ]
+    },
+    {
+      "sku": "Lenti-Bundle-1",
+      "url": "https://www.abmgood.com/2nd-Generation-Lentivirus-Bundle-1.html",
+      "images": [
+        {
+          "height": 1200,
+          "src": "https://www.abmgood.com/assets/product/upload/Le49CqkwPNWh3AvOxTHvHwWWM1vwYkady5A0waUA.jpg",
+          "width": 1800,
+          "sha1": "cf8c44c36ef2438f13d2ed93f2a3f795b396414d",
+          "matched": true
+        },
+        {
+          "height": 3583,
+          "src": "https://www.abmgood.com/assets/product/upload/OCtZqjJz8kRt7cboRLE4NCiIz8FmE2bKIrOrd4br.jpg",
+          "width": 6619,
+          "sha1": "df74aa8a24d574494cf76e04203305068664834e",
+          "matched": true
+        },
+        {
+          "height": 222,
+          "src": "https://www.abmgood.com/assets/product/upload/Qc1PQwfqoavYDi5EgQQ3I07JAeh0DowqIreXEnxl.png",
+          "width": 652,
+          "sha1": "008930dda7adc1c1bb496f91858e360c77f9d207",
+          "matched": true
+        },
+        {
+          "height": 1200,
+          "src": "https://www.abmgood.com/assets/product/upload/YwI8q6qfZx1Jrl3EBP8dUZHx7EYmAaZDpksKFSxz.jpg",
+          "width": 1660,
+          "sha1": "e524467335aaf751bdb9f6c57b722daf10d4758c",
+          "matched": true
+        },
+        {
+          "height": 900,
+          "src": "https://www.abmgood.com/assets/product/upload/4K1R6ToW1mBjHEbVDemIEXFRhVxTEjDdveSZlKYg.jpg",
+          "width": 1129,
+          "sha1": "5560afcec863aeb9dffd523ac73928cb9628c9cd",
+          "matched": true
+        },
+        {
+          "height": 900,
+          "src": "https://www.abmgood.com/assets/product/upload/CWN2cZvwoIjri4KPS3kyCLmFhkKME7LbpVT1bVrF.jpg",
+          "width": 1129,
+          "sha1": "c92a7a8967d62cc4d5dbdcdab4f096424720f157",
+          "matched": true
+        }
+      ]
+    },
+    {
+      "sku": "G515",
+      "url": "https://www.abmgood.com/viralentry-transduction-enhancer.html",
+      "images": [
+        {
+          "height": 1552,
+          "src": "https://www.abmgood.com/assets/product/upload/gd4j5TIhUFVOwcs9GCTwnOG9m30QpmoBV8QgHt8x.jpg",
+          "width": 2101,
+          "sha1": "c5999f6f49d796d9b79d93f65b9fc0df0141497a",
+          "matched": true
+        },
+        {
+          "height": 1154,
+          "src": "https://www.abmgood.com/assets/product/upload/f7OQ86FCFq4dAp98IdKAIql1BKrVHtjNfRVv4vuM.jpg",
+          "width": 2350,
+          "sha1": "1ace86a3488171f4f5d90035d35f687362fc9af4",
+          "matched": true
+        },
+        {
+          "height": 816,
+          "src": "https://www.abmgood.com/assets/product/g/5/g515-viralentry-transduction-enhancer-performance-data-v10.jpg",
+          "width": 1920,
+          "sha1": "747d8fda86f298dfb1df2f669d5f1a16b1598833",
+          "matched": true
+        },
+        {
+          "height": 266,
+          "src": "https://www.abmgood.com/assets/product/upload/5yotsn9S6axbHbxwtwWGa3krVnAzO3e85dcB6gYr.png",
+          "width": 300,
+          "sha1": "b22b731ac89c7d4b6294b27ec37fd6412a6c507f",
+          "matched": true
+        }
+      ]
+    }
+  ]
+}

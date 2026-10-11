@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { readFileSync } from "node:fs";
 
 import { JSDOM } from "jsdom";
 import React from "react";
@@ -24,6 +25,38 @@ const { restorePackagingMixesBlocks } = await import("../lib/abm/packaging-mixes
 const { internalizeAbmHref } = await import("../lib/abm/internal-links.ts");
 const { createAbmCrisprSearchForm } = await import("../lib/abm/crispr-search.ts");
 const { restoreCrisprCatalogSearch } = await import("../components/products/AbmGeneticMaterialsPolishClient.tsx");
+
+const { stripUnwantedAbmNav } = await import("../lib/abm/category-html.ts");
+const precedingContent = `<!--<h3>Overview</h3>--><p>siRNA library overview</p>
+<h3>Additional Information</h3><p>Vector delivery information</p>
+<h3>Documents</h3><p>Manual link</p>`;
+const strippedCategory = stripUnwantedAbmNav(`${precedingContent}
+<h3><strong>Top Publications</strong></h3><table><tr><td>Duplicate citation</td></tr></table>
+<h3>FAQs</h3><p>Keep the answer</p>`);
+assert.equal(strippedCategory.includes(precedingContent), true, "Publication cleanup must preserve earlier headings and overview");
+assert.equal(strippedCategory.includes("Duplicate citation"), false);
+assert.equal(strippedCategory.includes("Keep the answer"), true);
+const strippedResources = stripUnwantedAbmNav(`${precedingContent}<h3>Resources</h3><ul class="htmlcontent-home"><li>Duplicate resource</li></ul><h3>FAQs</h3>`);
+assert.equal(strippedResources.includes(precedingContent), true);
+assert.equal(strippedResources.includes("Duplicate resource"), false);
+
+const publicationCards = stripUnwantedAbmNav(`${precedingContent}<h3>Top Publications</h3><div>Keep publication cards</div><h3>FAQs</h3><table><tr><td>Keep FAQ table</td></tr></table>`);
+assert.equal(publicationCards.includes("Keep FAQ table"), true, "Publication cleanup must not cross into FAQ tables");
+const siRnaLandings = JSON.parse(readFileSync(new URL("../data/abm-sirna-landings.json", import.meta.url), "utf8"));
+for (const landing of siRnaLandings) {
+  const doc = new JSDOM(sanitizeAndStyle(stripUnwantedAbmNav(landing.html), "https://www.abmgood.com", "abm-detail")).window.document;
+  assert.equal(doc.querySelectorAll(".abm-sirna-resource-grid img").length, 3);
+  assert.equal(doc.querySelectorAll("details").length, 4);
+  assert.equal(doc.querySelectorAll("script,iframe,form,input").length, 0);
+  assert.equal(doc.body.textContent.includes("Search results will be displayed here"), false);
+  assert.equal(doc.querySelector(".abm-sirna-search a")?.getAttribute("href"), landing.sourceUrl);
+  assert.equal(doc.querySelector(".abm-sirna-search a")?.getAttribute("target"), "_blank");
+  assert.equal(doc.querySelectorAll(".abm-sirna-publication-grid").length, 1);
+  assert.equal(doc.body.textContent.includes("convergent promoter"), true);
+  for (const image of doc.querySelectorAll("img")) assert.equal(image.getAttribute("src").startsWith("/images/abm/sirna-"), true);
+  for (const a of doc.querySelectorAll('a[href^="#"]')) assert.ok(doc.getElementById(a.hash.slice(1)), `Missing siRNA anchor ${a.hash}`);
+  for (const a of doc.querySelectorAll('a[href*=".pdf"]')) assert.equal(/\.html\//.test(a.getAttribute("href")), false);
+}
 
 for (const [id, heading, level, category] of [
   ["abm-crispr-hub", "Find CRISPR sgRNA &amp; Genome Editing Products for Your Gene", "h2", "67"],

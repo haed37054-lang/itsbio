@@ -1315,12 +1315,13 @@ function resolveSrcset(srcset: string, baseUrl: string) {
 }
 
 function isInternalItsbioMediaUrl(value: string) {
-  return /^\/products\/abm\/resource-image(?:\?|$)/i.test((value || "").trim());
+  return /^(?:\/products\/abm\/resource-image(?:\?|$)|\/images\/abm\/)/i.test((value || "").trim());
 }
 
 function isInternalItsbioHref(href: string) {
   const h = (href || "").trim();
   if (!h) return true;
+  if (h.startsWith("/images/abm/")) return true;
   if (h.startsWith("#") || /^mailto:|^tel:/i.test(h)) return true;
 
   // ✅ 우리 사이트 내부 라우트는 절대경로화 금지
@@ -1532,7 +1533,10 @@ export function sanitizeAndStyle(
   const parser = new DOMParser();
   const doc = parser.parseFromString(html, "text/html");
 
-  if (mode === "abm-detail") transformImmortalizationCollapses(doc);
+  if (mode === "abm-detail") {
+    transformImmortalizationCollapses(doc);
+    if (doc.querySelector(".abm-sirna-official")) transformServiceFaqs(doc);
+  }
 
   const officialCrisprLanding = isAbmLanding && /CRISPR Genome Editing Tools and Services|CRISPR Knockout sgRNA Vectors & Viruses|CRISPR Activation & Repression|Cas9 Expression Vectors and Viruses|Cas Proteins & CRISPR Screening/i.test(
     collapseWs(doc.body.textContent || "")

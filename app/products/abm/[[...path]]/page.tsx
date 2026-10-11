@@ -1,7 +1,7 @@
 // app/products/abm/[[...path]]/page.tsx
 import Image from "next/image";
 import Link from "next/link";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 
 import Breadcrumb from "@/components/site/Breadcrumb";
 import { PUBLIC_CATALOG_CACHE, sanityCdnClient } from "@/lib/sanity/sanity.client";
@@ -14,7 +14,9 @@ import AbmServiceLanding from "@/components/products/AbmServiceLanding";
 import AbmViralKitGuide from "@/components/products/AbmViralKitGuide";
 import AbmTiterKitLanding, { TITER_KITS, TITER_PATH } from "@/components/products/AbmTiterKitLanding";
 import { AbmPackagingVideo, AbmPackagingPublications } from "@/components/products/AbmPackagingMedia";
+import { stripUnwantedAbmNav } from "@/lib/abm/category-html";
 import { restorePackagingMixesBlocks } from "@/lib/abm/packaging-mixes";
+import sirnaLandings from "@/data/abm-sirna-landings.json";
 import abmCellularTaxonomy from "@/data/abm-cellular-taxonomy.json";
 import {
   ABM_PRODUCT_GROUPS,
@@ -46,6 +48,7 @@ import "../abm-cellular-category.css";
 import "../abm-crispr-official.css";
 import "../abm-crispr-source.css";
 import "../abm-titer-official.css";
+import "../abm-sirna-official.css";
 
 export const revalidate = 300;
 
@@ -126,6 +129,7 @@ function buildHref(brandKey: string, path: string[]) {
 }
 
 function humanizeSegment(seg: string) {
+  if (seg === "RNAi-shRNA-sirna-shrna-rnai-lentivirus") return "siRNA";
   return (seg || "").replaceAll("-", " ").replaceAll("_", " ").trim();
 }
 
@@ -510,8 +514,8 @@ const ABM_GENETIC_NAV_SPECS: AbmGeneticNavSpec[] = [
       {
         title: "siRNA",
         children: [
-          { title: "siRNA Lentivirus" },
-          { title: "siRNA AAV" },
+          { title: "siRNA Lentivirus", aliases: ["Lentivirus siRNA Library"] },
+          { title: "siRNA AAV", aliases: ["AAV siRNA Library"] },
           { title: "siRNA dsRNA Oligo", aliases: ["siRNA Oligo", "dsRNA Oligo"] },
         ],
       },
@@ -602,6 +606,12 @@ function normalizeAbmGeneticSidebar(nodes: TreeNode[]) {
       ...node,
       children: (node.children || []).map((child) => ({ ...child })),
     }));
+    const canonicalSiRna = remaining.find((node) => node.path.join("/") === "genetic-materials/expression-ready-libraries/sirna");
+    const legacySiRnaIndex = remaining.findIndex((node) => node.path.join("/") === "genetic-materials/expression-ready-libraries/RNAi-shRNA-sirna-shrna-rnai-lentivirus");
+    if (canonicalSiRna && legacySiRnaIndex >= 0) {
+      const [legacySiRna] = remaining.splice(legacySiRnaIndex, 1);
+      canonicalSiRna.children = [...(canonicalSiRna.children || []), ...(legacySiRna.children || [])];
+    }
     const ordered: TreeNode[] = [];
 
     specs.forEach((spec, order) => {
@@ -708,26 +718,6 @@ function rewriteRelativeUrls(html: string, baseUrl: string) {
   return out;
 }
 
-function stripUnwantedAbmNav(html: string) {
-  if (!html) return "";
-  let out = html;
-
-  out = out.replace(/<ul[^>]*class=["'][^"']*\babm-page-category-nav-list\b[^"']*["'][\s\S]*?<\/ul>/gi, "");
-  out = out.replace(
-    /<h3[^>]*>[\s\S]*?\bResource\b[\s\S]*?<\/h3>[\s\S]*?<ul[^>]*class=["'][^"']*\bhtmlcontent-home\b[^"']*["'][\s\S]*?<\/ul>[\s\S]*?(?=<h3\b|$)/gi,
-    ""
-  );
-  out = out.replace(
-    /<h3[^>]*>[\s\S]*?\bTop\s*Publications\b[\s\S]*?<\/h3>[\s\S]*?<table[\s\S]*?<\/table>[\s\S]*?(?=<h3\b|$)/gi,
-    ""
-  );
-
-  out = out.replace(/<script[^>]*type=["']application\/ld\+json["'][\s\S]*?<\/script>/gi, "");
-  out = out.replace(/<script[\s\S]*?<\/script>/gi, "");
-
-  return out;
-}
-
 function rewriteAnchorsToLegacy(html: string, brandKey: string) {
   if (!html) return "";
   return html.replace(/\shref=["'](https?:\/\/[^"']+)["']/gi, (_m, url) => {
@@ -739,6 +729,7 @@ function safeHtmlForRender(html: string, brandKey: string) {
   const baseUrl = getBaseUrlForBrand(brandKey);
   let out = html || "";
   if (brandKey === "abm") out = stripUnwantedAbmNav(out);
+  if (/class="abm-sirna-official"/.test(out)) return out.trim();
   if (brandKey === "abm") {
     out = out.replace(/<li\b[^>]*>(?:(?!<\/li>)[\s\S])*Wholesale\s+Prices?(?:(?!<\/li>)[\s\S])*<\/li>/gi, "");
     out = out.replace(/Wholesale\s+Prices?/gi, "");
@@ -824,7 +815,7 @@ function SideNavTree({
           {nodes.map((node) => {
             const nodePath = node.path.join("/");
             const isActive = activePathStr === nodePath;
-            const isOnTrail = isPrefix(activePathStr, nodePath) && !isActive;
+            const isOnTrail = (isPrefix(activePathStr, nodePath) || Boolean(findTreeNodeByPath(node.children, activePath))) && !isActive;
             const hasChildren = node.children.length > 0;
 
             return (
@@ -868,7 +859,7 @@ function SideNavTree({
         {nodes.map((node) => {
           const nodePath = node.path.join("/");
           const isActive = activePathStr === nodePath;
-          const isOnTrail = isPrefix(activePathStr, nodePath) && !isActive;
+          const isOnTrail = (isPrefix(activePathStr, nodePath) || Boolean(findTreeNodeByPath(node.children, activePath))) && !isActive;
           const hasChildren = node.children.length > 0;
           const isOpen = hasChildren && (isActive || isOnTrail);
 
@@ -1289,6 +1280,9 @@ export default async function AbmProductsPathPage({
   const hasPath = path.length > 0;
   const hasActiveRoot = !!activeRoot;
   const pathStr = path.join("/");
+  if (pathStr === "genetic-materials/expression-ready-libraries/RNAi-shRNA-sirna-shrna-rnai-lentivirus") {
+    redirect("/products/abm/genetic-materials/expression-ready-libraries/sirna");
+  }
 
   const data = await sanityCdnClient.fetch(PAGE_QUERY, {
     brandKey,
@@ -1610,7 +1604,10 @@ export default async function AbmProductsPathPage({
     : primaryHtml
       ? [{ _key: "legacy-html-fallback", _type: "contentBlockHtml", html: primaryHtml }, ...blocks]
       : blocks;
-  const blocksForRender = brandKey === "abm"
+  const sirnaLanding = sirnaLandings.find((landing) => pathStr === `genetic-materials/expression-ready-libraries/RNAi-shRNA-sirna-shrna-rnai-lentivirus/${landing.path}`);
+  const blocksForRender = sirnaLanding
+    ? [{ _key: "verified-sirna-landing", _type: "contentBlockHtml", html: sirnaLanding.html }]
+    : brandKey === "abm"
     ? restorePackagingMixesBlocks(pathStr, originalBlocksForRender)
     : originalBlocksForRender;
   const cellularPresentation = getCellularPresentation(pathStr, typeof primaryHtml === "string" ? primaryHtml : "");

@@ -483,6 +483,17 @@ function applyVerifiedSpecialCellDetail(detail: AbmStagedDetail) {
 }
 
 function applyVerifiedProductDetail(detail: AbmStagedDetail) {
+  if (String(detail.sku || "").trim().toUpperCase() === "AAV100") {
+    const image = "/images/abm/AAV100-vector-map.svg";
+    return {
+      ...detail,
+      previewImage: image,
+      images: [image],
+      imageCaption: "Official ABM Vector Design Studio map for pAAV-G-CMV-EGFP (4892 bp).",
+      imageCreditUrl: "https://www.abmgood.com/vds/viewer/cat/414",
+      imageCreditLabel: "View official vector map",
+    };
+  }
   return applyVerifiedIpscVectorMap(applyVerifiedSpecialCellDetail(detail));
 }
 

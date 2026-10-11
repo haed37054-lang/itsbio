@@ -23,6 +23,22 @@ const { extractAbmTableCatalogNumbers } = await import("../lib/abm/table-catalog
 const { restorePackagingMixesBlocks } = await import("../lib/abm/packaging-mixes.ts");
 const { internalizeAbmHref } = await import("../lib/abm/internal-links.ts");
 const { createAbmCrisprSearchForm } = await import("../lib/abm/crispr-search.ts");
+const { restoreCrisprCatalogSearch } = await import("../components/products/AbmGeneticMaterialsPolishClient.tsx");
+
+for (const [id, heading, level, category] of [
+  ["abm-crispr-hub", "Find CRISPR sgRNA &amp; Genome Editing Products for Your Gene", "h2", "67"],
+  ["crispr-ko-page", "Search Your Target Gene", "h3", "68"],
+  ["abm-crispra-hub", "Search Activation sgRNA Library", "h2", "69"],
+]) {
+  const fixture = new JSDOM(`<div class="itsbio-html"><div id="${id}"><${level}>${heading}</${level}><p>Search explanation</p><div class="result-section">Search results will be displayed here</div><h2>Resources</h2><p>Keep resources</p></div></div>`).window.document;
+  restoreCrisprCatalogSearch(fixture);
+  restoreCrisprCatalogSearch(fixture);
+  assert.equal(fixture.querySelectorAll("form").length, 1, `${id} must have one working search`);
+  assert.equal(Array.from(fixture.querySelectorAll('input[name="fc_ids[]"]')).at(-1)?.value, category);
+  assert.equal(fixture.querySelector("form")?.target, "_blank");
+  assert.equal(fixture.body.textContent.includes("Keep resources"), true);
+  assert.equal(fixture.body.textContent.includes("Search results will be displayed here"), false);
+}
 
 for (const [kind, categories] of Object.entries({ all: ["57", "67"], knockout: ["57", "67", "68"], activation: ["57", "67", "69"] })) {
   const form = createAbmCrisprSearchForm(document, kind);

@@ -193,15 +193,16 @@ function cleanHighlightLabel(value: string) {
     .trim();
 }
 
-function restoreCrisprCatalogSearch() {
+export function restoreCrisprCatalogSearch(doc: Document = document) {
   const supportedHeadings = new Set([
     "find crispr sgrna genome editing products for your gene",
+    "find crispr sgrna and genome editing products for your gene",
     "search crispr sgrna library",
     "search activation sgrna library",
     "search your target gene",
   ]);
 
-  const headings = Array.from(document.querySelectorAll<HTMLElement>(".itsbio-html h1,.itsbio-html h2,.itsbio-html h3,.itsbio-html h4"))
+  const headings = Array.from(doc.querySelectorAll<HTMLElement>(".itsbio-html h1,.itsbio-html h2,.itsbio-html h3,.itsbio-html h4"))
     .filter((heading) => supportedHeadings.has(norm(heading.textContent)));
 
   headings.forEach((heading) => {
@@ -238,7 +239,7 @@ function restoreCrisprCatalogSearch() {
     }
 
     const kind = isActivationLibrarySearch ? "activation" : isKoTargetSearch ? "knockout" : "all";
-    const form = createAbmCrisprSearchForm(document, kind);
+    const form = createAbmCrisprSearchForm(doc, kind);
     const explanation = sectionNodes.find((node) => node.tagName === "P" && norm(node.textContent));
     if (explanation) {
       explanation.textContent = isActivationLibrarySearch
@@ -256,7 +257,7 @@ function restoreCrisprCatalogSearch() {
       }
     });
 
-    const note = document.createElement("p");
+    const note = doc.createElement("p");
     note.className = "itsbio-crispr-search-note";
     note.textContent = "Your search results open on ABM in a new tab.";
     if (explanation) explanation.insertAdjacentElement("afterend", form);

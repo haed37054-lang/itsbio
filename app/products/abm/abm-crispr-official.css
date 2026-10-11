@@ -191,6 +191,12 @@
   cursor: pointer;
 }
 
+.abm-crispr-official .itsbio-crispr-search-note {
+  margin: 0 0 24px;
+  color: #627083;
+  font-size: 14px;
+}
+
 .abm-crispr-official .itsbio-abm-highlight-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));

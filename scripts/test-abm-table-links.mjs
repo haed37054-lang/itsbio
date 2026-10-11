@@ -22,6 +22,26 @@ const { sanitizeAndStyle } = await import("../components/site/HtmlContent.tsx");
 const { extractAbmTableCatalogNumbers } = await import("../lib/abm/table-catalog.ts");
 const { restorePackagingMixesBlocks } = await import("../lib/abm/packaging-mixes.ts");
 const { internalizeAbmHref } = await import("../lib/abm/internal-links.ts");
+const { createAbmCrisprSearchForm } = await import("../lib/abm/crispr-search.ts");
+
+for (const [kind, categories] of Object.entries({ all: ["57", "67"], knockout: ["57", "67", "68"], activation: ["57", "67", "69"] })) {
+  const form = createAbmCrisprSearchForm(document, kind);
+  assert.equal(form.method, "get");
+  assert.equal(form.target, "_blank");
+  assert.equal(form.rel, "noopener noreferrer");
+  assert.equal(form.checkValidity(), false, "A blank gene must not open an unfiltered search");
+  for (const query of ["md1", "TP53", "NM_000546.6", "β-catenin & TP53"]) {
+    form.querySelector('input[type="search"]').value = query;
+    const destination = new URL(form.action);
+    destination.search = new URLSearchParams(new browser.window.FormData(form)).toString();
+    assert.equal(destination.origin, "https://www.abmgood.com");
+    assert.equal(destination.pathname, "/search");
+    assert.equal(destination.searchParams.get("query"), query);
+    assert.deepEqual(destination.searchParams.getAll("fc_ids[]"), categories);
+    assert.equal(destination.searchParams.has("brand"), false);
+    assert.equal(form.checkValidity(), true);
+  }
+}
 
 for (const path of ["crispr-cas9", "crispr-cas9-methods-tools", "crispr-cas9-sgrna-design"]) {
   const source = `https://info.abmgood.com/${path}`;

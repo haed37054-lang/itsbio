@@ -1906,7 +1906,7 @@
 
 .qv-titer-lp .titer-image-dialog { position: fixed; inset: 0; margin: auto; width: min(1100px, 92vw); max-width: 92vw; max-height: 90vh; padding: 22px; border: 1px solid #ece7e2; border-radius: 18px; overflow: auto; background: #fff; }
 .qv-titer-lp .titer-image-dialog::backdrop { background: rgba(0,0,0,.6); }
-.qv-titer-lp section[id], .qv-titer-lp header[id] { scroll-margin-top: 100px; }
+#qpcr-virus-titer-kits.qv-titer-lp section[id], #qpcr-virus-titer-kits.qv-titer-lp header[id] { scroll-margin-top: 100px; }
 .qv-titer-lp .titer-image-dialog-header { display:flex; align-items:center; justify-content:space-between; gap:16px; margin-bottom:16px; }
 .qv-titer-lp .titer-image-dialog-header button { flex:none; width:40px; height:40px; font-size:28px; cursor:pointer; border-radius:50%; background:#fff4ed; color:#cf531b; }
 .qv-titer-lp .titer-image-dialog img { width:auto; max-width:100%; max-height:65vh; object-fit:contain; margin:0 auto 18px; }

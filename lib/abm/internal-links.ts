@@ -64,6 +64,14 @@ export function internalizeAbmHref(rawHref: string, baseUrl = "") {
   if (VECTOR_PATH.test(resolved.pathname)) return resolved.toString();
 
   if (COMMERCE_PATH.test(resolved.pathname)) return "";
+  // Official datasheets are now generated HTML print views rather than PDFs.
+  // CoA lookup is a document tool, not a migrated product/category destination.
+  if (resolved.pathname.toLowerCase() === "/coa-library.html"
+    || (resolved.pathname.toLowerCase() === "/product/printview"
+      && /^\d+$/.test(resolved.searchParams.get("product_id") || "")
+      && /^(?:library|product)$/.test(resolved.searchParams.get("product_type") || ""))) {
+    return resolved.toString();
+  }
   if (resolved.pathname.startsWith("/uploads/") || DOCUMENT_PATH.test(resolved.pathname)) {
     return resolved.toString();
   }

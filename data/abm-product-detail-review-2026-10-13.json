@@ -1,0 +1,148 @@
+{
+  "checkedAt": "2026-10-13",
+  "records": [
+    {
+      "sku": "G6100",
+      "patch": {
+        "title": "AaCas12b Lentiviral Vector",
+        "sourceUrl": "https://www.abmgood.com/AaCas12b-Lentiviral-Vector-G6100.html",
+        "url": "https://www.abmgood.com/AaCas12b-Lentiviral-Vector-G6100.html",
+        "unit": "10 µg",
+        "storage": "-20°C or below.",
+        "description": "A lentiviral vector carrying AaCas12b from Alicyclobacillus acidiphilus. This compact, specific Class 2, Type V-B nuclease uses an sgRNA to recognize 5′-TTN-3′ PAM sites and cut DNA for CRISPR genome editing.",
+        "introHtml": "",
+        "specificationsHtml": "<table><tbody><tr><td>Cat. No.</td><td>G6100</td></tr><tr><td>Product Name</td><td>AaCas12b Lentiviral Vector</td></tr><tr><td>Unit</td><td>10 µg</td></tr><tr><td>Description</td><td>A lentiviral vector carrying AaCas12b from Alicyclobacillus acidiphilus. This compact, specific Class 2, Type V-B nuclease uses an sgRNA to recognize 5′-TTN-3′ PAM sites and cut DNA for CRISPR genome editing.</td></tr><tr><td>Storage Condition</td><td>-20°C or below.</td></tr></tbody></table>",
+        "datasheetHtml": "<p><a href=\"https://www.abmgood.com/product/printView?product_id=1967267&product_type=library&optionId=0\" target=\"_blank\" rel=\"noopener noreferrer\">Open official printable datasheet</a></p>",
+        "documentsHtml": "<div>\n    <div class=\"abm-doc-div\">\n        <div class=\"abm-doc-title\">\n            Search CoA <a href=\"https://www.abmgood.com/CoA-Library.html\" class=\"abm-link\" target=\"_blank\" rel=\"noopener noreferrer\">here</a>\n        </div>\n    </div>\n        \n            <div class=\"abm-doc-div\">\n            <div class=\"abm-doc-title\">MSDS</div>\n            <ul class=\"abm-document-list\">\n                                                            <li>\n                            <a href=\"https://www.abmgood.com/uploads/document/Vector_Plasmid_MSDS.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">Plasmid MSDS</a>\n                        </li>\n                                                </ul>\n        </div>\n                            <div class=\"abm-doc-div\">\n            <div class=\"abm-doc-title\">Supporting Protocol</div>\n            <ul class=\"abm-document-list\">\n                                                            <li>\n                            <a href=\"https://www.abmgood.com/uploads/document/Plasmid%20Amplification%20Protocol%202026.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">Plasmid Amplification Protocol</a>\n                        </li>\n                                                </ul>\n        </div>\n                    </div>",
+        "documents": [],
+        "faqsHtml": "<div class=\"card\"><div class=\"card-header\"><a href=\"#faq-0\">How does AaCas12b compare with SpCas9?</a></div><div class=\"card-body\"><p>AaCas12b is smaller, highly specific and temperature tolerant. Its size supports AAV delivery; stringent PAM recognition limits off-target activity, and staggered cuts may improve repair outcomes.</p></div></div><div class=\"card\"><div class=\"card-header\"><a href=\"#faq-1\">Which PAM does AaCas12b recognize?</a></div><div class=\"card-body\"><p>5′-TTN-3′.</p></div></div><div class=\"card\"><div class=\"card-header\"><a href=\"#faq-2\">Is sgRNA included?</a></div><div class=\"card-body\"><p>An sgRNA must be supplied separately. Explore <a href=\"/products/abm/genetic-materials/crispr/crispr-ko-vectors-and-virus\">CRISPR knockout</a>, <a href=\"/products/abm/genetic-materials/crispr/crispr-activation-vectors\">activation/repression</a> or <a href=\"/products/abm/services/dna-and-cloning-services/custom-crispr-vectors-and-viruses\">custom vectors</a> through the linked categories.</p></div></div>",
+        "referencesHtml": "<p>ABM lists no published references for G6100.</p>",
+        "reviewsHtml": "",
+        "images": [
+          "/images/abm/G6100-vector-map.svg"
+        ],
+        "previewImage": "/images/abm/G6100-vector-map.svg",
+        "imageCaption": "Official ABM map: pLenti-SFFV-AaCas12b-2A-Puro (10823 bp).",
+        "imageCreditUrl": "https://www.abmgood.com/vds/viewer/cat/408",
+        "imageCreditLabel": "View official vector map",
+        "hasDetail": true,
+        "sourceUnavailable": false
+      },
+      "review": {
+        "sourceHtmlSha256": "5936039cd78c93e78153e8e323b6264c8e0ccc64207fb27f31c8022f9f31b3d7",
+        "sourceGeneralInformationFields": [
+          "Cat. No.",
+          "Product Name",
+          "Unit",
+          "Description",
+          "Storage Condition"
+        ],
+        "faqCount": 3,
+        "officialMapUrl": "https://www.abmgood.com/vds/map/cat/408",
+        "mapType": "product-specific",
+        "svgSha256": "559535826819889a5b4ac8cc1f8fcd8f408d1d564cf8c225e537f41113b01e94",
+        "datasheetChecked": true,
+        "documentCount": 2
+      }
+    },
+    {
+      "sku": "G6101",
+      "patch": {
+        "title": "AaCas12b AAV Vector",
+        "sourceUrl": "https://www.abmgood.com/AaCas12b-AAV-Vector-G6101.html",
+        "url": "https://www.abmgood.com/AaCas12b-AAV-Vector-G6101.html",
+        "unit": "10 µg",
+        "storage": "-20°C or below.",
+        "description": "An AAV vector carrying AaCas12b from Alicyclobacillus acidiphilus. This compact, specific Class 2, Type V-B nuclease uses an sgRNA to recognize 5′-TTN-3′ PAM sites and cut DNA for genome editing.",
+        "introHtml": "",
+        "specificationsHtml": "<table><tbody><tr><td>Cat. No.</td><td>G6101</td></tr><tr><td>Product Name</td><td>AaCas12b AAV Vector</td></tr><tr><td>Unit</td><td>10 µg</td></tr><tr><td>Description</td><td>An AAV vector carrying AaCas12b from Alicyclobacillus acidiphilus. This compact, specific Class 2, Type V-B nuclease uses an sgRNA to recognize 5′-TTN-3′ PAM sites and cut DNA for genome editing.</td></tr><tr><td>Storage Condition</td><td>-20°C or below.</td></tr></tbody></table>",
+        "datasheetHtml": "<p><a href=\"https://www.abmgood.com/product/printView?product_id=1967268&product_type=library&optionId=0\" target=\"_blank\" rel=\"noopener noreferrer\">Open official printable datasheet</a></p>",
+        "documentsHtml": "<div>\n    <div class=\"abm-doc-div\">\n        <div class=\"abm-doc-title\">\n            Search CoA <a href=\"https://www.abmgood.com/CoA-Library.html\" class=\"abm-link\" target=\"_blank\" rel=\"noopener noreferrer\">here</a>\n        </div>\n    </div>\n        \n            <div class=\"abm-doc-div\">\n            <div class=\"abm-doc-title\">MSDS</div>\n            <ul class=\"abm-document-list\">\n                                                            <li>\n                            <a href=\"https://www.abmgood.com/uploads/document/Vector_Plasmid_MSDS.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">Plasmid MSDS</a>\n                        </li>\n                                                </ul>\n        </div>\n                            <div class=\"abm-doc-div\">\n            <div class=\"abm-doc-title\">Supporting Protocol</div>\n            <ul class=\"abm-document-list\">\n                                                            <li>\n                            <a href=\"https://www.abmgood.com/uploads/document/Plasmid%20Amplification%20Protocol%202026.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">Plasmid Amplification Protocol</a>\n                        </li>\n                                                </ul>\n        </div>\n                    </div>",
+        "documents": [],
+        "faqsHtml": "<div class=\"card\"><div class=\"card-header\"><a href=\"#faq-0\">Is a fluorescent reporter available?</a></div><div class=\"card-body\"><p>No. ABM states that adding a promoter, fluorescent reporter and poly(A) signal exceeds this AAV construct’s approximately 4.4 kb packaging limit.</p></div></div><div class=\"card\"><div class=\"card-header\"><a href=\"#faq-1\">How does AaCas12b compare with SpCas9?</a></div><div class=\"card-body\"><p>AaCas12b is smaller, highly specific and temperature tolerant. Its size supports AAV delivery; stringent PAM recognition limits off-target activity, and staggered cuts may improve repair outcomes.</p></div></div><div class=\"card\"><div class=\"card-header\"><a href=\"#faq-2\">Which PAM does AaCas12b recognize?</a></div><div class=\"card-body\"><p>5′-TTN-3′.</p></div></div><div class=\"card\"><div class=\"card-header\"><a href=\"#faq-3\">Is sgRNA included?</a></div><div class=\"card-body\"><p>An sgRNA must be supplied separately. Explore <a href=\"/products/abm/genetic-materials/crispr/crispr-ko-vectors-and-virus\">CRISPR knockout</a>, <a href=\"/products/abm/genetic-materials/crispr/crispr-activation-vectors\">activation/repression</a> or <a href=\"/products/abm/services/dna-and-cloning-services/custom-crispr-vectors-and-viruses\">custom vectors</a> through the linked categories.</p></div></div>",
+        "referencesHtml": "<p>ABM lists no published references for G6101.</p>",
+        "reviewsHtml": "",
+        "images": [
+          "/images/abm/G6101-abm-backbone-map.svg"
+        ],
+        "previewImage": "/images/abm/G6101-abm-backbone-map.svg",
+        "imageCaption": "ABM displays the pAAV-CMV-Blank backbone reference map (4117 bp) for this product.",
+        "imageCreditUrl": "https://www.abmgood.com/vds/viewer/aav/blankcontrol",
+        "imageCreditLabel": "View ABM backbone map",
+        "hasDetail": true,
+        "sourceUnavailable": false
+      },
+      "review": {
+        "sourceHtmlSha256": "5d100724aa3bc900ba952643d3e5ef04be5f87c0d8bca82023b4e62b019e84ea",
+        "sourceGeneralInformationFields": [
+          "Cat. No.",
+          "Product Name",
+          "Unit",
+          "Description",
+          "Storage Condition"
+        ],
+        "faqCount": 4,
+        "officialMapUrl": "https://www.abmgood.com/vds/map/aav/blankcontrol",
+        "mapType": "manufacturer-displayed-backbone-reference",
+        "svgSha256": "929f15f0026adf9d1a278ddb5aa6183454a431e7031703965cea502f840aff81",
+        "datasheetChecked": true,
+        "documentCount": 2
+      }
+    },
+    {
+      "sku": "G6105",
+      "patch": {
+        "title": "CRISPR Adenine Base Editor (ABE) GFP Lentiviral Vector",
+        "sourceUrl": "https://www.abmgood.com/CRISPR-Adenine-Base-Editor-ABE-GFP-Lentiviral-Vector-G6105.html",
+        "url": "https://www.abmgood.com/CRISPR-Adenine-Base-Editor-ABE-GFP-Lentiviral-Vector-G6105.html",
+        "unit": "10 µg",
+        "storage": "-20°C or below.",
+        "description": "A lentiviral vector that expresses adenine base editor (ABE) and GFP. The editor couples nCas9 with engineered TadA to convert A•T base pairs to G•C without cutting both DNA strands.",
+        "introHtml": "",
+        "specificationsHtml": "<table><tbody><tr><td>Cat. No.</td><td>G6105</td></tr><tr><td>Product Name</td><td>CRISPR Adenine Base Editor (ABE) GFP Lentiviral Vector</td></tr><tr><td>Unit</td><td>10 µg</td></tr><tr><td>Description</td><td>A lentiviral vector that expresses adenine base editor (ABE) and GFP. The editor couples nCas9 with engineered TadA to convert A•T base pairs to G•C without cutting both DNA strands.</td></tr><tr><td>Storage Condition</td><td>-20°C or below.</td></tr></tbody></table>",
+        "datasheetHtml": "<p><a href=\"https://www.abmgood.com/product/printView?product_id=1967270&product_type=library&optionId=0\" target=\"_blank\" rel=\"noopener noreferrer\">Open official printable datasheet</a></p>",
+        "documentsHtml": "<div>\n    <div class=\"abm-doc-div\">\n        <div class=\"abm-doc-title\">\n            Search CoA <a href=\"https://www.abmgood.com/CoA-Library.html\" class=\"abm-link\" target=\"_blank\" rel=\"noopener noreferrer\">here</a>\n        </div>\n    </div>\n        \n            <div class=\"abm-doc-div\">\n            <div class=\"abm-doc-title\">MSDS</div>\n            <ul class=\"abm-document-list\">\n                                                            <li>\n                            <a href=\"https://www.abmgood.com/uploads/document/Vector_Plasmid_MSDS.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">Plasmid MSDS</a>\n                        </li>\n                                                </ul>\n        </div>\n                            <div class=\"abm-doc-div\">\n            <div class=\"abm-doc-title\">Supporting Protocol</div>\n            <ul class=\"abm-document-list\">\n                                                            <li>\n                            <a href=\"https://www.abmgood.com/uploads/document/Plasmid%20Amplification%20Protocol%202026.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">Plasmid Amplification Protocol</a>\n                        </li>\n                                                </ul>\n        </div>\n                    </div>",
+        "documents": [],
+        "faqsHtml": "<div class=\"card\"><div class=\"card-header\"><a href=\"#faq-0\">Is sgRNA included?</a></div><div class=\"card-body\"><p>An sgRNA must be supplied separately. Explore <a href=\"/products/abm/genetic-materials/crispr/crispr-ko-vectors-and-virus\">CRISPR knockout</a>, <a href=\"/products/abm/genetic-materials/crispr/crispr-activation-vectors\">activation/repression</a> or <a href=\"/products/abm/services/dna-and-cloning-services/custom-crispr-vectors-and-viruses\">custom vectors</a> through the linked categories.</p></div></div><div class=\"card\"><div class=\"card-header\"><a href=\"#faq-1\">How does ABE differ from standard Cas9 editing?</a></div><div class=\"card-body\"><p>ABE converts A→G (or T→C) without double-strand DNA breaks. This avoids error-prone repair insertions/deletions and supports precise correction of point mutations.</p></div></div>",
+        "referencesHtml": "<p>ABM lists no published references for G6105.</p>",
+        "reviewsHtml": "",
+        "images": [
+          "/images/abm/G6105-vector-map.svg"
+        ],
+        "previewImage": "/images/abm/G6105-vector-map.svg",
+        "imageCaption": "Official ABM map: pLenti-SFFV-ABE8e-V106W-nCas9-GFP (12610 bp).",
+        "imageCreditUrl": "https://www.abmgood.com/vds/viewer/cat/413",
+        "imageCreditLabel": "View official vector map",
+        "hasDetail": true,
+        "sourceUnavailable": false
+      },
+      "review": {
+        "sourceHtmlSha256": "a9362d9c29e5422b6441efa98a27e9ef1008d903d25490771c0ab861ed50d498",
+        "sourceGeneralInformationFields": [
+          "Cat. No.",
+          "Product Name",
+          "Unit",
+          "Description",
+          "Storage Condition"
+        ],
+        "faqCount": 2,
+        "officialMapUrl": "https://www.abmgood.com/vds/map/cat/413",
+        "mapType": "product-specific",
+        "svgSha256": "70f919f5b0ec32df9909403844bfa3beeb1d122ac3206b21178de452dafda7cf",
+        "datasheetChecked": true,
+        "documentCount": 2
+      }
+    }
+  ],
+  "deferred": [
+    {
+      "sku": "TM205",
+      "status": "official-detail-unresolved",
+      "reason": "The current official Specialized Medium and Kits page does not list TM205; the official exact SKU search provided no linked product. Do not substitute another medium or invent images, storage, composition or documents.",
+      "checkedSources": [
+        "https://www.abmgood.com/Specialized-Medium-and-Kits",
+        "https://www.abmgood.com/search?query=TM205&search_mode=exact"
+      ]
+    }
+  ]
+}

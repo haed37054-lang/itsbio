@@ -1,6 +1,7 @@
 import { PUBLIC_CATALOG_CACHE, sanityCdnClient, sanityClient } from "@/lib/sanity/sanity.client";
 import { findOfficialAbmCellModelProduct } from "@/lib/abm/cell-model-data";
 import { findOfficialAbmCellDetail } from "@/lib/abm/cell-detail-data";
+import { applyReviewedAbmProductDetail } from "@/lib/abm/reviewed-product-details";
 
 export const ABM_REBUILD_VERSION = "2026-08-09-search-v5";
 
@@ -483,6 +484,7 @@ function applyVerifiedSpecialCellDetail(detail: AbmStagedDetail) {
 }
 
 function applyVerifiedProductDetail(detail: AbmStagedDetail) {
+  detail = applyReviewedAbmProductDetail(detail);
   if (String(detail.sku || "").trim().toUpperCase() === "AAV100") {
     const image = "/images/abm/AAV100-vector-map.svg";
     return {

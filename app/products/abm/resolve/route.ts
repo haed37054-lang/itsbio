@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { withAbmProductSource } from "@/lib/abm/product-navigation";
 
 import {
   ABM_REBUILD_VERSION,
@@ -91,6 +92,7 @@ function safeReturnPath(request: NextRequest) {
 }
 
 export async function GET(request: NextRequest) {
+  const sourceCategory = request.nextUrl.searchParams.get("from") || safeReturnPath(request).split("?")[0];
   const title = clean(request.nextUrl.searchParams.get("title"));
   const sku = clean(request.nextUrl.searchParams.get("sku"));
   const sourceUrl = safeOfficialUrl(clean(request.nextUrl.searchParams.get("u")));
@@ -142,7 +144,7 @@ export async function GET(request: NextRequest) {
   const stagedMatch = exactSku || exactUrl || exactTitle;
 
   if (stagedMatch) {
-    return NextResponse.redirect(new URL(stagedRecordPath(stagedMatch.kind, stagedMatch), request.url), 307);
+    return NextResponse.redirect(new URL(withAbmProductSource(stagedRecordPath(stagedMatch.kind, stagedMatch), sourceCategory), request.url), 307);
   }
 
   const live = Array.isArray(liveRows) ? liveRows : [];
@@ -152,7 +154,7 @@ export async function GET(request: NextRequest) {
 
   if (liveMatch?.slug) {
     return NextResponse.redirect(
-      new URL(`/products/abm/item/${encodeURIComponent(liveMatch.slug)}`, request.url),
+      new URL(withAbmProductSource(`/products/abm/item/${encodeURIComponent(liveMatch.slug)}`, sourceCategory), request.url),
       307,
     );
   }

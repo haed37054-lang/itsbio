@@ -9,7 +9,10 @@ import { abmResourceImagePath } from "@/lib/abm/resource-links";
 import { PUBLIC_CATALOG_CACHE, sanityCdnClient } from "@/lib/sanity/sanity.client";
 
 
-import AbmCatalogSideNav from "@/components/products/AbmCatalogSideNav";
+import AbmCategorySideNav from "@/components/products/AbmCategorySideNav";
+import AbmCellularSidebar from "@/components/products/AbmCellularSidebar";
+import { getAbmProductSidebar } from "@/lib/abm/product-sidebar";
+import { resolveAbmProductPath, productCategoryBreadcrumbs } from "@/lib/abm/product-navigation";
 import AbmHeroBanner from "@/components/products/AbmHeroBanner";
 import ProductGalleryClient from "@/components/products/ProductGalleryClient";
 import ProductTabsClient from "@/components/products/ProductTabs";
@@ -23,15 +26,8 @@ const THEME = {
   accentSoftBg: "bg-orange-50",
 };
 
-// ✅ ABM 루트 3갈래만 (카테고리 페이지와 동일)
-const ABM_ROOTS = ["general-materials", "cellular-materials", "genetic-materials"] as const;
-
 function buildHref(brandKey: string, path: string[]) {
   return path.length ? `/products/${brandKey}/${path.join("/")}` : `/products/${brandKey}`;
-}
-
-function humanizeSegment(seg: string) {
-  return (seg || "").replaceAll("-", " ").replaceAll("_", " ").trim();
 }
 
 function decodeHtmlEntities(input: string) {
@@ -166,38 +162,6 @@ const ITEM_PAGE_QUERY = `
 }
 `;
 
-const NAV_QUERY = `
-{
-  "roots": *[
-    _type == "category"
-    && (
-      themeKey == $brandKey
-      || brand->themeKey == $brandKey
-      || brand->slug.current == $brandKey
-    )
-    && count(path) == 1
-    && ($isAbm == false || path[0] in $abmRoots)
-  ]
-  | order(order asc, title asc) { _id, title, path, order },
-
-  "descendants": select(
-    $hasActiveRoot => *[
-      _type == "category"
-      && (
-        themeKey == $brandKey
-        || brand->themeKey == $brandKey
-        || brand->slug.current == $brandKey
-      )
-      && count(path) > 1
-      && path[0] == $activeRoot
-      && ($isAbm == false || path[0] in $abmRoots)
-    ]
-    | order(order asc, title asc) { _id, title, path, order },
-    []
-  )
-}
-`;
-
 type CatLite = { _id: string; title: string; path: string[]; order?: number };
 
 type AbmProductDocument = {
@@ -229,197 +193,6 @@ type AbmItemBundle = {
   roots?: CatLite[];
   descendants?: CatLite[];
 };
-
-type TreeNode = {
-  key: string;
-  _id: string;
-  title: string;
-  path: string[];
-  order?: number;
-  isVirtual?: boolean;
-  children: TreeNode[];
-};
-
-function makeNodeKey(path: string[]) {
-  return path.join("/");
-}
-
-function buildTreeFromDescendants(rootPath: string[], descendants: CatLite[]) {
-  const rootKey = makeNodeKey(rootPath);
-  const nodes = new Map<string, TreeNode>();
-
-  function ensureNode(path: string[], meta?: Partial<CatLite>) {
-    const key = makeNodeKey(path);
-    const seg = path[path.length - 1] || "";
-
-    if (!nodes.has(key)) {
-      nodes.set(key, {
-        key,
-        _id: meta?._id || `virtual-${key}`,
-        title: meta?.title || humanizeSegment(seg),
-        path,
-        order: meta?.order,
-        isVirtual: !meta?._id,
-        children: [],
-      });
-    } else if (meta?._id) {
-      const cur = nodes.get(key)!;
-      nodes.set(key, {
-        ...cur,
-        _id: meta._id,
-        title: meta.title || cur.title,
-        order: typeof meta.order === "number" ? meta.order : cur.order,
-        isVirtual: false,
-      });
-    }
-    return nodes.get(key)!;
-  }
-
-  ensureNode(rootPath, {
-    _id: `virtual-${rootKey}`,
-    title: humanizeSegment(rootPath[rootPath.length - 1] || ""),
-  });
-
-  for (const d of descendants) {
-    if (!Array.isArray(d.path) || d.path.length <= rootPath.length) continue;
-    const prefixOk = rootPath.every((seg, i) => d.path[i] === seg);
-    if (!prefixOk) continue;
-
-    for (let i = rootPath.length; i < d.path.length; i++) {
-      const p = d.path.slice(0, i + 1);
-      if (i === d.path.length - 1) ensureNode(p, d);
-      else ensureNode(p);
-    }
-  }
-
-  for (const [key, node] of nodes.entries()) {
-    if (key === rootKey) continue;
-    const parentPath = node.path.slice(0, node.path.length - 1);
-    const parentKey = makeNodeKey(parentPath);
-    const parent = nodes.get(parentKey);
-    if (parent) parent.children.push(node);
-  }
-
-  function sortRec(n: TreeNode) {
-    n.children.sort((a, b) => {
-      const ao = typeof a.order === "number" ? a.order : 999999;
-      const bo = typeof b.order === "number" ? b.order : 999999;
-      if (ao !== bo) return ao - bo;
-      return String(a.title).localeCompare(String(b.title));
-    });
-    n.children.forEach(sortRec);
-  }
-
-  const root = nodes.get(rootKey)!;
-  sortRec(root);
-  return root.children;
-}
-
-/** -------------------- SideNav -------------------- */
-
-function SideNavTree({
-  brandKey,
-  roots,
-  activePath,
-  activeRootTree,
-}: {
-  brandKey: string;
-  roots: CatLite[];
-  activePath: string[];
-  activeRootTree: TreeNode[];
-}) {
-  const activePathStr = activePath.join("/");
-  const activeRoot = activePath[0] || "";
-  const INDENTS = ["ml-2", "ml-4", "ml-6", "ml-8", "ml-10", "ml-12"];
-
-  function NodeList({ nodes, depth }: { nodes: TreeNode[]; depth: number }) {
-    if (!nodes?.length) return null;
-    const indentClass = INDENTS[Math.min(depth, INDENTS.length - 1)];
-
-    return (
-      <div className="space-y-1">
-        {nodes.map((n) => {
-          const p = n.path.join("/");
-          const isActive = activePathStr === p;
-          const isOnTrail =
-            !isActive &&
-            activePath.length > n.path.length &&
-            activePath.slice(0, n.path.length).join("/") === p;
-
-          const childrenOpen = isActive || isOnTrail;
-
-          return (
-            <div key={n.key} className="group">
-              <Link
-                href={buildHref(brandKey, n.path)}
-                className={[
-                  `${indentClass} flex items-center justify-between rounded-xl px-3 py-2 text-sm`,
-                  isActive
-                    ? `${THEME.accentBg} text-white`
-                    : isOnTrail
-                    ? "bg-neutral-50 text-neutral-900"
-                    : "text-neutral-700 hover:bg-neutral-50",
-                ].join(" ")}
-              >
-                <span className="min-w-0 truncate">{stripBrandSuffix(n.title)}</span>
-                <span className={isActive ? "text-white/80" : "text-neutral-300"}>›</span>
-              </Link>
-
-              {n.children?.length ? (
-                <div className={[childrenOpen ? "block" : "hidden group-hover:block", "mt-1"].join(" ")}>
-                  <NodeList nodes={n.children} depth={depth + 1} />
-                </div>
-              ) : null}
-            </div>
-          );
-        })}
-      </div>
-    );
-  }
-
-  return (
-    <div className="overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-sm">
-      <div className="border-b border-neutral-200 px-5 py-4">
-        <div className="text-sm font-semibold text-neutral-900">All Products</div>
-      </div>
-
-      <div className="p-2 space-y-2">
-        <div className="space-y-1">
-          {roots.map((r) => {
-            const isActive = activePath[0] === r.path[0];
-            return (
-              <Link
-                key={r._id}
-                href={buildHref(brandKey, r.path)}
-                className={[
-                  "flex items-center justify-between rounded-xl px-3 py-2 text-sm",
-                  isActive ? `${THEME.accentBg} text-white` : "text-neutral-700 hover:bg-neutral-50",
-                ].join(" ")}
-              >
-                <span className="min-w-0 truncate">{stripBrandSuffix(r.title)}</span>
-                <span className={isActive ? "text-white/80" : "text-neutral-300"}>›</span>
-              </Link>
-            );
-          })}
-        </div>
-
-        {activeRoot ? (
-          <div className="mt-2 border-t border-neutral-200 pt-2">
-            <div className={`px-3 py-2 text-xs font-semibold tracking-wide ${THEME.accentText}`}>
-              {humanizeSegment(activeRoot)}
-            </div>
-
-            {activeRootTree?.length ? (
-              <NodeList nodes={activeRootTree} depth={0} />
-            ) : (
-              <div className="px-3 py-2 text-sm text-neutral-500">하위 카테고리가 없습니다.</div>
-            )}
-          </div>
-        ) : null}
-      </div>
-    </div>
-  );
-}
 
 /** -------------------- Images normalize (ABM 1:1 우선 + 노이즈 제거) -------------------- */
 function normalizeImages(product: AbmProductDocument, title: string) {
@@ -490,11 +263,12 @@ function HeroBanner({ brandTitle }: { brandTitle: string }) {
 
 export default async function AbmProductDetailPage({
   params,
+  searchParams,
 }: {
   params: Promise<{ slug: string[] }> | { slug: string[] };
   searchParams?: Promise<Record<string, string | undefined>> | Record<string, string | undefined>;
 }) {
-  const resolved = await Promise.resolve(params);
+  const [resolved, query] = await Promise.all([Promise.resolve(params), Promise.resolve(searchParams)]);
 
   const brandKey = "abm";
   const slugArr = (resolved?.slug ?? []) as string[];
@@ -518,43 +292,20 @@ export default async function AbmProductDetailPage({
   const catNo = decodeHtmlEntities((product?.sku || "").trim());
   const isCas9CellProduct = /^T\d/i.test(catNo) && /cas9/i.test(title);
   const savedCategoryPath: string[] = Array.isArray(product?.categoryPath) ? product.categoryPath : [];
-  const categoryPath = savedCategoryPath.length
-    ? savedCategoryPath
-    : isCas9CellProduct
-      ? ["cellular-materials", "cell-library-collections", "cas9-expressing-cell-lines"]
-      : [];
-  const activeRoot = categoryPath[0] || "";
-
-  // Fetch only navigation categories after the product reveals its active root.
-  // The former implementation downloaded the complete product document twice.
-  const data2 = isCas9CellProduct
-    ? {}
-    : await sanityCdnClient.fetch<AbmItemBundle>(NAV_QUERY, {
-        brandKey,
-        isAbm: brandKey === "abm",
-        abmRoots: ABM_ROOTS,
-        hasActiveRoot: !!activeRoot,
-        activeRoot,
-      }, PUBLIC_CATALOG_CACHE);
-
-  const roots: CatLite[] = Array.isArray(data2?.roots) ? data2.roots : [];
-  const descendants: CatLite[] = Array.isArray(data2?.descendants) ? data2.descendants : [];
-
+  const productSidebar = await getAbmProductSidebar(catNo);
+  const categoryPath = resolveAbmProductPath({ ...productSidebar, paths: [product.categoryPathTitles || []], hints: [],
+    from: query?.from || (savedCategoryPath.length ? buildHref(brandKey, savedCategoryPath)
+      : isCas9CellProduct ? "/products/abm/cellular-materials/cell-library-collections/cas9-expressing-cell-lines" : undefined),
+  });
   const categoryHref = buildHref(brandKey, categoryPath);
-
-  let activeRootTree: TreeNode[] = [];
-  if (activeRoot) {
-    activeRootTree = buildTreeFromDescendants([activeRoot], descendants);
-  }
-
+  const sidebar = categoryPath[0] === "cellular-materials" ? <AbmCellularSidebar activePath={categoryPath} />
+    : <AbmCategorySideNav brandKey="abm" roots={productSidebar.roots} activePath={categoryPath}
+      activeRootTree={productSidebar.trees.find((node) => node.path[0] === categoryPath[0])?.children || []}
+      theme={{ accentText: "text-orange-600", accentActiveBg: "bg-orange-100", accentActiveText: "text-orange-700", accentSoftBg: "bg-orange-50" }} isKentMode={false} />;
   const breadcrumbItems = [
-    { label: "Home", href: "/" },
-    { label: "Products", href: "/products" },
+    { label: "Home", href: "/" }, { label: "Products", href: "/products" },
     { label: stripCompanyNoise(brand.title), href: `/products/${brandKey}` },
-    ...categoryPath.map((seg: string, i: number) => ({
-      label: humanizeSegment(seg),
-      href: buildHref(brandKey, categoryPath.slice(0, i + 1)),
-    })),
+    ...productCategoryBreadcrumbs(productSidebar.trees, categoryPath),
     { label: title, href: `/products/${brandKey}/item/${product.slug}` },
   ];
 
@@ -610,6 +361,7 @@ export default async function AbmProductDetailPage({
               { label: "Home", href: "/" },
               { label: "Products", href: "/products" },
               { label: "ABM", href: "/products/abm" },
+              ...productCategoryBreadcrumbs(productSidebar.trees, categoryPath),
               { label: title, href: `/products/abm/item/${encodeURIComponent(product.slug)}` },
             ]} />
           </div>
@@ -618,7 +370,7 @@ export default async function AbmProductDetailPage({
         <main className="mx-auto max-w-[1320px] px-6 py-10">
           <div className="grid gap-8 lg:grid-cols-[280px_minmax(0,1fr)] xl:grid-cols-[296px_minmax(0,1fr)]">
             <aside className="self-start lg:sticky lg:top-24">
-              <AbmCatalogSideNav mode="product" activeProductRoot="cellular-materials" />
+              {sidebar}
             </aside>
 
             <section className="min-w-0">
@@ -690,7 +442,7 @@ export default async function AbmProductDetailPage({
         <main className="mt-10 pb-14">
           <div className="grid gap-8 lg:grid-cols-12">
             <aside className="lg:col-span-4">
-              <SideNavTree brandKey={brandKey} roots={roots} activePath={categoryPath} activeRootTree={activeRootTree} />
+              {sidebar}
             </aside>
 
             <section className="lg:col-span-8">

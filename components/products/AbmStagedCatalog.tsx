@@ -53,7 +53,7 @@ export default async function AbmStagedCatalog({
 
     const href = stagedRecordPath(kind, row);
     return {
-      href: kind === "product" && base.startsWith("/products/abm/cellular-materials/")
+      href: kind === "product" && /^\/products\/abm\/(?:general|cellular|genetic)-materials(?:\/|$)/.test(base)
         ? `${href}?from=${encodeURIComponent(base)}`
         : href,
       external: false,

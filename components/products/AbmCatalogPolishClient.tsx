@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect } from "react";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
+import { abmProductCategoryPath, withAbmProductSource } from "@/lib/abm/product-navigation";
 import { normalizeAbmCategoryTitle } from "@/lib/abm/category-labels";
 
 const GEL_DOCUMENTATION = "/products/abm/general-materials/gel-documentation";
@@ -283,6 +284,7 @@ async function canonicalizeMissingCategory(pathname: string) {
 
 export default function AbmCatalogPolishClient() {
   const pathname = usePathname();
+  const router = useRouter();
 
   useEffect(() => {
     let scheduled = false;
@@ -296,6 +298,13 @@ export default function AbmCatalogPolishClient() {
         if (disposed) return;
         normalizeGelDocumentationLinks();
         normalizeAbmCategoryTitle(document, pathname);
+        const source = abmProductCategoryPath(pathname).length ? pathname
+          : new URLSearchParams(window.location.search).get("from") || "";
+        document.querySelectorAll<HTMLAnchorElement>('main a[href^="/products/abm/staged/product/"], main a[href^="/products/abm/item/"], main a[href^="/products/abm/resolve?"]').forEach((anchor) => {
+          const href = anchor.getAttribute("href") || "";
+          const contextual = withAbmProductSource(href, source);
+          if (contextual !== href) anchor.setAttribute("href", contextual);
+        });
         document.querySelectorAll<HTMLTableElement>(".itsbio-html table").forEach(normalizeAbmTable);
 
         const target = ensureDnaStainsAnchor(pathname);
@@ -312,6 +321,14 @@ export default function AbmCatalogPolishClient() {
       try {
         url = new URL(anchor.href, window.location.origin);
       } catch {
+        return;
+      }
+      if (url.origin === window.location.origin && /^\/products\/abm\/(?:staged\/product\/[^/]+|item\/.+|resolve)$/.test(url.pathname)
+        && url.searchParams.has("from") && !event.ctrlKey && !event.metaKey && !event.shiftKey && !event.altKey
+        && event.button === 0 && (!anchor.target || anchor.target === "_self")) {
+        event.preventDefault();
+        event.stopImmediatePropagation();
+        router.push(`${url.pathname}${url.search}${url.hash}`);
         return;
       }
       if (url.pathname !== GEL_DOCUMENTATION || url.hash !== "#safeview-dna-stains") return;
@@ -335,7 +352,7 @@ export default function AbmCatalogPolishClient() {
       observer.disconnect();
       document.removeEventListener("click", onClick, true);
     };
-  }, [pathname]);
+  }, [pathname, router]);
 
   return null;
 }

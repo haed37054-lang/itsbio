@@ -1,13 +1,14 @@
 import { notFound, permanentRedirect } from "next/navigation";
 
 import Breadcrumb from "@/components/site/Breadcrumb";
-import HtmlContent from "@/components/site/HtmlContent";
 import AbmHeroBanner from "@/components/products/AbmHeroBanner";
 import AbmCatalogSideNav from "@/components/products/AbmCatalogSideNav";
 import AbmCellularSidebar from "@/components/products/AbmCellularSidebar";
 import ProductGalleryClient from "@/components/products/ProductGalleryClient";
 import ProductTabsClient from "@/components/products/ProductTabs";
-import abmCellularTaxonomy from "@/data/abm-cellular-taxonomy.json";
+import AbmCategorySideNav from "@/components/products/AbmCategorySideNav";
+import { getAbmProductSidebar } from "@/lib/abm/product-sidebar";
+import { resolveAbmProductPath, productCategoryBreadcrumbs } from "@/lib/abm/product-navigation";
 import { ABM_PRODUCT_GROUPS, findAbmServicePathForLabels } from "@/lib/abm/catalog-taxonomy";
 import { abmResourceImagePath } from "@/lib/abm/resource-links";
 import { verifiedMissingAbmVectorUrl } from "@/lib/abm/vector-links";
@@ -32,160 +33,6 @@ const VERIFIED_STATIC_VECTOR_IMAGES: Record<string, string> = {
   LV028858: "/images/abm/LV028858-vector-map.svg",
   LV028859: "/images/abm/LV028859-vector-map.svg",
 };
-
-type TaxonomyNode = {
-  slug: string;
-  title: string;
-  children?: TaxonomyNode[];
-};
-
-type BreadcrumbItem = { label: string; href?: string };
-
-function normalizedTaxonomyLabel(value: string) {
-  return String(value || "")
-    .normalize("NFKD")
-    .replace(/[™®]/g, "")
-    .replace(/&/g, "and")
-    .replace(/[^a-z0-9]+/gi, " ")
-    .trim()
-    .toLowerCase();
-}
-
-function cellularProductBreadcrumbs(paths: string[][], hints: string[]): BreadcrumbItem[] {
-  const cellularLabel = normalizedTaxonomyLabel("Cellular Materials");
-  const candidates = paths
-    .map((path) => {
-      const rootIndex = path.findIndex((label) => normalizedTaxonomyLabel(label) === cellularLabel);
-      return rootIndex >= 0 ? path.slice(rootIndex + 1) : [];
-    })
-    .filter((path) => path.length > 0);
-  if (!candidates.length) return [];
-
-  const hintLabels = new Set([...paths.flat(), ...hints].map(normalizedTaxonomyLabel).filter(Boolean));
-  const taxonomy = abmCellularTaxonomy as TaxonomyNode[];
-
-  const resolvedCandidates = candidates.map((candidate) => {
-    const crumbs: BreadcrumbItem[] = [
-      { label: "Cellular Materials", href: "/products/abm/cellular-materials" },
-    ];
-    const slugs = ["cellular-materials"];
-    let nodes = taxonomy;
-
-    for (const label of candidate) {
-      const wanted = normalizedTaxonomyLabel(label);
-      const node = nodes.find((item) => normalizedTaxonomyLabel(item.title) === wanted);
-      if (!node) continue;
-      slugs.push(node.slug);
-      crumbs.push({
-        label: node.title,
-        href: `/products/abm/${slugs.map(encodeURIComponent).join("/")}`,
-      });
-      nodes = node.children || [];
-    }
-
-    // Some staged records keep the collection name in `category` or in the
-    // source breadcrumb instead of `listingPaths`. Resolve one missing child
-    // from those labels so the product still links back to its actual group.
-    const hintedChild = nodes.find((node) => hintLabels.has(normalizedTaxonomyLabel(node.title)));
-    if (hintedChild) {
-      slugs.push(hintedChild.slug);
-      crumbs.push({
-        label: hintedChild.title,
-        href: `/products/abm/${slugs.map(encodeURIComponent).join("/")}`,
-      });
-    }
-
-    return crumbs;
-  });
-
-  return resolvedCandidates.sort((left, right) => right.length - left.length)[0] || [];
-}
-
-function cellularBreadcrumbsFromPath(value?: string): BreadcrumbItem[] {
-  if (!value?.startsWith("/")) return [];
-
-  let segments: string[];
-  try {
-    segments = new URL(value, "https://www.itsbio.co.kr").pathname
-      .split("/")
-      .filter(Boolean)
-      .map(decodeURIComponent);
-  } catch {
-    return [];
-  }
-
-  if (segments[0] !== "products" || segments[1] !== "abm" || segments[2] !== "cellular-materials") return [];
-
-  const crumbs: BreadcrumbItem[] = [
-    { label: "Cellular Materials", href: "/products/abm/cellular-materials" },
-  ];
-  const slugs = ["cellular-materials"];
-  let nodes = abmCellularTaxonomy as TaxonomyNode[];
-
-  for (const slug of segments.slice(3)) {
-    const node = nodes.find((item) => item.slug === slug);
-    if (!node) return [];
-    slugs.push(node.slug);
-    crumbs.push({
-      label: node.title,
-      href: `/products/abm/${slugs.map(encodeURIComponent).join("/")}`,
-    });
-    nodes = node.children || [];
-  }
-
-  return crumbs;
-}
-
-
-const GENETIC_BREADCRUMB_LABELS: Record<string, string> = {
-  "genetic-materials": "Genetic Materials",
-  "expression-ready-libraries": "Expression-Ready Libraries",
-  "lentiviral-vectors-and-virus": "Lentiviral Vectors & Virus",
-  "aav-vectors-and-virus": "AAV Vectors & Virus",
-  "crispr": "CRISPR",
-  "crispr-ko-vectors-and-virus": "CRISPR KO Vectors & Virus",
-  "crispr-activation-vectors": "CRISPR Activation Vectors",
-  "cas9-vectors-and-virus": "Cas9 Vectors & Virus",
-  "cas-proteins-and-crispr-screening": "Cas Proteins & CRISPR Screening",
-  "expression-systems": "Expression Systems",
-  "specialized-vectors": "Specialized Vectors",
-  "kits-for-viral-vectors": "Kits for Viral Vectors",
-};
-
-function geneticBreadcrumbsFromPath(value?: string): BreadcrumbItem[] {
-  if (!value?.startsWith("/")) return [];
-
-  let segments: string[];
-  try {
-    segments = new URL(value, "https://www.itsbio.co.kr").pathname
-      .split("/")
-      .filter(Boolean)
-      .map(decodeURIComponent);
-  } catch {
-    return [];
-  }
-
-  if (segments[0] !== "products" || segments[1] !== "abm" || segments[2] !== "genetic-materials") return [];
-
-  const crumbs: BreadcrumbItem[] = [];
-  const route: string[] = [];
-  for (const slug of segments.slice(2)) {
-    route.push(slug);
-    const fallback = slug
-      .split("-")
-      .filter(Boolean)
-      .map((part) => part.length <= 4 && /^(?:aav|orf|sirna|mirna|crispr|cas9|qpcr)$/i.test(part)
-        ? part.toUpperCase().replace("SIRNA", "siRNA").replace("MIRNA", "miRNA").replace("QPCR", "qPCR")
-        : part.charAt(0).toUpperCase() + part.slice(1))
-      .join(" ");
-    crumbs.push({
-      label: GENETIC_BREADCRUMB_LABELS[slug] || fallback,
-      href: `/products/abm/${route.map(encodeURIComponent).join("/")}`,
-    });
-  }
-
-  return crumbs;
-}
 
 function escapeHtml(value: string) {
   return value.replace(/[&<>"']/g, (character) => ({
@@ -227,7 +74,10 @@ export default async function AbmStagedDetailPage({
   const [{ kind, key }, fallback] = await Promise.all([params, searchParams]);
   if (kind !== "product" && kind !== "service") notFound();
   const decodedKey = decodeURIComponent(key);
-  const stagedRecord = await getAbmStagedDetail(kind, decodedKey);
+  const [stagedRecord, productSidebar] = await Promise.all([
+    getAbmStagedDetail(kind, decodedKey),
+    kind === "product" ? getAbmProductSidebar(decodedKey) : Promise.resolve(null),
+  ]);
   if (!stagedRecord) {
     const counterpartKind = kind === "product" ? "service" : "product";
     const counterpartRecord = await getAbmStagedDetail(counterpartKind, decodedKey);
@@ -286,30 +136,16 @@ export default async function AbmStagedDetailPage({
   const activeServicePath = kind === "service"
     ? findAbmServicePathForLabels([...paths.flat(), ...(record.breadcrumbs || [])])
     : [];
-  const requestedProductBreadcrumbs = kind === "product"
-    ? cellularBreadcrumbsFromPath(fallback?.from).length
-      ? cellularBreadcrumbsFromPath(fallback?.from)
-      : geneticBreadcrumbsFromPath(fallback?.from)
-    : [];
-  const productBreadcrumbs = kind === "product"
-    ? requestedProductBreadcrumbs.length ? requestedProductBreadcrumbs : cellularProductBreadcrumbs(paths, [
-      ...(record.breadcrumbs || []),
-      record.category || "",
-      record.searchCategory || "",
-      record.filterTitle || "",
-    ])
-    : [];
+  const activeProductPath = productSidebar ? resolveAbmProductPath({
+    ...productSidebar,
+    paths,
+    hints: [...(record.breadcrumbs || []), record.category || "", record.searchCategory || "", record.filterTitle || ""],
+    from: fallback?.from,
+  }) : [];
+  const productBreadcrumbs = productSidebar ? productCategoryBreadcrumbs(productSidebar.trees, activeProductPath) : [];
   const fallbackProductRootBreadcrumbs = kind === "product" && !productBreadcrumbs.length
-    ? ABM_PRODUCT_GROUPS.filter((group) => group.slug === activeProductRoot).map((group) => ({
-      label: group.title,
-      href: group.href,
-    }))
+    ? ABM_PRODUCT_GROUPS.filter((group) => group.slug === activeProductRoot).map((group) => ({ label: group.title, href: group.href }))
     : [];
-  const activeCellularPath = productBreadcrumbs.at(-1)?.href
-    ?.replace(/^\/products\/abm\//, "")
-    .split("/")
-    .filter(Boolean)
-    .map(decodeURIComponent) || [];
   const belongsToSpecialCellCollection = paths.some((path) => path.includes("Special Cell Line Collections"));
   const isCollectionTableRecord = record.verification?.source === "official-collection-table"
     || (kind === "product"
@@ -354,8 +190,14 @@ export default async function AbmStagedDetailPage({
       <main className="mx-auto max-w-[1320px] px-6 py-10">
         <div className="grid gap-8 lg:grid-cols-[280px_minmax(0,1fr)] xl:grid-cols-[296px_minmax(0,1fr)]">
           <aside className="relative z-[40] self-start lg:sticky lg:top-24">
-            {kind === "product" && activeCellularPath[0] === "cellular-materials" ? (
-              <AbmCellularSidebar activePath={activeCellularPath} />
+            {kind === "product" && activeProductPath[0] === "cellular-materials" ? (
+              <AbmCellularSidebar activePath={activeProductPath} />
+            ) : productSidebar && activeProductPath.length ? (
+              <AbmCategorySideNav brandKey="abm" roots={productSidebar.roots}
+                activePath={activeProductPath}
+                activeRootTree={productSidebar.trees.find((node) => node.path[0] === activeProductPath[0])?.children || []}
+                theme={{ accentText: "text-orange-600", accentActiveBg: "bg-orange-100", accentActiveText: "text-orange-700", accentSoftBg: "bg-orange-50" }}
+                isKentMode={false} />
             ) : (
               <AbmCatalogSideNav mode={kind} activeProductRoot={activeProductRoot} activeServicePath={activeServicePath} />
             )}

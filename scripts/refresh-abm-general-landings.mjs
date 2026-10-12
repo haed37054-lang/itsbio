@@ -33,6 +33,7 @@ function localHref(raw, source, from) {
   if (url.protocol === "mailto:") return "mailto:info@itsbio.co.kr";
   if (!["https:", "http:"].includes(url.protocol)) return "";
   if (!/(^|\.)abmgood\.com$/.test(url.hostname)) return url.href;
+  if (url.pathname === "/pcr-competitor-cross-reference-tool") return url.href;
   if (/\.(?:pdf|docx?|xlsx?|pptx?|zip)$/i.test(url.pathname)) return url.href;
   const filename = url.pathname.split("/").pop();
   const sku = rtUrls[filename] || filename?.match(/-([A-Z]\d{2,}(?:-[A-Z0-9]+)?)(?:\.html)?$/i)?.[1]?.toUpperCase();
@@ -73,6 +74,11 @@ for (const key of selected) {
   root.find("[href*='free-sample'],[href*='free_sample']").remove();
   root.find("[id='rt-free-sample-form'],.offer,.offer-card,.bundle-offer").remove();
   root.find("h1").first().remove(); // shared page heading is the canonical menu label
+  root.find("main").each((_, item) => { item.tagName = "div"; $(item).addClass("abm-general-body"); });
+  if (key === "gel-documentation") {
+    root.find("h2,h3,h4").filter((_, item) => /^SafeView.*DNA Stains$/i.test($(item).text().trim())).first().before('<span id="safeview-dna-stains" class="abm-general-anchor" aria-hidden="true"></span>');
+  }
+  root.find("li,p,span,div").filter((_, item) => /^Wholesale\s+Prices?$/i.test($(item).text().trim())).remove();
   root.find("iframe").each((_, item) => {
     const frame = $(item);
     if (frame.attr("src") === "https://www.youtube.com/embed/M1_8mYwuBeE") {

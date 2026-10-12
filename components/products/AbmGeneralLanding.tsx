@@ -13,7 +13,7 @@ export default function AbmGeneralLanding({ html, className, finderProducts = EM
   const content = useRef<HTMLDivElement>(null);
   const dialog = useRef<HTMLDialogElement>(null);
   const titleId = useId();
-  const [image, setImage] = useState<{ src: string; alt: string } | null>(null);
+  const [image, setImage] = useState<{ src: string; alt: string; description?: string } | null>(null);
 
   useEffect(() => {
     const root = content.current;
@@ -105,7 +105,7 @@ export default function AbmGeneralLanding({ html, className, finderProducts = EM
     const button = event.target.closest("button[data-general-image]");
     const img = button?.querySelector<HTMLImageElement>("img");
     if (!img || !img.getAttribute("src")?.startsWith("/images/abm/general/")) return;
-    setImage({ src: img.getAttribute("src")!, alt: img.alt });
+    setImage({ src: img.getAttribute("src")!, alt: img.alt, description: img.closest(".figure-card")?.querySelector(".figure-details")?.textContent?.trim() });
     dialog.current?.showModal();
   };
 
@@ -119,6 +119,7 @@ export default function AbmGeneralLanding({ html, className, finderProducts = EM
         </div>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         {image ? <img src={image.src} alt={image.alt} /> : null}
+        {image?.description ? <p className="mt-5 leading-7 text-[#374151]">{image.description}</p> : null}
       </dialog>
     </div>
   );

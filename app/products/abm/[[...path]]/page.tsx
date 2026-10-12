@@ -792,7 +792,7 @@ export default async function AbmProductsPathPage({
     : childCategoryNodes;
   const isProductListPage = path.length >= 3 || (path.length > 1 && childCategoryNodes.length === 0);
   const isPrimaryAntibodyPage = pathStr === "general-materials/antibodies/primary-antibodies";
-  const stagedProductsInCategory = isProductListPage && ABM_ROOTS.includes(path[0] as (typeof ABM_ROOTS)[number])
+  const stagedProductsInCategory = !generalLanding && isProductListPage && ABM_ROOTS.includes(path[0] as (typeof ABM_ROOTS)[number])
     ? (await getAbmStagedRecords("product")).filter((record) => {
         if (isPrimaryAntibodyPage) {
           const antibodyCategory = `${record.searchCategory || ""} ${record.filterTitle || ""}`;
@@ -1074,7 +1074,7 @@ export default async function AbmProductsPathPage({
   const hasEmbeddedCategoryHero = hasEmbeddedCellularHero || hasEmbeddedCrisprHero || Boolean(libraryLanding);
   const hideDuplicateCas9Resources = pathStr === "genetic-materials/crispr/cas9-vectors-and-virus";
   const isTiterLanding = brandKey === "abm" && pathStr === TITER_PATH;
-  const hasEmbeddedProductTable = isTiterLanding || blocksForRender.some((block: any) => {
+  const hasEmbeddedProductTable = Boolean(generalLanding) || isTiterLanding || blocksForRender.some((block: any) => {
     const html = typeof block?.html === "string" ? block.html : "";
     return /<table\b/i.test(html) && /Product\s+(?:List|Name)|Cat\.?\s*No\.?/i.test(html);
   });
@@ -1082,7 +1082,9 @@ export default async function AbmProductsPathPage({
     .map((block: any) => typeof block?.html === "string" ? block.html : "")
     .filter(Boolean)
     .join("\n");
-  const tableCatalogNumbers = isTiterLanding
+  const tableCatalogNumbers = generalLanding
+    ? []
+    : isTiterLanding
     ? TITER_KITS.map((kit) => kit.sku)
     : brandKey === "abm" && hasEmbeddedProductTable
     ? extractAbmTableCatalogNumbers(tableHtml)

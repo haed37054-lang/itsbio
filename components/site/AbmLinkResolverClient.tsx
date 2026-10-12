@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { usePathname } from "next/navigation";
 
 import { isOfficialAbmVectorUrl } from "@/lib/abm/internal-links";
+import { ABM_GENERAL_MENU_ITEMS } from "@/lib/abm/general-navigation";
 
 const ABM_ROOTS = new Set(["general-materials", "cellular-materials", "genetic-materials"]);
 const GEL_DOCUMENTATION_PATH = "/products/abm/general-materials/gel-documentation";
@@ -150,8 +151,10 @@ function extractOfficialAbmUrl(href: string) {
   return "";
 }
 
-function rewriteMegaMenuLinks(menuItems: MenuItem[]) {
+export function rewriteMegaMenuLinks(menuItems: MenuItem[]) {
   document.querySelectorAll<HTMLAnchorElement>('header a[href^="/products/abm/"]').forEach((anchor) => {
+    // Supplier hero headers are editorial content, not the site mega menu.
+    if (anchor.closest("main")) return;
     const gelTarget = gelDocumentationTargetForLink(anchor);
     if (gelTarget) {
       applyGelDocumentationTarget(anchor, gelTarget);
@@ -167,6 +170,9 @@ function rewriteMegaMenuLinks(menuItems: MenuItem[]) {
 
     const segments = url.pathname.split("/").filter(Boolean);
     if (segments[0] !== "products" || segments[1] !== "abm") return;
+    // Reviewed menu paths remain valid when older CMS records are hidden or
+    // carry a different title (for example DNA & Protein Ladders).
+    if (ABM_GENERAL_MENU_ITEMS.some((item) => item.href === url.pathname)) return;
 
     const root = segments[2] || "";
     if (!ABM_ROOTS.has(root) || segments.length <= 3) return;

@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-10-12T17:20:31.273Z",
+  "checkedAt": "2026-10-12T17:32:06.406Z",
   "auditScope": "Pre-repair category HTML bodies. Structured resource/publication blocks are separate, so raw image-count differences alone are not missing-image defects.",
   "categoryAudit": [
     {

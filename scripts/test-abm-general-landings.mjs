@@ -7,6 +7,7 @@ import { JSDOM } from "jsdom";
 const { findRtProduct } = await import("../lib/abm/rt-product-finder.ts");
 const { normalizeAbmGeneralSidebar, ABM_GENERAL_MENU_ITEMS } = await import("../lib/abm/general-navigation.ts");
 const { default: AbmGeneralLanding } = await import("../components/products/AbmGeneralLanding.tsx");
+const { rewriteMegaMenuLinks } = await import("../components/site/AbmLinkResolverClient.tsx");
 const data = JSON.parse(await fs.readFile(new URL("../data/abm-general-landings.json", import.meta.url), "utf8"));
 
 const defaults = { application: "cdna", gdna: "no", sample: "routine", format: "mastermix" };
@@ -40,8 +41,9 @@ const expectedFaqs = { "pcr-enzymes/rt-and-rt-pcr": 8, "rna-tracking": 7, "gel-d
 for (const landing of data.landings) {
   const doc = new JSDOM(landing.html).window.document;
   assert.equal(doc.querySelectorAll("script,style,.hs-form-frame").length, 0);
+  assert.equal(doc.querySelectorAll("main").length, 0, "One main landmark belongs to the host page");
   assert.equal(doc.querySelectorAll("details").length, expectedFaqs[landing.key]);
-  assert.doesNotMatch(doc.body.textContent, /\$\d|Q4RT15|Save 15%/);
+  assert.doesNotMatch(doc.body.textContent, /\$\d|Q4RT15|Save 15%|Wholesale Prices/);
   for (const el of doc.querySelectorAll("*")) for (const attribute of el.attributes) assert.ok(!/^on/i.test(attribute.name));
   for (const image of doc.querySelectorAll("img[src]")) assert.ok(image.getAttribute("src").startsWith("/images/abm/general/"));
   for (const table of doc.querySelectorAll("table")) {
@@ -60,6 +62,7 @@ for (const asset of data.assets) {
   assert.ok(bytes.length > 500);
 }
 const ladders = new JSDOM(data.landings.find((item) => item.key === "dna-and-protein-ladders").html).window.document;
+assert.ok(new JSDOM(data.landings.find((item) => item.key === "gel-documentation").html).window.document.getElementById("safeview-dna-stains"));
 for (const sku of ["G016", "G193", "G106", "G248", "G624", "G623", "G523"]) assert.ok(ladders.querySelector(`a[href^='/products/abm/staged/product/${sku}?']`));
 
 // Exercise actual DOM events against the reviewed RT form and performance tabs.
@@ -71,6 +74,16 @@ globalThis.document = dom.window.document;
 globalThis.Element = dom.window.Element;
 globalThis.FormData = dom.window.FormData;
 globalThis.IS_REACT_ACT_ENVIRONMENT = true;
+const header = document.createElement("header");
+header.innerHTML = '<a href="/products/abm/general-materials/dna-and-protein-ladders">DNA &amp; Protein Ladders</a><a href="/products/abm/general-materials/rna-tracking">RNA Tracking (RNA Mango)</a>';
+document.body.prepend(header);
+const main = document.createElement("main");
+main.innerHTML = '<header><a href="/products/abm/general-materials/pcr-enzymes/rt-and-rt-pcr#finder">Product Finder</a></header>';
+document.body.append(main);
+rewriteMegaMenuLinks([]);
+assert.equal(header.querySelector("a").getAttribute("href"), "/products/abm/general-materials/dna-and-protein-ladders");
+assert.equal(header.querySelectorAll("a")[1].getAttribute("href"), "/products/abm/general-materials/rna-tracking");
+assert.equal(main.querySelector("a").getAttribute("href"), "/products/abm/general-materials/pcr-enzymes/rt-and-rt-pcr#finder");
 const mount = createRoot(document.getElementById("test-root"));
 await act(async () => mount.render(React.createElement(AbmGeneralLanding, { html: rt.html, className: rt.className, finderProducts: data.finderProducts })));
 const form = document.querySelector("#rtFinderBalanced");

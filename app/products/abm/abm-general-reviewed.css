@@ -4,6 +4,7 @@
 .abm-general-reviewed [hidden] { display: none !important; }
 .abm-general-reviewed :is(.rt-balance,.rna-mango-page) { padding: 0; max-width: 100%; }
 .abm-general-reviewed :is(section,[id]) { scroll-margin-top: 100px; }
+.abm-general-reviewed .abm-general-anchor { display: block; height: 0; }
 .abm-general-reviewed p { margin: 0 0 16px; }
 .abm-general-reviewed :is(h2,h3,h4) { margin: 30px 0 12px; }
 .abm-general-reviewed :is(ul,ol):not([class]) { padding-left: 24px; margin: 16px 0; }
@@ -21,6 +22,7 @@
 .abm-general-reviewed table { width: 100%; min-width: 640px; border-collapse: collapse; table-layout: auto; }
 .abm-general-reviewed table :is(th,td) { padding: 14px 16px; vertical-align: top; border-bottom: 1px solid var(--abm-content-border); text-align: left; overflow-wrap: normal; word-break: normal; }
 .abm-general-reviewed table a { display: inline; white-space: normal; }
+#abm-catalog-content main .abm-general-reviewed table tbody > tr.abm-table-section-row > :is(th,td) { background-color: #f1f5f9 !important; color: var(--abm-content-title) !important; font-weight: 700 !important; }
 .abm-general-reviewed details { margin: 12px 0; border: 1px solid var(--abm-content-border); border-radius: 12px; padding: 16px 20px; background: white; }
 .abm-general-reviewed summary { cursor: pointer; font-weight: 700; color: var(--abm-content-heading); }
 .abm-general-reviewed details[open] > summary { margin-bottom: 16px; }

@@ -107,6 +107,42 @@
 #abm-catalog-content main table a { color: var(--abm-content-link) !important; }
 #abm-catalog-content main :is(.itsbio-html, .qv-titer-lp) table thead a { color: #fff !important; }
 
+/* Table geometry is separate from the fixed typography/color roles above.
+   Wrap at word boundaries, and scroll the table when its columns need room. */
+#abm-catalog-content main .abm-data-table :is(th, td) {
+  word-break: normal;
+  overflow-wrap: normal;
+  hyphens: manual;
+}
+#abm-catalog-content main table[data-abm-table-layout="editorial"] {
+  table-layout: auto !important;
+}
+#abm-catalog-content main table[data-abm-table-layout="editorial"] tr > :first-child {
+  width: auto !important;
+  min-width: 0 !important;
+}
+#abm-catalog-content main table[data-abm-table-layout="editorial"]:is([data-abm-table-columns="3"], [data-abm-table-columns="4"], [data-abm-table-columns="5"]) {
+  min-width: 680px !important;
+}
+#abm-catalog-content main table[data-abm-table-layout="editorial"][data-abm-table-columns="4"] { min-width: 780px !important; }
+#abm-catalog-content main table[data-abm-table-layout="editorial"][data-abm-table-columns="5"] { min-width: 860px !important; }
+#abm-catalog-content main table.abm-lenti-promoter-table,
+#abm-catalog-content main table.abm-lenti-packaging-table { table-layout: fixed !important; }
+#abm-catalog-content main table.abm-lenti-promoter-table tr > :first-child { width: 14% !important; }
+#abm-catalog-content main table.abm-lenti-promoter-table tr > :nth-child(2) { width: 36% !important; }
+#abm-catalog-content main table.abm-lenti-promoter-table tr > :nth-child(3) { width: 50% !important; }
+#abm-catalog-content main table.abm-lenti-packaging-table tr > :first-child { width: 30% !important; }
+#abm-catalog-content main table.abm-lenti-packaging-table tr > :nth-child(2) { width: 16% !important; white-space: normal; }
+#abm-catalog-content main table.abm-lenti-packaging-table tr > :nth-child(3) { width: 24% !important; }
+#abm-catalog-content main table.abm-lenti-packaging-table tr > :nth-child(4) { width: 30% !important; }
+#abm-catalog-content main .abm-table-scroll:has(> table[data-abm-table-layout="editorial"]) {
+  max-width: 100%;
+  overflow-x: auto !important;
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5e1 #f8fafc;
+}
+#abm-catalog-content main .abm-table-scroll:has(> table[data-abm-table-layout="editorial"])::-webkit-scrollbar { display: block; height: 6px; }
+
 /* Captions and form labels are secondary UI copy, distinct from body prose. */
 #abm-catalog-content main :is(figcaption, caption, .abm-library-search-note, .abm-lenti-caption) {
   font-size: 13px !important;

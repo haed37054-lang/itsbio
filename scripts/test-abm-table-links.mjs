@@ -81,6 +81,14 @@ for (const landing of expressionLandings) {
     assert.ok(doc.body.textContent.includes("Key Advantages"));
   }
   if (landing.key === "lentiviral-vectors-and-virus") {
+    const promoter = doc.querySelector(".abm-lenti-promoter-table");
+    const packaging = doc.querySelector(".abm-lenti-packaging-table");
+    assert.equal(promoter?.dataset.abmTableLayout, "editorial");
+    assert.equal(packaging?.dataset.abmTableColumns, "4");
+    assert.equal(packaging?.rows[0].cells[1].textContent.trim(), "Plasmids Required");
+    const inventory = doc.querySelector(".abm-lenti-related-table");
+    assert.ok(inventory?.querySelector(".abm-col-catalog"));
+    assert.equal(inventory?.hasAttribute("data-abm-table-layout"), false);
     for (const text of ["Third-Generation Lentiviral Transfer Vector Design", "Promoters, Reporters & Selection Markers", "Lentiviral Gene Overexpression Data"]) assert.ok(doc.body.textContent.includes(text));
   }
   for (const th of doc.querySelectorAll("th")) assert.notEqual(th.textContent.trim().toLowerCase(), "price");

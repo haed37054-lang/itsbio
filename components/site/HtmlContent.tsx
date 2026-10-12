@@ -505,6 +505,12 @@ function applySemanticTableColumnLayout(table: HTMLTableElement) {
   if (!headerRow) return;
 
   const headers = Array.from(headerRow.children).map((cell) => collapseWs(cell.textContent || ""));
+  // Comparison/guide tables have no catalog column. They must not inherit
+  // inventory's 38% product-name column or squeeze short numeric columns.
+  if (!headers.some(isCatalogNumberHeader)) {
+    table.dataset.abmTableLayout = "editorial";
+    table.dataset.abmTableColumns = String(headers.length);
+  }
   const columnClasses = headers.map((header) => {
     const normalized = normalizedTableHeader(header);
     if (isProductNameHeader(header)) return "abm-col-product";
@@ -1667,7 +1673,10 @@ export function sanitizeAndStyle(
     });
 
     if (isAbmMode && !isAbmLanding) {
-      table.setAttribute("class", TABLE_CLASS);
+      const reviewedLayoutClasses = table.closest(".abm-library-official")
+        ? Array.from(table.classList).filter((name) => /^abm-lenti-(?:table|promoter-table|packaging-table|related-table)$/.test(name))
+        : [];
+      table.setAttribute("class", [TABLE_CLASS, ...reviewedLayoutClasses].join(" "));
       ["style", "width", "height", "bgcolor", "border", "cellpadding", "cellspacing", "align"].forEach((attribute) => table.removeAttribute(attribute));
       table.querySelectorAll("th").forEach((th) => th.setAttribute("scope", "col"));
       const sectionRows = detectAbmProductGroupRows(table as HTMLTableElement);

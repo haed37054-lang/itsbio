@@ -266,7 +266,7 @@ const BRANDS: Brand[] = [
     description: "Integrated systems for laboratory animal anesthesia, ventilation, monitoring, surgery, warming, identification, and handling.",
     href: "/products/kent",
     searchKey: "kent",
-    categories: ["Anesthesia", "Ventilation", "Physiological Monitoring", "Noninvasive Blood Pressure", "Surgery", "Warming", "Rodent Identification", "Animal Handling", "Syringe Pump", "Feeding Needles"],
+    categories: ["Anesthesia", "Ventilation", "Physiological Monitoring", "Noninvasive Blood Pressure", "Surgery", "Warming", "Rodent Identification", "Animal Handling", "Feeding Needles"],
     theme: THEMES.kent,
   },
   {

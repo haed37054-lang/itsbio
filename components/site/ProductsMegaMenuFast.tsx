@@ -59,7 +59,6 @@ const BRANDS: BrandMenu[] = [
           { label: "Warming", href: "/products/kent/warming" },
           { label: "Rodent Identification", href: "/products/kent/rodent-identification" },
           { label: "Animal Handling", href: "/products/kent/animal-handling" },
-          { label: "Syringe Pump", href: "/products/kent/syringe-pump" },
           { label: "Feeding Needles", href: "/products/kent/feeding-needles" },
         ],
       },

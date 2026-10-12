@@ -1,0 +1,118 @@
+/* Shared ABM content roles override imported supplier typography, including
+   page-specific !important declarations. Layout and scientific images stay
+   under their existing page styles. The brand hero and site footer are outside
+   main; sidebar/navigation retain their smaller UI type scale. */
+#abm-catalog-content {
+  display: contents;
+  --abm-content-font: var(--font-pretendard), system-ui, -apple-system, "Segoe UI", sans-serif;
+  --abm-content-text: #374151;
+  --abm-content-title: #111827;
+  --abm-content-heading: #dc5a2b;
+  --abm-content-link: #c2410c;
+  --abm-content-accent: #ef6331;
+  --abm-content-border: #e5e7eb;
+  --abm-content-stripe: #f8fafc;
+}
+
+#abm-catalog-content main,
+#abm-catalog-content main :is(.itsbio-html, .qv-titer-lp, .organoid-page, .abm-library-official) {
+  font-family: var(--abm-content-font) !important;
+  font-size: 15px !important;
+  line-height: 1.75 !important;
+  color: var(--abm-content-text) !important;
+}
+
+#abm-catalog-content main :is(div, p, span, a, h1, h2, h3, h4, h5, h6, li, th, td, dt, dd, label, input, select, button, summary, small, strong, b, em, figcaption):not(:where(svg *, .fa, .fas, .far, .fab, [aria-hidden="true"])) {
+  font-family: var(--abm-content-font) !important;
+}
+
+#abm-catalog-content main :is(p, li, dd):not(:where(aside *, nav *)) {
+  font-size: 15px !important;
+  line-height: 1.75 !important;
+  color: var(--abm-content-text) !important;
+}
+
+/* Inline source spans must follow their paragraph, heading or table cell. */
+#abm-catalog-content main :is(p, li, dd, h1, h2, h3, h4, h5, h6) :is(span, strong, b, em):not(:where(svg *, [aria-hidden="true"], [class*="badge"], [class*="tag"])) {
+  font-size: inherit !important;
+  line-height: inherit !important;
+  color: inherit !important;
+}
+
+#abm-catalog-content main :is(h1, h2, h3, h4, h5, h6):not(:where(aside *, nav *)) {
+  font-weight: 700 !important;
+  line-height: 1.35 !important;
+  letter-spacing: -0.02em !important;
+  color: var(--abm-content-heading) !important;
+}
+#abm-catalog-content main h1 { font-size: 30px !important; color: var(--abm-content-title) !important; }
+#abm-catalog-content main h2 { font-size: 24px !important; }
+#abm-catalog-content main h3 { font-size: 20px !important; }
+#abm-catalog-content main h4 { font-size: 18px !important; }
+#abm-catalog-content main :is(h5, h6) { font-size: 16px !important; }
+
+/* Legacy libraries use h2 for the page title and h3 for major sections. */
+#abm-catalog-content main :is(.abm-categories-title-h2, .abm-library-official > h2, .abm-library-official > div:first-child > h2, h2.text-4xl) {
+  font-size: 30px !important;
+  color: var(--abm-content-title) !important;
+}
+#abm-catalog-content main .abm-library-official h3 { font-size: 24px !important; }
+
+#abm-catalog-content main :is(.itsbio-html, .qv-titer-lp) a:not(:where([class*="btn"], [class*="button"], .abm-lenti-button, .cta-row a, nav a)) {
+  color: var(--abm-content-link) !important;
+}
+
+/* Every data table shares one header, body and section-row palette. Do not
+   change column widths, rowspans or text alignment fixed by individual pages. */
+#abm-catalog-content main table {
+  font-family: var(--abm-content-font) !important;
+  font-size: 15px !important;
+  line-height: 1.6 !important;
+  color: var(--abm-content-text) !important;
+  background-color: #fff !important;
+}
+#abm-catalog-content main table :is(th, td) {
+  font-size: 15px !important;
+  line-height: 1.6 !important;
+  color: var(--abm-content-text) !important;
+  background-color: #fff !important;
+  border-color: var(--abm-content-border) !important;
+}
+#abm-catalog-content main table tbody > tr:nth-child(even) > :is(th, td) {
+  background-color: var(--abm-content-stripe) !important;
+}
+#abm-catalog-content main table :is(th, td) :is(p, div, span, strong, b, em, small, h2, h3, h4) {
+  font-size: inherit !important;
+  line-height: inherit !important;
+  color: inherit !important;
+}
+#abm-catalog-content main table thead > tr > :is(th, td),
+#abm-catalog-content main .abm-data-table > tbody > tr:first-child > th {
+  background-color: var(--abm-content-accent) !important;
+  color: #fff !important;
+  font-weight: 700 !important;
+}
+#abm-catalog-content main table :is(.abm-table-section-row, .itsbio-cas9-section-row) > :is(th, td) {
+  background-color: #f1f5f9 !important;
+  color: var(--abm-content-title) !important;
+  font-weight: 700 !important;
+}
+#abm-catalog-content main table a { color: var(--abm-content-link) !important; }
+#abm-catalog-content main table thead a { color: #fff !important; }
+
+/* Captions and form labels are secondary UI copy, distinct from body prose. */
+#abm-catalog-content main :is(figcaption, caption, .abm-library-search-note, .abm-lenti-caption) {
+  font-size: 13px !important;
+  color: #6b7280 !important;
+}
+#abm-catalog-content main :is(input, select, label) { font-size: 14px !important; }
+
+/* Preserve contrast in the existing dark CTA bands. */
+#abm-catalog-content main .organoid-page .final-cta :is(p, h2, h3) { color: #fff !important; }
+
+@media (max-width: 767px) {
+  #abm-catalog-content main h1,
+  #abm-catalog-content main :is(.abm-categories-title-h2, .abm-library-official > h2, .abm-library-official > div:first-child > h2, h2.text-4xl) { font-size: 26px !important; }
+  #abm-catalog-content main h2,
+  #abm-catalog-content main .abm-library-official h3 { font-size: 22px !important; }
+}

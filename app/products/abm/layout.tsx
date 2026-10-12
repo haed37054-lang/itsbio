@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import "./abm-content-theme.css";
 
 import AbmCatalogPolishClient from "@/components/products/AbmCatalogPolishClient";
 import AbmGeneticMaterialsPolishClient from "@/components/products/AbmGeneticMaterialsPolishClient";
@@ -391,7 +392,7 @@ export default function AbmProductsLayout({ children }: { children: ReactNode })
       <AbmCas9VectorsTableFixClient />
       <AbmPrintCleanupClient />
       <AbmRichProductLinkClient />
-      {children}
+      <div id="abm-catalog-content">{children}</div>
     </>
   );
 }

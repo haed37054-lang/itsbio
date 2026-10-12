@@ -121,5 +121,6 @@
   #abm-catalog-content main h1,
   #abm-catalog-content main :is(.abm-categories-title-h2, .abm-library-official > h2, .abm-library-official > div:first-child > h2, h2.text-4xl) { font-size: 26px !important; }
   #abm-catalog-content main h2,
-  #abm-catalog-content main .abm-library-official h3 { font-size: 22px !important; }
+  #abm-catalog-content main .abm-library-official h3,
+  #abm-catalog-content main h3.text-2xl { font-size: 22px !important; }
 }

@@ -15,6 +15,7 @@ import AbmViralKitGuide from "@/components/products/AbmViralKitGuide";
 import AbmTiterKitLanding, { TITER_KITS, TITER_PATH } from "@/components/products/AbmTiterKitLanding";
 import { AbmPackagingVideo, AbmPackagingPublications } from "@/components/products/AbmPackagingMedia";
 import { stripUnwantedAbmNav } from "@/lib/abm/category-html";
+import { abmCategoryLabel } from "@/lib/abm/category-labels";
 import { restorePackagingMixesBlocks } from "@/lib/abm/packaging-mixes";
 import expressionLibraryLandings from "@/data/abm-expression-library-landings.json";
 import AbmLibraryMediaClient from "@/components/products/AbmLibraryMediaClient";
@@ -564,7 +565,7 @@ const ABM_GENETIC_NAV_SPECS: AbmGeneticNavSpec[] = [
   {
     title: "Expression Systems",
     children: [
-      { title: "Lentiviral Vectors", aliases: ["Lentivirus Expression System"] },
+      { title: "Lentiviral Vectors & Virus", aliases: ["Lentiviral Vectors", "Lentivirus Expression System"] },
       { title: "AAV Vectors", aliases: ["AAV Expression System"] },
       { title: "Adenoviral Vectors", aliases: ["Adenovirus Vectors", "Adenoviral Expression Vectors"] },
       { title: "Retroviral Vectors", aliases: ["Retrovirus Vectors"] },
@@ -1578,14 +1579,16 @@ export default async function AbmProductsPathPage({
     { label: brand.title, href: `/products/${brandKey}` },
     ...(isKent ? [{ label: KENT_MENU_TITLE, href: `/products/${brandKey}` }] : []),
     ...path.map((seg: string, i: number) => ({
-      label: humanizeSegment(seg),
+      label: brandKey === "abm"
+        ? abmCategoryLabel(buildHref(brandKey, path.slice(0, i + 1)), findTreeNodeByPath(activeRootTree, path.slice(0, i + 1))?.title || ABM_PRODUCT_GROUPS.find((group) => group.slug === seg && i === 0)?.title || humanizeSegment(seg))
+        : humanizeSegment(seg),
       href: buildHref(brandKey, path.slice(0, i + 1)),
     })),
   ];
 
-  const pageTitle = pathStr === "genetic-materials/crispr"
-    ? "CRISPR Products for Genome Editing"
-    : stripBrandSuffix(category?.title || humanizeSegment(path[path.length - 1] || ""));
+  const pageTitle = brandKey === "abm"
+    ? abmCategoryLabel(buildHref(brandKey, path), activePageNode?.title || ABM_PRODUCT_GROUPS.find((group) => group.slug === pathStr)?.title || stripBrandSuffix(category?.title || humanizeSegment(path.at(-1) || "")))
+    : stripBrandSuffix(category?.title || humanizeSegment(path.at(-1) || ""));
   const is3dLandingFidelity = brandKey === "abm" && [
     "cellular-materials/3d-and-organoid/3d-culture-platforms",
     "cellular-materials/3d-and-organoid/3dcelmatrix",

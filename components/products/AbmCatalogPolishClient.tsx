@@ -2,6 +2,7 @@
 
 import { useEffect } from "react";
 import { usePathname } from "next/navigation";
+import { normalizeAbmCategoryTitle } from "@/lib/abm/category-labels";
 
 const GEL_DOCUMENTATION = "/products/abm/general-materials/gel-documentation";
 const DNA_STAINS = `${GEL_DOCUMENTATION}#safeview-dna-stains`;
@@ -294,6 +295,7 @@ export default function AbmCatalogPolishClient() {
         scheduled = false;
         if (disposed) return;
         normalizeGelDocumentationLinks();
+        normalizeAbmCategoryTitle(document, pathname);
         document.querySelectorAll<HTMLTableElement>(".itsbio-html table").forEach(normalizeAbmTable);
 
         const target = ensureDnaStainsAnchor(pathname);

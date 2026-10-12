@@ -67,7 +67,7 @@ const OFFICIAL_GENETIC_TREE: CanonicalNode[] = [
     node("Cas Proteins & CRISPR Screening", ["Cas Proteins and CRISPR Screening"]),
   ]),
   node("Expression Systems", [], [
-    node("Lentiviral Vectors", ["Lentivirus Expression System"]),
+    node("Lentiviral Vectors & Virus", ["Lentiviral Vectors", "Lentivirus Expression System"]),
     node("AAV Vectors", ["AAV Expression System"]),
     node("Adenoviral Vectors", ["Adenovirus Vectors", "Adenoviral Expression Vectors"]),
     node("Retroviral Vectors", ["Retrovirus Vectors"]),

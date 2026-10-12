@@ -20,6 +20,26 @@ Object.assign(globalThis, {
 });
 
 const { sanitizeAndStyle } = await import("../components/site/HtmlContent.tsx");
+const { normalizeAbmCategoryTitle } = await import("../lib/abm/category-labels.ts");
+for (const [path, menu, imported, expected] of [
+  ["genetic-materials/expression-systems/lentiviral-vectors", "Lentiviral Vectors", "Recombinant Lentiviral Vectors", "Lentiviral Vectors & Virus"],
+  ["genetic-materials/expression-ready-libraries/lentiviral-vectors-and-virus", "Lentiviral Vectors & Virus", "Lentiviral Gene Expression & Overexpression Library", "Lentiviral Vectors & Virus"],
+  ["genetic-materials/expression-systems/aav-vectors", "AAV Vectors", "Recombinant AAV Vectors", "AAV Vectors"],
+  ["genetic-materials/expression-ready-libraries/mirna", "miRNA", "miRNA Technology", "miRNA"],
+]) {
+  const pathname = `/products/abm/${path}`;
+  const fixture = new JSDOM(`<aside><a href="${pathname}">${menu}</a></aside><nav aria-label="Breadcrumb"><span aria-current="page">old slug</span></nav><main><h1>${imported}</h1><p>Keep the source description.</p><h2>Resources</h2><table><tr><td>LV900</td></tr></table></main>`, { url: `https://www.itsbio.co.kr${pathname}` }).window.document;
+  normalizeAbmCategoryTitle(fixture, pathname);
+  normalizeAbmCategoryTitle(fixture, pathname);
+  assert.equal(fixture.querySelector("main h1").textContent, expected);
+  assert.equal(fixture.querySelector('[aria-current="page"]').textContent, expected);
+  assert.equal(fixture.querySelector("main p").textContent, "Keep the source description.");
+  assert.equal(fixture.querySelector("main h2").textContent, "Resources");
+  assert.equal(fixture.querySelector("td").textContent, "LV900");
+}
+const productTitleFixture = new JSDOM('<aside><a href="/products/abm/staged/product/LV900">qPCR Virus Titer Kits</a></aside><main><h1>qPCR Lentivirus Titer Kit</h1></main>', { url: "https://www.itsbio.co.kr" }).window.document;
+normalizeAbmCategoryTitle(productTitleFixture, "/products/abm/staged/product/LV900");
+assert.equal(productTitleFixture.querySelector("h1").textContent, "qPCR Lentivirus Titer Kit");
 const { extractAbmTableCatalogNumbers } = await import("../lib/abm/table-catalog.ts");
 const { restorePackagingMixesBlocks } = await import("../lib/abm/packaging-mixes.ts");
 const { internalizeAbmHref } = await import("../lib/abm/internal-links.ts");

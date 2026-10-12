@@ -1,0 +1,633 @@
+{
+  "checkedAt": "2026-10-12T17:20:31.273Z",
+  "auditScope": "Pre-repair category HTML bodies. Structured resource/publication blocks are separate, so raw image-count differences alone are not missing-image defects.",
+  "categoryAudit": [
+    {
+      "path": "general-materials/antibodies/tag-antibodies",
+      "status": 200,
+      "bytes": 198301,
+      "root": true,
+      "officialText": 3132,
+      "currentText": 3050,
+      "officialHeadings": [
+        "Tag Antibodies",
+        "Product List"
+      ],
+      "currentHeadings": [
+        "Product List"
+      ],
+      "officialImgs": 3,
+      "currentImgs": 0,
+      "officialTables": 1,
+      "currentTables": 1
+    },
+    {
+      "path": "general-materials/pcr-enzymes/pcr-polymerase",
+      "status": 200,
+      "bytes": 211413,
+      "root": true,
+      "officialText": 6944,
+      "currentText": 6919,
+      "officialHeadings": [
+        "PCR Polymerases",
+        "Meet the Next Generation of PCR Enzymes",
+        "Product List",
+        "MegaFi™ Pro Fidelity DNA Polymerase",
+        "Ultra-Low Error Rates",
+        "Superior Fidelity",
+        "Kodaq 2X PCR MasterMix",
+        "Highly Robust",
+        "BlasTaq™ DNA Polymerase",
+        "Super Fast Extension Speeds",
+        "Highly Robust",
+        "BlasTaq™ HotStart DNA Polymerase",
+        "Excellent for suspension cells",
+        "Super Fast Extension Speeds",
+        "Unsure which polymerase is right for you?",
+        "Request a Free Sample",
+        "Resource"
+      ],
+      "currentHeadings": [
+        "Meet the Next Generation of PCR Enzymes",
+        "Product List",
+        "MegaFi™ Pro Fidelity DNA Polymerase",
+        "Ultra-Low Error Rates",
+        "Superior Fidelity",
+        "Kodaq 2X PCR MasterMix",
+        "Highly Robust",
+        "BlasTaq™ DNA Polymerase",
+        "Super Fast Extension Speeds",
+        "Highly Robust",
+        "BlasTaq™ HotStart DNA Polymerase",
+        "Excellent for suspension cells",
+        "Super Fast Extension Speeds",
+        "Unsure which polymerase is right for you?",
+        "Request a Free Sample"
+      ],
+      "officialImgs": 28,
+      "currentImgs": 28,
+      "officialTables": 6,
+      "currentTables": 6
+    },
+    {
+      "path": "general-materials/pcr-enzymes/rt-and-rt-pcr",
+      "status": 200,
+      "bytes": 294835,
+      "root": true,
+      "officialText": 15751,
+      "currentText": 6153,
+      "officialHeadings": [
+        "Reverse Transcription Products for Every Workflow.",
+        "Browse the RT Portfolio",
+        "5X RT MasterMixes",
+        "All-In-One 5X RT MasterMix with gDNA Removal",
+        "OneScript® Hot 5X RT MasterMix",
+        "cDNA Synthesis Kits",
+        "OneScript® Hot cDNA Synthesis Kit",
+        "OneScript® Plus cDNA Synthesis Kit",
+        "Reverse Transcriptase Enzymes",
+        "OneScript® Hot Reverse Transcriptase",
+        "OneScript® Plus Reverse Transcriptase",
+        "Specialized RT Products",
+        "MegaFi™ Pro One-Step RT-PCR",
+        "miRNA All-In-One cDNA Synthesis Kit",
+        "Reverse Transcription Portfolio at a Glance",
+        "Use the RT Product Finder",
+        "Tell us about your workflow.",
+        "What Do “Hot” and “Plus” Mean?",
+        "Higher-temperature RT for demanding RNA",
+        "Flexible RT for routine cDNA synthesis",
+        "Performance by Reverse Transcriptase Family",
+        "High-Temperature RT for Challenging RNA",
+        "Built-In Genomic DNA Removal",
+        "Reduce gDNA-Driven Early Amplification",
+        "Compare cDNA After gDNA Removal",
+        "Ready-to-Use MasterMix Stability",
+        "Full functionality after 20 freeze-thaw cycles and 7 days at 4°C",
+        "OneScript® Hot Enzyme Performance",
+        "50–80°C Demonstrated Range",
+        "Ultra-Low RNA Input",
+        "Performance With Common Inhibitors",
+        "Activity After 7 Days at 37°C",
+        "Multi-Target Competitor Comparison",
+        "Flexible RT for Routine cDNA Synthesis",
+        "OneScript® Plus Enzyme Performance",
+        "Long-Template cDNA Synthesis",
+        "Activity After 7 Days at 37°C",
+        "Reverse Transcription FAQs",
+        "Request a Free RT Sample",
+        "Tell Us What You'd Like to Try",
+        "Explore Reverse Transcription Resources",
+        "Reverse Transcription",
+        "PCR: Variations to the System",
+        "PCR/qPCR Competitor Cross Reference Tool",
+        "Build Your RT Workflow and Save 15%",
+        ""
+      ],
+      "currentHeadings": [
+        "The New Gold Standard in cDNA Synthesis",
+        "Product List",
+        "RT MasterMixes",
+        "Super Simple",
+        "Accurate cDNA Synthesis",
+        "OneScript® Hot Reverse Transcriptase",
+        "Outstanding Thermostability",
+        "OneScript™ Plus Reverse Transcriptase",
+        "Excellent Elongation Ability",
+        "Unsure which reverse transcriptase is right for you?",
+        "Request a Free Sample",
+        "Resources"
+      ],
+      "officialImgs": 10,
+      "currentImgs": 20,
+      "officialTables": 2,
+      "currentTables": 5
+    },
+    {
+      "path": "general-materials/equipment",
+      "status": 200,
+      "bytes": 209179,
+      "root": true,
+      "officialText": 3748,
+      "currentText": 3718,
+      "officialHeadings": [
+        "Equipment and Lab Consumables"
+      ],
+      "currentHeadings": [],
+      "officialImgs": 0,
+      "currentImgs": 0,
+      "officialTables": 1,
+      "currentTables": 1
+    },
+    {
+      "path": "general-materials/biorepository/ffpe-tissue-sections",
+      "status": 200,
+      "bytes": 211337,
+      "root": true,
+      "officialText": 4183,
+      "currentText": 4162,
+      "officialHeadings": [
+        "FFPE Tissue Sections"
+      ],
+      "currentHeadings": [],
+      "officialImgs": 0,
+      "currentImgs": 0,
+      "officialTables": 1,
+      "currentTables": 1
+    },
+    {
+      "path": "general-materials/antibodies",
+      "status": 200,
+      "bytes": 180579,
+      "root": true,
+      "officialText": 593,
+      "currentText": 582,
+      "officialHeadings": [
+        "Antibodies"
+      ],
+      "currentHeadings": [],
+      "officialImgs": 0,
+      "currentImgs": 0,
+      "officialTables": 0,
+      "currentTables": 0
+    },
+    {
+      "path": "general-materials/dna-and-protein-ladders",
+      "status": 200,
+      "bytes": 185217,
+      "root": true,
+      "officialText": 1165,
+      "currentText": 1349,
+      "officialHeadings": [
+        "DNA & Protein Ladders"
+      ],
+      "currentHeadings": [],
+      "officialImgs": 0,
+      "currentImgs": 0,
+      "officialTables": 1,
+      "currentTables": 1
+    },
+    {
+      "path": "general-materials/antibodies/polyclonal-antibodies",
+      "status": 200,
+      "bytes": 180663,
+      "root": true,
+      "officialText": 490,
+      "currentText": 468,
+      "officialHeadings": [
+        "Polyclonal Antibodies"
+      ],
+      "currentHeadings": [],
+      "officialImgs": 0,
+      "currentImgs": 0,
+      "officialTables": 0,
+      "currentTables": 0
+    },
+    {
+      "path": "general-materials/rna-tracking",
+      "status": 200,
+      "bytes": 223208,
+      "root": true,
+      "officialText": 8952,
+      "currentText": 4050,
+      "officialHeadings": [
+        "RNA Mango Imaging andPull-Down Technology",
+        "What is RNA Mango and how does it work?",
+        "RNA Mango in one sentence",
+        "Aptamer binding and fluorescence activation",
+        "Properties supporting cellular and multiplex workflows",
+        "RNA Mango fluorophores",
+        "The RNA Mango workflow",
+        "The RNA Mango aptamer",
+        "Tagging your RNA",
+        "Application: RNA visualization",
+        "Application: RNA–RNA or RNA–protein complex pull-down",
+        "Laboratory results and performance data",
+        "Yeast U1 ribonucleoprotein complex",
+        "RNA Mango in a test tube",
+        "RNA Mango in action",
+        "RNA Mango binding, fluorescence, and resistance properties",
+        "TO1 and TO3 with RNA Mango and RNA Peach aptamers",
+        "RNA Mango documents and technical support",
+        "RNA Mango Insertion Guidelines",
+        "RNA Mango Binding, Fluorescence, and Resistance Properties",
+        "Need a specific dye or experimental recommendation?",
+        "Top RNA Mango publications",
+        "Ribonucleoprotein purification and characterization using RNA Mango.",
+        "Structural basis for high-affinity fluorophore binding and activation by RNA Mango.",
+        "Fluorophore ligand binding and complex stabilization of the RNA Mango and RNA Spinach aptamers.",
+        "RNA Mango frequently asked questions",
+        "Need help planning an RNA Mango experiment?"
+      ],
+      "currentHeadings": [
+        "Overview",
+        "Key Features",
+        "The RNA Mango Workflow",
+        "Laboratory Results"
+      ],
+      "officialImgs": 11,
+      "currentImgs": 6,
+      "officialTables": 1,
+      "currentTables": 2
+    },
+    {
+      "path": "general-materials/transfection-reagents",
+      "status": 200,
+      "bytes": 196679,
+      "root": true,
+      "officialText": 7113,
+      "currentText": 3131,
+      "officialHeadings": [
+        "Transfection Reagents",
+        "Transfection Reagents For Every Application",
+        "Product List",
+        "SusfectinTM Suspension Cell Transfection Reagent",
+        "Excellent for Suspension Cells",
+        "2X Higher Expression",
+        "DNAfectinTM Plus DNA Transfection Reagents",
+        "Out-Performs Competitors",
+        "No Medium Changes Required",
+        "Troubleshooting Transfection and Viral Production Efficiency",
+        "Request a Free Sample",
+        "Additional Resources"
+      ],
+      "currentHeadings": [
+        "Transfection Reagents For Every Application",
+        "Product List",
+        "SusfectinTM Suspension Cell Transfection Reagent",
+        "Excellent for Suspension Cells",
+        "2X Higher Expression",
+        "DNAfectinTM Plus DNA Transfection Reagents",
+        "Out-Performs Competitors",
+        "No Medium Changes Required",
+        "Request a Free Sample",
+        "Additional Resources"
+      ],
+      "officialImgs": 14,
+      "currentImgs": 12,
+      "officialTables": 1,
+      "currentTables": 1
+    },
+    {
+      "path": "general-materials/pcr-enzymes",
+      "status": 200,
+      "bytes": 182492,
+      "root": true,
+      "officialText": 482,
+      "currentText": 324,
+      "officialHeadings": [
+        "PCR Enzymes",
+        "Highlighted Products and Services",
+        "Resource"
+      ],
+      "currentHeadings": [
+        "Highlighted Products and Services"
+      ],
+      "officialImgs": 7,
+      "currentImgs": 4,
+      "officialTables": 0,
+      "currentTables": 0
+    },
+    {
+      "path": "general-materials/antibodies/secondary-antibodies",
+      "status": 200,
+      "bytes": 306154,
+      "root": true,
+      "officialText": 22128,
+      "currentText": 22107,
+      "officialHeadings": [
+        "Secondary Antibodies"
+      ],
+      "currentHeadings": [],
+      "officialImgs": 0,
+      "currentImgs": 0,
+      "officialTables": 1,
+      "currentTables": 1
+    },
+    {
+      "path": "general-materials/antibodies/monoclonal-antibodies",
+      "status": 200,
+      "bytes": 180693,
+      "root": true,
+      "officialText": 490,
+      "currentText": 468,
+      "officialHeadings": [
+        "Monoclonal Antibodies"
+      ],
+      "currentHeadings": [],
+      "officialImgs": 0,
+      "currentImgs": 0,
+      "officialTables": 0,
+      "currentTables": 0
+    },
+    {
+      "path": "general-materials/biorepository",
+      "status": 200,
+      "bytes": 178553,
+      "root": true,
+      "officialText": 323,
+      "currentText": 309,
+      "officialHeadings": [
+        "Biorepository"
+      ],
+      "currentHeadings": [],
+      "officialImgs": 0,
+      "currentImgs": 0,
+      "officialTables": 0,
+      "currentTables": 0
+    },
+    {
+      "path": "general-materials/gel-documentation/gel-imager",
+      "status": 200,
+      "bytes": 270244,
+      "root": true,
+      "officialText": 5011,
+      "currentText": 3841,
+      "officialHeadings": [
+        "SafeViewER™ Imager",
+        "Often used with this product"
+      ],
+      "currentHeadings": [
+        "SafeViewER™ Imager"
+      ],
+      "officialImgs": 5,
+      "currentImgs": 5,
+      "officialTables": 7,
+      "currentTables": 7
+    },
+    {
+      "path": "general-materials/antibodies/primary-antibodies",
+      "status": 200,
+      "bytes": 182851,
+      "root": true,
+      "officialText": 95,
+      "currentText": 146,
+      "officialHeadings": [
+        "Primary Antibodies",
+        "Search Primary Antibodies Library"
+      ],
+      "currentHeadings": [
+        "Search Primary Antibodies Library"
+      ],
+      "officialImgs": 0,
+      "currentImgs": 0,
+      "officialTables": 0,
+      "currentTables": 0
+    },
+    {
+      "path": "general-materials/pcr-enzymes/qpcr",
+      "status": 200,
+      "bytes": 190177,
+      "root": true,
+      "officialText": 2381,
+      "currentText": 2355,
+      "officialHeadings": [
+        "qPCR MasterMixes",
+        "Enjoy World-Class Standards in Performance",
+        "Product List",
+        "qPCR MasterMixes",
+        "Reliable Detection",
+        "Outstanding Sensitivity",
+        "Request a Free Sample",
+        "Resource"
+      ],
+      "currentHeadings": [
+        "Enjoy World-Class Standards in Performance",
+        "Product List",
+        "qPCR MasterMixes",
+        "Reliable Detection",
+        "Outstanding Sensitivity",
+        "Request a Free Sample"
+      ],
+      "officialImgs": 10,
+      "currentImgs": 10,
+      "officialTables": 1,
+      "currentTables": 1
+    },
+    {
+      "path": "general-materials/enzymes-and-kits",
+      "status": 200,
+      "bytes": 189000,
+      "root": true,
+      "officialText": 1576,
+      "currentText": 1587,
+      "officialHeadings": [
+        "Molecular Biology Enzymes and Kits"
+      ],
+      "currentHeadings": [],
+      "officialImgs": 0,
+      "currentImgs": 0,
+      "officialTables": 1,
+      "currentTables": 1
+    },
+    {
+      "path": "general-materials/antibodies/ihc-antibodies",
+      "status": 429,
+      "bytes": 22,
+      "root": false,
+      "officialText": 0,
+      "currentText": 23364,
+      "officialHeadings": [],
+      "currentHeadings": [
+        "Search IHC Antibodies Library",
+        "Product List"
+      ],
+      "officialImgs": 0,
+      "currentImgs": 0,
+      "officialTables": 0,
+      "currentTables": 1
+    },
+    {
+      "path": "general-materials/buffers-and-general-chemicals",
+      "status": 429,
+      "bytes": 22,
+      "root": false,
+      "officialText": 0,
+      "currentText": 4949,
+      "officialHeadings": [],
+      "currentHeadings": [],
+      "officialImgs": 0,
+      "currentImgs": 0,
+      "officialTables": 0,
+      "currentTables": 1
+    },
+    {
+      "path": "general-materials",
+      "status": 429,
+      "bytes": 22,
+      "root": false,
+      "officialText": 0,
+      "currentText": 360,
+      "officialHeadings": [],
+      "currentHeadings": [],
+      "officialImgs": 0,
+      "currentImgs": 0,
+      "officialTables": 0,
+      "currentTables": 0
+    },
+    {
+      "path": "general-materials/antibodies/loading-control-antibodies",
+      "status": 200,
+      "bytes": 190083,
+      "root": true,
+      "officialText": 2089,
+      "currentText": 2004,
+      "officialHeadings": [
+        "Loading Control Antibodies",
+        "Product List"
+      ],
+      "currentHeadings": [
+        "Product List"
+      ],
+      "officialImgs": 3,
+      "currentImgs": 0,
+      "officialTables": 1,
+      "currentTables": 1
+    },
+    {
+      "path": "general-materials/dna-rna-purification",
+      "status": 429,
+      "bytes": 22,
+      "root": false,
+      "officialText": 0,
+      "currentText": 1088,
+      "officialHeadings": [],
+      "currentHeadings": [],
+      "officialImgs": 0,
+      "currentImgs": 0,
+      "officialTables": 0,
+      "currentTables": 1
+    },
+    {
+      "path": "general-materials/gel-documentation",
+      "status": 200,
+      "bytes": 200829,
+      "root": true,
+      "officialText": 9378,
+      "currentText": 2635,
+      "officialHeadings": [
+        "Gel Documentation",
+        "Gel Documentation Systems: Imaging, Analysis, and DNA Visualization Guide",
+        "",
+        "",
+        "Safer than Ethidium Bromide",
+        "SafeView™ DNA Stains",
+        "Increased sensitivity compared to ethidium bromide",
+        "Meet the new SafeViewER™ Imager",
+        "Frequently Asked Questions",
+        "Request a Free Sample"
+      ],
+      "currentHeadings": [
+        "Safer than Ethidium Bromide",
+        "SafeView™ DNA Stains",
+        "Increased sensitivity compared to ethidium bromide",
+        "Meet the new SafeViewER™ Imager",
+        "Request a Free Sample"
+      ],
+      "officialImgs": 7,
+      "currentImgs": 7,
+      "officialTables": 2,
+      "currentTables": 1
+    },
+    {
+      "path": "general-materials/gel-documentation/dna-stains",
+      "status": 200,
+      "bytes": 200829,
+      "root": true,
+      "officialText": 9378,
+      "currentText": 2635,
+      "officialHeadings": [
+        "Gel Documentation",
+        "Gel Documentation Systems: Imaging, Analysis, and DNA Visualization Guide",
+        "",
+        "",
+        "Safer than Ethidium Bromide",
+        "SafeView™ DNA Stains",
+        "Increased sensitivity compared to ethidium bromide",
+        "Meet the new SafeViewER™ Imager",
+        "Frequently Asked Questions",
+        "Request a Free Sample"
+      ],
+      "currentHeadings": [
+        "Safer than Ethidium Bromide",
+        "SafeView™ DNA Stains",
+        "Increased sensitivity compared to ethidium bromide",
+        "Meet the new SafeViewER™ Imager",
+        "Request a Free Sample"
+      ],
+      "officialImgs": 7,
+      "currentImgs": 7,
+      "officialTables": 2,
+      "currentTables": 1
+    }
+  ],
+  "repairedPaths": [
+    "general-materials/pcr-enzymes/rt-and-rt-pcr",
+    "general-materials/rna-tracking",
+    "general-materials/gel-documentation",
+    "general-materials/transfection-reagents",
+    "general-materials/dna-and-protein-ladders"
+  ],
+  "unresolved": [
+    {
+      "path": "general-materials/antibodies/ihc-antibodies",
+      "status": 429,
+      "reason": "Official HTTP request returned a rate limit; current content preserved pending verification."
+    },
+    {
+      "path": "general-materials/buffers-and-general-chemicals",
+      "status": 429,
+      "reason": "Official HTTP request returned a rate limit; current content preserved pending verification."
+    },
+    {
+      "path": "general-materials",
+      "status": 429,
+      "reason": "Official HTTP request returned a rate limit; current content preserved pending verification."
+    },
+    {
+      "path": "general-materials/dna-rna-purification",
+      "status": 429,
+      "reason": "Official HTTP request returned a rate limit; current content preserved pending verification."
+    }
+  ]
+}

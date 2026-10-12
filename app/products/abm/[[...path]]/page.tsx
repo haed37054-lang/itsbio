@@ -18,6 +18,9 @@ import { stripUnwantedAbmNav } from "@/lib/abm/category-html";
 import { abmCategoryLabel } from "@/lib/abm/category-labels";
 import { restorePackagingMixesBlocks } from "@/lib/abm/packaging-mixes";
 import expressionLibraryLandings from "@/data/abm-expression-library-landings.json";
+import generalLandings from "@/data/abm-general-landings.json";
+import AbmGeneralLanding from "@/components/products/AbmGeneralLanding";
+import { normalizeAbmGeneralSidebar } from "@/lib/abm/general-navigation";
 import AbmLibraryMediaClient from "@/components/products/AbmLibraryMediaClient";
 import AbmCategorySideNav from "@/components/products/AbmCategorySideNav";
 import { buildTreeFromDescendants, buildTreeFromAllCategories, normalizeAbmCellularSidebar, normalizeAbmGeneticSidebar, includeVerifiedSpecializedVectorPages, findTreeNodeByPath, normalizeAbmGeneticNavLabel, type CatLite, type TreeNode } from "@/lib/abm/sidebar-tree";
@@ -53,6 +56,8 @@ import "../abm-crispr-source.css";
 import "../abm-titer-official.css";
 import "../abm-library-source.css";
 import "../abm-library-official.css";
+import "../abm-general-source.css";
+import "../abm-general-reviewed.css";
 
 export const revalidate = 300;
 
@@ -730,6 +735,18 @@ export default async function AbmProductsPathPage({
   const roots: CatLite[] = Array.isArray(data?.roots) ? data.roots : [];
   const descendants: CatLite[] = Array.isArray(data?.descendants) ? data.descendants : [];
   let category = data?.category || null;
+  const generalLanding = path[0] === "general-materials"
+    ? generalLandings.landings.find((landing) => path.slice(1).join("/") === landing.key)
+    : undefined;
+  if (generalLanding) {
+    category = {
+      ...(category || {}),
+      _id: category?._id || `reviewed-general-${generalLanding.key}`,
+      path,
+      sourceUrl: generalLanding.sourceUrl,
+      contentBlocks: [{ _key: "reviewed-general-landing", _type: "contentBlockHtml", html: generalLanding.html }],
+    };
+  }
   if (pathStr === TARGETED_APOPTOSIS_PATH.join("/")) {
     category = {
       ...(category || {}),
@@ -761,6 +778,8 @@ export default async function AbmProductsPathPage({
       activeRootTree = normalizeAbmCellularSidebar(activeRootTree);
     } else if (activeRoot === "genetic-materials") {
       activeRootTree = includeVerifiedSpecializedVectorPages(normalizeAbmGeneticSidebar(activeRootTree));
+    } else if (activeRoot === "general-materials") {
+      activeRootTree = normalizeAbmGeneralSidebar(activeRootTree);
     }
   }
 
@@ -1164,7 +1183,7 @@ export default async function AbmProductsPathPage({
 
             {brandKey === "abm" && !isTiterLanding ? <AbmViralKitGuide path={pathStr} position="before" sourceHtml={tableHtml} /> : null}
 
-            {isTiterLanding ? <AbmTiterKitLanding /> : blocksForRender.length ? (
+            {generalLanding ? <AbmGeneralLanding html={generalLanding.html} className={generalLanding.className} finderProducts={generalLanding.key === "pcr-enzymes/rt-and-rt-pcr" ? generalLandings.finderProducts : undefined} /> : isTiterLanding ? <AbmTiterKitLanding /> : blocksForRender.length ? (
               renderContentBlocks(
                 blocksForRender,
                 brandKey,

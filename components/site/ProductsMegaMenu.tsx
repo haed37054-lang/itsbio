@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useMemo, useRef, useState } from "react";
+import { ABM_GENERAL_MENU_ITEMS } from "@/lib/abm/general-navigation";
 
 type BrandTheme = {
   gradient: string;
@@ -194,19 +195,7 @@ const ABM_GROUPS: CategoryGroup[] = [
   {
     label: "General Materials",
     href: "/products/abm/general-materials",
-    items: categoryItems("/products/abm/general-materials", [
-      "PCR Enzymes",
-      "Enzymes & Kits",
-      "Antibodies",
-      "Biorepository",
-      "Transfection Reagents",
-      "DNA / RNA Purification",
-      "Gel Documentation",
-      "RNA Tracking",
-      "Buffers & General Chemicals",
-      "Equipment",
-      "DNA & Protein Ladders",
-    ]),
+    items: ABM_GENERAL_MENU_ITEMS,
   },
   {
     label: "Cellular Materials",

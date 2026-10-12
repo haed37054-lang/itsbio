@@ -1,5 +1,6 @@
 import { PUBLIC_CATALOG_CACHE, sanityCdnClient } from "@/lib/sanity/sanity.client";
 import { ABM_PRODUCT_GROUPS } from "./catalog-taxonomy";
+import { normalizeAbmGeneralSidebar } from "./general-navigation";
 import { buildTreeFromDescendants, includeVerifiedSpecializedVectorPages, normalizeAbmCellularSidebar, normalizeAbmGeneticSidebar, type CatLite, type TreeNode } from "./sidebar-tree";
 
 export async function getAbmProductSidebar(sku: string) {
@@ -18,6 +19,7 @@ export async function getAbmProductSidebar(sku: string) {
     let children = buildTreeFromDescendants(root.path, categories);
     if (root.path[0] === "cellular-materials") children = normalizeAbmCellularSidebar(children);
     if (root.path[0] === "genetic-materials") children = includeVerifiedSpecializedVectorPages(normalizeAbmGeneticSidebar(children));
+    if (root.path[0] === "general-materials") children = normalizeAbmGeneralSidebar(children);
     return { ...root, key: root.path.join("/"), children };
   });
   // Exact catalog boundaries avoid confusing LV003 with LV0030.

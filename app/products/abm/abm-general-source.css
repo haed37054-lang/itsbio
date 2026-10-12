@@ -1,0 +1,3100 @@
+/* Scoped official layouts; typography and table colours use the fixed ABM theme. */
+
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance,
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance * {
+    box-sizing: border-box;
+  }
+
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance {
+    --abm-orange: #EA6225;
+    --abm-orange-dark: #cf531b;
+    --abm-orange-soft: #fff4ed;
+    --abm-ink: #646567;
+    --abm-text: #222222;
+    --abm-line: #ece7e2;
+    --abm-panel: #faf8f7;
+    --abm-blue: #546C99;
+    --abm-green: #4EAC7E;
+    --abm-gold: #F3981C;
+    --abm-shadow: 0 10px 24px rgba(0, 0, 0, 0.055);
+    --abm-shadow-soft: 0 6px 16px rgba(0, 0, 0, 0.028);
+
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 22px;
+    line-height: 1.55 !important;
+    text-align: left;
+    container-type: inline-size;
+  }
+
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance img { display: block; max-width: 100%; height: auto; }
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance a { text-decoration: none !important; }
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance h1,
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance h2,
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance h3,
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance h4,
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance p { margin-top: 0 !important; }
+
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance h1,
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance h2,
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance h3,
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance h4 {
+  }
+
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance h1 {
+    margin: 0 0 10px !important;
+    line-height: 1.14 !important;
+    letter-spacing: -0.015em !important;
+  }
+
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance h2 {
+    margin: 0 0 10px !important;
+    line-height: 1.25 !important;
+  }
+
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance h3 {
+    margin: 0 0 7px !important;
+    line-height: 1.3 !important;
+  }
+
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance h4 {
+    margin: 0 0 5px !important;
+    line-height: 1.35 !important;
+  }
+
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance p {
+    margin: 0 0 12px !important;
+    line-height: 1.55 !important;
+  }
+
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance strong { }
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .section-intro { max-width: 800px; }
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .accent { }
+
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .eyebrow,
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .group-kicker,
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .result-kicker,
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .figure-tag {
+    display: block;
+    margin-bottom: 8px;
+    padding: 0 !important;
+    border: 0 !important;
+    background: transparent !important;
+    letter-spacing: .08em;
+    line-height: 1.35 !important;
+    text-transform: uppercase;
+  }
+
+  /* Buttons */
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .btn {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    width: auto !important;
+    min-height: 42px;
+    padding: 10px 18px !important;
+    border: 0 !important;
+    border-radius: 999px !important;
+    background: var(--abm-orange) !important;
+    cursor: pointer;
+    line-height: 1.2 !important;
+    text-align: center;
+    white-space: nowrap;
+    transition: background .2s ease, transform .2s ease;
+  }
+
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .btn:hover,
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .btn:focus {
+    background: var(--abm-orange-dark) !important;
+    outline: none;
+    transform: translateY(-1px);
+  }
+
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .btn.secondary {
+    border: 1.5px solid var(--abm-orange) !important;
+    background: #fff !important;
+  }
+
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .btn.secondary:hover,
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .btn.secondary:focus {
+    background: var(--abm-orange-soft) !important;
+  }
+
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  /* Promotion */
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .promo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 14px;
+    margin: 0 0 14px;
+    padding: 11px 15px;
+    border: 1px solid #f2d3c4;
+    border-radius: 16px;
+    background: linear-gradient(135deg, #fff7f2 0%, #ffffff 100%);
+    box-shadow: var(--abm-shadow-soft);
+  }
+
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .promo p {
+    margin-bottom: 0 !important;
+  }
+
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .promo p strong { }
+
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .promo-code {
+    flex: 0 0 auto;
+    padding: 6px 10px;
+    border: 1px dashed #d7a68f;
+    border-radius: 999px;
+    background: #fff;
+  }
+
+  /* Hero */
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .hero {
+    position: relative;
+    overflow: hidden;
+    margin: 0 0 24px;
+    padding: 26px 28px;
+    border: 1px solid #f2e4dc;
+    border-radius: 22px;
+    background: linear-gradient(135deg, #fff7f2 0%, #ffffff 58%, #f8fbfb 100%);
+  }
+
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .hero::before,
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .hero::after {
+    position: absolute;
+    border-radius: 50%;
+    content: "";
+    pointer-events: none;
+  }
+
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .hero::before {
+    left: -70px;
+    bottom: -70px;
+    width: 210px;
+    height: 210px;
+    background: rgba(234, 98, 37, .12);
+  }
+
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .hero::after {
+    top: -80px;
+    right: -80px;
+    width: 240px;
+    height: 240px;
+    background: radial-gradient(circle, rgba(234,98,37,.10) 0 2px, transparent 2px 100%);
+    background-size: 17px 17px;
+    opacity: .65;
+  }
+
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .hero > * { position: relative; z-index: 1; }
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .hero > p { max-width: 800px; line-height: 1.52 !important; }
+
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .path-cards {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    max-width: 850px;
+    margin-top: 22px;
+  }
+
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .path-card {
+    display: grid;
+    grid-template-columns: 38px minmax(0, 1fr) auto;
+    gap: 12px;
+    align-items: center;
+    min-width: 0;
+    padding: 16px;
+    border: 1px solid #f0ebe7;
+    border-radius: 18px;
+    background: rgba(255,255,255,.94);
+    box-shadow: var(--abm-shadow-soft);
+    transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease;
+  }
+
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .path-card:hover,
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .path-card:focus {
+    border-color: #f2c4af;
+    box-shadow: var(--abm-shadow);
+    transform: translateY(-1px);
+    outline: none;
+  }
+
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .path-number {
+    display: grid;
+    place-items: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: var(--abm-orange-soft);
+  }
+
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .path-card strong {
+    display: block;
+  }
+
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .path-card small {
+    display: block;
+    margin-top: 3px;
+    line-height: 1.35 !important;
+  }
+
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .path-arrow { }
+
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .quick-nav,
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .browse-jumps,
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .family-tabs,
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .product-tabs,
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .related-links,
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .family-chips,
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .card-meta,
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .result-badges,
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .stability-results {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .quick-nav { margin-top: 20px; }
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .quick-nav a,
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .browse-jumps a,
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .related-links a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 32px;
+    padding: 6px 10px;
+    border: 1px solid #f0ebe7;
+    border-radius: 999px;
+    background: #fff;
+    transition: .2s ease;
+  }
+
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .quick-nav a:hover,
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .quick-nav a:focus,
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .browse-jumps a:hover,
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .browse-jumps a:focus,
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .related-links a:hover,
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .related-links a:focus {
+    border-color: var(--abm-orange);
+    background: var(--abm-orange-soft);
+    outline: none;
+  }
+
+  /* Sections */
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .section {
+    margin: 0 0 28px;
+    padding: 26px;
+    border: 1px solid var(--abm-line);
+    border-radius: 22px;
+    background: #fff;
+    box-shadow: 0 8px 22px rgba(0,0,0,.035);
+  }
+
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .section.soft {
+    background: var(--abm-panel);
+  }
+
+  /* Product browser */
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .product-browser { padding-top: 26px; }
+
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .browse-head {
+    display: grid;
+    grid-template-columns: minmax(0,1fr) auto;
+    gap: 20px;
+    align-items: end;
+  }
+
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .browse-head .btn { align-self: end; }
+
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .browse-jumps {
+    margin-top: 18px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--abm-line);
+  }
+
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .product-group { padding-top: 23px; scroll-margin-top: 24px; }
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .product-group + .product-group { margin-top: 5px; border-top: 1px solid var(--abm-line); }
+
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .group-heading {
+    display: grid;
+    grid-template-columns: minmax(0,1fr) minmax(280px, .55fr);
+    gap: 20px;
+    align-items: end;
+    margin-bottom: 12px;
+  }
+
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .group-heading h3 { margin-bottom: 0 !important; }
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .group-heading > p { margin-bottom: 0 !important; text-align: right; }
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .group-kicker { margin-bottom: 3px; }
+
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .product-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0,1fr));
+    gap: 14px;
+  }
+
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .browse-card,
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .translation-card,
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .finder-form,
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .finder-result,
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .figure-card,
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .stability-card {
+    border: 1px solid #f0ebe7;
+    border-radius: 18px;
+    background: #fff;
+    box-shadow: var(--abm-shadow-soft);
+  }
+
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .browse-card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    padding: 18px;
+    transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease;
+  }
+
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .browse-card:hover,
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .browse-card:focus-within {
+    border-color: #f2d3c4;
+    box-shadow: var(--abm-shadow);
+    transform: translateY(-1px);
+  }
+
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .browse-card.featured {
+    border-color: #f2c4af;
+    background: linear-gradient(135deg,#ffffff 0%,#fff8f4 100%);
+  }
+
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    min-height: 28px;
+    margin-bottom: 8px;
+  }
+
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .cat,
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .use-badge,
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .plain-label,
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .data-source,
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .card-meta span,
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .family-chips span,
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .result-badges span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 9px;
+    border: 1px solid rgba(234,98,37,.18);
+    border-radius: 999px;
+    background: var(--abm-orange-soft);
+    line-height: 1.2 !important;
+  }
+
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .use-badge,
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .data-source {
+    border-color: #e5e5e5;
+    background: #f8f8f8;
+  }
+
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .browse-card h3 { }
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .browse-card p { }
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .card-meta { margin: 10px 0 13px; gap: 6px; }
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .card-meta span { }
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .card-link {
+    display: inline-flex;
+    align-items: center;
+    align-self: flex-start;
+    margin-top: auto;
+  }
+
+  /* Finder */
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance #finder { scroll-margin-top: 24px; }
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .finder-head { display: block; }
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .finder-shell {
+    display: grid;
+    grid-template-columns: minmax(0,1.25fr) minmax(300px,.75fr);
+    gap: 18px;
+    margin-top: 20px;
+  }
+
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .finder-form,
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .finder-result { padding: 20px; }
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .finder-form fieldset { margin: 0; padding: 0; border: 0; }
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .finder-form fieldset + fieldset,
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .conditional fieldset { margin-top: 18px; }
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .finder-form legend {
+    margin-bottom: 8px;
+  }
+
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .question-help {
+    display: block;
+    margin: -3px 0 9px;
+    line-height: 1.4 !important;
+  }
+
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .option-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0,1fr));
+    gap: 9px;
+  }
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .option-grid.four { grid-template-columns: repeat(4, minmax(0,1fr)); }
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .option input { position: absolute; opacity: 0; pointer-events: none; }
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .option label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 55px;
+    height: 100%;
+    padding: 9px 10px;
+    border: 1px solid var(--abm-line);
+    border-radius: 13px;
+    background: #fff;
+    cursor: pointer;
+    line-height: 1.35 !important;
+    text-align: center;
+    transition: .2s ease;
+  }
+
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .option label:hover { border-color: #f2c4af; }
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .option input:checked + label {
+    border-color: var(--abm-orange);
+    background: var(--abm-orange-soft);
+  }
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .conditional[hidden] { display: none !important; }
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .finder-msg { margin-top: 8px !important; }
+
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .finder-result {
+    display: flex;
+    align-items: center;
+    border-color: #f2d3c4;
+    background: linear-gradient(135deg,#ffffff 0%,#fff8f4 100%);
+  }
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .result-empty,
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .result-filled { width: 100%; }
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .result-filled { display: none; }
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .finder-result.has-result .result-empty { display: none; }
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .finder-result.has-result .result-filled { display: block; }
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .result-icon {
+    display: grid;
+    place-items: center;
+    width: 56px;
+    height: 56px;
+    margin-bottom: 12px;
+    border-radius: 50%;
+    background: var(--abm-orange-soft);
+  }
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .result-name { margin: 4px 0 9px; line-height: 1.3 !important; }
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .result-badges { margin: 12px 0 15px; gap: 6px; }
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .result-note { margin: 11px 0 0 !important; }
+
+  /* Hot vs Plus */
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance #hot-vs-plus { scroll-margin-top: 24px; }
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .translation-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0,1fr));
+    gap: 14px;
+    margin-top: 18px;
+  }
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .translation-card { padding: 18px; }
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .translation-card.hot { border-top: 3px solid var(--abm-orange); }
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .translation-card.plus { border-top: 3px solid var(--abm-blue); }
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .translation-card.plus .plain-label {
+    border-color: rgba(84,108,153,.18);
+    background: #f4f7fb;
+  }
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .translation-card p { margin-bottom: 0 !important; }
+
+  /* Tables */
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .table-wrap {
+    overflow-x: auto;
+    margin-top: 18px;
+    border: 1px solid var(--abm-line);
+    border-radius: 18px;
+    background: #fff;
+    box-shadow: var(--abm-shadow-soft);
+  }
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance table { width: 100%; min-width: 760px; border-collapse: collapse; }
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance th,
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance td {
+    padding: 12px 13px;
+    border-bottom: 1px solid #f0ebe7;
+    line-height: 1.42 !important;
+    text-align: left;
+    vertical-align: top;
+  }
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance th {
+    background: var(--abm-panel);
+  }
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance tr:last-child td { border-bottom: 0; }
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .family-hot { background: #fffaf7; }
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .family-plus { background: #f7f9fc; }
+
+  /* Performance */
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance #performance { scroll-margin-top: 24px; }
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .family-tabs,
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .product-tabs { margin-top: 18px; }
+
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .tab-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 38px;
+    padding: 8px 13px;
+    border: 1px solid #f0ebe7;
+    border-radius: 999px;
+    background: #fff;
+    cursor: pointer;
+    transition: .2s ease;
+  }
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .tab-btn:hover,
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .tab-btn:focus { border-color: #f2c4af; outline: none; }
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .tab-btn.active {
+    border-color: var(--abm-orange);
+    background: var(--abm-orange-soft);
+  }
+
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .family-panel,
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .product-panel { display: none; }
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .family-panel.active,
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .product-panel.active { display: block; }
+
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .family-summary {
+    display: grid;
+    grid-template-columns: minmax(0,1fr) 260px;
+    gap: 20px;
+    align-items: start;
+    margin-top: 18px;
+    padding: 18px;
+    border: 1px solid #f0ebe7;
+    border-radius: 18px;
+    background: var(--abm-panel);
+  }
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .family-summary p { max-width: 720px; }
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .family-chips { margin-top: 10px; gap: 6px; }
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .family-chips span { border-color: #e4e4e4; background: #fff; }
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .family-side {
+    padding: 13px 14px;
+    border-left: 4px solid var(--abm-orange);
+    border-radius: 0 12px 12px 0;
+    background: #fff;
+  }
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .family-side p { margin-bottom: 0 !important; }
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance [data-family-panel="plus"] .family-side { border-left-color: var(--abm-blue); }
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance [data-family-panel="plus"] .tab-btn.active {
+    border-color: var(--abm-blue);
+    background: #f4f7fb;
+  }
+
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .product-panel { margin-top: 15px; }
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .panel-head {
+    display: grid;
+    grid-template-columns: minmax(0,1fr) auto;
+    gap: 18px;
+    align-items: start;
+    margin-bottom: 14px;
+  }
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .panel-head p { max-width: 720px; }
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .data-source { white-space: nowrap; }
+
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .figure-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0,1fr));
+    gap: 14px;
+  }
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .figure-grid.three { grid-template-columns: repeat(3, minmax(0,1fr)); }
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .figure-card { overflow: hidden; transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease; }
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .figure-card:hover,
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .figure-card:focus-within { border-color: #f2d3c4; box-shadow: var(--abm-shadow); transform: translateY(-1px); }
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .figure-card img {
+    width: 100%;
+    height: 240px;
+    padding: 8px;
+    border-bottom: 1px solid #f0ebe7;
+    background: #fff;
+    cursor: zoom-in;
+    object-fit: contain;
+    transition: transform .3s ease;
+  }
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .figure-card img:hover { transform: scale(1.015); }
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .figure-copy { padding: 14px 15px 15px; }
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .figure-tag { margin-bottom: 5px; }
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .figure-copy h3 { }
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .figure-copy p { margin-bottom: 0 !important; }
+
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .stability-card {
+    display: grid;
+    grid-template-columns: minmax(0,1fr) auto;
+    gap: 18px;
+    align-items: center;
+    padding: 18px;
+  }
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .stability-results { margin-top: 10px; gap: 7px; }
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .status {
+    display: inline-flex;
+    padding: 6px 9px;
+    border-radius: 999px;
+  }
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .status.pass { border: 1px solid #d7e8d8; background: #f2f8f2; }
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .status.decrease { border: 1px solid #f0d4c6; background: #fff5ef; }
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .evidence-note { margin: 13px 0 0 !important; }
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .related-links { margin-top: 14px; }
+
+  /* Portfolio table */
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .portfolio-note {
+    display: grid;
+    grid-template-columns: minmax(0,1fr) auto;
+    gap: 16px;
+    align-items: end;
+  }
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .portfolio-table tbody tr[data-href] { cursor: pointer; transition: background .18s ease, box-shadow .18s ease; }
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .portfolio-table tbody tr[data-href]:hover,
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .portfolio-table tbody tr[data-href]:focus {
+    background: var(--abm-orange-soft);
+    outline: 2px solid rgba(234,98,37,.25);
+    outline-offset: -2px;
+    box-shadow: inset 3px 0 0 var(--abm-orange);
+  }
+
+  /* FAQs */
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance #faq { scroll-margin-top: 24px; }
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .faq-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0,1fr));
+    gap: 12px;
+    margin-top: 18px;
+  }
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance details.faq {
+    overflow: hidden;
+    border: 1px solid var(--abm-line);
+    border-radius: 17px;
+    background: #fff;
+    box-shadow: var(--abm-shadow-soft);
+  }
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance details.faq > summary {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0,1fr) 30px;
+    gap: 12px;
+    align-items: center;
+    padding: 16px 17px;
+    cursor: pointer;
+    line-height: 1.4 !important;
+    list-style: none;
+  }
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance details.faq > summary::-webkit-details-marker { display: none; }
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance details.faq > summary::after {
+    content: "+";
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: var(--abm-orange-soft);
+    line-height: 1 !important;
+  }
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance details.faq[open] > summary::after { content: "−"; }
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance details.faq > summary:hover,
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance details.faq > summary:focus { background: #fffaf7; outline: none; }
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .faq-answer { padding: 0 17px 16px; border-top: 1px solid #f0ebe7; }
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .faq-answer p { margin: 14px 0 0 !important; }
+
+  /* Bottom CTA */
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .footer-cta {
+    position: relative;
+    overflow: hidden;
+    margin: 0 0 28px;
+    padding: 28px;
+    border-radius: 22px;
+    background: var(--abm-ink);
+    text-align: center;
+  }
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .footer-cta::before {
+    position: absolute;
+    left: -70px;
+    bottom: -70px;
+    width: 210px;
+    height: 210px;
+    border-radius: 50%;
+    background: rgba(234,98,37,.22);
+    content: "";
+  }
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .footer-cta > * { position: relative; z-index: 1; }
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .footer-cta .eyebrow { opacity: .85; }
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .footer-cta h2 { }
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .footer-cta p { max-width: 760px; margin-left: auto !important; margin-right: auto !important; }
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .footer-cta .actions { justify-content: center; }
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .footer-cta .btn.secondary { background: #fff !important; }
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .footer-cta .terms { margin-top: 14px !important; }
+
+  /* Image modal */
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 999999;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background: rgba(0,0,0,.72);
+  }
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .modal.active { display: flex; }
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .modal-inner {
+    position: relative;
+    width: min(1040px,100%);
+    max-height: 90vh;
+    padding: 18px;
+    overflow: auto;
+    border-radius: 18px;
+    background: #fff;
+    box-shadow: 0 16px 40px rgba(0,0,0,.25);
+  }
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .modal-inner img {
+    width: 100%;
+    max-height: calc(90vh - 36px);
+    border-radius: 12px;
+    background: #fff;
+    object-fit: contain;
+  }
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .modal-close {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    z-index: 2;
+    width: 38px;
+    height: 38px;
+    border: 0;
+    border-radius: 50%;
+    background: rgba(0,0,0,.08);
+    cursor: pointer;
+    line-height: 1 !important;
+  }
+
+  /* Responsive */
+  @container (max-width: 900px) {
+    .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .finder-shell,
+    .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .family-summary { grid-template-columns: 1fr; }
+    .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .figure-grid.three { grid-template-columns: repeat(2, minmax(0,1fr)); }
+    .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .family-side { max-width: none; }
+    .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .option-grid.four { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  }
+
+  @container (max-width: 700px) {
+    .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .browse-head,
+    .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .group-heading,
+    .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .portfolio-note,
+    .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .panel-head,
+    .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .stability-card { grid-template-columns: 1fr; }
+    .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .group-heading > p { text-align: left; }
+    .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .browse-head .btn { width: 100% !important; }
+  }
+
+  @container (max-width: 639px) {
+    .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .path-cards,
+    .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .product-grid,
+    .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .translation-grid,
+    .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .figure-grid,
+    .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .figure-grid.three,
+    .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .faq-grid,
+    .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .option-grid,
+    .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .option-grid.four { grid-template-columns: 1fr !important; }
+    .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .figure-card img { height: auto; max-height: 430px; }
+  }
+
+  @media (max-width: 980px) {
+    .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .finder-shell,
+    .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .family-summary { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 680px) {
+    .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance { padding: 16px; }
+    .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .hero,
+    .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .section,
+    .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .footer-cta { padding: 20px; }
+    .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance h1 { }
+    .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .promo { align-items: flex-start; flex-direction: column; }
+    .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .actions { flex-direction: column; align-items: stretch; }
+    .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .btn { width: 100% !important; white-space: normal; }
+  }
+
+
+  /* Free sample + resource sections */
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance #free-sample,
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance #resources { scroll-margin-top: 24px; }
+
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .sample-layout {
+    display: grid;
+    grid-template-columns: minmax(0, .85fr) minmax(360px, 1.15fr);
+    gap: 22px;
+    align-items: start;
+  }
+
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .sample-copy {
+    padding: 2px 0;
+  }
+
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .sample-points {
+    display: grid;
+    gap: 9px;
+    margin-top: 18px;
+  }
+
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .sample-point {
+    display: grid;
+    grid-template-columns: 34px minmax(0, 1fr);
+    gap: 10px;
+    align-items: start;
+    padding: 11px 12px;
+    border: 1px solid #f0ebe7;
+    border-radius: 14px;
+    background: #fff;
+    box-shadow: var(--abm-shadow-soft);
+  }
+
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .sample-point-number {
+    display: grid;
+    place-items: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: var(--abm-orange-soft);
+  }
+
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .sample-point strong,
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .sample-point span { display: block; }
+
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .sample-point strong {
+    margin-bottom: 2px;
+  }
+
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .sample-point span {
+    line-height: 1.42;
+  }
+
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .sample-form-shell {
+    min-width: 0;
+    padding: 20px;
+    border: 1px solid #f0d4c6;
+    border-radius: 18px;
+    background: linear-gradient(135deg, #ffffff 0%, #fff8f4 100%);
+    box-shadow: var(--abm-shadow);
+  }
+
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .sample-form-heading {
+    padding-bottom: 14px;
+    margin-bottom: 14px;
+    border-bottom: 1px solid #f0e3dc;
+  }
+
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .sample-form-heading h3 {
+    margin-bottom: 4px !important;
+  }
+
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .sample-form-heading p {
+    margin-bottom: 0 !important;
+  }
+
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .sample-form-host {
+    width: 100%;
+    min-height: 230px;
+  }
+
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .sample-form-host > iframe,
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .sample-form-host > form,
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .sample-form-host .hs-form-frame,
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .sample-form-host .hbspt-form {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .sample-form-fallback {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px solid #f0e3dc;
+  }
+
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .sample-form-fallback p {
+    margin: 0 !important;
+    line-height: 1.4 !important;
+  }
+
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .sample-form-fallback .btn {
+    flex: 0 0 auto;
+  }
+
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .resource-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+    margin-top: 20px;
+  }
+
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .resource-card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    padding: 18px;
+    border: 1px solid #f0ebe7;
+    border-radius: 18px;
+    background: #fff;
+    box-shadow: var(--abm-shadow-soft);
+    transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease;
+  }
+
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .resource-card:hover,
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .resource-card:focus-within {
+    border-color: #f2d3c4;
+    box-shadow: var(--abm-shadow);
+    transform: translateY(-1px);
+  }
+
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .resource-type {
+    display: inline-flex;
+    align-self: flex-start;
+    margin-bottom: 10px;
+    padding: 5px 9px;
+    border: 1px solid rgba(234,98,37,.18);
+    border-radius: 999px;
+    background: var(--abm-orange-soft);
+    letter-spacing: .05em;
+    text-transform: uppercase;
+  }
+
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .resource-card h3 {
+  }
+
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .resource-card p {
+    margin-bottom: 16px !important;
+  }
+
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .resource-card .card-link {
+    margin-top: auto;
+  }
+
+  @container (max-width: 820px) {
+    .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .sample-layout,
+    .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .resource-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 760px) {
+    .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .sample-layout,
+    .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .resource-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .sample-form-fallback {
+      align-items: stretch;
+      flex-direction: column;
+    }
+
+    .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .sample-form-fallback .btn {
+      width: 100% !important;
+    }
+  }
+
+
+  /* All-product comparison */
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance #all-products { scroll-margin-top: 24px; }
+
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .all-products-block {
+    margin-top: 30px;
+    padding-top: 26px;
+    border-top: 1px solid var(--abm-line);
+  }
+
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .all-products-head {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 18px;
+    align-items: end;
+  }
+
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .all-products-head .section-intro { margin-bottom: 0 !important; }
+
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .all-products-table { min-width: 930px; }
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .all-products-table th:nth-child(1) { width: 11%; }
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .all-products-table th:nth-child(2) { width: 28%; }
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .all-products-table th:nth-child(3) { width: 15%; }
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .all-products-table th:nth-child(4) { width: 17%; }
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .all-products-table th:nth-child(5) { width: 29%; }
+
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .all-products-table tbody tr { transition: background .18s ease; }
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .all-products-table tbody tr:hover { background: #fffaf7; }
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .all-products-table .featured-row {
+    background: linear-gradient(90deg, #fff7f2 0%, #ffffff 100%);
+  }
+
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .all-products-table .table-cat {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 54px;
+    padding: 5px 9px;
+    border: 1px solid rgba(234, 98, 37, .18);
+    border-radius: 999px;
+    background: var(--abm-orange-soft);
+    line-height: 1.2 !important;
+  }
+
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .all-products-table .table-feature {
+    display: inline-flex;
+    margin-left: 5px;
+    padding: 3px 7px;
+    border-radius: 999px;
+    background: var(--abm-orange);
+    letter-spacing: .04em;
+    line-height: 1.2 !important;
+    text-transform: uppercase;
+    vertical-align: middle;
+  }
+
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .all-products-table .product-table-link {
+  }
+
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .all-products-table .product-table-link:hover,
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .all-products-table .product-table-link:focus {
+    text-decoration: underline !important;
+    text-underline-offset: 2px;
+    outline: none;
+  }
+
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .all-products-note {
+    margin: 11px 0 0 !important;
+  }
+
+  @container (max-width: 720px) {
+    .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .all-products-head { grid-template-columns: 1fr; align-items: start; }
+  }
+
+  @media (max-width: 760px) {
+    .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .all-products-head { grid-template-columns: 1fr; align-items: start; }
+  }
+
+
+
+/* =========================================================
+   READABILITY + VISUAL HIERARCHY REFRESH
+   Keeps all RT Hub content; improves legibility and contrast.
+   ========================================================= */
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance {
+  --abm-ink: #2f3133;
+  --abm-text: #303234;
+  --abm-line: #e7e2de;
+  --abm-panel: #f5f3f1;
+  --abm-shadow: 0 14px 34px rgba(31, 36, 40, .10);
+  --abm-shadow-soft: 0 8px 22px rgba(31, 36, 40, .07);
+  max-width: 1280px;
+  padding: 26px;
+  line-height: 1.62 !important;
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance h1 {
+  margin-bottom: 14px !important;
+  line-height: 1.08 !important;
+  letter-spacing: -0.025em !important;
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance h2 {
+  margin-bottom: 12px !important;
+  line-height: 1.2 !important;
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance h3 {
+  margin-bottom: 9px !important;
+  line-height: 1.35 !important;
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance h4 {
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance p,
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .section-intro {
+  line-height: 1.62 !important;
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .eyebrow,
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .group-kicker,
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .result-kicker,
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .figure-tag {
+  line-height: 1.3 !important;
+}
+
+/* Stronger action hierarchy */
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .btn {
+  min-height: 48px;
+  padding: 12px 22px !important;
+  border: 2px solid var(--abm-orange) !important;
+  border-radius: 999px !important;
+  background: var(--abm-orange) !important;
+  box-shadow: 0 7px 16px rgba(234, 98, 37, .22);
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .btn:hover,
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .btn:focus {
+  background: var(--abm-orange-dark) !important;
+  border-color: var(--abm-orange-dark) !important;
+  box-shadow: 0 9px 20px rgba(207, 83, 27, .26);
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .btn.secondary {
+  border: 2px solid var(--abm-orange) !important;
+  background: #fff2e9 !important;
+  box-shadow: none;
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .btn.secondary:hover,
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .btn.secondary:focus {
+  background: var(--abm-orange) !important;
+}
+
+/* Promo */
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .promo {
+  padding: 14px 18px;
+  border: 0;
+  background: linear-gradient(100deg, #ffe6d7 0%, #fff6ef 58%, #fff 100%);
+  box-shadow: var(--abm-shadow-soft);
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .promo p {
+  line-height: 1.45 !important;
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .promo-code {
+  padding: 8px 13px;
+  border: 2px dashed #d68a67;
+  background: #fff;
+}
+
+/* Hero */
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .hero {
+  padding: 38px 40px;
+  border: 0;
+  background:
+    radial-gradient(circle at 92% 10%, rgba(234,98,37,.16) 0 110px, transparent 112px),
+    linear-gradient(135deg, #fff0e6 0%, #fff8f3 48%, #f3f7fb 100%);
+  box-shadow: var(--abm-shadow);
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .hero > p {
+  max-width: 860px;
+  line-height: 1.6 !important;
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .path-cards {
+  gap: 16px;
+  max-width: 930px;
+  margin-top: 26px;
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .path-card {
+  min-height: 104px;
+  padding: 20px;
+  border: 0;
+  box-shadow: 0 10px 24px rgba(31,36,40,.12);
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .path-card:first-child {
+  background: linear-gradient(135deg, #ea6225 0%, #d6541c 100%);
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .path-card:nth-child(2) {
+  background: linear-gradient(135deg, #3e454c 0%, #252a2f 100%);
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .path-card .path-number {
+  width: 42px;
+  height: 42px;
+  background: rgba(255,255,255,.18);
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .path-card strong {
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .path-card small {
+  margin-top: 5px;
+  line-height: 1.4 !important;
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .path-card .path-arrow {
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .path-card:hover,
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .path-card:focus {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px rgba(31,36,40,.18);
+}
+
+/* Navigation chips */
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .quick-nav,
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .browse-jumps {
+  gap: 9px;
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .quick-nav a,
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .browse-jumps a,
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .related-links a {
+  min-height: 38px;
+  padding: 8px 13px;
+  border: 1px solid #e8c5b4;
+  background: #fff7f2;
+}
+
+/* Section separation — deliberate colour coding */
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .section {
+  margin-bottom: 34px;
+  padding: 34px;
+  border: 0;
+  border-top: 5px solid transparent;
+  box-shadow: var(--abm-shadow-soft);
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance #rt-product-portfolio {
+  border-top-color: var(--abm-orange);
+  background: linear-gradient(180deg, #fff8f3 0%, #fffdfb 100%);
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance #finder {
+  border-top-color: var(--abm-blue);
+  background: linear-gradient(180deg, #f2f6fb 0%, #fafcff 100%);
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance #hot-vs-plus {
+  border-top-color: var(--abm-green);
+  background: linear-gradient(180deg, #f1faf5 0%, #fbfdfc 100%);
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance #performance {
+  border-top-color: var(--abm-orange);
+  background: linear-gradient(180deg, #fff5ed 0%, #fffaf6 100%);
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance #faq {
+  border-top-color: var(--abm-gold);
+  background: linear-gradient(180deg, #fff9ef 0%, #fffdf8 100%);
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance #free-sample {
+  border-top-color: var(--abm-orange-dark);
+  background: linear-gradient(180deg, #ffefe4 0%, #fff7f1 100%);
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance #resources {
+  border-top-color: var(--abm-blue);
+  background: linear-gradient(180deg, #edf3fa 0%, #f8fbfe 100%);
+}
+
+/* Product groups */
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .browse-head {
+  margin-bottom: 4px;
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .browse-jumps {
+  padding-bottom: 22px;
+  margin-top: 22px;
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .product-group {
+  padding-top: 28px;
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .group-heading {
+  margin-bottom: 16px;
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .group-heading h3 {
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .group-heading > p {
+  line-height: 1.5 !important;
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .browse-card {
+  padding: 22px;
+  border: 1px solid rgba(47,49,51,.09);
+  border-top-width: 5px;
+  background: #fff;
+  box-shadow: 0 8px 22px rgba(31,36,40,.075);
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance #mastermix-products .browse-card { border-top-color: var(--abm-orange); }
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance #cdna-kits .browse-card { border-top-color: var(--abm-blue); }
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance #rt-enzymes .browse-card { border-top-color: var(--abm-green); }
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance #specialized-rt .browse-card { border-top-color: var(--abm-gold); }
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .browse-card.featured {
+  background: linear-gradient(145deg, #fff7f0 0%, #fff 62%);
+  box-shadow: 0 10px 26px rgba(234,98,37,.13);
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .browse-card h3 {
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .browse-card p {
+  line-height: 1.58 !important;
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .cat,
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .use-badge,
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .plain-label,
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .data-source,
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .card-meta span,
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .family-chips span,
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .result-badges span {
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .card-meta span {
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .card-link {
+  margin-top: auto;
+  padding: 9px 13px;
+  border: 1.5px solid var(--abm-orange);
+  border-radius: 999px;
+  background: #fff3eb;
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .card-link:hover,
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .card-link:focus {
+  background: var(--abm-orange);
+  outline: none;
+}
+
+/* Finder */
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .finder-shell {
+  gap: 22px;
+  margin-top: 24px;
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .finder-form,
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .finder-result {
+  padding: 26px;
+  border: 0;
+  box-shadow: 0 10px 26px rgba(31,36,40,.09);
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .finder-form legend {
+  margin-bottom: 10px;
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .question-help {
+  margin-bottom: 12px;
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .option label {
+  min-height: 62px;
+  padding: 12px;
+  border: 2px solid #dfe4e9;
+  background: #fff;
+  line-height: 1.4 !important;
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .option input:checked + label {
+  border-color: var(--abm-orange);
+  background: #fff0e5;
+  box-shadow: inset 0 0 0 1px var(--abm-orange);
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .finder-result {
+  border: 2px solid #f0b89e;
+  background: linear-gradient(145deg, #fff0e7 0%, #fff9f5 100%);
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .result-name {
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .result-note,
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .finder-msg {
+}
+
+/* Hot vs Plus */
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .translation-card {
+  padding: 24px;
+  border: 0;
+  box-shadow: 0 9px 22px rgba(31,36,40,.08);
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .translation-card.hot {
+  border-top: 6px solid var(--abm-orange);
+  background: linear-gradient(145deg, #fff0e5 0%, #fff 65%);
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .translation-card.plus {
+  border-top: 6px solid var(--abm-blue);
+  background: linear-gradient(145deg, #edf3fb 0%, #fff 65%);
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .translation-card p {
+  line-height: 1.55 !important;
+}
+
+/* Tables */
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .table-wrap {
+  border: 0;
+  box-shadow: 0 9px 24px rgba(31,36,40,.09);
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance th,
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance td {
+  padding: 15px 15px;
+  line-height: 1.5 !important;
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance th {
+  background: #383d42;
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance tbody tr:nth-child(even) {
+  background: rgba(247,247,247,.72);
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .family-hot {
+  background: #fff1e7 !important;
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .family-plus {
+  background: #eef4fb !important;
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .all-products-table .featured-row {
+  background: #ffe9db !important;
+}
+
+/* Performance */
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .tab-btn {
+  min-height: 44px;
+  padding: 10px 16px;
+  border: 2px solid #e3ded9;
+  background: #fff;
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .tab-btn.active {
+  border-color: var(--abm-orange);
+  background: var(--abm-orange);
+  box-shadow: 0 6px 14px rgba(234,98,37,.2);
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance [data-family-panel="plus"] .tab-btn.active {
+  border-color: var(--abm-blue);
+  background: var(--abm-blue);
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .family-summary {
+  padding: 24px;
+  border: 0;
+  box-shadow: inset 0 0 0 1px rgba(47,49,51,.06);
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance [data-family-panel="hot"] .family-summary {
+  background: #fff0e5;
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance [data-family-panel="plus"] .family-summary {
+  background: #edf3fb;
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .family-side {
+  padding: 16px;
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .family-side p,
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .panel-head p,
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .figure-copy p {
+  line-height: 1.55 !important;
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .figure-card {
+  border: 0;
+  box-shadow: 0 8px 22px rgba(31,36,40,.09);
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .figure-copy {
+  padding: 18px 18px 20px;
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .figure-copy h3 {
+}
+
+/* FAQ */
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .faq-grid {
+  gap: 14px;
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance details.faq {
+  border: 0;
+  box-shadow: 0 7px 20px rgba(31,36,40,.075);
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance details.faq > summary {
+  padding: 18px 19px;
+  line-height: 1.45 !important;
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance details.faq:nth-child(odd) > summary {
+  background: #fffdf9;
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .faq-answer {
+  padding: 0 19px 18px;
+  background: #fff;
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .faq-answer p {
+  line-height: 1.55 !important;
+}
+
+/* Free sample */
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .sample-point {
+  padding: 14px;
+  border: 0;
+  box-shadow: 0 7px 18px rgba(31,36,40,.07);
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .sample-point strong {
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .sample-point span {
+  line-height: 1.5 !important;
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .sample-form-shell {
+  padding: 25px;
+  border: 3px solid #efab89;
+  background: #fff;
+  box-shadow: 0 12px 28px rgba(234,98,37,.13);
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .sample-form-heading h3 {
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .sample-form-heading p,
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .sample-form-fallback p {
+}
+
+/* Resources */
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .resource-card {
+  padding: 22px;
+  border: 0;
+  border-top: 5px solid var(--abm-blue);
+  box-shadow: 0 8px 22px rgba(31,36,40,.08);
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .resource-card:nth-child(2) {
+  border-top-color: var(--abm-green);
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .resource-card:nth-child(3) {
+  border-top-color: var(--abm-orange);
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .resource-card h3 {
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .resource-card p {
+  line-height: 1.55 !important;
+}
+
+/* All-products table header area */
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .all-products-block {
+  margin-top: 36px;
+  padding-top: 30px;
+  border-top: 3px solid #efc9b7;
+}
+
+/* Closing CTA */
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .footer-cta {
+  padding: 38px 32px;
+  background: linear-gradient(135deg, #303438 0%, #202428 100%);
+  box-shadow: var(--abm-shadow);
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .footer-cta h2 {
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .footer-cta p {
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .footer-cta .btn.secondary:first-of-type {
+  border-color: var(--abm-orange) !important;
+  background: var(--abm-orange) !important;
+  box-shadow: 0 8px 18px rgba(234,98,37,.22);
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .footer-cta .btn.secondary:last-of-type {
+  border-color: #fff !important;
+  background: #fff !important;
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .footer-cta .terms {
+}
+
+/* Responsive readability */
+@container (max-width: 760px) {
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance {
+    padding: 16px;
+  }
+
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .hero,
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .section,
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .footer-cta {
+    padding: 24px 20px;
+  }
+
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .path-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .group-heading > p {
+    text-align: left;
+  }
+
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .btn,
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .card-link {
+    width: 100% !important;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 760px) {
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance {
+    padding: 16px;
+  }
+
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .hero,
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .section,
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .footer-cta {
+    padding: 24px 20px;
+  }
+
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .path-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+/* Compact all-product table */
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .compact-product-table {
+  min-width: 720px;
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .compact-product-table th:nth-child(1) { width: 54%; }
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .compact-product-table th:nth-child(2) { width: 18%; }
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .compact-product-table th:nth-child(3) { width: 28%; }
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .compact-product-table td {
+  vertical-align: middle;
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .compact-product-table .table-cat {
+  min-width: 52px;
+  margin-right: 9px;
+  vertical-align: middle;
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .compact-product-table .product-table-link {
+  display: inline;
+  line-height: 1.4 !important;
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .compact-product-table td:nth-child(2),
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .compact-product-table td:nth-child(3) {
+  white-space: nowrap;
+}
+
+@container (max-width: 760px) {
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .compact-product-table {
+    min-width: 680px;
+  }
+}
+
+@media (max-width: 760px) {
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .compact-product-table {
+    min-width: 680px;
+  }
+}
+
+
+
+/* =========================================================
+   FLAT SITE-STYLE OVERRIDES
+   Removes the heavier floating-card shadows from the
+   readability refresh while keeping stronger type, colour,
+   spacing, and CTA hierarchy.
+   ========================================================= */
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance {
+  --abm-shadow: none;
+  --abm-shadow-soft: none;
+}
+
+/* Main surfaces */
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .promo,
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .hero,
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .section,
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .footer-cta,
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .path-card,
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .browse-card,
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .finder-form,
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .finder-result,
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .translation-card,
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .table-wrap,
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .family-summary,
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .figure-card,
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance details.faq,
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .sample-point,
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .sample-form-shell,
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .resource-card {
+  box-shadow: none !important;
+}
+
+/* Use borders and fills rather than elevation */
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .hero {
+  border: 1px solid #f2d8ca !important;
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .section {
+  border-right: 1px solid var(--abm-line) !important;
+  border-bottom: 1px solid var(--abm-line) !important;
+  border-left: 1px solid var(--abm-line) !important;
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .path-card {
+  border: 1px solid rgba(255,255,255,.22) !important;
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .browse-card,
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .translation-card,
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .finder-form,
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .finder-result,
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .figure-card,
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance details.faq,
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .sample-point,
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .resource-card {
+  border-right: 1px solid #e8e3df !important;
+  border-bottom: 1px solid #e8e3df !important;
+  border-left: 1px solid #e8e3df !important;
+}
+
+/* Keep category colour accents, but flatten them */
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .browse-card {
+  border-top-width: 4px !important;
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .translation-card {
+  border-top-width: 5px !important;
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .resource-card {
+  border-top-width: 4px !important;
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .browse-card.featured {
+  box-shadow: none !important;
+  border-color: #edc8b6 !important;
+}
+
+/* Finder should feel integrated, not like separate floating widgets */
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .finder-form {
+  border: 1px solid #dfe5eb !important;
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .finder-result {
+  border: 1px solid #e9b89f !important;
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .option label {
+  box-shadow: none !important;
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .option input:checked + label {
+  box-shadow: none !important;
+}
+
+/* Tables: simple framed layout */
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .table-wrap {
+  border: 1px solid #ded9d5 !important;
+}
+
+/* Performance */
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .family-summary {
+  border: 1px solid rgba(47,49,51,.08) !important;
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .figure-card {
+  border: 1px solid #e8e3df !important;
+}
+
+/* FAQs */
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance details.faq {
+  border: 1px solid #e7e1dc !important;
+}
+
+/* Free sample */
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .sample-form-shell {
+  border: 2px solid #efb092 !important;
+}
+
+/* Buttons: keep contrast but remove floating treatment */
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .btn,
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .footer-cta .btn.secondary:first-of-type {
+  box-shadow: none !important;
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .btn:hover,
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .btn:focus {
+  box-shadow: none !important;
+}
+
+/* Reduce hover movement to match a flatter site system */
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .path-card:hover,
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .path-card:focus,
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .browse-card:hover,
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .browse-card:focus-within {
+  transform: none !important;
+}
+
+/* Keep subtle background contrast as the main hierarchy */
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance #rt-product-portfolio {
+  background: #fff9f5 !important;
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance #finder {
+  background: #f5f8fc !important;
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance #hot-vs-plus {
+  background: #f5faf7 !important;
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance #performance {
+  background: #fff8f3 !important;
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance #faq {
+  background: #fffaf2 !important;
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance #free-sample {
+  background: #fff4ec !important;
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance #resources {
+  background: #f4f8fc !important;
+}
+
+/* Slightly calmer hero treatment */
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .hero {
+  background:
+    radial-gradient(circle at 92% 10%, rgba(234,98,37,.10) 0 105px, transparent 107px),
+    linear-gradient(135deg, #fff5ee 0%, #fffaf7 52%, #f7fafc 100%) !important;
+}
+
+
+
+/* Equal-width Hot vs Plus comparison columns */
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance #hot-vs-plus .family-comparison-table {
+  width: 100%;
+  table-layout: fixed;
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance #hot-vs-plus .family-comparison-table th:first-child,
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance #hot-vs-plus .family-comparison-table td:first-child {
+  width: 22%;
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance #hot-vs-plus .family-comparison-table th:nth-child(2),
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance #hot-vs-plus .family-comparison-table td:nth-child(2),
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance #hot-vs-plus .family-comparison-table th:nth-child(3),
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance #hot-vs-plus .family-comparison-table td:nth-child(3) {
+  width: 39%;
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance #hot-vs-plus .family-comparison-table th:nth-child(2),
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance #hot-vs-plus .family-comparison-table th:nth-child(3) {
+  text-align: left;
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance #hot-vs-plus .family-comparison-table td {
+  overflow-wrap: break-word;
+}
+
+@container (max-width: 620px) {
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance #hot-vs-plus .family-comparison-table {
+    min-width: 720px;
+  }
+}
+
+@media (max-width: 620px) {
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance #hot-vs-plus .family-comparison-table {
+    min-width: 720px;
+  }
+}
+
+
+
+/* Free-sample step number centering */
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .sample-point-number {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 30px !important;
+  height: 30px !important;
+  min-width: 30px !important;
+  min-height: 30px !important;
+  padding: 0 !important;
+  line-height: 1 !important;
+  text-align: center !important;
+  box-sizing: border-box !important;
+}
+
+/* Embedded HubSpot free-sample form */
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance #rt-free-sample-form,
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance #rt-free-sample-form .hs-form-frame {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance #rt-free-sample-form {
+  min-height: 120px;
+}
+
+
+
+/* Clean performance image cards: image only on the page */
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance #performance .figure-card .figure-copy {
+  display: none !important;
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance #performance .figure-card {
+  background: #fff !important;
+  cursor: zoom-in;
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance #performance .figure-card img {
+  width: 100% !important;
+  height: 270px !important;
+  object-fit: contain !important;
+  object-position: center !important;
+  padding: 10px;
+  background: #fff;
+}
+
+/* Expanded performance modal with full description */
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .modal-inner {
+  width: min(1120px, 96vw) !important;
+  max-height: 92vh !important;
+  overflow: auto;
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .performance-modal-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(260px, .55fr);
+  gap: 24px;
+  align-items: start;
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .performance-modal-image-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+  border: 1px solid #e8e3df;
+  border-radius: 12px;
+  background: #fff;
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .performance-modal-image-wrap img {
+  width: 100% !important;
+  height: auto !important;
+  max-height: 78vh !important;
+  object-fit: contain !important;
+  margin: 0 !important;
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .performance-modal-copy {
+  padding: 10px 38px 10px 0;
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .performance-modal-copy .modal-tag {
+  display: inline-block;
+  margin-bottom: 9px;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .performance-modal-copy h3 {
+  margin: 0 0 10px !important;
+  line-height: 1.3 !important;
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .performance-modal-copy p {
+  margin: 0 !important;
+  line-height: 1.62 !important;
+}
+
+@container (max-width: 760px) {
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .performance-modal-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .performance-modal-copy {
+    padding: 0 2px 6px;
+  }
+
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance #performance .figure-card img {
+    height: auto !important;
+    max-height: 420px !important;
+  }
+}
+
+@media (max-width: 760px) {
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .performance-modal-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .performance-modal-copy {
+    padding: 0 2px 6px;
+  }
+
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance #performance .figure-card img {
+    height: auto !important;
+    max-height: 420px !important;
+  }
+}
+
+
+
+/* CMS-safe hero path cards
+   Uses inline elements only inside links so editors do not split the anchor markup. */
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .path-card {
+  display: grid !important;
+  grid-template-columns: 42px minmax(0, 1fr) 24px !important;
+  align-items: center !important;
+  column-gap: 14px !important;
+  width: 100% !important;
+  min-height: 104px !important;
+  box-sizing: border-box !important;
+  text-decoration: none !important;
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .path-copy {
+  display: block !important;
+  min-width: 0 !important;
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .path-copy strong,
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .path-copy small {
+  display: block !important;
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .path-copy strong {
+  margin: 0 0 4px !important;
+  line-height: 1.25 !important;
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .path-copy small {
+  margin: 0 !important;
+  line-height: 1.4 !important;
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .path-number {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0 !important;
+  line-height: 1 !important;
+  box-sizing: border-box !important;
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .path-arrow {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 24px !important;
+  line-height: 1 !important;
+}
+
+@container (max-width: 760px) {
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .path-card {
+    grid-template-columns: 42px minmax(0, 1fr) 22px !important;
+  }
+}
+
+@media (max-width: 760px) {
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .path-card {
+    grid-template-columns: 42px minmax(0, 1fr) 22px !important;
+  }
+}
+
+
+
+/* Performance captions: short summary on page, full explanation in enlarged modal */
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance #performance .figure-card {
+  cursor: default !important;
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance #performance .figure-card .figure-copy {
+  display: block !important;
+  padding: 14px 16px 16px !important;
+  border-top: 1px solid #eee9e5;
+  background: #fff;
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance #performance .figure-card .figure-copy .figure-tag {
+  display: inline-block;
+  margin-bottom: 5px;
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance #performance .figure-card .figure-copy h3 {
+  margin: 0 0 5px !important;
+  line-height: 1.35 !important;
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance #performance .figure-card .figure-summary {
+  margin: 0 !important;
+  line-height: 1.5 !important;
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance #performance .figure-card .figure-details {
+  display: none !important;
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance #performance .figure-card img {
+  cursor: zoom-in !important;
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance #performance .figure-expand-hint {
+  display: inline-block;
+  margin-top: 8px;
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .performance-modal-copy p {
+  white-space: normal;
+}
+
+
+
+/* Reliable section landing position below the site header */
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance #rt-product-portfolio,
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance #finder,
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance #hot-vs-plus,
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance #performance,
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance #faq,
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance #free-sample,
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance #resources,
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance #mastermix-products,
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance #cdna-kits,
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance #rt-enzymes,
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance #specialized-rt,
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance #all-products {
+  scroll-margin-top: 110px !important;
+}
+
+
+
+/* Dynamic product pricing — uses the site's existing .product-price hook */
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .compact-product-table {
+  min-width: 830px;
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .compact-product-table th:nth-child(1) { width: 45%; }
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .compact-product-table th:nth-child(2) { width: 16%; }
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .compact-product-table th:nth-child(3) { width: 25%; }
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .compact-product-table th:nth-child(4) { width: 14%; }
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .compact-product-table .price-cell,
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .compact-product-table th:nth-child(4) {
+  white-space: nowrap;
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .compact-product-table .product-price {
+}
+
+
+
+/* =========================================================
+   COMPACT SITE FONT SCALE
+   Matches the surrounding abm site more closely.
+   ========================================================= */
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance {
+  line-height: 1.5 !important;
+}
+
+/* Hero */
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance h1 {
+  line-height: 1.1 !important;
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .hero > p {
+  line-height: 1.52 !important;
+}
+
+/* Section headings */
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance h2 {
+  line-height: 1.2 !important;
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance h3 {
+  line-height: 1.35 !important;
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance h4 {
+}
+
+/* Main body copy */
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance p,
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .section-intro {
+  line-height: 1.52 !important;
+}
+
+/* Small labels */
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .eyebrow,
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .group-kicker,
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .result-kicker,
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .figure-tag {
+}
+
+/* Buttons */
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .btn {
+  min-height: 40px !important;
+  padding: 9px 16px !important;
+}
+
+/* Hero choice cards */
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .path-card {
+  min-height: 94px !important;
+  padding: 16px !important;
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .path-card strong {
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .path-card small {
+  line-height: 1.4 !important;
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .path-card .path-number {
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .path-card .path-arrow {
+}
+
+/* Navigation pills */
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .quick-nav a,
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .browse-jumps a,
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .related-links a {
+  min-height: 31px !important;
+  padding: 6px 10px !important;
+}
+
+/* Product browser */
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .group-heading h3,
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .browse-card h3,
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .resource-card h3,
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .sample-form-heading h3 {
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .group-heading > p,
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .browse-card p,
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .translation-card p,
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .resource-card p,
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .family-side p,
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .panel-head p {
+  line-height: 1.48 !important;
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .card-link {
+  padding: 8px 11px !important;
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .cat,
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .use-badge,
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .plain-label,
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .data-source,
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .card-meta span,
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .family-chips span,
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .result-badges span {
+}
+
+/* Finder */
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .finder-form legend {
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .question-help,
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .result-note,
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .finder-msg {
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .option label {
+  min-height: 52px !important;
+  padding: 9px 10px !important;
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .result-name {
+}
+
+/* Tables */
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance th,
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance td {
+  padding: 11px 12px !important;
+  line-height: 1.42 !important;
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .compact-product-table .table-cat {
+}
+
+/* Performance */
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .tab-btn {
+  min-height: 37px !important;
+  padding: 8px 12px !important;
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance #performance .figure-card .figure-copy h3 {
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance #performance .figure-card .figure-summary {
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance #performance .figure-expand-hint {
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .performance-modal-copy h3 {
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .performance-modal-copy p {
+}
+
+/* FAQs */
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance details.faq > summary {
+  padding: 15px 16px !important;
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .faq-answer p {
+}
+
+/* Free sample */
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .sample-point strong {
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .sample-point span {
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .sample-form-heading p,
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .sample-form-fallback p {
+}
+
+/* Footer CTA */
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .footer-cta h2 {
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .footer-cta p {
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .footer-cta .terms {
+}
+
+@container (max-width: 760px) {
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance {
+  }
+
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance h1 {
+  }
+}
+
+@media (max-width: 760px) {
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance {
+  }
+
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance h1 {
+  }
+}
+
+
+
+/* =========================================================
+   PORTFOLIO TABLE — KEEP PRICE VISIBLE WITHOUT HORIZONTAL SCROLL
+   ========================================================= */
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .all-products-block .table-wrap {
+  overflow-x: visible !important;
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .compact-product-table {
+  width: 100% !important;
+  min-width: 0 !important;
+  table-layout: fixed !important;
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .compact-product-table th:nth-child(1),
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .compact-product-table td:nth-child(1) { width: 43% !important; }
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .compact-product-table th:nth-child(2),
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .compact-product-table td:nth-child(2) { width: 16% !important; }
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .compact-product-table th:nth-child(3),
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .compact-product-table td:nth-child(3) { width: 25% !important; }
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .compact-product-table th:nth-child(4),
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .compact-product-table td:nth-child(4) { width: 16% !important; }
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .compact-product-table td,
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .compact-product-table th {
+  white-space: normal !important;
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .compact-product-table .price-cell,
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .compact-product-table th:nth-child(4) {
+  white-space: nowrap !important;
+}
+
+/* Keep the catalogue badge from forcing the first column too wide */
+.abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .compact-product-table .table-cat {
+  min-width: 46px !important;
+  margin-right: 6px !important;
+}
+
+/* On narrower screens, tighten the table slightly rather than forcing side-scroll */
+@container (max-width: 760px) {
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .compact-product-table {
+    min-width: 0 !important;
+  }
+
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .compact-product-table th,
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .compact-product-table td {
+    padding: 9px 8px !important;
+  }
+
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .compact-product-table .table-cat {
+    display: inline-flex;
+    min-width: 42px !important;
+    margin: 0 4px 3px 0 !important;
+  }
+}
+
+@media (max-width: 760px) {
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .compact-product-table {
+    min-width: 0 !important;
+  }
+
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .compact-product-table th,
+  .abm-general-reviewed.abm-general-rt-and-rt-pcr .rt-balance .compact-product-table td {
+    padding: 9px 8px !important;
+  }
+}
+
+
+
+  .abm-general-reviewed.abm-general-rna-tracking table, .abm-general-reviewed.abm-general-rna-tracking th, .abm-general-reviewed.abm-general-rna-tracking td, .abm-general-reviewed.abm-general-rna-tracking div, .abm-general-reviewed.abm-general-rna-tracking header, .abm-general-reviewed.abm-general-rna-tracking nav, .abm-general-reviewed.abm-general-rna-tracking main, .abm-general-reviewed.abm-general-rna-tracking section, .abm-general-reviewed.abm-general-rna-tracking article, .abm-general-reviewed.abm-general-rna-tracking aside, .abm-general-reviewed.abm-general-rna-tracking figure, .abm-general-reviewed.abm-general-rna-tracking figcaption, .abm-general-reviewed.abm-general-rna-tracking h1, .abm-general-reviewed.abm-general-rna-tracking h2, .abm-general-reviewed.abm-general-rna-tracking h3, .abm-general-reviewed.abm-general-rna-tracking h4, .abm-general-reviewed.abm-general-rna-tracking h5, .abm-general-reviewed.abm-general-rna-tracking p, .abm-general-reviewed.abm-general-rna-tracking li, .abm-general-reviewed.abm-general-rna-tracking a, .abm-general-reviewed.abm-general-rna-tracking span, .abm-general-reviewed.abm-general-rna-tracking button, .abm-general-reviewed.abm-general-rna-tracking input, .abm-general-reviewed.abm-general-rna-tracking summary {
+  }
+
+  .abm-general-reviewed.abm-general-rna-tracking * { box-sizing: border-box; }
+  .abm-general-reviewed.abm-general-rna-tracking { scroll-behavior: smooth; }
+  .abm-general-reviewed.abm-general-rna-tracking { margin: 0; background: #ffffff; }
+  .abm-general-reviewed.abm-general-rna-tracking img { max-width: 100%; height: auto; display: block; }
+  .abm-general-reviewed.abm-general-rna-tracking a { text-decoration: none; }
+
+  .abm-general-reviewed.abm-general-rna-tracking {
+    --abm-orange: #e96225;
+    --abm-orange-dark: #cf531b;
+    --abm-orange-soft: #fff5ef;
+    --abm-border: #ece7e2;
+    --abm-text: #222;
+    --abm-muted: #555;
+    --abm-shadow: 0 8px 22px rgba(0, 0, 0, 0.05);
+    --abm-navy: #646567;
+    --abm-grey-soft: #faf8f7;
+  }
+
+  .abm-general-reviewed.abm-general-rna-tracking .rna-mango-page {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 24px;
+  }
+
+  .abm-general-reviewed.abm-general-rna-tracking .rna-mango-page a:focus-visible,
+  .abm-general-reviewed.abm-general-rna-tracking .rna-mango-page summary:focus-visible {
+    outline: 3px solid rgba(233, 98, 37, 0.35);
+    outline-offset: 3px;
+    border-radius: 5px;
+  }
+
+  .abm-general-reviewed.abm-general-rna-tracking .orange-link {
+  }
+
+  .abm-general-reviewed.abm-general-rna-tracking .orange-link:hover { text-decoration: underline; }
+
+  .abm-general-reviewed.abm-general-rna-tracking .orange-button {
+    min-height: 46px;
+    padding: 12px 18px;
+    border: 0;
+    border-radius: 999px;
+    background: var(--abm-orange);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.25;
+    text-align: center;
+    transition: background 0.2s ease, transform 0.2s ease;
+  }
+
+  .abm-general-reviewed.abm-general-rna-tracking .orange-button:hover {
+    background: var(--abm-orange-dark);
+    transform: translateY(-1px);
+  }
+
+  .abm-general-reviewed.abm-general-rna-tracking .orange-button.secondary {
+    background: #fff;
+    border: 1.5px solid var(--abm-orange);
+  }
+
+  .abm-general-reviewed.abm-general-rna-tracking .orange-button.secondary:hover { background: var(--abm-orange-soft); }
+
+  .abm-general-reviewed.abm-general-rna-tracking .hero-shell {
+    margin-bottom: 18px;
+    padding: 34px;
+    border: 1px solid #f2e4dc;
+    border-radius: 22px;
+    background: linear-gradient(135deg, #fff8f4 0%, #ffffff 100%);
+  }
+
+  .abm-general-reviewed.abm-general-rna-tracking .hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 135px;
+    gap: 24px;
+    align-items: center;
+  }
+
+  .abm-general-reviewed.abm-general-rna-tracking .hero-kicker {
+    margin-bottom: 10px;
+    letter-spacing: 0.065em;
+    text-transform: uppercase;
+  }
+
+  .abm-general-reviewed.abm-general-rna-tracking .hero-copy h1 {
+    max-width: 760px;
+    margin: 0 0 16px;
+    line-height: 1.13;
+  }
+
+  .abm-general-reviewed.abm-general-rna-tracking .hero-title-line {
+    display: block;
+    white-space: nowrap;
+  }
+
+  .abm-general-reviewed.abm-general-rna-tracking .hero-lead {
+    max-width: 740px;
+    margin: 0 0 10px;
+    line-height: 1.65;
+  }
+
+  .abm-general-reviewed.abm-general-rna-tracking .hero-copy p:not(.hero-lead) {
+    max-width: 760px;
+    margin: 0;
+    line-height: 1.72;
+  }
+
+  .abm-general-reviewed.abm-general-rna-tracking .hero-figure {
+    width: 100%;
+    max-width: 135px;
+    margin: 0;
+    justify-self: end;
+    overflow: hidden;
+    border: 1px solid var(--abm-border);
+    border-radius: 18px;
+    background: #fff;
+    box-shadow: var(--abm-shadow);
+  }
+
+  .abm-general-reviewed.abm-general-rna-tracking .hero-figure img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    object-position: center;
+  }
+
+  .abm-general-reviewed.abm-general-rna-tracking .hero-figure figcaption {
+    padding: 9px 10px 11px;
+    line-height: 1.48;
+  }
+
+  .abm-general-reviewed.abm-general-rna-tracking .cta-row {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+  }
+
+  .abm-general-reviewed.abm-general-rna-tracking .section-nav {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    display: flex;
+    gap: 7px;
+    flex-wrap: wrap;
+    margin: 0 0 32px;
+    padding: 11px;
+    border: 1px solid var(--abm-border);
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.96);
+    box-shadow: 0 5px 14px rgba(0,0,0,0.035);
+    backdrop-filter: blur(8px);
+  }
+
+  .abm-general-reviewed.abm-general-rna-tracking .section-nav a {
+    padding: 8px 11px;
+    border-radius: 999px;
+  }
+
+  .abm-general-reviewed.abm-general-rna-tracking .section-nav a:hover {
+    background: var(--abm-orange-soft);
+  }
+
+  .abm-general-reviewed.abm-general-rna-tracking .content-section { margin-bottom: 32px; scroll-margin-top: 118px; }
+
+  .abm-general-reviewed.abm-general-rna-tracking .section-shell {
+    padding: 28px;
+    border: 1px solid var(--abm-border);
+    border-radius: 20px;
+    background: #fff;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.03);
+  }
+
+  .abm-general-reviewed.abm-general-rna-tracking .section-shell.grey { background: var(--abm-grey-soft); }
+
+  .abm-general-reviewed.abm-general-rna-tracking .section-header {
+    max-width: 950px;
+    margin-bottom: 19px;
+  }
+
+  .abm-general-reviewed.abm-general-rna-tracking .section-header h2 {
+    margin: 0;
+    line-height: 1.25;
+  }
+
+  .abm-general-reviewed.abm-general-rna-tracking .section-header p {
+    margin: 8px 0 0;
+    line-height: 1.68;
+  }
+
+  .abm-general-reviewed.abm-general-rna-tracking .answer-box {
+    margin-bottom: 18px;
+    padding: 18px 20px;
+    border-left: 4px solid var(--abm-orange);
+    border-radius: 0 14px 14px 0;
+    background: #fff;
+  }
+
+  .abm-general-reviewed.abm-general-rna-tracking .answer-box h3 {
+    margin: 0 0 7px;
+  }
+
+  .abm-general-reviewed.abm-general-rna-tracking .answer-box p {
+    margin: 0;
+    line-height: 1.7;
+  }
+
+  .abm-general-reviewed.abm-general-rna-tracking .fact-line {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 13px;
+  }
+
+  .abm-general-reviewed.abm-general-rna-tracking .fact-pill {
+    padding: 7px 11px;
+    border: 1px solid #f1dfd5;
+    border-radius: 999px;
+    background: #fff7f2;
+  }
+
+  .abm-general-reviewed.abm-general-rna-tracking .two-column,
+  .abm-general-reviewed.abm-general-rna-tracking .workflow-grid,
+  .abm-general-reviewed.abm-general-rna-tracking .results-grid,
+  .abm-general-reviewed.abm-general-rna-tracking .resource-grid,
+  .abm-general-reviewed.abm-general-rna-tracking .publication-grid {
+    display: grid;
+    gap: 18px;
+  }
+
+  .abm-general-reviewed.abm-general-rna-tracking .two-column { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .abm-general-reviewed.abm-general-rna-tracking .workflow-grid, .abm-general-reviewed.abm-general-rna-tracking .results-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .abm-general-reviewed.abm-general-rna-tracking .resource-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .abm-general-reviewed.abm-general-rna-tracking .publication-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+  .abm-general-reviewed.abm-general-rna-tracking .content-card,
+  .abm-general-reviewed.abm-general-rna-tracking .step-card,
+  .abm-general-reviewed.abm-general-rna-tracking .result-card,
+  .abm-general-reviewed.abm-general-rna-tracking .resource-card,
+  .abm-general-reviewed.abm-general-rna-tracking .publication-card {
+    min-height: 100%;
+    padding: 20px;
+    border: 1px solid #f0ebe7;
+    border-radius: 18px;
+    background: #fff;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.03);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  }
+
+  .abm-general-reviewed.abm-general-rna-tracking .content-card:hover,
+  .abm-general-reviewed.abm-general-rna-tracking .step-card:hover,
+  .abm-general-reviewed.abm-general-rna-tracking .result-card:hover,
+  .abm-general-reviewed.abm-general-rna-tracking .resource-card:hover,
+  .abm-general-reviewed.abm-general-rna-tracking .publication-card:hover {
+    transform: translateY(-2px);
+    border-color: #f2d7ca;
+    box-shadow: var(--abm-shadow);
+  }
+
+  .abm-general-reviewed.abm-general-rna-tracking .card-kicker {
+    margin-bottom: 8px;
+    letter-spacing: 0.055em;
+    text-transform: uppercase;
+  }
+
+  .abm-general-reviewed.abm-general-rna-tracking .content-card h3,
+  .abm-general-reviewed.abm-general-rna-tracking .step-card h3,
+  .abm-general-reviewed.abm-general-rna-tracking .result-card h3,
+  .abm-general-reviewed.abm-general-rna-tracking .resource-card h3,
+  .abm-general-reviewed.abm-general-rna-tracking .publication-card h3 {
+    margin: 0 0 10px;
+    line-height: 1.38;
+  }
+
+  .abm-general-reviewed.abm-general-rna-tracking .content-card p,
+  .abm-general-reviewed.abm-general-rna-tracking .step-card p,
+  .abm-general-reviewed.abm-general-rna-tracking .result-card p,
+  .abm-general-reviewed.abm-general-rna-tracking .resource-card p,
+  .abm-general-reviewed.abm-general-rna-tracking .publication-card p {
+    margin: 0 0 14px;
+    line-height: 1.66;
+  }
+
+  .abm-general-reviewed.abm-general-rna-tracking .content-card ul {
+    margin: 0;
+    padding-left: 19px;
+    line-height: 1.72;
+  }
+
+  .abm-general-reviewed.abm-general-rna-tracking .step-card figure,
+  .abm-general-reviewed.abm-general-rna-tracking .result-card figure { margin: 0; }
+
+  .abm-general-reviewed.abm-general-rna-tracking .step-card img,
+  .abm-general-reviewed.abm-general-rna-tracking .result-card img {
+    width: 100%;
+    margin-bottom: 16px;
+    border-radius: 12px;
+    object-fit: cover;
+  }
+
+  .abm-general-reviewed.abm-general-rna-tracking .step-card img { aspect-ratio: 16 / 9; }
+  .abm-general-reviewed.abm-general-rna-tracking .result-card img { max-height: 430px; object-fit: contain; background: #fff; }
+
+  .abm-general-reviewed.abm-general-rna-tracking .card-actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: auto;
+  }
+
+  .abm-general-reviewed.abm-general-rna-tracking .product-table-wrap {
+    overflow-x: auto;
+    border: 1px solid var(--abm-border);
+    border-radius: 16px;
+    background: #fff;
+  }
+
+  .abm-general-reviewed.abm-general-rna-tracking .product-table {
+    width: 100%;
+    min-width: 720px;
+    border-collapse: collapse;
+  }
+
+  .abm-general-reviewed.abm-general-rna-tracking .product-table caption {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .abm-general-reviewed.abm-general-rna-tracking .product-table th {
+    padding: 13px 14px;
+    border-bottom: 1px solid var(--abm-border);
+    background: #fffaf7;
+    text-align: left;
+  }
+
+  .abm-general-reviewed.abm-general-rna-tracking .product-table td {
+    padding: 14px;
+    border-bottom: 1px solid #f2eeea;
+    vertical-align: middle;
+  }
+
+  .abm-general-reviewed.abm-general-rna-tracking .product-table tbody tr {
+    cursor: pointer;
+    transition: background 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .abm-general-reviewed.abm-general-rna-tracking .product-table tbody tr:hover { background: #fff5ef; }
+  .abm-general-reviewed.abm-general-rna-tracking .product-table tbody tr:focus-visible {
+    outline: 3px solid rgba(233, 98, 37, 0.35);
+    outline-offset: -3px;
+    background: #fff5ef;
+  }
+  .abm-general-reviewed.abm-general-rna-tracking .product-table tbody tr:last-child td { border-bottom: 0; }
+
+  .abm-general-reviewed.abm-general-rna-tracking .table-note {
+    margin: 14px 0 0;
+    line-height: 1.58;
+  }
+
+  .abm-general-reviewed.abm-general-rna-tracking .video-wrap {
+    position: relative;
+    width: 100%;
+    height: 0;
+    margin-bottom: 16px;
+    padding-bottom: 56.25%;
+    overflow: hidden;
+    border-radius: 12px;
+    background: #000;
+  }
+
+  .abm-general-reviewed.abm-general-rna-tracking .video-wrap iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+
+  .abm-general-reviewed.abm-general-rna-tracking .technical-details {
+    margin-top: 4px;
+    border-top: 1px solid var(--abm-border);
+  }
+
+  .abm-general-reviewed.abm-general-rna-tracking .technical-details summary {
+    padding: 13px 0 2px;
+    cursor: pointer;
+  }
+
+  .abm-general-reviewed.abm-general-rna-tracking .technical-details p {
+    margin: 10px 0 0;
+    line-height: 1.68;
+  }
+
+  .abm-general-reviewed.abm-general-rna-tracking .reporter-panel {
+    grid-column: 1 / -1;
+  }
+
+  .abm-general-reviewed.abm-general-rna-tracking .reporter-images {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    margin-bottom: 16px;
+  }
+
+  .abm-general-reviewed.abm-general-rna-tracking .reporter-images img {
+    max-height: none;
+    margin: 0;
+  }
+
+  .abm-general-reviewed.abm-general-rna-tracking .enlargeable-image {
+    cursor: zoom-in;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+  }
+
+  .abm-general-reviewed.abm-general-rna-tracking .enlargeable-image:hover {
+    opacity: 0.94;
+    transform: scale(1.005);
+  }
+
+  .abm-general-reviewed.abm-general-rna-tracking .image-lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 28px;
+    background: rgba(18, 18, 18, 0.9);
+  }
+
+  .abm-general-reviewed.abm-general-rna-tracking .image-lightbox.is-open { display: flex; }
+
+  .abm-general-reviewed.abm-general-rna-tracking .image-lightbox-dialog {
+    position: relative;
+    display: flex;
+    max-width: 96vw;
+    max-height: 92vh;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .abm-general-reviewed.abm-general-rna-tracking .image-lightbox-image {
+    width: auto;
+    max-width: 96vw;
+    height: auto;
+    max-height: 82vh;
+    border-radius: 10px;
+    background: #fff;
+    object-fit: contain;
+    box-shadow: 0 18px 55px rgba(0, 0, 0, 0.35);
+  }
+
+  .abm-general-reviewed.abm-general-rna-tracking .image-lightbox-caption {
+    max-width: 900px;
+    margin: 12px 48px 0;
+    line-height: 1.5;
+    text-align: center;
+  }
+
+  .abm-general-reviewed.abm-general-rna-tracking .image-lightbox-close {
+    position: absolute;
+    top: -16px;
+    right: -16px;
+    width: 42px;
+    height: 42px;
+    padding: 0;
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    border-radius: 999px;
+    background: #fff;
+    cursor: pointer;
+    line-height: 1;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.3);
+  }
+
+  .abm-general-reviewed.abm-general-rna-tracking .image-lightbox-close:hover { background: var(--abm-orange-soft); }
+
+  .abm-general-reviewed.abm-general-rna-tracking .publication-number {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 18px;
+    line-height: 1;
+  }
+
+  .abm-general-reviewed.abm-general-rna-tracking .publication-number::after {
+    width: 38px;
+    height: 2px;
+    background: var(--abm-orange);
+    content: "";
+  }
+
+  .abm-general-reviewed.abm-general-rna-tracking .publication-citation {
+    margin-top: auto;
+    margin-bottom: 11px;
+    line-height: 1.58;
+  }
+
+  .abm-general-reviewed.abm-general-rna-tracking .publication-meta {
+    line-height: 1.58;
+  }
+
+  .abm-general-reviewed.abm-general-rna-tracking .publication-meta a {
+  }
+
+  .abm-general-reviewed.abm-general-rna-tracking .faq-list {
+    display: grid;
+    gap: 10px;
+  }
+
+  .abm-general-reviewed.abm-general-rna-tracking .faq-list details {
+    border: 1px solid var(--abm-border);
+    border-radius: 14px;
+    background: #fff;
+  }
+
+  .abm-general-reviewed.abm-general-rna-tracking .faq-list summary {
+    padding: 15px 17px;
+    cursor: pointer;
+    line-height: 1.45;
+  }
+
+  .abm-general-reviewed.abm-general-rna-tracking .faq-list details[open] summary { }
+
+  .abm-general-reviewed.abm-general-rna-tracking .faq-answer {
+    padding: 0 17px 16px;
+    line-height: 1.68;
+  }
+
+  .abm-general-reviewed.abm-general-rna-tracking .final-cta {
+    margin-top: 34px;
+    padding: 28px 24px;
+    border: 1px solid #f2e4dc;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #fff7f2 0%, #ffffff 100%);
+    text-align: center;
+  }
+
+  .abm-general-reviewed.abm-general-rna-tracking .final-cta h2 {
+    margin: 0 0 10px;
+  }
+
+  .abm-general-reviewed.abm-general-rna-tracking .final-cta p {
+    max-width: 760px;
+    margin: 0 auto 18px;
+    line-height: 1.65;
+  }
+
+  @media (max-width: 1050px) {
+    .abm-general-reviewed.abm-general-rna-tracking .publication-grid { grid-template-columns: 1fr; }
+    .abm-general-reviewed.abm-general-rna-tracking .hero-grid { grid-template-columns: minmax(0, 1fr) 125px; }
+    .abm-general-reviewed.abm-general-rna-tracking .hero-copy h1 { }
+    .abm-general-reviewed.abm-general-rna-tracking .hero-figure { max-width: 125px; }
+  }
+
+  @media (max-width: 768px) {
+    .abm-general-reviewed.abm-general-rna-tracking .rna-mango-page { padding: 18px; }
+    .abm-general-reviewed.abm-general-rna-tracking .hero-shell, .abm-general-reviewed.abm-general-rna-tracking .section-shell { padding: 22px; }
+    .abm-general-reviewed.abm-general-rna-tracking .hero-grid { grid-template-columns: 1fr; }
+    .abm-general-reviewed.abm-general-rna-tracking .hero-copy h1 { }
+    .abm-general-reviewed.abm-general-rna-tracking .hero-figure {
+      width: 100%;
+      max-width: 310px;
+      justify-self: start;
+      display: grid;
+      grid-template-columns: 90px minmax(0, 1fr);
+      align-items: center;
+    }
+    .abm-general-reviewed.abm-general-rna-tracking .hero-figure img { height: auto; }
+    .abm-general-reviewed.abm-general-rna-tracking .hero-figure figcaption { }
+    .abm-general-reviewed.abm-general-rna-tracking .section-nav { position: static; }
+    .abm-general-reviewed.abm-general-rna-tracking .two-column,
+    .abm-general-reviewed.abm-general-rna-tracking .workflow-grid,
+    .abm-general-reviewed.abm-general-rna-tracking .results-grid,
+    .abm-general-reviewed.abm-general-rna-tracking .resource-grid,
+    .abm-general-reviewed.abm-general-rna-tracking .reporter-images { grid-template-columns: 1fr; }
+    .abm-general-reviewed.abm-general-rna-tracking .reporter-panel { grid-column: auto; }
+    .abm-general-reviewed.abm-general-rna-tracking .orange-button { width: 100%; }
+    .abm-general-reviewed.abm-general-rna-tracking .card-actions, .abm-general-reviewed.abm-general-rna-tracking .cta-row { flex-direction: column; }
+    .abm-general-reviewed.abm-general-rna-tracking .image-lightbox { padding: 18px; }
+    .abm-general-reviewed.abm-general-rna-tracking .image-lightbox-close { top: -12px; right: -8px; }
+    .abm-general-reviewed.abm-general-rna-tracking .image-lightbox-caption { margin-right: 12px; margin-left: 12px; }
+  }
+
+  @media (max-width: 420px) {
+    .abm-general-reviewed.abm-general-rna-tracking .hero-copy h1 { }
+  }
+

@@ -1,7 +1,6 @@
 /** Category and species fields verified against ABM's public search UI. */
 export const EXPRESSION_LIBRARY_OPTIONS = [
   { key: "all", label: "All Expression Libraries", categories: ["57", "58"] },
-  { key: "cdna", label: "cDNA — All Viral Systems", categories: ["57", "58", "59", "60", "61"] },
   { key: "lenti", label: "Lentiviral Vectors & Virus", categories: ["57", "58", "59"] },
   { key: "aav", label: "AAV Vectors & Virus", categories: ["57", "58", "60"] },
   { key: "adeno", label: "Adenovirus", categories: ["57", "58", "61"] },
@@ -53,7 +52,7 @@ export function createAbmExpressionLibrarySearchForm(doc: Document, defaultLibra
   const speciesLabel = field("Species");
   const species = doc.createElement("select");
   species.setAttribute("aria-label", "Choose species");
-  for (const [value, label] of [["", "All Species"], ["Human", "Human"], ["Mouse", "Mouse"], ["Rat", "Rat"]]) {
+  for (const [value, label] of [["", "All Species"], ["Human", "Human"], ["Mouse", "Mouse"], ["Rat", "Rat"], ["Human (H. sapiens)", "Human (H. sapiens)"], ["Mouse (M. musculus)", "Mouse (M. musculus)"], ["Rat (R. norvegicus)", "Rat (R. norvegicus)"]]) {
     const option = doc.createElement("option");
     option.value = value;
     option.textContent = label;
@@ -74,8 +73,6 @@ export function createAbmExpressionLibrarySearchForm(doc: Document, defaultLibra
     selected.categories.forEach(value => add("fc_ids[]", value));
     if (species.value) {
       add("sp[]", species.value);
-      if (species.value === "Human") add("sp[]", "Human (H. sapiens)");
-      if (species.value === "Rat") add("sp[]", "Rat (R. norvegicus)");
     }
   };
   library.addEventListener("change", syncFilters);

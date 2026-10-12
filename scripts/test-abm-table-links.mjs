@@ -86,7 +86,7 @@ for (const landing of expressionLandings) {
   for (const th of doc.querySelectorAll("th")) assert.notEqual(th.textContent.trim().toLowerCase(), "price");
   assert.equal(/(?:US|CA)?\$\s*\d/.test(doc.body.textContent), false, `${landing.key}: visible manufacturer price`);
 }
-const expressionSearch = createAbmExpressionLibrarySearchForm(document, "cdna");
+const expressionSearch = createAbmExpressionLibrarySearchForm(document, "all");
 assert.equal(expressionSearch.checkValidity(), false);
 expressionSearch.querySelector('input[name="query"]').value = "TP53";
 for (const option of EXPRESSION_LIBRARY_OPTIONS) {
@@ -107,7 +107,7 @@ for (const option of EXPRESSION_LIBRARY_OPTIONS) {
 const expressionSpecies = expressionSearch.querySelector('select[aria-label="Choose species"]');
 expressionSpecies.value = "Human";
 expressionSpecies.dispatchEvent(new browser.window.Event("change"));
-assert.deepEqual(new browser.window.FormData(expressionSearch).getAll("sp[]"), ["Human", "Human (H. sapiens)"]);
+assert.deepEqual(new browser.window.FormData(expressionSearch).getAll("sp[]"), ["Human"]);
 expressionSpecies.value = "";
 expressionSpecies.dispatchEvent(new browser.window.Event("change"));
 assert.deepEqual(new browser.window.FormData(expressionSearch).getAll("sp[]"), []);

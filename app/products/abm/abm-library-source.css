@@ -1,0 +1,352 @@
+
+
+/* Ready-to-use library search */
+
+@media (max-width: 767px) {
+}
+
+
+/* ============================================================
+   Lentivirus page-specific additions
+   Intentionally minimal so the page continues to look like the
+   existing abmgood category pages.
+   ============================================================ */
+
+.abm-library-official .abm-lenti-section {
+  margin-top: 18px;
+  padding-top: 10px;
+  padding-bottom: 18px;
+  border-top: 1px solid #eeeeee;
+  scroll-margin-top: 95px;
+}
+
+.abm-library-official .abm-lenti-section:first-of-type {
+  border-top: 0;
+}
+
+.abm-library-official .abm-lenti-search-inner {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.abm-library-official .abm-lenti-page-links {
+  font-size: 13px;
+  margin-top: 12px;
+}
+
+.abm-library-official .abm-lenti-page-links a {
+  white-space: nowrap;
+}
+
+.abm-library-official .abm-lenti-icon-search {
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+}
+
+.abm-library-official .abm-lenti-icon-chevron {
+  width: 14px;
+  height: 14px;
+}
+
+.abm-library-official .abm-lenti-outlink {
+  border-bottom: 1px dotted currentColor;
+}
+
+.abm-library-official .abm-lenti-vector-flow,
+.abm-library-official .abm-lenti-feature-row {
+  margin-top: 14px;
+}
+
+.abm-library-official .abm-lenti-info-box,
+.abm-library-official .abm-lenti-simple-box,
+.abm-library-official .abm-lenti-vector-step,
+.abm-library-official .abm-lenti-packaging-box,
+.abm-library-official .abm-lenti-choice-box {
+  border: 1px solid #e4e4e4;
+  background: #ffffff;
+  padding: 14px 16px;
+  margin-bottom: 15px;
+  min-height: 145px;
+}
+
+.abm-library-official .abm-lenti-info-box h4,
+.abm-library-official .abm-lenti-vector-step h4,
+.abm-library-official .abm-lenti-packaging-box h4,
+.abm-library-official .abm-lenti-choice-box h4 {
+  margin-top: 0;
+}
+
+.abm-library-official .abm-lenti-small-label {
+  color: #ef6331;
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  margin-bottom: 5px;
+}
+
+.abm-library-official .abm-lenti-table-wrap {
+  margin-top: 15px;
+}
+
+.abm-library-official .abm-lenti-table {
+  margin-bottom: 0;
+  background: #ffffff;
+}
+
+.abm-library-official .abm-lenti-table caption {
+  padding: 0 0 10px;
+  color: #666666;
+  font-size: 13px;
+  text-align: left;
+  caption-side: top;
+}
+
+.abm-library-official .abm-lenti-table > thead > tr > th {
+  background: #f5f5f5;
+  border-bottom: 2px solid #dddddd;
+  vertical-align: top;
+}
+
+.abm-library-official .abm-lenti-table > tbody > tr > td {
+  vertical-align: top;
+}
+
+.abm-library-official .abm-lenti-note,
+.abm-library-official .abm-lenti-moi-box {
+  background: #f8f8f8;
+  border-left: 3px solid #ef6331;
+  padding: 12px 15px;
+  margin-top: 15px;
+}
+
+.abm-library-official .abm-lenti-subheading {
+  margin-top: 24px;
+}
+
+.abm-library-official .abm-lenti-highlight {
+  border-left: 3px solid #ef6331;
+  background: #f8f8f8;
+  padding: 14px 16px;
+  min-height: 150px;
+}
+
+.abm-library-official .abm-lenti-highlight h4 {
+  margin-top: 4px;
+}
+
+.abm-library-official .abm-lenti-builder-box {
+  border: 1px solid #e4e4e4;
+  padding: 14px 16px;
+  min-height: 150px;
+}
+
+.abm-library-official .abm-lenti-builder-box h4 {
+  margin-top: 0;
+}
+
+.abm-library-official .abm-lenti-button {
+  display: inline-block;
+  background-color: #ef6331;
+  color: #ffffff !important;
+  padding: 8px 14px;
+  text-decoration: none !important;
+}
+
+.abm-library-official .abm-lenti-button:hover,
+.abm-library-official .abm-lenti-button:focus {
+  background-color: #d95428;
+  color: #ffffff !important;
+}
+
+.abm-library-official .abm-lenti-package-tag {
+  display: inline-block;
+  background: #ef6331;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 12px;
+  padding: 3px 8px;
+  margin-bottom: 8px;
+}
+
+.abm-library-official .abm-lenti-number-step {
+  border-top: 2px solid #ef6331;
+  padding: 11px 8px 8px;
+  margin-bottom: 14px;
+}
+
+.abm-library-official .abm-lenti-number-step > span {
+  display: inline-block;
+  color: #ef6331;
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+.abm-library-official .abm-lenti-number-step > strong {
+  display: inline;
+}
+
+.abm-library-official .abm-lenti-number-step p {
+  margin: 5px 0 0;
+  font-size: 13px;
+}
+
+.abm-library-official .abm-lenti-caption {
+  color: #666666;
+  font-size: 13px;
+  margin-top: 8px;
+}
+
+.abm-library-official .abm-lenti-data-image {
+  text-align: center;
+  padding: 8px;
+}
+
+.abm-library-official .abm-lenti-collapse-block {
+  border-top: 1px solid #e5e5e5;
+  border-bottom: 1px solid #e5e5e5;
+  padding: 10px 0;
+  margin-top: 18px;
+}
+
+.abm-library-official .abm-lenti-workflow-image {
+  padding: 15px 0 5px;
+  text-align: center;
+}
+
+.abm-library-official .abm-lenti-learning-box {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  border-left: 3px solid #ef6331;
+  padding: 10px 15px;
+  background: #f8f8f8;
+}
+
+.abm-library-official .abm-lenti-learning-box h4 {
+  margin-top: 0;
+}
+
+
+/* Cleaner decision-guide layouts */
+.abm-library-official .abm-lenti-promoter-table > tbody > tr > td:first-child {
+  width: 110px;
+  color: #ef6331;
+  font-size: 15px;
+}
+
+.abm-library-official .abm-lenti-design-callout {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 28px;
+  border-left: 3px solid #ef6331;
+  background: #f8f8f8;
+  padding: 16px 18px;
+  margin-top: 18px;
+}
+
+.abm-library-official .abm-lenti-design-copy {
+  flex: 1 1 auto;
+}
+
+.abm-library-official .abm-lenti-design-copy h4 {
+  margin-top: 4px;
+}
+
+.abm-library-official .abm-lenti-design-copy p {
+  margin-bottom: 0;
+}
+
+.abm-library-official .abm-lenti-design-action {
+  flex: 0 0 290px;
+  border-left: 1px solid #dddddd;
+  padding-left: 20px;
+}
+
+.abm-library-official .abm-lenti-design-action strong,
+.abm-library-official .abm-lenti-design-action span {
+  display: block;
+}
+
+.abm-library-official .abm-lenti-design-action span {
+  margin: 5px 0 10px;
+  color: #666666;
+  font-size: 13px;
+}
+
+.abm-library-official .abm-lenti-packaging-table td:nth-child(2),
+.abm-library-official .abm-lenti-related-table td:nth-child(2),
+.abm-library-official .abm-lenti-related-table td:nth-child(4),
+.abm-library-official .abm-lenti-related-table td:nth-child(5) {
+  white-space: nowrap;
+}
+
+.abm-library-official .abm-lenti-packaging-figure {
+  margin: 14px 0 8px;
+}
+
+.abm-library-official .abm-lenti-packaging-figure img {
+  display: block;
+  max-width: 760px;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+.abm-library-official .abm-lenti-packaging-figure figcaption {
+  max-width: 900px;
+  margin: 10px auto 0;
+  color: #666666;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.abm-library-official .abm-lenti-related-table td:nth-child(5),
+.abm-library-official .abm-lenti-related-table th:last-child {
+  text-align: right;
+}
+
+
+.abm-library-official .abm-lenti-faq-title {
+  width: 100%;
+  border-top: 1px solid #eeeeee;
+}
+
+@media (max-width: 767px) {
+
+  .abm-library-official .abm-lenti-design-callout {
+    display: block;
+  }
+
+  .abm-library-official .abm-lenti-design-action {
+    border-left: 0;
+    border-top: 1px solid #dddddd;
+    padding-left: 0;
+    padding-top: 12px;
+    margin-top: 12px;
+  }
+
+  .abm-library-official .abm-lenti-page-links {
+    line-height: 2;
+  }
+
+  .abm-library-official .abm-lenti-info-box,
+  .abm-library-official .abm-lenti-simple-box,
+  .abm-library-official .abm-lenti-vector-step,
+  .abm-library-official .abm-lenti-packaging-box,
+  .abm-library-official .abm-lenti-choice-box,
+  .abm-library-official .abm-lenti-highlight,
+  .abm-library-official .abm-lenti-builder-box {
+    min-height: 0;
+  }
+
+  .abm-library-official .abm-lenti-learning-box {
+    display: block;
+  }
+
+  .abm-library-official .abm-lenti-learning-box img {
+    margin-bottom: 10px;
+  }
+}
+

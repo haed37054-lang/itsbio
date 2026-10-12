@@ -2,7 +2,7 @@
 export function stripUnwantedAbmNav(html: string) {
   if (!html) return "";
   let out = html;
-  if (/class="abm-sirna-official"/.test(out)) {
+  if (/class="abm-(?:sirna|library)-official"/.test(out)) {
     return out.replace(/<script[\s\S]*?<\/script>/gi, "");
   }
 

@@ -1535,7 +1535,7 @@ export function sanitizeAndStyle(
 
   if (mode === "abm-detail") {
     transformImmortalizationCollapses(doc);
-    if (doc.querySelector(".abm-sirna-official")) transformServiceFaqs(doc);
+    if (doc.querySelector(".abm-sirna-official,.abm-library-official")) transformServiceFaqs(doc);
   }
 
   const officialCrisprLanding = isAbmLanding && /CRISPR Genome Editing Tools and Services|CRISPR Knockout sgRNA Vectors & Viruses|CRISPR Activation & Repression|Cas9 Expression Vectors and Viruses|Cas Proteins & CRISPR Screening/i.test(
@@ -1740,7 +1740,7 @@ export function sanitizeAndStyle(
   }
 
   // ✅ 7) 가독성 개선(문단 래핑)
-  if (!isAbmLanding) improveReadability(doc);
+  if (!isAbmLanding && !doc.querySelector(".abm-library-official")) improveReadability(doc);
 
   if (mode === "abm-detail") {
     restoreGrowthFactorTools(doc);
@@ -1752,7 +1752,7 @@ export function sanitizeAndStyle(
 
   // 8) 빈 요소 정리
   doc.querySelectorAll("p, div, section, span, li").forEach((el) => {
-    const hasImg = el.querySelector("img");
+    const hasImg = el.querySelector(doc.querySelector(".abm-library-official") ? "img,svg" : "img");
     const txt = (el.textContent || "").replace(/\s+/g, " ").trim();
     if (!hasImg && txt.length === 0) removeNode(el);
   });

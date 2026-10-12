@@ -1,5 +1,7 @@
 "use client";
 
+import { createAbmExpressionLibrarySearchForm } from "@/lib/abm/expression-library-search";
+
 import { useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { createAbmCrisprSearchForm } from "@/lib/abm/crispr-search";
@@ -323,6 +325,18 @@ function normalizeHighlightedProducts() {
   });
 }
 
+export function restoreExpressionLibrarySearch(doc: Document = document) {
+  doc.querySelectorAll<HTMLElement>(".abm-library-official [data-abm-library-search]").forEach((placeholder) => {
+    if (placeholder.dataset.itsbioLibrarySearch === "true") return;
+    placeholder.dataset.itsbioLibrarySearch = "true";
+    const form = createAbmExpressionLibrarySearchForm(doc, placeholder.dataset.abmLibrarySearch);
+    const note = doc.createElement("p");
+    note.className = "abm-library-search-note";
+    note.textContent = "Search results open on ABM in a new tab.";
+    placeholder.replaceChildren(form, note);
+  });
+}
+
 export default function AbmGeneticMaterialsPolishClient() {
   const pathname = usePathname();
 
@@ -339,6 +353,7 @@ export default function AbmGeneticMaterialsPolishClient() {
         if (disposed) return;
         normalizeGeneticNavigation();
         restoreCrisprCatalogSearch();
+        restoreExpressionLibrarySearch();
         normalizeHighlightedProducts();
       });
     };

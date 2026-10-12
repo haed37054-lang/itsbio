@@ -58,6 +58,60 @@ for (const landing of siRnaLandings) {
   for (const a of doc.querySelectorAll('a[href*=".pdf"]')) assert.equal(/\.html\//.test(a.getAttribute("href")), false);
 }
 
+const { createAbmExpressionLibrarySearchForm, EXPRESSION_LIBRARY_OPTIONS } = await import("../lib/abm/expression-library-search.ts");
+const { restoreExpressionLibrarySearch } = await import("../components/products/AbmGeneticMaterialsPolishClient.tsx");
+const expressionLandings = JSON.parse(readFileSync(new URL("../data/abm-expression-library-landings.json", import.meta.url), "utf8"));
+assert.equal(expressionLandings.length, 12);
+for (const landing of expressionLandings) {
+  const doc = new JSDOM(sanitizeAndStyle(stripUnwantedAbmNav(landing.html), "https://www.abmgood.com", "abm-detail")).window.document;
+  assert.ok(doc.querySelector(".abm-library-official"));
+  assert.equal(doc.querySelectorAll("script,iframe,input,form").length, 0);
+  assert.equal(doc.body.textContent.includes("Search results will be displayed here"), false);
+  assert.equal(doc.querySelectorAll("[onclick],[onload],[onerror]").length, 0);
+  for (const image of doc.querySelectorAll("img")) assert.equal(image.getAttribute("src").startsWith("/images/abm/library/"), true);
+  for (const a of doc.querySelectorAll('a[data-library-preview]')) assert.ok(a.getAttribute("href").startsWith("/images/abm/library/"));
+  for (const a of doc.querySelectorAll('a[href^="#"]')) assert.ok(doc.getElementById(a.hash.slice(1)), `${landing.key}: missing anchor ${a.hash}`);
+  restoreExpressionLibrarySearch(doc);
+  restoreExpressionLibrarySearch(doc);
+  assert.equal(doc.querySelectorAll("form").length, landing.key === "control-vectors-and-viruses" ? 0 : 1);
+  if (!landing.key) {
+    const comparison = doc.querySelector("table");
+    assert.equal(comparison.rows.length, 4);
+    assert.ok([...comparison.rows].every(row => row.cells.length === 3));
+    assert.ok(doc.body.textContent.includes("Key Advantages"));
+  }
+  if (landing.key === "lentiviral-vectors-and-virus") {
+    for (const text of ["Third-Generation Lentiviral Transfer Vector Design", "Promoters, Reporters & Selection Markers", "Lentiviral Gene Overexpression Data"]) assert.ok(doc.body.textContent.includes(text));
+  }
+  for (const th of doc.querySelectorAll("th")) assert.notEqual(th.textContent.trim().toLowerCase(), "price");
+  assert.equal(/(?:US|CA)?\$\s*\d/.test(doc.body.textContent), false, `${landing.key}: visible manufacturer price`);
+}
+const expressionSearch = createAbmExpressionLibrarySearchForm(document, "cdna");
+assert.equal(expressionSearch.checkValidity(), false);
+expressionSearch.querySelector('input[name="query"]').value = "TP53";
+for (const option of EXPRESSION_LIBRARY_OPTIONS) {
+  const select = expressionSearch.querySelector('select[aria-label="Choose expression library"]');
+  select.value = option.key;
+  select.dispatchEvent(new browser.window.Event("change"));
+  const destination = new URL(expressionSearch.action);
+  destination.search = new URLSearchParams(new browser.window.FormData(expressionSearch));
+  assert.equal(destination.origin, "https://www.abmgood.com");
+  assert.equal(destination.pathname, "/search");
+  assert.equal(destination.searchParams.get("query"), "TP53");
+  assert.deepEqual(destination.searchParams.getAll("fc_ids[]"), [...option.categories]);
+  assert.equal(destination.searchParams.has("sp[]"), false);
+  assert.equal(destination.searchParams.has("_token"), false);
+  assert.equal(expressionSearch.target, "_blank");
+  assert.equal(expressionSearch.checkValidity(), true);
+}
+const expressionSpecies = expressionSearch.querySelector('select[aria-label="Choose species"]');
+expressionSpecies.value = "Human";
+expressionSpecies.dispatchEvent(new browser.window.Event("change"));
+assert.deepEqual(new browser.window.FormData(expressionSearch).getAll("sp[]"), ["Human", "Human (H. sapiens)"]);
+expressionSpecies.value = "";
+expressionSpecies.dispatchEvent(new browser.window.Event("change"));
+assert.deepEqual(new browser.window.FormData(expressionSearch).getAll("sp[]"), []);
+
 for (const [id, heading, level, category] of [
   ["abm-crispr-hub", "Find CRISPR sgRNA &amp; Genome Editing Products for Your Gene", "h2", "67"],
   ["crispr-ko-page", "Search Your Target Gene", "h3", "68"],

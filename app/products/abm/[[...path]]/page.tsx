@@ -16,7 +16,8 @@ import AbmTiterKitLanding, { TITER_KITS, TITER_PATH } from "@/components/product
 import { AbmPackagingVideo, AbmPackagingPublications } from "@/components/products/AbmPackagingMedia";
 import { stripUnwantedAbmNav } from "@/lib/abm/category-html";
 import { restorePackagingMixesBlocks } from "@/lib/abm/packaging-mixes";
-import sirnaLandings from "@/data/abm-sirna-landings.json";
+import expressionLibraryLandings from "@/data/abm-expression-library-landings.json";
+import AbmLibraryMediaClient from "@/components/products/AbmLibraryMediaClient";
 import abmCellularTaxonomy from "@/data/abm-cellular-taxonomy.json";
 import {
   ABM_PRODUCT_GROUPS,
@@ -48,7 +49,8 @@ import "../abm-cellular-category.css";
 import "../abm-crispr-official.css";
 import "../abm-crispr-source.css";
 import "../abm-titer-official.css";
-import "../abm-sirna-official.css";
+import "../abm-library-source.css";
+import "../abm-library-official.css";
 
 export const revalidate = 300;
 
@@ -729,7 +731,7 @@ function safeHtmlForRender(html: string, brandKey: string) {
   const baseUrl = getBaseUrlForBrand(brandKey);
   let out = html || "";
   if (brandKey === "abm") out = stripUnwantedAbmNav(out);
-  if (/class="abm-sirna-official"/.test(out)) return out.trim();
+  if (/class="abm-(?:sirna|library)-official"/.test(out)) return out.trim();
   if (brandKey === "abm") {
     out = out.replace(/<li\b[^>]*>(?:(?!<\/li>)[\s\S])*Wholesale\s+Prices?(?:(?!<\/li>)[\s\S])*<\/li>/gi, "");
     out = out.replace(/Wholesale\s+Prices?/gi, "");
@@ -1081,15 +1083,18 @@ function HtmlBlock({
         ? "abm-crispr-official"
         : undefined;
 
+  const content = (
+    <HtmlContent
+      html={cleaned}
+      mode={landingFidelity || embeddedCellularLanding || officialCrisprContent ? "abm-landing" : brandKey === "abm" ? "abm-detail" : "default"}
+      className={className}
+      productCatalogNumbers={productCatalogNumbers}
+      serviceCatalogNumbers={serviceCatalogNumbers}
+    />
+  );
   return (
-    <section className={landingFidelity || embeddedCellularLanding || officialCrisprContent ? "mt-0" : cellularPresentation ? "mt-6" : "mt-8"}>
-      <HtmlContent
-        html={cleaned}
-        mode={landingFidelity || embeddedCellularLanding || officialCrisprContent ? "abm-landing" : brandKey === "abm" ? "abm-detail" : "default"}
-        className={className}
-        productCatalogNumbers={productCatalogNumbers}
-        serviceCatalogNumbers={serviceCatalogNumbers}
-      />
+    <section className={landingFidelity || embeddedCellularLanding || officialCrisprContent || /class="abm-library-official"/.test(cleaned) ? "mt-0" : cellularPresentation ? "mt-6" : "mt-8"}>
+      {/class="abm-library-official"/.test(cleaned) ? <AbmLibraryMediaClient>{content}</AbmLibraryMediaClient> : content}
     </section>
   );
 }
@@ -1604,9 +1609,9 @@ export default async function AbmProductsPathPage({
     : primaryHtml
       ? [{ _key: "legacy-html-fallback", _type: "contentBlockHtml", html: primaryHtml }, ...blocks]
       : blocks;
-  const sirnaLanding = sirnaLandings.find((landing) => pathStr === `genetic-materials/expression-ready-libraries/RNAi-shRNA-sirna-shrna-rnai-lentivirus/${landing.path}`);
-  const blocksForRender = sirnaLanding
-    ? [{ _key: "verified-sirna-landing", _type: "contentBlockHtml", html: sirnaLanding.html }]
+  const libraryLanding = expressionLibraryLandings.find((landing) => pathStr === ["genetic-materials", "expression-ready-libraries", landing.key].filter(Boolean).join("/"));
+  const blocksForRender = libraryLanding
+    ? [{ _key: "verified-expression-library-landing", _type: "contentBlockHtml", html: libraryLanding.html }]
     : brandKey === "abm"
     ? restorePackagingMixesBlocks(pathStr, originalBlocksForRender)
     : originalBlocksForRender;
@@ -1622,7 +1627,7 @@ export default async function AbmProductsPathPage({
   const primaryText = String(primaryHtml || "").replace(/<[^>]+>/g, " ").replace(/&amp;/g, "&");
   const hasEmbeddedCrisprHero = officialCrisprPaths.has(pathStr)
     && /CRISPR Genome Editing Tools and Services|CRISPR Knockout sgRNA Vectors & Viruses|CRISPR Activation & Repression|Cas9 Expression Vectors and Viruses|Cas Proteins & CRISPR Screening/i.test(primaryText);
-  const hasEmbeddedCategoryHero = hasEmbeddedCellularHero || hasEmbeddedCrisprHero;
+  const hasEmbeddedCategoryHero = hasEmbeddedCellularHero || hasEmbeddedCrisprHero || Boolean(libraryLanding);
   const hideDuplicateCas9Resources = pathStr === "genetic-materials/crispr/cas9-vectors-and-virus";
   const isTiterLanding = brandKey === "abm" && pathStr === TITER_PATH;
   const hasEmbeddedProductTable = isTiterLanding || blocksForRender.some((block: any) => {
@@ -1687,7 +1692,7 @@ export default async function AbmProductsPathPage({
 
           <main className="min-w-0">
             {!is3dLandingFidelity && !hasEmbeddedCategoryHero && !isTiterLanding ? <h1 className="text-3xl font-bold tracking-tight text-neutral-900">{pageTitle}</h1> : null}
-            {!is3dLandingFidelity && !hasEmbeddedCellularHero && !hasEmbeddedCrisprHero && !isTiterLanding ? <CategoryLinkRail brandKey={brandKey} nodes={categoryRailNodes} /> : null}
+            {!is3dLandingFidelity && !hasEmbeddedCategoryHero && !isTiterLanding ? <CategoryLinkRail brandKey={brandKey} nodes={categoryRailNodes} /> : null}
 
             {isKent && productsInCategory.length ? (
               <div className="mt-6">

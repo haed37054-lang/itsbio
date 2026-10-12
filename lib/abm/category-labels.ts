@@ -23,7 +23,9 @@ export function normalizeAbmCategoryTitle(doc: Document, pathname: string) {
     }
   });
   if (!active) return;
-  const label = abmCategoryLabel(pathname, (active.textContent || "").replace(/\s+/g, " ").trim());
+  const menuText = active.cloneNode(true) as HTMLElement;
+  menuText.querySelectorAll('[aria-hidden="true"], svg').forEach((icon) => icon.remove());
+  const label = abmCategoryLabel(pathname, (menuText.textContent || "").replace(/\s+/g, " ").trim());
   if (!label) return;
   const primary = Array.from(doc.querySelectorAll<HTMLElement>("main h1, main .itsbio-html h2, main .qv-titer-lp h1"))
     .find((heading) => !heading.closest("aside, nav, table, svg, dialog"));

@@ -28,7 +28,7 @@ for (const [path, menu, imported, expected] of [
   ["genetic-materials/expression-ready-libraries/mirna", "miRNA", "miRNA Technology", "miRNA"],
 ]) {
   const pathname = `/products/abm/${path}`;
-  const fixture = new JSDOM(`<aside><a href="${pathname}">${menu}</a></aside><nav aria-label="Breadcrumb"><span aria-current="page">old slug</span></nav><main><h1>${imported}</h1><p>Keep the source description.</p><h2>Resources</h2><table><tr><td>LV900</td></tr></table></main>`, { url: `https://www.itsbio.co.kr${pathname}` }).window.document;
+  const fixture = new JSDOM(`<aside><a href="${pathname}"><span>${menu}</span><span aria-hidden="true">›</span></a></aside><nav aria-label="Breadcrumb"><span aria-current="page">old slug</span></nav><main><h1>${imported}</h1><p>Keep the source description.</p><h2>Resources</h2><table><tr><td>LV900</td></tr></table></main>`, { url: `https://www.itsbio.co.kr${pathname}` }).window.document;
   normalizeAbmCategoryTitle(fixture, pathname);
   normalizeAbmCategoryTitle(fixture, pathname);
   assert.equal(fixture.querySelector("main h1").textContent, expected);

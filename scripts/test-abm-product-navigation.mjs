@@ -41,7 +41,7 @@ const props = { brandKey: "abm", roots: [root], activePath: packaging, activeRoo
   theme: { accentText: "text-orange-600", accentActiveBg: "bg-orange-100", accentActiveText: "text-orange-700", accentSoftBg: "bg-orange-50" }, isKentMode: false };
 const dom = new JSDOM(renderToStaticMarkup(React.createElement(AbmCategorySideNav, props))).window.document;
 assert.equal(dom.querySelector('[aria-current="page"]').getAttribute("href"), `/products/abm/${packaging.join("/")}`);
-const expanded = dom.querySelector('[aria-current="page"]').closest('div.group\\/tree-row').parentElement;
+const expanded = dom.querySelector('[aria-current="page"]').closest('div.abm-category-row').parentElement;
 assert.ok(expanded.className.includes("border-l"), "Leaf category is inside the expanded parent tree");
 assert.ok(dom.querySelector(`a[href="/products/abm/${categories[2].path.join("/")}"]`));
 console.log("ABM product navigation: direct links, source category, invalid input, shared expanded sidebar passed.");

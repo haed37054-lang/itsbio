@@ -82,7 +82,11 @@ animation: partners-marquee 22s linear infinite;
   .abm-cellular-row:hover > .abm-cellular-row-flyout,
   .abm-cellular-row:focus-within > .abm-cellular-row-flyout,
   .abm-cellular-flyout-row:hover > .abm-cellular-nested-flyout,
-  .abm-cellular-flyout-row:focus-within > .abm-cellular-nested-flyout {
+  .abm-cellular-flyout-row:focus-within > .abm-cellular-nested-flyout,
+  .abm-category-row:hover > .abm-category-row-flyout,
+  .abm-category-row:focus-within > .abm-category-row-flyout,
+  .abm-category-flyout-row:hover > .abm-category-nested-flyout,
+  .abm-category-flyout-row:focus-within > .abm-category-nested-flyout {
     display: block;
   }
 }

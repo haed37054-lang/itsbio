@@ -77,7 +77,7 @@ export default function AbmCategorySideNav({
             const hasChildren = node.children.length > 0;
 
             return (
-              <div key={node.key} className="group/flyout relative">
+              <div key={node.key} className="abm-category-flyout-row relative">
                 <Link
                   href={nodeHref(node)}
                   aria-current={isActive ? "page" : undefined}
@@ -98,7 +98,7 @@ export default function AbmCategorySideNav({
                 </Link>
 
                 {hasChildren ? (
-                  <div className="absolute left-full top-0 z-[140] hidden pl-2 lg:group-hover/flyout:block">
+                  <div className="abm-category-nested-flyout absolute left-full top-0 z-[140] hidden pl-2">
                     <FlyoutRows nodes={node.children} parentTitle={node.title} />
                   </div>
                 ) : null}
@@ -123,10 +123,10 @@ export default function AbmCategorySideNav({
           const isOpen = hasChildren && (isActive || isOnTrail);
 
           return (
-            <div key={node.key} className="group/tree-row relative">
+            <div key={node.key} className="abm-category-row relative">
               <Link
                 href={nodeHref(node)}
-                  aria-current={isActive ? "page" : undefined}
+                aria-current={isActive ? "page" : undefined}
                 prefetch={false}
                 className={[
                   "group flex min-h-10 items-center justify-between gap-2 rounded-xl px-3 py-2.5 text-[13px] leading-5 transition",
@@ -151,7 +151,7 @@ export default function AbmCategorySideNav({
               {isOpen ? <TreeRows nodes={node.children} depth={depth + 1} /> : null}
 
               {hasChildren && !isOpen ? (
-                <div className="absolute left-full top-0 z-[130] hidden pl-2 lg:group-hover/tree-row:block">
+                <div className="abm-category-row-flyout absolute left-full top-0 z-[130] hidden pl-2">
                   <FlyoutRows nodes={node.children} parentTitle={node.title} />
                 </div>
               ) : null}

@@ -40,3 +40,6 @@
 .abm-library-official[data-library-key=""] .abm-data-table th { background:#ef6331; color:white; text-align:center; font-size:14px; }
 .abm-library-official[data-library-key=""] .abm-data-table td { text-align:center; padding:16px 18px; }
 .abm-library-image-dialog button:focus-visible { outline:3px solid #1386ac; outline-offset:3px; }
+.abm-rich .abm-library-official a[href^="/products/abm/"]::after {
+  content: none;
+}

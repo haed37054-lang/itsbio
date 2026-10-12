@@ -38,6 +38,7 @@
   line-height: inherit !important;
   color: inherit !important;
 }
+#abm-catalog-content main :is(p, li, dd) a { font-size: inherit !important; }
 
 #abm-catalog-content main :is(h1, h2, h3, h4, h5, h6):not(:where(aside *, nav *)) {
   font-weight: 700 !important;
@@ -57,6 +58,12 @@
   color: var(--abm-content-title) !important;
 }
 #abm-catalog-content main .abm-library-official h3 { font-size: 24px !important; }
+#abm-catalog-content main h3.text-2xl { font-size: 24px !important; }
+
+/* The imported kit selector uses an ID plus !important to shrink its cards.
+   Match that scope so cards follow the same body/subheading roles as ABM. */
+#abm-catalog-content main .qv-titer-lp #kit-selector :is(p, li) { font-size: 15px !important; line-height: 1.75 !important; }
+#abm-catalog-content main .qv-titer-lp #kit-selector h3 { font-size: 20px !important; }
 
 #abm-catalog-content main :is(.itsbio-html, .qv-titer-lp) a:not(:where([class*="btn"], [class*="button"], .abm-lenti-button, .cta-row a, nav a)) {
   color: var(--abm-content-link) !important;
@@ -98,7 +105,7 @@
   font-weight: 700 !important;
 }
 #abm-catalog-content main table a { color: var(--abm-content-link) !important; }
-#abm-catalog-content main table thead a { color: #fff !important; }
+#abm-catalog-content main :is(.itsbio-html, .qv-titer-lp) table thead a { color: #fff !important; }
 
 /* Captions and form labels are secondary UI copy, distinct from body prose. */
 #abm-catalog-content main :is(figcaption, caption, .abm-library-search-note, .abm-lenti-caption) {

@@ -35,9 +35,9 @@ assert.equal(tree.at(-1).sourceUrl, "https://www.abmgood.com/DNA-and-Protein-Lad
 assert.equal(ABM_GENERAL_MENU_ITEMS.find((item) => item.label === "RNA Tracking (RNA Mango)").href, "/products/abm/general-materials/rna-tracking");
 assert.equal(ABM_GENERAL_MENU_ITEMS.at(-1).href, "/products/abm/general-materials/dna-and-protein-ladders");
 
-assert.equal(data.landings.length, 5);
+assert.equal(data.landings.length, 7);
 assert.equal(data.assets.length, 37);
-const expectedFaqs = { "pcr-enzymes/rt-and-rt-pcr": 8, "rna-tracking": 7, "gel-documentation": 11, "transfection-reagents": 9, "dna-and-protein-ladders": 0 };
+const expectedFaqs = { "pcr-enzymes/rt-and-rt-pcr": 8, "rna-tracking": 7, "gel-documentation": 11, "transfection-reagents": 9, "dna-and-protein-ladders": 0, "dna-rna-purification": 0, "buffers-and-general-chemicals": 0 };
 for (const landing of data.landings) {
   const doc = new JSDOM(landing.html).window.document;
   assert.equal(doc.querySelectorAll("script,style,.hs-form-frame").length, 0);
@@ -64,6 +64,23 @@ for (const asset of data.assets) {
 const ladders = new JSDOM(data.landings.find((item) => item.key === "dna-and-protein-ladders").html).window.document;
 assert.ok(new JSDOM(data.landings.find((item) => item.key === "gel-documentation").html).window.document.getElementById("safeview-dna-stains"));
 for (const sku of ["G016", "G193", "G106", "G248", "G624", "G623", "G523"]) assert.ok(ladders.querySelector(`a[href^='/products/abm/staged/product/${sku}?']`));
+
+// Each table's product name and catalog number must reach the same detail.
+for (const key of ["dna-rna-purification", "buffers-and-general-chemicals"]) {
+  const doc = new JSDOM(data.landings.find((item) => item.key === key).html).window.document;
+  for (const row of doc.querySelectorAll("tbody tr")) {
+    const sku = row.children[1]?.textContent.trim();
+    if (!/^[A-Z]{1,4}\d{2,}[A-Z]*(?:-[A-Z0-9]+)?$/.test(sku || "")) continue;
+    for (const anchor of row.querySelectorAll("a[href]")) {
+      const url = new URL(anchor.getAttribute("href"), "https://itsbio.vercel.app");
+      assert.equal(url.pathname, `/products/abm/staged/product/${sku}`, `${key}: ${sku}`);
+      assert.equal(url.searchParams.get("from"), `/products/abm/general-materials/${key}`);
+    }
+  }
+}
+const buffers = new JSDOM(data.landings.find((item) => item.key === "buffers-and-general-chemicals").html).window.document;
+for (const sku of ["CH110-10", "G135E", "G129", "G945"]) assert.ok(buffers.querySelector(`a[href^='/products/abm/staged/product/${sku}?']`));
+assert.ok(!buffers.querySelector("a[href*='/CH001?']"), "Removed supplier catalog rows must not remain listed");
 
 // Exercise actual DOM events against the reviewed RT form and performance tabs.
 const rt = data.landings[0];

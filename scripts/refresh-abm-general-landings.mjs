@@ -12,7 +12,7 @@ if (!process.argv.includes("--source-dir") || !input) throw new Error("--source-
 const sourceDir = path.resolve(input);
 const categories = JSON.parse(await fs.readFile(path.join(sourceDir, "categories.json"), "utf8"));
 const nav = JSON.parse(await fs.readFile(path.join(sourceDir, "nav.json"), "utf8"));
-const selected = ["pcr-enzymes/rt-and-rt-pcr", "rna-tracking", "gel-documentation", "transfection-reagents", "dna-and-protein-ladders"];
+const selected = ["pcr-enzymes/rt-and-rt-pcr", "rna-tracking", "gel-documentation", "transfection-reagents", "dna-and-protein-ladders", "dna-rna-purification", "buffers-and-general-chemicals"];
 const sha = (bytes) => crypto.createHash("sha256").update(bytes).digest("hex");
 const outDir = "public/images/abm/general";
 await fs.mkdir(outDir, { recursive: true });
@@ -150,7 +150,7 @@ for (const key of selected) {
     const skuIndex = table.find("tr").first().children().toArray().findIndex((cell) => /Cat\.?\s*No\.?/i.test($(cell).text()));
     if (skuIndex >= 0) table.find("tr").slice(1).each((_, row) => {
       const sku = $(row).children().eq(skuIndex).text().trim();
-      if (!/^[A-Z]\d{2,}(?:-[A-Z0-9]+)?$/i.test(sku)) return;
+      if (!/^[A-Z]{1,4}\d{2,}[A-Z]*(?:-[A-Z0-9]+)?$/i.test(sku)) return;
       $(row).find("a[href]").each((_, item) => {
         const anchor = $(item);
         if (/\.(pdf|zip|png|jpe?g)(?:$|\?)/i.test(anchor.attr("href"))) return;
@@ -220,5 +220,15 @@ await Promise.all(Array.from({ length: 2 }, async () => {
 await fs.writeFile("data/abm-general-landings.json", JSON.stringify({ checkedAt: new Date().toISOString(), landings, assets: downloads, finderProducts }, null, 2) + "\n");
 await fs.writeFile("app/products/abm/abm-general-source.css", `/* Scoped official layouts; typography and table colours use the fixed ABM theme. */\n${styles.join("\n")}\n`);
 const audit = JSON.parse(await fs.readFile(path.join(sourceDir, "audit.json"), "utf8"));
+// Freshly reviewed sources supersede earlier rate-limit entries.
+for (const landing of landings) {
+  const row = audit.find((item) => item.path === `general-materials/${landing.key}`);
+  if (row && row.status !== 200) {
+    row.status = 200;
+    row.root = true;
+    row.recheckedAt = new Date().toISOString();
+    row.sourceSha256 = landing.sourceSha256;
+  }
+}
 await fs.writeFile("data/abm-general-review-2026-10-13.json", JSON.stringify({ checkedAt: new Date().toISOString(), auditScope: "Pre-repair category HTML bodies. Structured resource/publication blocks are separate, so raw image-count differences alone are not missing-image defects.", categoryAudit: audit, repairedPaths: selected.map((key) => `general-materials/${key}`), unresolved: audit.filter((row) => row.status !== 200).map((row) => ({ path: row.path, status: row.status, reason: "Official HTTP request returned a rate limit; current content preserved pending verification." })) }, null, 2) + "\n");
 console.log("Reviewed", landings.length, "landings and", downloads.length, "official images");

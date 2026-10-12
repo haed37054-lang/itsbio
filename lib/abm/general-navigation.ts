@@ -11,7 +11,7 @@ const GENERAL_CATEGORIES = [
   ["dna-rna-purification", "DNA/RNA Purification", "DNA-RNA-Purification-Kits.html"],
   ["gel-documentation", "Gel Documentation", "Gel-Documentation.html"],
   ["rna-tracking", "RNA Tracking (RNA Mango)", "RNA-Mango.html"],
-  ["buffers-and-general-chemicals", "Buffers & General Chemicals", "Buffers-and-Chemicals.html"],
+  ["buffers-and-general-chemicals", "Buffers & Chemicals", "Buffers-and-Chemicals.html"],
   ["equipment", "Equipment", "lab-equipment.html"],
   ["dna-and-protein-ladders", "DNA & Protein Ladders", "DNA-and-Protein-Ladders.html"],
 ] as const;

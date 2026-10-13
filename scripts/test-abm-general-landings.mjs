@@ -35,9 +35,9 @@ assert.equal(tree.at(-1).sourceUrl, "https://www.abmgood.com/abm-circRNA.html");
 assert.equal(ABM_GENERAL_MENU_ITEMS.find((item) => item.label === "RNA Tracking (RNA Mango)").href, "/products/abm/general-materials/rna-tracking");
 assert.equal(ABM_GENERAL_MENU_ITEMS.at(-1).href, "/products/abm/general-materials/circrna");
 
-assert.equal(data.landings.length, 10);
+assert.equal(data.landings.length, 11);
 assert.equal(data.assets.length, 55);
-const expectedFaqs = { "pcr-enzymes/rt-and-rt-pcr": 8, "rna-tracking": 7, "gel-documentation": 11, "transfection-reagents": 9, "dna-and-protein-ladders": 0, "dna-rna-purification": 0, "buffers-and-general-chemicals": 0, "enzymes-and-kits": 0, "circrna": 0, "3d-and-organoid/neurological-system": 15 };
+const expectedFaqs = { "pcr-enzymes/rt-and-rt-pcr": 8, "rna-tracking": 7, "gel-documentation": 11, "transfection-reagents": 9, "dna-and-protein-ladders": 0, "dna-rna-purification": 0, "buffers-and-general-chemicals": 0, "equipment": 0, "enzymes-and-kits": 0, "circrna": 0, "3d-and-organoid/neurological-system": 15 };
 for (const landing of data.landings) {
   const doc = new JSDOM(landing.html).window.document;
   assert.equal(doc.querySelectorAll("script,style,.hs-form-frame").length, 0);
@@ -81,6 +81,45 @@ for (const key of ["dna-rna-purification", "buffers-and-general-chemicals"]) {
 const buffers = new JSDOM(data.landings.find((item) => item.key === "buffers-and-general-chemicals").html).window.document;
 for (const sku of ["CH110-10", "G135E", "G129", "G945"]) assert.ok(buffers.querySelector(`a[href^='/products/abm/staged/product/${sku}?']`));
 assert.ok(!buffers.querySelector("a[href*='/CH001?']"), "Removed supplier catalog rows must not remain listed");
+
+// Compare every displayed product, unit and group with the reviewed current
+// supplier tables, including numeric-prefix and hyphenated catalog numbers.
+const sourceTables = JSON.parse(await fs.readFile(new URL("../data/abm-general-table-source-2026-10-13.json", import.meta.url), "utf8"));
+for (const source of sourceTables.pages) {
+  const doc = new JSDOM(data.landings.find((item) => item.key === source.key).html).window.document;
+  let group = "";
+  const products = [];
+  for (const row of doc.querySelectorAll("tbody tr")) {
+    if (row.children.length === 1) {
+      group = row.textContent.trim();
+      assert.equal(row.children[0].getAttribute("colspan"), "3");
+      continue;
+    }
+    assert.equal(row.children.length, 3);
+    const [name, sku, quantity] = [...row.children].map((cell) => cell.textContent.trim());
+    products.push({ group, name, sku, quantity });
+    const links = [...row.querySelectorAll("a")];
+    if (sku === "CH028") {
+      assert.equal(links.length, 0, "The official CH028 detail is a 404, so do not create a dead local link");
+      continue;
+    }
+    assert.equal(links.length, 2, `${sku}: both product name and Cat. No. are navigable`);
+    assert.equal(links[0].getAttribute("href"), links[1].getAttribute("href"));
+    const url = new URL(links[0].getAttribute("href"), "https://itsbio.vercel.app");
+    if (["B613", "G5503"].includes(sku)) {
+      assert.equal(url.hostname, "www.abmgood.com");
+      assert.equal(links[0].getAttribute("target"), "_blank");
+    } else {
+      assert.equal(url.pathname, `/products/abm/staged/product/${sku}`);
+      assert.equal(url.searchParams.get("from"), `/products/abm/general-materials/${source.key}`);
+    }
+  }
+  assert.deepEqual(products, source.products, `${source.key}: complete official table order and content`);
+  assert.deepEqual([...doc.querySelectorAll("p")].map((p) => p.textContent), source.descriptions);
+}
+const enzymes = new JSDOM(data.landings.find((item) => item.key === "enzymes-and-kits").html).window.document;
+for (const id of ["Cloning-Applications", "DNA-RNA-Applications", "in-vitro-Kits-Proteases"]) assert.ok(enzymes.getElementById(id));
+assert.ok(enzymes.querySelector("a[href^='/products/abm/staged/product/000033P?']"));
 
 // Exercise actual DOM events against the reviewed RT form and performance tabs.
 const rt = data.landings[0];

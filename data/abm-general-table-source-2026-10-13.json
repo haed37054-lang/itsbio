@@ -1,0 +1,990 @@
+{
+  "checkedAt": "2026-10-13T07:48:06.713Z",
+  "method": "Official ABM page text retrieved through web source; prices excluded",
+  "pages": [
+    {
+      "key": "buffers-and-general-chemicals",
+      "sourceUrl": "https://www.abmgood.com/Buffers-and-Chemicals.html",
+      "descriptions": [
+        "abm offers a comprehensive selection of buffers, chemicals, and reagents to support a wide range of molecular biology and life science applications. From essential components like antibiotics, dNTPs, and NTPs to specialized buffers and high-purity chemicals, our products are designed to deliver consistency and reliability in every experiment.",
+        "We also provide high-quality resins and membranes for purification and separation processes, ensuring optimal performance in your workflows. Whether you're conducting routine lab work or advanced research, abm’s trusted reagents help simplify your process and improve reproducibility."
+      ],
+      "products": [
+        {
+          "group": "Antibiotics",
+          "name": "Actinomycin D",
+          "sku": "G033",
+          "quantity": "1.0 ml; 1.0mg/ml"
+        },
+        {
+          "group": "Antibiotics",
+          "name": "Ampicillin",
+          "sku": "G021",
+          "quantity": "5 x 1.0 ml; 100 mg/ml"
+        },
+        {
+          "group": "Antibiotics",
+          "name": "Carbenicillin",
+          "sku": "G054",
+          "quantity": "1.0 g"
+        },
+        {
+          "group": "Antibiotics",
+          "name": "Chloramphenicol",
+          "sku": "G055",
+          "quantity": "50 g"
+        },
+        {
+          "group": "Antibiotics",
+          "name": "Doxycycline",
+          "sku": "G261",
+          "quantity": "5 x 1.0 ml; 1.0 mg/ml"
+        },
+        {
+          "group": "Antibiotics",
+          "name": "G418",
+          "sku": "G262",
+          "quantity": "1.0 g"
+        },
+        {
+          "group": "Antibiotics",
+          "name": "G418",
+          "sku": "G263",
+          "quantity": "5.0 g (5 x G262)"
+        },
+        {
+          "group": "Antibiotics",
+          "name": "Ganciclovir",
+          "sku": "G612",
+          "quantity": "500 mg"
+        },
+        {
+          "group": "Antibiotics",
+          "name": "Gentamycin",
+          "sku": "G056",
+          "quantity": "25 g"
+        },
+        {
+          "group": "Antibiotics",
+          "name": "Hygromycin B",
+          "sku": "G265",
+          "quantity": "1.0 g"
+        },
+        {
+          "group": "Antibiotics",
+          "name": "Kanamycin",
+          "sku": "G022",
+          "quantity": "5 x 1.0 ml; 100 mg/ml"
+        },
+        {
+          "group": "Antibiotics",
+          "name": "Puromycin",
+          "sku": "G264",
+          "quantity": "1.0 ml; 10 mg/ml"
+        },
+        {
+          "group": "Antibiotics",
+          "name": "Rapamycin",
+          "sku": "G613",
+          "quantity": "100 mg"
+        },
+        {
+          "group": "Antibiotics",
+          "name": "Spectinomycin dihydrochloride",
+          "sku": "G442",
+          "quantity": "1.0 ml; 50mg/ml"
+        },
+        {
+          "group": "Antibiotics",
+          "name": "Streptomycin",
+          "sku": "G023",
+          "quantity": "5 x 1.0 ml; 100 mg/ml"
+        },
+        {
+          "group": "Antibiotics",
+          "name": "Tetracycline",
+          "sku": "G260",
+          "quantity": "5 x 1.0 ml; 1.0 mg/ml"
+        },
+        {
+          "group": "Buffers",
+          "name": "1X PBS, pH 7.2",
+          "sku": "CH111",
+          "quantity": "500 ml"
+        },
+        {
+          "group": "Buffers",
+          "name": "1X PBS, pH 7.4",
+          "sku": "G5000",
+          "quantity": "500 ml"
+        },
+        {
+          "group": "Buffers",
+          "name": "1X PBS, pH 7.4, Case of 10",
+          "sku": "G5000-10",
+          "quantity": "500 ml x 10"
+        },
+        {
+          "group": "Buffers",
+          "name": "1X DPBS, No Ca²⁺, No Mg²⁺",
+          "sku": "CH110",
+          "quantity": "500 ml"
+        },
+        {
+          "group": "Buffers",
+          "name": "1X DPBS, No Ca²⁺, No Mg²⁺, Case of 10",
+          "sku": "CH110-10",
+          "quantity": "500 ml x 10"
+        },
+        {
+          "group": "Buffers",
+          "name": "10X PBS, pH 7.2",
+          "sku": "CH113",
+          "quantity": "500 ml"
+        },
+        {
+          "group": "Buffers",
+          "name": "10X DPBS, No Ca²⁺, No Mg²⁺",
+          "sku": "CH112",
+          "quantity": "500 ml"
+        },
+        {
+          "group": "Buffers",
+          "name": "1 M PIPES Buffer Solution, pH 8",
+          "sku": "CH101",
+          "quantity": "500 ml"
+        },
+        {
+          "group": "Buffers",
+          "name": "50X TAE Buffer (Tris-Acetate-EDTA)",
+          "sku": "CH117",
+          "quantity": "500 ml"
+        },
+        {
+          "group": "Buffers",
+          "name": "1X TE Buffer, pH 7",
+          "sku": "CH114",
+          "quantity": "500 ml"
+        },
+        {
+          "group": "Buffers",
+          "name": "1X TE Buffer, pH 8",
+          "sku": "CH115",
+          "quantity": "500 ml"
+        },
+        {
+          "group": "Buffers",
+          "name": "1X Tris Buffered Saline (TBS)",
+          "sku": "CH108",
+          "quantity": "500 ml"
+        },
+        {
+          "group": "Buffers",
+          "name": "10X Tris Buffered Saline (TBS)",
+          "sku": "CH109",
+          "quantity": "500 ml"
+        },
+        {
+          "group": "Buffers",
+          "name": "10X Tris-Glycine-SDS Buffer",
+          "sku": "CH125",
+          "quantity": "500 ml"
+        },
+        {
+          "group": "Buffers",
+          "name": "100 mM Tris-HCl Buffer, pH 7.4",
+          "sku": "CH107",
+          "quantity": "500 ml"
+        },
+        {
+          "group": "Buffers",
+          "name": "1 M Tris-HCl Buffer, pH 7",
+          "sku": "CH102",
+          "quantity": "500 ml"
+        },
+        {
+          "group": "Buffers",
+          "name": "1 M Tris-HCl Buffer, pH 7.5",
+          "sku": "CH103",
+          "quantity": "500 ml"
+        },
+        {
+          "group": "Buffers",
+          "name": "1 M Tris-HCl Buffer, pH 7.6",
+          "sku": "CH104",
+          "quantity": "500 ml"
+        },
+        {
+          "group": "Buffers",
+          "name": "1 M Tris-HCl Buffer, pH 8.5",
+          "sku": "CH106",
+          "quantity": "500 ml"
+        },
+        {
+          "group": "Buffers",
+          "name": "5X Protein Loading Buffer",
+          "sku": "G031",
+          "quantity": "3 x 1.0 ml"
+        },
+        {
+          "group": "Chemicals",
+          "name": "0.5 M EDTA",
+          "sku": "CH124",
+          "quantity": "500 ml"
+        },
+        {
+          "group": "Chemicals",
+          "name": "2-Mercaptoethanol",
+          "sku": "CH045",
+          "quantity": "200 ml (2 x 100ml)"
+        },
+        {
+          "group": "Chemicals",
+          "name": "1 M MgCl₂ Solution",
+          "sku": "CH119",
+          "quantity": "500 ml"
+        },
+        {
+          "group": "Chemicals",
+          "name": "1 M MgSO₄ Solution",
+          "sku": "CH118",
+          "quantity": "500 ml"
+        },
+        {
+          "group": "Chemicals",
+          "name": "25 mM MnCl₂ Solution",
+          "sku": "CH121",
+          "quantity": "500 ml"
+        },
+        {
+          "group": "Chemicals",
+          "name": "4 M NaCl Solution",
+          "sku": "CH120",
+          "quantity": "500 ml"
+        },
+        {
+          "group": "Chemicals",
+          "name": "50% (v/w) PEG6000 Solution",
+          "sku": "CH123",
+          "quantity": "500 ml"
+        },
+        {
+          "group": "Chemicals",
+          "name": "40% (v/w) PEG8000 Solution",
+          "sku": "CH122",
+          "quantity": "500 ml"
+        },
+        {
+          "group": "Chemicals",
+          "name": "20% SDS",
+          "sku": "CH100",
+          "quantity": "100 ml"
+        },
+        {
+          "group": "Chemicals",
+          "name": "3 M Sodium Acetate Solution, pH 5.2",
+          "sku": "CH126",
+          "quantity": "500 ml"
+        },
+        {
+          "group": "Chemicals",
+          "name": "3 M Sodium Acetate Solution, pH 7",
+          "sku": "CH127",
+          "quantity": "500 ml"
+        },
+        {
+          "group": "Chemicals",
+          "name": "3,3-Diaminobenzidine (DAB) 5mg Substrate Tabs",
+          "sku": "CH028",
+          "quantity": "100 Tabs"
+        },
+        {
+          "group": "Chemicals",
+          "name": "Agarose",
+          "sku": "G060-1",
+          "quantity": "100 g"
+        },
+        {
+          "group": "Chemicals",
+          "name": "Agarose",
+          "sku": "G060-2",
+          "quantity": "500 g"
+        },
+        {
+          "group": "Chemicals",
+          "name": "Albumin, Bovine pH 5.1 +/-0.2, Salt Free Form",
+          "sku": "CH005",
+          "quantity": "250 g"
+        },
+        {
+          "group": "Chemicals",
+          "name": "Albumin, Bovine solution",
+          "sku": "CH006",
+          "quantity": "1.0 ml; 20mg/ml"
+        },
+        {
+          "group": "Chemicals",
+          "name": "Ammonium Persulfate (APS)",
+          "sku": "CH009",
+          "quantity": "100 g"
+        },
+        {
+          "group": "Chemicals",
+          "name": "B-Galactosidase",
+          "sku": "CH036",
+          "quantity": "1.0 kU"
+        },
+        {
+          "group": "Chemicals",
+          "name": "BCIP, 5-Bromo-4-Chloro-3-Indolyl Phosphate",
+          "sku": "CH013",
+          "quantity": "500 mg"
+        },
+        {
+          "group": "Chemicals",
+          "name": "BCIP, 5-Bromo-4-Chloro-3-Indolyl Phosphate Toluidine Salt",
+          "sku": "CH014",
+          "quantity": "1.0 g"
+        },
+        {
+          "group": "Chemicals",
+          "name": "Bromophenol Blue",
+          "sku": "CH019",
+          "quantity": "25 g"
+        },
+        {
+          "group": "Chemicals",
+          "name": "Bromophenol Blue, Sodium Salt",
+          "sku": "CH023",
+          "quantity": "100 g"
+        },
+        {
+          "group": "Chemicals",
+          "name": "CHIR99021",
+          "sku": "G611",
+          "quantity": "2.0 mg"
+        },
+        {
+          "group": "Chemicals",
+          "name": "Coomassie Brilliant Blue R-250",
+          "sku": "CH025",
+          "quantity": "25 mg"
+        },
+        {
+          "group": "Chemicals",
+          "name": "DNA, Fish Sperm, Sodium Salt",
+          "sku": "CH029",
+          "quantity": "50 g"
+        },
+        {
+          "group": "Chemicals",
+          "name": "DTT",
+          "sku": "G025",
+          "quantity": "3 x 1.0 ml"
+        },
+        {
+          "group": "Chemicals",
+          "name": "EDTA, Disodium Salt, Dihydrate",
+          "sku": "CH033",
+          "quantity": "1.0 kg"
+        },
+        {
+          "group": "Chemicals",
+          "name": "Glycerol",
+          "sku": "CH038",
+          "quantity": "100 ml"
+        },
+        {
+          "group": "Chemicals",
+          "name": "Glycerol",
+          "sku": "G115",
+          "quantity": "500 ml"
+        },
+        {
+          "group": "Chemicals",
+          "name": "Glycogen",
+          "sku": "G024",
+          "quantity": "20 mg/ml; 1.0 ml"
+        },
+        {
+          "group": "Chemicals",
+          "name": "IPTG",
+          "sku": "G116",
+          "quantity": "1.0 g"
+        },
+        {
+          "group": "Chemicals",
+          "name": "LB Broth",
+          "sku": "G246",
+          "quantity": "500 g"
+        },
+        {
+          "group": "Chemicals",
+          "name": "Neutral Red",
+          "sku": "G035",
+          "quantity": "5 x 1.0ml; 10mg/ml"
+        },
+        {
+          "group": "Chemicals",
+          "name": "Nitroblue Tetrazolium Chloride",
+          "sku": "CH046",
+          "quantity": "500 mg"
+        },
+        {
+          "group": "Chemicals",
+          "name": "Oligo(dT)18 Primer",
+          "sku": "G140",
+          "quantity": "500 μl, 10 μM"
+        },
+        {
+          "group": "Chemicals",
+          "name": "Pepstatin",
+          "sku": "CH048",
+          "quantity": "5.0 mg"
+        },
+        {
+          "group": "Chemicals",
+          "name": "Protease Inhibition Cocktail with EDTA",
+          "sku": "G135E",
+          "quantity": "1.0 ml"
+        },
+        {
+          "group": "Chemicals",
+          "name": "Protease Inhibitor Cocktail",
+          "sku": "G135",
+          "quantity": "1.0 ml"
+        },
+        {
+          "group": "Chemicals",
+          "name": "Proteinase K",
+          "sku": "G029",
+          "quantity": "1.0 ml; 20mg/ml"
+        },
+        {
+          "group": "Chemicals",
+          "name": "Random Primer (6N)",
+          "sku": "G139",
+          "quantity": "500 μl, 10 μM"
+        },
+        {
+          "group": "Chemicals",
+          "name": "RNase A Solution",
+          "sku": "G118",
+          "quantity": "1.0 ml; 10 mg/ml"
+        },
+        {
+          "group": "Chemicals",
+          "name": "SB216763",
+          "sku": "G607",
+          "quantity": "5.0 mg"
+        },
+        {
+          "group": "Chemicals",
+          "name": "Sodium Azide",
+          "sku": "CH052",
+          "quantity": "250 g"
+        },
+        {
+          "group": "Chemicals",
+          "name": "SYBR Green Solution",
+          "sku": "CH131",
+          "quantity": "500 µl"
+        },
+        {
+          "group": "Chemicals",
+          "name": "TRIS",
+          "sku": "CH059",
+          "quantity": "1kg (2 x 500g [CH058])"
+        },
+        {
+          "group": "Chemicals",
+          "name": "Triton X-100, T-Octylphenoxypolyethoxyethanol",
+          "sku": "CH061",
+          "quantity": "1L (2 x 500ml)"
+        },
+        {
+          "group": "Chemicals",
+          "name": "TWEEN 20, Polyoxyethylene-20-Sorbitan Monolaurate",
+          "sku": "CH063",
+          "quantity": "1L (2 x 500ml)"
+        },
+        {
+          "group": "dNTPs",
+          "name": "dNTP Mix",
+          "sku": "G129",
+          "quantity": "1.0 ml (10 mM)"
+        },
+        {
+          "group": "dNTPs",
+          "name": "dNTP Set",
+          "sku": "G050",
+          "quantity": "4 x 250 µl (100 mM each)"
+        },
+        {
+          "group": "NTPs",
+          "name": "NTP Mix",
+          "sku": "G945",
+          "quantity": "1.0 ml (25 mM)"
+        },
+        {
+          "group": "NTPs",
+          "name": "NTP Set",
+          "sku": "G946",
+          "quantity": "4 x 250 µl (100 mM each)"
+        }
+      ]
+    },
+    {
+      "key": "equipment",
+      "sourceUrl": "https://www.abmgood.com/lab-equipment.html",
+      "descriptions": [
+        "abm provides a full range of equipment and lab consumables to support the day-to-day operations of any research lab. From gel documentation and electrophoresis systems to freezers, cryogenics, centrifuges, and rotors, our high-performance tools are built for accuracy, durability, and ease of use in demanding lab environments.",
+        "We also offer essential lab supplies including pipettes, tips, plastics, glassware, and storage boxes to keep your workspace organized and efficient. Whether you're setting up a new lab or upgrading your current setup, abm has the dependable equipment and consumables you need to keep your experiments running smoothly."
+      ],
+      "products": [
+        {
+          "group": "Gel Documentation",
+          "name": "SafeViewER™ Imager",
+          "sku": "E1001",
+          "quantity": "1"
+        },
+        {
+          "group": "Gel Electrophoresis Systems",
+          "name": "Gel Electrophoresis System with Multicaster, 100-120 V Input",
+          "sku": "Q-EP-2034",
+          "quantity": "1"
+        },
+        {
+          "group": "Gel Electrophoresis Systems",
+          "name": "Gel Electrophoresis System with Time Control, 100-120 V Input",
+          "sku": "Q-EP-2100",
+          "quantity": "1"
+        },
+        {
+          "group": "Freezers & Cryogenics",
+          "name": "Ultra Low Temperature Lab Freezer-510 L",
+          "sku": "Q5126",
+          "quantity": "1"
+        },
+        {
+          "group": "Freezers & Cryogenics",
+          "name": "Cryogenic Liquid Nitrogen Storage Tank, 47L",
+          "sku": "Q5135",
+          "quantity": "1"
+        },
+        {
+          "group": "Freezers & Cryogenics",
+          "name": "Ultra Low Temperature Lab Freezer with Dual Cooling System - 530L",
+          "sku": "Q5128",
+          "quantity": "1"
+        },
+        {
+          "group": "Centrifuges & Rotors",
+          "name": "Benchtop Centrifuge with Swing Buckets, 4000 rpm",
+          "sku": "Q5120",
+          "quantity": "1"
+        },
+        {
+          "group": "Centrifuges & Rotors",
+          "name": "High Speed Micro-centrifuge with 24 x 1.5 ml Rotor",
+          "sku": "Q5140",
+          "quantity": "1"
+        },
+        {
+          "group": "Centrifuges & Rotors",
+          "name": "Plate Rotor",
+          "sku": "Q5123",
+          "quantity": "1"
+        },
+        {
+          "group": "Centrifuges & Rotors",
+          "name": "15 ml Swing Rotor Buckets",
+          "sku": "Q5121",
+          "quantity": "1"
+        },
+        {
+          "group": "Centrifuges & Rotors",
+          "name": "50 ml Swing Rotor Buckets",
+          "sku": "Q5122",
+          "quantity": "1"
+        },
+        {
+          "group": "Centrifuges & Rotors",
+          "name": "15 ml and 50 ml Combined Swing Rotor Buckets",
+          "sku": "Q5124",
+          "quantity": "1"
+        },
+        {
+          "group": "Lab Equipment",
+          "name": "HEPA Filter Biosafety Cabinet, 4 ft",
+          "sku": "Q5051",
+          "quantity": "1"
+        },
+        {
+          "group": "Lab Equipment",
+          "name": "Stackable CO₂ Incubator Shaker – 315L",
+          "sku": "Q5102",
+          "quantity": "1"
+        },
+        {
+          "group": "Lab Equipment",
+          "name": "Tabletop Vacuum Aspirator System",
+          "sku": "Q5136",
+          "quantity": "1"
+        },
+        {
+          "group": "Lab Plastics & Glassware",
+          "name": "1 L Flask",
+          "sku": "B600",
+          "quantity": "Set of 5"
+        },
+        {
+          "group": "Lab Plastics & Glassware",
+          "name": "2 L Flask",
+          "sku": "B601",
+          "quantity": "Set of 5"
+        },
+        {
+          "group": "Lab Plastics & Glassware",
+          "name": "5 L Flask",
+          "sku": "B602",
+          "quantity": "Set of 5"
+        },
+        {
+          "group": "Lab Plastics & Glassware",
+          "name": "1 L Glass Beaker",
+          "sku": "B611",
+          "quantity": "Set of 5"
+        },
+        {
+          "group": "Lab Plastics & Glassware",
+          "name": "2 L Glass Beaker",
+          "sku": "B612",
+          "quantity": "Set of 5"
+        },
+        {
+          "group": "Lab Plastics & Glassware",
+          "name": "500 ml Glass Bottle with cap",
+          "sku": "B603",
+          "quantity": "Set of 5"
+        },
+        {
+          "group": "Lab Plastics & Glassware",
+          "name": "1 L Glass Bottle with cap",
+          "sku": "B604",
+          "quantity": "Set of 5"
+        },
+        {
+          "group": "Lab Plastics & Glassware",
+          "name": "2 L Glass Bottle with cap",
+          "sku": "B605",
+          "quantity": "Set of 5"
+        },
+        {
+          "group": "Lab Plastics & Glassware",
+          "name": "100 ml Glass Graduated Cylinder",
+          "sku": "B610",
+          "quantity": "Set of 5"
+        },
+        {
+          "group": "Lab Plastics & Glassware",
+          "name": "250 ml Glass Graduated Cylinder",
+          "sku": "B609",
+          "quantity": "Set of 5"
+        },
+        {
+          "group": "Lab Plastics & Glassware",
+          "name": "500 ml Glass Graduated Cylinder",
+          "sku": "B608",
+          "quantity": "Set of 5"
+        },
+        {
+          "group": "Lab Plastics & Glassware",
+          "name": "1 L Glass Graduated Cylinder",
+          "sku": "B607",
+          "quantity": "Set of 5"
+        },
+        {
+          "group": "Lab Plastics & Glassware",
+          "name": "250 ml Plastic Graduated Cylinder",
+          "sku": "B617",
+          "quantity": "Set of 5"
+        },
+        {
+          "group": "Lab Plastics & Glassware",
+          "name": "50 ml Media Bottle",
+          "sku": "B613",
+          "quantity": "Case of 360"
+        },
+        {
+          "group": "Lab Plastics & Glassware",
+          "name": "500 ml Media Bottle",
+          "sku": "B614",
+          "quantity": "Case of 48"
+        },
+        {
+          "group": "Lab Plastics & Glassware",
+          "name": "1.5 ml Microtube",
+          "sku": "P0400",
+          "quantity": "2 x 500 bags"
+        },
+        {
+          "group": "Lab Plastics & Glassware",
+          "name": "Opti-Seal qPCR and Storage Films",
+          "sku": "G495",
+          "quantity": "100 Films/Box"
+        },
+        {
+          "group": "Pipettes & Tips",
+          "name": "3 ml Graduated Transfer Pipettes, Individually Wrapped, Sterile",
+          "sku": "B912",
+          "quantity": "Case of 2000"
+        },
+        {
+          "group": "Pipettes & Tips",
+          "name": "5 ml Serological Pipette, Individually Wrapped",
+          "sku": "B255",
+          "quantity": "Case of 2000"
+        },
+        {
+          "group": "Pipettes & Tips",
+          "name": "10 ml Serological Pipette, Individually Wrapped",
+          "sku": "B256",
+          "quantity": "200/case"
+        },
+        {
+          "group": "Pipettes & Tips",
+          "name": "25 ml Serological Pipette, Individually Wrapped",
+          "sku": "B257",
+          "quantity": "200/case"
+        },
+        {
+          "group": "Pipettes & Tips",
+          "name": "50 ml Serological Pipette, Individually Wrapped",
+          "sku": "B258",
+          "quantity": "100/case"
+        },
+        {
+          "group": "Pipettes & Tips",
+          "name": "P2 Single Channel Pipette (0.1 µl - 2 µl)",
+          "sku": "B250",
+          "quantity": "1 Pipette"
+        },
+        {
+          "group": "Pipettes & Tips",
+          "name": "P20 Single Channel Pipette (2 µl - 20 µl)",
+          "sku": "B251",
+          "quantity": "1 Pipette"
+        },
+        {
+          "group": "Pipettes & Tips",
+          "name": "P200 Single Channel Pipette (20 µl - 200 µl)",
+          "sku": "B252",
+          "quantity": "1 Pipette"
+        },
+        {
+          "group": "Pipettes & Tips",
+          "name": "P1000 Single Channel Pipette (100 µl - 1000 µl)",
+          "sku": "B253",
+          "quantity": "1 Pipette"
+        },
+        {
+          "group": "Pipettes & Tips",
+          "name": "4 Pipette Bundle Pack",
+          "sku": "B254",
+          "quantity": "Bundle Pack"
+        },
+        {
+          "group": "Pipettes & Tips",
+          "name": "10 µl Filter Tips",
+          "sku": "P0630",
+          "quantity": "10 Racks of 96"
+        },
+        {
+          "group": "Pipettes & Tips",
+          "name": "20 µl Filter Tips",
+          "sku": "P0600",
+          "quantity": "10 Racks of 96"
+        },
+        {
+          "group": "Pipettes & Tips",
+          "name": "200 µl Filter Tips",
+          "sku": "P0610",
+          "quantity": "10 Racks of 96"
+        },
+        {
+          "group": "Pipettes & Tips",
+          "name": "1000 µl Filter Tips",
+          "sku": "P0620",
+          "quantity": "10 Racks of 96"
+        },
+        {
+          "group": "Pipettes & Tips",
+          "name": "10 µl Pipette Tips",
+          "sku": "P0500",
+          "quantity": "1000/bag"
+        },
+        {
+          "group": "Pipettes & Tips",
+          "name": "200 µl Pipette Tips",
+          "sku": "P0410",
+          "quantity": "1000/bag"
+        },
+        {
+          "group": "Pipettes & Tips",
+          "name": "1000 µl Pipette Tips",
+          "sku": "P0520",
+          "quantity": "1000/bag"
+        },
+        {
+          "group": "Storage Boxes",
+          "name": "15 ml Tube Storage Boxes, Plastic",
+          "sku": "B618",
+          "quantity": "1"
+        },
+        {
+          "group": "Storage Boxes",
+          "name": "50 ml Tube Storage Boxes, Plastic",
+          "sku": "B619",
+          "quantity": "1"
+        },
+        {
+          "group": "Storage Boxes",
+          "name": "9x9 Microtube Freezer Storage Box, Plastic",
+          "sku": "B615",
+          "quantity": "1"
+        },
+        {
+          "group": "Storage Boxes",
+          "name": "10x10 Microtube Freezer Storage Box, Plastic",
+          "sku": "B616",
+          "quantity": "1"
+        },
+        {
+          "group": "Storage Boxes",
+          "name": "9 x 9 Microtube Freezer Storage Box with Hinged Lid",
+          "sku": "G5503",
+          "quantity": "1"
+        }
+      ]
+    },
+    {
+      "key": "enzymes-and-kits",
+      "sourceUrl": "https://www.abmgood.com/Molecular-Biology-Enzymes-and-Kits.html",
+      "descriptions": [
+        "abm offers a wide range of high-quality enzymes and kits designed for molecular biology applications. Whether you're working on cloning, DNA and RNA preparation, or CRISPR screening, our reliable products support consistent and high-performance results. We provide essential tools such as Cas proteins, RNase R, proteases, and more to help streamline your workflow.",
+        "Our kits and individual enzymes are ideal for applications like PCR, sequencing, and assay development. With abm, you can simplify complex experiments and focus on achieving accurate, reproducible outcomes."
+      ],
+      "products": [
+        {
+          "group": "Cloning Applications",
+          "name": "Pro Ligation-Free Cloning MasterMix",
+          "sku": "G4004",
+          "quantity": "50 Reactions"
+        },
+        {
+          "group": "Cloning Applications",
+          "name": "ProClone™ Competent Cells",
+          "sku": "E003",
+          "quantity": "1.2 ml (6 x 200 µl)"
+        },
+        {
+          "group": "Cloning Applications",
+          "name": "Ultra-Pure Phi29 DNA Polymerase",
+          "sku": "E014",
+          "quantity": "100 µl"
+        },
+        {
+          "group": "DNA & RNA Applications",
+          "name": "RNase R",
+          "sku": "E049",
+          "quantity": "500 U (50 μl)"
+        },
+        {
+          "group": "DNA & RNA Applications",
+          "name": "RNaseOFF Ribonuclease Inhibitor",
+          "sku": "G138",
+          "quantity": "4,000 U (100 µl)"
+        },
+        {
+          "group": "DNA & RNA Applications",
+          "name": "RNaseOFF Ribonuclease Inhibitor",
+          "sku": "G591",
+          "quantity": "100,000 U (2 x 1.25 ml)"
+        },
+        {
+          "group": "DNA & RNA Applications",
+          "name": "RNase R with RNaseOFF Bundle",
+          "sku": "E049-G138S",
+          "quantity": "Bundle"
+        },
+        {
+          "group": "DNA & RNA Applications",
+          "name": "RNase A",
+          "sku": "G117",
+          "quantity": "25 mg"
+        },
+        {
+          "group": "DNA & RNA Applications",
+          "name": "DNase I",
+          "sku": "G028",
+          "quantity": "2000 U (1.0 ml)"
+        },
+        {
+          "group": "DNA & RNA Applications",
+          "name": "DNase I (RNase-Free)",
+          "sku": "E091",
+          "quantity": "200 U (100 μl)"
+        },
+        {
+          "group": "DNA & RNA Applications",
+          "name": "Poly(A) Polymerase, Yeast",
+          "sku": "E017",
+          "quantity": "100 U (100 μl)"
+        },
+        {
+          "group": "DNA & RNA Applications",
+          "name": "Poly(A) Polymerase, E. coli",
+          "sku": "E099",
+          "quantity": "25 U (25 µl)"
+        },
+        {
+          "group": "DNA & RNA Applications",
+          "name": "T4 Gene 32 Protein",
+          "sku": "E040",
+          "quantity": "100 μg"
+        },
+        {
+          "group": "DNA & RNA Applications",
+          "name": "Thermolabile UDG",
+          "sku": "E095",
+          "quantity": "200 reactions"
+        },
+        {
+          "group": "DNA & RNA Applications",
+          "name": "GFP Purified Protein",
+          "sku": "000033P",
+          "quantity": "50 μg"
+        },
+        {
+          "group": "Proteases",
+          "name": "TEV Protease",
+          "sku": "E027",
+          "quantity": "100 μl"
+        },
+        {
+          "group": "Proteases",
+          "name": "Enterokinase Cleavage Enzyme (Mammalian Produced)",
+          "sku": "G699",
+          "quantity": "100 Units"
+        },
+        {
+          "group": "Proteases",
+          "name": "Proteinase K",
+          "sku": "G029",
+          "quantity": "1.0 ml; 20mg/ml"
+        }
+      ]
+    }
+  ]
+}

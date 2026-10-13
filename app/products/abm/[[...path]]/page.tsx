@@ -1073,7 +1073,7 @@ export default async function AbmProductsPathPage({
   const primaryText = String(primaryHtml || "").replace(/<[^>]+>/g, " ").replace(/&amp;/g, "&");
   const hasEmbeddedCrisprHero = officialCrisprPaths.has(pathStr)
     && /CRISPR Genome Editing Tools and Services|CRISPR Knockout sgRNA Vectors & Viruses|CRISPR Activation & Repression|Cas9 Expression Vectors and Viruses|Cas Proteins & CRISPR Screening/i.test(primaryText);
-  const hasEmbeddedCategoryHero = hasEmbeddedCellularHero || hasEmbeddedCrisprHero || Boolean(libraryLanding);
+  const hasEmbeddedCategoryHero = !generalLanding && (hasEmbeddedCellularHero || hasEmbeddedCrisprHero || Boolean(libraryLanding));
   const hideDuplicateCas9Resources = pathStr === "genetic-materials/crispr/cas9-vectors-and-virus";
   const isTiterLanding = brandKey === "abm" && pathStr === TITER_PATH;
   const hasEmbeddedProductTable = Boolean(generalLanding) || isTiterLanding || blocksForRender.some((block: any) => {
@@ -1139,7 +1139,7 @@ export default async function AbmProductsPathPage({
           </aside>
 
           <main className="min-w-0">
-            {!is3dLandingFidelity && !hasEmbeddedCategoryHero && !isTiterLanding ? <h1 className="text-3xl font-bold tracking-tight text-neutral-900">{pageTitle}</h1> : null}
+            {!is3dLandingFidelity && !hasEmbeddedCategoryHero && !isTiterLanding ? <h1 id={generalLanding ? "page-title" : undefined} className="text-3xl font-bold tracking-tight text-neutral-900">{pageTitle}</h1> : null}
             {!is3dLandingFidelity && !hasEmbeddedCategoryHero && !isTiterLanding ? <CategoryLinkRail brandKey={brandKey} nodes={categoryRailNodes} /> : null}
 
             {isKent && productsInCategory.length ? (

@@ -7,6 +7,7 @@ const { normalizeAbmGeneralSidebar } = await import('../lib/abm/general-navigati
 const { buildTreeFromDescendants, normalizeAbmCellularSidebar, normalizeAbmGeneticSidebar, includeVerifiedSpecializedVectorPages } = await import('../lib/abm/sidebar-tree.ts');
 const { resolveAbmProductPath, productCategoryBreadcrumbs } = await import('../lib/abm/product-navigation.ts');
 const { default: AbmCategorySideNav } = await import('../components/products/AbmCategorySideNav.tsx');
+const { default: AbmCellularSidebar } = await import('../components/products/AbmCellularSidebar.tsx');
 const source = JSON.parse(await fs.readFile(new URL('../data/abm-menu-review-2026-10-13.json', import.meta.url)));
 const landings = JSON.parse(await fs.readFile(new URL('../data/abm-general-landings.json', import.meta.url)));
 const general = normalizeAbmGeneralSidebar([]);
@@ -40,6 +41,9 @@ const html = renderToStaticMarkup(React.createElement(AbmCategorySideNav, {brand
 const doc = new JSDOM(html).window.document;
 for (const node of enzymes.children) assert.ok([...doc.querySelectorAll('a[href]')].some(a=>a.getAttribute('href')===node.href));
 assert.ok(doc.querySelector('a[aria-current="page"]').closest('.abm-category-row').textContent.includes('RNase R'));
+const cellularSidebar = new JSDOM(renderToStaticMarkup(React.createElement(AbmCellularSidebar, {activePath:['cellular-materials','3d-and-organoid']}))).window.document;
+const renalLink = [...cellularSidebar.querySelectorAll('a')].find(a=>a.textContent.replace(/›|⌃|⌄/g,'').trim()==='Renal System');
+assert.equal(renalLink.getAttribute('href'),cellular[0].children.find(n=>n.title==='Renal System').href);
 const sirnaRoot = ['genetic-materials','expression-ready-libraries'];
 const genetic = normalizeAbmGeneticSidebar(buildTreeFromDescendants(['genetic-materials'],[
   {_id:'lib',title:'Expression-Ready Libraries',path:sirnaRoot},

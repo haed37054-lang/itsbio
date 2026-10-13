@@ -7,6 +7,7 @@ type TaxonomyNode = {
   slug: string;
   title: string;
   sourceUrl: string;
+  href?: string;
   children?: TaxonomyNode[];
 };
 
@@ -50,7 +51,7 @@ function FlyoutRows({
           return (
             <div key={nodePath.join("/")} className="abm-cellular-flyout-row relative">
               <Link
-                href={categoryHref(nodePath)}
+                href={node.href || categoryHref(nodePath)}
                 prefetch={false}
                 className={[
                   "flex min-h-9 items-center justify-between gap-3 rounded-lg px-3 py-2 text-[13px] leading-5 transition",
@@ -107,7 +108,7 @@ function TaxonomyRows({
         return (
           <div key={nodePath.join("/")} className="abm-cellular-row relative">
             <Link
-              href={categoryHref(nodePath)}
+              href={node.href || categoryHref(nodePath)}
               prefetch={false}
               className={[
                 "group flex min-h-10 items-center justify-between gap-2 rounded-xl px-3 py-2.5 text-[13px] leading-5 transition",

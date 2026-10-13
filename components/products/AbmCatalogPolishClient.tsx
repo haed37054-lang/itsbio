@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import { abmProductCategoryPath, withAbmProductSource } from "@/lib/abm/product-navigation";
 import { normalizeAbmCategoryTitle } from "@/lib/abm/category-labels";
+import { navigateAbmReviewedSection, scrollToAbmReviewedSection } from "@/lib/abm/section-navigation";
 
 const GEL_DOCUMENTATION = "/products/abm/general-materials/gel-documentation";
 const DNA_STAINS = `${GEL_DOCUMENTATION}#safeview-dna-stains`;
@@ -289,6 +290,13 @@ export default function AbmCatalogPolishClient() {
   useEffect(() => {
     let scheduled = false;
     let disposed = false;
+    let scrolledHash = "";
+
+    const scrollToSection = () => {
+      const hash = window.location.hash;
+      if (!hash) scrolledHash = "";
+      if (hash !== scrolledHash && scrollToAbmReviewedSection()) scrolledHash = hash;
+    };
 
     const apply = () => {
       if (scheduled) return;
@@ -306,6 +314,7 @@ export default function AbmCatalogPolishClient() {
           if (contextual !== href) anchor.setAttribute("href", contextual);
         });
         document.querySelectorAll<HTMLTableElement>(".itsbio-html table").forEach(normalizeAbmTable);
+        scrollToSection();
 
         const target = ensureDnaStainsAnchor(pathname);
         if (target && window.location.hash === "#safeview-dna-stains") {
@@ -315,6 +324,10 @@ export default function AbmCatalogPolishClient() {
     };
 
     const onClick = (event: MouseEvent) => {
+      if (navigateAbmReviewedSection(event)) {
+        scrolledHash = window.location.hash;
+        return;
+      }
       const anchor = (event.target as Element | null)?.closest<HTMLAnchorElement>("a[href]");
       if (!anchor) return;
       let url: URL;
@@ -346,11 +359,15 @@ export default function AbmCatalogPolishClient() {
     const observer = new MutationObserver(apply);
     observer.observe(document.body, { childList: true, subtree: true });
     document.addEventListener("click", onClick, true);
+    window.addEventListener("hashchange", scrollToSection);
+    window.addEventListener("popstate", scrollToSection);
 
     return () => {
       disposed = true;
       observer.disconnect();
       document.removeEventListener("click", onClick, true);
+      window.removeEventListener("hashchange", scrollToSection);
+      window.removeEventListener("popstate", scrollToSection);
     };
   }, [pathname, router]);
 

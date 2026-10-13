@@ -20,6 +20,15 @@ Object.assign(globalThis, {
 });
 
 const { sanitizeAndStyle } = await import("../components/site/HtmlContent.tsx");
+const rnase = new JSDOM(sanitizeAndStyle(`<table><tbody><tr><td>Description</td><td>
+<table><tbody><tr><td>Save 20% when you buy abm's RNase R bundled with RNaseOFF Ribonuclease Inhibitor. Click <a href="https://www.abmgood.com/rnase-r-with-rnaseoff-bundle.html">here</a> and add this bundle to your cart to save instantly!</td></tr></tbody></table>
+<p>RNase R efficiently digests linear RNA species.</p>
+<table><tbody><tr><th>Product Component</th><th>Quantity</th></tr><tr><td>RNase R (10 U/µl)</td><td>50 µl</td></tr></tbody></table>
+</td></tr></tbody></table>`, "https://www.abmgood.com", "abm-detail")).window.document;
+assert.doesNotMatch(rnase.body.textContent, /when you buy|save instantly|cart/i);
+assert.match(rnase.body.textContent, /RNase R efficiently digests linear RNA species/);
+assert.match(rnase.body.textContent, /RNase R \(10 U\/µl\)/);
+assert.match(rnase.body.textContent, /50 µl/);
 const { normalizeAbmCategoryTitle } = await import("../lib/abm/category-labels.ts");
 for (const [path, menu, imported, expected] of [
   ["genetic-materials/expression-systems/lentiviral-vectors", "Lentiviral Vectors", "Recombinant Lentiviral Vectors", "Lentiviral Vectors & Virus"],

@@ -1612,6 +1612,13 @@ export function sanitizeAndStyle(
   });
 
   if (isAbmMode) {
+    // Product descriptions can contain a nested supplier-store discount table
+    // (for example RNase R). Removing just the price leaves a broken cart pitch.
+    doc.querySelectorAll("table, p, aside").forEach((el) => {
+      const text = collapseWs(el.textContent || "");
+      if (text.length < 600 && /^save\b/i.test(text)
+        && /\bwhen you buy\b/i.test(text) && /\b(?:cart|save instantly)\b/i.test(text)) removeNode(el);
+    });
     doc.querySelectorAll("li, p, span, div").forEach((el) => {
       const text = collapseWs(el.textContent || "");
       if (/^(?:wholesale\s+prices?|add\s+to\s+cart|buy\s+now)$/i.test(text)) removeNode(el);

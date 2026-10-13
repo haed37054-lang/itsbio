@@ -18,6 +18,7 @@
 .abm-general-reviewed :is(.tab-btn.active,.family-tabs .active) { color: white !important; }
 .abm-general-reviewed :is(.family-tabs,.product-tabs) { flex-wrap: wrap; gap: 8px; }
 .abm-general-reviewed img { max-width: 100%; height: auto; }
+.abm-general-reviewed.abm-general-neurological-system .hero-image-caption { background: var(--abm-content-stripe); color: var(--abm-content-text); }
 .abm-general-reviewed .abm-table-scroll { max-width: 100%; overflow-x: auto; margin: 24px 0; border: 1px solid var(--abm-content-border); border-radius: 10px; }
 .abm-general-reviewed table { width: 100%; min-width: 640px; border-collapse: collapse; table-layout: auto; }
 .abm-general-reviewed table :is(th,td) { padding: 14px 16px; vertical-align: top; border-bottom: 1px solid var(--abm-content-border); text-align: left; overflow-wrap: normal; word-break: normal; }

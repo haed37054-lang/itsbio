@@ -302,7 +302,7 @@ function CategoryLinkRail({ brandKey, nodes }: { brandKey: string; nodes: TreeNo
       {nodes.map((node, index) => (
         <span key={node.key} className="flex items-center">
           {index ? <span className="mx-2 text-neutral-800" aria-hidden>|</span> : null}
-          <Link href={buildHref(brandKey, node.path)} prefetch={false} className="text-[#1386ac] hover:underline hover:underline-offset-4">
+          <Link href={node.href || buildHref(brandKey, node.path)} prefetch={false} className="text-[#1386ac] hover:underline hover:underline-offset-4">
             {stripBrandSuffix(node.title)}
           </Link>
         </span>
@@ -735,9 +735,8 @@ export default async function AbmProductsPathPage({
   const roots: CatLite[] = Array.isArray(data?.roots) ? data.roots : [];
   const descendants: CatLite[] = Array.isArray(data?.descendants) ? data.descendants : [];
   let category = data?.category || null;
-  const generalLanding = path[0] === "general-materials"
-    ? generalLandings.landings.find((landing) => path.slice(1).join("/") === landing.key)
-    : undefined;
+  const generalLanding = generalLandings.landings.find((landing) =>
+    path[0] === landing.root && path.slice(1).join("/") === landing.key);
   if (generalLanding) {
     category = {
       ...(category || {}),
@@ -784,6 +783,9 @@ export default async function AbmProductsPathPage({
   }
 
   const activePageNode = path.length > 1 ? findTreeNodeByPath(activeRootTree, path) : undefined;
+  if (activePageNode?.href && activePageNode.href !== buildHref(brandKey, path)) {
+    redirect(activePageNode.href);
+  }
   const childCategoryNodes = path.length === 1 ? activeRootTree : activePageNode?.children || [];
   const categoryRailNodes = pathStr === "genetic-materials/crispr"
     ? childCategoryNodes.map((node) => normalizeAbmGeneticNavLabel(node.title) === normalizeAbmGeneticNavLabel("CRISPR Activation Vectors")

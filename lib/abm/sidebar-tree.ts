@@ -17,6 +17,8 @@ export type TreeNode = {
   path: string[];
   order?: number;
   sourceUrl?: string;
+  /** Shared pages and section links need a destination distinct from their menu position. */
+  href?: string;
   isVirtual?: boolean;
   children: TreeNode[];
 };
@@ -182,6 +184,7 @@ type AbmCellularTaxonomyNode = {
   slug: string;
   title: string;
   sourceUrl: string;
+  href?: string;
   children?: AbmCellularTaxonomyNode[];
 };
 
@@ -207,6 +210,7 @@ export function normalizeAbmCellularSidebar(nodes: TreeNode[]) {
       path,
       order,
       sourceUrl: item.sourceUrl,
+      href: item.href,
       isVirtual: !existing?._id,
       children: build(item.children || [], path),
     };
@@ -235,7 +239,7 @@ const ABM_GENETIC_NAV_SPECS: AbmGeneticNavSpec[] = [
         children: [
           { title: "siRNA Lentivirus", aliases: ["Lentivirus siRNA Library"] },
           { title: "siRNA AAV", aliases: ["AAV siRNA Library"] },
-          { title: "siRNA dsRNA Oligo", aliases: ["siRNA Oligo", "dsRNA Oligo"] },
+          { title: "siRNA dsRNA Oligo", aliases: ["siRNA Oligo", "dsRNA Oligo", "siRNA dsRNA Oligo Library"] },
         ],
       },
       { title: "miRNA", aliases: ["microRNA"] },

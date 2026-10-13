@@ -1,6 +1,8 @@
 import { NextResponse } from "next/server";
 
 import { PUBLIC_CATALOG_CACHE, sanityCdnClient } from "@/lib/sanity/sanity.client";
+import { normalizeAbmGeneralSidebar } from "@/lib/abm/general-navigation";
+import { buildTreeFromDescendants, includeVerifiedSpecializedVectorPages, normalizeAbmCellularSidebar, normalizeAbmGeneticSidebar, type TreeNode } from "@/lib/abm/sidebar-tree";
 
 const ROOTS = ["general-materials", "cellular-materials", "genetic-materials"] as const;
 
@@ -21,7 +23,8 @@ const QUERY = `
   _id,
   title,
   path,
-  order
+  order,
+  sourceUrl
 }
 `;
 
@@ -35,15 +38,21 @@ type Row = {
 export async function GET() {
   const rows = await sanityCdnClient.fetch<Row[]>(QUERY, { roots: ROOTS }, PUBLIC_CATALOG_CACHE);
 
-  const items = (Array.isArray(rows) ? rows : [])
-    .filter((row) => Array.isArray(row.path) && row.path.length > 1 && ROOTS.includes(row.path[0] as (typeof ROOTS)[number]))
-    .sort((a, b) => (a.path?.length || 99) - (b.path?.length || 99))
-    .map((row) => ({
-      id: row._id,
-      title: String(row.title || "").trim(),
-      path: row.path as string[],
-      href: `/products/abm/${(row.path as string[]).map(encodeURIComponent).join("/")}`,
-    }));
+  const categories = (Array.isArray(rows) ? rows : []).flatMap((row) =>
+    Array.isArray(row.path) && row.path.length > 1
+      ? [{ ...row, title: String(row.title || "").trim(), path: row.path }] : []);
+  const items: Array<{ id: string; title: string; path: string[]; href: string }> = [];
+  const flatten = (nodes: TreeNode[]) => nodes.forEach((node) => {
+    items.push({ id: node._id, title: node.title, path: node.path,
+      href: node.href || `/products/abm/${node.path.map(encodeURIComponent).join("/")}` });
+    flatten(node.children);
+  });
+  for (const root of ROOTS) {
+    const nodes = buildTreeFromDescendants([root], categories);
+    flatten(root === "general-materials" ? normalizeAbmGeneralSidebar(nodes)
+      : root === "cellular-materials" ? normalizeAbmCellularSidebar(nodes)
+      : includeVerifiedSpecializedVectorPages(normalizeAbmGeneticSidebar(nodes)));
+  }
 
   return NextResponse.json(
     { items },

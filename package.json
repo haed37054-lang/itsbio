@@ -4,7 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "predev": "node scripts/assemble-abm-reviewed-assets.mjs",
     "build": "next build",
+    "prebuild": "node scripts/assemble-abm-reviewed-assets.mjs",
     "start": "next start",
     "lint": "eslint",
     "production:audit": "node scripts/production-audit.mjs",

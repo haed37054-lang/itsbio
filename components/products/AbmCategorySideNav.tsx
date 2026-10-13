@@ -55,8 +55,8 @@ export default function AbmCategorySideNav({
 
   const isPrefix = (full: string, prefix: string) => full === prefix || full.startsWith(prefix + "/");
 
-  function nodeHref(n: { path: string[] }) {
-    return buildHref(brandKey, n.path);
+  function nodeHref(n: TreeNode) {
+    return n.href || buildHref(brandKey, n.path);
   }
 
   function FlyoutRows({ nodes, parentTitle }: { nodes: TreeNode[]; parentTitle?: string }) {

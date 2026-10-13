@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useId, useRef, useState, type MouseEvent } from "react";
+import { useEffect, useId, useMemo, useRef, useState, type MouseEvent } from "react";
 import { findRtProduct } from "@/lib/abm/rt-product-finder";
 
 type FinderProduct = { name: string; href: string; badges: string[]; reason: string; note: string };
@@ -14,6 +14,10 @@ export default function AbmGeneralLanding({ html, className, finderProducts = EM
   const dialog = useRef<HTMLDialogElement>(null);
   const titleId = useId();
   const [image, setImage] = useState<{ src: string; alt: string; description?: string } | null>(null);
+  // Dialog state must not replace the HTML DOM and reset choices, tabs or FAQs.
+  const reviewedContent = useMemo(() => (
+    <div ref={content} className={`abm-general-reviewed ${className}`} dangerouslySetInnerHTML={{ __html: html }} />
+  ), [html, className]);
 
   useEffect(() => {
     const root = content.current;
@@ -105,13 +109,14 @@ export default function AbmGeneralLanding({ html, className, finderProducts = EM
     const button = event.target.closest("button[data-general-image]");
     const img = button?.querySelector<HTMLImageElement>("img");
     if (!img || !img.getAttribute("src")?.startsWith("/images/abm/general/")) return;
-    setImage({ src: img.getAttribute("src")!, alt: img.alt, description: img.closest(".figure-card")?.querySelector(".figure-details")?.textContent?.trim() });
+    setImage({ src: button?.getAttribute("data-full-image") || img.getAttribute("src")!, alt: img.alt,
+      description: button?.getAttribute("data-caption") || img.closest(".figure-card")?.querySelector(".figure-details")?.textContent?.trim() });
     dialog.current?.showModal();
   };
 
   return (
     <div onClick={openImage}>
-      <div ref={content} className={`abm-general-reviewed ${className}`} dangerouslySetInnerHTML={{ __html: html }} />
+      {reviewedContent}
       <dialog ref={dialog} className="abm-general-image-dialog" aria-labelledby={titleId} onClose={() => setImage(null)}>
         <div className="abm-general-dialog-heading">
           <h2 id={titleId}>{image?.alt || "Official ABM image"}</h2>

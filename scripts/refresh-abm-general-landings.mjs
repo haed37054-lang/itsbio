@@ -13,6 +13,12 @@ const sourceDir = path.resolve(input);
 const categories = JSON.parse(await fs.readFile(path.join(sourceDir, "categories.json"), "utf8"));
 const nav = JSON.parse(await fs.readFile(path.join(sourceDir, "nav.json"), "utf8"));
 const selected = ["pcr-enzymes/rt-and-rt-pcr", "rna-tracking", "gel-documentation", "transfection-reagents", "dna-and-protein-ladders", "dna-rna-purification", "buffers-and-general-chemicals"];
+const reviewedPaths = [
+  ...selected.map((key) => ["general-materials", ...key.split("/")]),
+  ["general-materials", "enzymes-and-kits"],
+  ["general-materials", "circrna"],
+  ["cellular-materials", "3d-and-organoid", "neurological-system"],
+];
 const sha = (bytes) => crypto.createHash("sha256").update(bytes).digest("hex");
 const outDir = "public/images/abm/general";
 await fs.mkdir(outDir, { recursive: true });
@@ -26,6 +32,10 @@ const rtUrls = {
   "megafi-one-step-rt-pcr.html": "G597", "mirna-all-in-one-cdna-synthesis-kit.html": "G898",
 };
 const finderProducts = {};
+// Newly added supplier products without a local inventory/detail record use
+// their exact official product URLs while detail collection continues.
+const neuralExternalSkus = new Set(["TM216", "TM217", "TM226", "TM227", "TM228", "R0500", "R0501", "R0502", "TM097"]);
+const needsOfficialDetail = (sku, from) => from.endsWith("/neurological-system") && neuralExternalSkus.has(sku);
 
 function localHref(raw, source, from) {
   if (!raw || raw.startsWith("#")) return raw;
@@ -36,14 +46,17 @@ function localHref(raw, source, from) {
   if (url.pathname === "/pcr-competitor-cross-reference-tool") return url.href;
   if (/\.(?:pdf|docx?|xlsx?|pptx?|zip)$/i.test(url.pathname)) return url.href;
   const filename = url.pathname.split("/").pop();
-  const sku = rtUrls[filename] || filename?.match(/-([A-Z]\d{2,}(?:-[A-Z0-9]+)?)(?:\.html)?$/i)?.[1]?.toUpperCase();
+  const sku = rtUrls[filename] || filename?.match(/-([A-Z]{1,4}\d{2,}[A-Z]*(?:-[A-Z0-9]+)?)(?:\.html)?$/i)?.[1]?.toUpperCase();
+  if (needsOfficialDetail(sku, from)) return url.href;
   if (sku) return `/products/abm/staged/product/${sku}?from=${encodeURIComponent(from)}`;
   const category = categories.find((item) => item.sourceUrl === `${url.origin}${url.pathname}` && (nav.find((n) => n._id === item._id)?.isActive !== false || item.path.at(-1) === "dna-and-protein-ladders"));
   return category ? `/products/abm/${category.path.join("/")}${url.hash}` : internalizeAbmHref(url.href, source);
 }
 
-for (const key of selected) {
-  const category = categories.find((item) => item.path.slice(1).join("/") === key);
+for (const categoryPath of reviewedPaths) {
+  const rootSlug = categoryPath[0];
+  const key = categoryPath.slice(1).join("/");
+  const category = categories.find((item) => item.path.join("/") === categoryPath.join("/"));
   const filename = key.replaceAll("/", "__");
   const bytes = await fs.readFile(path.join(sourceDir, `${filename}.html`));
   const $ = cheerio.load(bytes.toString());
@@ -68,7 +81,7 @@ for (const key of selected) {
   }
   // The supplier's seasonal discount and sample forms belong to its store.
   root.find("#free_sample #abm-category-section5").each((_, item) => { $("#free_sample").before($(item)); });
-  root.find("script,style,.promo,#free-sample,#free_sample,#b-modal,#image-lightbox,#default-product-type").remove();
+  root.find("script,style,.promo,#free-sample,#free_sample,#b-modal,#image-lightbox,#image-modal,#default-product-type").remove();
   root.find(".hs-form-frame").remove();
   root.find("h2.abm-categories-title-h2,ul.abm-page-category-nav-list").remove();
   root.find("[href*='free-sample'],[href*='free_sample']").remove();
@@ -94,7 +107,7 @@ for (const key of selected) {
     const inline = el.attr("style");
     if (inline) el.attr("style", inline.split(";").filter((declaration) => !/^\s*(?:font(?:-|\s*:)|color\s*:)/i.test(declaration)).join(";"));
   });
-  const from = `/products/abm/general-materials/${key}`;
+  const from = `/products/abm/${categoryPath.join("/")}`;
   root.find("a[href]").each((_, item) => {
     const anchor = $(item);
     const raw = anchor.attr("href");
@@ -115,6 +128,17 @@ for (const key of selected) {
     const local = `/images/abm/general/${sha(url).slice(0, 14)}${extension}`;
     assets.set(url, { sourceUrl: url, localPath: local });
     img.attr({ src: local, loading: "lazy", decoding: "async" });
+    const imageButton = img.closest("button.image-tile");
+    if (imageButton.length) {
+      const fullImage = imageButton.attr("data-full-image");
+      if (fullImage) {
+        const fullUrl = new URL(fullImage, category.sourceUrl).href;
+        const fullLocal = `/images/abm/general/${sha(fullUrl).slice(0, 14)}${path.extname(new URL(fullUrl).pathname).toLowerCase()}`;
+        assets.set(fullUrl, { sourceUrl: fullUrl, localPath: fullLocal });
+        imageButton.attr("data-full-image", fullLocal);
+      }
+      imageButton.attr("data-general-image", "");
+    }
     if (!img.attr("alt")) img.attr("alt", img.closest("figure,article,.abm-custom-page-tr").find("h2,h3,h4").first().text().trim() || category.title);
     if (!img.closest("a,button").length && !/(?:icon|dr-peter-unrau)/.test(url)) {
       img.wrap(`<button type="button" data-general-image aria-label="Enlarge image" class="abm-general-image-trigger"></button>`);
@@ -138,19 +162,22 @@ for (const key of selected) {
         });
       }
     });
-    // RT's clickable table rows need ordinary, keyboard-accessible product links.
-    rows.filter("[data-href]").each((_, row) => {
+    // Supplier row navigation becomes ordinary, keyboard-accessible links.
+    rows.filter("[data-href],[data-link]").each((_, row) => {
       const r = $(row);
-      const href = localHref(r.attr("data-href"), category.sourceUrl, from);
+      const href = localHref(r.attr("data-href") || r.attr("data-link"), category.sourceUrl, from);
       const cell = r.children().first();
-      const content = cell.html();
-      cell.empty().append($("<a></a>").attr("href", href).html(content));
-      r.removeAttr("data-href role tabindex");
+      if (!cell.find("a").length) {
+        const content = cell.html();
+        cell.empty().append($("<a></a>").attr("href", href).html(content));
+      }
+      r.removeAttr("data-href data-link role tabindex");
     });
-    const skuIndex = table.find("tr").first().children().toArray().findIndex((cell) => /Cat\.?\s*No\.?/i.test($(cell).text()));
+    const skuIndex = table.find("tr").first().children().toArray().findIndex((cell) => /Cat\.?\s*(?:No\.?|#)/i.test($(cell).text()));
     if (skuIndex >= 0) table.find("tr").slice(1).each((_, row) => {
       const sku = $(row).children().eq(skuIndex).text().trim();
       if (!/^[A-Z]{1,4}\d{2,}[A-Z]*(?:-[A-Z0-9]+)?$/i.test(sku)) return;
+      if (needsOfficialDetail(sku, from)) return;
       $(row).find("a[href]").each((_, item) => {
         const anchor = $(item);
         if (/\.(pdf|zip|png|jpe?g)(?:$|\?)/i.test(anchor.attr("href"))) return;
@@ -195,7 +222,7 @@ for (const key of selected) {
   final("p").each((_, item) => { if (!final(item).attr("id") && !final(item).text().trim() && !final(item).find("img,iframe").length) final(item).remove(); });
   final("section,div").filter((_, item) => final(item).children("h2").text().includes("Build Your RT Workflow and Save")).remove();
   html = final("body").html();
-  landings.push({ key, sourceUrl: category.sourceUrl, sourceSha256: sha(bytes), className, html, imageCount: final("img[src]").length, faqCount: final("details").length });
+  landings.push({ root: rootSlug, key, sourceUrl: category.sourceUrl, sourceSha256: sha(bytes), className, html, imageCount: final("img[src]").length, faqCount: final("details").length });
 }
 
 // Two workers, one request per original asset. A failed asset aborts promotion.
@@ -218,11 +245,11 @@ await Promise.all(Array.from({ length: 2 }, async () => {
 }));
 
 await fs.writeFile("data/abm-general-landings.json", JSON.stringify({ checkedAt: new Date().toISOString(), landings, assets: downloads, finderProducts }, null, 2) + "\n");
-await fs.writeFile("app/products/abm/abm-general-source.css", `/* Scoped official layouts; typography and table colours use the fixed ABM theme. */\n${styles.join("\n")}\n`);
+await fs.writeFile("app/products/abm/abm-general-source.css", `/* Scoped official layouts; typography and table colours use the fixed ABM theme. */\n${styles.join("\n").trimEnd()}\n`);
 const audit = JSON.parse(await fs.readFile(path.join(sourceDir, "audit.json"), "utf8"));
 // Freshly reviewed sources supersede earlier rate-limit entries.
 for (const landing of landings) {
-  const row = audit.find((item) => item.path === `general-materials/${landing.key}`);
+  const row = audit.find((item) => item.path === `${landing.root}/${landing.key}`);
   if (row && row.status !== 200) {
     row.status = 200;
     row.root = true;
@@ -230,5 +257,5 @@ for (const landing of landings) {
     row.sourceSha256 = landing.sourceSha256;
   }
 }
-await fs.writeFile("data/abm-general-review-2026-10-13.json", JSON.stringify({ checkedAt: new Date().toISOString(), auditScope: "Pre-repair category HTML bodies. Structured resource/publication blocks are separate, so raw image-count differences alone are not missing-image defects.", categoryAudit: audit, repairedPaths: selected.map((key) => `general-materials/${key}`), unresolved: audit.filter((row) => row.status !== 200).map((row) => ({ path: row.path, status: row.status, reason: "Official HTTP request returned a rate limit; current content preserved pending verification." })) }, null, 2) + "\n");
+await fs.writeFile("data/abm-general-review-2026-10-13.json", JSON.stringify({ checkedAt: new Date().toISOString(), auditScope: "Reviewed official category bodies and missing navigation destinations. Structured resource/publication blocks are separate, so raw image-count differences alone are not missing-image defects.", categoryAudit: audit, repairedPaths: reviewedPaths.map((parts) => parts.join("/")), unresolved: audit.filter((row) => row.status !== 200).map((row) => ({ path: row.path, status: row.status, reason: "Official HTTP request returned a rate limit; current content preserved pending verification." })) }, null, 2) + "\n");
 console.log("Reviewed", landings.length, "landings and", downloads.length, "official images");

@@ -60,7 +60,7 @@ export function resolveAbmProductPath({ trees, paths, hints, from, matchingCateg
 export function productCategoryBreadcrumbs(trees: TreeNode[], path: string[]) {
   return path.flatMap((_, index) => {
     const node = findTreeNodeByPath(trees, path.slice(0, index + 1));
-    return node ? [{ label: node.title, href: `/products/abm/${node.path.join("/")}` }] : [];
+    return node ? [{ label: node.title, href: node.href || `/products/abm/${node.path.join("/")}` }] : [];
   });
 }
 

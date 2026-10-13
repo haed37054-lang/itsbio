@@ -27,17 +27,17 @@ for (const [answers, expected] of [
 const tree = normalizeAbmGeneralSidebar([{ _id: "pcr", key: "general-materials/pcr-enzymes", path: ["general-materials", "pcr-enzymes"], title: "PCR Enzymes", children: [
   { _id: "rt", key: "rt", path: ["general-materials", "pcr-enzymes", "rt-and-rt-pcr"], title: "Reverse Transcriptase & RT-PCR", children: [] },
 ] }]);
-assert.equal(tree.length, 11);
-assert.deepEqual(tree.map((node) => node.path[1]), ["pcr-enzymes", "enzymes-and-kits", "antibodies", "biorepository", "transfection-reagents", "dna-rna-purification", "gel-documentation", "rna-tracking", "buffers-and-general-chemicals", "equipment", "dna-and-protein-ladders"]);
-assert.equal(tree[0].children[0].title, "RT & RT-PCR");
-assert.ok(tree[0].children[0].aliases.includes("Reverse Transcriptase & RT-PCR"));
-assert.equal(tree.at(-1).sourceUrl, "https://www.abmgood.com/DNA-and-Protein-Ladders.html");
+assert.equal(tree.length, 12);
+assert.deepEqual(tree.map((node) => node.path[1]), ["pcr-enzymes", "enzymes-and-kits", "antibodies", "biorepository", "transfection-reagents", "dna-rna-purification", "gel-documentation", "rna-tracking", "buffers-and-general-chemicals", "equipment", "dna-and-protein-ladders", "circrna"]);
+assert.equal(tree[0].children[2].title, "RT & RT-PCR");
+assert.ok(tree[0].children[2].aliases.includes("Reverse Transcriptase & RT-PCR"));
+assert.equal(tree.at(-1).sourceUrl, "https://www.abmgood.com/abm-circRNA.html");
 assert.equal(ABM_GENERAL_MENU_ITEMS.find((item) => item.label === "RNA Tracking (RNA Mango)").href, "/products/abm/general-materials/rna-tracking");
-assert.equal(ABM_GENERAL_MENU_ITEMS.at(-1).href, "/products/abm/general-materials/dna-and-protein-ladders");
+assert.equal(ABM_GENERAL_MENU_ITEMS.at(-1).href, "/products/abm/general-materials/circrna");
 
-assert.equal(data.landings.length, 7);
-assert.equal(data.assets.length, 37);
-const expectedFaqs = { "pcr-enzymes/rt-and-rt-pcr": 8, "rna-tracking": 7, "gel-documentation": 11, "transfection-reagents": 9, "dna-and-protein-ladders": 0, "dna-rna-purification": 0, "buffers-and-general-chemicals": 0 };
+assert.equal(data.landings.length, 10);
+assert.equal(data.assets.length, 55);
+const expectedFaqs = { "pcr-enzymes/rt-and-rt-pcr": 8, "rna-tracking": 7, "gel-documentation": 11, "transfection-reagents": 9, "dna-and-protein-ladders": 0, "dna-rna-purification": 0, "buffers-and-general-chemicals": 0, "enzymes-and-kits": 0, "circrna": 0, "3d-and-organoid/neurological-system": 15 };
 for (const landing of data.landings) {
   const doc = new JSDOM(landing.html).window.document;
   assert.equal(doc.querySelectorAll("script,style,.hs-form-frame").length, 0);
@@ -118,6 +118,21 @@ assert.ok(document.querySelector("#b-finder-result").classList.contains("has-res
 await act(async () => document.querySelector("[data-family='plus']").click());
 assert.equal(document.querySelector("[data-family-panel='hot']").hidden, true);
 assert.equal(document.querySelector("[data-family-panel='plus']").hidden, false);
+const contentBefore = document.querySelector(".abm-general-reviewed");
+// JSDOM does not implement native dialogs; the real browser is checked separately.
+dom.window.HTMLDialogElement.prototype.showModal = function () { this.open = true; };
+dom.window.HTMLDialogElement.prototype.close = function () {
+  this.open = false; this.dispatchEvent(new dom.window.Event("close"));
+};
+await act(async () => document.querySelector("button[data-general-image]").click());
+assert.ok(document.querySelector("dialog").open);
+assert.equal(document.querySelector(".abm-general-reviewed"), contentBefore);
+assert.equal(form.querySelectorAll("input:checked").length, 4);
+assert.match(document.querySelector("#b-result-name").textContent, /^G237/);
+await act(async () => document.querySelector('[aria-label="Close expanded image"]').click());
+assert.ok(!document.querySelector("dialog").open);
+assert.equal(document.querySelector("[data-family-panel='plus']").hidden, false);
+assert.match(document.querySelector("#b-result-name").textContent, /^G237/);
 await act(async () => document.querySelector("#b-finder-reset").click());
 assert.equal(document.querySelector("#b-cdna-questions").hidden, true);
 assert.equal(document.querySelector("#b-finder-result").classList.contains("has-result"), false);

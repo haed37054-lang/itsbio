@@ -1,6 +1,6 @@
 {
-  "checkedAt": "2026-10-12T17:46:32.174Z",
-  "auditScope": "Pre-repair category HTML bodies. Structured resource/publication blocks are separate, so raw image-count differences alone are not missing-image defects.",
+  "checkedAt": "2026-10-13T05:30:01.507Z",
+  "auditScope": "Reviewed official category bodies and missing navigation destinations. Structured resource/publication blocks are separate, so raw image-count differences alone are not missing-image defects.",
   "categoryAudit": [
     {
       "path": "general-materials/antibodies/tag-antibodies",
@@ -490,7 +490,7 @@
       "currentImgs": 0,
       "officialTables": 0,
       "currentTables": 1,
-      "recheckedAt": "2026-10-12T17:46:32.174Z",
+      "recheckedAt": "2026-10-13T05:30:01.507Z",
       "sourceSha256": "49d1ca824c25c7bff8a9916d519978ed439416cfc9283d4329125559b796ae94"
     },
     {
@@ -539,7 +539,7 @@
       "currentImgs": 0,
       "officialTables": 0,
       "currentTables": 1,
-      "recheckedAt": "2026-10-12T17:46:32.174Z",
+      "recheckedAt": "2026-10-13T05:30:01.507Z",
       "sourceSha256": "4ce216052b66e4b6c6d5ad4bf9cc1e86be1f5e1dadc41dbeb0829a4c39e04c9f"
     },
     {
@@ -612,7 +612,10 @@
     "general-materials/transfection-reagents",
     "general-materials/dna-and-protein-ladders",
     "general-materials/dna-rna-purification",
-    "general-materials/buffers-and-general-chemicals"
+    "general-materials/buffers-and-general-chemicals",
+    "general-materials/enzymes-and-kits",
+    "general-materials/circrna",
+    "cellular-materials/3d-and-organoid/neurological-system"
   ],
   "unresolved": [
     {

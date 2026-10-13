@@ -14,46 +14,67 @@ const GENERAL_CATEGORIES = [
   ["buffers-and-general-chemicals", "Buffers & Chemicals", "Buffers-and-Chemicals.html"],
   ["equipment", "Equipment", "lab-equipment.html"],
   ["dna-and-protein-ladders", "DNA & Protein Ladders", "DNA-and-Protein-Ladders.html"],
+  ["circrna", "circRNA", "abm-circRNA.html"],
 ] as const;
 
 export const ABM_GENERAL_MENU_ITEMS = GENERAL_CATEGORIES.map(([slug, label]) => ({
   label, href: `/products/abm/general-materials/${slug}`,
 }));
 
-const CHILD_LABELS: Record<string, string> = {
-  qpcr: "qPCR",
-  "pcr-polymerase": "PCR Polymerase",
-  "rt-and-rt-pcr": "RT & RT-PCR",
-  "gel-imager": "Gel Imager",
-  "dna-stains": "DNA Stains",
-  "ihc-antibodies": "IHC Antibodies",
-};
-const CHILD_ORDER: Record<string, string[]> = {
-  "pcr-enzymes": ["qpcr", "pcr-polymerase", "rt-and-rt-pcr"],
-  antibodies: ["tag-antibodies", "ihc-antibodies", "loading-control-antibodies", "monoclonal-antibodies", "polyclonal-antibodies", "primary-antibodies", "secondary-antibodies"],
-  "gel-documentation": ["gel-imager", "dna-stains"],
+const ENZYMES = "/products/abm/general-materials/enzymes-and-kits";
+const GEL = "/products/abm/general-materials/gel-documentation";
+type ChildSpec = { slug: string; title: string; href?: string };
+const CHILDREN: Record<string, ChildSpec[]> = {
+  "pcr-enzymes": [
+    { slug: "qpcr", title: "qPCR" },
+    { slug: "pcr-polymerase", title: "PCR Polymerase" },
+    { slug: "rt-and-rt-pcr", title: "RT & RT-PCR" },
+  ],
+  "enzymes-and-kits": [
+    { slug: "cloning-applications", title: "Cloning Applications", href: `${ENZYMES}#Cloning-Applications` },
+    { slug: "dna-and-rna-applications", title: "DNA & RNA Applications", href: `${ENZYMES}#DNA-RNA-Applications` },
+    { slug: "proteases", title: "Proteases", href: `${ENZYMES}#in-vitro-Kits-Proteases` },
+    { slug: "rnase-r", title: "RNase R", href: `/products/abm/staged/product/E049?from=${encodeURIComponent(ENZYMES)}` },
+    { slug: "cas-proteins-and-crispr-screening", title: "Cas Proteins & CRISPR Screening", href: "/products/abm/genetic-materials/crispr/cas-proteins-and-crispr-screening" },
+  ],
+  antibodies: [
+    { slug: "tag-antibodies", title: "Tag Antibodies" },
+    { slug: "ihc-antibodies", title: "IHC Antibodies" },
+    { slug: "loading-control-antibodies", title: "Loading Control Antibodies" },
+    { slug: "monoclonal-antibodies", title: "Monoclonal Antibodies" },
+    { slug: "polyclonal-antibodies", title: "Polyclonal Antibodies" },
+    { slug: "primary-antibodies", title: "Primary Antibodies" },
+    { slug: "secondary-antibodies", title: "Secondary Antibodies" },
+  ],
+  biorepository: [{ slug: "ffpe-tissue-sections", title: "FFPE Tissue Sections" }],
+  "gel-documentation": [
+    { slug: "gel-imager", title: "Gel Imager", href: `/products/abm/staged/product/E1001?from=${encodeURIComponent(GEL)}` },
+    { slug: "dna-stains", title: "DNA Stains", href: `${GEL}#safeview-dna-stains` },
+  ],
 };
 
 export function normalizeAbmGeneralSidebar(nodes: TreeNode[]): TreeNode[] {
   return GENERAL_CATEGORIES.map(([slug, title, source], order) => {
     const existing = nodes.find((node) => node.path[1] === slug);
     const path = ["general-materials", slug];
-    const wanted = CHILD_ORDER[slug] || [];
-    const children = (existing?.children || []).map((child) => ({
-      ...child,
-      title: CHILD_LABELS[child.path.at(-1) || ""] || child.title,
-      aliases: [...(child.aliases || []), child.title],
-    })).sort((a, b) => {
-      const rank = (node: TreeNode) => {
-        const index = wanted.indexOf(node.path.at(-1) || "");
-        return index < 0 ? wanted.length : index;
+    const remaining = [...(existing?.children || [])];
+    const children = (CHILDREN[slug] || []).map((spec, childOrder) => {
+      const index = remaining.findIndex((node) => node.path.at(-1) === spec.slug);
+      const child = index >= 0 ? remaining.splice(index, 1)[0] : undefined;
+      const childPath = [...path, spec.slug];
+      return {
+        ...child,
+        _id: child?._id || `verified-${childPath.join("-")}`,
+        key: childPath.join("/"), path: childPath, title: spec.title, order: childOrder,
+        href: spec.href || child?.href,
+        aliases: [...(child?.aliases || []), child?.title || spec.title],
+        children: child?.children || [],
       };
-      return rank(a) - rank(b);
     });
     return {
       ...existing,
       _id: existing?._id || `verified-${path.join("-")}`,
-      key: path.join("/"), path, title, order, children,
+      key: path.join("/"), path, title, order, children: [...children, ...remaining],
       aliases: [...(existing?.aliases || []), existing?.title || title],
       sourceUrl: `https://www.abmgood.com/${source}`,
     };

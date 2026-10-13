@@ -3098,3 +3098,1636 @@
     .abm-general-reviewed.abm-general-rna-tracking .hero-copy h1 { }
   }
 
+
+  .abm-general-reviewed.abm-general-circrna table, .abm-general-reviewed.abm-general-circrna th, .abm-general-reviewed.abm-general-circrna td, .abm-general-reviewed.abm-general-circrna div, .abm-general-reviewed.abm-general-circrna h1, .abm-general-reviewed.abm-general-circrna h2, .abm-general-reviewed.abm-general-circrna h3, .abm-general-reviewed.abm-general-circrna h4, .abm-general-reviewed.abm-general-circrna h5, .abm-general-reviewed.abm-general-circrna p, .abm-general-reviewed.abm-general-circrna li, .abm-general-reviewed.abm-general-circrna a, .abm-general-reviewed.abm-general-circrna span, .abm-general-reviewed.abm-general-circrna button, .abm-general-reviewed.abm-general-circrna input {
+  }
+
+  .abm-general-reviewed.abm-general-circrna * { box-sizing: border-box; }
+  .abm-general-reviewed.abm-general-circrna { scroll-behavior: smooth; }
+  .abm-general-reviewed.abm-general-circrna { margin: 0; background: #ffffff; }
+  .abm-general-reviewed.abm-general-circrna img { max-width: 100%; height: auto; display: block; }
+  .abm-general-reviewed.abm-general-circrna a { text-decoration: none; }
+
+  .abm-general-reviewed.abm-general-circrna {
+    --abm-orange: #e96225;
+    --abm-orange-dark: #cf531b;
+    --abm-orange-soft: #fff5ef;
+    --abm-border: #ece7e2;
+    --abm-text: #222;
+    --abm-muted: #555;
+    --abm-shadow: 0 8px 22px rgba(0, 0, 0, 0.05);
+    --abm-dark: #646567;
+  }
+
+  .abm-general-reviewed.abm-general-circrna .circrna-page {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 24px;
+  }
+
+  .abm-general-reviewed.abm-general-circrna .orange-button {
+    background: var(--abm-orange);
+    border: none;
+    border-radius: 999px;
+    padding: 10px 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 42px;
+    transition: background 0.2s ease, transform 0.2s ease;
+    white-space: nowrap;
+  }
+
+  .abm-general-reviewed.abm-general-circrna .orange-button:hover {
+    background: var(--abm-orange-dark);
+    transform: translateY(-1px);
+  }
+
+  .abm-general-reviewed.abm-general-circrna .orange-button.secondary {
+    background: #fff;
+    border: 1.5px solid var(--abm-orange);
+  }
+
+  .abm-general-reviewed.abm-general-circrna .orange-button.secondary:hover {
+    background: var(--abm-orange-soft);
+  }
+
+  .abm-general-reviewed.abm-general-circrna .hero-shell {
+    background: linear-gradient(135deg, #fff8f4 0%, #ffffff 100%);
+    border: 1px solid #f2e4dc;
+    border-radius: 22px;
+    padding: 32px;
+    margin-bottom: 32px;
+  }
+
+  .abm-general-reviewed.abm-general-circrna .hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.85fr);
+    gap: 24px;
+    align-items: start;
+  }
+
+  .abm-general-reviewed.abm-general-circrna .hero-kicker {
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 12px;
+  }
+
+  .abm-general-reviewed.abm-general-circrna .hero-copy h1 {
+    margin: 0 0 12px;
+    line-height: 1.14;
+    max-width: 700px;
+  }
+
+  .abm-general-reviewed.abm-general-circrna .hero-copy .hero-subline {
+    margin: 0 0 12px;
+    line-height: 1.5;
+    max-width: 700px;
+  }
+
+  .abm-general-reviewed.abm-general-circrna .hero-copy p {
+    margin: 0 0 12px;
+    line-height: 1.65;
+    max-width: 700px;
+  }
+
+  .abm-general-reviewed.abm-general-circrna .hero-panel {
+    background: #fff;
+    border: 1px solid var(--abm-border);
+    border-radius: 18px;
+    padding: 18px 20px;
+    box-shadow: var(--abm-shadow);
+  }
+
+  .abm-general-reviewed.abm-general-circrna .hero-panel h4 {
+    margin: 0 0 10px;
+    line-height: 1.35;
+  }
+
+  .abm-general-reviewed.abm-general-circrna .hero-panel ul {
+    margin: 0;
+    padding-left: 18px;
+    line-height: 1.65;
+  }
+
+  .abm-general-reviewed.abm-general-circrna .hero-panel a {
+    text-decoration: none;
+  }
+
+  .abm-general-reviewed.abm-general-circrna .hero-panel a:hover {
+    text-decoration: underline;
+  }
+
+.abm-general-reviewed.abm-general-circrna .hero-path-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  align-items: start;
+}
+
+.abm-general-reviewed.abm-general-circrna .hero-path {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 6px 4px;
+  min-width: 0;
+}
+
+.abm-general-reviewed.abm-general-circrna .hero-path-icon {
+  width: 46px;
+  height: 46px;
+  flex: 0 0 46px;
+  border-radius: 999px;
+  border: 1.5px solid #f1dfd5;
+  background: #fff7f2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.abm-general-reviewed.abm-general-circrna .hero-path-text {
+  min-width: 0;
+}
+
+.abm-general-reviewed.abm-general-circrna .hero-path-title {
+  margin-bottom: 3px;
+  line-height: 1.25;
+}
+
+.abm-general-reviewed.abm-general-circrna .hero-path-copy {
+  line-height: 1.4;
+}
+  .abm-general-reviewed.abm-general-circrna .cta-row {
+    display: flex;
+    gap: 10px;
+    flex-wrap: nowrap;
+    margin-top: 18px;
+  }
+
+.abm-general-reviewed.abm-general-circrna .workflow-visual {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid #f2e4dc;
+}
+
+  .abm-general-reviewed.abm-general-circrna .content-section { margin-bottom: 36px; }
+
+  .abm-general-reviewed.abm-general-circrna .section-shell {
+    background: #fff;
+    border: 1px solid var(--abm-border);
+    border-radius: 20px;
+    padding: 28px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.03);
+  }
+
+  .abm-general-reviewed.abm-general-circrna .section-shell.grey {
+    background: #faf8f7;
+  }
+
+  .abm-general-reviewed.abm-general-circrna .section-header {
+    margin-bottom: 18px;
+    max-width: 860px;
+  }
+
+  .abm-general-reviewed.abm-general-circrna .section-header h2 {
+    margin: 0;
+    line-height: 1.2;
+  }
+
+  .abm-general-reviewed.abm-general-circrna .section-header p {
+    margin: 8px 0 0;
+    line-height: 1.6;
+  }
+
+  .abm-general-reviewed.abm-general-circrna .knowledge-grid,
+  .abm-general-reviewed.abm-general-circrna .workflow-grid,
+  .abm-general-reviewed.abm-general-circrna .tools-grid,
+  .abm-general-reviewed.abm-general-circrna .resource-grid,
+  .abm-general-reviewed.abm-general-circrna .publication-grid {
+    display: grid;
+    gap: 18px;
+  }
+
+  .abm-general-reviewed.abm-general-circrna .knowledge-grid {
+    grid-template-columns: 1.1fr 1fr 1fr;
+    align-items: stretch;
+  }
+
+  .abm-general-reviewed.abm-general-circrna .workflow-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .abm-general-reviewed.abm-general-circrna .tools-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .abm-general-reviewed.abm-general-circrna .resource-grid,
+  .abm-general-reviewed.abm-general-circrna .publication-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .abm-general-reviewed.abm-general-circrna .knowledge-card,
+  .abm-general-reviewed.abm-general-circrna .step-card,
+  .abm-general-reviewed.abm-general-circrna .tool-card,
+  .abm-general-reviewed.abm-general-circrna .resource-card,
+  .abm-general-reviewed.abm-general-circrna .publication-card {
+    background: #fff;
+    border: 1px solid #f0ebe7;
+    border-radius: 18px;
+    padding: 20px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.03);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .abm-general-reviewed.abm-general-circrna .knowledge-card:hover,
+  .abm-general-reviewed.abm-general-circrna .step-card:hover,
+  .abm-general-reviewed.abm-general-circrna .tool-card:hover,
+  .abm-general-reviewed.abm-general-circrna .resource-card:hover,
+  .abm-general-reviewed.abm-general-circrna .publication-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--abm-shadow);
+    border-color: #f2d7ca;
+  }
+
+  .abm-general-reviewed.abm-general-circrna .knowledge-card.image-card {
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .abm-general-reviewed.abm-general-circrna .knowledge-card.image-card img {
+    width: 100%;
+    height: 100%;
+    min-height: 320px;
+    object-fit: cover;
+  }
+
+  .abm-general-reviewed.abm-general-circrna .card-kicker {
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 8px;
+  }
+
+  .abm-general-reviewed.abm-general-circrna .knowledge-card h3,
+  .abm-general-reviewed.abm-general-circrna .step-card h3,
+  .abm-general-reviewed.abm-general-circrna .tool-card h3,
+  .abm-general-reviewed.abm-general-circrna .resource-card h3,
+  .abm-general-reviewed.abm-general-circrna .publication-card h3 {
+    margin: 0 0 10px;
+    line-height: 1.35;
+  }
+
+  .abm-general-reviewed.abm-general-circrna .knowledge-card p,
+  .abm-general-reviewed.abm-general-circrna .step-card p,
+  .abm-general-reviewed.abm-general-circrna .tool-card p,
+  .abm-general-reviewed.abm-general-circrna .resource-card p,
+  .abm-general-reviewed.abm-general-circrna .publication-card p {
+    margin: 0 0 14px;
+    line-height: 1.6;
+  }
+
+  .abm-general-reviewed.abm-general-circrna .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 0 0 16px;
+  }
+
+  .abm-general-reviewed.abm-general-circrna .tag {
+    background: #faf4f0;
+    border: 1px solid #f1dfd5;
+    border-radius: 999px;
+    padding: 6px 10px;
+    line-height: 1;
+  }
+
+  .abm-general-reviewed.abm-general-circrna .mini-flow {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+  }
+
+  .abm-general-reviewed.abm-general-circrna .mini-flow .arrow {
+  }
+
+  .abm-general-reviewed.abm-general-circrna .card-actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: auto;
+  }
+
+  .abm-general-reviewed.abm-general-circrna .enrichment-table table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 12px;
+  }
+
+  .abm-general-reviewed.abm-general-circrna .enrichment-table th {
+    text-align: left;
+    padding: 10px 8px;
+    border-bottom: 1px solid var(--abm-border);
+  }
+
+  .abm-general-reviewed.abm-general-circrna .enrichment-table td {
+    padding: 10px 8px;
+    border-bottom: 1px solid #f2eeea;
+  }
+
+  .abm-general-reviewed.abm-general-circrna .enrichment-table tbody tr {
+    cursor: pointer;
+    transition: background 0.2s ease;
+  }
+
+  .abm-general-reviewed.abm-general-circrna .enrichment-table tbody tr:hover {
+    background: #fff5ef;
+  }
+
+  .abm-general-reviewed.abm-general-circrna .publication-number {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    line-height: 1;
+    margin-bottom: 18px;
+  }
+
+  .abm-general-reviewed.abm-general-circrna .publication-number::after {
+    content: "";
+    width: 38px;
+    height: 2px;
+    background: var(--abm-orange);
+    display: block;
+  }
+
+  .abm-general-reviewed.abm-general-circrna .publication-citation {
+    line-height: 1.5;
+    margin-top: auto;
+    margin-bottom: 10px;
+  }
+
+  .abm-general-reviewed.abm-general-circrna .publication-doi {
+    word-break: break-word;
+  }
+
+  .abm-general-reviewed.abm-general-circrna .publication-doi a {
+    text-decoration: none;
+  }
+
+  .abm-general-reviewed.abm-general-circrna .publication-doi a:hover {
+    text-decoration: underline;
+  }
+
+  .abm-general-reviewed.abm-general-circrna #resources {
+    margin-top: 36px;
+  }
+
+  .abm-general-reviewed.abm-general-circrna .final-cta {
+    margin-top: 34px;
+    background: linear-gradient(135deg, #fff7f2 0%, #ffffff 100%);
+    border: 1px solid #f2e4dc;
+    border-radius: 20px;
+    padding: 28px 24px;
+    text-align: center;
+  }
+
+  .abm-general-reviewed.abm-general-circrna .final-cta h3 {
+    margin: 0 0 10px;
+  }
+
+  .abm-general-reviewed.abm-general-circrna .final-cta p {
+    max-width: 760px;
+    margin: 0 auto 18px;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 1100px) {
+    .abm-general-reviewed.abm-general-circrna .hero-grid,
+    .abm-general-reviewed.abm-general-circrna .knowledge-grid,
+    .abm-general-reviewed.abm-general-circrna .workflow-grid,
+    .abm-general-reviewed.abm-general-circrna .resource-grid,
+    .abm-general-reviewed.abm-general-circrna .publication-grid,
+    .abm-general-reviewed.abm-general-circrna .tools-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .abm-general-reviewed.abm-general-circrna .tool-card#enrichment-tools {
+      grid-column: span 1 !important;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .abm-general-reviewed.abm-general-circrna .circrna-page { padding: 18px; }
+    .abm-general-reviewed.abm-general-circrna .hero-shell, .abm-general-reviewed.abm-general-circrna .section-shell { padding: 22px; }
+    .abm-general-reviewed.abm-general-circrna .hero-copy h1 { }
+    .abm-general-reviewed.abm-general-circrna .cta-row { flex-wrap: wrap; }
+    .abm-general-reviewed.abm-general-circrna .card-actions { flex-direction: column; }
+  }
+
+@media (max-width: 1100px) {
+  .abm-general-reviewed.abm-general-circrna .hero-path-strip {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+
+
+.abm-general-reviewed.abm-general-neurological-system table,
+.abm-general-reviewed.abm-general-neurological-system th,
+.abm-general-reviewed.abm-general-neurological-system td,
+.abm-general-reviewed.abm-general-neurological-system div,
+.abm-general-reviewed.abm-general-neurological-system h1,
+.abm-general-reviewed.abm-general-neurological-system h2,
+.abm-general-reviewed.abm-general-neurological-system h3,
+.abm-general-reviewed.abm-general-neurological-system h4,
+.abm-general-reviewed.abm-general-neurological-system h5,
+.abm-general-reviewed.abm-general-neurological-system p,
+.abm-general-reviewed.abm-general-neurological-system li,
+.abm-general-reviewed.abm-general-neurological-system a,
+.abm-general-reviewed.abm-general-neurological-system span,
+.abm-general-reviewed.abm-general-neurological-system button,
+.abm-general-reviewed.abm-general-neurological-system summary {
+}
+
+.abm-general-reviewed.abm-general-neurological-system {
+  --orange:#e96225;
+  --pale:#fff7f2;
+  --pale2:#fffaf7;
+  --line:#ececec;
+  --text:#222;
+  --muted:#555;
+}
+
+.abm-general-reviewed.abm-general-neurological-system {
+  scroll-behavior:smooth;
+}
+
+.abm-general-reviewed.abm-general-neurological-system {
+  margin:0;
+  background:#fff;
+}
+
+.abm-general-reviewed.abm-general-neurological-system img {
+  max-width:100%;
+  height:auto;
+  display:block;
+}
+
+
+.abm-general-reviewed.abm-general-neurological-system .lp-wrap {
+  width:100%;
+  max-width:1060px;
+  margin:0 auto;
+  padding:0 18px 64px;
+  box-sizing:border-box;
+  line-height:1.55;
+}
+
+.abm-general-reviewed.abm-general-neurological-system .lp-wrap *,
+.abm-general-reviewed.abm-general-neurological-system .lp-wrap *::before,
+.abm-general-reviewed.abm-general-neurological-system .lp-wrap *::after {
+  box-sizing:border-box;
+}
+
+.abm-general-reviewed.abm-general-neurological-system .lp-wrap h1,
+.abm-general-reviewed.abm-general-neurological-system .lp-wrap h2,
+.abm-general-reviewed.abm-general-neurological-system .lp-wrap h3,
+.abm-general-reviewed.abm-general-neurological-system .lp-wrap h4,
+.abm-general-reviewed.abm-general-neurological-system .lp-wrap h5,
+.abm-general-reviewed.abm-general-neurological-system .lp-wrap p {
+  line-height:1.45;
+}
+
+.abm-general-reviewed.abm-general-neurological-system .orange-text {
+}
+
+
+/* BUTTONS */
+
+.abm-general-reviewed.abm-general-neurological-system .orange-button {
+  background:var(--orange);
+  border:1px solid var(--orange);
+  border-radius:8px;
+  padding:12px 16px;
+  text-align:center;
+  text-decoration:none;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  width:100%;
+  min-height:44px;
+  line-height:1.25;
+}
+
+.abm-general-reviewed.abm-general-neurological-system .orange-button.secondary {
+  background:#fff;
+}
+
+
+/* HERO */
+
+.abm-general-reviewed.abm-general-neurological-system .hero-banner {
+  background:linear-gradient(135deg,#fff7f2 0%,#fff 100%);
+  border:1px solid #f2e4dc;
+  border-radius:18px;
+  padding:34px 36px;
+  margin:12px 0 22px;
+  position:relative;
+  overflow:hidden;
+}
+
+.abm-general-reviewed.abm-general-neurological-system .hero-banner:after {
+  content:"";
+  position:absolute;
+  right:-75px;
+  top:-75px;
+  width:230px;
+  height:230px;
+  border-radius:50%;
+  background:rgba(233,98,37,.08);
+  pointer-events:none;
+}
+
+.abm-general-reviewed.abm-general-neurological-system .hero-layout {
+  display:grid;
+  grid-template-columns:1.12fr .88fr;
+  gap:28px;
+  align-items:center;
+  position:relative;
+  z-index:1;
+}
+
+.abm-general-reviewed.abm-general-neurological-system .hero-copy {
+  min-width:0;
+}
+
+.abm-general-reviewed.abm-general-neurological-system .hero-kicker {
+  letter-spacing:.04em;
+  text-transform:uppercase;
+  margin-bottom:10px;
+}
+
+.abm-general-reviewed.abm-general-neurological-system .hero-title {
+  margin:0 0 16px !important;
+  line-height:1.25 !important;
+}
+
+.abm-general-reviewed.abm-general-neurological-system .hero-tagline {
+  margin:0 0 14px !important;
+  line-height:1.45 !important;
+}
+
+.abm-general-reviewed.abm-general-neurological-system .hero-subcopy {
+  margin:0;
+  line-height:1.55;
+}
+
+.abm-general-reviewed.abm-general-neurological-system .cta-row {
+  display:flex;
+  gap:14px;
+  flex-wrap:wrap;
+  margin-top:22px;
+}
+
+.abm-general-reviewed.abm-general-neurological-system .cta-row a {
+  text-decoration:none;
+  flex:1 1 210px;
+  max-width:300px;
+}
+
+.abm-general-reviewed.abm-general-neurological-system .hero-image-card {
+  margin:0;
+  background:#111;
+  border-radius:18px;
+  overflow:hidden;
+  border:1px solid #f2d5c6;
+  box-shadow:0 14px 34px rgba(0,0,0,.12);
+}
+
+.abm-general-reviewed.abm-general-neurological-system .hero-image-card img {
+  width:100%;
+  height:340px;
+  object-fit:cover;
+  object-position:center;
+  background:#000;
+}
+
+.abm-general-reviewed.abm-general-neurological-system .hero-image-caption {
+  padding:10px 12px;
+  line-height:1.4;
+  background:#222;
+}
+
+
+/* QUICK NAV */
+
+.abm-general-reviewed.abm-general-neurological-system .jump-nav {
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin:0 0 34px;
+  padding:10px 12px;
+  border:1px solid var(--line);
+  border-radius:12px;
+  background:#fafafa;
+}
+
+.abm-general-reviewed.abm-general-neurological-system .jump-nav a {
+  text-decoration:none;
+  padding:7px 10px;
+  border-radius:8px;
+}
+
+.abm-general-reviewed.abm-general-neurological-system .jump-nav a:hover {
+  background:var(--pale);
+}
+
+
+/* GENERIC */
+
+.abm-general-reviewed.abm-general-neurological-system .section-title {
+  margin:46px 0 9px;
+}
+
+.abm-general-reviewed.abm-general-neurological-system .section-lead {
+  margin:0;
+  max-width:900px;
+}
+
+.abm-general-reviewed.abm-general-neurological-system .eyebrow {
+  text-transform:uppercase;
+  letter-spacing:.04em;
+}
+
+.abm-general-reviewed.abm-general-neurological-system .mini-note {
+  margin-top:8px;
+}
+
+
+/* PRODUCT INFORMATION */
+
+.abm-general-reviewed.abm-general-neurological-system .product-info {
+  margin:34px 0 0;
+  padding:28px 24px;
+  border:1px solid #f2e4dc;
+  border-radius:18px;
+  background:var(--pale);
+}
+
+.abm-general-reviewed.abm-general-neurological-system .product-info-header h2 {
+  margin:4px 0 8px;
+}
+
+.abm-general-reviewed.abm-general-neurological-system .product-info-block {
+  margin-top:26px;
+  padding-top:24px;
+  border-top:1px solid #eadfd9;
+}
+
+.abm-general-reviewed.abm-general-neurological-system .product-subtitle {
+  margin:0 0 6px;
+}
+
+.abm-general-reviewed.abm-general-neurological-system .product-subcopy {
+  margin:0;
+  max-width:860px;
+}
+
+.abm-general-reviewed.abm-general-neurological-system .format-block {
+  margin-top:28px;
+}
+
+.abm-general-reviewed.abm-general-neurological-system .format-help {
+  margin:14px 0 0;
+}
+
+.abm-general-reviewed.abm-general-neurological-system .format-help a {
+  text-decoration:none;
+}
+
+.abm-general-reviewed.abm-general-neurological-system .format-help a:hover {
+  text-decoration:underline;
+}
+
+
+/* REGION CARDS */
+
+.abm-general-reviewed.abm-general-neurological-system .region-picker {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:16px;
+  margin-top:20px;
+}
+
+.abm-general-reviewed.abm-general-neurological-system .region-pick {
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:15px;
+  padding:19px 17px;
+  height:100%;
+}
+
+.abm-general-reviewed.abm-general-neurological-system .region-image {
+  margin:-19px -17px 16px;
+  height:170px;
+  overflow:hidden;
+  border-radius:14px 14px 0 0;
+  background:#111;
+  border-bottom:1px solid var(--line);
+}
+
+.abm-general-reviewed.abm-general-neurological-system .region-image img {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+}
+
+.abm-general-reviewed.abm-general-neurological-system .region-pick h3 {
+  margin:4px 0 8px;
+}
+
+.abm-general-reviewed.abm-general-neurological-system .region-pick p {
+  margin:0 0 12px;
+}
+
+.abm-general-reviewed.abm-general-neurological-system .pick-meta {
+  display:grid;
+  gap:7px;
+}
+
+.abm-general-reviewed.abm-general-neurological-system .pick-meta span {
+}
+
+.abm-general-reviewed.abm-general-neurological-system .pick-meta strong {
+}
+
+.abm-general-reviewed.abm-general-neurological-system .pick-link {
+  display:inline-block;
+  margin-top:14px;
+  text-decoration:none;
+}
+
+.abm-general-reviewed.abm-general-neurological-system .pick-link:hover {
+  text-decoration:underline;
+}
+
+
+/* FORMAT CHOICE */
+
+.abm-general-reviewed.abm-general-neurological-system .format-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+  margin-top:20px;
+}
+
+.abm-general-reviewed.abm-general-neurological-system .format-card {
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:22px 20px;
+  background:#fff;
+}
+
+.abm-general-reviewed.abm-general-neurological-system .format-card.recommended {
+  border-color:#f0cdbd;
+  background:var(--pale2);
+}
+
+.abm-general-reviewed.abm-general-neurological-system .format-card h3 {
+  margin:4px 0 8px;
+}
+
+.abm-general-reviewed.abm-general-neurological-system .format-card p {
+  margin:0;
+}
+
+.abm-general-reviewed.abm-general-neurological-system .format-card ul {
+  margin:13px 0 0;
+  padding-left:1.1em;
+}
+
+.abm-general-reviewed.abm-general-neurological-system .format-card li {
+  margin:5px 0;
+}
+
+.abm-general-reviewed.abm-general-neurological-system .format-card li::marker {
+}
+
+
+/* PRODUCT TABLE */
+
+.abm-general-reviewed.abm-general-neurological-system .data-table-wrap {
+  overflow-x:auto;
+  margin-top:20px;
+  border:1px solid var(--line);
+  border-radius:16px;
+  background:#fff;
+}
+
+.abm-general-reviewed.abm-general-neurological-system .data-table {
+  width:100%;
+  border-collapse:collapse;
+}
+
+.abm-general-reviewed.abm-general-neurological-system .data-table th,
+.abm-general-reviewed.abm-general-neurological-system .data-table td {
+  padding:12px;
+  border-bottom:1px solid var(--line);
+  text-align:left;
+  vertical-align:top;
+}
+
+.abm-general-reviewed.abm-general-neurological-system .data-table th {
+  background:var(--pale);
+}
+
+.abm-general-reviewed.abm-general-neurological-system .data-table tr:last-child td {
+  border-bottom:none;
+}
+
+.abm-general-reviewed.abm-general-neurological-system .data-table tr.clickable-row {
+  cursor:pointer;
+  transition:background .16s ease;
+}
+
+.abm-general-reviewed.abm-general-neurological-system .data-table tr.clickable-row:hover {
+  background:#fff7f2;
+}
+
+.abm-general-reviewed.abm-general-neurological-system .data-table tr.clickable-row:focus {
+  outline:2px solid var(--orange);
+  outline-offset:-2px;
+  background:#fff7f2;
+}
+
+.abm-general-reviewed.abm-general-neurological-system .product-link {
+  text-decoration:none;
+}
+
+.abm-general-reviewed.abm-general-neurological-system .product-link:hover,
+.abm-general-reviewed.abm-general-neurological-system .product-link:focus {
+  text-decoration:underline;
+}
+
+.abm-general-reviewed.abm-general-neurological-system .type-badge {
+  display:inline-block;
+  padding:4px 8px;
+  border-radius:999px;
+  background:#f5f5f5;
+  white-space:nowrap;
+}
+
+.abm-general-reviewed.abm-general-neurological-system .type-badge.live {
+  background:#fff0e8;
+}
+
+
+/* REGION GROUP HEADERS */
+
+.abm-general-reviewed.abm-general-neurological-system #brain-organoid-lp .data-table .region-group-row td {
+  padding:13px 14px !important;
+  background:#fff7f2 !important;
+  border-top:2px solid #f2d5c6 !important;
+  border-bottom:1px solid #f0ddd3 !important;
+}
+
+.abm-general-reviewed.abm-general-neurological-system #brain-organoid-lp .data-table .region-group-row:first-child td {
+  border-top:0 !important;
+}
+
+.abm-general-reviewed.abm-general-neurological-system #brain-organoid-lp .region-group-title {
+  display:block;
+  line-height:1.4 !important;
+}
+
+.abm-general-reviewed.abm-general-neurological-system #brain-organoid-lp .region-group-subtitle {
+  display:block;
+  margin-top:2px;
+  line-height:1.45 !important;
+}
+
+
+/* VALIDATION */
+
+.abm-general-reviewed.abm-general-neurological-system .validation-section {
+  margin:44px 0;
+  background:var(--pale);
+  border:1px solid #f2e4dc;
+  border-radius:18px;
+  padding:28px 24px;
+}
+
+.abm-general-reviewed.abm-general-neurological-system .validation-section h2 {
+  margin:0 0 7px;
+}
+
+.abm-general-reviewed.abm-general-neurological-system .region-validation-list {
+  margin-top:18px;
+  border-top:1px solid #eadfd9;
+}
+
+.abm-general-reviewed.abm-general-neurological-system details.region-validation {
+  border-bottom:1px solid #eadfd9;
+}
+
+.abm-general-reviewed.abm-general-neurological-system details.region-validation > summary {
+  list-style:none;
+  cursor:pointer;
+  padding:18px 46px 18px 0;
+  position:relative;
+}
+
+.abm-general-reviewed.abm-general-neurological-system details.region-validation > summary::-webkit-details-marker {
+  display:none;
+}
+
+.abm-general-reviewed.abm-general-neurological-system details.region-validation > summary:after {
+  content:"+";
+  position:absolute;
+  right:5px;
+  top:13px;
+  width:30px;
+  height:30px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  background:#fff;
+}
+
+.abm-general-reviewed.abm-general-neurological-system details.region-validation[open] > summary:after {
+  content:"−";
+}
+
+.abm-general-reviewed.abm-general-neurological-system .validation-body {
+  padding:0 0 22px;
+}
+
+.abm-general-reviewed.abm-general-neurological-system .validation-intro {
+  margin:0 0 14px;
+}
+
+.abm-general-reviewed.abm-general-neurological-system .image-grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+  align-items:stretch;
+}
+
+.abm-general-reviewed.abm-general-neurological-system .image-tile.assay-card {
+  display:flex;
+  flex-direction:column;
+  width:100%;
+  height:100%;
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:12px;
+  overflow:hidden;
+  cursor:pointer;
+  padding:0;
+  text-align:left;
+}
+
+.abm-general-reviewed.abm-general-neurological-system .image-tile.assay-card:hover,
+.abm-general-reviewed.abm-general-neurological-system .image-tile.assay-card:focus {
+  outline:2px solid #f0c6b2;
+  outline-offset:0;
+}
+
+.abm-general-reviewed.abm-general-neurological-system .image-tile.assay-card img {
+  width:100%;
+  height:185px;
+  object-fit:contain;
+  background:#fff;
+  flex:0 0 auto;
+}
+
+.abm-general-reviewed.abm-general-neurological-system .assay-card-copy {
+  display:block;
+  padding:12px 12px 14px;
+  flex:1 1 auto;
+}
+
+.abm-general-reviewed.abm-general-neurological-system .assay-card-copy strong {
+  display:block;
+  margin:0 0 6px;
+  line-height:1.4;
+}
+
+.abm-general-reviewed.abm-general-neurological-system .assay-card-copy > span {
+  display:block;
+  line-height:1.55;
+}
+
+.abm-general-reviewed.abm-general-neurological-system .sku-row {
+  display:flex;
+  flex-wrap:wrap;
+  gap:7px;
+  margin-top:12px;
+}
+
+.abm-general-reviewed.abm-general-neurological-system .sku-chip {
+  display:inline-flex;
+  gap:5px;
+  padding:6px 9px;
+  border:1px solid #f0d9ce;
+  border-radius:999px;
+  background:#fff;
+}
+
+.abm-general-reviewed.abm-general-neurological-system .sku-chip strong {
+}
+
+
+/* TRUST */
+
+.abm-general-reviewed.abm-general-neurological-system .pillar-grid {
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:16px;
+  margin-top:20px;
+}
+
+.abm-general-reviewed.abm-general-neurological-system .pillar-card {
+  border:1px solid var(--line);
+  border-radius:15px;
+  padding:19px 16px;
+  background:#fff;
+  text-align:center;
+}
+
+.abm-general-reviewed.abm-general-neurological-system .pillar-icon {
+  width:54px;
+  height:54px;
+  border-radius:13px;
+  background:#fff3ed;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin:0 auto 14px;
+}
+
+.abm-general-reviewed.abm-general-neurological-system .pillar-icon svg {
+  width:29px;
+  height:29px;
+  stroke:var(--orange);
+  fill:none;
+  stroke-width:1.8;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+
+.abm-general-reviewed.abm-general-neurological-system .pillar-title {
+  margin:0 0 7px;
+  text-transform:uppercase;
+}
+
+.abm-general-reviewed.abm-general-neurological-system .pillar-card p {
+  margin:0;
+  line-height:1.6;
+}
+
+
+/* CUSTOM + WORKFLOW SUPPORT HUB */
+
+.abm-general-reviewed.abm-general-neurological-system .hero-support-link {
+  margin:14px 0 0 !important;
+  position:relative;
+  z-index:1;
+}
+
+.abm-general-reviewed.abm-general-neurological-system .hero-support-link a {
+  text-decoration:none !important;
+}
+
+.abm-general-reviewed.abm-general-neurological-system .hero-support-link a:hover {
+  text-decoration:underline !important;
+}
+
+.abm-general-reviewed.abm-general-neurological-system .support-hub {
+  margin:42px 0;
+  border:1px solid #f2e4dc;
+  background:var(--pale);
+  border-radius:18px;
+  padding:28px 24px;
+}
+
+.abm-general-reviewed.abm-general-neurological-system .support-hub > h2 {
+  margin:4px 0 8px;
+}
+
+.abm-general-reviewed.abm-general-neurological-system .support-hub > .section-lead {
+  margin-bottom:0;
+}
+
+.abm-general-reviewed.abm-general-neurological-system .support-hub-grid {
+  display:grid;
+  grid-template-columns:.92fr 1.08fr;
+  gap:18px;
+  margin-top:20px;
+}
+
+.abm-general-reviewed.abm-general-neurological-system .support-hub-card {
+  border:1px solid var(--line);
+  border-radius:15px;
+  background:#fff;
+  padding:21px 19px;
+  min-width:0;
+}
+
+.abm-general-reviewed.abm-general-neurological-system .support-hub-card h3 {
+  margin:4px 0 8px;
+}
+
+.abm-general-reviewed.abm-general-neurological-system .support-hub-card p {
+  margin:0;
+}
+
+.abm-general-reviewed.abm-general-neurological-system .support-hub-card .cta-row {
+  margin-top:16px;
+}
+
+.abm-general-reviewed.abm-general-neurological-system .support-hub-card .data-table-wrap {
+  margin-top:14px;
+  border-radius:12px;
+}
+
+.abm-general-reviewed.abm-general-neurological-system .support-hub-card .data-table th,
+.abm-general-reviewed.abm-general-neurological-system .support-hub-card .data-table td {
+  padding:10px 11px;
+}
+
+
+/* FAQ */
+
+.abm-general-reviewed.abm-general-neurological-system .faq-section-wrap {
+  margin-top:46px;
+}
+
+.abm-general-reviewed.abm-general-neurological-system details.faq-section {
+  border:1px solid var(--line);
+  border-radius:16px;
+  overflow:hidden;
+  background:#fff;
+}
+
+.abm-general-reviewed.abm-general-neurological-system .faq-section-summary {
+  list-style:none;
+  cursor:pointer;
+  position:relative;
+  padding:22px 58px 22px 22px;
+  background:var(--pale);
+  border-radius:16px;
+}
+
+.abm-general-reviewed.abm-general-neurological-system .faq-section-summary::-webkit-details-marker {
+  display:none;
+}
+
+.abm-general-reviewed.abm-general-neurological-system .faq-section-summary:after {
+  content:"+";
+  position:absolute;
+  right:18px;
+  top:50%;
+  transform:translateY(-50%);
+  width:32px;
+  height:32px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  background:#fff;
+}
+
+.abm-general-reviewed.abm-general-neurological-system details.faq-section[open] > .faq-section-summary:after {
+  content:"−";
+}
+
+.abm-general-reviewed.abm-general-neurological-system .faq-section-heading {
+  display:block;
+  line-height:1.35;
+}
+
+.abm-general-reviewed.abm-general-neurological-system .faq-section-subheading {
+  display:block;
+  margin-top:5px;
+}
+
+.abm-general-reviewed.abm-general-neurological-system .faq-section-body {
+  padding:0 22px 18px;
+}
+
+.abm-general-reviewed.abm-general-neurological-system .faq-list {
+  margin-top:0;
+}
+
+.abm-general-reviewed.abm-general-neurological-system details.faq-item {
+  border-bottom:1px solid var(--line);
+}
+
+.abm-general-reviewed.abm-general-neurological-system details.faq-item:last-child {
+  border-bottom:0;
+}
+
+.abm-general-reviewed.abm-general-neurological-system details.faq-item summary {
+  list-style:none;
+  cursor:pointer;
+  padding:17px 44px 17px 0;
+  position:relative;
+}
+
+.abm-general-reviewed.abm-general-neurological-system details.faq-item summary::-webkit-details-marker {
+  display:none;
+}
+
+.abm-general-reviewed.abm-general-neurological-system details.faq-item summary:after {
+  content:"+";
+  position:absolute;
+  right:4px;
+  top:12px;
+  width:28px;
+  height:28px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  background:#fafafa;
+}
+
+.abm-general-reviewed.abm-general-neurological-system details.faq-item[open] summary:after {
+  content:"−";
+}
+
+.abm-general-reviewed.abm-general-neurological-system .faq-answer {
+  padding:0 44px 17px 0;
+  line-height:1.7;
+}
+
+
+/* FINAL CTA */
+
+.abm-general-reviewed.abm-general-neurological-system .final-cta {
+  margin:54px 0 0;
+  background:var(--pale);
+  border:1px solid #f2e4dc;
+  border-radius:18px;
+  text-align:center;
+  padding:32px 26px;
+}
+
+.abm-general-reviewed.abm-general-neurological-system .final-cta h2 {
+  margin:0 0 7px;
+}
+
+.abm-general-reviewed.abm-general-neurological-system .final-cta p {
+  margin:0;
+}
+
+.abm-general-reviewed.abm-general-neurological-system .final-cta .cta-row {
+  justify-content:center;
+}
+
+
+/* IMAGE MODAL */
+
+.abm-general-reviewed.abm-general-neurological-system .modal {
+  display:none;
+  position:fixed;
+  inset:0;
+  z-index:9999;
+  background:rgba(0,0,0,.86);
+  padding:28px;
+  align-items:center;
+  justify-content:center;
+}
+
+.abm-general-reviewed.abm-general-neurological-system .modal.open {
+  display:flex;
+}
+
+.abm-general-reviewed.abm-general-neurological-system .modal-inner {
+  width:min(1100px,95vw);
+  max-height:92vh;
+  background:#111;
+  border-radius:16px;
+  overflow:auto;
+  box-shadow:0 20px 70px rgba(0,0,0,.35);
+}
+
+.abm-general-reviewed.abm-general-neurological-system .modal-img {
+  width:100%;
+  max-height:78vh;
+  object-fit:contain;
+  background:#000;
+}
+
+.abm-general-reviewed.abm-general-neurological-system .modal-caption {
+  background:#222;
+  padding:14px 18px;
+  line-height:1.5;
+}
+
+.abm-general-reviewed.abm-general-neurological-system .modal-close {
+  position:fixed;
+  right:26px;
+  top:20px;
+  background:#fff;
+  border:0;
+  width:40px;
+  height:40px;
+  border-radius:50%;
+  cursor:pointer;
+  line-height:1;
+}
+
+
+/* ANCHOR OFFSETS */
+
+.abm-general-reviewed.abm-general-neurological-system #product-info,
+.abm-general-reviewed.abm-general-neurological-system #brain-regions,
+.abm-general-reviewed.abm-general-neurological-system #formats,
+.abm-general-reviewed.abm-general-neurological-system #portfolio,
+.abm-general-reviewed.abm-general-neurological-system #midbrain-products,
+.abm-general-reviewed.abm-general-neurological-system #dorsal-products,
+.abm-general-reviewed.abm-general-neurological-system #ventral-products,
+.abm-general-reviewed.abm-general-neurological-system #validation,
+.abm-general-reviewed.abm-general-neurological-system #quality,
+.abm-general-reviewed.abm-general-neurological-system #research-support,
+.abm-general-reviewed.abm-general-neurological-system #custom-services,
+.abm-general-reviewed.abm-general-neurological-system #support-materials,
+.abm-general-reviewed.abm-general-neurological-system #faq,
+.abm-general-reviewed.abm-general-neurological-system #final-cta {
+  scroll-margin-top:100px;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width:960px) {
+
+  .abm-general-reviewed.abm-general-neurological-system .region-picker,
+  .abm-general-reviewed.abm-general-neurological-system .pillar-grid {
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .abm-general-reviewed.abm-general-neurological-system .image-grid {
+    grid-template-columns:1fr;
+  }
+
+  .abm-general-reviewed.abm-general-neurological-system .image-tile img {
+    height:auto;
+    max-height:520px;
+  }
+
+}
+
+
+@media (max-width:720px) {
+
+  .abm-general-reviewed.abm-general-neurological-system .lp-wrap {
+    padding:0 14px 50px;
+  }
+
+  .abm-general-reviewed.abm-general-neurological-system .hero-banner {
+    padding:27px 22px 28px;
+  }
+
+  .abm-general-reviewed.abm-general-neurological-system .hero-title {
+  }
+
+  .abm-general-reviewed.abm-general-neurological-system .hero-tagline {
+  }
+
+  .abm-general-reviewed.abm-general-neurological-system .region-picker,
+  .abm-general-reviewed.abm-general-neurological-system .format-grid,
+  .abm-general-reviewed.abm-general-neurological-system .pillar-grid {
+    grid-template-columns:1fr;
+  }
+
+  .abm-general-reviewed.abm-general-neurological-system .region-image {
+    height:220px;
+  }
+
+  .abm-general-reviewed.abm-general-neurological-system .cta-row a {
+    max-width:100%;
+    flex:1 1 100%;
+  }
+
+  .abm-general-reviewed.abm-general-neurological-system .product-info,
+  .abm-general-reviewed.abm-general-neurological-system .validation-section {
+    padding:23px 18px;
+  }
+
+  .abm-general-reviewed.abm-general-neurological-system .jump-nav {
+    display:none;
+  }
+
+}
+
+
+/* CMS-SAFE TYPOGRAPHY + COMPONENT OVERRIDES */
+
+.abm-general-reviewed.abm-general-neurological-system #brain-organoid-lp,
+.abm-general-reviewed.abm-general-neurological-system #brain-organoid-lp table,
+.abm-general-reviewed.abm-general-neurological-system #brain-organoid-lp th,
+.abm-general-reviewed.abm-general-neurological-system #brain-organoid-lp td,
+.abm-general-reviewed.abm-general-neurological-system #brain-organoid-lp div,
+.abm-general-reviewed.abm-general-neurological-system #brain-organoid-lp h1,
+.abm-general-reviewed.abm-general-neurological-system #brain-organoid-lp h2,
+.abm-general-reviewed.abm-general-neurological-system #brain-organoid-lp h3,
+.abm-general-reviewed.abm-general-neurological-system #brain-organoid-lp h4,
+.abm-general-reviewed.abm-general-neurological-system #brain-organoid-lp h5,
+.abm-general-reviewed.abm-general-neurological-system #brain-organoid-lp p,
+.abm-general-reviewed.abm-general-neurological-system #brain-organoid-lp li,
+.abm-general-reviewed.abm-general-neurological-system #brain-organoid-lp a,
+.abm-general-reviewed.abm-general-neurological-system #brain-organoid-lp span,
+.abm-general-reviewed.abm-general-neurological-system #brain-organoid-lp button,
+.abm-general-reviewed.abm-general-neurological-system #brain-organoid-lp summary {
+}
+
+.abm-general-reviewed.abm-general-neurological-system #brain-organoid-lp {
+  line-height:1.55 !important;
+}
+
+.abm-general-reviewed.abm-general-neurological-system #brain-organoid-lp p,
+.abm-general-reviewed.abm-general-neurological-system #brain-organoid-lp li,
+.abm-general-reviewed.abm-general-neurological-system #brain-organoid-lp td,
+.abm-general-reviewed.abm-general-neurological-system #brain-organoid-lp th {
+  line-height:1.6 !important;
+}
+
+.abm-general-reviewed.abm-general-neurological-system #brain-organoid-lp h1.hero-title {
+  line-height:1.25 !important;
+  margin:0 0 16px !important;
+}
+
+.abm-general-reviewed.abm-general-neurological-system #brain-organoid-lp h2 {
+  line-height:1.4 !important;
+}
+
+.abm-general-reviewed.abm-general-neurological-system #brain-organoid-lp h3 {
+  line-height:1.4 !important;
+}
+
+.abm-general-reviewed.abm-general-neurological-system #brain-organoid-lp .hero-kicker {
+  line-height:1.4 !important;
+}
+
+.abm-general-reviewed.abm-general-neurological-system #brain-organoid-lp .hero-tagline {
+  line-height:1.45 !important;
+}
+
+.abm-general-reviewed.abm-general-neurological-system #brain-organoid-lp .hero-subcopy {
+  line-height:1.55 !important;
+}
+
+.abm-general-reviewed.abm-general-neurological-system #brain-organoid-lp .section-title {
+  line-height:1.4 !important;
+  margin:46px 0 9px !important;
+}
+
+.abm-general-reviewed.abm-general-neurological-system #brain-organoid-lp .section-lead {
+  line-height:1.6 !important;
+}
+
+.abm-general-reviewed.abm-general-neurological-system #brain-organoid-lp .product-info-header h2 {
+  line-height:1.4 !important;
+}
+
+.abm-general-reviewed.abm-general-neurological-system #brain-organoid-lp .product-subtitle {
+  line-height:1.4 !important;
+}
+
+.abm-general-reviewed.abm-general-neurological-system #brain-organoid-lp .product-subcopy,
+.abm-general-reviewed.abm-general-neurological-system #brain-organoid-lp .format-help {
+  line-height:1.6 !important;
+}
+
+.abm-general-reviewed.abm-general-neurological-system #brain-organoid-lp .orange-button {
+  line-height:1.25 !important;
+  text-decoration:none !important;
+}
+
+.abm-general-reviewed.abm-general-neurological-system #brain-organoid-lp .orange-button.secondary {
+  background:#fff !important;
+}
+
+.abm-general-reviewed.abm-general-neurological-system #brain-organoid-lp details.region-validation > summary,
+.abm-general-reviewed.abm-general-neurological-system #brain-organoid-lp details.faq-item > summary {
+  line-height:1.5 !important;
+}
+
+.abm-general-reviewed.abm-general-neurological-system #brain-organoid-lp .faq-section-heading {
+  line-height:1.35 !important;
+}
+
+.abm-general-reviewed.abm-general-neurological-system #brain-organoid-lp .faq-section-subheading {
+  line-height:1.5 !important;
+}
+
+.abm-general-reviewed.abm-general-neurological-system #brain-organoid-lp .assay-card-copy strong {
+  line-height:1.4 !important;
+}
+
+.abm-general-reviewed.abm-general-neurological-system #brain-organoid-lp .assay-card-copy > span {
+  line-height:1.55 !important;
+}
+
+.abm-general-reviewed.abm-general-neurological-system #brain-organoid-lp button.image-tile.assay-card {
+  text-transform:none !important;
+  letter-spacing:normal !important;
+  background:#fff !important;
+}
+
+.abm-general-reviewed.abm-general-neurological-system #brain-organoid-lp .support-hub h2 {
+  line-height:1.4 !important;
+}
+
+.abm-general-reviewed.abm-general-neurological-system #brain-organoid-lp .support-hub h3 {
+  line-height:1.4 !important;
+}
+
+.abm-general-reviewed.abm-general-neurological-system #brain-organoid-lp .hero-support-link,
+.abm-general-reviewed.abm-general-neurological-system #brain-organoid-lp .hero-support-link a {
+  line-height:1.5 !important;
+}
+
+
+/* KEEP VISITED LINKS FROM TURNING BLUE/PURPLE */
+
+.abm-general-reviewed.abm-general-neurological-system #brain-organoid-lp a:link,
+.abm-general-reviewed.abm-general-neurological-system #brain-organoid-lp a:visited {
+}
+
+.abm-general-reviewed.abm-general-neurological-system #brain-organoid-lp .jump-nav a:link,
+.abm-general-reviewed.abm-general-neurological-system #brain-organoid-lp .jump-nav a:visited {
+}
+
+.abm-general-reviewed.abm-general-neurological-system #brain-organoid-lp .jump-nav a:hover,
+.abm-general-reviewed.abm-general-neurological-system #brain-organoid-lp .jump-nav a:focus {
+}
+
+.abm-general-reviewed.abm-general-neurological-system #brain-organoid-lp .pick-link:link,
+.abm-general-reviewed.abm-general-neurological-system #brain-organoid-lp .pick-link:visited,
+.abm-general-reviewed.abm-general-neurological-system #brain-organoid-lp .format-help a:link,
+.abm-general-reviewed.abm-general-neurological-system #brain-organoid-lp .format-help a:visited,
+.abm-general-reviewed.abm-general-neurological-system #brain-organoid-lp .hero-support-link a:link,
+.abm-general-reviewed.abm-general-neurological-system #brain-organoid-lp .hero-support-link a:visited {
+}
+
+.abm-general-reviewed.abm-general-neurological-system #brain-organoid-lp .cta-row a:link,
+.abm-general-reviewed.abm-general-neurological-system #brain-organoid-lp .cta-row a:visited {
+  text-decoration:none !important;
+}
+
+
+/* TABLE GROUP HEADER CMS OVERRIDES */
+
+.abm-general-reviewed.abm-general-neurological-system #brain-organoid-lp .region-group-title {
+  line-height:1.4 !important;
+}
+
+.abm-general-reviewed.abm-general-neurological-system #brain-organoid-lp .region-group-subtitle {
+  line-height:1.45 !important;
+}
+
+
+@media (max-width:900px) {
+
+  .abm-general-reviewed.abm-general-neurological-system #brain-organoid-lp .hero-layout {
+    grid-template-columns:1fr !important;
+  }
+
+  .abm-general-reviewed.abm-general-neurological-system #brain-organoid-lp .support-hub-grid {
+    grid-template-columns:1fr !important;
+  }
+
+  .abm-general-reviewed.abm-general-neurological-system #brain-organoid-lp .hero-image-card {
+    max-width:640px;
+  }
+
+  .abm-general-reviewed.abm-general-neurological-system #brain-organoid-lp .hero-image-card img {
+    height:auto;
+    max-height:480px;
+    object-fit:contain;
+  }
+
+}
+
+
+@media (max-width:720px) {
+
+  .abm-general-reviewed.abm-general-neurological-system #brain-organoid-lp h1.hero-title {
+  }
+
+  .abm-general-reviewed.abm-general-neurological-system #brain-organoid-lp .hero-tagline {
+  }
+
+}

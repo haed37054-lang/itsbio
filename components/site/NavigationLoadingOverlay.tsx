@@ -10,6 +10,13 @@ const COMPLETE_HOLD_MS = 180;
 const FAILSAFE_MS = 12000;
 
 type IndicatorState = "hidden" | "running" | "complete";
+type NavigationTheme = "default" | "kent" | "cleaver";
+
+function navigationThemeForPath(pathname: string): NavigationTheme {
+  if (pathname === "/products/kent" || pathname.startsWith("/products/kent/")) return "kent";
+  if (pathname === "/products/cleaver" || pathname.startsWith("/products/cleaver/")) return "cleaver";
+  return "default";
+}
 
 type SlowTarget = {
   element: HTMLElement;
@@ -70,10 +77,11 @@ function createSlowTarget(): SlowTarget | null {
   };
 }
 
-function SlowContentSkeleton({ target }: { target: SlowTarget }) {
+function SlowContentSkeleton({ target, theme }: { target: SlowTarget; theme: NavigationTheme }) {
   return createPortal(
     <div
       className="navigation-content-skeleton"
+      data-navigation-theme={theme}
       style={{ top: target.top, height: target.height }}
       aria-hidden="true"
     >
@@ -103,6 +111,7 @@ export default function NavigationLoadingOverlay() {
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const [indicatorState, setIndicatorState] = useState<IndicatorState>("hidden");
+  const [navigationTheme, setNavigationTheme] = useState<NavigationTheme>("default");
   const [slowTarget, setSlowTarget] = useState<SlowTarget | null>(null);
   const pendingRef = useRef(false);
   const indicatorVisibleRef = useRef(false);
@@ -155,13 +164,14 @@ export default function NavigationLoadingOverlay() {
     }, COMPLETE_HOLD_MS);
   };
 
-  const begin = (anchor?: HTMLAnchorElement) => {
+  const begin = (anchor?: HTMLAnchorElement, destinationPath = window.location.pathname) => {
     if (pendingRef.current) return;
     pendingRef.current = true;
     clearTimers();
     clearPendingDecorations();
     indicatorVisibleRef.current = false;
     setIndicatorState("hidden");
+    setNavigationTheme(navigationThemeForPath(destinationPath));
 
     if (anchor) {
       activeAnchorRef.current = anchor;
@@ -218,7 +228,7 @@ export default function NavigationLoadingOverlay() {
       ) return;
 
       // Keep ownership of the navigation with Next.js so its cache remains intact.
-      begin(anchor);
+      begin(anchor, nextUrl.pathname);
     };
 
     const onSubmit = (event: SubmitEvent) => {
@@ -236,7 +246,7 @@ export default function NavigationLoadingOverlay() {
       }
       if (action.origin !== window.location.origin) return;
 
-      begin();
+      begin(undefined, action.pathname);
     };
 
     const onPageShow = () => {
@@ -261,14 +271,14 @@ export default function NavigationLoadingOverlay() {
   return (
     <>
       {indicatorState !== "hidden" ? (
-        <div className="navigation-progress" role="status" aria-live="polite" aria-label="Loading page">
+        <div className="navigation-progress" data-navigation-theme={navigationTheme} role="status" aria-live="polite" aria-label="Loading page">
           <span className="sr-only">Loading the next page</span>
           <span className="navigation-progress-rail">
             <span className="navigation-progress-bar" data-state={indicatorState} />
           </span>
         </div>
       ) : null}
-      {slowTarget ? <SlowContentSkeleton target={slowTarget} /> : null}
+      {slowTarget ? <SlowContentSkeleton target={slowTarget} theme={navigationTheme} /> : null}
     </>
   );
 }

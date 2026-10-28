@@ -67,6 +67,11 @@ const nextConfig: NextConfig = {
 
     return [
       {
+        source: "/products/kent/animal-handling",
+        destination: "/products/kent/laboratory-animal-handling",
+        permanent: true,
+      },
+      {
         source: "/products/abm/general-materials/gel-documentation/dna-stains",
         destination: "/products/abm/general-materials/gel-documentation#safeview-dna-stains",
         permanent: false,

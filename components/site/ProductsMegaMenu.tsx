@@ -63,6 +63,9 @@ const CLEAVER_CATEGORY_HREFS: Record<string, string> = {
 
 function productCategoryHref(brand: Brand, category: string) {
   if (brand.key === "cleaver") return CLEAVER_CATEGORY_HREFS[category] || brand.href;
+  if (brand.key === "kent" && category === "Animal Handling") {
+    return "/products/kent/laboratory-animal-handling";
+  }
   if (brand.key === "kent") return `/products/kent/${slugify(category)}`;
   return `/search?q=${encodeURIComponent(category)}&brand=${encodeURIComponent(brand.searchKey)}`;
 }

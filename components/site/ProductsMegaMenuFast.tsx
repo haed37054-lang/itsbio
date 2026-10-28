@@ -58,7 +58,7 @@ const BRANDS: BrandMenu[] = [
           { label: "Surgery", href: "/products/kent/surgery" },
           { label: "Warming", href: "/products/kent/warming" },
           { label: "Rodent Identification", href: "/products/kent/rodent-identification" },
-          { label: "Animal Handling", href: "/products/kent/animal-handling" },
+          { label: "Animal Handling", href: "/products/kent/laboratory-animal-handling" },
           { label: "Feeding Needles", href: "/products/kent/feeding-needles" },
         ],
       },

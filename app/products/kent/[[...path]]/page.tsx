@@ -2248,10 +2248,13 @@ function renderLandingBlocks(blocks: ContentBlock[], theme: Theme) {
 
 export default async function KentProductsPathPage({
   params,
+  searchParams,
 }: {
   params: Promise<{ path?: string[] }> | { path?: string[] };
+  searchParams?: Promise<{ view?: string | string[] }> | { view?: string | string[] };
 }) {
   const resolved = await Promise.resolve(params as { path?: string[] });
+  const requestedView = (await searchParams)?.view;
   const pathArr = normalizePathSegments((resolved?.path ?? []) as string[]);
   const hasPath = pathArr.length > 0;
   const pathStr = pathArr.join("/");
@@ -2387,18 +2390,34 @@ export default async function KentProductsPathPage({
   const productsInCategory = resolveListingProducts(pathArr, category, allProducts);
   const officialProductCount = currentCategory?.count ?? dedupeProducts(productsInCategory).length;
   const directChildren = getDirectChildren(allCategories, pathArr);
-  const pageType: PageType = currentCategory
-    ? (directChildren.length > 0 ? "landing" : "listing")
-    : resolvePageType(category, pathStr, directChildren.length, officialProductCount);
+  const pageType: PageType = requestedView === "products"
+    ? "listing"
+    : currentCategory
+      ? (directChildren.length > 0 ? "landing" : "listing")
+      : resolvePageType(category, pathStr, directChildren.length, officialProductCount);
 
   const pageTitle =
     STATIC_LABEL_BY_PATH.get(pathStr) || normalizeTitle(category.title || "", pathArr[pathArr.length - 1] || "");
 
+  const categoryHref = buildCategoryHref(pathArr);
   const blocks = hydrateProductCardBlocks(
     coerceContentBlocks(Array.isArray(category.contentBlocks) ? category.contentBlocks : []),
     allProducts,
     allCategories,
-  );
+  ).map((block) => {
+    if (block._type !== "contentBlockCards" || block.kind !== "category") return block;
+
+    // A card for the current category opens its complete product listing.
+    // Linking to the landing page itself leaves the user on the same screen.
+    return {
+      ...block,
+      items: block.items?.map((item) =>
+        resolveKentHref(String(item.href || "")).split(/[?#]/)[0].replace(/\/$/, "") === categoryHref
+          ? { ...item, href: `${categoryHref}?view=products` }
+          : item,
+      ),
+    };
+  });
   const renderedBlocks = renderLandingBlocks(blocks, THEME_KENT);
   const fallbackHtml = typeof category.legacyHtml === "string" ? category.legacyHtml : "";
   const hasFallbackHtml = roughTextLenFromHtml(safeHtmlForRender(fallbackHtml)) >= 20;
@@ -2452,6 +2471,11 @@ export default async function KentProductsPathPage({
   } else {
     mainContent = (
       <>
+        {requestedView === "products" && directChildren.length ? (
+          <Link href={categoryHref} prefetch={false} className="mt-5 inline-flex text-sm font-semibold text-blue-700 hover:underline">
+            ‹ Browse subcategories
+          </Link>
+        ) : null}
         <ListingIntro html={firstHtmlBlock?.html} summary={category.summary} />
         <ListingHeader count={officialProductCount} theme={THEME_KENT} />
         {!productsInCategory.length && directChildren.length ? (

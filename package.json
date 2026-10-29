@@ -6,7 +6,7 @@
     "dev": "next dev",
     "predev": "node scripts/assemble-abm-reviewed-assets.mjs",
     "build": "next build",
-    "prebuild": "node scripts/assemble-abm-reviewed-assets.mjs",
+    "prebuild": "node scripts/assemble-abm-reviewed-assets.mjs && npm run cleaver:images:test",
     "start": "next start",
     "lint": "eslint",
     "production:audit": "node scripts/production-audit.mjs",
@@ -55,7 +55,9 @@
     "kent:category:dry": "node scripts/kent-category-migrate.mjs --dryRun",
     "kent:category:refresh:dry": "node scripts/kent-category-migrate.mjs --dryRun --refresh",
     "kent:category:write": "node scripts/kent-category-migrate.mjs",
-    "kent:category:refresh:write": "node scripts/kent-category-migrate.mjs --refresh"
+    "kent:category:refresh:write": "node scripts/kent-category-migrate.mjs --refresh",
+    "cleaver:images:test": "node --experimental-strip-types --test tests/cleaver-relation-images.test.mjs",
+    "cleaver:images:audit": "node --experimental-strip-types scripts/audit-cleaver-relation-images.mjs"
   },
   "dependencies": {
     "@portabletext/react": "^6.0.2",

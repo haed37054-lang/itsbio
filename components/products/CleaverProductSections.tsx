@@ -1,6 +1,8 @@
 import Link from "next/link";
 
 import sourceMap from "@/data/cleaver-source-map.json";
+import inventory from "@/data/cleaver-product-catalog.json";
+import { createCleaverRelationImageResolver } from "@/lib/cleaver/relation-images";
 import CleaverSourceImage from "@/components/products/CleaverSourceImage";
 import HtmlContent from "@/components/site/HtmlContent";
 import type { CleaverProduct } from "@/lib/cleaver/catalog";
@@ -17,58 +19,10 @@ type SourceAwareCleaverProduct = CleaverProduct & {
   cleaverExtraSections?: Array<{ title: string; html?: string }>;
 };
 
-type SourceIdentity = {
-  sourceUrl?: string;
-  sourceSlug?: string;
-  images?: string[];
-};
+const relationImages = createCleaverRelationImageResolver(sourceMap, inventory);
 
-type RelationImageItem = {
-  sku?: string;
-  sourceUrl?: string;
-  imageUrl?: string;
-};
-
-const CLEAVER_SOURCE_MAP = sourceMap as Record<string, SourceIdentity>;
-
-function normalizedSku(value?: string) {
-  return String(value || "").normalize("NFKC").trim().toUpperCase();
-}
-
-function normalizedSourceUrl(value?: string) {
-  if (!value) return "";
-  try {
-    const url = new URL(value);
-    url.hash = "";
-    url.search = "";
-    return `${url.hostname.toLowerCase()}${url.pathname.replace(/\/+$/, "")}`;
-  } catch {
-    return String(value || "").trim().toLowerCase().replace(/\/+$/, "");
-  }
-}
-
-const SOURCE_IDENTITY_BY_URL = new Map<string, SourceIdentity>();
-for (const identity of Object.values(CLEAVER_SOURCE_MAP)) {
-  const key = normalizedSourceUrl(identity.sourceUrl);
-  if (key && !SOURCE_IDENTITY_BY_URL.has(key)) SOURCE_IDENTITY_BY_URL.set(key, identity);
-}
-
-function relationSourceIdentity(item?: RelationImageItem) {
-  if (!item) return undefined;
-  const bySku = item.sku ? CLEAVER_SOURCE_MAP[normalizedSku(item.sku)] : undefined;
-  const byUrl = !bySku && item.sourceUrl ? SOURCE_IDENTITY_BY_URL.get(normalizedSourceUrl(item.sourceUrl)) : undefined;
-  return bySku || byUrl;
-}
-
-function relationImageUrl(item?: RelationImageItem) {
-  if (!item) return "";
-  const exactSource = relationSourceIdentity(item);
-
-  if (exactSource) {
-    return (exactSource.images || []).map((value) => String(value || "").trim()).find(Boolean) || "";
-  }
-
-  return String(item.imageUrl || "").trim();
+function relationImageUrl(item: Parameters<typeof relationImages.resolve>[0]) {
+  return relationImages.resolve(item).imageUrl;
 }
 
 function sectionKey(value: string) {
@@ -199,22 +153,13 @@ export default function CleaverProductSections({ product }: { product: CleaverPr
     return groups;
   }, []);
 
-  const normalizedTitle = (value: string) => value.trim().toLowerCase().replace(/[×]/g, "x").replace(/[‐‑‒–—−]/g, "-").replace(/\s+/g, " ");
   const includedCards = included.map((item) => {
-    const normalized = normalizedTitle(item.title);
-    const sourceIdentity = relationSourceIdentity(item);
-    const itemSource = normalizedSourceUrl(item.sourceUrl);
-    const accessory = accessories.find((candidate) =>
-      (itemSource && normalizedSourceUrl(candidate.sourceUrl) === itemSource)
-      || normalizedTitle(candidate.title) === normalized,
-    );
-    const variation = variations.find((candidate) => normalizedTitle(candidate.title) === normalized);
+    const resolved = relationImages.resolve(item, [...accessories, ...variations], true);
     return {
       title: item.title,
       quantity: item.quantity,
-      imageUrl: item.imageUrl || relationImageUrl(item) || relationImageUrl(accessory) || relationImageUrl(variation),
-      href: accessory?.internalHref || variation?.internalHref
-        || (sourceIdentity?.sourceSlug ? `/products/cleaver/item/${sourceIdentity.sourceSlug}` : undefined),
+      imageUrl: resolved.imageUrl,
+      href: resolved.internalHref,
     };
   });
 

@@ -67,6 +67,12 @@ const nextConfig: NextConfig = {
 
     return [
       {
+        source: "/products/kent/laboratory-animal-handling",
+        has: [{ type: "query", key: "view", value: "products" }],
+        destination: "/products/kent/laboratory-animal-handling/all-products",
+        permanent: false,
+      },
+      {
         source: "/products/kent/animal-handling",
         destination: "/products/kent/laboratory-animal-handling",
         permanent: true,

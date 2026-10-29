@@ -13,6 +13,10 @@ import { PUBLIC_CATALOG_CACHE, sanityCdnClient } from "@/lib/sanity/sanity.clien
 
 export const revalidate = 300;
 
+export function generateStaticParams() {
+  return [];
+}
+
 const BRAND_KEY = "kent";
 const PRODUCT_DOC_TYPE =
   process.env.VERCEL_ENV === "preview" && String(process.env.VERCEL_GIT_COMMIT_REF || "").startsWith("agent/kent")

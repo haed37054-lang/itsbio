@@ -75,7 +75,7 @@ export default function Header() {
 
   useEffect(() => {
     const prefetched = new Set<string>();
-    const onPointerOver = (event: PointerEvent) => {
+    const onNavigationIntent = (event: PointerEvent | FocusEvent) => {
       const target = event.target as Element | null;
       const anchor = target?.closest?.("a[href]") as HTMLAnchorElement | null;
       if (!anchor) return;
@@ -88,7 +88,9 @@ export default function Header() {
       }
 
       if (url.origin !== window.location.origin) return;
-      if (!url.pathname.startsWith("/products/cleaver")) return;
+      if (!/^\/products\/(cleaver|kent)(?:\/|$)/.test(url.pathname)) return;
+      if (anchor.target === "_blank" || anchor.hasAttribute("download")) return;
+      if (url.pathname === window.location.pathname && url.search === window.location.search) return;
 
       const href = `${url.pathname}${url.search}`;
       if (prefetched.has(href)) return;
@@ -96,8 +98,12 @@ export default function Header() {
       router.prefetch(href);
     };
 
-    document.addEventListener("pointerover", onPointerOver, { passive: true });
-    return () => document.removeEventListener("pointerover", onPointerOver);
+    document.addEventListener("pointerover", onNavigationIntent, { passive: true });
+    document.addEventListener("focusin", onNavigationIntent);
+    return () => {
+      document.removeEventListener("pointerover", onNavigationIntent);
+      document.removeEventListener("focusin", onNavigationIntent);
+    };
   }, [router]);
 
   return (

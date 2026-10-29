@@ -11,6 +11,11 @@ import kentCurrentTaxonomy from "@/data/kent-current-taxonomy.json";
 
 export const revalidate = 300;
 
+// Generate and cache catalog pages on their first visit, then refresh in the background.
+export function generateStaticParams() {
+  return [];
+}
+
 const BRAND_KEY = "kent";
 const BRAND_BASE = "https://www.kentscientific.com";
 const KENT_MENU_TITLE = "General Lab Equipment";
@@ -2248,14 +2253,14 @@ function renderLandingBlocks(blocks: ContentBlock[], theme: Theme) {
 
 export default async function KentProductsPathPage({
   params,
-  searchParams,
 }: {
   params: Promise<{ path?: string[] }> | { path?: string[] };
-  searchParams?: Promise<{ view?: string | string[] }> | { view?: string | string[] };
 }) {
   const resolved = await Promise.resolve(params as { path?: string[] });
-  const requestedView = (await searchParams)?.view;
-  const pathArr = normalizePathSegments((resolved?.path ?? []) as string[]);
+  const requestedPath = normalizePathSegments((resolved?.path ?? []) as string[]);
+  const showAllProducts = requestedPath.at(-1) === "all-products";
+  const pathArr = showAllProducts ? requestedPath.slice(0, -1) : requestedPath;
+  if (showAllProducts && !pathArr.length) notFound();
   const hasPath = pathArr.length > 0;
   const pathStr = pathArr.join("/");
   const taxonomyCategoryForRequest = hasPath ? resolveCurrentKentCategory(pathArr) : null;
@@ -2390,7 +2395,7 @@ export default async function KentProductsPathPage({
   const productsInCategory = resolveListingProducts(pathArr, category, allProducts);
   const officialProductCount = currentCategory?.count ?? dedupeProducts(productsInCategory).length;
   const directChildren = getDirectChildren(allCategories, pathArr);
-  const pageType: PageType = requestedView === "products"
+  const pageType: PageType = showAllProducts
     ? "listing"
     : currentCategory
       ? (directChildren.length > 0 ? "landing" : "listing")
@@ -2413,7 +2418,7 @@ export default async function KentProductsPathPage({
       ...block,
       items: block.items?.map((item) =>
         resolveKentHref(String(item.href || "")).split(/[?#]/)[0].replace(/\/$/, "") === categoryHref
-          ? { ...item, href: `${categoryHref}?view=products` }
+          ? { ...item, href: `${categoryHref}/all-products` }
           : item,
       ),
     };
@@ -2471,7 +2476,7 @@ export default async function KentProductsPathPage({
   } else {
     mainContent = (
       <>
-        {requestedView === "products" && directChildren.length ? (
+        {showAllProducts && directChildren.length ? (
           <Link href={categoryHref} prefetch={false} className="mt-5 inline-flex text-sm font-semibold text-blue-700 hover:underline">
             ‹ Browse subcategories
           </Link>

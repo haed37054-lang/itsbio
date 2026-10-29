@@ -19,6 +19,7 @@ type SourceAwareCleaverProduct = CleaverProduct & {
 
 type SourceIdentity = {
   sourceUrl?: string;
+  sourceSlug?: string;
   images?: string[];
 };
 
@@ -52,11 +53,16 @@ for (const identity of Object.values(CLEAVER_SOURCE_MAP)) {
   if (key && !SOURCE_IDENTITY_BY_URL.has(key)) SOURCE_IDENTITY_BY_URL.set(key, identity);
 }
 
-function relationImageUrl(item?: RelationImageItem) {
-  if (!item) return "";
+function relationSourceIdentity(item?: RelationImageItem) {
+  if (!item) return undefined;
   const bySku = item.sku ? CLEAVER_SOURCE_MAP[normalizedSku(item.sku)] : undefined;
   const byUrl = !bySku && item.sourceUrl ? SOURCE_IDENTITY_BY_URL.get(normalizedSourceUrl(item.sourceUrl)) : undefined;
-  const exactSource = bySku || byUrl;
+  return bySku || byUrl;
+}
+
+function relationImageUrl(item?: RelationImageItem) {
+  if (!item) return "";
+  const exactSource = relationSourceIdentity(item);
 
   if (exactSource) {
     return (exactSource.images || []).map((value) => String(value || "").trim()).find(Boolean) || "";
@@ -193,16 +199,22 @@ export default function CleaverProductSections({ product }: { product: CleaverPr
     return groups;
   }, []);
 
-  const normalizedTitle = (value: string) => value.trim().toLowerCase().replace(/[×]/g, "x").replace(/\s+/g, " ");
+  const normalizedTitle = (value: string) => value.trim().toLowerCase().replace(/[×]/g, "x").replace(/[‐‑‒–—−]/g, "-").replace(/\s+/g, " ");
   const includedCards = included.map((item) => {
     const normalized = normalizedTitle(item.title);
-    const accessory = accessories.find((candidate) => normalizedTitle(candidate.title) === normalized);
+    const sourceIdentity = relationSourceIdentity(item);
+    const itemSource = normalizedSourceUrl(item.sourceUrl);
+    const accessory = accessories.find((candidate) =>
+      (itemSource && normalizedSourceUrl(candidate.sourceUrl) === itemSource)
+      || normalizedTitle(candidate.title) === normalized,
+    );
     const variation = variations.find((candidate) => normalizedTitle(candidate.title) === normalized);
     return {
       title: item.title,
       quantity: item.quantity,
-      imageUrl: item.imageUrl || relationImageUrl(accessory) || relationImageUrl(variation),
-      href: accessory?.internalHref || variation?.internalHref,
+      imageUrl: item.imageUrl || relationImageUrl(item) || relationImageUrl(accessory) || relationImageUrl(variation),
+      href: accessory?.internalHref || variation?.internalHref
+        || (sourceIdentity?.sourceSlug ? `/products/cleaver/item/${sourceIdentity.sourceSlug}` : undefined),
     };
   });
 

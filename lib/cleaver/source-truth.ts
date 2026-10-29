@@ -1,4 +1,25 @@
 import type { CleaverProduct } from "@/lib/cleaver/catalog";
+import sourceMap from "@/data/cleaver-source-map.json";
+
+// Exact contents and variants from the MINIAGAROSEPACK500 source page.
+const MINI_AGAROSE_KIT_INCLUDED_ITEMS = [
+  ["multiSUB Midi, Midi Horizontal Electrophoresis System - multiSUB Midi with 10 x 7cm & 10 x 10cm Gel tray", "MSMIDIDUO"],
+  ["PowerPRO 500 Power Supply, 500V, 800mA, 300W", "POWERPRO500"],
+  ["Agarose, Low EEO - Agarose 100g", "CSL-AG100"],
+  ["1Kb PLUS DNA ladder, 100-10Kb - 1Kb PLUS DNA ladder, 100-10Kb, 1 x 500ul vial", "CSL-MDNA-1KBPLUS"],
+  ["multiSUB Midi - 10cm UV Gel Scoop", "MS10-UVS"],
+  ["Tris-Acetate-EDTA (TAE) Buffer - Tris-Acetate EDTA Running Buffer 50X - 1L", "TAE50X1L"],
+  ["UV Fluorescent Ruler", "CSL-RULER"],
+  ["runSAFE Safe DNA staining reagent - runSAFE stain 1ml/vial", "CSL-RUNSAFE"],
+].map(([title, sku]) => {
+  const identity = sourceMap[sku as keyof typeof sourceMap];
+  return {
+    title,
+    quantity: "1",
+    sourceUrl: identity.sourceUrl,
+    imageUrl: identity.images[0],
+  };
+});
 
 function sourceProductPath(value?: string) {
   if (!value) return "";
@@ -77,6 +98,9 @@ const SPARSE_PRODUCT_OVERRIDES: Record<string, Partial<CleaverProduct>> = {
 };
 
 const VERIFIED_PRODUCT_OVERRIDES: Record<string, Partial<CleaverProduct>> = {
+  "MINIAGAROSEPACK500": {
+    cleaverIncludedItems: MINI_AGAROSE_KIT_INCLUDED_ITEMS,
+  },
   "MSO-1-12/22DS": {
     cleaverAtAGlance: [
       "Molded, 1 mm thick double-sided comb.",

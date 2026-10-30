@@ -102,6 +102,12 @@ def main():
  products.sort(key=lambda p:p['title'].casefold())
  # Public catalog records are counted separately from unpublished collection totals.
  report={'source':'https://seedburo.com/','collectedAt':datetime.datetime.now(datetime.timezone.utc).isoformat(),'sourceRecords':source_record_count,'sourceProductPages':len(canonical),'products':len(products),'variants':sum(len(p['variants']) for p in products),'collections':len(collections),'productsWithGallery':sum(bool(p['images']) for p in products),'productsWithoutGallery':sum(not p['images'] for p in products),'additionalTabs':tabcount,'collectionErrors':json.loads((root/'collection-errors.json').read_text()),'sectionErrors':json.loads((root/'section-errors.json').read_text())}
+ imagechecks=json.loads((root/'image-checks.json').read_text()) if (root/'image-checks.json').exists() else {}
+ imageurls={image['url'] for product in products for image in product['images']}
+ verified=sum(imagechecks.get(url,{}).get('status')==200 and imagechecks.get(url,{}).get('contentType','').startswith('image/') for url in imageurls)
+ report['gallerySourceUrls']=len(imageurls)
+ report['verifiedGallerySourceUrls']=verified
+ report['unverifiedGallerySourceUrls']=len(imageurls)-verified
  if report['collectionErrors'] or report['sectionErrors']:raise RuntimeError('Source collection has failures')
  for filename,data in [('catalog.json',products),('collections.json',collections),('navigation.json',{'categories':navigation,'phases':phases}),('migration-report.json',report)]:
   (out/filename).write_text(json.dumps(data,ensure_ascii=False,separators=(',',':'))+'\n')

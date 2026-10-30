@@ -12,6 +12,7 @@ assert.equal(categories.size, collections.length, 'Duplicate category routes');
 assert.equal(products.length, report.products, 'Product census differs from source report');
 assert.equal(products.reduce((n, product) => n + product.variants.length, 0), report.variants, 'Variant census differs from source report');
 assert.equal(report.collectionErrors.length + report.sectionErrors.length, 0, 'Failed source requests');
+assert.equal(report.unverifiedGallerySourceUrls, 0, 'Source photos need URL verification');
 for (const item of [...navigation.categories, ...navigation.phases]) assert.ok(categories.has(item.handle), `Menu route missing: ${item.handle}`);
 for (const collection of collections) {
   assert.equal(collection.count, collection.productHandles.length, `Count mismatch: ${collection.handle}`);

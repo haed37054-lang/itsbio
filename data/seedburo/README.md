@@ -9,6 +9,7 @@ Refresh into a new cache directory:
 ```sh
 python scripts/collect-seedburo-catalog.py --cache=/path/to/new-cache
 python scripts/collect_seedburo_sections.py --cache=/path/to/new-cache
+python scripts/audit-seedburo-image-sources.py --cache=/path/to/new-cache
 python scripts/build-seedburo-catalog.py --cache=/path/to/new-cache
 npm run seedburo:audit
 ```

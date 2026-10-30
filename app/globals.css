@@ -579,6 +579,15 @@ animation: partners-marquee 22s linear infinite;
   --navigation-accent-soft: #faf5ff;
 }
 
+.navigation-progress[data-navigation-theme="seedburo"],
+.navigation-content-skeleton[data-navigation-theme="seedburo"] {
+  --navigation-accent-rgb: 22 163 74;
+  --navigation-accent: #16a34a;
+  --navigation-gradient-middle: #4ade80;
+  --navigation-gradient-end: #bbf7d0;
+  --navigation-accent-soft: #f0fdf4;
+}
+
 .navigation-progress {
   position: fixed;
   z-index: 9999;

@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { SEEDBURO_PRODUCTS, SEEDBURO_COLLECTIONS, seedburoProductHref, seedburoCollectionHref } from "@/lib/seedburo/catalog";
 
 import { OFFICIAL_ABM_CELL_MODEL_PRODUCTS } from "@/lib/abm/cell-model-data";
 import { ABM_REBUILD_VERSION, stagedRecordPath, type AbmStagedRecord } from "@/lib/abm/rebuild-staging";
@@ -47,6 +48,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     for (const child of category.children) entries.push({ url: absoluteSiteUrl(`/products/cleaver/${category.slug}/${child.slug}`), changeFrequency: "monthly", priority: 0.7 });
   }
   for (const product of CLEAVER_INVENTORY) entries.push({ url: absoluteSiteUrl(cleaverProductHref(product)), changeFrequency: "monthly", priority: 0.7 });
+  for (const product of SEEDBURO_PRODUCTS) entries.push({ url: absoluteSiteUrl(seedburoProductHref(product)), changeFrequency: "monthly", priority: 0.7 });
+  for (const category of SEEDBURO_COLLECTIONS) entries.push({ url: absoluteSiteUrl(seedburoCollectionHref(category.handle)), changeFrequency: "monthly", priority: 0.6 });
+  for (const path of ["/products/seedburo/all-products", "/products/seedburo/categories"]) entries.push({ url: absoluteSiteUrl(path), changeFrequency: "monthly", priority: 0.6 });
   for (const row of notices) if (row.slug) entries.push({ url: absoluteSiteUrl(`/notice/${encodeURIComponent(row.slug)}`), lastModified: row.updatedAt, changeFrequency: "monthly", priority: 0.5 });
   for (const row of promotions) if (row.slug) entries.push({ url: absoluteSiteUrl(`/promotions/${encodeURIComponent(row.slug)}`), lastModified: row.updatedAt, changeFrequency: "weekly", priority: 0.6 });
 

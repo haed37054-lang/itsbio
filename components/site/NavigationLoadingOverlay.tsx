@@ -10,11 +10,12 @@ const COMPLETE_HOLD_MS = 180;
 const FAILSAFE_MS = 12000;
 
 type IndicatorState = "hidden" | "running" | "complete";
-type NavigationTheme = "default" | "kent" | "cleaver";
+type NavigationTheme = "default" | "kent" | "cleaver" | "seedburo";
 
 function navigationThemeForPath(pathname: string): NavigationTheme {
   if (pathname === "/products/kent" || pathname.startsWith("/products/kent/")) return "kent";
   if (pathname === "/products/cleaver" || pathname.startsWith("/products/cleaver/")) return "cleaver";
+  if (pathname === "/products/seedburo" || pathname.startsWith("/products/seedburo/")) return "seedburo";
   return "default";
 }
 

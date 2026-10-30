@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import seedburoNavigation from "@/data/seedburo/navigation.json";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { ABM_GENERAL_MENU_ITEMS } from "@/lib/abm/general-navigation";
 
@@ -62,6 +63,10 @@ const CLEAVER_CATEGORY_HREFS: Record<string, string> = {
 };
 
 function productCategoryHref(brand: Brand, category: string) {
+  if (brand.key === "seedburo") {
+    const match = seedburoNavigation.categories.find((item) => item.title === category);
+    if (match) return `/products/seedburo/${match.handle}`;
+  }
   if (brand.key === "cleaver") return CLEAVER_CATEGORY_HREFS[category] || brand.href;
   if (brand.key === "kent" && category === "Animal Handling") {
     return "/products/kent/laboratory-animal-handling";
@@ -286,9 +291,9 @@ const BRANDS: Brand[] = [
     name: "Seedburo",
     area: "Agricultural Research",
     description: "Specialized instruments for seed, grain, moisture, germination, cleaning, and agricultural quality testing.",
-    href: "/products#brands",
+    href: "/products/seedburo",
     searchKey: "seedburo",
-    categories: ["Divider", "Density Measurement", "Sieve Shakers, Test Sieves & Screens", "Seed Counting & Analysis", "Farm & Ranch", "Grinders & Mills", "Moisture Testers", "Spiral Separators", "Sample Bags & Containers", "Germination Equipment", "Grain & Seed Cleaners"],
+    categories: seedburoNavigation.categories.map((item) => item.title),
     theme: THEMES.seedburo,
   },
   {

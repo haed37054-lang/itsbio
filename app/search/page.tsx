@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { exactSeedburoProducts, searchSeedburoProducts, seedburoPrimarySku, seedburoProductHref } from "@/lib/seedburo/catalog";
 import { redirect } from "next/navigation";
 
 import {
@@ -403,7 +404,11 @@ export default async function SearchPage({
   let exactMissingVectorResult: SearchResult | null = null;
 
   const catalogNumber = normalizeCatalogNumber(q);
-  if (isCatalogNumberCandidate(catalogNumber)) {
+  const exactSeedburo = exactSeedburoProducts(catalogNumber);
+  if (selectedBrand === "seedburo" && exactSeedburo.length === 1) {
+    redirect(`${seedburoProductHref(exactSeedburo[0])}#model-${encodeURIComponent(catalogNumber)}`);
+  }
+  if (selectedBrand !== "seedburo" && isCatalogNumberCandidate(catalogNumber)) {
     const [exactDocs, stagedProduct, stagedService] = await Promise.all([
       sanityCdnClient.fetch<ExactCatalogMatch[]>(FIND_EXACT_CATALOG_NUMBER, { catalogNumber }, PUBLIC_CATALOG_CACHE),
       getAbmStagedRecord("product", catalogNumber),
@@ -467,13 +472,14 @@ export default async function SearchPage({
       );
     }
 
+    if (!selectedBrand) exactTargets.push(...exactSeedburo.map((product) => `${seedburoProductHref(product)}#model-${encodeURIComponent(catalogNumber)}`));
     const uniqueTargets = [...new Set(exactTargets)];
     if (uniqueTargets.length === 1) redirect(uniqueTargets[0]);
   }
 
   const safeMatch = q.replace(/\*/g, "");
   const match = `*${safeMatch}*`;
-  const [liveRows, stagedChunks] = await Promise.all([
+  const [liveRows, stagedChunks] = selectedBrand === "seedburo" ? [[], []] : await Promise.all([
     sanityCdnClient.fetch<LiveSearchRow[]>(LIVE_SEARCH_QUERY, { match }, PUBLIC_CATALOG_CACHE),
     sanityCdnClient.fetch<StagedSearchChunk[]>(
       ABM_STAGED_SEARCH_QUERY,
@@ -502,6 +508,18 @@ export default async function SearchPage({
       kind: "Product",
       direct: target.direct,
       score: scoreMatch(title, sku, q),
+    });
+  }
+
+  for (const product of searchSeedburoProducts(q)) {
+    const matched = product.variants.find((variant) => variant.sku.toLowerCase() === q.toLowerCase());
+    const sku = matched?.sku || seedburoPrimarySku(product);
+    results.push({
+      id: `seedburo:${product.id}`, title: product.title, sku: sku || undefined,
+      description: product.summary || undefined, brandKey: "seedburo", brandLabel: "Seedburo",
+      href: `${seedburoProductHref(product)}${matched ? `#model-${encodeURIComponent(matched.sku)}` : ""}`,
+      kind: "Product", direct: true,
+      score: scoreMatch(product.title, sku, q) + (product.images.length ? 3 : 0) + (product.descriptionHtml ? 3 : 0),
     });
   }
 

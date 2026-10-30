@@ -55,9 +55,9 @@ const BRANDS: BrandItem[] = [
     eyebrow: "AGRICULTURAL RESEARCH",
     description: "Specialized instruments for seed, grain and agricultural quality testing workflows.",
     logo: "/partners/Seedburo-logo.png",
-    href: "https://seedburo.com/",
+    href: "/products/seedburo",
     tags: ["Seed Testing", "Grain Analysis", "Lab Equipment"],
-    external: true,
+    external: false,
   },
   {
     key: "aims",

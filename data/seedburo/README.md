@@ -1,0 +1,18 @@
+Seedburo product catalog
+
+Source: https://seedburo.com/
+
+The product scope follows the public product sitemap and visible collection memberships. Global Shopify product JSON also includes SKU-only and draft/unlisted records; those are not emitted as additional empty product pages. Product models retain their original SKU and variant image associations. Collection membership comes from the actual collection endpoints, not inferred title matching.
+
+Refresh into a new cache directory:
+
+```sh
+python scripts/collect-seedburo-catalog.py --cache=/path/to/new-cache
+python scripts/collect_seedburo_sections.py --cache=/path/to/new-cache
+python scripts/build-seedburo-catalog.py --cache=/path/to/new-cache
+npm run seedburo:audit
+```
+
+The collector reads public source endpoints only. It does not use account credentials or mutate the source store. The generated catalog excludes prices, purchase controls and stock claims. Product descriptions and additional document/media tabs are collected separately. Existing source photos are preserved; a source product without a photo is not assigned another product's image.
+
+`migration-report.json` records the source census and request failures. The build audit checks route identities, every collection-to-product link, model counts, menu targets and sanitized product content. Deployments still require a visual review of representative category, model, gallery, document and video flows.

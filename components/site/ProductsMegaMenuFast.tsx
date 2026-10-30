@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import seedburoNavigation from "@/data/seedburo/navigation.json";
 import { useEffect, useMemo, useRef, useState } from "react";
 
 type MenuLink = { label: string; href: string };
@@ -123,9 +124,9 @@ const BRANDS: BrandMenu[] = [
     name: "Seedburo",
     area: "Agricultural Research",
     description: "Seed, grain, moisture, germination, cleaning, and agricultural quality testing instruments.",
-    href: "/products#brands",
+    href: "/products/seedburo",
     searchKey: "seedburo",
-    categories: ["Divider", "Density Measurement", "Sieve Shakers", "Seed Counting & Analysis", "Grinders & Mills", "Moisture Testers", "Germination Equipment", "Grain & Seed Cleaners"],
+    sections: [{ label: "Product categories", links: seedburoNavigation.categories.map((item) => ({ label: item.title, href: `/products/seedburo/${item.handle}` })) }],
     dotClass: "bg-green-600",
     accentClass: "text-green-700",
   },

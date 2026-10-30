@@ -23,6 +23,8 @@ export default function SeedburoProductOverview({ title, vendor, images, variant
   const chooseVariant = (variant: SeedburoVariant) => {
     setSelectedId(variant.id);
     setSelectedPhoto(variant.image || images[0]?.url || "");
+    const modelHash = variant.sku ? `#model-${encodeURIComponent(variant.sku)}` : "";
+    window.history.replaceState(window.history.state, "", `${window.location.pathname}${window.location.search}${modelHash}`);
   };
 
   useEffect(() => {

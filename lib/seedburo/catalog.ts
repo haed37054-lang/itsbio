@@ -32,8 +32,11 @@ const collectionByHandle = new Map(SEEDBURO_COLLECTIONS.map((collection) => [col
 const normalized = (value: string) => value.normalize("NFKC").toLowerCase().replace(/\s+/g, " ").trim();
 export const seedburoProductHref = (product: Pick<SeedburoProduct, "handle">) => `/products/seedburo/item/${encodeURIComponent(product.handle)}`;
 export const seedburoCollectionHref = (handle: string) => `/products/seedburo/${encodeURIComponent(handle)}`;
-export const getSeedburoProduct = (handle: string) => byHandle.get(handle);
-export const getSeedburoCollection = (handle: string) => collectionByHandle.get(handle);
+function routeHandle(value: string) {
+  try { return decodeURIComponent(value); } catch { return value; }
+}
+export const getSeedburoProduct = (handle: string) => byHandle.get(routeHandle(handle));
+export const getSeedburoCollection = (handle: string) => collectionByHandle.get(routeHandle(handle));
 export function searchSeedburoProducts(query: string, source = SEEDBURO_PRODUCTS) {
   const tokens = normalized(query).split(" ").filter(Boolean);
   return source.filter((product) => {

@@ -36,9 +36,9 @@ export function SeedburoCategoryGrid({ categories }: { categories: SeedburoColle
   ))}</div>;
 }
 
-export function SeedburoProductGrid({ products }: { products: SeedburoProduct[] }) {
-  return <div className="grid gap-x-6 gap-y-8 sm:grid-cols-2 xl:grid-cols-3">{products.map((product) => (
-    <Link key={product.id} href={seedburoProductHref(product)} prefetch={false} className="group flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white transition hover:border-green-300 hover:shadow-md">
+export function SeedburoProductGrid({ products, hrefs = {}, columns = 3 }: { products: SeedburoProduct[]; hrefs?: Record<string, string>; columns?: 3 | 4 }) {
+  return <div className={`grid gap-x-6 gap-y-8 sm:grid-cols-2 ${columns === 4 ? "xl:grid-cols-4" : "xl:grid-cols-3"}`}>{products.map((product) => (
+    <Link key={product.id} href={hrefs[product.handle] || seedburoProductHref(product)} prefetch={false} className="group flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white transition hover:border-green-300 hover:shadow-md">
       <div className="relative aspect-[4/3] shrink-0 border-b border-slate-100 bg-white">{product.images[0] ? <Image src={product.images[0].url} alt={product.images[0].alt} fill quality={90} sizes="(max-width: 640px) 90vw, (max-width: 1280px) 40vw, 300px" className="object-contain p-5" /> : <div className="flex h-full flex-col items-center justify-center gap-2 bg-slate-50 px-5 text-center"><span className="text-sm font-medium text-slate-500">Product photo unavailable</span><span className="text-xs text-slate-400">Not provided by Seedburo</span></div>}</div>
       <div className="flex h-[280px] flex-col p-5"><div className="text-[11px] font-semibold uppercase tracking-wider text-slate-500">{seedburoPrimarySku(product) ? `Cat.No ${seedburoPrimarySku(product)}` : "Seedburo"}</div><h3 title={product.title} className="mt-2 line-clamp-3 min-h-[4.5rem] text-lg font-semibold leading-6 tracking-tight text-slate-950 group-hover:text-green-800">{product.title}</h3><p className="mt-3 line-clamp-2 min-h-12 text-sm leading-6 text-slate-600">{product.summary || product.variants.find((variant) => variant.title !== "Default Title")?.title || "See available model and catalog information."}</p><div className="mt-auto flex items-center justify-between gap-3 pt-5 text-sm font-semibold text-green-800"><span>View product ›</span>{product.variants.length > 1 ? <span className="text-xs font-normal text-slate-500">{product.variants.length} models</span> : null}</div></div>
     </Link>

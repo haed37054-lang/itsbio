@@ -68,3 +68,29 @@ assert.equal(replacementPoint.title, 'L.D. Outside Plain Brass Replacement Point
 assert.equal(replacementPoint.images.length, 0, 'Replacement point must not inherit another item photograph');
 assert.equal(replacementPoint.variants[0].sku, '000-02LD-B');
 console.log(JSON.stringify({actualPhotoProducts: presented.filter((product) => product.images.length).length, sourceWithoutProductPhoto: presented.filter((product) => !product.images.length).length, sourcePlaceholdersOmitted: products.reduce((n, product) => n + product.images.filter((image) => isSeedburoPlaceholder(image.url)).length, 0), presentation: 'passed'}));
+
+// The source renders these outside Product Description, with Best sellers only as fallback.
+const recommendations = read('recommendations.json');
+const recommendationReport = read('recommendations-report.json');
+assert.equal(recommendationReport.checkedProducts, products.length, 'Recommendation coverage is incomplete');
+assert.deepEqual(recommendationReport.errors, [], 'Recommendation collection failed');
+assert.deepEqual(recommendationReport.unknownTargets, [], 'Recommendation targets have not been migrated');
+assert.deepEqual(Object.keys(recommendations).sort(), [...handles].sort(), 'Missing recommendation snapshot');
+let relationCount = 0;
+for (const [handle, record] of Object.entries(recommendations)) {
+  const sourceUrl = new URL(record.sourceUrl);
+  assert.equal(sourceUrl.origin, "https://seedburo.com");
+  assert.equal(decodeURIComponent(sourceUrl.pathname), `/products/${handle}`);
+  assert.ok(['bought-together', 'best-sellers', 'none'].includes(record.kind));
+  assert.equal(record.heading, record.kind === 'bought-together' ? 'Customers who bought this item also bought' : record.kind === 'best-sellers' ? 'Best sellers' : '');
+  assert.equal(new Set(record.items.map((item) => `${item.handle}:${item.variantId || ''}`)).size, record.items.length, `Duplicate recommendations: ${handle}`);
+  for (const item of record.items) {
+    assert.ok(handles.has(item.handle), `Recommendation route missing: ${handle} -> ${item.handle}`);
+    if (item.variantId) assert.ok(products.find((product) => product.handle === item.handle)?.variants.some((variant) => variant.id === item.variantId), `Unknown recommended model: ${handle}`);
+  }
+  relationCount += record.items.length;
+}
+assert.equal(relationCount, recommendationReport.relations);
+assert.equal(recommendations['3210'].kind, 'bought-together', 'Probe page must not show the hidden Best sellers fallback');
+assert.deepEqual(recommendations['3210'].items.map((item) => item.handle), ['3191', 'triangular-sample-pans', '3202-2', 'grain-grading-training-mats'], 'Probe recommendations differ from the reviewed source order');
+console.log(JSON.stringify({recommendationProducts: recommendationReport.checkedProducts, recommendationLinks: relationCount, recommendationAudit: 'passed'}));

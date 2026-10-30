@@ -1,3 +1,4 @@
+import { sortSeedburoProducts } from "@/lib/seedburo/presentation";
 import { notFound } from "next/navigation";
 import Breadcrumb from "@/components/site/Breadcrumb";
 import SeedburoHero from "@/components/products/seedburo/SeedburoHero";
@@ -13,7 +14,7 @@ export default async function SeedburoCollectionPage({ params, searchParams }: {
   const title = directory ? "All Seedburo categories" : all ? "All Seedburo products" : collection!.title;
   const q = String(query.q || "").trim().slice(0, 150);
   const source = all ? SEEDBURO_PRODUCTS : seedburoCollectionProducts(handle);
-  const products = q ? searchSeedburoProducts(q, source) : source;
+  const products = sortSeedburoProducts(q ? searchSeedburoProducts(q, source) : source);
   const categories = directory ? SEEDBURO_COLLECTIONS.filter((item) => item.title.toLowerCase().includes(q.toLowerCase())) : [];
   const pageSize = 24;
   const count = directory ? categories.length : products.length;

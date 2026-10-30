@@ -1,3 +1,4 @@
+import { isSeedburoPlaceholder, seedburoDisplayTitle } from "./presentation";
 import catalog from "@/data/seedburo/catalog.json";
 import collections from "@/data/seedburo/collections.json";
 import navigation from "@/data/seedburo/navigation.json";
@@ -18,11 +19,12 @@ export type SeedburoCollection = {
 const displayText = (value: string) => value.replaceAll("Â®", "®").replaceAll("Â°", "°").replaceAll("Â ", " ");
 export const SEEDBURO_PRODUCTS: SeedburoProduct[] = (catalog as SeedburoProduct[]).map((product) => ({
   ...product,
-  title: displayText(product.title),
+  title: displayText(seedburoDisplayTitle(product)),
+  images: product.images.filter((image) => !isSeedburoPlaceholder(image.url)),
   vendor: displayText(product.vendor),
   summary: displayText(product.summary),
   descriptionHtml: displayText(product.descriptionHtml),
-  variants: product.variants.map((variant) => ({ ...variant, title: displayText(variant.title) })),
+  variants: product.variants.map((variant) => ({ ...variant, title: displayText(variant.title), image: isSeedburoPlaceholder(variant.image) ? "" : variant.image })),
   tabs: product.tabs.map((tab) => ({ title: displayText(tab.title), html: displayText(tab.html) })),
 }));
 export const SEEDBURO_COLLECTIONS = collections as SeedburoCollection[];

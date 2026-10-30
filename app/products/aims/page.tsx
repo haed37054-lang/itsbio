@@ -2,15 +2,36 @@ import Image from "next/image";
 import Link from "next/link";
 import Breadcrumb from "@/components/site/Breadcrumb";
 import AimsHero from "@/components/products/aims/AimsHero";
+import AimsSupport from "@/components/products/aims/AimsSupport";
 import { AIMS_PRODUCTS, aimsProductHref } from "@/lib/aims/catalog";
 
 export const metadata = { title: "AIMS Products", description: "Compare ATS-3, NEO-9 and ATS-3L laboratory animal tattoo systems and ATS-3 upgrade packages." };
 export default function AimsPage() {
   const upgrades = AIMS_PRODUCTS[0].models.slice(1);
+  const comparisonRows = [
+    { label: "Animal / age", values: AIMS_PRODUCTS.map((product) => product.audience) },
+    { label: "Identification sites", values: ["Tail", "Toes, paw pads, leg shanks, tail", "Skin · ears, chest, inner limbs"] },
+    { label: "Equipment focus", values: ["Rodent restraints and tail needles", "LED station with 4× magnification", "Ultra-light handpiece and foot pedal"] },
+    { label: "Initial supplies¹", values: ["Approx. 3,000 mice / rats", "Approx. 2,000 neonates", "Supplies and accessories included"] },
+    { label: "Included guide", values: AIMS_PRODUCTS.map((product) => product.training.volume) },
+  ];
   return <><AimsHero /><main className="mx-auto max-w-[1320px] px-6 pb-16"><div className="my-7"><Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Products", href: "/products" }, { label: "AIMS" }]} /></div>
     <section id="systems" className="scroll-mt-28"><div className="mb-7 flex flex-wrap items-end justify-between gap-5"><div><h2 className="text-3xl font-semibold tracking-tight text-slate-950">Tattoo Identification Systems</h2><p className="mt-3 text-sm leading-7 text-slate-600">Choose a system by animal type and age.</p></div><form action="/search" className="flex w-full gap-2 sm:w-auto"><input type="hidden" name="brand" value="aims" /><label htmlFor="aims-search" className="sr-only">Search AIMS products</label><input id="aims-search" name="q" placeholder="Product name or Cat.No" className="min-w-0 flex-1 rounded-xl border border-slate-300 px-4 py-3 text-sm sm:w-64" /><button className="rounded-xl bg-sky-700 px-5 py-3 text-sm font-semibold text-white hover:bg-sky-800">Search</button></form></div>
       <div className="grid gap-6 md:grid-cols-3">{AIMS_PRODUCTS.map((product) => <Link key={product.sku} href={aimsProductHref(product.slug)} className="group flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white transition hover:border-sky-300 hover:shadow-md"><div className="relative aspect-[4/3] border-b border-slate-100"><Image src={product.images[0].url} alt={`${product.sku} ${product.title}`} fill quality={90} sizes="(max-width: 768px) 90vw, 400px" className="object-contain p-5" /></div><div className="flex flex-1 flex-col p-6"><p className="text-xs font-semibold uppercase tracking-wider text-sky-800">Cat.No {product.sku}</p><h3 className="mt-2 min-h-14 text-xl font-semibold leading-7 text-slate-950">{product.title}</h3><p className="mt-3 text-sm font-medium text-sky-800">{product.audience}</p><p className="mt-3 text-sm leading-7 text-slate-600">{product.summary}</p><span className="mt-auto pt-6 text-sm font-semibold text-sky-800">View product ›</span></div></Link>)}</div>
     </section>
+    <section id="compare" className="mt-14 scroll-mt-28 border-t border-slate-200 pt-9">
+      <h2 className="text-2xl font-semibold tracking-tight text-slate-950">Compare AIMS Systems</h2>
+      <p className="mt-3 text-sm leading-7 text-slate-600">Match the animal’s age and marking site to the equipment and included guide.</p>
+      <div className="mt-6 overflow-x-auto rounded-2xl border border-slate-200">
+        <table className="w-full min-w-[720px] text-left text-sm">
+          <caption className="sr-only">AIMS systems compared by animals, identification sites, equipment and training materials</caption>
+          <thead className="bg-sky-50"><tr><th scope="col" className="px-5 py-4 font-semibold text-slate-900">Selection guide</th>{AIMS_PRODUCTS.map((product) => <th key={product.sku} scope="col" className="min-w-48 px-5 py-4"><Link href={aimsProductHref(product.slug)} className="font-semibold text-sky-800 underline">{product.sku}</Link></th>)}</tr></thead>
+          <tbody className="divide-y divide-slate-200">{comparisonRows.map(({ label, values }) => <tr key={label}><th scope="row" className="px-5 py-4 align-top font-medium text-slate-800">{label}</th>{values.map((value, index) => <td key={AIMS_PRODUCTS[index].sku} className="px-5 py-4 align-top leading-7 text-slate-600">{value}</td>)}</tr>)}</tbody>
+        </table>
+      </div>
+      <p className="mt-3 text-xs leading-6 text-slate-500">¹ Approximate capacities listed in the manufacturer’s 2022 brochures; consumption depends on the identification scheme and use. Each product page links to its brochure.</p>
+    </section>
     <section id="upgrades" className="mt-14 scroll-mt-28 border-t border-slate-200 pt-9"><h2 className="text-2xl font-semibold tracking-tight text-slate-950">ATS-3 Upgrade Packages</h2><p className="mt-3 text-sm leading-7 text-slate-600">Add capabilities to an existing ATS-3 system.</p><div className="mt-6 grid gap-5 md:grid-cols-2">{upgrades.map((model) => <Link key={model.sku} href={`${aimsProductHref("ats-3")}#model-${model.sku}`} className="rounded-2xl border border-sky-200 bg-sky-50/50 p-6 transition hover:border-sky-400"><p className="text-xs font-semibold uppercase tracking-wider text-sky-800">Cat.No {model.sku}</p><h3 className="mt-2 text-lg font-semibold text-slate-950">{model.title}</h3><p className="mt-3 text-sm leading-7 text-slate-600">{model.description}</p><span className="mt-5 inline-block text-sm font-semibold text-sky-800">View ATS-3 option ›</span></Link>)}</div></section>
+    <AimsSupport />
   </main></>;
 }

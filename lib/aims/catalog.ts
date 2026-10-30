@@ -6,10 +6,12 @@ export type AimsModel = { sku: string; title: string; description: string };
 export type AimsProduct = {
   slug: string; sku: string; title: string; audience: string; summary: string;
   description: string; features: string[]; specifications: Array<[string, string]>;
+  applications: string[]; kitContents: Array<[string, string]>; capacityNote: string;
+  training: { volume: string; description: string; upgradeNote: string };
   models: AimsModel[]; sourceUrl: string; images: Image[]; gallery: Image[];
   brochures: string[]; videos: string[];
 };
-export const AIMS_PRODUCTS: AimsProduct[] = content.map((product) => ({ ...product, ...media[product.slug as keyof typeof media], specifications: product.specifications as Array<[string, string]> }));
+export const AIMS_PRODUCTS: AimsProduct[] = content.map((product) => ({ ...product, ...media[product.slug as keyof typeof media], specifications: product.specifications as Array<[string, string]>, kitContents: product.kitContents as Array<[string, string]> }));
 export const aimsProductHref = (slug: string) => `/products/aims/item/${slug}`;
 export const getAimsProduct = (slug: string) => AIMS_PRODUCTS.find((product) => product.slug === slug);
 export function exactAimsModel(sku: string) {
@@ -22,7 +24,7 @@ export function exactAimsModel(sku: string) {
 }
 export function searchAimsProducts(query: string) {
   const tokens = query.normalize("NFKC").toLowerCase().split(/\s+/).filter(Boolean);
-  return AIMS_PRODUCTS.filter((product) => tokens.every((token) => `${product.sku} ${product.title} ${product.audience} ${product.summary} ${product.models.map((model) => `${model.sku} ${model.title}`).join(" ")}`.toLowerCase().includes(token)));
+  return AIMS_PRODUCTS.filter((product) => tokens.every((token) => `${product.sku} ${product.title} ${product.audience} ${product.summary} ${product.description} ${product.applications.join(" ")} ${product.features.join(" ")} ${product.kitContents.flat().join(" ")} ${product.specifications.flat().join(" ")} ${product.models.map((model) => `${model.sku} ${model.title}`).join(" ")}`.toLowerCase().includes(token)));
 }
 
 export function aimsVideoLabel(url: string) {

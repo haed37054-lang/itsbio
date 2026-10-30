@@ -4,7 +4,7 @@ import { useEffect, useId, useState } from "react";
 import type { AimsProduct } from "@/lib/aims/catalog";
 import AimsGallery from "./AimsGallery";
 
-export default function AimsProductOverview({ product }: { product: Pick<AimsProduct, "sku" | "title" | "summary" | "audience" | "models" | "images"> }) {
+export default function AimsProductOverview({ product }: { product: Pick<AimsProduct, "sku" | "title" | "summary" | "audience" | "models" | "images" | "specifications"> }) {
   const [sku, setSku] = useState(product.models[0].sku);
   const group = useId();
   const selected = product.models.find((item) => item.sku === sku) || product.models[0];
@@ -27,6 +27,8 @@ export default function AimsProductOverview({ product }: { product: Pick<AimsPro
         <div aria-live="polite" aria-atomic="true" className="bg-sky-50 px-5 py-4"><p className="text-xs font-semibold uppercase tracking-wide text-sky-800">Cat.No</p><p className="mt-1 text-xl font-semibold text-slate-950">{selected.sku}</p><p className="mt-2 text-sm font-medium text-slate-800">{selected.title}</p><p className="mt-2 text-sm leading-6 text-slate-600">{selected.description}</p></div>
         {product.models.length > 1 ? <div role="radiogroup" aria-label="System and ATS-3 upgrade packages" className="divide-y divide-slate-100 border-t border-sky-200 bg-white">{product.models.map((model) => <label key={model.sku} id={`model-${model.sku}`} className={`flex cursor-pointer scroll-mt-28 items-start gap-3 px-5 py-4 hover:bg-sky-50/70 ${sku === model.sku ? "bg-sky-50/50" : ""}`}><input type="radio" name={group} value={model.sku} checked={sku === model.sku} onChange={() => { setSku(model.sku); window.history.replaceState(window.history.state, "", `${window.location.pathname}${window.location.search}#model-${encodeURIComponent(model.sku)}`); }} aria-label={`${model.sku} · ${model.title}`} className="mt-1 h-4 w-4 shrink-0 accent-sky-700" /><span><span className="block text-sm font-semibold text-slate-900">{model.sku} · {model.title}</span><span className="mt-1 block text-xs leading-5 text-slate-500">{model.sku === product.sku ? "Complete system" : "For existing ATS-3 systems"}</span></span></label>)}</div> : null}
       </fieldset>
+      <dl className="mt-6 divide-y divide-slate-100 text-sm">{product.specifications.slice(0, 3).map(([label, value]) => <div key={label} className="grid gap-1 py-3 sm:grid-cols-[140px_minmax(0,1fr)]"><dt className="font-medium text-slate-800">{label}</dt><dd className="leading-6 text-slate-600">{value}</dd></div>)}</dl>
+      <a href="#kit-contents" className="mt-4 inline-block text-sm font-semibold text-sky-800 underline">View kit contents & training ↓</a>
     </div>
   </div>;
 }

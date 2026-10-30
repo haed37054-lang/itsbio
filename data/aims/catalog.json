@@ -1,1 +1,238 @@
-[{"slug":"ats-3","sku":"ATS-3","title":"General Rodent Tattoo System","audience":"Weanling & adult mice / rats","summary":"Permanent tail identification for weanling and adult mice and rats.","description":"A complete laboratory system for marking rodent tails with identification numbers, letters or lines. The kit combines tattoo equipment, pigments, needles and animal restraints. Equipment instructions and an adult rodent training guide accompany the system. Existing ATS-3 equipment can be extended with the NEO-AP or LLA-AP packages.","features":["Tail identification for laboratory mice and rats","Pigments, needles and restraints included","Rodent tattoo training guide","Two upgrade packages for existing ATS-3 equipment"],"specifications":[["Animals","Weanling to adult mice and rats"],["Identification site","Tail"],["Power input","100–220 V, 50–60 Hz"],["Documentation","Equipment instructions and adult rodent tattoo guide"]],"models":[{"sku":"ATS-3","title":"General Rodent Tattoo System","description":"Complete rodent tattoo system with supplies and accessories."},{"sku":"NEO-AP","title":"Neonate Upgrade Package","description":"Neonate accessories and supplies for an existing ATS-3; includes the neonate tattoo guide."},{"sku":"LLA-AP","title":"Large Lab Animal Upgrade Package","description":"Large-animal accessories and supplies for an existing ATS-3; includes the large-animal tattoo guide."}]},{"slug":"neo-9","sku":"NEO-9","title":"Neonate Rodent Tattooing System","audience":"P0–P15 mice / rats","summary":"An identification system developed for newborn mice and rats from P0 to P15.","description":"The NEO-9 supports individual identification during the neonatal period, including animals in transgenic breeding colonies. The system includes a micro tattooing station with LED illumination and magnification, together with equipment and neonate training instructions. The manufacturer describes identification sites on toes, paw pads, leg shanks and tails.","features":["Designed for P0–P15 neonate rodents","LED lighting and magnification","Multiple pigment colors","Neonate identification guide and ID schemes"],"specifications":[["Animals","Neonate mice and rats"],["Age range","P0–P15"],["Tattooing station","LED illumination and magnifier"],["Power input","100–220 V, 50–60 Hz"]],"models":[{"sku":"NEO-9","title":"Neonate Rodent Tattooing System","description":"Neonate tattoo system with supplies, accessories and training documentation."}]},{"slug":"ats-3l","sku":"ATS-3L","title":"Large Lab Animal Tattoo System","audience":"Larger laboratory animals","summary":"Compact tattoo equipment for skin identification on larger laboratory animals.","description":"The ATS-3L is designed for animals such as rabbits, guinea pigs, ferrets, nonhuman primates and swine. Its compact arrangement and lightweight tattoo machine support work in limited spaces. Identification can be placed on skin sites including ears, chest and inner limbs; treatment sites can also be marked. Operating instructions and a large-animal tattoo training guide accompany the system.","features":["Lightweight tattoo machine","Compact, portable equipment arrangement","Large-animal needles and pigment colors","Equipment instructions and large-animal training guide"],"specifications":[["Animals","Larger laboratory animals"],["Identification sites","Ears, chest and inner limbs"],["Other application","Marking skin treatment sites"],["Power input","100–220 V, 50–60 Hz"]],"models":[{"sku":"ATS-3L","title":"Large Lab Animal Tattoo System","description":"Large laboratory animal tattoo system with supplies and accessories."}]}]
+[
+  {
+    "slug": "ats-3",
+    "sku": "ATS-3",
+    "title": "General Rodent Tattoo System",
+    "audience": "Weanling & adult mice / rats",
+    "summary": "Permanent tail identification for weanling and adult mice and rats.",
+    "description": "Designed for breeding-colony records and individual experimental identification, the ATS-3 marks mouse and rat tails with permanent numbers, letters or lines. It serves weanling and adult rodents, with dedicated supplies and restraints. An existing system can be extended to neonates or larger laboratory animals using the packages in the Cat.No selector.",
+    "features": [
+      "Laboratory-duty equipment for rodent tail identification",
+      "Mouse and rat restraints supplied",
+      "Dedicated tail needles and a choice of pigment colors",
+      "Permanent markings for colony and research records",
+      "Universal 100–220 V, 50–60 Hz power input",
+      "RoHS compliance listed by the manufacturer"
+    ],
+    "specifications": [
+      [
+        "Animals",
+        "Weanling and adult mice / rats"
+      ],
+      [
+        "Marking site",
+        "Tail"
+      ],
+      [
+        "Marking formats",
+        "Numbers, letters, lines, dots and colors"
+      ],
+      [
+        "Power input",
+        "100–220 V, 50–60 Hz"
+      ],
+      [
+        "Expansion",
+        "NEO-AP for neonates; LLA-AP for larger animals"
+      ]
+    ],
+    "models": [
+      {
+        "sku": "ATS-3",
+        "title": "General Rodent Tattoo System",
+        "description": "Complete rodent tattoo system with supplies and accessories."
+      },
+      {
+        "sku": "NEO-AP",
+        "title": "Neonate Upgrade Package",
+        "description": "Neonate accessories and supplies for an existing ATS-3; includes the neonate tattoo guide."
+      },
+      {
+        "sku": "LLA-AP",
+        "title": "Large Lab Animal Upgrade Package",
+        "description": "Large-animal accessories and supplies for an existing ATS-3; includes the large-animal tattoo guide."
+      }
+    ],
+    "applications": [
+      "Weanling and adult mice and rats, including different coat colors and strains.",
+      "Tail markings for breeding colonies and individual animals in experiments.",
+      "Numbers, letters, lines, dots and pigment colors can form identification schemes."
+    ],
+    "kitContents": [
+      [
+        "Equipment",
+        "Rodent tattoo system with mouse / rat restraints"
+      ],
+      [
+        "Supplies",
+        "Tattoo pigments, tail needles and accessories"
+      ],
+      [
+        "Initial supply capacity",
+        "Approximately 3,000 mice / rats, as stated in the 2022 brochure"
+      ]
+    ],
+    "capacityNote": "The brochure gives an approximate initial supply capacity; consumption depends on the identification scheme and use.",
+    "training": {
+      "volume": "Vol. 2 · Adult Mice and Rats",
+      "description": "Equipment setup and operation instructions accompany a rodent training guide and instructional DVD, as listed in the brochure. The guide covers tail-marking techniques.",
+      "upgradeNote": "NEO-AP includes the Vol. 1 neonate guide; LLA-AP includes the Vol. 3 large-animal guide."
+    }
+  },
+  {
+    "slug": "neo-9",
+    "sku": "NEO-9",
+    "title": "Neonate Rodent Tattooing System",
+    "audience": "P0–P15 mice / rats",
+    "summary": "An identification system developed for newborn mice and rats from P0 to P15.",
+    "description": "The NEO-9 identifies mice and rats from birth through P15, across coat colors and strains. Early individual identification supports neonatal studies and transgenic-colony records before weaning. The system combines dedicated tattoo equipment with a lighted, magnified work station and illustrated identification schemes.",
+    "features": [
+      "Designed specifically for P0–P15 mice and rats",
+      "Illuminated micro tattooing station with 4× magnification",
+      "Identification schemes covering small and large number ranges",
+      "Numbering schemes supporting up to 10,000 unique IDs",
+      "Choice of pigment colors for different neonates",
+      "Universal 100–220 V, 50–60 Hz power input"
+    ],
+    "specifications": [
+      [
+        "Animals / age",
+        "Mice and rats · P0–P15"
+      ],
+      [
+        "Marking sites",
+        "Toes, paw pads, leg shanks and tail"
+      ],
+      [
+        "Work station",
+        "LED illumination and 4× magnification"
+      ],
+      [
+        "ID range",
+        "Schemes for up to 10,000 unique numbers"
+      ],
+      [
+        "Power input",
+        "100–220 V, 50–60 Hz"
+      ],
+      [
+        "Manufacturer-listed compliance",
+        "RoHS"
+      ]
+    ],
+    "models": [
+      {
+        "sku": "NEO-9",
+        "title": "Neonate Rodent Tattooing System",
+        "description": "Neonate tattoo system with supplies, accessories and training documentation."
+      }
+    ],
+    "applications": [
+      "Individual identification beginning on the first day of life (P0).",
+      "Transgenic-colony records and early genotyping studies before weaning.",
+      "Manufacturer-listed sites: toes, paw pads, leg shanks and tail. Existing toe-numbering schemes can be adapted to tattoo markings."
+    ],
+    "kitContents": [
+      [
+        "Equipment",
+        "Neonate tattoo system with LED-lit micro tattooing station"
+      ],
+      [
+        "Magnification",
+        "4× magnifier"
+      ],
+      [
+        "Supplies",
+        "Neonate tattooing supplies and accessories"
+      ],
+      [
+        "Initial supply capacity",
+        "Approximately 2,000 neonates, as stated in the 2022 brochure"
+      ]
+    ],
+    "capacityNote": "The brochure gives an approximate initial supply capacity; consumption depends on the identification scheme and use.",
+    "training": {
+      "volume": "Vol. 1 · Neonate Mice and Rats",
+      "description": "The illustrated training guide and instructional DVD explain neonate identification schemes. Separate equipment instructions cover setup, operation and care.",
+      "upgradeNote": "For an existing ATS-3, the NEO-AP package adds neonate accessories, supplies and the Vol. 1 guide."
+    }
+  },
+  {
+    "slug": "ats-3l",
+    "sku": "ATS-3L",
+    "title": "Large Lab Animal Tattoo System",
+    "audience": "Larger laboratory animals",
+    "summary": "Compact tattoo equipment for skin identification on larger laboratory animals.",
+    "description": "The ATS-3L provides skin identification for larger laboratory animals, including rabbits, hamsters, guinea pigs, ferrets, nonhuman primates, swine, cats and dogs. Its lightweight handpiece and compact power / control equipment suit limited work areas. It can also mark injection or treatment locations on laboratory-animal skin.",
+    "features": [
+      "AIMS ultra-light tattoo handpiece",
+      "Foot pedal for on / off control",
+      "Compact micro-power supply and tattoo controller",
+      "Calibrated small- and large-bore needle tubes",
+      "Dedicated needles for different line sizes",
+      "Universal 100–220 V, 50–60 Hz power input"
+    ],
+    "specifications": [
+      [
+        "Animals",
+        "Rabbits, hamsters, guinea pigs, ferrets, NHP, swine, cats and dogs"
+      ],
+      [
+        "Marking sites",
+        "Ears, chest, inner biceps, thighs and other skin sites"
+      ],
+      [
+        "Other application",
+        "Injection / treatment-site identification"
+      ],
+      [
+        "Controls",
+        "Foot-pedal on / off micro-controller"
+      ],
+      [
+        "Power input",
+        "100–220 V, 50–60 Hz"
+      ],
+      [
+        "Manufacturer-listed compliance",
+        "RoHS"
+      ]
+    ],
+    "models": [
+      {
+        "sku": "ATS-3L",
+        "title": "Large Lab Animal Tattoo System",
+        "description": "Large laboratory animal tattoo system with supplies and accessories."
+      }
+    ],
+    "applications": [
+      "Individual identification of larger laboratory animals.",
+      "Common sites include ears, chest, inner biceps and thighs.",
+      "Marking injection and treatment locations on skin."
+    ],
+    "kitContents": [
+      [
+        "Handpiece",
+        "AIMS ultra-light tattoo machine"
+      ],
+      [
+        "Power / controls",
+        "HDUI compact micro-power supply, controller and foot pedal"
+      ],
+      [
+        "Needle equipment",
+        "Calibrated small- / large-bore tubes and large-animal needles"
+      ],
+      [
+        "Supplies",
+        "Tattooing supplies and accessories"
+      ]
+    ],
+    "capacityNote": "",
+    "training": {
+      "volume": "Vol. 3 · Large Laboratory Animals",
+      "description": "The supplied guide covers large-animal skin identification. Equipment instructions explain setup and operation; the brochure also describes cleaning and sterilization between animals.",
+      "upgradeNote": "For an existing ATS-3, the LLA-AP package adds large-animal accessories, supplies and the Vol. 3 guide."
+    }
+  }
+]

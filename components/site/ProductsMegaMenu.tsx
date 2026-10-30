@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import seedburoNavigation from "@/data/seedburo/navigation.json";
+import aimsNavigation from "@/data/aims/navigation.json";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { ABM_GENERAL_MENU_ITEMS } from "@/lib/abm/general-navigation";
 
@@ -63,6 +64,7 @@ const CLEAVER_CATEGORY_HREFS: Record<string, string> = {
 };
 
 function productCategoryHref(brand: Brand, category: string) {
+  if (brand.key === "aims") return aimsNavigation.flatMap((section) => section.links).find((item) => item.label === category)?.href || brand.href;
   if (brand.key === "seedburo") {
     const match = seedburoNavigation.categories.find((item) => item.title === category);
     if (match) return `/products/seedburo/${match.handle}`;
@@ -280,10 +282,10 @@ const BRANDS: Brand[] = [
     key: "aims",
     name: "AIMS",
     area: "Animal Identification",
-    description: "Identification systems and accessories designed to support reliable laboratory animal research and care.",
-    href: "/products#brands",
+    description: "Tattoo identification systems for rodents, neonates and larger laboratory animals.",
+    href: "/products/aims",
     searchKey: "aims",
-    categories: ["Lab Animal Identification System", "AIMS Accessories"],
+    categories: aimsNavigation.flatMap((section) => section.links.map((item) => item.label)),
     theme: THEMES.aims,
   },
   {

@@ -1,3 +1,4 @@
+import { exactAimsModel, searchAimsProducts, aimsProductHref } from "@/lib/aims/catalog";
 import Link from "next/link";
 import { exactSeedburoProducts, searchSeedburoProducts, seedburoPrimarySku, seedburoProductHref } from "@/lib/seedburo/catalog";
 import { redirect } from "next/navigation";
@@ -405,10 +406,12 @@ export default async function SearchPage({
 
   const catalogNumber = normalizeCatalogNumber(q);
   const exactSeedburo = exactSeedburoProducts(catalogNumber);
+  const exactAims = exactAimsModel(catalogNumber);
+  if (selectedBrand === "aims" && exactAims) redirect(exactAims.href);
   if (selectedBrand === "seedburo" && exactSeedburo.length === 1) {
     redirect(`${seedburoProductHref(exactSeedburo[0])}#model-${encodeURIComponent(catalogNumber)}`);
   }
-  if (selectedBrand !== "seedburo" && isCatalogNumberCandidate(catalogNumber)) {
+  if (selectedBrand !== "seedburo" && selectedBrand !== "aims" && (isCatalogNumberCandidate(catalogNumber) || exactAims)) {
     const [exactDocs, stagedProduct, stagedService] = await Promise.all([
       sanityCdnClient.fetch<ExactCatalogMatch[]>(FIND_EXACT_CATALOG_NUMBER, { catalogNumber }, PUBLIC_CATALOG_CACHE),
       getAbmStagedRecord("product", catalogNumber),
@@ -473,13 +476,14 @@ export default async function SearchPage({
     }
 
     if (!selectedBrand) exactTargets.push(...exactSeedburo.map((product) => `${seedburoProductHref(product)}#model-${encodeURIComponent(catalogNumber)}`));
+    if (!selectedBrand && exactAims) exactTargets.push(exactAims.href);
     const uniqueTargets = [...new Set(exactTargets)];
     if (uniqueTargets.length === 1) redirect(uniqueTargets[0]);
   }
 
   const safeMatch = q.replace(/\*/g, "");
   const match = `*${safeMatch}*`;
-  const [liveRows, stagedChunks] = selectedBrand === "seedburo" ? [[], []] : await Promise.all([
+  const [liveRows, stagedChunks] = ["seedburo", "aims"].includes(selectedBrand) ? [[], []] : await Promise.all([
     sanityCdnClient.fetch<LiveSearchRow[]>(LIVE_SEARCH_QUERY, { match }, PUBLIC_CATALOG_CACHE),
     sanityCdnClient.fetch<StagedSearchChunk[]>(
       ABM_STAGED_SEARCH_QUERY,
@@ -508,6 +512,17 @@ export default async function SearchPage({
       kind: "Product",
       direct: target.direct,
       score: scoreMatch(title, sku, q),
+    });
+  }
+
+  for (const product of searchAimsProducts(q)) {
+    const exact = exactAimsModel(q);
+    const matched = exact?.product.slug === product.slug ? exact : undefined;
+    results.push({
+      id: `aims:${product.slug}`, title: matched && matched.model.sku !== product.sku ? `${matched.model.title} (ATS-3 upgrade)` : `${product.sku} ${product.title}`,
+      sku: matched?.model.sku || product.sku, description: matched?.model.description || product.summary,
+      brandKey: "aims", brandLabel: "AIMS", href: matched?.href || aimsProductHref(product.slug),
+      kind: "Product", direct: true, score: scoreMatch(product.title, matched?.model.sku || product.sku, q) + 3,
     });
   }
 

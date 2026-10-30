@@ -88,7 +88,7 @@ export default function Header() {
       }
 
       if (url.origin !== window.location.origin) return;
-      if (!/^\/products\/(cleaver|kent|seedburo)(?:\/|$)/.test(url.pathname)) return;
+      if (!/^\/products\/(cleaver|kent|seedburo|aims)(?:\/|$)/.test(url.pathname)) return;
       if (anchor.target === "_blank" || anchor.hasAttribute("download")) return;
       if (url.pathname === window.location.pathname && url.search === window.location.search) return;
 

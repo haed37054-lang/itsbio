@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import seedburoNavigation from "@/data/seedburo/navigation.json";
+import aimsNavigation from "@/data/aims/navigation.json";
 import { useEffect, useMemo, useRef, useState } from "react";
 
 type MenuLink = { label: string; href: string };
@@ -112,10 +113,10 @@ const BRANDS: BrandMenu[] = [
     key: "aims",
     name: "AIMS",
     area: "Animal Identification",
-    description: "Identification systems and accessories for laboratory animal research.",
-    href: "/products#brands",
+    description: "Laboratory animal tattoo systems and ATS-3 upgrade packages.",
+    href: "/products/aims",
     searchKey: "aims",
-    categories: ["Lab Animal Identification System", "AIMS Accessories"],
+    sections: aimsNavigation,
     dotClass: "bg-sky-600",
     accentClass: "text-sky-700",
   },

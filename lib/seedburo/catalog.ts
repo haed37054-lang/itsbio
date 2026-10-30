@@ -14,7 +14,17 @@ export type SeedburoCollection = {
   handle: string; title: string; sourceUrl: string; description: string;
   image: string; productHandles: string[]; count: number;
 };
-export const SEEDBURO_PRODUCTS = catalog as SeedburoProduct[];
+// Repair known source-feed encoding artifacts without changing product/SKU identities.
+const displayText = (value: string) => value.replaceAll("Â®", "®").replaceAll("Â°", "°").replaceAll("Â ", " ");
+export const SEEDBURO_PRODUCTS: SeedburoProduct[] = (catalog as SeedburoProduct[]).map((product) => ({
+  ...product,
+  title: displayText(product.title),
+  vendor: displayText(product.vendor),
+  summary: displayText(product.summary),
+  descriptionHtml: displayText(product.descriptionHtml),
+  variants: product.variants.map((variant) => ({ ...variant, title: displayText(variant.title) })),
+  tabs: product.tabs.map((tab) => ({ title: displayText(tab.title), html: displayText(tab.html) })),
+}));
 export const SEEDBURO_COLLECTIONS = collections as SeedburoCollection[];
 export const SEEDBURO_NAVIGATION = navigation;
 const byHandle = new Map(SEEDBURO_PRODUCTS.map((product) => [product.handle, product]));

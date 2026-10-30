@@ -283,6 +283,7 @@ export async function POST(req: Request) {
     const phone = oneLine(body.phone, 50);
     const product = oneLine(body.product, 300);
     const catNo = oneLine(body.catNo, 150);
+    const configuration = oneLine(body.configuration, 500);
     const message = clean(body.message, 5000);
     const sourceUrl = oneLine(body.sourceUrl, 1000);
     const privacyAccepted = body.privacyAccepted === true;
@@ -310,7 +311,7 @@ Email: ${email}
 Phone: ${phone}
 Product name: ${product}
 Cat No: ${catNo}
-${sourceUrl ? `Source page: ${sourceUrl}\n` : ""}
+${configuration ? `Model / specification: ${configuration}\n` : ""}${sourceUrl ? `Source page: ${sourceUrl}\n` : ""}
 Message:
 ${message}
     `.trim();

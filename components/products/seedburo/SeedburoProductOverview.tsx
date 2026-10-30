@@ -52,7 +52,7 @@ export default function SeedburoProductOverview({ title, vendor, images, variant
   }, [zoom]);
 
   return <>
-    <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
+    <div data-quote-context="product" data-product-name={title} data-cat-no={selected?.sku || ""} data-product-model={selected?.title !== "Default Title" ? selected?.title || "" : ""} className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
       {hasImages ? <div>
         <button ref={galleryTrigger} type="button" onClick={() => setZoom(true)} aria-label={`Enlarge ${title} photograph`} className="relative block aspect-square w-full overflow-hidden rounded-2xl border border-slate-200 bg-white">
           {activePhoto ? <Image src={activePhoto} alt={title} fill priority quality={90} sizes="(max-width: 1024px) 90vw, 580px" className="object-contain p-6" /> : null}

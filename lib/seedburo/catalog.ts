@@ -16,11 +16,11 @@ export type SeedburoCollection = {
   image: string; productHandles: string[]; count: number;
 };
 // Repair known source-feed encoding artifacts without changing product/SKU identities.
-const displayText = (value: string) => value.replaceAll("Â®", "®").replaceAll("Â°", "°").replaceAll("Â ", " ");
+const displayText = (value: string) => value.replaceAll("Â®", "®").replaceAll("â„¢", "™").replaceAll("Â°", "°").replaceAll("Â ", " ");
 export const SEEDBURO_PRODUCTS: SeedburoProduct[] = (catalog as SeedburoProduct[]).map((product) => ({
   ...product,
   title: displayText(seedburoDisplayTitle(product)),
-  images: product.images.filter((image) => !isSeedburoPlaceholder(image.url)),
+  images: product.images.filter((image) => !isSeedburoPlaceholder(image.url)).map((image) => ({ ...image, alt: displayText(image.alt) })),
   vendor: displayText(product.vendor),
   summary: displayText(product.summary),
   descriptionHtml: displayText(product.descriptionHtml),

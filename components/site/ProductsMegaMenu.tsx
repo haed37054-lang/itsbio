@@ -114,15 +114,15 @@ const THEMES: Record<string, BrandTheme> = {
     dot: "bg-rose-500",
   },
   aims: {
-    gradient: "from-sky-700 via-sky-600 to-sky-500",
-    softBg: "bg-sky-50/55",
-    activeBg: "bg-sky-50",
-    border: "border-sky-200",
-    text: "text-sky-700",
-    hoverText: "hover:text-sky-700",
-    hoverBorder: "hover:border-sky-200",
-    button: "bg-sky-600 hover:bg-sky-700",
-    dot: "bg-sky-500",
+    gradient: "from-red-700 via-red-600 to-red-500",
+    softBg: "bg-red-50/55",
+    activeBg: "bg-red-50",
+    border: "border-red-200",
+    text: "text-red-700",
+    hoverText: "hover:text-red-700",
+    hoverBorder: "hover:border-red-200",
+    button: "bg-red-600 hover:bg-red-700",
+    dot: "bg-red-500",
   },
   seedburo: {
     gradient: "from-green-700 via-green-600 to-green-500",
@@ -282,12 +282,13 @@ const BRANDS: Brand[] = [
   },
   {
     key: "aims",
-    name: "AIMS",
-    area: "Animal Identification",
-    description: "Tattoo identification systems for rodents, neonates and larger laboratory animals.",
+    name: "AIMS Lab Products",
+    area: "Laboratory Animal Equipment",
+    description: "Surgery and procedure boards, warming equipment, CO₂ systems and rodent restraints.",
     href: "/products/aims",
     searchKey: "aims",
     categories: aimsNavigation.flatMap((section) => section.links.map((item) => item.label)),
+    groups: aimsNavigation.map(section => ({label: section.label, href: section.links[0].href, items: section.links.slice(1)})),
     theme: THEMES.aims,
   },
   {
@@ -384,6 +385,7 @@ export default function ProductsMegaMenu() {
 
   const activeBrand = useMemo(() => BRANDS.find((brand) => brand.key === activeKey) ?? BRANDS[0], [activeKey]);
   const theme = activeBrand.theme;
+  const familyPalette = activeBrand.key === "affinity" ? {border:"border-cyan-500",arrow:"text-cyan-500",item:"hover:border-cyan-100 hover:text-sky-700",dot:"bg-cyan-400",side:"border-cyan-100 hover:text-sky-700",sideArrow:"text-cyan-400"} : activeBrand.key === "aims" ? {border:"border-red-500",arrow:"text-red-500",item:"hover:border-red-100 hover:text-red-700",dot:"bg-red-400",side:"border-red-100 hover:text-red-700",sideArrow:"text-red-400"} : {border:"border-orange-500",arrow:"text-orange-500",item:"hover:border-orange-100 hover:text-orange-700",dot:"bg-orange-400",side:"border-orange-100 hover:text-orange-700",sideArrow:"text-orange-400"};
 
   const cancelClose = () => {
     if (!closeTimer.current) return;
@@ -524,14 +526,14 @@ export default function ProductsMegaMenu() {
 
                     <div className="grid gap-x-8 gap-y-8 xl:grid-cols-2">
                       {activeBrand.groups.map((group) => (
-                        <section key={group.label} className={`min-w-0 border-t-[3px] pt-3 ${activeBrand.key === "affinity" ? "border-cyan-500" : "border-orange-500"}`}>
+                        <section key={group.label} className={`min-w-0 border-t-[3px] pt-3 ${familyPalette.border}`}>
                           <Link
                             href={group.href}
                             onClick={closeMenu}
                             className={`group/family mt-1.5 inline-flex items-center gap-3 text-[20px] font-semibold leading-tight tracking-[-0.03em] text-[#071d43] transition ${theme.hoverText}`}
                           >
                             {group.label}
-                            <ArrowIcon className={`h-4 w-4 transition group-hover/family:translate-x-1 ${activeBrand.key === "affinity" ? "text-cyan-500" : "text-orange-500"}`} />
+                            <ArrowIcon className={`h-4 w-4 transition group-hover/family:translate-x-1 ${familyPalette.arrow}`} />
                           </Link>
 
                           <div className="mt-3 grid grid-cols-2 gap-x-5">
@@ -540,9 +542,9 @@ export default function ProductsMegaMenu() {
                                 key={item.href}
                                 href={item.href}
                                 onClick={closeMenu}
-                                className={`group/item flex min-h-8 items-start gap-2 border-b border-slate-100 py-1.5 text-[11.5px] leading-4 text-slate-600 transition ${activeBrand.key === "affinity" ? "hover:border-cyan-100 hover:text-sky-700" : "hover:border-orange-100 hover:text-orange-700"}`}
+                                className={`group/item flex min-h-8 items-start gap-2 border-b border-slate-100 py-1.5 text-[11.5px] leading-4 text-slate-600 transition ${familyPalette.item}`}
                               >
-                                <span className={`mt-[6px] h-1 w-1 shrink-0 rounded-full ${activeBrand.key === "affinity" ? "bg-cyan-400" : "bg-orange-400"}`} />
+                                <span className={`mt-[6px] h-1 w-1 shrink-0 rounded-full ${familyPalette.dot}`} />
                                 <span>{item.label}</span>
                               </Link>
                             ))}
@@ -598,10 +600,10 @@ export default function ProductsMegaMenu() {
                             key={group.label}
                             href={group.href}
                             onClick={closeMenu}
-                            className={`group/family-side flex items-center justify-between border-b pb-2 text-[12px] font-semibold text-slate-700 transition ${activeBrand.key === "affinity" ? "border-cyan-100 hover:text-sky-700" : "border-orange-100 hover:text-orange-700"}`}
+                            className={`group/family-side flex items-center justify-between border-b pb-2 text-[12px] font-semibold text-slate-700 transition ${familyPalette.side}`}
                           >
                             <span>{group.label}</span>
-                            <ArrowIcon className={`h-3.5 w-3.5 transition group-hover/family-side:translate-x-0.5 ${activeBrand.key === "affinity" ? "text-cyan-400" : "text-orange-400"}`} />
+                            <ArrowIcon className={`h-3.5 w-3.5 transition group-hover/family-side:translate-x-0.5 ${familyPalette.sideArrow}`} />
                           </Link>
                         ))}
                       </div>

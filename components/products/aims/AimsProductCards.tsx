@@ -1,0 +1,6 @@
+import Image from "next/image";
+import Link from "next/link";
+import {aimsProductHref,type AimsProduct} from "@/lib/aims/catalog";
+export default function AimsProductCards({products}:{products:AimsProduct[]}) {
+  return <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-3">{products.map(product=><Link key={product.slug} href={aimsProductHref(product.slug)} prefetch={false} data-aims-product-card={product.slug} className="group flex h-full min-w-0 flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white transition hover:border-red-400 hover:shadow-md"><div className="relative aspect-[4/3] border-b border-slate-100 bg-white"><Image src={product.images[0].url} alt={product.images[0].alt} fill sizes="(max-width: 640px) 90vw, (max-width: 1280px) 45vw, 320px" quality={90} className="object-contain p-4" /></div><div className="flex flex-1 flex-col p-5">{product.sku?<p className="break-words text-[11px] font-semibold text-red-900">Cat.No {product.sku}</p>:null}<h3 className="mt-2 line-clamp-3 min-h-[4.5rem] text-lg font-semibold leading-6 tracking-tight text-slate-950 group-hover:text-red-900">{product.title}</h3><p className="mt-3 line-clamp-3 text-xs leading-6 text-slate-600">{product.summary}</p><span className="mt-auto pt-5 text-sm font-semibold text-red-900">View product ›</span></div></Link>)}</div>;
+}

@@ -1,34 +1,19 @@
-AIMS catalog scope
+# AIMS Lab Products catalog
 
-Three independently listed systems are published: ATS-3, NEO-9 and ATS-3L. NEO-AP and LLA-AP are manufacturer-listed upgrades for an existing ATS-3 and remain selectable options on that product, with their own Cat.Nos and quote metadata. No unverified standalone accessory SKUs or substitute photographs are added.
+The active AIMS catalog follows **https://aimslabproducts.com/**. The previously migrated animalid.com tattoo systems are excluded from the active catalog, navigation, brand descriptions and search. Their three old detail URLs redirect to the AIMS Lab Products catalog; they are not mapped to unrelated equipment.
 
-Catalog descriptions are editorial summaries of the official product pages and linked brochures. `source-media.json` records exact official media references. Equipment photographs use the largest image explicitly present in the original srcset. Application galleries retain the original source images. Canonical animalid.com references are used for the same uploaded files, rather than obsolete new.animalid.com links; every asset is checked before publication. Native product videos remain on their source host and load on demand.
+The official Shop has 50 distinct entries. 39 have substantive product descriptions; 11 are empty-description product-family links. All 50 are covered: 39 local detail pages plus 11 family links mapped to local categories. This is a count of source product pages, not a claim of 39 unique physical model numbers. Some manufacturer pages cover multiple models or overlap with a separate model page.
 
-To collect fresh official references into a new source cache (requires Python Pillow):
+Navigation retains six manufacturer families and 22 categories, including the three-level Surgery Boards hierarchy. Parent membership includes the products of its source-linked child categories. GETP and LLSW are present in the official Shop but absent from the reviewed menu category listings; both remain in All products, without inventing a category assignment.
+
+Product text is preserved from the manufacturer description panel. Images use the original source gallery files and the largest explicitly listed body-image source. The local snapshot contains 80 distinct images (including the logo) and 16 original PDF files; 38 product pages have linked documents. The combined Grace Procedure / Dissection Boards page has no source PDF link, so none is invented. The source pages contain no embedded product video. Manufacturer reference text is retained when an external AVMA PDF could not be verified; an invalid HTML response is never published as a PDF.
+
+Original descriptions, tables, model codes, image captions, related-product references, PDF files and the correct red AIMS Lab Products logo are retained. Product and category links in descriptions are rewritten to local routes. Vendor checkout controls, prices, login prompts and external manufacturer-page footer links are not displayed.
 
 ```sh
-python scripts/collect-aims-media.py /path/to/new-cache
+node scripts/collect-aims-lab.mjs
 npm run aims:audit
+npm run build
 ```
 
-Review changes to `catalog.json` against these sources before updating specifications or models:
-
-- https://animalid.com/portfolio/ats-3-general-rodent-tattoo-system/
-- https://animalid.com/portfolio/neo-9-neonate-rodent-tattooing-system/
-- https://animalid.com/portfolio/ats-3l-large-animal-tattoo-system/
-
-Public training manuals mentioned in kit contents are not fabricated as downloadable files. The Documents section links only to the actual manufacturer brochures. ATS-3L has no product video on the reviewed source page, so its page has no empty or substituted video section.
-
-Content review — 2026-10-30
-
-The initial migration compressed product text too aggressively. The second pass adds separate applications, kit contents, model-specific instruction volumes, quantitative brochure facts, a system comparison and manufacturer training/care summaries. Original media and Cat.No/quote behavior remain intact.
-
-Additional fact sources:
-
-- ATS-3 brochure: https://animalid.com/wp-content/uploads/2022/04/AIMS-ATS-3-Document.pdf — approximate initial supplies for 3,000 mice/rats; Vol. 2 and instructional DVD; upgrade guide volumes.
-- NEO-9 brochure: https://animalid.com/wp-content/uploads/2022/04/AIMS-NEO-9-Brochure.pdf — 4× magnification; schemes up to 10,000 IDs; initial supplies for approximately 2,000 neonates; Vol. 1 and instructional DVD.
-- ATS-3L brochure: https://animalid.com/wp-content/uploads/2022/04/AIMS-ATS-3L-Brochure.pdf — ultra-light handpiece, foot pedal, HDUI supply/controller, calibrated needle tubes, Vol. 3.
-- https://animalid.com/training/ — manufacturer on-site program, six-person minimum, equipment/supplies and assessment requirements.
-- https://animalid.com/equipment-care/ — annual handpiece service recommendation and inspection/calibration scope.
-
-Supply quantities are attributed to the 2022 brochures and are approximate, not lifetime throughput guarantees. The training program is described as the manufacturer's service; local availability is not promised. Instructional books/DVDs listed as kit materials are not presented as public downloads. No equipment dimensions, consumable SKUs or safety guarantees are inferred from photographs.
+The collector caches source HTML in ignored `.cache/aims-lab-review/`. `official-inventory.json` records source membership and normalized text digests independent of the rendered pages. The offline audit validates all 39 descriptions, family routes, navigation, source provenance, original image dimensions and PDF byte signatures. Shared product information tabs retain the AffinityImmuno cyan theme and use the AIMS red theme for this catalog.

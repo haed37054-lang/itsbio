@@ -61,13 +61,13 @@ const BRANDS: Brand[] = [
   },
   {
     key: "aims",
-    name: "AIMS",
+    name: "AIMS Lab Products",
     shortName: "AIMS",
-    eyebrow: "ANIMAL IDENTIFICATION",
-    description: "Identification and data solutions designed to support reliable animal research and care.",
-    logo: "/partners/aims-logo.png",
+    eyebrow: "LABORATORY ANIMAL EQUIPMENT",
+    description: "Surgery and procedure boards, warming equipment, CO₂ systems and rodent restraints.",
+    logo: "/partners/aims-lab-logo.png",
     href: "/products/aims",
-    tags: ["Identification", "Data Systems", "Animal Care"],
+    tags: ["Surgery Boards", "Warming Equipment", "CO₂ Systems"],
   },
   {
     key: "bioplastics",

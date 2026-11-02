@@ -1,0 +1,437 @@
+[
+  {
+    "slug": "small-animal-surgery",
+    "title": "Small Animal Surgery",
+    "parent": "",
+    "sourceUrl": "https://aimslabproducts.com/product-category/small-animal-surgery/",
+    "productUrls": [
+      "https://aimslabproducts.com/product/aims-warming-induction-chamber/",
+      "https://aimslabproducts.com/product/acrylic/",
+      "https://aimslabproducts.com/product/surgery-boards/",
+      "https://aimslabproducts.com/product/warming-plates/",
+      "https://aimslabproducts.com/product/aims-portable-warming-plate-pwpv/",
+      "https://aimslabproducts.com/product/hpde/",
+      "https://aimslabproducts.com/product/warming-chambers/",
+      "https://aimslabproducts.com/product/accessories/",
+      "https://aimslabproducts.com/product/aims-grace-small-animal-surgery-boards-gss1/",
+      "https://aimslabproducts.com/product/post-surgery-warming/",
+      "https://aimslabproducts.com/product/aims-grace-small-animal-surgery-boards-gss2/",
+      "https://aimslabproducts.com/product/aims-grace-small-animal-surgery-boards-gsm1/",
+      "https://aimslabproducts.com/product/aims-grace-small-animal-surgery-boards-gsm2/",
+      "https://aimslabproducts.com/product/aims-thermo-controlled-recovery-pad-tcrp/",
+      "https://aimslabproducts.com/product/aims-variable-temp-controller-gvt1/",
+      "https://aimslabproducts.com/product/aims-thermal-drape-gbtd/",
+      "https://aimslabproducts.com/product/aims-space-gel-heating-pad-ggp1/",
+      "https://aimslabproducts.com/product/aims-single-temp-power-supply-gpp1-gpp2-gpp3/",
+      "https://aimslabproducts.com/product/aims-magnetic-magnifier-gmag/",
+      "https://aimslabproducts.com/product/aims-magnetic-limb-restraints-glr1/",
+      "https://aimslabproducts.com/product/aims-magnetic-drape-holders-small-gdhs/",
+      "https://aimslabproducts.com/product/aims-magnetic-drape-holders-large-gdhl/",
+      "https://aimslabproducts.com/product/aims-hypothermic-cooling-plate-gbhp/",
+      "https://aimslabproducts.com/product/aims-elastic-hold-downs-gehd/"
+    ],
+    "directProductUrls": [
+      "https://aimslabproducts.com/product/aims-warming-induction-chamber/",
+      "https://aimslabproducts.com/product/acrylic/",
+      "https://aimslabproducts.com/product/surgery-boards/",
+      "https://aimslabproducts.com/product/warming-plates/",
+      "https://aimslabproducts.com/product/aims-portable-warming-plate-pwpv/",
+      "https://aimslabproducts.com/product/hpde/",
+      "https://aimslabproducts.com/product/warming-chambers/",
+      "https://aimslabproducts.com/product/accessories/",
+      "https://aimslabproducts.com/product/aims-grace-small-animal-surgery-boards-gss1/",
+      "https://aimslabproducts.com/product/post-surgery-warming/",
+      "https://aimslabproducts.com/product/aims-grace-small-animal-surgery-boards-gss2/",
+      "https://aimslabproducts.com/product/aims-grace-small-animal-surgery-boards-gsm1/",
+      "https://aimslabproducts.com/product/aims-grace-small-animal-surgery-boards-gsm2/",
+      "https://aimslabproducts.com/product/aims-thermo-controlled-recovery-pad-tcrp/",
+      "https://aimslabproducts.com/product/aims-variable-temp-controller-gvt1/",
+      "https://aimslabproducts.com/product/aims-thermal-drape-gbtd/",
+      "https://aimslabproducts.com/product/aims-space-gel-heating-pad-ggp1/",
+      "https://aimslabproducts.com/product/aims-single-temp-power-supply-gpp1-gpp2-gpp3/",
+      "https://aimslabproducts.com/product/aims-magnetic-magnifier-gmag/",
+      "https://aimslabproducts.com/product/aims-magnetic-limb-restraints-glr1/",
+      "https://aimslabproducts.com/product/aims-magnetic-drape-holders-small-gdhs/",
+      "https://aimslabproducts.com/product/aims-magnetic-drape-holders-large-gdhl/",
+      "https://aimslabproducts.com/product/aims-hypothermic-cooling-plate-gbhp/",
+      "https://aimslabproducts.com/product/aims-elastic-hold-downs-gehd/"
+    ],
+    "count": 18
+  },
+  {
+    "slug": "surgery-boards",
+    "title": "Surgery Boards",
+    "parent": "small-animal-surgery",
+    "sourceUrl": "https://aimslabproducts.com/surgery-boards/",
+    "productUrls": [
+      "https://aimslabproducts.com/product/acrylic/",
+      "https://aimslabproducts.com/product/hpde/",
+      "https://aimslabproducts.com/product/accessories/",
+      "https://aimslabproducts.com/product/aims-grace-small-animal-surgery-boards-gsm1/",
+      "https://aimslabproducts.com/product/aims-grace-small-animal-surgery-boards-gsm2/",
+      "https://aimslabproducts.com/product/aims-grace-small-animal-surgery-boards-gss1/",
+      "https://aimslabproducts.com/product/aims-grace-small-animal-surgery-boards-gss2/",
+      "https://aimslabproducts.com/product/aims-variable-temp-controller-gvt1/",
+      "https://aimslabproducts.com/product/aims-thermal-drape-gbtd/",
+      "https://aimslabproducts.com/product/aims-space-gel-heating-pad-ggp1/",
+      "https://aimslabproducts.com/product/aims-single-temp-power-supply-gpp1-gpp2-gpp3/",
+      "https://aimslabproducts.com/product/aims-magnetic-magnifier-gmag/",
+      "https://aimslabproducts.com/product/aims-magnetic-limb-restraints-glr1/",
+      "https://aimslabproducts.com/product/aims-magnetic-drape-holders-small-gdhs/",
+      "https://aimslabproducts.com/product/aims-magnetic-drape-holders-large-gdhl/",
+      "https://aimslabproducts.com/product/aims-hypothermic-cooling-plate-gbhp/",
+      "https://aimslabproducts.com/product/aims-elastic-hold-downs-gehd/"
+    ],
+    "directProductUrls": [
+      "https://aimslabproducts.com/product/acrylic/",
+      "https://aimslabproducts.com/product/hpde/",
+      "https://aimslabproducts.com/product/accessories/"
+    ],
+    "count": 15
+  },
+  {
+    "slug": "hdpe",
+    "title": "HDPE",
+    "parent": "surgery-boards",
+    "sourceUrl": "https://aimslabproducts.com/hdpe/",
+    "productUrls": [
+      "https://aimslabproducts.com/product/aims-grace-small-animal-surgery-boards-gsm1/",
+      "https://aimslabproducts.com/product/aims-grace-small-animal-surgery-boards-gsm2/",
+      "https://aimslabproducts.com/product/aims-grace-small-animal-surgery-boards-gss1/",
+      "https://aimslabproducts.com/product/aims-grace-small-animal-surgery-boards-gss2/"
+    ],
+    "directProductUrls": [
+      "https://aimslabproducts.com/product/aims-grace-small-animal-surgery-boards-gsm1/",
+      "https://aimslabproducts.com/product/aims-grace-small-animal-surgery-boards-gsm2/",
+      "https://aimslabproducts.com/product/aims-grace-small-animal-surgery-boards-gss1/",
+      "https://aimslabproducts.com/product/aims-grace-small-animal-surgery-boards-gss2/"
+    ],
+    "count": 4
+  },
+  {
+    "slug": "acrylic",
+    "title": "Acrylic",
+    "parent": "surgery-boards",
+    "sourceUrl": "https://aimslabproducts.com/acrylic/",
+    "productUrls": [
+      "https://aimslabproducts.com/product/acrylic/"
+    ],
+    "directProductUrls": [
+      "https://aimslabproducts.com/product/acrylic/"
+    ],
+    "count": 1
+  },
+  {
+    "slug": "surgery-board-accessories",
+    "title": "Accessories",
+    "parent": "surgery-boards",
+    "sourceUrl": "https://aimslabproducts.com/surgery-board-accessories/",
+    "productUrls": [
+      "https://aimslabproducts.com/product/aims-variable-temp-controller-gvt1/",
+      "https://aimslabproducts.com/product/aims-thermal-drape-gbtd/",
+      "https://aimslabproducts.com/product/aims-space-gel-heating-pad-ggp1/",
+      "https://aimslabproducts.com/product/aims-single-temp-power-supply-gpp1-gpp2-gpp3/",
+      "https://aimslabproducts.com/product/aims-magnetic-magnifier-gmag/",
+      "https://aimslabproducts.com/product/aims-magnetic-limb-restraints-glr1/",
+      "https://aimslabproducts.com/product/aims-magnetic-drape-holders-small-gdhs/",
+      "https://aimslabproducts.com/product/aims-magnetic-drape-holders-large-gdhl/",
+      "https://aimslabproducts.com/product/aims-hypothermic-cooling-plate-gbhp/",
+      "https://aimslabproducts.com/product/aims-elastic-hold-downs-gehd/"
+    ],
+    "directProductUrls": [
+      "https://aimslabproducts.com/product/aims-variable-temp-controller-gvt1/",
+      "https://aimslabproducts.com/product/aims-thermal-drape-gbtd/",
+      "https://aimslabproducts.com/product/aims-space-gel-heating-pad-ggp1/",
+      "https://aimslabproducts.com/product/aims-single-temp-power-supply-gpp1-gpp2-gpp3/",
+      "https://aimslabproducts.com/product/aims-magnetic-magnifier-gmag/",
+      "https://aimslabproducts.com/product/aims-magnetic-limb-restraints-glr1/",
+      "https://aimslabproducts.com/product/aims-magnetic-drape-holders-small-gdhs/",
+      "https://aimslabproducts.com/product/aims-magnetic-drape-holders-large-gdhl/",
+      "https://aimslabproducts.com/product/aims-hypothermic-cooling-plate-gbhp/",
+      "https://aimslabproducts.com/product/aims-elastic-hold-downs-gehd/"
+    ],
+    "count": 10
+  },
+  {
+    "slug": "post-surgery-warming",
+    "title": "Post-Surgery Warming",
+    "parent": "small-animal-surgery",
+    "sourceUrl": "https://aimslabproducts.com/post-surgery-warming/",
+    "productUrls": [
+      "https://aimslabproducts.com/product/warming-plates/",
+      "https://aimslabproducts.com/product/warming-chambers/",
+      "https://aimslabproducts.com/product/aims-thermo-controlled-recovery-pad-tcrp/",
+      "https://aimslabproducts.com/product/aims-portable-warming-plate-pwpv/",
+      "https://aimslabproducts.com/product/aims-warming-induction-chamber/"
+    ],
+    "directProductUrls": [
+      "https://aimslabproducts.com/product/warming-plates/",
+      "https://aimslabproducts.com/product/warming-chambers/"
+    ],
+    "count": 3
+  },
+  {
+    "slug": "warming-plates",
+    "title": "Warming Plates",
+    "parent": "post-surgery-warming",
+    "sourceUrl": "https://aimslabproducts.com/warming-plates/",
+    "productUrls": [
+      "https://aimslabproducts.com/product/aims-thermo-controlled-recovery-pad-tcrp/",
+      "https://aimslabproducts.com/product/aims-portable-warming-plate-pwpv/"
+    ],
+    "directProductUrls": [
+      "https://aimslabproducts.com/product/aims-thermo-controlled-recovery-pad-tcrp/",
+      "https://aimslabproducts.com/product/aims-portable-warming-plate-pwpv/"
+    ],
+    "count": 2
+  },
+  {
+    "slug": "warming-chambers",
+    "title": "Warming Chambers",
+    "parent": "post-surgery-warming",
+    "sourceUrl": "https://aimslabproducts.com/warming-chambers/",
+    "productUrls": [
+      "https://aimslabproducts.com/product/aims-warming-induction-chamber/"
+    ],
+    "directProductUrls": [
+      "https://aimslabproducts.com/product/aims-warming-induction-chamber/"
+    ],
+    "count": 1
+  },
+  {
+    "slug": "procedure-dissection-boards",
+    "title": "Procedure / Dissection Boards",
+    "parent": "",
+    "sourceUrl": "https://aimslabproducts.com/product-category/procedure-dissection-boards/",
+    "productUrls": [
+      "https://aimslabproducts.com/product/aims-blue-wax-dissection-tray-extra-large/",
+      "https://aimslabproducts.com/product/aims-blue-wax-dissection-tray-standard-size/",
+      "https://aimslabproducts.com/product/aims-blue-wax-processing-discs/",
+      "https://aimslabproducts.com/product/aims-grace-procedure-dissection-boards/",
+      "https://aimslabproducts.com/product/aims-grace-procedure-board-magnetic-base-gpm1/",
+      "https://aimslabproducts.com/product/aims-grace-procedure-board-magnetic-base-gpm2/",
+      "https://aimslabproducts.com/product/aims-grace-procedure-board-non-magnetic-base-gps1/",
+      "https://aimslabproducts.com/product/aims-grace-procedure-board-non-magnetic-base-gps2/",
+      "https://aimslabproducts.com/product/acrylic/",
+      "https://aimslabproducts.com/product/aims-dissection-platform/",
+      "https://aimslabproducts.com/product/aims-surgery-platform-ass7/"
+    ],
+    "directProductUrls": [
+      "https://aimslabproducts.com/product/aims-blue-wax-dissection-tray-extra-large/",
+      "https://aimslabproducts.com/product/aims-blue-wax-dissection-tray-standard-size/",
+      "https://aimslabproducts.com/product/aims-blue-wax-processing-discs/",
+      "https://aimslabproducts.com/product/aims-grace-procedure-dissection-boards/",
+      "https://aimslabproducts.com/product/aims-grace-procedure-board-magnetic-base-gpm1/",
+      "https://aimslabproducts.com/product/aims-grace-procedure-board-magnetic-base-gpm2/",
+      "https://aimslabproducts.com/product/aims-grace-procedure-board-non-magnetic-base-gps1/",
+      "https://aimslabproducts.com/product/aims-grace-procedure-board-non-magnetic-base-gps2/",
+      "https://aimslabproducts.com/product/acrylic/",
+      "https://aimslabproducts.com/product/aims-dissection-platform/",
+      "https://aimslabproducts.com/product/aims-surgery-platform-ass7/"
+    ],
+    "count": 11
+  },
+  {
+    "slug": "procedure-boards",
+    "title": "Procedure Boards",
+    "parent": "procedure-dissection-boards",
+    "sourceUrl": "https://aimslabproducts.com/procedure-boards/",
+    "productUrls": [
+      "https://aimslabproducts.com/product/aims-grace-procedure-board-magnetic-base-gpm1/",
+      "https://aimslabproducts.com/product/aims-grace-procedure-board-magnetic-base-gpm2/",
+      "https://aimslabproducts.com/product/aims-grace-procedure-board-non-magnetic-base-gps1/",
+      "https://aimslabproducts.com/product/aims-grace-procedure-board-non-magnetic-base-gps2/",
+      "https://aimslabproducts.com/product/aims-dissection-platform/",
+      "https://aimslabproducts.com/product/aims-surgery-platform-ass7/"
+    ],
+    "directProductUrls": [
+      "https://aimslabproducts.com/product/aims-grace-procedure-board-magnetic-base-gpm1/",
+      "https://aimslabproducts.com/product/aims-grace-procedure-board-magnetic-base-gpm2/",
+      "https://aimslabproducts.com/product/aims-grace-procedure-board-non-magnetic-base-gps1/",
+      "https://aimslabproducts.com/product/aims-grace-procedure-board-non-magnetic-base-gps2/",
+      "https://aimslabproducts.com/product/aims-dissection-platform/",
+      "https://aimslabproducts.com/product/aims-surgery-platform-ass7/"
+    ],
+    "count": 6
+  },
+  {
+    "slug": "dissection-trays",
+    "title": "Dissection Trays",
+    "parent": "procedure-dissection-boards",
+    "sourceUrl": "https://aimslabproducts.com/dissection-trays/",
+    "productUrls": [
+      "https://aimslabproducts.com/product/aims-blue-wax-dissection-tray-standard-size/",
+      "https://aimslabproducts.com/product/aims-blue-wax-dissection-tray-extra-large/"
+    ],
+    "directProductUrls": [
+      "https://aimslabproducts.com/product/aims-blue-wax-dissection-tray-standard-size/",
+      "https://aimslabproducts.com/product/aims-blue-wax-dissection-tray-extra-large/"
+    ],
+    "count": 2
+  },
+  {
+    "slug": "processing-discs",
+    "title": "Processing Discs",
+    "parent": "procedure-dissection-boards",
+    "sourceUrl": "https://aimslabproducts.com/processing-discs/",
+    "productUrls": [
+      "https://aimslabproducts.com/product/aims-blue-wax-processing-discs/"
+    ],
+    "directProductUrls": [
+      "https://aimslabproducts.com/product/aims-blue-wax-processing-discs/"
+    ],
+    "count": 1
+  },
+  {
+    "slug": "co2-euthanasia",
+    "title": "CO₂ Euthanasia",
+    "parent": "",
+    "sourceUrl": "https://aimslabproducts.com/product-category/co2-euthanasia/",
+    "productUrls": [
+      "https://aimslabproducts.com/product/aims-co2-flowmeter/",
+      "https://aimslabproducts.com/product/aims-co2-flowmeter-low-pressure-regulator/",
+      "https://aimslabproducts.com/product/aims-co2-flowmeter-tubing-10-with-coupler-kit/",
+      "https://aimslabproducts.com/product/aims-co2-flowmeter-wall-mount-brackets/",
+      "https://aimslabproducts.com/product/aims-co2-induction-chamber-for-mice-rats/"
+    ],
+    "directProductUrls": [
+      "https://aimslabproducts.com/product/aims-co2-flowmeter/",
+      "https://aimslabproducts.com/product/aims-co2-flowmeter-low-pressure-regulator/",
+      "https://aimslabproducts.com/product/aims-co2-flowmeter-tubing-10-with-coupler-kit/",
+      "https://aimslabproducts.com/product/aims-co2-flowmeter-wall-mount-brackets/",
+      "https://aimslabproducts.com/product/aims-co2-induction-chamber-for-mice-rats/"
+    ],
+    "count": 5
+  },
+  {
+    "slug": "co2-chamber",
+    "title": "CO₂ Chamber",
+    "parent": "co2-euthanasia",
+    "sourceUrl": "https://aimslabproducts.com/product-category/co2-euthanasia/co2-chamber/",
+    "productUrls": [
+      "https://aimslabproducts.com/product/aims-co2-induction-chamber-for-mice-rats/"
+    ],
+    "directProductUrls": [
+      "https://aimslabproducts.com/product/aims-co2-induction-chamber-for-mice-rats/"
+    ],
+    "count": 1
+  },
+  {
+    "slug": "co2-flowmeters",
+    "title": "CO₂ Flowmeters",
+    "parent": "",
+    "sourceUrl": "https://aimslabproducts.com/co2-flowmeters/",
+    "productUrls": [
+      "https://aimslabproducts.com/product/aims-co2-flowmeter/",
+      "https://aimslabproducts.com/product/aims-co2-flowmeter-low-pressure-regulator/",
+      "https://aimslabproducts.com/product/aims-co2-flowmeter-tubing-10-with-coupler-kit/",
+      "https://aimslabproducts.com/product/aims-co2-flowmeter-wall-mount-brackets/"
+    ],
+    "directProductUrls": [
+      "https://aimslabproducts.com/product/aims-co2-flowmeter/",
+      "https://aimslabproducts.com/product/aims-co2-flowmeter-low-pressure-regulator/"
+    ],
+    "count": 4
+  },
+  {
+    "slug": "flowmeter-models",
+    "title": "SC100, LC500, XL900",
+    "parent": "co2-flowmeters",
+    "sourceUrl": "https://aimslabproducts.com/product-category/co2-euthanasia/co2-flowmeters/sc100-lc500-xl900/",
+    "productUrls": [
+      "https://aimslabproducts.com/product/aims-co2-flowmeter/"
+    ],
+    "directProductUrls": [
+      "https://aimslabproducts.com/product/aims-co2-flowmeter/"
+    ],
+    "count": 1
+  },
+  {
+    "slug": "flowmeter-accessories",
+    "title": "Accessories",
+    "parent": "co2-flowmeters",
+    "sourceUrl": "https://aimslabproducts.com/product-category/co2-euthanasia/co2-flowmeters/accessories-flowmeters/",
+    "productUrls": [
+      "https://aimslabproducts.com/product/aims-co2-flowmeter-low-pressure-regulator/",
+      "https://aimslabproducts.com/product/aims-co2-flowmeter-tubing-10-with-coupler-kit/",
+      "https://aimslabproducts.com/product/aims-co2-flowmeter-wall-mount-brackets/"
+    ],
+    "directProductUrls": [
+      "https://aimslabproducts.com/product/aims-co2-flowmeter-low-pressure-regulator/",
+      "https://aimslabproducts.com/product/aims-co2-flowmeter-tubing-10-with-coupler-kit/",
+      "https://aimslabproducts.com/product/aims-co2-flowmeter-wall-mount-brackets/"
+    ],
+    "count": 3
+  },
+  {
+    "slug": "rodent-restraints",
+    "title": "Rodent Restraints",
+    "parent": "",
+    "sourceUrl": "https://aimslabproducts.com/product-category/rodent-restraints/",
+    "productUrls": [
+      "https://aimslabproducts.com/product/aims-disposable-plastic-restraints-dpr/",
+      "https://aimslabproducts.com/product/aims-in-low-tail-cutting-platform-il200/",
+      "https://aimslabproducts.com/product/aims-in-low-tail-injection-platform-il300/"
+    ],
+    "directProductUrls": [
+      "https://aimslabproducts.com/product/aims-disposable-plastic-restraints-dpr/",
+      "https://aimslabproducts.com/product/aims-in-low-tail-cutting-platform-il200/",
+      "https://aimslabproducts.com/product/aims-in-low-tail-injection-platform-il300/"
+    ],
+    "count": 3
+  },
+  {
+    "slug": "plastic-restraints",
+    "title": "Plastic Restraints",
+    "parent": "rodent-restraints",
+    "sourceUrl": "https://aimslabproducts.com/product-category/rodent-restraints/plastic-restraints/",
+    "productUrls": [
+      "https://aimslabproducts.com/product/aims-disposable-plastic-restraints-dpr/"
+    ],
+    "directProductUrls": [
+      "https://aimslabproducts.com/product/aims-disposable-plastic-restraints-dpr/"
+    ],
+    "count": 1
+  },
+  {
+    "slug": "tail-cutting",
+    "title": "Tail Cutting",
+    "parent": "rodent-restraints",
+    "sourceUrl": "https://aimslabproducts.com/product-category/rodent-restraints/tail-cutting/",
+    "productUrls": [
+      "https://aimslabproducts.com/product/aims-in-low-tail-cutting-platform-il200/"
+    ],
+    "directProductUrls": [
+      "https://aimslabproducts.com/product/aims-in-low-tail-cutting-platform-il200/"
+    ],
+    "count": 1
+  },
+  {
+    "slug": "tail-injection",
+    "title": "Tail Injection",
+    "parent": "rodent-restraints",
+    "sourceUrl": "https://aimslabproducts.com/product-category/rodent-restraints/tail-injection/",
+    "productUrls": [
+      "https://aimslabproducts.com/product/aims-in-low-tail-injection-platform-il300/"
+    ],
+    "directProductUrls": [
+      "https://aimslabproducts.com/product/aims-in-low-tail-injection-platform-il300/"
+    ],
+    "count": 1
+  },
+  {
+    "slug": "stereotaxic-lighting-magnification",
+    "title": "Stereotaxic Lighting / Magnification",
+    "parent": "",
+    "sourceUrl": "https://aimslabproducts.com/product-category/stereotaxiclighting-magnification/",
+    "productUrls": [
+      "https://aimslabproducts.com/product/aims-magnetic-magnifier-gmag/",
+      "https://aimslabproducts.com/product/aims-stereotaxic-led-light-ll13/"
+    ],
+    "directProductUrls": [
+      "https://aimslabproducts.com/product/aims-magnetic-magnifier-gmag/",
+      "https://aimslabproducts.com/product/aims-stereotaxic-led-light-ll13/"
+    ],
+    "count": 2
+  }
+]

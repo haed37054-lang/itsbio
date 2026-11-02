@@ -1,238 +1,2217 @@
 [
   {
-    "slug": "ats-3",
-    "sku": "ATS-3",
-    "title": "General Rodent Tattoo System",
-    "audience": "Weanling & adult mice / rats",
-    "summary": "Permanent tail identification for weanling and adult mice and rats.",
-    "description": "Designed for breeding-colony records and individual experimental identification, the ATS-3 marks mouse and rat tails with permanent numbers, letters or lines. It serves weanling and adult rodents, with dedicated supplies and restraints. An existing system can be extended to neonates or larger laboratory animals using the packages in the Cat.No selector.",
-    "features": [
-      "Laboratory-duty equipment for rodent tail identification",
-      "Mouse and rat restraints supplied",
-      "Dedicated tail needles and a choice of pigment colors",
-      "Permanent markings for colony and research records",
-      "Universal 100–220 V, 50–60 Hz power input",
-      "RoHS compliance listed by the manufacturer"
-    ],
-    "specifications": [
-      [
-        "Animals",
-        "Weanling and adult mice / rats"
-      ],
-      [
-        "Marking site",
-        "Tail"
-      ],
-      [
-        "Marking formats",
-        "Numbers, letters, lines, dots and colors"
-      ],
-      [
-        "Power input",
-        "100–220 V, 50–60 Hz"
-      ],
-      [
-        "Expansion",
-        "NEO-AP for neonates; LLA-AP for larger animals"
-      ]
-    ],
+    "slug": "aims-blue-wax-dissection-tray-extra-large",
+    "sku": "DTXL",
+    "title": "AIMS™ Blue Wax Dissection Tray Extra Large",
+    "summary": "Environmentally Safe Dissection Tray – Completely Green",
+    "descriptionHtml": "\n\t\t\t\t\n\t\n\n\n\t\n\t\t\n\t\t\t<p>Environmentally Safe Dissection Tray – Completely Green</p>\n<p>No Black Wax This dissection tray uses a completely environmentally safe wax product instead of the “black wax” like product used in most other dissection trays. The MSDS sheet for this product lists no toxic chemicals and there are no fire, health or reactivity hazards with this product.</p>\n<p>Often used with AIMS™ Dissection Platform.</p>\n<p>“Blue Wax” is specially formulated to provide the proper consistency to allow pins to stick firmly and be easily removed.</p>\n<p>Tissue Processing Disc<br />\nProcess tissue using a clean Blue Wax surface</p>\n<p>Layout, Pin, &amp; Trim tissue</p>\n<p>“Blue Wax” can be heated to renew the surface and the dissection tray can be reused several times.</p>\n<p>DTW1 AIMS™ Dissection Tray (9” x 6.5” x 1”)<br />\nLTPD Large Tissue Processing Disc (4″ dia., 1/4″ thick)<br />\nMTPD Medium Tissue Processing Disc (2 3/4″ dia., 1/4″ thick)<br />\nSTPD Small Tissue Processing Disc (2″ dia., 1/4″ thick)<br />\nTPIN Ball Head Tissue Pins, ss (1 1/2″ long, 50/pk)</p>\n\n\t\t\n\t\n\n\t\t\t",
+    "sourceBodyDigest": "cb1a4ec38f8df21934d79b0e04e41f41465c966abab870d0ed91ea0eb7de13f6",
+    "specifications": [],
     "models": [
       {
-        "sku": "ATS-3",
-        "title": "General Rodent Tattoo System",
-        "description": "Complete rodent tattoo system with supplies and accessories."
+        "sku": "DTXL",
+        "title": "AIMS™ Blue Wax Dissection Tray Extra Large",
+        "description": ""
+      }
+    ],
+    "images": [
+      {
+        "url": "/aims-lab/c13602f44a539320.jpg",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/10/HP-Dissection-Trays-1-scaled.jpg",
+        "width": 2560,
+        "height": 1920,
+        "alt": "AIMS™ Lab Products Dissection Trays"
       },
       {
-        "sku": "NEO-AP",
-        "title": "Neonate Upgrade Package",
-        "description": "Neonate accessories and supplies for an existing ATS-3; includes the neonate tattoo guide."
+        "url": "/aims-lab/0d83f0728e2cfde4.png",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/09/AIMS-Lab-Products-grace-procedure-board-light-mag-bluewax-example.png",
+        "width": 641,
+        "height": 529,
+        "alt": "AIMS™ Lab Products | Grace Procedure / Dissection Boards"
+      }
+    ],
+    "documents": [
+      {
+        "url": "/aims-lab/8370db02d388a132.pdf",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/12/AIMS%E2%84%A2-Lab-Products-Blue-Wax-Large-Dissection-Tray-Product-Details.pdf",
+        "label": "Product Details - PDF"
+      }
+    ],
+    "categories": [
+      "procedure-dissection-boards",
+      "dissection-trays"
+    ],
+    "relatedSlugs": [
+      "aims-blue-wax-dissection-tray-standard-size",
+      "aims-dissection-platform"
+    ],
+    "sourceUrl": "https://aimslabproducts.com/product/aims-blue-wax-dissection-tray-extra-large/"
+  },
+  {
+    "slug": "aims-blue-wax-dissection-tray-standard-size",
+    "sku": "DTW1",
+    "title": "AIMS™ Blue Wax Dissection Tray Standard Size",
+    "summary": "Environmentally Safe Dissection Tray – Completely Green",
+    "descriptionHtml": "\n\t\t\t\t\n\t\n\n\n\t\n\t\t\n\t\t\t<p>Environmentally Safe Dissection Tray – Completely Green</p>\n<p>No Black Wax This dissection tray uses a completely environmentally safe wax product instead of the “black wax” like product used in most other dissection trays. The MSDS sheet for this product lists no toxic chemicals and there are no fire, health or reactivity hazards with this product.</p>\n<p>Often used with AIMS™ Dissection Platform.</p>\n<p>“Blue Wax” is specially formulated to provide the proper consistency to allow pins to stick firmly and be easily removed.</p>\n<p>Tissue Processing Disc<br />\nProcess tissue using a clean Blue Wax surface</p>\n<p>Layout, Pin, &amp; Trim tissue</p>\n<p>“Blue Wax” can be heated to renew the surface and the dissection tray can be reused several times.</p>\n<p>DTW1 AIMS™ Dissection Tray (9” x 6.5” x 1”)<br />\nLTPD Large Tissue Processing Disc (4″ dia., 1/4″ thick)<br />\nMTPD Medium Tissue Processing Disc (2 3/4″ dia., 1/4″ thick)<br />\nSTPD Small Tissue Processing Disc (2″ dia., 1/4″ thick)<br />\nTPIN Ball Head Tissue Pins, ss (1 1/2″ long, 50/pk)</p>\n\n\t\t\n\t\n\n\t\t\t",
+    "sourceBodyDigest": "cb1a4ec38f8df21934d79b0e04e41f41465c966abab870d0ed91ea0eb7de13f6",
+    "specifications": [],
+    "models": [
+      {
+        "sku": "DTW1",
+        "title": "AIMS™ Blue Wax Dissection Tray Standard Size",
+        "description": ""
+      }
+    ],
+    "images": [
+      {
+        "url": "/aims-lab/f70f3f3aa24dddd1.jpg",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/09/AIMS%E2%84%A2-Lab-Products-Blue-Wax-Dissection-Tray-scaled.jpg",
+        "width": 2560,
+        "height": 1920,
+        "alt": "AIMS™ Lab Products Blue Wax Dissection Tray"
       },
       {
-        "sku": "LLA-AP",
-        "title": "Large Lab Animal Upgrade Package",
-        "description": "Large-animal accessories and supplies for an existing ATS-3; includes the large-animal tattoo guide."
+        "url": "/aims-lab/0d83f0728e2cfde4.png",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/09/AIMS-Lab-Products-grace-procedure-board-light-mag-bluewax-example.png",
+        "width": 641,
+        "height": 529,
+        "alt": "AIMS™ Lab Products | Grace Procedure / Dissection Boards"
       }
     ],
-    "applications": [
-      "Weanling and adult mice and rats, including different coat colors and strains.",
-      "Tail markings for breeding colonies and individual animals in experiments.",
-      "Numbers, letters, lines, dots and pigment colors can form identification schemes."
+    "documents": [
+      {
+        "url": "/aims-lab/8370db02d388a132.pdf",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/12/AIMS%E2%84%A2-Lab-Products-Blue-Wax-Large-Dissection-Tray-Product-Details.pdf",
+        "label": "Product Details - PDF"
+      }
     ],
-    "kitContents": [
-      [
-        "Equipment",
-        "Rodent tattoo system with mouse / rat restraints"
-      ],
-      [
-        "Supplies",
-        "Tattoo pigments, tail needles and accessories"
-      ],
-      [
-        "Initial supply capacity",
-        "Approximately 3,000 mice / rats, as stated in the 2022 brochure"
-      ]
+    "categories": [
+      "procedure-dissection-boards",
+      "dissection-trays"
     ],
-    "capacityNote": "The brochure gives an approximate initial supply capacity; consumption depends on the identification scheme and use.",
-    "training": {
-      "volume": "Vol. 2 · Adult Mice and Rats",
-      "description": "Equipment setup and operation instructions accompany a rodent training guide and instructional DVD, as listed in the brochure. The guide covers tail-marking techniques.",
-      "upgradeNote": "NEO-AP includes the Vol. 1 neonate guide; LLA-AP includes the Vol. 3 large-animal guide."
-    }
+    "relatedSlugs": [
+      "aims-dissection-platform",
+      "aims-blue-wax-dissection-tray-extra-large"
+    ],
+    "sourceUrl": "https://aimslabproducts.com/product/aims-blue-wax-dissection-tray-standard-size/"
   },
   {
-    "slug": "neo-9",
-    "sku": "NEO-9",
-    "title": "Neonate Rodent Tattooing System",
-    "audience": "P0–P15 mice / rats",
-    "summary": "An identification system developed for newborn mice and rats from P0 to P15.",
-    "description": "The NEO-9 identifies mice and rats from birth through P15, across coat colors and strains. Early individual identification supports neonatal studies and transgenic-colony records before weaning. The system combines dedicated tattoo equipment with a lighted, magnified work station and illustrated identification schemes.",
-    "features": [
-      "Designed specifically for P0–P15 mice and rats",
-      "Illuminated micro tattooing station with 4× magnification",
-      "Identification schemes covering small and large number ranges",
-      "Numbering schemes supporting up to 10,000 unique IDs",
-      "Choice of pigment colors for different neonates",
-      "Universal 100–220 V, 50–60 Hz power input"
-    ],
-    "specifications": [
-      [
-        "Animals / age",
-        "Mice and rats · P0–P15"
-      ],
-      [
-        "Marking sites",
-        "Toes, paw pads, leg shanks and tail"
-      ],
-      [
-        "Work station",
-        "LED illumination and 4× magnification"
-      ],
-      [
-        "ID range",
-        "Schemes for up to 10,000 unique numbers"
-      ],
-      [
-        "Power input",
-        "100–220 V, 50–60 Hz"
-      ],
-      [
-        "Manufacturer-listed compliance",
-        "RoHS"
-      ]
-    ],
+    "slug": "aims-blue-wax-processing-discs",
+    "sku": "TPD",
+    "title": "AIMS™ Blue Wax Processing Discs",
+    "summary": "Environmentally Safe Dissection Tray – Completely Green",
+    "descriptionHtml": "\n\t\t\t\t\n\t\n\n\n\t\n\t\t\n\t\t\t<p>Environmentally Safe Dissection Tray – Completely Green</p>\n<p>No Black Wax This dissection tray uses a completely environmentally safe wax product instead of the “black wax” like product used in most other dissection trays. The MSDS sheet for this product lists no toxic chemicals and there are no fire, health or reactivity hazards with this product.</p>\n<p>Often used with AIMS™ Dissection Platform.</p>\n<p>“Blue Wax” is specially formulated to provide the proper consistency to allow pins to stick firmly and be easily removed.</p>\n<p>Tissue Processing Disc<br />\nProcess tissue using a clean Blue Wax surface</p>\n<p>Layout, Pin, &amp; Trim tissue</p>\n<p>“Blue Wax” can be heated to renew the surface and the dissection tray can be reused several times.</p>\n<p>DTW1 AIMS™ Dissection Tray (9” x 6.5” x 1”)<br />\nLTPD Large Tissue Processing Disc (4″ dia., 1/4″ thick)<br />\nMTPD Medium Tissue Processing Disc (2 3/4″ dia., 1/4″ thick)<br />\nSTPD Small Tissue Processing Disc (2″ dia., 1/4″ thick)<br />\nTPIN Ball Head Tissue Pins, ss (1 1/2″ long, 50/pk)</p>\n\n\t\t\n\t\n\n\t\t\t",
+    "sourceBodyDigest": "cb1a4ec38f8df21934d79b0e04e41f41465c966abab870d0ed91ea0eb7de13f6",
+    "specifications": [],
     "models": [
       {
-        "sku": "NEO-9",
-        "title": "Neonate Rodent Tattooing System",
-        "description": "Neonate tattoo system with supplies, accessories and training documentation."
+        "sku": "TPD",
+        "title": "AIMS™ Blue Wax Processing Discs",
+        "description": ""
       }
     ],
-    "applications": [
-      "Individual identification beginning on the first day of life (P0).",
-      "Transgenic-colony records and early genotyping studies before weaning.",
-      "Manufacturer-listed sites: toes, paw pads, leg shanks and tail. Existing toe-numbering schemes can be adapted to tattoo markings."
+    "images": [
+      {
+        "url": "/aims-lab/03dce74f9d065c32.jpg",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/09/AIMS-Lab-Products-blue-wax-dissection-disks-group-lg.jpg",
+        "width": 1000,
+        "height": 292,
+        "alt": "AIMS™ Lab Products Blue Wax Processing Discs"
+      },
+      {
+        "url": "/aims-lab/aaed61aad5a69ab3.jpg",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/12/AIMS%E2%84%A2-Lab-Products-Blue-Wax-Processing-Discs-c-scaled.jpg",
+        "width": 2560,
+        "height": 1920,
+        "alt": "AIMS™ Lab Products Blue Wax Processing Discs"
+      },
+      {
+        "url": "/aims-lab/ba3e647d9ea169d1.jpg",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/12/AIMS%E2%84%A2-Lab-Products-Blue-Wax-Processing-Discs-b-scaled.jpg",
+        "width": 2560,
+        "height": 1920,
+        "alt": "AIMS™ Lab Products Blue Wax Processing Discs"
+      },
+      {
+        "url": "/aims-lab/b74dd7c6993e8d8b.jpg",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/12/AIMS%E2%84%A2-Lab-Products-Blue-Wax-Processing-Discs-a-scaled.jpg",
+        "width": 2560,
+        "height": 1920,
+        "alt": "AIMS™ Lab Products Blue Wax Processing Discs"
+      }
     ],
-    "kitContents": [
-      [
-        "Equipment",
-        "Neonate tattoo system with LED-lit micro tattooing station"
-      ],
-      [
-        "Magnification",
-        "4× magnifier"
-      ],
-      [
-        "Supplies",
-        "Neonate tattooing supplies and accessories"
-      ],
-      [
-        "Initial supply capacity",
-        "Approximately 2,000 neonates, as stated in the 2022 brochure"
-      ]
+    "documents": [
+      {
+        "url": "/aims-lab/6be73205089a9ffb.pdf",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/09/AIMS-Lab-Products-blue-wax-dissection-tray.pdf",
+        "label": "Product Details - PDF"
+      }
     ],
-    "capacityNote": "The brochure gives an approximate initial supply capacity; consumption depends on the identification scheme and use.",
-    "training": {
-      "volume": "Vol. 1 · Neonate Mice and Rats",
-      "description": "The illustrated training guide and instructional DVD explain neonate identification schemes. Separate equipment instructions cover setup, operation and care.",
-      "upgradeNote": "For an existing ATS-3, the NEO-AP package adds neonate accessories, supplies and the Vol. 1 guide."
-    }
+    "categories": [
+      "procedure-dissection-boards",
+      "processing-discs"
+    ],
+    "relatedSlugs": [],
+    "sourceUrl": "https://aimslabproducts.com/product/aims-blue-wax-processing-discs/"
   },
   {
-    "slug": "ats-3l",
-    "sku": "ATS-3L",
-    "title": "Large Lab Animal Tattoo System",
-    "audience": "Larger laboratory animals",
-    "summary": "Compact tattoo equipment for skin identification on larger laboratory animals.",
-    "description": "The ATS-3L provides skin identification for larger laboratory animals, including rabbits, hamsters, guinea pigs, ferrets, nonhuman primates, swine, cats and dogs. Its lightweight handpiece and compact power / control equipment suit limited work areas. It can also mark injection or treatment locations on laboratory-animal skin.",
-    "features": [
-      "AIMS ultra-light tattoo handpiece",
-      "Foot pedal for on / off control",
-      "Compact micro-power supply and tattoo controller",
-      "Calibrated small- and large-bore needle tubes",
-      "Dedicated needles for different line sizes",
-      "Universal 100–220 V, 50–60 Hz power input"
-    ],
-    "specifications": [
-      [
-        "Animals",
-        "Rabbits, hamsters, guinea pigs, ferrets, NHP, swine, cats and dogs"
-      ],
-      [
-        "Marking sites",
-        "Ears, chest, inner biceps, thighs and other skin sites"
-      ],
-      [
-        "Other application",
-        "Injection / treatment-site identification"
-      ],
-      [
-        "Controls",
-        "Foot-pedal on / off micro-controller"
-      ],
-      [
-        "Power input",
-        "100–220 V, 50–60 Hz"
-      ],
-      [
-        "Manufacturer-listed compliance",
-        "RoHS"
-      ]
-    ],
+    "slug": "aims-co2-flowmeter",
+    "sku": "SC100-LC500-XL900",
+    "title": "AIMS™ CO2 Flowmeter",
+    "summary": "Compliance made easy for CO2 Euthanasia",
+    "descriptionHtml": "\n\t\t\t\t\n\t\n\n\n\t\n\t\t\n\t\t\t<p>Compliance made easy for CO<sub>2</sub> Euthanasia</p>\n<p>Calibrated to accurately deliver CO<sub>2</sub> to ANY Chamber.</p>\n<p>Small profile with an easy to set Flow-Rate and 3-way ball valve for quick chamber fill when needed.</p>\n<p>Barb fitting for connecting to 5/16″ or 1/4″ ID hose. Wall-mount option.</p>\n<p>Example Calculations for 70% Chamber Vol/min<br />\nLarge Rat Cage<br />\n19” x 10” x 8” = 1520 in3.<br />\n1520 in3 x 0.70 = 1,064 in3 (flow rate wanted 1,064 in3/min).<br />\n1,064 in3/min divided by 61 = 17.4 l/min AIMS CO2 flowmeter setting.</p>\n<p>AIMS CO<sub>2</sub> Chamber (cylinder)<br />\nπ x Radius2 x Height<br />\n3.14 x 4”2 x 7” = 352 in3.<br />\n352 in3 x 0.70 = 246 in3 (flow rate wanted 246 in3/min).<br />\n246 in3/min divided by 61 = 4.0 l/min AIMS CO<sub>2</sub> flowmeter setting.</p>\n<p> </p>\n<p>Tubing w/Coupler Kit<br />\n1/4″ to 1/4″ ID – 2ea<br />\n1/4″ to 5/16″ ID – 2ea<br />\n5/16″ to 5/16″ ID – 2ea<br />\n5/16″ to 3/8″ ID – 2ea</p>\n<p>Which CO<sub>2</sub> Flowmeter to use? Calculate the total volume of your chamber in cubic inches (in3). Your chamber volume should fall between the min and max of the selected CO<sub>2</sub> flowmeter for the selected Chamber Displacement Rate (CDR).</p>\n\n\t\t\n\t\n\n\t\n\t\t\n\t\t\t<table>\n<tbody>\n<tr>\n<td><strong>CO2 Flowmeter Model/Range</strong></td>\n<td><strong>Chamber Volume (in3)</strong></td>\n<td><strong>CDR 30%</strong></td>\n<td><strong>CDR 70%</strong></td>\n</tr>\n<tr>\n<td><strong>XL900</strong></td>\n<td>Max</td>\n<td>5,040</td>\n<td>2,178</td>\n</tr>\n<tr>\n<td>3.0 – 25 l/min</td>\n<td>Min</td>\n<td>612</td>\n<td>261</td>\n</tr>\n<tr>\n<td><strong>LC500</strong></td>\n<td>Max</td>\n<td>2,012</td>\n<td>871</td>\n</tr>\n<tr>\n<td>1.0 – 10 l/min</td>\n<td>Min</td>\n<td>210</td>\n<td>87</td>\n</tr>\n<tr>\n<td><strong>SC100</strong></td>\n<td>Max</td>\n<td>1,001</td>\n<td>436</td>\n</tr>\n<tr>\n<td>0.5- 5.0 l/min</td>\n<td>Min</td>\n<td>96</td>\n<td>44</td>\n</tr>\n</tbody>\n</table>\n\n\t\t\n\t\n\n\t\n\t\t\n\t\t\t<p>AVMA Guidelines for CO<sub>2</sub> Euthanasia</p>\n<p>General recommendations—Carbon dioxide is acceptable……using a gradual fill method is less likely to cause pain due to nociceptor activation by carbonic acid prior to onset of unconsciousness; a displacement rate from 30% to 70% of the chamber volume/min is recommended. The practice of immersion, where conscious animals are placed directly into a container prefilled with 100% CO<sub>2</sub>, is unacceptable. From AVMA Guidelines for the Euthanasia of Animals:2020 Edition.</p>\n\n\t\t\n\t\n\n\t\n\t\t\n\t\t\t<p>SC100 – Model SC100 CO2 Flowmeter CO<sub>2</sub> flow rates: 0.5 – 5.0 l/min</p>\n<p>LC500 – Model LC500 CO<sub>2</sub> Flowmeter CO<sub>2</sub> flow rates: 1.0 – 10 l/min</p>\n<p>XL900 – Model XL900 CO<sub>2</sub> Flowmeter CO<sub>2</sub> flow rates: 3.0 – 25 l/min</p>\n<p>WMB2 – Wall Mount Brackets w/Mounting Hardware</p>\n<p>FMT2 – Tubing, 10’ w/ Coupler Kit 5/16” ID x 9/16” OD</p>\n<p>LPRE – Low Pressure Regulator 0 – 60 psi, w/ tank gauge</p>\n<p><strong>CALL for CO<sub>2</sub> flowmeters with higher flow rates.</strong></p>\n\n\t\t\n\t\n\n\t\t\t",
+    "sourceBodyDigest": "e2f7dfdf493570607ce022ae18150dcf5c15ab0f71b4fdc157cd26280d40c3e1",
+    "specifications": [],
     "models": [
       {
-        "sku": "ATS-3L",
-        "title": "Large Lab Animal Tattoo System",
-        "description": "Large laboratory animal tattoo system with supplies and accessories."
+        "sku": "SC100",
+        "title": "AIMS™ CO2 Flowmeter",
+        "description": ""
+      },
+      {
+        "sku": "LC500",
+        "title": "AIMS™ CO2 Flowmeter",
+        "description": ""
+      },
+      {
+        "sku": "XL900",
+        "title": "AIMS™ CO2 Flowmeter",
+        "description": ""
       }
     ],
-    "applications": [
-      "Individual identification of larger laboratory animals.",
-      "Common sites include ears, chest, inner biceps and thighs.",
-      "Marking injection and treatment locations on skin."
+    "images": [
+      {
+        "url": "/aims-lab/4b3f1d1e8cd7d214.jpg",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/09/AIMS-Lab-Products-co2-flowmeter-lg.jpg",
+        "width": 791,
+        "height": 830,
+        "alt": "AIMS™ Lab Products | CO2 Flowmeter"
+      },
+      {
+        "url": "/aims-lab/da6b23309fc68d0d.jpg",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/09/AIMS-Lab-Products-co2-flowmeter-regulator-lg.jpg",
+        "width": 436,
+        "height": 446,
+        "alt": "AIMS™ Lab Products | CO2 Flowmeter Regulator"
+      },
+      {
+        "url": "/aims-lab/b1a4b7f9ddd9243e.jpg",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/09/AIMS-Lab-Products-co2-flowmeter-tubing-kit-lg.jpg",
+        "width": 478,
+        "height": 338,
+        "alt": "AIMS™ Lab Products | CO2 Flowmeter with Tubing Kit"
+      },
+      {
+        "url": "/aims-lab/c35cb5599422a0a2.jpg",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/09/AIMS-Lab-Products-co2-flowmeter-with-wallmt-tank.jpg",
+        "width": 510,
+        "height": 350,
+        "alt": "AIMS™ Lab Products | CO2 Flowmeter with Wallmount Tank"
+      },
+      {
+        "url": "/aims-lab/98df679ef15a50a4.jpg",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/10/HP-CO2-Euthanasia-1-scaled.jpg",
+        "width": 2560,
+        "height": 1920,
+        "alt": "AIMS™ Lab Products Co2 Euthanasia"
+      }
     ],
-    "kitContents": [
-      [
-        "Handpiece",
-        "AIMS ultra-light tattoo machine"
-      ],
-      [
-        "Power / controls",
-        "HDUI compact micro-power supply, controller and foot pedal"
-      ],
-      [
-        "Needle equipment",
-        "Calibrated small- / large-bore tubes and large-animal needles"
-      ],
-      [
-        "Supplies",
-        "Tattooing supplies and accessories"
-      ]
+    "documents": [
+      {
+        "url": "/aims-lab/eef06c4d4afba97e.pdf",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/12/AIMS%E2%84%A2-Lab-Products-co2-flowmeter-product-details.pdf",
+        "label": "Product Details - PDF"
+      }
     ],
-    "capacityNote": "",
-    "training": {
-      "volume": "Vol. 3 · Large Laboratory Animals",
-      "description": "The supplied guide covers large-animal skin identification. Equipment instructions explain setup and operation; the brochure also describes cleaning and sterilization between animals.",
-      "upgradeNote": "For an existing ATS-3, the LLA-AP package adds large-animal accessories, supplies and the Vol. 3 guide."
-    }
+    "categories": [
+      "co2-euthanasia",
+      "co2-flowmeters",
+      "flowmeter-models"
+    ],
+    "relatedSlugs": [
+      "aims-co2-induction-chamber-for-mice-rats"
+    ],
+    "sourceUrl": "https://aimslabproducts.com/product/aims-co2-flowmeter/"
+  },
+  {
+    "slug": "aims-co2-flowmeter-low-pressure-regulator",
+    "sku": "LPRE",
+    "title": "AIMS™ CO2 Flowmeter Low Pressure Regulator",
+    "summary": "Compliance made easy for CO2 Euthanasia",
+    "descriptionHtml": "\n\t\t\t\t\n\t\n\n\n\t\n\t\t\n\t\t\t<p>Compliance made easy for CO<sub>2</sub> Euthanasia</p>\n<p>Calibrated to accurately deliver CO<sub>2</sub> to ANY Chamber.</p>\n<p>Small profile with an easy to set Flow-Rate and 3-way ball valve for quick chamber fill when needed.</p>\n<p>Barb fitting for connecting to 5/16″ or 1/4″ ID hose. Wall-mount option.</p>\n<p>Example Calculations for 70% Chamber Vol/min<br />\nLarge Rat Cage<br />\n19” x 10” x 8” = 1520 in3.<br />\n1520 in3 x 0.70 = 1,064 in3 (flow rate wanted 1,064 in3/min).<br />\n1,064 in3/min divided by 61 = 17.4 l/min AIMS CO2 flowmeter setting.</p>\n<p>AIMS CO<sub>2</sub> Chamber (cylinder)<br />\nπ x Radius2 x Height<br />\n3.14 x 4”2 x 7” = 352 in3.<br />\n352 in3 x 0.70 = 246 in3 (flow rate wanted 246 in3/min).<br />\n246 in3/min divided by 61 = 4.0 l/min AIMS CO<sub>2</sub> flowmeter setting.</p>\n<p>Tubing w/Coupler Kit<br />\n1/4″ to 1/4″ ID – 2ea<br />\n1/4″ to 5/16″ ID – 2ea<br />\n5/16″ to 5/16″ ID – 2ea<br />\n5/16″ to 3/8″ ID – 2ea</p>\n<p>Which CO<sub>2</sub> Flowmeter to use? Calculate the total volume of your chamber in cubic inches (in3). Your chamber volume should fall between the min and max of the selected CO<sub>2</sub> flowmeter for the selected Chamber Displacement Rate (CDR).</p>\n\n\t\t\n\t\n\n\t\n\t\t\n\t\t\t<table>\n<tbody>\n<tr>\n<td><strong>CO2 Flowmeter Model/Range</strong></td>\n<td><strong>Chamber Volume (in3)</strong></td>\n<td><strong>CDR 30%</strong></td>\n<td><strong>CDR 70%</strong></td>\n</tr>\n<tr>\n<td><strong>XL900</strong></td>\n<td>Max</td>\n<td>5,040</td>\n<td>2,178</td>\n</tr>\n<tr>\n<td>3.0 – 25 l/min</td>\n<td>Min</td>\n<td>612</td>\n<td>261</td>\n</tr>\n<tr>\n<td><strong>LC500</strong></td>\n<td>Max</td>\n<td>2,012</td>\n<td>871</td>\n</tr>\n<tr>\n<td>1.0 – 10 l/min</td>\n<td>Min</td>\n<td>210</td>\n<td>87</td>\n</tr>\n<tr>\n<td><strong>SC100</strong></td>\n<td>Max</td>\n<td>1,001</td>\n<td>436</td>\n</tr>\n<tr>\n<td>0.5- 5.0 l/min</td>\n<td>Min</td>\n<td>96</td>\n<td>44</td>\n</tr>\n</tbody>\n</table>\n\n\t\t\n\t\n\n\t\n\t\t\n\t\t\t<p>AVMA Guidelines for CO<sub>2</sub> Euthanasia</p>\n<p>General recommendations—Carbon dioxide is acceptable……using a gradual fill method is less likely to cause pain due to nociceptor activation by carbonic acid prior to onset of unconsciousness; a displacement rate from 30% to 70% of the chamber volume/min is recommended. The practice of immersion, where conscious animals are placed directly into a container prefilled with 100% CO<sub>2</sub>, is unacceptable. From AVMA Guidelines for the Euthanasia of Animals:2020 Edition.</p>\n\n\t\t\n\t\n\n\t\n\t\t\n\t\t\t<p>SC100 – Model SC100 CO2 Flowmeter CO<sub>2</sub> flow rates: 0.5 – 5.0 l/min</p>\n<p>LC500 – Model LC500 CO<sub>2</sub> Flowmeter CO<sub>2</sub> flow rates: 1.0 – 10 l/min</p>\n<p>XL900 – Model XL900 CO<sub>2</sub> Flowmeter CO<sub>2</sub> flow rates: 3.0 – 25 l/min</p>\n<p>WMB2 – Wall Mount Brackets w/Mounting Hardware</p>\n<p>FMT2 – Tubing, 10’ w/ Coupler Kit 5/16” ID x 9/16” OD</p>\n<p>LPRE – Low Pressure Regulator 0 – 60 psi, w/ tank gauge</p>\n<p><strong>CALL for CO<sub>2</sub> flowmeters with higher flow rates.</strong></p>\n\n\t\t\n\t\n\n\t\t\t",
+    "sourceBodyDigest": "e2f7dfdf493570607ce022ae18150dcf5c15ab0f71b4fdc157cd26280d40c3e1",
+    "specifications": [],
+    "models": [
+      {
+        "sku": "LPRE",
+        "title": "AIMS™ CO2 Flowmeter Low Pressure Regulator",
+        "description": ""
+      }
+    ],
+    "images": [
+      {
+        "url": "/aims-lab/da6b23309fc68d0d.jpg",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/09/AIMS-Lab-Products-co2-flowmeter-regulator-lg.jpg",
+        "width": 436,
+        "height": 446,
+        "alt": "AIMS™ Lab Products | CO2 Flowmeter Regulator"
+      },
+      {
+        "url": "/aims-lab/b1a4b7f9ddd9243e.jpg",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/09/AIMS-Lab-Products-co2-flowmeter-tubing-kit-lg.jpg",
+        "width": 478,
+        "height": 338,
+        "alt": "AIMS™ Lab Products | CO2 Flowmeter with Tubing Kit"
+      },
+      {
+        "url": "/aims-lab/253750fcfb1677bc.jpg",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/09/AIMS-Lab-Products-co2-flowmeter-with-aims-chamber-lg.jpg",
+        "width": 570,
+        "height": 340,
+        "alt": "AIMS™ Lab Products | CO2 Flowmeter with Chamber"
+      },
+      {
+        "url": "/aims-lab/4b3f1d1e8cd7d214.jpg",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/09/AIMS-Lab-Products-co2-flowmeter-lg.jpg",
+        "width": 791,
+        "height": 830,
+        "alt": "AIMS™ Lab Products | CO2 Flowmeter"
+      },
+      {
+        "url": "/aims-lab/c35cb5599422a0a2.jpg",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/09/AIMS-Lab-Products-co2-flowmeter-with-wallmt-tank.jpg",
+        "width": 510,
+        "height": 350,
+        "alt": "AIMS™ Lab Products | CO2 Flowmeter with Wallmount Tank"
+      }
+    ],
+    "documents": [
+      {
+        "url": "/aims-lab/eef06c4d4afba97e.pdf",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/12/AIMS%E2%84%A2-Lab-Products-co2-flowmeter-product-details.pdf",
+        "label": "Product Details - PDF"
+      }
+    ],
+    "categories": [
+      "co2-euthanasia",
+      "co2-flowmeters",
+      "flowmeter-accessories"
+    ],
+    "relatedSlugs": [
+      "aims-co2-flowmeter-wall-mount-brackets",
+      "aims-co2-flowmeter-tubing-10-with-coupler-kit"
+    ],
+    "sourceUrl": "https://aimslabproducts.com/product/aims-co2-flowmeter-low-pressure-regulator/"
+  },
+  {
+    "slug": "aims-co2-flowmeter-tubing-10-with-coupler-kit",
+    "sku": "FMT2",
+    "title": "AIMS™ CO2 Flowmeter Tubing, 10’ with Coupler Kit",
+    "summary": "Tubing w/Coupler Kit 1/4″ to 1/4″ ID – 2ea 1/4″ to 5/16″ ID – 2ea 5/16″ to 5/16″ ID – 2ea 5/16″ to 3/8″ ID – 2ea",
+    "descriptionHtml": "\n\t\t\t\t\n\t\n\n\n\t\n\t\t\n\t\t\t<p>Tubing w/Coupler Kit<br />\n1/4″ to 1/4″ ID – 2ea<br />\n1/4″ to 5/16″ ID – 2ea<br />\n5/16″ to 5/16″ ID – 2ea<br />\n5/16″ to 3/8″ ID – 2ea</p>\n\n\t\t\n\t\n\n\t\n\t\t\n\t\t\t<p>SC100 – Model SC100 CO2 Flowmeter CO<sub>2</sub> flow rates: 0.5 – 5.0 l/min</p>\n<p>LC500 – Model LC500 CO<sub>2</sub> Flowmeter CO<sub>2</sub> flow rates: 1.0 – 10 l/min</p>\n<p>XL900 – Model XL900 CO<sub>2</sub> Flowmeter CO<sub>2</sub> flow rates: 3.0 – 25 l/min</p>\n<p>WMB2 – Wall Mount Brackets w/Mounting Hardware</p>\n<p>FMT2 – Tubing, 10’ w/ Coupler Kit 5/16” ID x 9/16” OD</p>\n<p>LPRE – Low Pressure Regulator 0 – 60 psi, w/ tank gauge</p>\n<p><strong>CALL for CO<sub>2</sub> flowmeters with higher flow rates.</strong></p>\n\n\t\t\n\t\n\n\t\t\t",
+    "sourceBodyDigest": "a99ac1a52d737b30754b1d929643411fea4cce642d19bdc509bbbfd11a3cb666",
+    "specifications": [],
+    "models": [
+      {
+        "sku": "FMT2",
+        "title": "AIMS™ CO2 Flowmeter Tubing, 10’ with Coupler Kit",
+        "description": ""
+      }
+    ],
+    "images": [
+      {
+        "url": "/aims-lab/b1a4b7f9ddd9243e.jpg",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/09/AIMS-Lab-Products-co2-flowmeter-tubing-kit-lg.jpg",
+        "width": 478,
+        "height": 338,
+        "alt": "AIMS™ Lab Products | CO2 Flowmeter with Tubing Kit"
+      },
+      {
+        "url": "/aims-lab/da6b23309fc68d0d.jpg",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/09/AIMS-Lab-Products-co2-flowmeter-regulator-lg.jpg",
+        "width": 436,
+        "height": 446,
+        "alt": "AIMS™ Lab Products | CO2 Flowmeter Regulator"
+      },
+      {
+        "url": "/aims-lab/253750fcfb1677bc.jpg",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/09/AIMS-Lab-Products-co2-flowmeter-with-aims-chamber-lg.jpg",
+        "width": 570,
+        "height": 340,
+        "alt": "AIMS™ Lab Products | CO2 Flowmeter with Chamber"
+      },
+      {
+        "url": "/aims-lab/4b3f1d1e8cd7d214.jpg",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/09/AIMS-Lab-Products-co2-flowmeter-lg.jpg",
+        "width": 791,
+        "height": 830,
+        "alt": "AIMS™ Lab Products | CO2 Flowmeter"
+      },
+      {
+        "url": "/aims-lab/c35cb5599422a0a2.jpg",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/09/AIMS-Lab-Products-co2-flowmeter-with-wallmt-tank.jpg",
+        "width": 510,
+        "height": 350,
+        "alt": "AIMS™ Lab Products | CO2 Flowmeter with Wallmount Tank"
+      }
+    ],
+    "documents": [
+      {
+        "url": "/aims-lab/eef06c4d4afba97e.pdf",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/12/AIMS%E2%84%A2-Lab-Products-co2-flowmeter-product-details.pdf",
+        "label": "Product Details - PDF"
+      }
+    ],
+    "categories": [
+      "co2-euthanasia",
+      "co2-flowmeters",
+      "flowmeter-accessories"
+    ],
+    "relatedSlugs": [
+      "aims-co2-flowmeter-low-pressure-regulator",
+      "aims-co2-flowmeter-wall-mount-brackets"
+    ],
+    "sourceUrl": "https://aimslabproducts.com/product/aims-co2-flowmeter-tubing-10-with-coupler-kit/"
+  },
+  {
+    "slug": "aims-co2-flowmeter-wall-mount-brackets",
+    "sku": "WMB2",
+    "title": "AIMS™ CO2 Flowmeter Wall Mount Brackets",
+    "summary": "Compliance made easy for CO2 Euthanasia",
+    "descriptionHtml": "\n\t\t\t\t\n\t\n\n\n\t\n\t\t\n\t\t\t<p>Compliance made easy for CO<sub>2</sub> Euthanasia</p>\n<p>Calibrated to accurately deliver CO<sub>2</sub> to ANY Chamber.</p>\n<p>Small profile with an easy to set Flow-Rate and 3-way ball valve for quick chamber fill when needed.</p>\n<p>Barb fitting for connecting to 5/16″ or 1/4″ ID hose. Wall-mount option.</p>\n<p>Example Calculations for 70% Chamber Vol/min<br />\nLarge Rat Cage<br />\n19” x 10” x 8” = 1520 in3.<br />\n1520 in3 x 0.70 = 1,064 in3 (flow rate wanted 1,064 in3/min).<br />\n1,064 in3/min divided by 61 = 17.4 l/min AIMS CO2 flowmeter setting.</p>\n<p>AIMS CO2 Chamber (cylinder)<br />\nπ x Radius2 x Height<br />\n3.14 x 4”2 x 7” = 352 in3.<br />\n352 in3 x 0.70 = 246 in3 (flow rate wanted 246 in3/min).<br />\n246 in3/min divided by 61 = 4.0 l/min AIMS CO2 flowmeter setting.</p>\n<p>Tubing w/Coupler Kit<br />\n1/4″ to 1/4″ ID – 2ea<br />\n1/4″ to 5/16″ ID – 2ea<br />\n5/16″ to 5/16″ ID – 2ea<br />\n5/16″ to 3/8″ ID – 2ea</p>\n<p>Which CO<sub>2</sub> Flowmeter to use? Calculate the total volume of your chamber in cubic inches (in3). Your chamber volume should fall between the min and max of the selected CO<sub>2</sub> flowmeter for the selected Chamber Displacement Rate (CDR).</p>\n\n\t\t\n\t\n\n\t\n\t\t\n\t\t\t<table>\n<tbody>\n<tr>\n<td><strong>CO2 Flowmeter Model/Range</strong></td>\n<td><strong>Chamber Volume (in3)</strong></td>\n<td><strong>CDR 30%</strong></td>\n<td><strong>CDR 70%</strong></td>\n</tr>\n<tr>\n<td><strong>XL900</strong></td>\n<td>Max</td>\n<td>5,040</td>\n<td>2,178</td>\n</tr>\n<tr>\n<td>3.0 – 25 l/min</td>\n<td>Min</td>\n<td>612</td>\n<td>261</td>\n</tr>\n<tr>\n<td><strong>LC500</strong></td>\n<td>Max</td>\n<td>2,012</td>\n<td>871</td>\n</tr>\n<tr>\n<td>1.0 – 10 l/min</td>\n<td>Min</td>\n<td>210</td>\n<td>87</td>\n</tr>\n<tr>\n<td><strong>SC100</strong></td>\n<td>Max</td>\n<td>1,001</td>\n<td>436</td>\n</tr>\n<tr>\n<td>0.5- 5.0 l/min</td>\n<td>Min</td>\n<td>96</td>\n<td>44</td>\n</tr>\n</tbody>\n</table>\n\n\t\t\n\t\n\n\t\n\t\t\n\t\t\t<p>AVMA Guidelines for CO<sub>2</sub> Euthanasia</p>\n<p>General recommendations—Carbon dioxide is acceptable……using a gradual fill method is less likely to cause pain due to nociceptor activation by carbonic acid prior to onset of unconsciousness; a displacement rate from 30% to 70% of the chamber volume/min is recommended. The practice of immersion, where conscious animals are placed directly into a container prefilled with 100% CO<sub>2</sub>, is unacceptable. From AVMA Guidelines for the Euthanasia of Animals:2020 Edition.</p>\n\n\t\t\n\t\n\n\t\n\t\t\n\t\t\t<p>SC100 – Model SC100 CO2 Flowmeter CO<sub>2</sub> flow rates: 0.5 – 5.0 l/min</p>\n<p>LC500 – Model LC500 CO<sub>2</sub> Flowmeter CO<sub>2</sub> flow rates: 1.0 – 10 l/min</p>\n<p>XL900 – Model XL900 CO<sub>2</sub> Flowmeter CO<sub>2</sub> flow rates: 3.0 – 25 l/min</p>\n<p>WMB2 – Wall Mount Brackets w/Mounting Hardware</p>\n<p>FMT2 – Tubing, 10’ w/ Coupler Kit 5/16” ID x 9/16” OD</p>\n<p>LPRE – Low Pressure Regulator 0 – 60 psi, w/ tank gauge</p>\n<p><strong>CALL for CO<sub>2</sub> flowmeters with higher flow rates.</strong></p>\n\n\t\t\n\t\n\n\t\t\t",
+    "sourceBodyDigest": "e2f7dfdf493570607ce022ae18150dcf5c15ab0f71b4fdc157cd26280d40c3e1",
+    "specifications": [],
+    "models": [
+      {
+        "sku": "WMB2",
+        "title": "AIMS™ CO2 Flowmeter Wall Mount Brackets",
+        "description": ""
+      }
+    ],
+    "images": [
+      {
+        "url": "/aims-lab/c35cb5599422a0a2.jpg",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/09/AIMS-Lab-Products-co2-flowmeter-with-wallmt-tank.jpg",
+        "width": 510,
+        "height": 350,
+        "alt": "AIMS™ Lab Products | CO2 Flowmeter with Wallmount Tank"
+      },
+      {
+        "url": "/aims-lab/da6b23309fc68d0d.jpg",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/09/AIMS-Lab-Products-co2-flowmeter-regulator-lg.jpg",
+        "width": 436,
+        "height": 446,
+        "alt": "AIMS™ Lab Products | CO2 Flowmeter Regulator"
+      },
+      {
+        "url": "/aims-lab/b1a4b7f9ddd9243e.jpg",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/09/AIMS-Lab-Products-co2-flowmeter-tubing-kit-lg.jpg",
+        "width": 478,
+        "height": 338,
+        "alt": "AIMS™ Lab Products | CO2 Flowmeter with Tubing Kit"
+      },
+      {
+        "url": "/aims-lab/253750fcfb1677bc.jpg",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/09/AIMS-Lab-Products-co2-flowmeter-with-aims-chamber-lg.jpg",
+        "width": 570,
+        "height": 340,
+        "alt": "AIMS™ Lab Products | CO2 Flowmeter with Chamber"
+      },
+      {
+        "url": "/aims-lab/4b3f1d1e8cd7d214.jpg",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/09/AIMS-Lab-Products-co2-flowmeter-lg.jpg",
+        "width": 791,
+        "height": 830,
+        "alt": "AIMS™ Lab Products | CO2 Flowmeter"
+      }
+    ],
+    "documents": [
+      {
+        "url": "/aims-lab/eef06c4d4afba97e.pdf",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/12/AIMS%E2%84%A2-Lab-Products-co2-flowmeter-product-details.pdf",
+        "label": "Product Details - PDF"
+      }
+    ],
+    "categories": [
+      "co2-euthanasia",
+      "co2-flowmeters",
+      "flowmeter-accessories"
+    ],
+    "relatedSlugs": [
+      "aims-co2-flowmeter-low-pressure-regulator",
+      "aims-co2-flowmeter-tubing-10-with-coupler-kit"
+    ],
+    "sourceUrl": "https://aimslabproducts.com/product/aims-co2-flowmeter-wall-mount-brackets/"
+  },
+  {
+    "slug": "aims-co2-induction-chamber-for-mice-rats",
+    "sku": "COIC-COBL",
+    "title": "AIMS™ CO2 Induction Chamber for Mice & Rats",
+    "summary": "The Cleanest CO2 Induction Chamber on the Market!",
+    "descriptionHtml": "\n\t\t\t\t\n\t\n\n\n\t\n\t\t\n\t\t\t<p>The Cleanest CO<sub>2</sub> Induction Chamber on the Market!</p>\n<p>SMALL FOOT PRINT – 9″ diameter, easy to keep on bench.</p>\n<p>QUICK CONNECT W/VALVE – Closes when disconnected, keeps CO<sub>2</sub> in tube and chamber.</p>\n<p>DOOR – Place animals in chamber without losing CO<sub>2</sub>. Provides for ultra quick animal induction.</p>\n<p>7’ TUBE – Easily connects to CO<sub>2</sub> source.</p>\n<p>DISPOSABLE BAG LINER – Animal feces &amp; urine remain in bag with animal. Chamber is always clean.</p>\n<p>DELIVERY TUBE WITHIN CHAMBER – Fills chamber from bottom, decrease induction time, “more humane”.</p>\n<p>CLEAR ACRYLIC TOP – Easy to see animals in chamber.</p>\n<p>SOLID SIDES – Prevents viewing of animals during the process.</p>\n<p>COIC – CO<sub>2</sub> Chamber<br />\nIncludes: See thru acrylic door &amp; quick connect w/valve, 7′ tubing, 50 disposable insert bags</p>\n<p>COBL – Disposable Bag Liner (50 bags/pk)<br />\nUse w/CO<sub>2</sub> Chamber</p>\n\n\t\t\n\t\n\n\t\t\t",
+    "sourceBodyDigest": "990d6894f7c9babe6f1f95f0f01ef703bb35b763084f9b1ebf273ec2585d6d0a",
+    "specifications": [],
+    "models": [
+      {
+        "sku": "COIC-COBL",
+        "title": "AIMS™ CO2 Induction Chamber for Mice & Rats",
+        "description": ""
+      }
+    ],
+    "images": [
+      {
+        "url": "/aims-lab/c5f183145f5ff5f1.jpg",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/09/AIMS-Lab-Products-co2-chamber-lg.jpg",
+        "width": 800,
+        "height": 624,
+        "alt": "AIMS™ Lab Products | CO2 Induction Chamber for Mice & Rats"
+      },
+      {
+        "url": "/aims-lab/2cc63d453760f048.jpg",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/09/AIMS-Lab-Products-co2-chamber-bag.jpg",
+        "width": 420,
+        "height": 445,
+        "alt": "AIMS™ Lab Products | CO2 Induction Chamber Bag"
+      },
+      {
+        "url": "/aims-lab/3784d1cac29689e3.jpg",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/09/AIMS-Lab-Products-co2-chamber-lid.jpg",
+        "width": 365,
+        "height": 326,
+        "alt": "AIMS™ Lab Products | CO2 Induction Chamber Lid for Mice & Rats"
+      },
+      {
+        "url": "/aims-lab/62adbad7702776c9.jpg",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/09/AIMS-Lab-Products-co2-chamber-top.jpg",
+        "width": 344,
+        "height": 331,
+        "alt": "AIMS™ Lab Products | CO2 Induction Chamber for Mice & Rats"
+      },
+      {
+        "url": "/aims-lab/a6975cf891e38421.jpg",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/09/AIMS-Lab-Products-co2-chamber-bag-pack.jpg",
+        "width": 360,
+        "height": 205,
+        "alt": "AIMS™ Lab Products | CO2 Induction Chamber Bags"
+      }
+    ],
+    "documents": [
+      {
+        "url": "/aims-lab/e319977eb4e636fc.pdf",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/09/AIMS-Lab-Products-co2-euthanasia-chamber.pdf",
+        "label": "Product Details - PDF"
+      }
+    ],
+    "categories": [
+      "co2-euthanasia",
+      "co2-chamber"
+    ],
+    "relatedSlugs": [
+      "aims-co2-flowmeter"
+    ],
+    "sourceUrl": "https://aimslabproducts.com/product/aims-co2-induction-chamber-for-mice-rats/"
+  },
+  {
+    "slug": "aims-dc-powered-thermal-plate-getp",
+    "sku": "GETP",
+    "title": "AIMS™ DC Powered Thermal Plate – GETP",
+    "summary": "Use with Cat# GVT1, GPP1, GPP2, GPP3",
+    "descriptionHtml": "\n\t\t\t\t\n\t\n\n\n\t\n\t\t\n\t\t\t<p>Use with Cat# GVT1, GPP1, GPP2, GPP3</p>\n\n\t\t\n\t\n\n\t\t\t",
+    "sourceBodyDigest": "20645e48c13575f3b5c7de30176a55248b2bb5d224bcf506e929503e0c2cf6f6",
+    "specifications": [],
+    "models": [
+      {
+        "sku": "GETP",
+        "title": "AIMS™ DC Powered Thermal Plate – GETP",
+        "description": ""
+      }
+    ],
+    "images": [
+      {
+        "url": "/aims-lab/44e0733c2dbc371a.png",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/08/AIMS-Lab-Products-DC-Powered-Thermal-Plate-GETP.png",
+        "width": 622,
+        "height": 246,
+        "alt": "AIMS™ Lab Products | DC Powered Thermal Plate - GETP"
+      }
+    ],
+    "documents": [
+      {
+        "url": "/aims-lab/7f3b78086a5d1354.pdf",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/12/AIMS%E2%84%A2-Lab-Products-Surgery-Accessories.pdf",
+        "label": "Product Details - PDF"
+      }
+    ],
+    "categories": [],
+    "relatedSlugs": [
+      "aims-thermal-drape-gbtd",
+      "aims-magnetic-limb-restraints-glr1",
+      "aims-thermo-controlled-recovery-pad-tcrp",
+      "aims-magnetic-drape-holders-small-gdhs"
+    ],
+    "sourceUrl": "https://aimslabproducts.com/product/aims-dc-powered-thermal-plate-getp/"
+  },
+  {
+    "slug": "aims-disposable-plastic-restraints-dpr",
+    "sku": "DPR",
+    "title": "AIMS™ Disposable Plastic Restraints – DPR",
+    "summary": "Humane, Safe, Disposable Rodent Restraint System",
+    "descriptionHtml": "\n\t\t\t\t\n\t\n\n\n\t\n\t\t\n\t\t\t<p><strong>Humane, Safe, Disposable Rodent Restraint System</strong></p>\n<p>Tail tattooing<br />\nTail vein injections<br />\nIp injections<br />\nOral dosing<br />\nDecapitation<br />\nGeneral restraint<br />\nIncludes instructions and twist ties</p>\n<p><strong>Technical Notes:</strong></p>\n<p>Do not leave animal in bag for extended periods of time. Animal body heat will increase when restrained in a plastic bag.<br />\nPlacing a mark at the base of the tail (on top) before placing animal in bag will help with tail orientation when animal is fully immobilized.<br />\nBlack/Rose colored restraint bags reduce light and provide a more calming environment for animals.<br />\nBody-Contour™ cone shape bags provide easier animal capture and increased animal comfort.</p>\n<p>Precut sizes for quick use, Buy what you need in size/number (no excess).<br />\nEasy-Flex-PETM provides effortless wrapping and added animal comfort.<br />\nNew Body-Contour™ Cone Shape provides easier restraint, exceptional comfort, and reduced animal stress.<br />\nNew Black and Rose color bags reduce natural light and aids in reducing animal agitation and stress.</p>\n\n\t\t\n\t\n\n\t\t\t",
+    "sourceBodyDigest": "c64c240a8062a7ef500424082f05881db8a7caabd6451641b7025cbb6e3f8f3a",
+    "specifications": [],
+    "models": [
+      {
+        "sku": "DPR",
+        "title": "AIMS™ Disposable Plastic Restraints – DPR",
+        "description": ""
+      }
+    ],
+    "images": [
+      {
+        "url": "/aims-lab/bdd5faeaa6544054.jpg",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/09/AIMS-Triangle-Bags.jpg",
+        "width": 2272,
+        "height": 1704,
+        "alt": "AIMS™ Lab Products Triangle Bags"
+      },
+      {
+        "url": "/aims-lab/c73ff471c86890b6.jpg",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/09/AIMS-Lab-Products-rodent-restraint-cone-lg.jpg",
+        "width": 600,
+        "height": 457,
+        "alt": "AIMS™ Lab Products | Rodent Restraints Cone Large"
+      },
+      {
+        "url": "/aims-lab/a0ef37b5d71b496e.jpg",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/09/AIMS-Lab-Products-mouse-rat-restraint-triangle-size-table.jpg",
+        "width": 399,
+        "height": 248,
+        "alt": "AIMS™ Lab Products | Rodent Restraints Cone Size Chart"
+      },
+      {
+        "url": "/aims-lab/5c1032330e616217.jpg",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/09/AIMS-Lab-Products-rodent-restraint-cone-size-table.jpg",
+        "width": 401,
+        "height": 213,
+        "alt": "AIMS™ Lab Products | Rodent Restraints Cone Size Table"
+      }
+    ],
+    "documents": [
+      {
+        "url": "/aims-lab/d0a04401f91b8760.pdf",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/12/AIMS%E2%84%A2-Lab-Products-Restraints.pdf",
+        "label": "Product Details - PDF"
+      }
+    ],
+    "categories": [
+      "rodent-restraints",
+      "plastic-restraints"
+    ],
+    "relatedSlugs": [
+      "aims-in-low-tail-injection-platform-il300",
+      "aims-in-low-tail-cutting-platform-il200"
+    ],
+    "sourceUrl": "https://aimslabproducts.com/product/aims-disposable-plastic-restraints-dpr/"
+  },
+  {
+    "slug": "aims-elastic-hold-downs-gehd",
+    "sku": "GEHD",
+    "title": "AIMS™ Elastic Hold Downs – GEHD",
+    "summary": "Set of 6 orange with loop hole. 9″ L x 3/4″ W Set of 4 white straps, 17″ L x 1″ W Cat#: GEHD",
+    "descriptionHtml": "\n\t\t\t\t\n\t\n\n\n\t\n\t\t\n\t\t\t<p>Set of 6 orange with loop hole. 9″ L x 3/4″ W<br />\nSet of 4 white straps, 17″ L x 1″ W<br />\nCat#: GEHD</p>\n\n\t\t\n\t\n\n\t\t\t",
+    "sourceBodyDigest": "435d00e72c20e3aed24adc3e398268309fc2ee8c0a95dbe6cc9c3d5756ff451c",
+    "specifications": [],
+    "models": [
+      {
+        "sku": "GEHD",
+        "title": "AIMS™ Elastic Hold Downs – GEHD",
+        "description": ""
+      }
+    ],
+    "images": [
+      {
+        "url": "/aims-lab/044a5910b588e809.jpg",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/09/aims-lab-products-gehd-elastic-hold-downs-combined.jpg",
+        "width": 733,
+        "height": 290,
+        "alt": "AIMS™ Lab Products Elastic Hold Downs - GEHD"
+      }
+    ],
+    "documents": [
+      {
+        "url": "/aims-lab/7f3b78086a5d1354.pdf",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/12/AIMS%E2%84%A2-Lab-Products-Surgery-Accessories.pdf",
+        "label": "Product Details - PDF"
+      }
+    ],
+    "categories": [
+      "small-animal-surgery",
+      "surgery-boards",
+      "surgery-board-accessories"
+    ],
+    "relatedSlugs": [
+      "aims-space-gel-heating-pad-ggp1",
+      "aims-magnetic-drape-holders-large-gdhl",
+      "aims-thermo-controlled-recovery-pad-tcrp",
+      "aims-single-temp-power-supply-gpp1-gpp2-gpp3"
+    ],
+    "sourceUrl": "https://aimslabproducts.com/product/aims-elastic-hold-downs-gehd/"
+  },
+  {
+    "slug": "aims-grace-procedure-dissection-boards",
+    "sku": "GPM2-GPS2-GPM1-GPS1",
+    "title": "AIMS™ Grace Procedure / Dissection Boards",
+    "summary": "Grace Procedure / Dissection Boards are made of 1” thick High Density Polyethylene (HDPE) with excellent chemical resistance",
+    "descriptionHtml": "\n\t\t\t\t\n\t\n\n\n\t\n\t\t\n\t\t\t<p>Grace Procedure / Dissection Boards are made of 1” thick High Density Polyethylene (HDPE) with excellent chemical resistance</p>\n<p><em>GPM2 and GPM1 Models include “Magnetic Base System”</em></p>\n<p><strong>Grace GPM2 Procedure/Dissection Board w/ LED, Magnifier, &amp; Magnetic Base System</strong><br />\nTwo Flexible LED lights – provides direct illumination with no shadows and no heat. Flex arm, non-obstructive rimless magnifying glass (main lens: 2.3X, inset lens: 4.0X). (Allows continuous eye contact with object when moving into magnification area). Non-skid feet for added stability. Universal input power supply (100 – 240 VAC, 50-60Hz). Size: 12” (L) x 9.5” (W). Includes Magnetic Base System.</p>\n<p><strong>Grace GPS2 Procedure/Dissection Board w/ LED, &amp; Magnifier</strong><br />\nTwo Flexible LED lights – provides direct illumination with no shadows and no heat. Flex arm, non-obstructive rimless magnifying glass (main lens: 2.3X, inset lens: 4.0X). (Allows continuous eye contact with object when moving into magnification area). Non-skid feet for added stability. Universal input power supply (100 – 240 VAC, 50-60Hz). Size: 12” (L) x 9.5” (W). Does not include Magnetic Base System.</p>\n<p><strong>Grace GPM1 Procedure/Dissection Board w/ Magnetic Base System</strong>, Non-skid feet for added stability. Size: 12” (L) x 8” (W). Includes Magnetic Base System.</p>\n<p><strong>Grace GPS1 Procedure/Dissection Board</strong><br />\nNon-skid feet for added stability. 12” (L) x 8” (W). Does not include Magnetic Base System.</p>\n<p><strong>*Easy-to-Clean, Solid Work Surface*</strong></p>\n\n\t\t\n\t\n\n\t\t\t",
+    "sourceBodyDigest": "b4fbaeede0732ab12f327e8c8ca41c3b38a968362681a3a2667e3cb079117a36",
+    "specifications": [],
+    "models": [
+      {
+        "sku": "GPM2",
+        "title": "AIMS™ Grace Procedure / Dissection Boards",
+        "description": ""
+      },
+      {
+        "sku": "GPS2",
+        "title": "AIMS™ Grace Procedure / Dissection Boards",
+        "description": ""
+      },
+      {
+        "sku": "GPM1",
+        "title": "AIMS™ Grace Procedure / Dissection Boards",
+        "description": ""
+      },
+      {
+        "sku": "GPS1",
+        "title": "AIMS™ Grace Procedure / Dissection Boards",
+        "description": ""
+      }
+    ],
+    "images": [
+      {
+        "url": "/aims-lab/c4caf401d6fd30e9.png",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/09/AIMS-Lab-Products-grace-procedure-boards-group.png",
+        "width": 649,
+        "height": 533,
+        "alt": "AIMS™ Lab Products | Grace Procedure / Dissection Boards"
+      },
+      {
+        "url": "/aims-lab/66e50cf327c8dea1.png",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/08/aims-lab-products-grace-surgery-boards-magnetic-base-system-diagram.png",
+        "width": 820,
+        "height": 344,
+        "alt": "AIMS™ Lab Products | Small Animal Surgery Board Magentic Base System Diagram GSM1 & GSM2"
+      },
+      {
+        "url": "/aims-lab/2aa661e6a8abd7b4.png",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/09/AIMS-Lab-Products-gpm2.png",
+        "width": 540,
+        "height": 490,
+        "alt": "AIMS™ Lab Products | Grace Procedure / Dissection Boards"
+      },
+      {
+        "url": "/aims-lab/87a7dd63012546b4.png",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/09/AIMS-Lab-Products-gps2.png",
+        "width": 1079,
+        "height": 894,
+        "alt": "AIMS™ Lab Products | Grace Procedure / Dissection Boards"
+      },
+      {
+        "url": "/aims-lab/ea1c78a75ff995af.png",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/09/AIMS-Lab-Products-gpm1.png",
+        "width": 1130,
+        "height": 665,
+        "alt": "AIMS™ Lab Products | Grace Procedure / Dissection Boards"
+      },
+      {
+        "url": "/aims-lab/482ead8aced47dfe.png",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/09/AIMS-Lab-Products-gps1.png",
+        "width": 1128,
+        "height": 662,
+        "alt": "AIMS™ Lab Products | Grace Procedure / Dissection Boards"
+      }
+    ],
+    "documents": [],
+    "categories": [
+      "procedure-dissection-boards"
+    ],
+    "relatedSlugs": [
+      "aims-grace-procedure-board-non-magnetic-base-gps2",
+      "aims-grace-procedure-board-non-magnetic-base-gps1",
+      "aims-grace-procedure-board-magnetic-base-gpm1",
+      "aims-grace-procedure-board-magnetic-base-gpm2"
+    ],
+    "sourceUrl": "https://aimslabproducts.com/product/aims-grace-procedure-dissection-boards/"
+  },
+  {
+    "slug": "aims-grace-procedure-board-magnetic-base-gpm1",
+    "sku": "GPM1",
+    "title": "AIMS™ Grace Procedure Board Magnetic Base GPM1",
+    "summary": "Grace Procedure / Dissection Boards are made of 1” thick High Density Polyethylene (HDPE) with excellent chemical resistance",
+    "descriptionHtml": "\n\t\t\t\t\n\t\n\n\n\t\n\t\t\n\t\t\t<p>Grace Procedure / Dissection Boards are made of 1” thick High Density Polyethylene (HDPE) with excellent chemical resistance</p>\n<p><em>GPM2 and GPM1 Models include “Magnetic Base System”</em></p>\n<p><strong>Grace GPM2 Procedure/Dissection Board w/ LED, Magnifier, &amp; Magnetic Base System</strong><br />\nTwo Flexible LED lights – provides direct illumination with no shadows and no heat. Flex arm, non-obstructive rimless magnifying glass (main lens: 2.3X, inset lens: 4.0X). (Allows continuous eye contact with object when moving into magnification area). Non-skid feet for added stability. Universal input power supply (100 – 240 VAC, 50-60Hz). Size: 12” (L) x 9.5” (W). Includes Magnetic Base System.</p>\n<p><strong>Grace GPS2 Procedure/Dissection Board w/ LED, &amp; Magnifier</strong><br />\nTwo Flexible LED lights – provides direct illumination with no shadows and no heat. Flex arm, non-obstructive rimless magnifying glass (main lens: 2.3X, inset lens: 4.0X). (Allows continuous eye contact with object when moving into magnification area). Non-skid feet for added stability. Universal input power supply (100 – 240 VAC, 50-60Hz). Size: 12” (L) x 9.5” (W). Does not include Magnetic Base System.</p>\n<p><strong>Grace GPM1 Procedure/Dissection Board w/ Magnetic Base System</strong>, Non-skid feet for added stability. Size: 12” (L) x 8” (W). Includes Magnetic Base System.</p>\n<p><strong>Grace GPS1 Procedure/Dissection Board</strong><br />\nNon-skid feet for added stability. 12” (L) x 8” (W). Does not include Magnetic Base System.</p>\n<p><strong>*Easy-to-Clean, Solid Work Surface*</strong></p>\n\n\t\t\n\t\n\n\t\t\t",
+    "sourceBodyDigest": "b4fbaeede0732ab12f327e8c8ca41c3b38a968362681a3a2667e3cb079117a36",
+    "specifications": [],
+    "models": [
+      {
+        "sku": "GPM1",
+        "title": "AIMS™ Grace Procedure Board Magnetic Base GPM1",
+        "description": ""
+      }
+    ],
+    "images": [
+      {
+        "url": "/aims-lab/ba1ff79008554ec7.jpg",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/12/16-scaled.jpg",
+        "width": 2560,
+        "height": 1920,
+        "alt": "AIMS™ Lab Products Magnetic Procedure Board"
+      },
+      {
+        "url": "/aims-lab/66e50cf327c8dea1.png",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/08/aims-lab-products-grace-surgery-boards-magnetic-base-system-diagram.png",
+        "width": 820,
+        "height": 344,
+        "alt": "AIMS™ Lab Products | Small Animal Surgery Board Magentic Base System Diagram GSM1 & GSM2"
+      },
+      {
+        "url": "/aims-lab/2aa661e6a8abd7b4.png",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/09/AIMS-Lab-Products-gpm2.png",
+        "width": 540,
+        "height": 490,
+        "alt": "AIMS™ Lab Products | Grace Procedure / Dissection Boards"
+      },
+      {
+        "url": "/aims-lab/87a7dd63012546b4.png",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/09/AIMS-Lab-Products-gps2.png",
+        "width": 1079,
+        "height": 894,
+        "alt": "AIMS™ Lab Products | Grace Procedure / Dissection Boards"
+      },
+      {
+        "url": "/aims-lab/ea1c78a75ff995af.png",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/09/AIMS-Lab-Products-gpm1.png",
+        "width": 1130,
+        "height": 665,
+        "alt": "AIMS™ Lab Products | Grace Procedure / Dissection Boards"
+      },
+      {
+        "url": "/aims-lab/482ead8aced47dfe.png",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/09/AIMS-Lab-Products-gps1.png",
+        "width": 1128,
+        "height": 662,
+        "alt": "AIMS™ Lab Products | Grace Procedure / Dissection Boards"
+      }
+    ],
+    "documents": [
+      {
+        "url": "/aims-lab/3edaa27a990ec5a6.pdf",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/12/AIMS%E2%84%A2-Lab-Products-Grace-Procedure-Boards-Product-Details.pdf",
+        "label": "Product Details - PDF"
+      }
+    ],
+    "categories": [
+      "procedure-dissection-boards",
+      "procedure-boards"
+    ],
+    "relatedSlugs": [
+      "aims-grace-procedure-dissection-boards",
+      "aims-grace-procedure-board-non-magnetic-base-gps1",
+      "aims-grace-procedure-board-magnetic-base-gpm2",
+      "aims-grace-procedure-board-non-magnetic-base-gps2"
+    ],
+    "sourceUrl": "https://aimslabproducts.com/product/aims-grace-procedure-board-magnetic-base-gpm1/"
+  },
+  {
+    "slug": "aims-grace-procedure-board-magnetic-base-gpm2",
+    "sku": "GPM2",
+    "title": "AIMS™ Grace Procedure Board Magnetic Base GPM2",
+    "summary": "Grace Procedure / Dissection Boards are made of 1” thick High Density Polyethylene (HDPE) with excellent chemical resistance",
+    "descriptionHtml": "\n\t\t\t\t\n\t\n\n\n\t\n\t\t\n\t\t\t<p>Grace Procedure / Dissection Boards are made of 1” thick High Density Polyethylene (HDPE) with excellent chemical resistance</p>\n<p><em>GPM2 and GPM1 Models include “Magnetic Base System”</em></p>\n<p><strong>Grace GPM2 Procedure/Dissection Board w/ LED, Magnifier, &amp; Magnetic Base System</strong><br />\nTwo Flexible LED lights – provides direct illumination with no shadows and no heat. Flex arm, non-obstructive rimless magnifying glass (main lens: 2.3X, inset lens: 4.0X). (Allows continuous eye contact with object when moving into magnification area). Non-skid feet for added stability. Universal input power supply (100 – 240 VAC, 50-60Hz). Size: 12” (L) x 9.5” (W). Includes Magnetic Base System.</p>\n<p><strong>Grace GPS2 Procedure/Dissection Board w/ LED, &amp; Magnifier</strong><br />\nTwo Flexible LED lights – provides direct illumination with no shadows and no heat. Flex arm, non-obstructive rimless magnifying glass (main lens: 2.3X, inset lens: 4.0X). (Allows continuous eye contact with object when moving into magnification area). Non-skid feet for added stability. Universal input power supply (100 – 240 VAC, 50-60Hz). Size: 12” (L) x 9.5” (W). Does not include Magnetic Base System.</p>\n<p><strong>Grace GPM1 Procedure/Dissection Board w/ Magnetic Base System</strong>, Non-skid feet for added stability. Size: 12” (L) x 8” (W). Includes Magnetic Base System.</p>\n<p><strong>Grace GPS1 Procedure/Dissection Board</strong><br />\nNon-skid feet for added stability. 12” (L) x 8” (W). Does not include Magnetic Base System.</p>\n<p><strong>*Easy-to-Clean, Solid Work Surface*</strong></p>\n\n\t\t\n\t\n\n\t\t\t",
+    "sourceBodyDigest": "b4fbaeede0732ab12f327e8c8ca41c3b38a968362681a3a2667e3cb079117a36",
+    "specifications": [],
+    "models": [
+      {
+        "sku": "GPM2",
+        "title": "AIMS™ Grace Procedure Board Magnetic Base GPM2",
+        "description": ""
+      }
+    ],
+    "images": [
+      {
+        "url": "/aims-lab/3007f5ed67295ba3.jpg",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/12/15-scaled.jpg",
+        "width": 2560,
+        "height": 1920,
+        "alt": "AIMS™ Lab Products Magnetic Procedure Board"
+      },
+      {
+        "url": "/aims-lab/66e50cf327c8dea1.png",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/08/aims-lab-products-grace-surgery-boards-magnetic-base-system-diagram.png",
+        "width": 820,
+        "height": 344,
+        "alt": "AIMS™ Lab Products | Small Animal Surgery Board Magentic Base System Diagram GSM1 & GSM2"
+      },
+      {
+        "url": "/aims-lab/2aa661e6a8abd7b4.png",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/09/AIMS-Lab-Products-gpm2.png",
+        "width": 540,
+        "height": 490,
+        "alt": "AIMS™ Lab Products | Grace Procedure / Dissection Boards"
+      },
+      {
+        "url": "/aims-lab/87a7dd63012546b4.png",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/09/AIMS-Lab-Products-gps2.png",
+        "width": 1079,
+        "height": 894,
+        "alt": "AIMS™ Lab Products | Grace Procedure / Dissection Boards"
+      },
+      {
+        "url": "/aims-lab/ea1c78a75ff995af.png",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/09/AIMS-Lab-Products-gpm1.png",
+        "width": 1130,
+        "height": 665,
+        "alt": "AIMS™ Lab Products | Grace Procedure / Dissection Boards"
+      },
+      {
+        "url": "/aims-lab/482ead8aced47dfe.png",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/09/AIMS-Lab-Products-gps1.png",
+        "width": 1128,
+        "height": 662,
+        "alt": "AIMS™ Lab Products | Grace Procedure / Dissection Boards"
+      }
+    ],
+    "documents": [
+      {
+        "url": "/aims-lab/3edaa27a990ec5a6.pdf",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/12/AIMS%E2%84%A2-Lab-Products-Grace-Procedure-Boards-Product-Details.pdf",
+        "label": "Product Details - PDF"
+      }
+    ],
+    "categories": [
+      "procedure-dissection-boards",
+      "procedure-boards"
+    ],
+    "relatedSlugs": [
+      "aims-grace-procedure-dissection-boards",
+      "aims-grace-procedure-board-magnetic-base-gpm1",
+      "aims-grace-procedure-board-non-magnetic-base-gps2",
+      "aims-grace-procedure-board-non-magnetic-base-gps1"
+    ],
+    "sourceUrl": "https://aimslabproducts.com/product/aims-grace-procedure-board-magnetic-base-gpm2/"
+  },
+  {
+    "slug": "aims-grace-procedure-board-non-magnetic-base-gps1",
+    "sku": "GPS1",
+    "title": "AIMS™ Grace Procedure Board Non-Magnetic Base GPS1",
+    "summary": "Grace Procedure / Dissection Boards are made of 1” thick High Density Polyethylene (HDPE) with excellent chemical resistance",
+    "descriptionHtml": "\n\t\t\t\t\n\t\n\n\n\t\n\t\t\n\t\t\t<p>Grace Procedure / Dissection Boards are made of 1” thick High Density Polyethylene (HDPE) with excellent chemical resistance</p>\n<p><em>GPM2 and GPM1 Models include “Magnetic Base System”</em></p>\n<p><strong>Grace GPM2 Procedure/Dissection Board w/ LED, Magnifier, &amp; Magnetic Base System</strong><br />\nTwo Flexible LED lights – provides direct illumination with no shadows and no heat. Flex arm, non-obstructive rimless magnifying glass (main lens: 2.3X, inset lens: 4.0X). (Allows continuous eye contact with object when moving into magnification area). Non-skid feet for added stability. Universal input power supply (100 – 240 VAC, 50-60Hz). Size: 12” (L) x 9.5” (W). Includes Magnetic Base System.</p>\n<p><strong>Grace GPS2 Procedure/Dissection Board w/ LED, &amp; Magnifier</strong><br />\nTwo Flexible LED lights – provides direct illumination with no shadows and no heat. Flex arm, non-obstructive rimless magnifying glass (main lens: 2.3X, inset lens: 4.0X). (Allows continuous eye contact with object when moving into magnification area). Non-skid feet for added stability. Universal input power supply (100 – 240 VAC, 50-60Hz). Size: 12” (L) x 9.5” (W). Does not include Magnetic Base System.</p>\n<p><strong>Grace GPM1 Procedure/Dissection Board w/ Magnetic Base System</strong>, Non-skid feet for added stability. Size: 12” (L) x 8” (W). Includes Magnetic Base System.</p>\n<p><strong>Grace GPS1 Procedure/Dissection Board</strong><br />\nNon-skid feet for added stability. 12” (L) x 8” (W). Does not include Magnetic Base System.</p>\n<p><strong>*Easy-to-Clean, Solid Work Surface*</strong></p>\n\n\t\t\n\t\n\n\t\t\t",
+    "sourceBodyDigest": "b4fbaeede0732ab12f327e8c8ca41c3b38a968362681a3a2667e3cb079117a36",
+    "specifications": [],
+    "models": [
+      {
+        "sku": "GPS1",
+        "title": "AIMS™ Grace Procedure Board Non-Magnetic Base GPS1",
+        "description": ""
+      }
+    ],
+    "images": [
+      {
+        "url": "/aims-lab/36fa891fa0cb61b5.jpg",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/12/18-scaled.jpg",
+        "width": 2560,
+        "height": 1920,
+        "alt": "AIMS™ Lab Products Procedure Board"
+      },
+      {
+        "url": "/aims-lab/87a7dd63012546b4.png",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/09/AIMS-Lab-Products-gps2.png",
+        "width": 1079,
+        "height": 894,
+        "alt": "AIMS™ Lab Products | Grace Procedure / Dissection Boards"
+      },
+      {
+        "url": "/aims-lab/482ead8aced47dfe.png",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/09/AIMS-Lab-Products-gps1.png",
+        "width": 1128,
+        "height": 662,
+        "alt": "AIMS™ Lab Products | Grace Procedure / Dissection Boards"
+      }
+    ],
+    "documents": [
+      {
+        "url": "/aims-lab/3edaa27a990ec5a6.pdf",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/12/AIMS%E2%84%A2-Lab-Products-Grace-Procedure-Boards-Product-Details.pdf",
+        "label": "Product Details - PDF"
+      }
+    ],
+    "categories": [
+      "procedure-dissection-boards",
+      "procedure-boards"
+    ],
+    "relatedSlugs": [
+      "aims-grace-procedure-dissection-boards",
+      "aims-grace-procedure-board-magnetic-base-gpm2",
+      "aims-grace-procedure-board-non-magnetic-base-gps2",
+      "aims-grace-procedure-board-magnetic-base-gpm1"
+    ],
+    "sourceUrl": "https://aimslabproducts.com/product/aims-grace-procedure-board-non-magnetic-base-gps1/"
+  },
+  {
+    "slug": "aims-grace-procedure-board-non-magnetic-base-gps2",
+    "sku": "GPS2",
+    "title": "AIMS™ Grace Procedure Board Non-Magnetic Base GPS2",
+    "summary": "Grace Procedure / Dissection Boards are made of 1” thick High Density Polyethylene (HDPE) with excellent chemical resistance",
+    "descriptionHtml": "\n\t\t\t\t\n\t\n\n\n\t\n\t\t\n\t\t\t<p>Grace Procedure / Dissection Boards are made of 1” thick High Density Polyethylene (HDPE) with excellent chemical resistance</p>\n<p><em>GPM2 and GPM1 Models include “Magnetic Base System”</em></p>\n<p><strong>Grace GPM2 Procedure/Dissection Board w/ LED, Magnifier, &amp; Magnetic Base System</strong><br />\nTwo Flexible LED lights – provides direct illumination with no shadows and no heat. Flex arm, non-obstructive rimless magnifying glass (main lens: 2.3X, inset lens: 4.0X). (Allows continuous eye contact with object when moving into magnification area). Non-skid feet for added stability. Universal input power supply (100 – 240 VAC, 50-60Hz). Size: 12” (L) x 9.5” (W). Includes Magnetic Base System.</p>\n<p><strong>Grace GPS2 Procedure/Dissection Board w/ LED, &amp; Magnifier</strong><br />\nTwo Flexible LED lights – provides direct illumination with no shadows and no heat. Flex arm, non-obstructive rimless magnifying glass (main lens: 2.3X, inset lens: 4.0X). (Allows continuous eye contact with object when moving into magnification area). Non-skid feet for added stability. Universal input power supply (100 – 240 VAC, 50-60Hz). Size: 12” (L) x 9.5” (W). Does not include Magnetic Base System.</p>\n<p><strong>Grace GPM1 Procedure/Dissection Board w/ Magnetic Base System</strong>, Non-skid feet for added stability. Size: 12” (L) x 8” (W). Includes Magnetic Base System.</p>\n<p><strong>Grace GPS1 Procedure/Dissection Board</strong><br />\nNon-skid feet for added stability. 12” (L) x 8” (W). Does not include Magnetic Base System.</p>\n<p><strong>*Easy-to-Clean, Solid Work Surface*</strong></p>\n\n\t\t\n\t\n\n\t\t\t",
+    "sourceBodyDigest": "b4fbaeede0732ab12f327e8c8ca41c3b38a968362681a3a2667e3cb079117a36",
+    "specifications": [],
+    "models": [
+      {
+        "sku": "GPS2",
+        "title": "AIMS™ Grace Procedure Board Non-Magnetic Base GPS2",
+        "description": ""
+      }
+    ],
+    "images": [
+      {
+        "url": "/aims-lab/642051a932e2e147.jpg",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/12/17-scaled.jpg",
+        "width": 2560,
+        "height": 1920,
+        "alt": "AIMS™ Lab Products Procedure Board"
+      },
+      {
+        "url": "/aims-lab/87a7dd63012546b4.png",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/09/AIMS-Lab-Products-gps2.png",
+        "width": 1079,
+        "height": 894,
+        "alt": "AIMS™ Lab Products | Grace Procedure / Dissection Boards"
+      },
+      {
+        "url": "/aims-lab/482ead8aced47dfe.png",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/09/AIMS-Lab-Products-gps1.png",
+        "width": 1128,
+        "height": 662,
+        "alt": "AIMS™ Lab Products | Grace Procedure / Dissection Boards"
+      }
+    ],
+    "documents": [
+      {
+        "url": "/aims-lab/3edaa27a990ec5a6.pdf",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/12/AIMS%E2%84%A2-Lab-Products-Grace-Procedure-Boards-Product-Details.pdf",
+        "label": "Product Details - PDF"
+      }
+    ],
+    "categories": [
+      "procedure-dissection-boards",
+      "procedure-boards"
+    ],
+    "relatedSlugs": [
+      "aims-grace-procedure-board-non-magnetic-base-gps1",
+      "aims-grace-procedure-dissection-boards",
+      "aims-grace-procedure-board-magnetic-base-gpm1",
+      "aims-grace-procedure-board-magnetic-base-gpm2"
+    ],
+    "sourceUrl": "https://aimslabproducts.com/product/aims-grace-procedure-board-non-magnetic-base-gps2/"
+  },
+  {
+    "slug": "aims-hypothermic-cooling-plate-gbhp",
+    "sku": "GBHP",
+    "title": "AIMS™ Hypothermic Cooling Plate – GBHP",
+    "summary": "Use with ice 3-4°C Cat# GBHP",
+    "descriptionHtml": "\n\t\t\t\t\n\t\n\n\n\t\n\t\t\n\t\t\t<p>Use with ice 3-4°C<br />\nCat# GBHP</p>\n\n\t\t\n\t\n\n\t\t\t",
+    "sourceBodyDigest": "dac8c241c476f5cfc147279109beaf1ee747cb26bcf71762a1bc4df53d31e7bd",
+    "specifications": [],
+    "models": [
+      {
+        "sku": "GBHP",
+        "title": "AIMS™ Hypothermic Cooling Plate – GBHP",
+        "description": ""
+      }
+    ],
+    "images": [
+      {
+        "url": "/aims-lab/b5cbf566684cf4e7.png",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/08/aims-lab-products-gbhp.png",
+        "width": 621,
+        "height": 301,
+        "alt": "AIMS™ Lab Products | Hypothermic Cooling Plate - GBHP"
+      }
+    ],
+    "documents": [
+      {
+        "url": "/aims-lab/7f3b78086a5d1354.pdf",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/12/AIMS%E2%84%A2-Lab-Products-Surgery-Accessories.pdf",
+        "label": "Product Details - PDF"
+      }
+    ],
+    "categories": [
+      "small-animal-surgery",
+      "surgery-boards",
+      "surgery-board-accessories"
+    ],
+    "relatedSlugs": [
+      "aims-thermo-controlled-recovery-pad-tcrp",
+      "aims-elastic-hold-downs-gehd",
+      "aims-magnetic-limb-restraints-glr1",
+      "aims-dc-powered-thermal-plate-getp"
+    ],
+    "sourceUrl": "https://aimslabproducts.com/product/aims-hypothermic-cooling-plate-gbhp/"
+  },
+  {
+    "slug": "aims-in-low-tail-cutting-platform-il200",
+    "sku": "IL200",
+    "title": "AIMS™ In Low Tail Cutting Platform – IL200",
+    "summary": "In Low Tail Cutting Platform Cat # IL200",
+    "descriptionHtml": "\n\t\t\t\t\n\t\n\n\n\t\n\t\t\n\t\t\t<p>In Low Tail Cutting Platform Cat # IL200</p>\n<p>Quick Restraint<br />\nTube Holder<br />\nRuler for Accurate Snips<br />\nEasy to Clean</p>\n<p>Also see In Low Tail Injection Platform</p>\n\n\t\t\n\t\n\n\t\t\t",
+    "sourceBodyDigest": "6a83aa856ca7ed59119a7bcc3566ddb2222be1f9172ffd5cecfb15924a6508b1",
+    "specifications": [],
+    "models": [
+      {
+        "sku": "IL200",
+        "title": "AIMS™ In Low Tail Cutting Platform – IL200",
+        "description": ""
+      }
+    ],
+    "images": [
+      {
+        "url": "/aims-lab/b989d198061e68dd.jpg",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/09/Tail-Snipping-Platform-scaled.jpg",
+        "width": 2560,
+        "height": 1920,
+        "alt": "AIMS™ Lab Products Tail Snipping Platform"
+      },
+      {
+        "url": "/aims-lab/906ea0436006c0a3.jpg",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/12/AIMS%E2%84%A2-Lab-Products-Tail-cutting.jpg",
+        "width": 534,
+        "height": 697,
+        "alt": "AIMS™ Lab Products Tail Cutting"
+      }
+    ],
+    "documents": [
+      {
+        "url": "/aims-lab/d0a04401f91b8760.pdf",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/12/AIMS%E2%84%A2-Lab-Products-Restraints.pdf",
+        "label": "Product Details - PDF"
+      }
+    ],
+    "categories": [
+      "rodent-restraints",
+      "tail-cutting"
+    ],
+    "relatedSlugs": [
+      "aims-in-low-tail-injection-platform-il300",
+      "aims-disposable-plastic-restraints-dpr"
+    ],
+    "sourceUrl": "https://aimslabproducts.com/product/aims-in-low-tail-cutting-platform-il200/"
+  },
+  {
+    "slug": "aims-in-low-tail-injection-platform-il300",
+    "sku": "IL300",
+    "title": "AIMS™ In Low Tail Injection Platform – IL300",
+    "summary": "In Low Tail Injection Platform Cat # IL300",
+    "descriptionHtml": "\n\t\t\t\t\n\t\n\n\n\t\n\t\t\n\t\t\t<p>In Low Tail Injection Platform Cat # IL300</p>\n<p>Quick Restraint<br />\nLow Stress<br />\nEasy to Clean</p>\n<p>Also see In Low Tail Cutting Platform</p>\n\n\t\t\n\t\n\n\t\t\t",
+    "sourceBodyDigest": "5d2cc90dc1e292ad447cb6aacf2667292da42babad04a269c88379b03cf7f18c",
+    "specifications": [],
+    "models": [
+      {
+        "sku": "IL300",
+        "title": "AIMS™ In Low Tail Injection Platform – IL300",
+        "description": ""
+      }
+    ],
+    "images": [
+      {
+        "url": "/aims-lab/5b05c86182771be0.jpg",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/09/Tail-Injection-Platform-scaled.jpg",
+        "width": 2560,
+        "height": 1920,
+        "alt": "AIMS™ Lab Products Tail Injection Platform"
+      },
+      {
+        "url": "/aims-lab/275e65b87ac6cb7d.jpg",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/11/Tail-Inj.jpg",
+        "width": 525,
+        "height": 334,
+        "alt": "AIMS™ Lab Products Tail Injection"
+      },
+      {
+        "url": "/aims-lab/1548df2dfc48f720.jpg",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/12/AIMS%E2%84%A2-Lab-Products-Tail-injecting.jpg",
+        "width": 939,
+        "height": 512,
+        "alt": "AIMS™ Lab Products Tail Injecting"
+      }
+    ],
+    "documents": [
+      {
+        "url": "/aims-lab/d0a04401f91b8760.pdf",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/12/AIMS%E2%84%A2-Lab-Products-Restraints.pdf",
+        "label": "Product Details - PDF"
+      }
+    ],
+    "categories": [
+      "rodent-restraints",
+      "tail-injection"
+    ],
+    "relatedSlugs": [
+      "aims-in-low-tail-cutting-platform-il200",
+      "aims-disposable-plastic-restraints-dpr"
+    ],
+    "sourceUrl": "https://aimslabproducts.com/product/aims-in-low-tail-injection-platform-il300/"
+  },
+  {
+    "slug": "aims-magnetic-drape-holders-large-gdhl",
+    "sku": "GDHL",
+    "title": "AIMS™ Magnetic Drape Holders Large – GDHL",
+    "summary": "Large – Cat# GDHL Set of 4",
+    "descriptionHtml": "\n\t\t\t\t\n\t\n\n\n\t\n\t\t\n\t\t\t<p>Large – Cat# GDHL<br />\nSet of 4</p>\n\n\t\t\n\t\n\n\t\t\t",
+    "sourceBodyDigest": "fe3959ba9cfcfbe3e63abbc53c0dd1dabfa3538bf30b5d47c941826128cc0a3b",
+    "specifications": [],
+    "models": [
+      {
+        "sku": "GDHL",
+        "title": "AIMS™ Magnetic Drape Holders Large – GDHL",
+        "description": ""
+      }
+    ],
+    "images": [
+      {
+        "url": "/aims-lab/b1ed1312f56c9708.png",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/09/aims-lab-products-gdhl-group.png",
+        "width": 424,
+        "height": 116,
+        "alt": "AIMS™ Lab Products | Magnetic Drape Holders Large - GDHL"
+      }
+    ],
+    "documents": [
+      {
+        "url": "/aims-lab/7f3b78086a5d1354.pdf",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/12/AIMS%E2%84%A2-Lab-Products-Surgery-Accessories.pdf",
+        "label": "Product Details - PDF"
+      }
+    ],
+    "categories": [
+      "small-animal-surgery",
+      "surgery-boards",
+      "surgery-board-accessories"
+    ],
+    "relatedSlugs": [
+      "aims-variable-temp-controller-gvt1",
+      "aims-surgery-platform-ass7",
+      "aims-elastic-hold-downs-gehd",
+      "aims-thermal-drape-gbtd"
+    ],
+    "sourceUrl": "https://aimslabproducts.com/product/aims-magnetic-drape-holders-large-gdhl/"
+  },
+  {
+    "slug": "aims-magnetic-drape-holders-small-gdhs",
+    "sku": "GDHS",
+    "title": "AIMS™ Magnetic Drape Holders Small – GDHS",
+    "summary": "Small – Cat# GDHS Set of 4",
+    "descriptionHtml": "\n\t\t\t\t\n\t\n\n\n\t\n\t\t\n\t\t\t<p>Small – Cat# GDHS<br />\nSet of 4</p>\n\n\t\t\n\t\n\n\t\t\t",
+    "sourceBodyDigest": "5ef653eb421199f969610242d78a0558fa35dff72aae2cf18806d7b5a1a84cc0",
+    "specifications": [],
+    "models": [
+      {
+        "sku": "GDHS",
+        "title": "AIMS™ Magnetic Drape Holders Small – GDHS",
+        "description": ""
+      }
+    ],
+    "images": [
+      {
+        "url": "/aims-lab/7ef5687b879d9f28.png",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/09/aims-lab-products-gdhs-group.png",
+        "width": 372,
+        "height": 123,
+        "alt": "AIMS™ Lab Products | Magnetic Drape Holders Small - GDHS"
+      }
+    ],
+    "documents": [
+      {
+        "url": "/aims-lab/7f3b78086a5d1354.pdf",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/12/AIMS%E2%84%A2-Lab-Products-Surgery-Accessories.pdf",
+        "label": "Product Details - PDF"
+      }
+    ],
+    "categories": [
+      "small-animal-surgery",
+      "surgery-boards",
+      "surgery-board-accessories"
+    ],
+    "relatedSlugs": [
+      "aims-dc-powered-thermal-plate-getp",
+      "aims-stereotaxic-light-on-off-plug-switch-llsw",
+      "aims-magnetic-limb-restraints-glr1",
+      "aims-thermo-controlled-recovery-pad-tcrp"
+    ],
+    "sourceUrl": "https://aimslabproducts.com/product/aims-magnetic-drape-holders-small-gdhs/"
+  },
+  {
+    "slug": "aims-magnetic-limb-restraints-glr1",
+    "sku": "GLR1",
+    "title": "AIMS™ Magnetic Limb Restraints – GLR1",
+    "summary": "Cat# GLR1 Set of 4",
+    "descriptionHtml": "\n\t\t\t\t\n\t\n\n\n\t\n\t\t\n\t\t\t<p>Cat# GLR1<br />\nSet of 4</p>\n\n\t\t\n\t\n\n\t\t\t",
+    "sourceBodyDigest": "52afd03a6b0c5c3cd4873c8ff0e067af6d3e40f3f72b8bb43460a29a34de146c",
+    "specifications": [],
+    "models": [
+      {
+        "sku": "GLR1",
+        "title": "AIMS™ Magnetic Limb Restraints – GLR1",
+        "description": ""
+      }
+    ],
+    "images": [
+      {
+        "url": "/aims-lab/3300833a19bf5d97.png",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/09/aims-lab-products-glr1.png",
+        "width": 348,
+        "height": 137,
+        "alt": "AIMS™ Lab Products | Magnetic Limb Restraints - GLR1"
+      }
+    ],
+    "documents": [
+      {
+        "url": "/aims-lab/7f3b78086a5d1354.pdf",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/12/AIMS%E2%84%A2-Lab-Products-Surgery-Accessories.pdf",
+        "label": "Product Details - PDF"
+      }
+    ],
+    "categories": [
+      "small-animal-surgery",
+      "surgery-boards",
+      "surgery-board-accessories"
+    ],
+    "relatedSlugs": [
+      "aims-thermo-controlled-recovery-pad-tcrp",
+      "aims-hypothermic-cooling-plate-gbhp",
+      "aims-surgery-platform-ass7",
+      "aims-stereotaxic-light-on-off-plug-switch-llsw"
+    ],
+    "sourceUrl": "https://aimslabproducts.com/product/aims-magnetic-limb-restraints-glr1/"
+  },
+  {
+    "slug": "aims-magnetic-magnifier-gmag",
+    "sku": "GMAG",
+    "title": "AIMS™ Magnetic Magnifier – GMAG",
+    "summary": "(Main lens: 2.3x, inset lens: 4.0x) Cat#: GMAG",
+    "descriptionHtml": "\n\t\t\t\t\n\t\n\n\n\t\n\t\t\n\t\t\t<p>(Main lens: 2.3x, inset lens: 4.0x)<br />\nCat#: GMAG</p>\n\n\t\t\n\t\n\n\t\t\t",
+    "sourceBodyDigest": "4b09e50c82ebf26eb3c8df2c852803d41afbc12c2678e0e7d4cda3a280c737e9",
+    "specifications": [],
+    "models": [
+      {
+        "sku": "GMAG",
+        "title": "AIMS™ Magnetic Magnifier – GMAG",
+        "description": ""
+      }
+    ],
+    "images": [
+      {
+        "url": "/aims-lab/4afa12c6137c2ab4.jpg",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/09/AIMS%E2%84%A2-Magnetic-Magnifier-GMAG-Mag-Led-scaled.jpg",
+        "width": 2560,
+        "height": 1920,
+        "alt": "AIMS™ Lab Products Magnetic Magnifier GMAG"
+      },
+      {
+        "url": "/aims-lab/9630bc00f4391638.jpg",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/09/MAG-1-scaled.jpg",
+        "width": 1920,
+        "height": 2560,
+        "alt": "AIMS™ Lab Products Magnetic Magnifier"
+      }
+    ],
+    "documents": [
+      {
+        "url": "/aims-lab/7defb1ee0edb9a01.pdf",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/12/AIMS%E2%84%A2-Lab-Products-Stereotaxic-Magnetic-Magnifier-Product-Details.pdf",
+        "label": "Product Details - PDF"
+      }
+    ],
+    "categories": [
+      "small-animal-surgery",
+      "surgery-boards",
+      "surgery-board-accessories",
+      "stereotaxic-lighting-magnification"
+    ],
+    "relatedSlugs": [
+      "aims-stereotaxic-led-light-ll13"
+    ],
+    "sourceUrl": "https://aimslabproducts.com/product/aims-magnetic-magnifier-gmag/"
+  },
+  {
+    "slug": "aims-single-temp-power-supply-gpp1-gpp2-gpp3",
+    "sku": "GPP1-GPP2-GPP3",
+    "title": "AIMS™ Single Temp Power Supply – GPP1, GPP2, GPP3",
+    "summary": "Provides a single constant plate temp. 30°C, Cat# GPP1 34°C, Cat# GPP2 38°C, Cat# GPP3 Use with Cat# GETP *Note: Final plate temp is dependant on room temp.",
+    "descriptionHtml": "\n\t\t\t\t\n\t\n\n\n\t\n\t\t\n\t\t\t<p>Provides a single constant plate temp.<br />\n30°C, Cat# GPP1<br />\n34°C, Cat# GPP2<br />\n38°C, Cat# GPP3<br />\nUse with Cat# GETP *Note: Final plate temp is dependant on room temp.</p>\n\n\t\t\n\t\n\n\t\t\t",
+    "sourceBodyDigest": "a67e8cd791bba11b0dc1371e22e64401f0624f99500e96e75e40041276b7ab33",
+    "specifications": [],
+    "models": [
+      {
+        "sku": "GPP1",
+        "title": "AIMS™ Single Temp Power Supply – GPP1, GPP2, GPP3",
+        "description": ""
+      },
+      {
+        "sku": "GPP2",
+        "title": "AIMS™ Single Temp Power Supply – GPP1, GPP2, GPP3",
+        "description": ""
+      },
+      {
+        "sku": "GPP3",
+        "title": "AIMS™ Single Temp Power Supply – GPP1, GPP2, GPP3",
+        "description": ""
+      }
+    ],
+    "images": [
+      {
+        "url": "/aims-lab/ed73a9b11be519a1.png",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/08/AIMS-Lab-Products-Single-Temp-Power-Supply-GPP1-GPP2-GPP3.png",
+        "width": 405,
+        "height": 257,
+        "alt": "AIMS™ Lab Products | Single Temp Power Supply - GPP1, GPP2, GPP3"
+      }
+    ],
+    "documents": [
+      {
+        "url": "/aims-lab/7f3b78086a5d1354.pdf",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/12/AIMS%E2%84%A2-Lab-Products-Surgery-Accessories.pdf",
+        "label": "Product Details - PDF"
+      }
+    ],
+    "categories": [
+      "small-animal-surgery",
+      "surgery-boards",
+      "surgery-board-accessories"
+    ],
+    "relatedSlugs": [
+      "aims-magnetic-drape-holders-small-gdhs",
+      "aims-thermal-drape-gbtd",
+      "aims-stereotaxic-light-on-off-plug-switch-llsw",
+      "aims-magnetic-limb-restraints-glr1"
+    ],
+    "sourceUrl": "https://aimslabproducts.com/product/aims-single-temp-power-supply-gpp1-gpp2-gpp3/"
+  },
+  {
+    "slug": "aims-space-gel-heating-pad-ggp1",
+    "sku": "GGP1",
+    "title": "AIMS™ Space Gel Heating Pad – GGP1",
+    "summary": "33-34°C Cat# GGP1 Can be reactivated. Use with standard thermal plate.",
+    "descriptionHtml": "\n\t\t\t\t\n\t\n\n\n\t\n\t\t\n\t\t\t<p>33-34°C<br />\nCat# GGP1<br />\nCan be reactivated. Use with standard thermal plate.</p>\n\n\t\t\n\t\n\n\t\t\t",
+    "sourceBodyDigest": "bf2d056743cf782695479f7f813c81627054ecb773fb47c12d168d0e33d9842e",
+    "specifications": [],
+    "models": [
+      {
+        "sku": "GGP1",
+        "title": "AIMS™ Space Gel Heating Pad – GGP1",
+        "description": ""
+      }
+    ],
+    "images": [
+      {
+        "url": "/aims-lab/a57fadc94bd73adb.png",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/08/AIMS-Lab-Products-Space-Gel-Heating-Pad-GCP1.png",
+        "width": 355,
+        "height": 230,
+        "alt": "AIMS™ Lab Products | Space Gel Heating Pad - GGP1"
+      }
+    ],
+    "documents": [
+      {
+        "url": "/aims-lab/7f3b78086a5d1354.pdf",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/12/AIMS%E2%84%A2-Lab-Products-Surgery-Accessories.pdf",
+        "label": "Product Details - PDF"
+      }
+    ],
+    "categories": [
+      "small-animal-surgery",
+      "surgery-boards",
+      "surgery-board-accessories"
+    ],
+    "relatedSlugs": [
+      "aims-elastic-hold-downs-gehd",
+      "aims-magnetic-drape-holders-large-gdhl",
+      "aims-thermal-drape-gbtd",
+      "aims-thermo-controlled-recovery-pad-tcrp"
+    ],
+    "sourceUrl": "https://aimslabproducts.com/product/aims-space-gel-heating-pad-ggp1/"
+  },
+  {
+    "slug": "aims-stereotaxic-led-light-ll13",
+    "sku": "LL13",
+    "title": "AIMS™ Stereotaxic LED Light – LL13",
+    "summary": "Unique magnetic base/puck system holds the lab light firmly on the base in any location.",
+    "descriptionHtml": "\n\t\t\t\t\n\t\n\n\n\t\n\t\t\n\t\t\t<p><strong>Unique magnetic base/puck system holds the lab light firmly on the base in any location.</strong></p>\n<p>Ultra Bright LED on 10″ Flex Arm.<br />\nUltra Strong Magnetic Base/Puck System to Anchor Light on Non-Metallic Surfaces.<br />\nAttaches Directly to Metallic Surfaces.<br />\nUniversal Power Supply (110-220 V).<br />\nSmall Base (1 5/8″ dia.)</p>\n\n\t\t\n\t\n\n\t\t\t",
+    "sourceBodyDigest": "59130ca8a8069f8deeb6f8cec2b5c6e3add7f108c080065e218684376abe859b",
+    "specifications": [],
+    "models": [
+      {
+        "sku": "LL13",
+        "title": "AIMS™ Stereotaxic LED Light – LL13",
+        "description": ""
+      }
+    ],
+    "images": [
+      {
+        "url": "/aims-lab/19db92880bf8f3b9.jpg",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/09/AIMS-stereotaxic-led-lighting-scaled.jpg",
+        "width": 2131,
+        "height": 2560,
+        "alt": "AIMS™ Lab Products Stereotaxic LED Light"
+      },
+      {
+        "url": "/aims-lab/99a1e0672edcb376.jpg",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/09/LL13-5-scaled.jpg",
+        "width": 2560,
+        "height": 1920,
+        "alt": "AIMS™ Lab Products Stereotaxic LED Light"
+      },
+      {
+        "url": "/aims-lab/d3af94c4c6fc6dd4.jpg",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/09/LL13-4-scaled.jpg",
+        "width": 1920,
+        "height": 2560,
+        "alt": "AIMS™ Lab Products Stereotaxic LED Light"
+      },
+      {
+        "url": "/aims-lab/8a26b21cb9526505.jpg",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/09/LL13-3-scaled.jpg",
+        "width": 2560,
+        "height": 1920,
+        "alt": "AIMS™ Lab Products Stereotaxic LED Light"
+      },
+      {
+        "url": "/aims-lab/a653a75456552c39.jpg",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/09/LL13-2-scaled.jpg",
+        "width": 2560,
+        "height": 1920,
+        "alt": "AIMS™ Lab Products Stereotaxic LED Light"
+      },
+      {
+        "url": "/aims-lab/7ab057a7c4bcba2f.jpg",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/09/LL13-1-scaled.jpg",
+        "width": 2560,
+        "height": 1920,
+        "alt": "AIMS™ Lab Products Stereotaxic LED Light"
+      }
+    ],
+    "documents": [
+      {
+        "url": "/aims-lab/bb0e1876a057e5db.pdf",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/09/AIMS-Lab-Products-stereotaxic-led-light.pdf",
+        "label": "Product Details - PDF"
+      }
+    ],
+    "categories": [
+      "stereotaxic-lighting-magnification"
+    ],
+    "relatedSlugs": [
+      "aims-magnetic-magnifier-gmag"
+    ],
+    "sourceUrl": "https://aimslabproducts.com/product/aims-stereotaxic-led-light-ll13/"
+  },
+  {
+    "slug": "aims-stereotaxic-light-on-off-plug-switch-llsw",
+    "sku": "LLSW",
+    "title": "AIMS™ Stereotaxic Light On/Off Plug Switch – LLSW",
+    "summary": "Plug the lab light into the On/Off Plug Switch for easy on/off operation.",
+    "descriptionHtml": "\n\t\t\t\t\n\t\n\n\n\t\n\t\t\n\t\t\t<p>Plug the lab light into the On/Off Plug Switch for easy on/off operation. </p>\n\n\t\t\n\t\n\n\t\t\t",
+    "sourceBodyDigest": "f7858a5e040b3b5fae22077b02cf5cd5a74eba111b846058add5e3dd2299fa84",
+    "specifications": [],
+    "models": [
+      {
+        "sku": "LLSW",
+        "title": "AIMS™ Stereotaxic Light On/Off Plug Switch – LLSW",
+        "description": ""
+      }
+    ],
+    "images": [
+      {
+        "url": "/aims-lab/bf05662ac5b22958.jpg",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/09/AIMS-Lab-Products-on-off-plug-switch-LLSW.jpg",
+        "width": 472,
+        "height": 322,
+        "alt": "AIMS™ Lab Products | Stereotaxic Light On/Off Plug Switch LLSW"
+      }
+    ],
+    "documents": [
+      {
+        "url": "/aims-lab/bb0e1876a057e5db.pdf",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/09/AIMS-Lab-Products-stereotaxic-led-light.pdf",
+        "label": "Product Details - PDF"
+      }
+    ],
+    "categories": [],
+    "relatedSlugs": [
+      "aims-elastic-hold-downs-gehd",
+      "aims-space-gel-heating-pad-ggp1",
+      "aims-variable-temp-controller-gvt1",
+      "aims-single-temp-power-supply-gpp1-gpp2-gpp3"
+    ],
+    "sourceUrl": "https://aimslabproducts.com/product/aims-stereotaxic-light-on-off-plug-switch-llsw/"
+  },
+  {
+    "slug": "aims-thermal-drape-gbtd",
+    "sku": "GBTD",
+    "title": "AIMS™ Thermal Drape – GBTD",
+    "summary": "Foil lined surgical drape maintains proper body temp 2/pk (12″ x 16″) Cat# GBTD",
+    "descriptionHtml": "\n\t\t\t\t\n\t\n\n\n\t\n\t\t\n\t\t\t<p>Foil lined surgical drape maintains proper body temp<br />\n2/pk (12″ x 16″)<br />\nCat# GBTD</p>\n\n\t\t\n\t\n\n\t\t\t",
+    "sourceBodyDigest": "6e116abee2a35b5c88b6aa24c43b16c1b4c6897b8f3502272e1c9e2874535383",
+    "specifications": [],
+    "models": [
+      {
+        "sku": "GBTD",
+        "title": "AIMS™ Thermal Drape – GBTD",
+        "description": ""
+      }
+    ],
+    "images": [
+      {
+        "url": "/aims-lab/7fcbdbf14a4d28ab.png",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/09/aims-lab-products-gbtd.png",
+        "width": 227,
+        "height": 219,
+        "alt": "AIMS™ Lab Products | Thermal Drape - GBTD"
+      },
+      {
+        "url": "/aims-lab/a530da2fd7cafdce.png",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/09/AIMS-Lab-Products-grace-procedure-board-drape-example.png",
+        "width": 694,
+        "height": 604,
+        "alt": "AIMS™ Lab Products | Grace Procedure / Dissection Boards"
+      }
+    ],
+    "documents": [
+      {
+        "url": "/aims-lab/7f3b78086a5d1354.pdf",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/12/AIMS%E2%84%A2-Lab-Products-Surgery-Accessories.pdf",
+        "label": "Product Details - PDF"
+      }
+    ],
+    "categories": [
+      "small-animal-surgery",
+      "surgery-boards",
+      "surgery-board-accessories"
+    ],
+    "relatedSlugs": [
+      "aims-single-temp-power-supply-gpp1-gpp2-gpp3",
+      "aims-surgery-platform-ass7",
+      "aims-thermo-controlled-recovery-pad-tcrp",
+      "aims-elastic-hold-downs-gehd"
+    ],
+    "sourceUrl": "https://aimslabproducts.com/product/aims-thermal-drape-gbtd/"
+  },
+  {
+    "slug": "aims-variable-temp-controller-gvt1",
+    "sku": "GVT1",
+    "title": "AIMS™ Variable Temp Controller – GVT1",
+    "summary": "Use with Cat# GETP",
+    "descriptionHtml": "\n\t\t\t\t\n\t\n\n\n\t\n\t\t\n\t\t\t<p>Use with Cat# GETP</p>\n\n\t\t\n\t\n\n\t\t\t",
+    "sourceBodyDigest": "855449b3e8a5e40cf0193c0c314f5ee8a7dab8ebee32b8edbf3516394c1ff06c",
+    "specifications": [],
+    "models": [
+      {
+        "sku": "GVT1",
+        "title": "AIMS™ Variable Temp Controller – GVT1",
+        "description": ""
+      }
+    ],
+    "images": [
+      {
+        "url": "/aims-lab/7fedaa09f0320812.jpg",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/08/AIMS-Lab-Products-Variable-Temp-GVT1-Power-Supply-rotated.jpg",
+        "width": 480,
+        "height": 640,
+        "alt": "AIMS™ Lab Products Variable Temp GVT1 Power Supply"
+      }
+    ],
+    "documents": [
+      {
+        "url": "/aims-lab/7f3b78086a5d1354.pdf",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/12/AIMS%E2%84%A2-Lab-Products-Surgery-Accessories.pdf",
+        "label": "Product Details - PDF"
+      }
+    ],
+    "categories": [
+      "small-animal-surgery",
+      "surgery-boards",
+      "surgery-board-accessories"
+    ],
+    "relatedSlugs": [
+      "aims-magnetic-drape-holders-large-gdhl",
+      "aims-hypothermic-cooling-plate-gbhp",
+      "aims-dc-powered-thermal-plate-getp",
+      "aims-stereotaxic-light-on-off-plug-switch-llsw"
+    ],
+    "sourceUrl": "https://aimslabproducts.com/product/aims-variable-temp-controller-gvt1/"
+  },
+  {
+    "slug": "aims-warming-induction-chamber",
+    "sku": "WCS9-WCS5-WCL9-WCH9",
+    "title": "AIMS™ Warming / Induction Chamber",
+    "summary": "Provides continuous warmth to animals being anaesthetized before surgery or recovering from surgery.",
+    "descriptionHtml": "\n\t\t\t\t\n\t\n\n\n\t\n\t\t\n\t\t\t<p>Provides continuous warmth to animals being anaesthetized before surgery or recovering from surgery.</p>\n<p>Post-Surgery Warming Chamber * Pre-Surgery Warming Induction Chamber</p>\n<p>Std. Small Shoe Box Cage, 7” x 11” x 5”<br />\nStd. Large Shoe Box Cage, 10” x 19” x 8”.<br />\n– Inlet/Outlet Port for Gas Anesthetic When Used As An Induction Chamber.<br />\n– Heavy Duty Power Packs Provide Preset Temp.<br />\n– Universal Input (110-220 V) for use in any Country.<br />\n– Warming Element Sealed Under Stainless Steel Floor.<br />\n– Bedding Material Can Be Used In Cage.</p>\n<p><strong>Filter Top:</strong> Allows animal to fully recover in chamber while unattended. Includes membrane for sealing filter top and outlet port to exhaust gas when used as an induction chamber.</p>\n<p><strong>Important Note:</strong> Cage floor temperatures were measured with an ambient room temperature of 70°F (21°C). Room conditions and table temperature will slightly increase/decrease cage floor temperature.</p>\n\n\t\t\n\t\n\n\t\n\t\t\n\t\t\t<p>Cat#: WCS9<br />\nSmall Chamber 7” x 11” x 5”, Full-Floor Warming<br />\nVariable Temp Small Warming / Induction Chamber</p>\n<p>Cat #: WCS5<br />\nSmall Chamber 7” x 11” x 5”, Half-Floor Warming<br />\nVariable Temp Small Warming / Induction Chamber</p>\n<p>Cat #: WCL9<br />\nLarge Chamber 10” x 19” x 8”, Full-Floor Warming<br />\nVariable Temp Large Warming / Induction Chamber</p>\n<p>Cat #: WCH9<br />\nLarge Chamber 10” x 19” x 8”, Half-Floor Warming<br />\nVariable Temp Large Warming / Induction Chamber</p>\n<p>Extra Power Pack<br />\nCat#: PPVT<br />\nVariable Temp, UIHD-Power Pack, Universal Input 110-220V<br />\n(~30°C, ~36°C, ~38°C, ~42°C, ~49°C)<br />\n(actual temperatures will be dependent on your room conditions)</p>\n<p>Chamber Includes:<br />\nVariable Temp, UIHD-Power Pack, Induction Conversion Kit, Insulation Pad &amp; Operating Instructions</p>\n\n\t\t\n\t\n\n\t\t\t",
+    "sourceBodyDigest": "1390be7750207007fd40bc53a46311e3380006d79516284784732f2bdc639c0a",
+    "specifications": [],
+    "models": [
+      {
+        "sku": "WCS9",
+        "title": "AIMS™ Warming / Induction Chamber",
+        "description": ""
+      },
+      {
+        "sku": "WCS5",
+        "title": "AIMS™ Warming / Induction Chamber",
+        "description": ""
+      },
+      {
+        "sku": "WCL9",
+        "title": "AIMS™ Warming / Induction Chamber",
+        "description": ""
+      },
+      {
+        "sku": "WCH9",
+        "title": "AIMS™ Warming / Induction Chamber",
+        "description": ""
+      }
+    ],
+    "images": [
+      {
+        "url": "/aims-lab/817646fbc60c0c0b.jpg",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/09/aimslp-1.jpg",
+        "width": 971,
+        "height": 809,
+        "alt": "AIMS™ Lab Products"
+      },
+      {
+        "url": "/aims-lab/f2e49d71e123aef2.png",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/09/AIMS-Lab-Products-warming-chambers-both-temp-stats.png",
+        "width": 828,
+        "height": 473,
+        "alt": "AIMS™ Lab Products | Warming/Induction Chambers"
+      },
+      {
+        "url": "/aims-lab/7690e3c25700d546.png",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/09/AIMS-Lab-Products-warming-chambers-side-by-side-easy-to-use.png",
+        "width": 930,
+        "height": 592,
+        "alt": "AIMS™ Lab Products | Warming/Induction Chambers"
+      },
+      {
+        "url": "/aims-lab/8ff653cd5e893c7b.jpg",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/09/AIMS-Lab-Products-warming-chamber-floor-warming-diagram2025.jpg",
+        "width": 650,
+        "height": 950,
+        "alt": "AIMS™ Lab Products | Warming/Induction Chamber Diagram"
+      }
+    ],
+    "documents": [
+      {
+        "url": "/aims-lab/46870e27a0b15aa3.pdf",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2025/12/AIMS%E2%84%A2-Lab-Products-Warming-Chamber-Product-Details2025.pdf",
+        "label": "Product Details - PDF"
+      }
+    ],
+    "categories": [
+      "small-animal-surgery",
+      "post-surgery-warming",
+      "warming-chambers"
+    ],
+    "relatedSlugs": [
+      "aims-portable-warming-plate-pwpv"
+    ],
+    "sourceUrl": "https://aimslabproducts.com/product/aims-warming-induction-chamber/"
+  },
+  {
+    "slug": "acrylic",
+    "sku": "",
+    "title": "Acrylic",
+    "summary": "Easily maintain animal body temperature during surgery",
+    "descriptionHtml": "\n\t\t\t\t\n\t\n\n\n\t\n\t\t\n\t\t\t<p>Easily maintain animal body temperature during surgery</p>\n<p>Two Flexible LED lights – provides direct illumination with no shadows and no heat. (now up to 50% brighter)<br />\nFlex arm, non-obstructive rimless magnifying glass (main lens: 2.3 X, inset lens: 4.0 X). (Allows continuous eye contact with object when moving into magnification area)<br />\nLimb restraints.<br />\n4 Space Gels for continuous heat.<br />\n2 Space Blankets to retain heat.<br />\nThermo Reflector and Turbo Heat Sink to maximize heat transfer.<br />\nNon-skid feet for added stability.<br />\nUniversal input power supply.<br />\nSize: 13.5″ (L) x 9″ (W)<br />\nBottom holds two space-gels for over 2 hours of Thermo-Regulation<br />\nSpace-age Thermal Reflector Maximizes Heat Transfer</p>\n<p><strong>USE:</strong> Can be used for surgery, micro manipulations, general micro-utility platform (i.e. organ inspections, dissections, etc).</p>\n\n\t\t\n\t\n\n\t\t\t",
+    "sourceBodyDigest": "518899099ba4bcd291c245a0f61541e2971237c5bfba0dfb41464df052347dec",
+    "specifications": [],
+    "models": [],
+    "images": [
+      {
+        "url": "/aims-lab/61795f14cd795540.jpg",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/11/3-scaled.jpg",
+        "width": 2560,
+        "height": 1920,
+        "alt": "AIMS™ Lab Products"
+      }
+    ],
+    "documents": [
+      {
+        "url": "/aims-lab/ca48d3ddfb7c0b7f.pdf",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/12/AIMS-Lab-Products-TCRP-ASS7-ASS7T-Product-Details.pdf",
+        "label": "Product Details - PDF"
+      }
+    ],
+    "categories": [
+      "small-animal-surgery",
+      "surgery-boards",
+      "acrylic",
+      "procedure-dissection-boards"
+    ],
+    "relatedSlugs": [
+      "aims-surgery-platform-ass7"
+    ],
+    "sourceUrl": "https://aimslabproducts.com/product/acrylic/"
+  },
+  {
+    "slug": "aims-thermo-controlled-recovery-pad-tcrp",
+    "sku": "TCRP",
+    "title": "AIMS™ Thermo Controlled Recovery Pad – TCRP",
+    "summary": "Animal Recovery Made Simple and Easy. Convenient size 13.5″ (L) x 7.5″ (w). 6 Space Gels for continuous heat. 4 Space Blankets to retain heat.",
+    "descriptionHtml": "\n\t\t\t\t\n\t\n\n\n\t\n\t\t\n\t\t\t<p>Animal Recovery Made Simple and Easy. Convenient size 13.5″ (L) x 7.5″ (w). 6 Space Gels for continuous heat. 4 Space Blankets to retain heat.</p>\n<p><strong>Animal Recovery Made Simple and Easy!!</strong></p>\n<p>Convenient size 13.5″ (L) x 7.5″ (w)<br />\n3 Space Gels for continuous heat.<br />\n4 Space Blankets to retain heat.<br />\nThermo Reflector and Turbo Heat Sink to maximize heat transfer.<br />\nNon-skid feet for added stability.<br />\nFits into a standard 18 (L) x 9 (W) shoe box cage.</p>\n<p><strong>Ultra-Safe Thermo Regulation:</strong></p>\n<p>will not over heat animal<br />\nwill not burn animal<br />\nno electricity used<br />\nno bulky water bath</p>\n\n\t\t\n\t\n\n\t\t\t",
+    "sourceBodyDigest": "37647cc7ac97cc7f6f72b2a311ece015e8f7e6201ff7085e74bef20765c08425",
+    "specifications": [],
+    "models": [
+      {
+        "sku": "TCRP",
+        "title": "AIMS™ Thermo Controlled Recovery Pad – TCRP",
+        "description": ""
+      }
+    ],
+    "images": [
+      {
+        "url": "/aims-lab/5bae6eb05e866ab8.jpg",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/12/AIMS%E2%84%A2-Lab-Products-Thermo-Controlled-Recovery-Pad-TCRP-scaled.jpg",
+        "width": 2560,
+        "height": 1920,
+        "alt": "AIMS™ Lab Products Thermo Controlled Recovery Pad"
+      },
+      {
+        "url": "/aims-lab/95751d3c6e0762ea.jpg",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/12/AIMS%E2%84%A2-Lab-Products-Thermo-Controlled-Recovery-Pad-TCRP-a-scaled.jpg",
+        "width": 2560,
+        "height": 1920,
+        "alt": "AIMS™ Lab Products Thermo Controlled Recovery Pad"
+      },
+      {
+        "url": "/aims-lab/988641abc5a1145a.jpg",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/12/AIMS%E2%84%A2-Lab-Products-Thermo-Controlled-Recovery-Pad-TCRP-b-scaled.jpg",
+        "width": 2560,
+        "height": 1920,
+        "alt": "AIMS™ Lab Products Thermo Controlled Recovery Pad"
+      },
+      {
+        "url": "/aims-lab/d349116e91336e74.jpg",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/12/AIMS%E2%84%A2-Lab-Products-Thermo-Controlled-Recovery-Pad-TCRP-c-scaled.jpg",
+        "width": 2560,
+        "height": 1920,
+        "alt": "AIMS™ Lab Products Thermo Controlled Recovery Pad"
+      }
+    ],
+    "documents": [
+      {
+        "url": "/aims-lab/068d07aae0fec372.pdf",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/12/AIMS%E2%84%A2-Lab-Products-Thermo-Controlled-Recovery-Pad-TCRP-Product-Details.pdf",
+        "label": "Thermo Controlled Recovery Pad Product Details - PDF"
+      }
+    ],
+    "categories": [
+      "small-animal-surgery",
+      "post-surgery-warming",
+      "warming-plates"
+    ],
+    "relatedSlugs": [
+      "aims-single-temp-power-supply-gpp1-gpp2-gpp3",
+      "aims-hypothermic-cooling-plate-gbhp",
+      "aims-space-gel-heating-pad-ggp1",
+      "aims-surgery-platform-ass7"
+    ],
+    "sourceUrl": "https://aimslabproducts.com/product/aims-thermo-controlled-recovery-pad-tcrp/"
+  },
+  {
+    "slug": "aims-portable-warming-plate-pwpv",
+    "sku": "PWPV",
+    "title": "AIMS™ Portable Warming Plate – PWPV",
+    "summary": "Use under animal to prevent hypothermia during surgery, post-surgery recovery and anesthesia induction. Small enough to place under animals during stereotaxic surgery.",
+    "descriptionHtml": "\n\t\t\t\t\n\t\n\n\n\t\n\t\t\n\t\t\t\n\t\t\n\t\n\n\t\n\t\t\n\t\t\t<p>Use under animal to prevent hypothermia during surgery, post-surgery recovery and anesthesia induction. Small enough to place under animals during stereotaxic surgery.</p>\n<p>Temperature range: 31°C, 35°C, 45°C<br />\nCan be placed on bench or in cage<br />\nNon-skid feet for added stability<br />\nHD power supply with universal input for use in any country (100 – 240 VAC, 60 Hz)<br />\n7″ x4″, stainless steel</p>\n\n\t\t\n\t\n\n\t\t\t",
+    "sourceBodyDigest": "c03a3f258ccb50393a07b7a1459e87ab86df624f31d928fdb4b70db466a60bb9",
+    "specifications": [],
+    "models": [
+      {
+        "sku": "PWPV",
+        "title": "AIMS™ Portable Warming Plate – PWPV",
+        "description": ""
+      }
+    ],
+    "images": [
+      {
+        "url": "/aims-lab/d307925a0cfc9838.jpg",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/12/13-scaled.jpg",
+        "width": 1920,
+        "height": 2560,
+        "alt": "AIMS™ Lab Products Portable Warming Plate"
+      },
+      {
+        "url": "/aims-lab/44573e90ae66a001.jpg",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/12/AIMS%E2%84%A2-Portable-Warming-Plate-PWPV-a-scaled.jpg",
+        "width": 1920,
+        "height": 2560,
+        "alt": "AIMS™ Lab Products Portable Warming Plate"
+      },
+      {
+        "url": "/aims-lab/371fd65329e17ef5.jpg",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/12/AIMS%E2%84%A2-Portable-Warming-Plate-PWPV-b-scaled-e1639679269897.jpg",
+        "width": 2560,
+        "height": 1920,
+        "alt": "AIMS™ Lab Products Portable Warming Plate"
+      },
+      {
+        "url": "/aims-lab/24017ede467d272a.jpg",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/12/AIMS%E2%84%A2-Portable-Warming-Plate-PWPV-c-scaled-e1639679284951.jpg",
+        "width": 2560,
+        "height": 1920,
+        "alt": "AIMS™ Lab Products Portable Warming Plate"
+      }
+    ],
+    "documents": [
+      {
+        "url": "/aims-lab/2216cfb380918bb4.pdf",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/12/AIMS%E2%84%A2-Lab-Products-Portable-Warming-Plate-PWPV-Product-Details.pdf",
+        "label": "Product Details - PDF"
+      }
+    ],
+    "categories": [
+      "small-animal-surgery",
+      "post-surgery-warming",
+      "warming-plates"
+    ],
+    "relatedSlugs": [
+      "aims-warming-induction-chamber"
+    ],
+    "sourceUrl": "https://aimslabproducts.com/product/aims-portable-warming-plate-pwpv/"
+  },
+  {
+    "slug": "aims-grace-small-animal-surgery-boards-gss1",
+    "sku": "GSS1",
+    "title": "AIMS™ Grace Small Animal Surgery Boards – GSS1",
+    "summary": "The New Standard for small animal surgery, procedure, & dissection platforms. Grace Small Animal Surgery Boards – Warming Thermal Plate or Hypothermic Cooling Plate. Grace Boards are made of 1” thick High Density Polyethylene (HDPE) with excellent chemical resistance.",
+    "descriptionHtml": "\n\t\t\t\t\n\t\n\n\n\t\n\t\t\n\t\t\t<p>The New Standard for small animal surgery, procedure, &amp; dissection platforms. Grace Small Animal Surgery Boards – Warming Thermal Plate or Hypothermic Cooling Plate. Grace Boards are made of 1” thick High Density Polyethylene (HDPE) with excellent chemical resistance.</p>\n<p><em>GSM2 and GSM1 Models include “Magnetic Base System”</em></p>\n<p><strong>Grace GSS1 Surgery Board</strong> Non-skid feet for added stability. 12” (L) x 8” (W), Includes 1x Magnetic Stainless Steel Warming Plate (7” x 4”), 1 Space Gel Heating Pad, &amp; Suction cup limb restraints. Does not include Magnetic Base System.</p>\n\n\t\t\n\t\n\n\t\t\t",
+    "sourceBodyDigest": "18bb1b69a0f0a8bbca6ed6a391b928f782303c5158fcc8a3a85cc764fdb7d1f1",
+    "specifications": [],
+    "models": [
+      {
+        "sku": "GSS1",
+        "title": "AIMS™ Grace Small Animal Surgery Boards – GSS1",
+        "description": ""
+      }
+    ],
+    "images": [
+      {
+        "url": "/aims-lab/84313687ab22186e.png",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/08/aims-lab-products-gss1.png",
+        "width": 1070,
+        "height": 627,
+        "alt": "AIMS™ Lab Products | Small Animal Surgery Board GSS1"
+      },
+      {
+        "url": "/aims-lab/e957ce09f507676d.png",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/08/aims-lab-products-grace-small-animal-surgery-boards-group.png",
+        "width": 747,
+        "height": 596,
+        "alt": "AIMS™ Grace Small Animal Surgery Boards"
+      }
+    ],
+    "documents": [
+      {
+        "url": "/aims-lab/60990105d4906d80.pdf",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/12/AIMS%E2%84%A2-Grace-Small-Animal-Surgery-Boards-Product-Details.pdf",
+        "label": "Grace Small Animal Surgery Boards Product Details - PDF"
+      }
+    ],
+    "categories": [
+      "small-animal-surgery",
+      "surgery-boards",
+      "hdpe"
+    ],
+    "relatedSlugs": [
+      "aims-grace-small-animal-surgery-boards-gsm2",
+      "aims-grace-small-animal-surgery-boards-gsm1",
+      "aims-grace-small-animal-surgery-boards-gss2"
+    ],
+    "sourceUrl": "https://aimslabproducts.com/product/aims-grace-small-animal-surgery-boards-gss1/"
+  },
+  {
+    "slug": "aims-dissection-platform",
+    "sku": "DTW1-LTPD-MTPD-STPD-TPIN-1",
+    "title": "AIMS™ Dissection Platform",
+    "summary": "USE: Can be used for dissections, surgery, micro manipulations, general micro-utility platform (i.e. organ inspections, dissections, etc.).",
+    "descriptionHtml": "\n\t\t\t\t\n\t\n\n\n\t\n\t\t\n\t\t\t<p><strong>USE:</strong> Can be used for dissections, surgery, micro manipulations, general micro-utility platform (i.e. organ inspections, dissections, etc.).</p>\n<p>Two Flexible LED lights provide direct illumination with no shadows and no heat. Flex arm, non-obstructive rimless magnifying glass [Main Lens: 2.3X, Inset Lens: 4.0X] allows continuous eye contact with object when moving into magnification area.</p>\n<p>Limb restraints and Non-skid feet for added stability.</p>\n<p><strong>TWO Ultra-Bright LED Lights Magnifying Glass</strong></p>\n<p>Main lens: 2.3X<br />\nInset lens: 4.0X</p>\n<p>Two Flexible LED lights – provides direct illumination with no shadows and no heat.<br />\nFlex arm, non-obstructive rimless magnifying glass (main lens: 2.3X, inset lens: 4.0X). (Allows continuous eye contact with object when moving into magnification area).<br />\nLimb restraints.<br />\nNon-skid feet for added stability.<br />\nUniversal input power supply (100 – 240 VAC, 50-60 Hz).<br />\nSize: 9” X 13.5”</p>\n<p>ASS7 Dissection Platform</p>\n\n\t\t\n\t\n\n\t\t\t",
+    "sourceBodyDigest": "93f5d43fbc99aa99cc948619bfc42e26ba74845a6ca98eccff7351a7cb5d46ac",
+    "specifications": [],
+    "models": [
+      {
+        "sku": "DTW1-LTPD-MTPD-STPD-TPIN-1",
+        "title": "AIMS™ Dissection Platform",
+        "description": ""
+      }
+    ],
+    "images": [
+      {
+        "url": "/aims-lab/4b4b9e31de18651a.jpg",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/09/AIMS-Lab-Products-dissection-plaform-lg.jpg",
+        "width": 1000,
+        "height": 750,
+        "alt": "AIMS Lab Products | Surgery Platform ASS7T - ASS7"
+      },
+      {
+        "url": "/aims-lab/1d62ba07d2cac8fb.jpg",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/09/AIMS-Lab-Products-dissection-plaform-blue-wax-tray-lg.jpg",
+        "width": 915,
+        "height": 800,
+        "alt": "AIMS™ Lab Products | Dissection Platform"
+      }
+    ],
+    "documents": [
+      {
+        "url": "/aims-lab/48d47c53de619f73.pdf",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/09/AIMS-Lab-Products-dissection-platform.pdf",
+        "label": "Product Details - PDF"
+      }
+    ],
+    "categories": [
+      "procedure-dissection-boards",
+      "procedure-boards"
+    ],
+    "relatedSlugs": [
+      "aims-blue-wax-dissection-tray-extra-large",
+      "aims-blue-wax-dissection-tray-standard-size"
+    ],
+    "sourceUrl": "https://aimslabproducts.com/product/aims-dissection-platform/"
+  },
+  {
+    "slug": "aims-grace-small-animal-surgery-boards-gss2",
+    "sku": "GSS2",
+    "title": "AIMS™ Grace Small Animal Surgery Boards – GSS2",
+    "summary": "The New Standard for small animal surgery, procedure, & dissection platforms. Grace Small Animal Surgery Boards – Warming Thermal Plate or Hypothermic Cooling Plate. Grace Boards are made of 1” thick High Density Polyethylene (HDPE) with excellent chemical resistance.",
+    "descriptionHtml": "\n\t\t\t\t\n\t\n\n\n\t\n\t\t\n\t\t\t<p>The New Standard for small animal surgery, procedure, &amp; dissection platforms. Grace Small Animal Surgery Boards – Warming Thermal Plate or Hypothermic Cooling Plate. Grace Boards are made of 1” thick High Density Polyethylene (HDPE) with excellent chemical resistance.</p>\n<p><em>GSM2 and GSM1 Models include “Magnetic Base System”</em></p>\n<p><strong>Grace GSS2 Surgery Board w/ LED, &amp; Magnifier Two Flexible LED lights</strong> – provides direct illumination with no shadows and no heat. Flex arm, non-obstructive rimless magnifying glass (main lens: 2.3X, inset lens: 4.0X). (Allows continuous eye contact with object when moving into magnification area). Non-skid feet for added stability. Universal input power supply (100 – 240 VAC, 50-60 Hz). Size: 12” (L) x 9.5” (W), Includes 1x Magnetic Stainless Steel Warming Plate (7” x 4”), 1 Space Gel Heating Pad, &amp; Suction cup limb restraints. Does not include Magnetic Base System.</p>\n\n\t\t\n\t\n\n\t\t\t",
+    "sourceBodyDigest": "6637b9ee6b4955dacedff5012492d696dd2fe168360b76b63f89cffc220c9635",
+    "specifications": [],
+    "models": [
+      {
+        "sku": "GSS2",
+        "title": "AIMS™ Grace Small Animal Surgery Boards – GSS2",
+        "description": ""
+      }
+    ],
+    "images": [
+      {
+        "url": "/aims-lab/fcd51843ee28123d.png",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/08/aims-lab-products-gss2.png",
+        "width": 1034,
+        "height": 848,
+        "alt": "AIMS™ Lab Products | Small Animal Surgery Board GSS2"
+      },
+      {
+        "url": "/aims-lab/e957ce09f507676d.png",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/08/aims-lab-products-grace-small-animal-surgery-boards-group.png",
+        "width": 747,
+        "height": 596,
+        "alt": "AIMS™ Grace Small Animal Surgery Boards"
+      }
+    ],
+    "documents": [
+      {
+        "url": "/aims-lab/60990105d4906d80.pdf",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/12/AIMS%E2%84%A2-Grace-Small-Animal-Surgery-Boards-Product-Details.pdf",
+        "label": "Grace Small Animal Surgery Boards Product Details - PDF"
+      }
+    ],
+    "categories": [
+      "small-animal-surgery",
+      "surgery-boards",
+      "hdpe"
+    ],
+    "relatedSlugs": [
+      "aims-grace-small-animal-surgery-boards-gss1",
+      "aims-grace-small-animal-surgery-boards-gsm1",
+      "aims-grace-small-animal-surgery-boards-gsm2"
+    ],
+    "sourceUrl": "https://aimslabproducts.com/product/aims-grace-small-animal-surgery-boards-gss2/"
+  },
+  {
+    "slug": "aims-grace-small-animal-surgery-boards-gsm1",
+    "sku": "GSM1",
+    "title": "AIMS™ Grace Small Animal Surgery Boards – GSM1",
+    "summary": "The New Standard for small animal surgery, procedure, & dissection platforms. Grace Small Animal Surgery Boards – Warming Thermal Plate or Hypothermic Cooling Plate. Grace Boards are made of 1” thick High Density Polyethylene (HDPE) with excellent chemical resistance.",
+    "descriptionHtml": "\n\t\t\t\t\n\t\n\n\n\t\n\t\t\n\t\t\t<p>The New Standard for small animal surgery, procedure, &amp; dissection platforms. Grace Small Animal Surgery Boards – Warming Thermal Plate or Hypothermic Cooling Plate. Grace Boards are made of 1” thick High Density Polyethylene (HDPE) with excellent chemical resistance.</p>\n<p><em>GSM2 and GSM1 Models include “Magnetic Base System”</em></p>\n<p><strong>Grace GSM1 Surgery Board w/ Magnetic Base System</strong> Non-skid feet for added stability. Size: 12” (L) x 8” (W), Includes 1x Magnetic Stainless Steel Warming Plate (7” x 4”), 1 Space Gel Heating Pad, &amp; Suction cup limb restraints. Includes Magnetic Base System.</p>\n\n\t\t\n\t\n\n\t\t\t",
+    "sourceBodyDigest": "7295c1108549e665e18c34a545ba99cba687647a7c825f454b025d502feee5e0",
+    "specifications": [],
+    "models": [
+      {
+        "sku": "GSM1",
+        "title": "AIMS™ Grace Small Animal Surgery Boards – GSM1",
+        "description": ""
+      }
+    ],
+    "images": [
+      {
+        "url": "/aims-lab/e6c084f5d58971b1.png",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/08/aims-lab-products-gsm1.png",
+        "width": 1107,
+        "height": 762,
+        "alt": "AIMS™ Lab Products | Small Animal Surgery Board GSM1"
+      },
+      {
+        "url": "/aims-lab/66e50cf327c8dea1.png",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/08/aims-lab-products-grace-surgery-boards-magnetic-base-system-diagram.png",
+        "width": 820,
+        "height": 344,
+        "alt": "AIMS™ Lab Products | Small Animal Surgery Board Magentic Base System Diagram GSM1 & GSM2"
+      },
+      {
+        "url": "/aims-lab/e957ce09f507676d.png",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/08/aims-lab-products-grace-small-animal-surgery-boards-group.png",
+        "width": 747,
+        "height": 596,
+        "alt": "AIMS™ Grace Small Animal Surgery Boards"
+      }
+    ],
+    "documents": [
+      {
+        "url": "/aims-lab/60990105d4906d80.pdf",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/12/AIMS%E2%84%A2-Grace-Small-Animal-Surgery-Boards-Product-Details.pdf",
+        "label": "Grace Small Animal Surgery Boards Product Details - PDF"
+      }
+    ],
+    "categories": [
+      "small-animal-surgery",
+      "surgery-boards",
+      "hdpe"
+    ],
+    "relatedSlugs": [
+      "aims-grace-small-animal-surgery-boards-gss1",
+      "aims-grace-small-animal-surgery-boards-gsm2",
+      "aims-grace-small-animal-surgery-boards-gss2"
+    ],
+    "sourceUrl": "https://aimslabproducts.com/product/aims-grace-small-animal-surgery-boards-gsm1/"
+  },
+  {
+    "slug": "aims-surgery-platform-ass7",
+    "sku": "ASS7",
+    "title": "AIMS™ Surgery Platform ASS7",
+    "summary": "Two Flexible LED lights – provides direct illumination with no shadows and no heat. (now up to 50% brighter) Flex arm, non-obstructive rimless magnifying glass (main lens: 2.3 X, inset lens: 4.0 X). (Allows continuous eye contact with object when moving into magnification area) Limb restraints.",
+    "descriptionHtml": "\n\t\t\t\t\n\t\n\n\n\t\n\t\t\n\t\t\t<p>Two Flexible LED lights – provides direct illumination with no shadows and no heat. (now up to 50% brighter)<br />\nFlex arm, non-obstructive rimless magnifying glass (main lens: 2.3 X, inset lens: 4.0 X). (Allows continuous eye contact with object when moving into magnification area)<br />\nLimb restraints.</p>\n<p>Non-skid feet for added stability.<br />\nUniversal input power supply.<br />\nSize: 13.5″ (L) x 9″ (W)</p>\n<p><strong>USE:</strong> Can be used for surgery, micro manipulations, general micro-utility platform (i.e. organ inspections, dissections, etc).</p>\n\n\t\t\n\t\n\n\t\t\t",
+    "sourceBodyDigest": "44af4931dad8fdb95d0939a51dd5489c81678d1ce3e49b796f4925d4d50b85f2",
+    "specifications": [],
+    "models": [
+      {
+        "sku": "ASS7",
+        "title": "AIMS™ Surgery Platform ASS7",
+        "description": ""
+      }
+    ],
+    "images": [
+      {
+        "url": "/aims-lab/4b4b9e31de18651a.jpg",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/09/AIMS-Lab-Products-dissection-plaform-lg.jpg",
+        "width": 1000,
+        "height": 750,
+        "alt": "AIMS Lab Products | Surgery Platform ASS7T - ASS7"
+      },
+      {
+        "url": "/aims-lab/9c54bd60f2adfe65.jpg",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/08/aims-lab-products-thermo-reflector.jpg",
+        "width": 800,
+        "height": 600,
+        "alt": "AIMS™ Lab Products | Surgery Platform ASS7T Thermo Reflector"
+      },
+      {
+        "url": "/aims-lab/cecf15c8eaf1dafd.jpg",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/08/aims-lab-products-thermo-controlled-surgery-platform-open-02.jpg",
+        "width": 800,
+        "height": 600,
+        "alt": "AIMS™ Lab Products | Surgery Platform ASS7T Thermo Controlled Platform"
+      },
+      {
+        "url": "/aims-lab/827cc57e97a08d52.jpg",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/08/aims-lab-products-thermo-controlled-surgery-platform.jpg",
+        "width": 800,
+        "height": 600,
+        "alt": "AIMS™ Lab Products | Surgery Platform ASS7T Thermo Controlled Platform"
+      }
+    ],
+    "documents": [
+      {
+        "url": "/aims-lab/4c547712d2780f26.pdf",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/12/aims-lab-products-ass7t-surgery-platform-product-details.pdf",
+        "label": "Product Details - PDF"
+      }
+    ],
+    "categories": [
+      "procedure-dissection-boards",
+      "procedure-boards"
+    ],
+    "relatedSlugs": [
+      "aims-variable-temp-controller-gvt1",
+      "aims-single-temp-power-supply-gpp1-gpp2-gpp3",
+      "aims-thermo-controlled-recovery-pad-tcrp",
+      "aims-hypothermic-cooling-plate-gbhp"
+    ],
+    "sourceUrl": "https://aimslabproducts.com/product/aims-surgery-platform-ass7/"
+  },
+  {
+    "slug": "aims-grace-small-animal-surgery-boards-gsm2",
+    "sku": "GSM2",
+    "title": "AIMS™ Grace Small Animal Surgery Boards – GSM2",
+    "summary": "The New Standard for small animal surgery, procedure, & dissection platforms. Grace Small Animal Surgery Boards – Warming Thermal Plate or Hypothermic Cooling Plate. Grace Boards are made of 1” thick High Density Polyethylene (HDPE) with excellent chemical resistance.",
+    "descriptionHtml": "\n\t\t\t\t\n\t\n\n\n\t\n\t\t\n\t\t\t<p>The New Standard for small animal surgery, procedure, &amp; dissection platforms. Grace Small Animal Surgery Boards – Warming Thermal Plate or Hypothermic Cooling Plate. Grace Boards are made of 1” thick High Density Polyethylene (HDPE) with excellent chemical resistance.</p>\n<p><em>GSM2 and GSM1 Models include “Magnetic Base System”</em></p>\n<p><strong>Grace GSM2 Surgery Board w/ LED, Magnifier, &amp; Magnetic Base System Two Flexible LED lights</strong> – provides direct illumination with no shadows and no heat. Flex arm, non-obstructive rimless magnifying glass (main lens: 2.3X, inset lens: 4.0X). (Allows continuous eye contact with object when moving into magnification area). Non-skid feet for added stability. Universal input power supply (100 – 240 VAC, 50-60 Hz). Size: 12” (L) x 9.5” (W), Includes 1x Magnetic Stainless Steel Warming Plate (7” x 4”), 1 Space Gel Heating Pad, &amp; Suction cup limb restraints. Includes Magnetic Base System.</p>\n\n\t\t\n\t\n\n\t\t\t",
+    "sourceBodyDigest": "c7415f7d58ead92efda244c72e88916ef496cd270745d8156adff93d7e58e219",
+    "specifications": [],
+    "models": [
+      {
+        "sku": "GSM2",
+        "title": "AIMS™ Grace Small Animal Surgery Boards – GSM2",
+        "description": ""
+      }
+    ],
+    "images": [
+      {
+        "url": "/aims-lab/fcd51843ee28123d.png",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/08/aims-lab-products-gss2.png",
+        "width": 1034,
+        "height": 848,
+        "alt": "AIMS™ Lab Products | Small Animal Surgery Board GSS2"
+      },
+      {
+        "url": "/aims-lab/66e50cf327c8dea1.png",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/08/aims-lab-products-grace-surgery-boards-magnetic-base-system-diagram.png",
+        "width": 820,
+        "height": 344,
+        "alt": "AIMS™ Lab Products | Small Animal Surgery Board Magentic Base System Diagram GSM1 & GSM2"
+      },
+      {
+        "url": "/aims-lab/e957ce09f507676d.png",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/08/aims-lab-products-grace-small-animal-surgery-boards-group.png",
+        "width": 747,
+        "height": 596,
+        "alt": "AIMS™ Grace Small Animal Surgery Boards"
+      }
+    ],
+    "documents": [
+      {
+        "url": "/aims-lab/60990105d4906d80.pdf",
+        "sourceUrl": "https://aimslabproducts.com/wp-content/uploads/2021/12/AIMS%E2%84%A2-Grace-Small-Animal-Surgery-Boards-Product-Details.pdf",
+        "label": "Grace Small Animal Surgery Boards Product Details - PDF"
+      }
+    ],
+    "categories": [
+      "small-animal-surgery",
+      "surgery-boards",
+      "hdpe"
+    ],
+    "relatedSlugs": [
+      "aims-grace-small-animal-surgery-boards-gss1",
+      "aims-grace-small-animal-surgery-boards-gss2",
+      "aims-grace-small-animal-surgery-boards-gsm1"
+    ],
+    "sourceUrl": "https://aimslabproducts.com/product/aims-grace-small-animal-surgery-boards-gsm2/"
   }
 ]

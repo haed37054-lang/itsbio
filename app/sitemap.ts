@@ -1,4 +1,4 @@
-import { AIMS_PRODUCTS, aimsProductHref } from "@/lib/aims/catalog";
+import { AIMS_PRODUCTS, AIMS_CATEGORIES, aimsProductHref } from "@/lib/aims/catalog";
 import { AFFINITY_PRODUCTS, AFFINITY_CATEGORIES, affinityProductHref, affinityCategoryHref } from "@/lib/affinityimmuno/catalog";
 import type { MetadataRoute } from "next";
 import { SEEDBURO_PRODUCTS, SEEDBURO_COLLECTIONS, seedburoProductHref, seedburoCollectionHref } from "@/lib/seedburo/catalog";
@@ -50,6 +50,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     for (const child of category.children) entries.push({ url: absoluteSiteUrl(`/products/cleaver/${category.slug}/${child.slug}`), changeFrequency: "monthly", priority: 0.7 });
   }
   for (const product of CLEAVER_INVENTORY) entries.push({ url: absoluteSiteUrl(cleaverProductHref(product)), changeFrequency: "monthly", priority: 0.7 });
+  for (const category of AIMS_CATEGORIES) entries.push({url:absoluteSiteUrl(`/products/aims/${category.slug}`),changeFrequency:"monthly",priority:0.65});
   for (const product of AIMS_PRODUCTS) entries.push({ url: absoluteSiteUrl(aimsProductHref(product.slug)), changeFrequency: "monthly", priority: 0.7 });
   for (const product of AFFINITY_PRODUCTS) entries.push({ url: absoluteSiteUrl(affinityProductHref(product)), changeFrequency: "monthly", priority: 0.7 });
   for (const category of AFFINITY_CATEGORIES) entries.push({ url: absoluteSiteUrl(affinityCategoryHref(category.slug)), changeFrequency: "monthly", priority: 0.6 });

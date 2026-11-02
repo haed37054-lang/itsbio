@@ -1,48 +1,28 @@
+import fs from 'node:fs/promises';
+import crypto from 'node:crypto';
 import assert from 'node:assert/strict';
-import { readFileSync } from 'node:fs';
-const read = (name) => JSON.parse(readFileSync(new URL(`../data/aims/${name}`, import.meta.url), 'utf8'));
-const products = read('catalog.json');
-const media = read('source-media.json');
-const checks = read('media-checks.json');
-const navigation = read('navigation.json');
-assert.deepEqual(products.map((product) => product.sku), ['ATS-3', 'NEO-9', 'ATS-3L']);
-assert.deepEqual(products[0].models.map((model) => model.sku), ['ATS-3', 'NEO-AP', 'LLA-AP']);
-assert.ok(products.slice(1).every((product) => product.models.length === 1));
-const models = new Map(products.flatMap((product) => product.models.map((model) => [model.sku, product.slug])));
-assert.equal(models.size, 5);
-const urls = new Set();
-let photos = 0, videos = 0, brochures = 0;
-for (const product of products) {
-  const source = media[product.slug];
-  assert.ok(source && source.sourceUrl.startsWith('https://animalid.com/portfolio/'));
-  assert.equal(source.images.length, 1, `Missing exact equipment photograph: ${product.sku}`);
-  assert.equal(source.brochures.length, 1);
-  assert.equal(product.models[0].sku, product.sku);
-  assert.ok(product.description && product.features.length && product.specifications.every((row) => row.length === 2));
-  assert.ok(!/\$\s*\d|add to cart|checkout|price/i.test(JSON.stringify(product)));
-  for (const image of [...source.images, ...source.gallery]) {
-    assert.ok(image.width > 0 && image.height > 0);
-    assert.ok(checks.assets[image.url]?.contentType.startsWith('image/'));
-    assert.equal(checks.assets[image.url]?.width, image.width);
-    assert.equal(checks.assets[image.url]?.height, image.height);
-    photos++; urls.add(image.url);
-  }
-  for (const url of source.brochures) { assert.ok(checks.assets[url]?.contentType.includes('pdf')); brochures++; urls.add(url); }
-  for (const url of source.videos) { assert.ok(checks.assets[url]?.contentType.includes('video/')); videos++; urls.add(url); }
+import {load} from 'cheerio';
+import sharp from 'sharp';
+const read=async name=>JSON.parse(await fs.readFile(`data/aims/${name}`,'utf8'));
+const products=await read('catalog.json'),categories=await read('categories.json'),inventory=await read('official-inventory.json'),report=await read('migration-report.json'),navigation=await read('navigation.json');
+const digest=s=>crypto.createHash('sha256').update(String(s).normalize('NFKC').replace(/\s/g,'')).digest('hex');
+assert.equal(products.length,39);assert.equal(inventory.listingCount,50);assert.equal(inventory.familyPageCount,11);assert.equal(categories.length,22);assert.equal(categories.filter(c=>!c.parent).length,6);
+assert.equal(new Set(products.map(p=>p.slug)).size,39);assert.deepEqual(new Set(products.map(p=>p.sourceUrl)),new Set(inventory.products.map(p=>p.sourceUrl)));
+const paths=new Set(['/products/aims',...products.map(p=>`/products/aims/item/${p.slug}`),...categories.map(c=>`/products/aims/${c.slug}`)]);
+for(const c of categories){assert(c.count>0,`Empty category ${c.slug}`);assert.equal(c.count,products.filter(p=>p.categories.includes(c.slug)).length);for(const url of c.productUrls)assert(url.startsWith('https://aimslabproducts.com/product/'));}
+for(const f of inventory.families)assert(paths.has(f.href),f.sourceUrl);
+for(const section of navigation)for(const link of section.links)assert(paths.has(link.href),link.href);
+const seen=new Set();let bodyImages=0;
+for(const p of products){
+ assert(p.title&&p.descriptionHtml&&p.images.length,p.slug);assert(p.sourceUrl.startsWith('https://aimslabproducts.com/product/'));
+ assert(!/animalid\.com|ATS-3|NEO-9|add to cart|checkout|\$\s*\d/i.test(JSON.stringify(p)),p.slug);
+ const $=load(p.descriptionHtml);assert.equal(digest($.text()),inventory.products.find(x=>x.sourceUrl===p.sourceUrl).sourceBodyDigest,p.slug);assert.equal($('script,iframe,form,input,button').length,0,p.slug);
+ for(const a of $('a[href]').toArray())assert(paths.has($(a).attr('href').split('#')[0]),`${p.slug}: ${$(a).attr('href')}`);
+ for(const image of p.images){assert(image.sourceUrl.startsWith('https://aimslabproducts.com/'));if(seen.has(image.url))continue;const metadata=await sharp(`public${image.url}`).metadata();assert.equal(metadata.width,image.width);assert.equal(metadata.height,image.height);seen.add(image.url);}
+ for(const image of $('img').toArray()){assert($(image).attr('src').startsWith('/aims-lab/'));await fs.access(`public${$(image).attr('src')}`);bodyImages++;}
+ for(const document of p.documents){assert(document.sourceUrl.startsWith('https://aimslabproducts.com/'));const bytes=await fs.readFile(`public${document.url}`);assert.equal(bytes.subarray(0,5).toString(),'%PDF-');seen.add(document.url);}
+ for(const slug of p.relatedSlugs)assert(products.some(x=>x.slug===slug));
 }
-for (const url of urls) {
-  const u = new URL(url);
-  assert.equal(u.origin, 'https://animalid.com');
-  assert.ok(u.pathname.startsWith('/wp-content/uploads/'));
-  assert.equal(checks.assets[url]?.status, 200, `Unverified media: ${url}`);
-}
-assert.equal(urls.size, Object.keys(checks.assets).length);
-for (const section of navigation) for (const item of section.links) {
-  const target = new URL(item.href, 'https://itsbio.vercel.app');
-  const slug = target.pathname.split('/').at(-1);
-  assert.ok(products.some((product) => product.slug === slug));
-  if (target.hash) assert.equal(models.get(decodeURIComponent(target.hash.slice(7))), slug);
-}
-assert.equal(videos, 5);
-assert.equal(brochures, 3);
-console.log(JSON.stringify({ products: products.length, upgrades: 2, photographs: photos, brochures, videos, verifiedAssets: urls.size, status: 'passed' }));
+const logo=await sharp('public/partners/aims-lab-logo.png').metadata();assert.equal(logo.width,report.logo.width);assert.equal(logo.height,report.logo.height);
+assert.equal(report.assetChecks.filter(a=>a.kind==='pdf').length,16);assert.equal(report.productsWithDocuments,38);
+console.log(JSON.stringify({products:products.length,sourceListings:inventory.listingCount,familyRoutes:inventory.familyPageCount,rootCategories:6,categories:categories.length,localMedia:seen.size,bodyImages,documentProducts:38,result:'PASS'}));

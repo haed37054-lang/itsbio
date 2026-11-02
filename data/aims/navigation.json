@@ -1,1 +1,120 @@
-[{"label":"Tattoo Identification Systems","links":[{"label":"ATS-3 · General Rodent","href":"/products/aims/item/ats-3"},{"label":"NEO-9 · Neonate Rodent","href":"/products/aims/item/neo-9"},{"label":"ATS-3L · Large Lab Animals","href":"/products/aims/item/ats-3l"}]},{"label":"ATS-3 Upgrade Packages","links":[{"label":"NEO-AP · Neonate Upgrade","href":"/products/aims/item/ats-3#model-NEO-AP"},{"label":"LLA-AP · Large Animal Upgrade","href":"/products/aims/item/ats-3#model-LLA-AP"}]}]
+[
+  {
+    "label": "Small Animal Surgery",
+    "links": [
+      {
+        "label": "All Small Animal Surgery",
+        "href": "/products/aims/small-animal-surgery"
+      },
+      {
+        "label": "Surgery Boards",
+        "href": "/products/aims/surgery-boards"
+      },
+      {
+        "label": "HDPE",
+        "href": "/products/aims/hdpe"
+      },
+      {
+        "label": "Acrylic",
+        "href": "/products/aims/acrylic"
+      },
+      {
+        "label": "Accessories",
+        "href": "/products/aims/surgery-board-accessories"
+      },
+      {
+        "label": "Post-Surgery Warming",
+        "href": "/products/aims/post-surgery-warming"
+      },
+      {
+        "label": "Warming Plates",
+        "href": "/products/aims/warming-plates"
+      },
+      {
+        "label": "Warming Chambers",
+        "href": "/products/aims/warming-chambers"
+      }
+    ]
+  },
+  {
+    "label": "Procedure / Dissection Boards",
+    "links": [
+      {
+        "label": "All Procedure / Dissection Boards",
+        "href": "/products/aims/procedure-dissection-boards"
+      },
+      {
+        "label": "Procedure Boards",
+        "href": "/products/aims/procedure-boards"
+      },
+      {
+        "label": "Dissection Trays",
+        "href": "/products/aims/dissection-trays"
+      },
+      {
+        "label": "Processing Discs",
+        "href": "/products/aims/processing-discs"
+      }
+    ]
+  },
+  {
+    "label": "CO₂ Euthanasia",
+    "links": [
+      {
+        "label": "All CO₂ Euthanasia",
+        "href": "/products/aims/co2-euthanasia"
+      },
+      {
+        "label": "CO₂ Chamber",
+        "href": "/products/aims/co2-chamber"
+      }
+    ]
+  },
+  {
+    "label": "CO₂ Flowmeters",
+    "links": [
+      {
+        "label": "All CO₂ Flowmeters",
+        "href": "/products/aims/co2-flowmeters"
+      },
+      {
+        "label": "SC100, LC500, XL900",
+        "href": "/products/aims/flowmeter-models"
+      },
+      {
+        "label": "Accessories",
+        "href": "/products/aims/flowmeter-accessories"
+      }
+    ]
+  },
+  {
+    "label": "Rodent Restraints",
+    "links": [
+      {
+        "label": "All Rodent Restraints",
+        "href": "/products/aims/rodent-restraints"
+      },
+      {
+        "label": "Plastic Restraints",
+        "href": "/products/aims/plastic-restraints"
+      },
+      {
+        "label": "Tail Cutting",
+        "href": "/products/aims/tail-cutting"
+      },
+      {
+        "label": "Tail Injection",
+        "href": "/products/aims/tail-injection"
+      }
+    ]
+  },
+  {
+    "label": "Stereotaxic Lighting / Magnification",
+    "links": [
+      {
+        "label": "All Stereotaxic Lighting / Magnification",
+        "href": "/products/aims/stereotaxic-lighting-magnification"
+      }
+    ]
+  }
+]

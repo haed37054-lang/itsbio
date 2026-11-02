@@ -4,10 +4,10 @@ import Breadcrumb from "@/components/site/Breadcrumb";
 import AimsGallery from "@/components/products/aims/AimsGallery";
 import AffinityHero from "@/components/products/affinity/AffinityHero";
 import AffinitySidebar from "@/components/products/affinity/AffinitySidebar";
-import { AFFINITY_PRODUCTS, getAffinityProduct, exactAffinityProduct, affinityProductHref } from "@/lib/affinityimmuno/catalog";
+import { AFFINITY_ALL_PRODUCTS, getAffinityProduct, exactAffinityProduct, affinityProductHref } from "@/lib/affinityimmuno/catalog";
 
 export const dynamicParams = false;
-export function generateStaticParams(){return AFFINITY_PRODUCTS.map(p=>({slug:p.slug}));}
+export function generateStaticParams(){return AFFINITY_ALL_PRODUCTS.map(p=>({slug:p.slug}));}
 export async function generateMetadata({params}:{params:Promise<{slug:string}>}){const p=getAffinityProduct((await params).slug);return p?{title:`${p.sku} ${p.title} | AffinityImmuno`,description:p.summary}:{};}
 export default async function AffinityProductPage({params}:{params:Promise<{slug:string}>}){
   const product=getAffinityProduct((await params).slug);if(!product)notFound();
@@ -30,7 +30,7 @@ export default async function AffinityProductPage({params}:{params:Promise<{slug
     {product.components.length?<section id="components" className="scroll-mt-28 border-t border-slate-200 py-8"><h2 className="text-2xl font-semibold text-slate-950">Kit Components</h2><ul className="mt-5 divide-y divide-slate-200 rounded-xl border border-slate-200">{product.components.map((component,i)=><li key={i} className="px-5 py-3 text-sm leading-7 text-slate-600">{component}</li>)}</ul></section>:null}
     {assaySections.length?<section id="assay-information" className="scroll-mt-28 border-t border-slate-200 py-8"><h2 className="text-2xl font-semibold text-slate-950">Assay Information</h2><div className="mt-5 space-y-3">{assaySections.map((s,i)=><details key={s.title} open={i===0} className="rounded-xl border border-slate-200 px-5 py-4"><summary className="cursor-pointer text-sm font-semibold text-cyan-900">{s.title}</summary><p className="mt-4 whitespace-pre-line text-sm leading-8 text-slate-600">{s.body}</p></details>)}</div></section>:null}
     {product.documents.length?<section id="documents" className="scroll-mt-28 border-t border-slate-200 py-8"><h2 className="text-2xl font-semibold text-slate-950">Documents</h2><div className="mt-5 flex flex-wrap gap-3">{product.documents.map(d=><a key={d.url} href={d.url} target="_blank" rel="noopener noreferrer" className="inline-flex rounded-xl border border-cyan-200 bg-cyan-50 px-5 py-3 text-sm font-semibold text-cyan-900">{d.label} · PDF ↗</a>)}</div></section>:null}
-    {related.length?<section className="border-t border-slate-200 py-8"><h2 className="text-2xl font-semibold text-slate-950">Related Products</h2><ul className="mt-5 space-y-3">{related.map(p=><li key={p.sku}><Link href={affinityProductHref(p)} className="text-sm text-cyan-900 underline">{p.sku} · {p.title}</Link></li>)}</ul></section>:null}
+    {related.length?<section className="border-t border-slate-200 py-8"><h2 className="text-2xl font-semibold text-slate-950">Related Products</h2><ul className="mt-5 space-y-3">{related.map(p=><li key={p.slug}><Link href={affinityProductHref(p)} className="text-sm text-cyan-900 underline">{p.sku} · {p.title}</Link></li>)}</ul></section>:null}
     {product.sourceUrl?<a href={product.sourceUrl} target="_blank" rel="noopener noreferrer" className="mt-4 inline-block text-xs font-medium text-cyan-900 underline">Manufacturer product page ↗</a>:null}
   </article></div></main></>;
 }

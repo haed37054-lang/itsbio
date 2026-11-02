@@ -1,133 +1,720 @@
 {
-  "sourceFilename": "2026_AffinityImmuno ELISA and Antibody products ITSBio.xlsx",
-  "sourceSha256": "98ee873234e1a8c4e4a130bc7fe9a523edbf33677814e9b4fb3d2e394646022e",
-  "products": 217,
-  "elisas": 19,
-  "antibodies": 198,
-  "duplicatesRemoved": [
+  "scope": "Complete manufacturer catalog",
+  "sourceUrl": "https://affinityimmuno.com/product-category/",
+  "reviewedAt": "2026-11-02T07:46:43.526Z",
+  "products": 310,
+  "uniqueCatalogNumbers": 309,
+  "elisas": 117,
+  "antibodies": 193,
+  "retainedPriorWorkbookPages": [
+    "EL-1611-32214",
+    "ab-131-437",
+    "ab-131-294",
+    "ab-131-294-gold",
+    "ab-131-294-hrp",
+    "ab-131-295-PAIR",
+    "ab-131-296",
+    "ab-131-430"
+  ],
+  "newProductPages": 101,
+  "duplicateCatalogNumbers": [
     {
-      "sku": "EL-141-73196",
-      "sheet": "ELISAs",
-      "row": 22
+      "sku": "EL-1611-73196",
+      "sourceUrl": "https://affinityimmuno.com/product/gcsf-pharmacokinetic-elisa-el-1611-73196/",
+      "slug": "el-1611-73196"
     },
     {
-      "sku": "EL-141-878",
-      "sheet": "ELISAs",
-      "row": 23
+      "sku": "EL-1611-73196",
+      "sourceUrl": "https://affinityimmuno.com/product/peg-filgrastim-granulocyte-colony-stimulating-factor-g-csf-or-gcsf-el-1611-73196-peg-gcsf-pk/",
+      "slug": "el-1611-73196-peg-gcsf-pk"
     }
   ],
-  "verifiedPages": 209,
-  "uniqueImageProducts": 7,
-  "documentProducts": 19,
-  "conflicts": [
+  "verifiedPages": 310,
+  "uniqueImageProducts": 9,
+  "documentProducts": 116,
+  "sourceDifferences": [],
+  "sourceProblems": [],
+  "assetChecks": [
     {
-      "sku": "EL-141-73196",
-      "field": "Application",
-      "workbook": "Quantification of antibodies to G-CSF",
-      "website": "Measure anti-GCSF antibodies"
-    },
-    {
-      "sku": "EL-141-73196",
-      "field": "Storage",
-      "workbook": "-20C, 1 year",
-      "website": "Stable at -20°C"
-    },
-    {
-      "sku": "EL-141-878",
-      "field": "Application",
-      "workbook": "Quantification of antibodies to hGH",
-      "website": "Measure anti-hGH antibodies"
-    },
-    {
-      "sku": "EL-141-878",
-      "field": "Storage",
-      "workbook": "-20C, 1 year",
-      "website": "Stable at -20°C"
-    },
-    {
-      "sku": "EL-1611-202",
-      "field": "Assay principle",
-      "resolution": "Omitted unrelated Trastuzumab sentence from Tocilizumab entry; original retained in workbook-input.json"
-    },
-    {
-      "sku": "EL-141-PEG-hIGM",
-      "field": "Storage",
-      "workbook": "-20C, 1 year",
-      "website": "Stable at -20°C for 1 year"
-    },
-    {
-      "sku": "EL-141-PEG-hIGG",
-      "field": "Storage",
-      "workbook": "-20C, 1 year",
-      "website": "Stable at -20°C for 1 year"
-    },
-    {
-      "sku": "EL-141-PEG-mIGG",
-      "field": "Storage",
-      "workbook": "-20C, 1 year",
-      "website": "Stable at -20°C for 1 year"
-    },
-    {
-      "sku": "EL-141-PEG-mIGM",
-      "field": "Storage",
-      "workbook": "-20C, 1 year",
-      "website": "Stable at -20°C for 1 year"
-    },
-    {
-      "sku": "ab-131-126",
-      "field": "Clone",
-      "workbook": "2.4300000000000002",
-      "website": "2.43"
-    }
-  ],
-  "errors": [
-    {
-      "sku": "EL-1611-32214",
-      "sourcePage": "https://affinityimmuno.com/product/sars-cov-2-surrogate-virus-neutralizing-test-svnt-spike-protein-ace2-ligand-binding-assay-covid-19-svntcatalog-el-1611-32214/",
-      "status": 404,
-      "reason": "No current page with matching Cat.No; workbook retained"
-    },
-    {
-      "sku": "ab-131-437",
-      "sourcePage": "https://affinityimmuno.com/product/ab-131-437-human-igg3-isotype-control/",
-      "status": 404,
-      "reason": "No current page with matching Cat.No; workbook retained"
-    },
-    {
-      "sku": "ab-131-294",
-      "sourcePage": "https://affinityimmuno.com/product/affinity-purified-sars-cov-2-spike-s2-domain-antibody/",
-      "status": 404,
-      "reason": "No current page with matching Cat.No; workbook retained"
-    },
-    {
-      "sku": "ab-131-294-gold",
-      "sourcePage": "https://affinityimmuno.com/product/gold-conjugated-affinity-purified-sars-cov-2-spike-s2-domain-antibody/",
-      "status": 404,
-      "reason": "No current page with matching Cat.No; workbook retained"
-    },
-    {
-      "sku": "ab-131-294-hrp",
-      "sourcePage": "https://affinityimmuno.com/product/hrp-conjugated-affinity-purified-sars-cov-2-spike-s2-domain-antibody/",
-      "status": 404,
-      "reason": "No current page with matching Cat.No; workbook retained"
-    },
-    {
-      "sku": "ab-131-295-PAIR",
-      "sourcePage": "https://affinityimmuno.com/product/covid-19-spike-capture-and-detection-hrp-conjugate-elisa-pair-with-calibrator/",
-      "status": 404,
-      "reason": "No current page with matching Cat.No; workbook retained"
-    },
-    {
-      "sku": "ab-131-296",
-      "sourcePage": "https://affinityimmuno.com/product/affinity-purified-sars-cov-2-covid-19-2019-ncov-nucleocapsid-antibody/",
-      "status": 404,
-      "reason": "No current page with matching Cat.No; workbook retained"
-    },
-    {
-      "sku": "ab-131-430",
-      "sourcePage": "https://affinityimmuno.com/product/mouse-igg1-isotype-control-2/",
+      "url": "https://affinityimmuno.com/wp-content/uploads/2021/10/ab-94-181-anti-Rituximab-IgY-1-e1634659834207.png",
       "status": 200,
-      "reason": "No current page with matching Cat.No; workbook retained"
+      "kind": "image"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2022/01/Affinityimmuno-ab-94-011-Chicken-anti-Adalimumab-idiotype.png",
+      "status": 200,
+      "kind": "image"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2021/10/ab-94-021-Chicken-anti-Bevacizumab-idiotype.png",
+      "status": 200,
+      "kind": "image"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2020/10/EL-1611-011-Humira-PK-PRODUCT-SHEET.pdf",
+      "status": 200,
+      "kind": "pdf",
+      "local": "/affinityimmuno/e3f56ea5b8271ad5.pdf"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2021/10/ab-94-181-anti-Rituximab-IgY-2.png",
+      "status": 200,
+      "kind": "image"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2022/01/Affinityimmuno-ab-94-011-Chicken-anti-Adalimumab-idiotype-2.png",
+      "status": 200,
+      "kind": "image"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2021/10/ab-94-021-Chicken-anti-Bevacizumab-idiotype-2.png",
+      "status": 200,
+      "kind": "image"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2020/10/EL-141-PEG-hIGG-PRODUCT-SHEET.pdf",
+      "status": 200,
+      "kind": "pdf",
+      "local": "/affinityimmuno/dd3e02f465bec325.pdf"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2020/10/EL-141-PEG-hIGM-PRODUCT-SHEET.pdf",
+      "status": 200,
+      "kind": "pdf",
+      "local": "/affinityimmuno/5d44ff2688f9df6b.pdf"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2020/10/EL-141-PEG-mIGM-PRODUCT-SHEET-2022.pdf",
+      "status": 200,
+      "kind": "pdf",
+      "local": "/affinityimmuno/a475d17f1ca1bfb8.pdf"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2020/10/EL-141-PEG-mIGG-PRODUCT-SHEET-1.pdf",
+      "status": 200,
+      "kind": "pdf",
+      "local": "/affinityimmuno/481d431a66890d87.pdf"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2020/10/EL-1611-021-Avastin-PK-PRODUCT-SHEET.pdf",
+      "status": 200,
+      "kind": "pdf",
+      "local": "/affinityimmuno/e232093554b0c704.pdf"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2020/10/EL-1611-031-Erbitux-PK-PRODUCT-SHEET.pdf",
+      "status": 200,
+      "kind": "pdf",
+      "local": "/affinityimmuno/c61ff4ffbdbea104.pdf"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2020/10/ENB-PK-Standard-curve.jpg",
+      "status": 200,
+      "kind": "image"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2020/10/EL-1611-051-Enbrel-PK-PRODUCT-SHEET.pdf",
+      "status": 200,
+      "kind": "pdf",
+      "local": "/affinityimmuno/b7d8865fe4cbe733.pdf"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2022/05/EL-1611-73196-GCSF-PK-PRODUCT-SHEET.pdf",
+      "status": 206,
+      "kind": "pdf"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2022/11/EL-141-73196-GCSF-ADA-PRODUCT-SHEET.pdf",
+      "status": 200,
+      "kind": "pdf",
+      "local": "/affinityimmuno/79ee8979c8551031.pdf"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2022/11/EL-141-878-hGH-ADA-PRODUCT-SHEET.pdf",
+      "status": 200,
+      "kind": "pdf",
+      "local": "/affinityimmuno/ca34a7e66f6a0356.pdf"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2023/04/EL-1611-73196-PEG-GCSF-PK-PRODUCT-SHEET.pdf",
+      "status": 206,
+      "kind": "pdf"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2026/08/EL-213-015-alpha-synuclein-PRODUCT-SHEET.pdf",
+      "status": 206,
+      "kind": "pdf"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2026/08/EL-213-01-amylin-iapp-PRODUCT-SHEET.pdf",
+      "status": 206,
+      "kind": "pdf"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2026/08/EL-213-114703-angptl3-PRODUCT-SHEET.pdf",
+      "status": 206,
+      "kind": "pdf"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2026/08/EL-213-114704-angptl4-PRODUCT-SHEET.pdf",
+      "status": 206,
+      "kind": "pdf"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2026/08/EL-213-114708-angptl8-PRODUCT-SHEET.pdf",
+      "status": 206,
+      "kind": "pdf"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2026/08/EL-213-2072-b7-h3-PRODUCT-SHEET.pdf",
+      "status": 206,
+      "kind": "pdf"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2026/08/EL-213-02-baff-PRODUCT-SHEET.pdf",
+      "status": 206,
+      "kind": "pdf"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2026/08/EL-213-022-bcma-PRODUCT-SHEET.pdf",
+      "status": 206,
+      "kind": "pdf"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2026/08/EL-213-2201401-btn1a1-PRODUCT-SHEET.pdf",
+      "status": 206,
+      "kind": "pdf"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2026/08/EL-213-34123-cd123-il-3ra-PRODUCT-SHEET.pdf",
+      "status": 206,
+      "kind": "pdf"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2026/08/EL-213-34133-cd133-prom1-PRODUCT-SHEET.pdf",
+      "status": 206,
+      "kind": "pdf"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2026/08/EL-213-34155-cd155-PRODUCT-SHEET.pdf",
+      "status": 206,
+      "kind": "pdf"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2026/08/EL-213-34226-cd226-PRODUCT-SHEET.pdf",
+      "status": 206,
+      "kind": "pdf"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2026/08/EL-213-3440-cd40-PRODUCT-SHEET.pdf",
+      "status": 206,
+      "kind": "pdf"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2026/08/EL-213-3447-cd47-PRODUCT-SHEET.pdf",
+      "status": 206,
+      "kind": "pdf"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2026/08/EL-213-3463-cd63-PRODUCT-SHEET.pdf",
+      "status": 206,
+      "kind": "pdf"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2026/08/EL-213-3470-cd70-PRODUCT-SHEET.pdf",
+      "status": 206,
+      "kind": "pdf"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2026/08/EL-213-3481-cd81-PRODUCT-SHEET.pdf",
+      "status": 206,
+      "kind": "pdf"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2026/08/EL-213-3496-cd96-PRODUCT-SHEET.pdf",
+      "status": 206,
+      "kind": "pdf"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2026/08/EL-213-35101-ceacam1-PRODUCT-SHEET.pdf",
+      "status": 206,
+      "kind": "pdf"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2026/08/EL-213-35106-ceacam6-PRODUCT-SHEET.pdf",
+      "status": 206,
+      "kind": "pdf"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2026/08/EL-213-38903-chi3l1-PRODUCT-SHEET.pdf",
+      "status": 206,
+      "kind": "pdf"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2026/08/EL-213-32403-cx3cl1-PRODUCT-SHEET.pdf",
+      "status": 206,
+      "kind": "pdf"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2026/08/EL-213-03-cystatin-c-PRODUCT-SHEET.pdf",
+      "status": 206,
+      "kind": "pdf"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2026/08/EL-213-04-dao-diamine-oxidase-PRODUCT-SHEET.pdf",
+      "status": 206,
+      "kind": "pdf"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2026/08/EL-213-4121203-dll3-PRODUCT-SHEET.pdf",
+      "status": 206,
+      "kind": "pdf"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2026/08/EL-213-05-epcam-PRODUCT-SHEET.pdf",
+      "status": 206,
+      "kind": "pdf"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2026/08/EL-213-67619-fgf19-PRODUCT-SHEET.pdf",
+      "status": 206,
+      "kind": "pdf"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2026/08/EL-213-67621-fgf21-PRODUCT-SHEET.pdf",
+      "status": 206,
+      "kind": "pdf"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2026/08/EL-213-67623-fgf23-PRODUCT-SHEET.pdf",
+      "status": 206,
+      "kind": "pdf"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2026/08/EL-213-603-flt3l-PRODUCT-SHEET.pdf",
+      "status": 206,
+      "kind": "pdf"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2026/08/EL-213-709-galectin-9-PRODUCT-SHEET.pdf",
+      "status": 206,
+      "kind": "pdf"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2026/08/EL-213-07-gasdermin-e-PRODUCT-SHEET.pdf",
+      "status": 206,
+      "kind": "pdf"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2026/08/EL-213-74615-gdf15-PRODUCT-SHEET.pdf",
+      "status": 206,
+      "kind": "pdf"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2026/08/EL-213-073-gfap-PRODUCT-SHEET.pdf",
+      "status": 206,
+      "kind": "pdf"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2026/08/EL-213-712201-glb1-PRODUCT-SHEET.pdf",
+      "status": 206,
+      "kind": "pdf"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2026/08/EL-213-7121602-glp-2-PRODUCT-SHEET.pdf",
+      "status": 206,
+      "kind": "pdf"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2026/08/EL-213-716303-gpc3-PRODUCT-SHEET.pdf",
+      "status": 206,
+      "kind": "pdf"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2026/08/EL-213-072-gpnmb-PRODUCT-SHEET.pdf",
+      "status": 206,
+      "kind": "pdf"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2022/05/EL-1611-878-hGH-PK-PRODUCT-SHEET-1.pdf",
+      "status": 206,
+      "kind": "pdf"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2026/08/EL-213-851803-her3-erbb3-PRODUCT-SHEET.pdf",
+      "status": 206,
+      "kind": "pdf"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2026/08/EL-213-813701-hmgb1-PRODUCT-SHEET.pdf",
+      "status": 206,
+      "kind": "pdf"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2026/08/EL-213-902-i-fabp-fabp2-PRODUCT-SHEET.pdf",
+      "status": 206,
+      "kind": "pdf"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2026/08/EL-213-941501-ido1-PRODUCT-SHEET.pdf",
+      "status": 206,
+      "kind": "pdf"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2026/08/EL-213-91217-il-17f-PRODUCT-SHEET.pdf",
+      "status": 206,
+      "kind": "pdf"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2026/08/EL-213-91218-il-18bp-PRODUCT-SHEET.pdf",
+      "status": 206,
+      "kind": "pdf"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2026/08/EL-213-91234-il-34-PRODUCT-SHEET.pdf",
+      "status": 206,
+      "kind": "pdf"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2026/08/EL-213-912362-il-36alpha-PRODUCT-SHEET.pdf",
+      "status": 206,
+      "kind": "pdf"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2026/08/EL-213-912363-il-36beta-PRODUCT-SHEET.pdf",
+      "status": 206,
+      "kind": "pdf"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2026/08/EL-213-91237-il-37-PRODUCT-SHEET.pdf",
+      "status": 206,
+      "kind": "pdf"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2026/08/EL-213-91201-il1rl1-PRODUCT-SHEET.pdf",
+      "status": 206,
+      "kind": "pdf"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2026/08/EL-213-91236-il36rn-PRODUCT-SHEET.pdf",
+      "status": 206,
+      "kind": "pdf"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2026/08/EL-213-09-irisin-PRODUCT-SHEET.pdf",
+      "status": 206,
+      "kind": "pdf"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2026/08/EL-213-1208-lactadherin-mfge8-PRODUCT-SHEET.pdf",
+      "status": 206,
+      "kind": "pdf"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2026/08/EL-213-1291203-lilra3-PRODUCT-SHEET.pdf",
+      "status": 206,
+      "kind": "pdf"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2026/08/EL-213-12152402-loxl2-PRODUCT-SHEET.pdf",
+      "status": 206,
+      "kind": "pdf"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2026/08/EL-213-13-mesothelin-msln-PRODUCT-SHEET.pdf",
+      "status": 206,
+      "kind": "pdf"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2026/08/EL-213-13131609-mmp9-PRODUCT-SHEET.pdf",
+      "status": 206,
+      "kind": "pdf"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2026/08/EL-213-1402-nectin-2-PRODUCT-SHEET.pdf",
+      "status": 206,
+      "kind": "pdf"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2026/08/EL-213-14-neurogranin-PRODUCT-SHEET.pdf",
+      "status": 206,
+      "kind": "pdf"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2026/08/EL-213-14181601-nrp1-PRODUCT-SHEET.pdf",
+      "status": 206,
+      "kind": "pdf"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2026/08/EL-213-142004-nt-4-PRODUCT-SHEET.pdf",
+      "status": 206,
+      "kind": "pdf"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2026/08/EL-213-152-osteocrin-PRODUCT-SHEET.pdf",
+      "status": 206,
+      "kind": "pdf"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2026/08/EL-213-15-oxyntomodulin-PRODUCT-SHEET.pdf",
+      "status": 206,
+      "kind": "pdf"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2026/08/EL-213-1616-p16ink4a-PRODUCT-SHEET.pdf",
+      "status": 206,
+      "kind": "pdf"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2026/08/EL-213-161901-pai-1-serpine1-PRODUCT-SHEET.pdf",
+      "status": 206,
+      "kind": "pdf"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2026/08/EL-213-16402-pd-l2-PRODUCT-SHEET.pdf",
+      "status": 206,
+      "kind": "pdf"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2026/08/EL-213-16122401-plxnb1-PRODUCT-SHEET.pdf",
+      "status": 206,
+      "kind": "pdf"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2026/08/EL-213-16-psca-PRODUCT-SHEET.pdf",
+      "status": 206,
+      "kind": "pdf"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2026/08/EL-213-16221804-pvrl4-PRODUCT-SHEET.pdf",
+      "status": 206,
+      "kind": "pdf"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2026/08/EL-213-162-pyy-PRODUCT-SHEET.pdf",
+      "status": 206,
+      "kind": "pdf"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2026/08/EL-213-1815204-robo4-PRODUCT-SHEET.pdf",
+      "status": 206,
+      "kind": "pdf"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2026/08/EL-213-18151801-ror1-PRODUCT-SHEET.pdf",
+      "status": 206,
+      "kind": "pdf"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2026/08/EL-213-19100-s100b-PRODUCT-SHEET.pdf",
+      "status": 206,
+      "kind": "pdf"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2026/08/EL-213-19163-scd163-PRODUCT-SHEET.pdf",
+      "status": 206,
+      "kind": "pdf"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2026/08/EL-213-1904-sctla-4-PRODUCT-SHEET.pdf",
+      "status": 206,
+      "kind": "pdf"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2026/08/EL-213-1915-siglec-15-PRODUCT-SHEET.pdf",
+      "status": 206,
+      "kind": "pdf"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2026/08/EL-213-1908-siglec-8-PRODUCT-SHEET.pdf",
+      "status": 206,
+      "kind": "pdf"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2026/08/EL-213-19-sirpa-PRODUCT-SHEET.pdf",
+      "status": 206,
+      "kind": "pdf"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2026/08/EL-213-1991801-sirpb1-PRODUCT-SHEET.pdf",
+      "status": 206,
+      "kind": "pdf"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2026/08/EL-213-192-sirpg-PRODUCT-SHEET.pdf",
+      "status": 206,
+      "kind": "pdf"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2026/08/EL-213-013-adropin-PRODUCT-SHEET.pdf",
+      "status": 206,
+      "kind": "pdf"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2024/11/Filgrastim-PK-White-Paper.pdf",
+      "status": 206,
+      "kind": "pdf"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2026/08/EL-213-014-ahsg-fetuin-a-PRODUCT-SHEET.pdf",
+      "status": 206,
+      "kind": "pdf"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2023/04/EL-141-73196-GCSF-PEG-ADA-PRODUCT-SHEET.pdf",
+      "status": 206,
+      "kind": "pdf"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2026/08/EL-213-1901-syndecan-1-PRODUCT-SHEET.pdf",
+      "status": 206,
+      "kind": "pdf"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2026/08/EL-213-2041643-tdp-43-tardbp-PRODUCT-SHEET.pdf",
+      "status": 206,
+      "kind": "pdf"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2026/08/EL-213-193-supar-PRODUCT-SHEET.pdf",
+      "status": 206,
+      "kind": "pdf"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2026/08/EL-213-20-tigit-PRODUCT-SHEET.pdf",
+      "status": 206,
+      "kind": "pdf"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2026/08/EL-213-2018502-trem2-PRODUCT-SHEET.pdf",
+      "status": 206,
+      "kind": "pdf"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2026/08/EL-213-20197101-tsg101-PRODUCT-SHEET.pdf",
+      "status": 206,
+      "kind": "pdf"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2026/08/EL-213-202-tslpr-PRODUCT-SHEET.pdf",
+      "status": 206,
+      "kind": "pdf"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2020/10/EL-1611-091-Remicade-PK-PRODUCT-SHEET.pdf",
+      "status": 200,
+      "kind": "pdf",
+      "local": "/affinityimmuno/5f70b0f47d58e39c.pdf"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2026/08/EL-213-2112201-ulbp1-PRODUCT-SHEET.pdf",
+      "status": 206,
+      "kind": "pdf"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2026/08/EL-213-22-vaspin-PRODUCT-SHEET.pdf",
+      "status": 206,
+      "kind": "pdf"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2026/08/EL-213-2291201-vilip-1-PRODUCT-SHEET.pdf",
+      "status": 206,
+      "kind": "pdf"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2026/08/EL-213-222-visfatin-PRODUCT-SHEET.pdf",
+      "status": 206,
+      "kind": "pdf"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2020/10/EL-1611-141-Tysabri-PK-PRODUCT-SHEET.pdf",
+      "status": 200,
+      "kind": "pdf",
+      "local": "/affinityimmuno/f256962cb8e0fb05.pdf"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2020/10/EL-1611-152-Xolair-PK-PRODUCT-SHEET.pdf",
+      "status": 200,
+      "kind": "pdf",
+      "local": "/affinityimmuno/39d008bc83fdb76e.pdf"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2020/10/Keytruda-std-series.jpg",
+      "status": 200,
+      "kind": "image"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2020/10/RIT_ADA_006-figure.jpg",
+      "status": 200,
+      "kind": "image"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2020/10/Ritux-standard-curve.jpg",
+      "status": 200,
+      "kind": "image"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2020/10/TOC_ADA_002.jpg",
+      "status": 200,
+      "kind": "image"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2020/10/EL-1611-202-Actemra-PK-PRODUCT-SHEET.pdf",
+      "status": 200,
+      "kind": "pdf",
+      "local": "/affinityimmuno/4306c57a3028e129.pdf"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2020/10/EL-141-181-Rituxan-ADA-PRODUCT-SHEET.pdf",
+      "status": 200,
+      "kind": "pdf",
+      "local": "/affinityimmuno/5ad73c05cfcf5382.pdf"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2020/10/EL-141-201-Herceptin-ADA-PRODUCT-SHEET.pdf",
+      "status": 200,
+      "kind": "pdf",
+      "local": "/affinityimmuno/6f2314c77fa0f948.pdf"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2020/10/EL-1611-181-Rituxan-PK-PRODUCT-SHEET.pdf",
+      "status": 200,
+      "kind": "pdf",
+      "local": "/affinityimmuno/122d4fefb7e280f2.pdf"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2020/10/Trastuzumab-PK_034.3-figure-1024x896.jpg",
+      "status": 200,
+      "kind": "image"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2020/10/EL-1611-201-Herceptin-PK-PRODUCT-SHEET.pdf",
+      "status": 200,
+      "kind": "pdf",
+      "local": "/affinityimmuno/fb8e166062a2e97d.pdf"
+    },
+    {
+      "url": "https://affinityimmuno.com/wp-content/uploads/2020/10/EL-141-202-Actemra-ADA-PRODUCT-SHEET.pdf",
+      "status": 206,
+      "kind": "pdf"
+    }
+  ],
+  "linkChecks": [
+    {
+      "url": "https://affinityimmuno.com/peg-immunogenicity-2026-whats-new/",
+      "status": 200,
+      "ok": true
+    }
+  ],
+  "initialWorkbookProducts": 217,
+  "sourceMissingFields": [
+    {
+      "sku": "EL-1611-161",
+      "sourceUrl": "https://affinityimmuno.com/product/pembrolizumabkeytruda-pharmacokinetic-elisa-catalog-el-1611-161/",
+      "fields": [
+        "Size",
+        "Product sheet"
+      ]
     }
   ]
 }

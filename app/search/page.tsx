@@ -1,5 +1,5 @@
 import { exactAimsModel, searchAimsProducts, aimsProductHref } from "@/lib/aims/catalog";
-import { exactAffinityProduct, searchAffinityProducts, affinityProductHref } from "@/lib/affinityimmuno/catalog";
+import { exactAffinityProduct, exactAffinityProducts, searchAffinityProducts, affinityProductHref } from "@/lib/affinityimmuno/catalog";
 import Link from "next/link";
 import { exactSeedburoProducts, searchSeedburoProducts, seedburoPrimarySku, seedburoProductHref } from "@/lib/seedburo/catalog";
 import { redirect } from "next/navigation";
@@ -410,6 +410,8 @@ export default async function SearchPage({
   const exactSeedburo = exactSeedburoProducts(catalogNumber);
   const exactAims = exactAimsModel(catalogNumber);
   const exactAffinity = exactAffinityProduct(catalogNumber);
+  const affinityMatches = exactAffinityProducts(catalogNumber);
+  if (!selectedBrand && affinityMatches.length > 1) redirect(`/search?q=${encodeURIComponent(q)}&brand=affinityimmuno`);
   if ((!selectedBrand || selectedBrand === "affinityimmuno") && exactAffinity) redirect(affinityProductHref(exactAffinity));
   if (selectedBrand === "aims" && exactAims) redirect(exactAims.href);
   if (selectedBrand === "seedburo" && exactSeedburo.length === 1) {
@@ -500,7 +502,7 @@ export default async function SearchPage({
   if (exactMissingVectorResult) results.push(exactMissingVectorResult);
 
   for (const product of searchAffinityProducts(q)) {
-    results.push({id:`affinity:${product.sku}`,title:product.title,sku:product.sku,description:product.summary || undefined,brandKey:"affinityimmuno",brandLabel:"AffinityImmuno",href:affinityProductHref(product),kind:"Product",direct:true,score:scoreMatch(product.title,product.sku,q)+3});
+    results.push({id:`affinity:${product.slug}`,title:product.title,sku:product.sku,description:product.summary || undefined,brandKey:"affinityimmuno",brandLabel:"AffinityImmuno",href:affinityProductHref(product),kind:"Product",direct:true,score:scoreMatch(product.title,product.sku,q)+3});
   }
 
   for (const row of Array.isArray(liveRows) ? liveRows : []) {
@@ -624,7 +626,7 @@ export default async function SearchPage({
 
   const deduped = new Map<string, SearchResult>();
   for (const result of scopedResults.sort((a, b) => b.score - a.score)) {
-    const key = `${result.brandKey}:${normalizeText(result.sku || result.title)}:${result.kind}`;
+    const key = `${result.brandKey}:${normalizeText(result.sku || result.title)}:${result.kind}${result.brandKey === "affinityimmuno" ? ":" + result.href : ""}`;
     const existing = deduped.get(key);
     if (!existing || result.score > existing.score || (result.direct && !existing.direct)) deduped.set(key, result);
   }

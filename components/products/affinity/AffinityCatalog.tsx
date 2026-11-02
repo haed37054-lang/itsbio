@@ -3,15 +3,15 @@ import Breadcrumb from "@/components/site/Breadcrumb";
 import AffinityHero from "./AffinityHero";
 import AffinitySidebar from "./AffinitySidebar";
 import AffinityProductCards from "./AffinityProductCards";
-import { AFFINITY_PRODUCTS, AFFINITY_CATEGORIES, searchAffinityProducts, affinityCategoryHref } from "@/lib/affinityimmuno/catalog";
+import { AFFINITY_PRODUCTS, AFFINITY_ALL_PRODUCTS, AFFINITY_CATEGORIES, searchAffinityProducts, affinityCategoryHref } from "@/lib/affinityimmuno/catalog";
 
 export type AffinityFilters = {q?: string; host?: string; application?: string; clonality?: string; page?: string};
 export default function AffinityCatalog({category = "", filters = {}}: {category?: string; filters?: AffinityFilters}) {
   const current = AFFINITY_CATEGORIES.find(c=>c.slug===category);
-  const scope = AFFINITY_PRODUCTS.filter(p=>!category || p.categories.includes(category));
+  const scope = (category === "covid-19" ? AFFINITY_ALL_PRODUCTS : AFFINITY_PRODUCTS).filter(p=>!category || p.categories.includes(category));
   const q = (filters.q || "").trim();
-  const matches = q ? new Set(searchAffinityProducts(q).map(p=>p.sku)) : null;
-  const products = scope.filter(p=>(!matches || matches.has(p.sku)) && (!filters.host || p.host===filters.host) && (!filters.clonality || p.clonality===filters.clonality) && (!filters.application || p.applications.split(/,\s*/).includes(filters.application)));
+  const matches = q ? new Set(searchAffinityProducts(q, scope).map(p=>p.slug)) : null;
+  const products = scope.filter(p=>(!matches || matches.has(p.slug)) && (!filters.host || p.host===filters.host) && (!filters.clonality || p.clonality===filters.clonality) && (!filters.application || p.applications.split(/,\s*/).includes(filters.application)));
   const pageCount = Math.max(1,Math.ceil(products.length/24));
   const requested = Number(filters.page);
   const page = Math.min(pageCount,Number.isSafeInteger(requested) && requested>0 ? requested : 1);

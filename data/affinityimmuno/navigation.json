@@ -1,16 +1,52 @@
 [
-  {"label":"ELISA Kits","links":[
-    {"label":"All ELISA Kits","href":"/products/affinity/elisas"},
-    {"label":"Pharmacokinetic ELISAs","href":"/products/affinity/pharmacokinetic-elisas"},
-    {"label":"Immunogenicity / ADA ELISAs","href":"/products/affinity/immunogenicity-elisas"},
-    {"label":"COVID-19 Research Products","href":"/products/affinity/covid-19"}
-  ]},
-  {"label":"Antibodies","links":[
-    {"label":"All Antibodies","href":"/products/affinity/antibodies"},
-    {"label":"Human Targets","href":"/products/affinity/human-targets"},
-    {"label":"Mouse Targets","href":"/products/affinity/mouse-targets"},
-    {"label":"Anti-Idiotype Antibodies","href":"/products/affinity/anti-idiotype"},
-    {"label":"Biosimilars","href":"/products/affinity/biosimilars"},
-    {"label":"Isotype Controls","href":"/products/affinity/isotype-controls"}
-  ]}
+  {
+    "label": "ELISA Kits",
+    "links": [
+      {
+        "label": "All ELISA Kits",
+        "href": "/products/affinity/elisas"
+      },
+      {
+        "label": "Biosimilar ELISAs",
+        "href": "/products/affinity/biosimilar-elisas"
+      },
+      {
+        "label": "Biomarker ELISAs",
+        "href": "/products/affinity/biomarker-elisas"
+      }
+    ]
+  },
+  {
+    "label": "Antibodies",
+    "links": [
+      {
+        "label": "All Antibodies",
+        "href": "/products/affinity/antibodies"
+      },
+      {
+        "label": "Primary Antibodies",
+        "href": "/products/affinity/primary-antibodies"
+      },
+      {
+        "label": "Human Targets",
+        "href": "/products/affinity/human-targets"
+      },
+      {
+        "label": "Mouse Targets",
+        "href": "/products/affinity/mouse-targets"
+      },
+      {
+        "label": "Anti-Idiotype Antibodies",
+        "href": "/products/affinity/anti-idiotype"
+      },
+      {
+        "label": "Biosimilars",
+        "href": "/products/affinity/biosimilars"
+      },
+      {
+        "label": "Isotype Controls",
+        "href": "/products/affinity/isotype-controls"
+      }
+    ]
+  }
 ]

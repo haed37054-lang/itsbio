@@ -11,6 +11,11 @@ import kentCurrentTaxonomy from "@/data/kent-current-taxonomy.json";
 
 export const revalidate = 300;
 
+// Generate and cache catalog pages on their first visit, then refresh in the background.
+export function generateStaticParams() {
+  return [];
+}
+
 const BRAND_KEY = "kent";
 const BRAND_BASE = "https://www.kentscientific.com";
 const KENT_MENU_TITLE = "General Lab Equipment";
@@ -2252,7 +2257,10 @@ export default async function KentProductsPathPage({
   params: Promise<{ path?: string[] }> | { path?: string[] };
 }) {
   const resolved = await Promise.resolve(params as { path?: string[] });
-  const pathArr = normalizePathSegments((resolved?.path ?? []) as string[]);
+  const requestedPath = normalizePathSegments((resolved?.path ?? []) as string[]);
+  const showAllProducts = requestedPath.at(-1) === "all-products";
+  const pathArr = showAllProducts ? requestedPath.slice(0, -1) : requestedPath;
+  if (showAllProducts && !pathArr.length) notFound();
   const hasPath = pathArr.length > 0;
   const pathStr = pathArr.join("/");
   const taxonomyCategoryForRequest = hasPath ? resolveCurrentKentCategory(pathArr) : null;
@@ -2387,18 +2395,34 @@ export default async function KentProductsPathPage({
   const productsInCategory = resolveListingProducts(pathArr, category, allProducts);
   const officialProductCount = currentCategory?.count ?? dedupeProducts(productsInCategory).length;
   const directChildren = getDirectChildren(allCategories, pathArr);
-  const pageType: PageType = currentCategory
-    ? (directChildren.length > 0 ? "landing" : "listing")
-    : resolvePageType(category, pathStr, directChildren.length, officialProductCount);
+  const pageType: PageType = showAllProducts
+    ? "listing"
+    : currentCategory
+      ? (directChildren.length > 0 ? "landing" : "listing")
+      : resolvePageType(category, pathStr, directChildren.length, officialProductCount);
 
   const pageTitle =
     STATIC_LABEL_BY_PATH.get(pathStr) || normalizeTitle(category.title || "", pathArr[pathArr.length - 1] || "");
 
+  const categoryHref = buildCategoryHref(pathArr);
   const blocks = hydrateProductCardBlocks(
     coerceContentBlocks(Array.isArray(category.contentBlocks) ? category.contentBlocks : []),
     allProducts,
     allCategories,
-  );
+  ).map((block) => {
+    if (block._type !== "contentBlockCards" || block.kind !== "category") return block;
+
+    // A card for the current category opens its complete product listing.
+    // Linking to the landing page itself leaves the user on the same screen.
+    return {
+      ...block,
+      items: block.items?.map((item) =>
+        resolveKentHref(String(item.href || "")).split(/[?#]/)[0].replace(/\/$/, "") === categoryHref
+          ? { ...item, href: `${categoryHref}/all-products` }
+          : item,
+      ),
+    };
+  });
   const renderedBlocks = renderLandingBlocks(blocks, THEME_KENT);
   const fallbackHtml = typeof category.legacyHtml === "string" ? category.legacyHtml : "";
   const hasFallbackHtml = roughTextLenFromHtml(safeHtmlForRender(fallbackHtml)) >= 20;
@@ -2452,6 +2476,11 @@ export default async function KentProductsPathPage({
   } else {
     mainContent = (
       <>
+        {showAllProducts && directChildren.length ? (
+          <Link href={categoryHref} prefetch={false} className="mt-5 inline-flex text-sm font-semibold text-blue-700 hover:underline">
+            ‹ Browse subcategories
+          </Link>
+        ) : null}
         <ListingIntro html={firstHtmlBlock?.html} summary={category.summary} />
         <ListingHeader count={officialProductCount} theme={THEME_KENT} />
         {!productsInCategory.length && directChildren.length ? (

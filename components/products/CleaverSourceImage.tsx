@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import verifiedImageCopies from "@/data/cleaver-verified-image-copies.json";
 
 type Props = {
   src: string;
@@ -29,31 +30,29 @@ function deliveryUrl(url: string) {
 }
 
 export default function CleaverSourceImage({ src, alt, size, className = "object-contain p-1" }: Props) {
-  const [mode, setMode] = useState<"direct" | "proxy" | "failed">("direct");
-  const manufacturer = isManufacturerImage(src);
+  const [failedSources, setFailedSources] = useState<string[]>([]);
+  // Only use a managed copy whose recorded source URL matches this exact photograph.
+  const managed = (verifiedImageCopies as Record<string, string>)[src];
   const proxy = deliveryUrl(src);
-  const resolvedSrc = mode === "proxy" ? proxy : src;
+  const sources = Array.from(new Set([managed, src, proxy].filter(Boolean)));
+  const resolvedSrc = sources.find((source) => !failedSources.includes(source));
 
-  if (mode === "failed") {
+  if (!resolvedSrc) {
     return <span className="absolute inset-0 flex items-center justify-center bg-[#faf8fc] px-2 text-center text-xs text-slate-400">Image unavailable</span>;
   }
 
   return (
     <Image
-      key={`${resolvedSrc}-${mode}`}
+      key={resolvedSrc}
       src={resolvedSrc}
       alt={alt}
       fill
-      unoptimized={manufacturer || mode === "proxy"}
-      quality={100}
+      unoptimized={isManufacturerImage(resolvedSrc) || (proxy !== src && resolvedSrc === proxy)}
+      quality={90}
       sizes={`${size}px`}
       className={className}
       onError={() => {
-        if (manufacturer && mode === "direct" && proxy !== src) {
-          setMode("proxy");
-          return;
-        }
-        setMode("failed");
+        setFailedSources((current) => current.includes(resolvedSrc) ? current : [...current, resolvedSrc]);
       }}
     />
   );

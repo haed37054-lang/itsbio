@@ -12,6 +12,7 @@ export default function FloatingQuoteButton() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [configuration, setConfiguration] = useState("");
   const [done, setDone] = useState<null | "ok" | "fail">(null);
   const [errorMsg, setErrorMsg] = useState("");
   const panelRef = useRef<HTMLDivElement | null>(null);
@@ -50,6 +51,32 @@ export default function FloatingQuoteButton() {
     pendingProductRef.current = "";
     pendingCatNoRef.current = "";
   }, [pathname]);
+
+  // Product pages expose the selected model on one scoped element. Observe only
+  // that metadata while the panel is open, preserving the visitor's other fields.
+  useEffect(() => {
+    if (!open) {
+      setConfiguration("");
+      return;
+    }
+    const context = document.querySelector<HTMLElement>("[data-quote-context='product']");
+    if (!context) {
+      setConfiguration("");
+      return;
+    }
+    const syncSelection = () => {
+      if (productRef.current) productRef.current.value = context.dataset.productName || "";
+      if (catNoRef.current) catNoRef.current.value = context.dataset.catNo || "";
+      setConfiguration(context.dataset.productModel || "");
+    };
+    syncSelection();
+    const observer = new MutationObserver(syncSelection);
+    observer.observe(context, {
+      attributes: true,
+      attributeFilter: ["data-product-name", "data-cat-no", "data-product-model"],
+    });
+    return () => observer.disconnect();
+  }, [open, pathname]);
 
   function pageProductName() {
     const explicit = document.querySelector<HTMLElement>("[data-product-name]")?.dataset.productName?.trim();
@@ -120,6 +147,7 @@ export default function FloatingQuoteButton() {
       phone: String(form.get("phone") ?? ""),
       product: String(form.get("product") ?? ""),
       catNo: String(form.get("catNo") ?? ""),
+      configuration: String(form.get("configuration") ?? ""),
       message: String(form.get("message") ?? ""),
       privacyAccepted: form.get("privacyAccepted") === "on",
       website: String(form.get("website") ?? ""),
@@ -153,6 +181,7 @@ export default function FloatingQuoteButton() {
         `Phone: ${payload.phone}`,
         `Product name: ${payload.product}`,
         `Cat No: ${payload.catNo}`,
+        ...(payload.configuration ? [`Model / specification: ${payload.configuration}`] : []),
         "",
         payload.message,
       ].join("\n");
@@ -176,13 +205,12 @@ export default function FloatingQuoteButton() {
             type="button"
             aria-label="Close quote form"
             onClick={() => setOpen(false)}
-            className="fixed inset-0 z-[69] bg-slate-950/20 backdrop-blur-[1px] md:bg-transparent md:backdrop-blur-none"
+            className="fixed inset-0 z-[69] bg-slate-950/20 backdrop-blur-[1px] md:hidden"
           />
 
           <div
             ref={panelRef}
             role="dialog"
-            aria-modal="true"
             aria-label="Request a Quote"
             className="fixed inset-x-3 bottom-3 z-[70] max-h-[calc(100vh-24px)] overflow-y-auto rounded-3xl border border-slate-200 bg-white shadow-[0_24px_80px_rgba(15,23,42,0.22)] md:inset-x-auto md:bottom-7 md:right-7 md:w-[430px]"
           >
@@ -220,6 +248,11 @@ export default function FloatingQuoteButton() {
                   <span className={labelClass}>CAT.NO</span>
                   <input ref={catNoRef} name="catNo" className={inputClass} placeholder="Catalog number" />
                 </label>
+                {configuration ? <div className="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3">
+                  <p className={labelClass}>MODEL / SPECIFICATION</p>
+                  <p className="text-sm leading-6 text-slate-700">{configuration}</p>
+                </div> : null}
+                <input type="hidden" name="configuration" value={configuration} />
               </div>
 
               <textarea

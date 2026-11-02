@@ -1,6 +1,9 @@
 "use client";
 
 import Link from "next/link";
+import seedburoNavigation from "@/data/seedburo/navigation.json";
+import aimsNavigation from "@/data/aims/navigation.json";
+import affinityNavigation from "@/data/affinityimmuno/navigation.json";
 import { useEffect, useMemo, useRef, useState } from "react";
 
 type MenuLink = { label: string; href: string };
@@ -58,7 +61,7 @@ const BRANDS: BrandMenu[] = [
           { label: "Surgery", href: "/products/kent/surgery" },
           { label: "Warming", href: "/products/kent/warming" },
           { label: "Rodent Identification", href: "/products/kent/rodent-identification" },
-          { label: "Animal Handling", href: "/products/kent/animal-handling" },
+          { label: "Animal Handling", href: "/products/kent/laboratory-animal-handling" },
           { label: "Feeding Needles", href: "/products/kent/feeding-needles" },
         ],
       },
@@ -111,10 +114,10 @@ const BRANDS: BrandMenu[] = [
     key: "aims",
     name: "AIMS",
     area: "Animal Identification",
-    description: "Identification systems and accessories for laboratory animal research.",
-    href: "/products#brands",
+    description: "Laboratory animal tattoo systems and ATS-3 upgrade packages.",
+    href: "/products/aims",
     searchKey: "aims",
-    categories: ["Lab Animal Identification System", "AIMS Accessories"],
+    sections: aimsNavigation,
     dotClass: "bg-sky-600",
     accentClass: "text-sky-700",
   },
@@ -123,9 +126,9 @@ const BRANDS: BrandMenu[] = [
     name: "Seedburo",
     area: "Agricultural Research",
     description: "Seed, grain, moisture, germination, cleaning, and agricultural quality testing instruments.",
-    href: "/products#brands",
+    href: "/products/seedburo",
     searchKey: "seedburo",
-    categories: ["Divider", "Density Measurement", "Sieve Shakers", "Seed Counting & Analysis", "Grinders & Mills", "Moisture Testers", "Germination Equipment", "Grain & Seed Cleaners"],
+    sections: [{ label: "Product categories", links: seedburoNavigation.categories.map((item) => ({ label: item.title, href: `/products/seedburo/${item.handle}` })) }],
     dotClass: "bg-green-600",
     accentClass: "text-green-700",
   },
@@ -164,12 +167,12 @@ const BRANDS: BrandMenu[] = [
   },
   {
     key: "affinity",
-    name: "Affinity Immuno",
+    name: "AffinityImmuno",
     area: "Immunoassays",
     description: "Immunoassay products and antibody solutions for life science and diagnostic research.",
-    href: "/products#brands",
+    href: "/products/affinity",
     searchKey: "affinityimmuno",
-    categories: ["ELISA", "Antibodies", "COVID-19", "IgEasY"],
+    sections: affinityNavigation,
     dotClass: "bg-cyan-500",
     accentClass: "text-sky-700",
   },

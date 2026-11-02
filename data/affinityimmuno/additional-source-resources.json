@@ -1,0 +1,18 @@
+{
+  "gcsf-pharmacokinetic-elisa-el-1611-73196": {
+    "documents": [
+      {"url":"https://affinityimmuno.com/wp-content/uploads/2022/05/EL-1611-73196-GCSF-PK-PRODUCT-SHEET.pdf","label":"EL-1611-73196 Product Sheet"},
+      {"url":"https://affinityimmuno.com/wp-content/uploads/2024/11/Filgrastim-PK-White-Paper.pdf","label":"Filgrastim PK White Paper"}
+    ]
+  },
+  "peg-filgrastim-granulocyte-colony-stimulating-factor-g-csf-or-gcsf-el-1611-73196-peg-gcsf-pk": {
+    "documents": [
+      {"url":"https://affinityimmuno.com/wp-content/uploads/2023/04/EL-1611-73196-PEG-GCSF-PK-PRODUCT-SHEET.pdf","label":"GCSF-PEG Pharmacokinetic ELISA Product Sheet"}
+    ]
+  },
+  "tocilizumab-actemra-immunogenicity-elisa-catalog-el-141-202": {
+    "documents": [
+      {"url":"https://affinityimmuno.com/wp-content/uploads/2020/10/EL-141-202-Actemra-ADA-PRODUCT-SHEET.pdf","label":"EL-141-202 Product Sheet"}
+    ]
+  }
+}

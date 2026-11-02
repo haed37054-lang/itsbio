@@ -1,0 +1,18 @@
+{
+  "antibody": {
+    "url": "/affinityimmuno/antibody-reference.jpg",
+    "sourceUrl": "https://affinityimmuno.com/images/affinityimmuno-generic-antibody-product.jpg",
+    "alt": "AffinityImmuno manufacturer antibody product image",
+    "width": 800,
+    "height": 534,
+    "reference": true
+  },
+  "elisa": {
+    "url": "/affinityimmuno/elisa-reference.jpg",
+    "sourceUrl": "https://affinityimmuno.com/images/affinityimmuno-generic-elisa-kit-product.jpg",
+    "alt": "AffinityImmuno manufacturer ELISA kit product image",
+    "width": 1200,
+    "height": 800,
+    "reference": true
+  }
+}

@@ -116,7 +116,7 @@ const BRANDS: Brand[] = [
     eyebrow: "IMMUNOASSAYS",
     description: "Immunoassay products and antibody solutions for life science and diagnostic research workflows.",
     href: "/products/affinity",
-    tags: ["ELISA", "Antibodies", "IgEasY"],
+    tags: ["ELISA Kits", "Antibodies", "Isotype Controls"],
   },
   {
     key: "dogen",

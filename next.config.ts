@@ -8,6 +8,9 @@ const nextConfig: NextConfig = {
   images: {
     qualities: [75, 85, 90],
     remotePatterns: [
+      { protocol: "https", hostname: "animalid.com", pathname: "/wp-content/uploads/**" },
+      { protocol: "https", hostname: "cdn.shopify.com", pathname: "/s/files/1/0070/8041/1191/**" },
+      { protocol: "https", hostname: "seedburo.com", pathname: "/cdn/shop/**" },
       {
         protocol: "https",
         hostname: "cdn.sanity.io",
@@ -66,6 +69,18 @@ const nextConfig: NextConfig = {
     });
 
     return [
+      { source: "/products/affinityimmuno/:path*", destination: "/products/affinity/:path*", permanent: true },
+      {
+        source: "/products/kent/laboratory-animal-handling",
+        has: [{ type: "query", key: "view", value: "products" }],
+        destination: "/products/kent/laboratory-animal-handling/all-products",
+        permanent: false,
+      },
+      {
+        source: "/products/kent/animal-handling",
+        destination: "/products/kent/laboratory-animal-handling",
+        permanent: true,
+      },
       {
         source: "/products/abm/general-materials/gel-documentation/dna-stains",
         destination: "/products/abm/general-materials/gel-documentation#safeview-dna-stains",

@@ -1,0 +1,659 @@
+[
+  {
+    "sku": "EL-1611-32214",
+    "slug": "el-1611-32214",
+    "title": "SARS-CoV-2 surrogate Virus Neutralizing Test (sVNT) (spike protein/ ACE2 ligand binding assay) COVID-19 sVNT",
+    "kind": "elisa",
+    "target": "Neutralizing antibodies",
+    "summary": "Quantification of neutralizing antibodies",
+    "unit": "1X96 wells",
+    "host": "",
+    "targetSpecies": "human",
+    "clone": "",
+    "isotype": "",
+    "clonality": "",
+    "applications": "Quantification of neutralizing antibodies",
+    "categories": [
+      "elisas",
+      "covid-19"
+    ],
+    "specifications": [
+      [
+        "Size",
+        "1X96 wells"
+      ],
+      [
+        "Storage",
+        "-20C, 1 year"
+      ],
+      [
+        "Antigen",
+        "Neutralizing antibodies"
+      ],
+      [
+        "Reactivity",
+        "human"
+      ],
+      [
+        "Method",
+        "Competitive ELISA"
+      ],
+      [
+        "Detection method",
+        "Peroxidase / OD450"
+      ],
+      [
+        "Application",
+        "Quantification of neutralizing antibodies"
+      ],
+      [
+        "Plate format",
+        "Strip"
+      ],
+      [
+        "Sample type",
+        "Serum Plasma"
+      ],
+      [
+        "Sample volume",
+        "40 uL"
+      ],
+      [
+        "Assay time",
+        "2.5 hours"
+      ],
+      [
+        "Specificity",
+        "SARS-CoV-2 neutralizing antibodies"
+      ],
+      [
+        "Assay precision",
+        "<10%, <10%"
+      ],
+      [
+        "Preservative",
+        "none"
+      ]
+    ],
+    "descriptionHtml": "",
+    "background": "Neutralizing antibodies develop in some patients to varying degrees following infection with SARS-CoV-2",
+    "components": [
+      "Coated microtiter plate, 96 wells",
+      "Calibrators (250 uL) - 0%, 20%, 40%, 60%, 80%, 100% inhibition ",
+      "10X wash buffer - 50ml",
+      "Assay buffer - 50ml",
+      "1000X detection reagent - 150 ul",
+      "TMB - 12ml",
+      "TMB stop solution - 12ml",
+      "Plate sealers - 3"
+    ],
+    "protocolSections": [
+      {
+        "title": "Assay principle",
+        "body": "This is a competitive ELISA that measures COVID19 neutralizing antibodies in human sera and plasma that prevents the binding of viral spike protein to its ACE2 receptor target."
+      },
+      {
+        "title": "Reagent preparation",
+        "body": "Prepare only the appropriate amount of required reagent on the day of use. Store all reagents as per instructions stated on the label."
+      },
+      {
+        "title": "Results calculation",
+        "body": "1. Neutralizing antibodies will vary in terms of concentration and affinity, this assay provides a qualitative readout. As such the user should use the comparable positive controls inhibitory controls when comparing interassay results. The provided controls are tested for comparability between lots and can be traced. 2. The protein titers in the test samples will fall in the range of high, medium, low or negative. We recommend each lab develop their own statistical cutpoint using methodologies as described by G. Shankar, et al. (2008). (Recommendations for the validation of immunoassays used for detection of host antibodies against biotechnology products. J. Pharmaceutical and Biomedical Analysis 48:1267–1281). 3. Any sample undiluted or diluted still reading greater than the highest standard should be diluted appropriately with assay buffer and retested. If the samples have been diluted, the concentration determined from the standard curve must be multiplied by the dilution factor."
+      },
+      {
+        "title": "Sample collection",
+        "body": "This kit is compatible with EDTA-plasma, heparinplasma and serum samples. Samples can be stored at or below -20°C for up to 1 year."
+      },
+      {
+        "title": "Sample preparation",
+        "body": "Samples are used neat."
+      }
+    ],
+    "images": [],
+    "documents": [
+      {
+        "url": "/affinityimmuno/609dbf65d0ca766a.pdf",
+        "sourceUrl": "https://affinityimmuno.com/wp-content/uploads/2020/10/EL-1611-32214-Product-sheet-Covid-virus-neutralization.pdf",
+        "label": "EL-1611-32214 Product Sheet"
+      }
+    ],
+    "relatedSkus": [],
+    "sourceUrl": "",
+    "sourceVerified": false,
+    "sourceRows": [
+      {
+        "sheet": "ELISAs",
+        "row": 24
+      }
+    ]
+  },
+  {
+    "sku": "ab-131-437",
+    "slug": "ab-131-437",
+    "title": "Human IgG3 Isotype Control",
+    "kind": "antibody",
+    "target": "Human IgG3 Isotype Control",
+    "summary": "Human IgG3 Isotype Control",
+    "unit": "500 µg",
+    "host": "Human HEK-293",
+    "targetSpecies": "Human",
+    "clone": "MOPC21.3",
+    "isotype": "Human IgG3",
+    "clonality": "monoclonal",
+    "applications": "FC, Functional Assays",
+    "categories": [
+      "antibodies",
+      "human-targets",
+      "isotype-controls"
+    ],
+    "specifications": [
+      [
+        "Antibody target",
+        "Human IgG3 Isotype Control"
+      ],
+      [
+        "Application",
+        "FC, Functional Assays"
+      ],
+      [
+        "Size",
+        "500 µg"
+      ],
+      [
+        "Storage",
+        "-20°C long term or 4°C for up to 1 month"
+      ],
+      [
+        "Target protein",
+        "Human IgG3 Isotype Control"
+      ],
+      [
+        "Clone",
+        "MOPC21.3"
+      ],
+      [
+        "Clonality",
+        "monoclonal"
+      ],
+      [
+        "Isotype",
+        "Human IgG3"
+      ],
+      [
+        "Host species",
+        "Human HEK-293"
+      ],
+      [
+        "Target species",
+        "Human"
+      ],
+      [
+        "Formulation",
+        "PBS, pH7.0"
+      ],
+      [
+        "Concentration",
+        "2 mg/mL"
+      ]
+    ],
+    "descriptionHtml": "",
+    "background": "",
+    "components": [],
+    "protocolSections": [],
+    "images": [],
+    "documents": [],
+    "relatedSkus": [],
+    "sourceUrl": "",
+    "sourceVerified": false,
+    "sourceRows": [
+      {
+        "sheet": "Antibodies",
+        "row": 180
+      }
+    ]
+  },
+  {
+    "sku": "ab-131-294",
+    "slug": "ab-131-294",
+    "title": "Affinity Purified SARS-COV-2 Spike S2 Domain Antibody",
+    "kind": "antibody",
+    "target": "COVID",
+    "summary": "COVID",
+    "unit": "100 µg",
+    "host": "chicken",
+    "targetSpecies": "",
+    "clone": "",
+    "isotype": "IgY",
+    "clonality": "polyclonal",
+    "applications": "",
+    "categories": [
+      "antibodies",
+      "covid-19"
+    ],
+    "specifications": [
+      [
+        "Antibody target",
+        "Affinity purified SARS-COV-2 Spike protein (S2 domain specific)"
+      ],
+      [
+        "Size",
+        "100 µg"
+      ],
+      [
+        "Storage",
+        "3 months and -20°C for one year"
+      ],
+      [
+        "Target protein",
+        "COVID"
+      ],
+      [
+        "Alternative names",
+        "SARS-CoV-2"
+      ],
+      [
+        "Clonality",
+        "polyclonal"
+      ],
+      [
+        "Isotype",
+        "IgY"
+      ],
+      [
+        "Host species",
+        "chicken"
+      ],
+      [
+        "Formulation",
+        "PBS"
+      ],
+      [
+        "Concentration",
+        "1 mg/mL"
+      ]
+    ],
+    "descriptionHtml": "",
+    "background": "",
+    "components": [],
+    "protocolSections": [],
+    "images": [],
+    "documents": [],
+    "relatedSkus": [],
+    "sourceUrl": "",
+    "sourceVerified": false,
+    "sourceRows": [
+      {
+        "sheet": "Antibodies",
+        "row": 182
+      }
+    ]
+  },
+  {
+    "sku": "ab-131-294-gold",
+    "slug": "ab-131-294-gold",
+    "title": "Gold Conjugated Affinity Purified SARS-COV-2 Spike S2 Domain Antibody",
+    "kind": "antibody",
+    "target": "COVID",
+    "summary": "COVID",
+    "unit": "100 µL",
+    "host": "chicken",
+    "targetSpecies": "",
+    "clone": "",
+    "isotype": "IgY",
+    "clonality": "polyclonal",
+    "applications": "",
+    "categories": [
+      "antibodies",
+      "covid-19"
+    ],
+    "specifications": [
+      [
+        "Antibody target",
+        "Affinity purified SARS-COV-2 Spike protein (S2 domain specific) - Gold conjugate (40nM)"
+      ],
+      [
+        "Size",
+        "100 µL"
+      ],
+      [
+        "Storage",
+        "3 months and -20°C for one year"
+      ],
+      [
+        "Target protein",
+        "COVID"
+      ],
+      [
+        "Alternative names",
+        "SARS-CoV-2"
+      ],
+      [
+        "Clonality",
+        "polyclonal"
+      ],
+      [
+        "Isotype",
+        "IgY"
+      ],
+      [
+        "Host species",
+        "chicken"
+      ],
+      [
+        "Formulation",
+        "PBS, 1% BSA and 0.025% tween with 0.02% sodium azide"
+      ]
+    ],
+    "descriptionHtml": "",
+    "background": "",
+    "components": [],
+    "protocolSections": [],
+    "images": [],
+    "documents": [],
+    "relatedSkus": [],
+    "sourceUrl": "",
+    "sourceVerified": false,
+    "sourceRows": [
+      {
+        "sheet": "Antibodies",
+        "row": 183
+      }
+    ]
+  },
+  {
+    "sku": "ab-131-294-hrp",
+    "slug": "ab-131-294-hrp",
+    "title": "HRP Conjugated Affinity Purified SARS-COV-2 Spike S2 Domain Antibody",
+    "kind": "antibody",
+    "target": "COVID",
+    "summary": "COVID",
+    "unit": "100 µg",
+    "host": "chicken",
+    "targetSpecies": "",
+    "clone": "",
+    "isotype": "IgY",
+    "clonality": "polyclonal",
+    "applications": "",
+    "categories": [
+      "antibodies",
+      "covid-19"
+    ],
+    "specifications": [
+      [
+        "Antibody target",
+        "Affinity purified SARS-COV-2 Spike protein (S2 domain specific) - HRP conjugate"
+      ],
+      [
+        "Size",
+        "100 µg"
+      ],
+      [
+        "Storage",
+        "3 months and -20°C for one year"
+      ],
+      [
+        "Target protein",
+        "COVID"
+      ],
+      [
+        "Alternative names",
+        "SARS-CoV-2"
+      ],
+      [
+        "Clonality",
+        "polyclonal"
+      ],
+      [
+        "Isotype",
+        "IgY"
+      ],
+      [
+        "Host species",
+        "chicken"
+      ],
+      [
+        "Formulation",
+        "PBS with 0.02% sodium azide"
+      ],
+      [
+        "Concentration",
+        "1 mg/mL"
+      ]
+    ],
+    "descriptionHtml": "",
+    "background": "",
+    "components": [],
+    "protocolSections": [],
+    "images": [],
+    "documents": [],
+    "relatedSkus": [],
+    "sourceUrl": "",
+    "sourceVerified": false,
+    "sourceRows": [
+      {
+        "sheet": "Antibodies",
+        "row": 184
+      }
+    ]
+  },
+  {
+    "sku": "ab-131-295-PAIR",
+    "slug": "ab-131-295-pair",
+    "title": "5 Kits - COVID-19 Spike Capture and Detection (HRP conjugate) ELISA pair with calibrator",
+    "kind": "antibody",
+    "target": "COVID",
+    "summary": "COVID",
+    "unit": "5 kits",
+    "host": "capture - rabbit, detection - chicken",
+    "targetSpecies": "",
+    "clone": "",
+    "isotype": "IgY",
+    "clonality": "polyclonal",
+    "applications": "",
+    "categories": [
+      "antibodies",
+      "covid-19"
+    ],
+    "specifications": [
+      [
+        "Antibody target",
+        "Antibody pair for capture and detection of SARS-COV-2 spike protein"
+      ],
+      [
+        "Size",
+        "5 kits"
+      ],
+      [
+        "Storage",
+        "3 months and -20°C for one year"
+      ],
+      [
+        "Target protein",
+        "COVID"
+      ],
+      [
+        "Alternative names",
+        "SARS-CoV-2"
+      ],
+      [
+        "Clonality",
+        "polyclonal"
+      ],
+      [
+        "Isotype",
+        "IgY"
+      ],
+      [
+        "Host species",
+        "capture - rabbit, detection - chicken"
+      ]
+    ],
+    "descriptionHtml": "",
+    "background": "",
+    "components": [],
+    "protocolSections": [],
+    "images": [],
+    "documents": [],
+    "relatedSkus": [],
+    "sourceUrl": "",
+    "sourceVerified": false,
+    "sourceRows": [
+      {
+        "sheet": "Antibodies",
+        "row": 185
+      }
+    ]
+  },
+  {
+    "sku": "ab-131-296",
+    "slug": "ab-131-296",
+    "title": "Affinity Purified SARS-COV-2 (Covid-19, 2019-nCov) Nucleocapsid Antibody",
+    "kind": "antibody",
+    "target": "COVID - Nucleocapsid",
+    "summary": "COVID - Nucleocapsid",
+    "unit": "100 µg",
+    "host": "chicken",
+    "targetSpecies": "",
+    "clone": "",
+    "isotype": "IgY",
+    "clonality": "polyclonal",
+    "applications": "",
+    "categories": [
+      "antibodies",
+      "covid-19"
+    ],
+    "specifications": [
+      [
+        "Antibody target",
+        "SARS-COV-2 Spike protein"
+      ],
+      [
+        "Size",
+        "100 µg"
+      ],
+      [
+        "Storage",
+        "1 months at 4°C and -20°C for one year"
+      ],
+      [
+        "Target protein",
+        "COVID - Nucleocapsid"
+      ],
+      [
+        "Alternative names",
+        "SARS-CoV-2"
+      ],
+      [
+        "Clonality",
+        "polyclonal"
+      ],
+      [
+        "Isotype",
+        "IgY"
+      ],
+      [
+        "Host species",
+        "chicken"
+      ],
+      [
+        "Formulation",
+        "PBS, Azide (0.02%)"
+      ],
+      [
+        "Concentration",
+        "1 mg/mL"
+      ]
+    ],
+    "descriptionHtml": "",
+    "background": "",
+    "components": [],
+    "protocolSections": [],
+    "images": [],
+    "documents": [],
+    "relatedSkus": [],
+    "sourceUrl": "",
+    "sourceVerified": false,
+    "sourceRows": [
+      {
+        "sheet": "Antibodies",
+        "row": 186
+      }
+    ]
+  },
+  {
+    "sku": "ab-131-430",
+    "slug": "ab-131-430",
+    "title": "Mouse IgG1 Isotype Control",
+    "kind": "antibody",
+    "target": "Mouse IgG1 Isotype Control",
+    "summary": "Mouse IgG1 Isotype Control",
+    "unit": "500 µg",
+    "host": "Mouse",
+    "targetSpecies": "",
+    "clone": "HKSP84",
+    "isotype": "IgG1",
+    "clonality": "monoclonal",
+    "applications": "",
+    "categories": [
+      "antibodies",
+      "isotype-controls"
+    ],
+    "specifications": [
+      [
+        "Antibody target",
+        "Mouse IgG1 Isotype Control"
+      ],
+      [
+        "Size",
+        "500 µg"
+      ],
+      [
+        "Storage",
+        "-20°C long term or 4°C for up to 1 month"
+      ],
+      [
+        "Target protein",
+        "Mouse IgG1 Isotype Control"
+      ],
+      [
+        "Clone",
+        "HKSP84"
+      ],
+      [
+        "Clonality",
+        "monoclonal"
+      ],
+      [
+        "Isotype",
+        "IgG1"
+      ],
+      [
+        "Host species",
+        "Mouse"
+      ],
+      [
+        "Formulation",
+        "PBS, pH7.0"
+      ],
+      [
+        "Concentration",
+        "2 mg/mL"
+      ]
+    ],
+    "descriptionHtml": "",
+    "background": "",
+    "components": [],
+    "protocolSections": [],
+    "images": [],
+    "documents": [],
+    "relatedSkus": [],
+    "sourceUrl": "",
+    "sourceVerified": false,
+    "sourceRows": [
+      {
+        "sheet": "Antibodies",
+        "row": 195
+      }
+    ]
+  }
+]

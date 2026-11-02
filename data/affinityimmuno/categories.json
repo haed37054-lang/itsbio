@@ -1,0 +1,72 @@
+[
+  {
+    "slug": "elisas",
+    "title": "ELISA Kits",
+    "parent": "",
+    "kind": "elisa",
+    "count": 19
+  },
+  {
+    "slug": "pharmacokinetic-elisas",
+    "title": "Pharmacokinetic ELISAs",
+    "parent": "elisas",
+    "kind": "elisa",
+    "count": 10
+  },
+  {
+    "slug": "immunogenicity-elisas",
+    "title": "Immunogenicity / ADA ELISAs",
+    "parent": "elisas",
+    "kind": "elisa",
+    "count": 8
+  },
+  {
+    "slug": "antibodies",
+    "title": "Antibodies",
+    "parent": "",
+    "kind": "antibody",
+    "count": 198
+  },
+  {
+    "slug": "human-targets",
+    "title": "Human Targets",
+    "parent": "antibodies",
+    "kind": "antibody",
+    "count": 88
+  },
+  {
+    "slug": "mouse-targets",
+    "title": "Mouse Targets",
+    "parent": "antibodies",
+    "kind": "antibody",
+    "count": 99
+  },
+  {
+    "slug": "anti-idiotype",
+    "title": "Anti-Idiotype Antibodies",
+    "parent": "antibodies",
+    "kind": "antibody",
+    "count": 3
+  },
+  {
+    "slug": "biosimilars",
+    "title": "Biosimilars",
+    "parent": "antibodies",
+    "kind": "antibody",
+    "count": 33
+  },
+  {
+    "slug": "isotype-controls",
+    "title": "Isotype Controls",
+    "parent": "antibodies",
+    "kind": "antibody",
+    "count": 14
+  },
+  {
+    "slug": "covid-19",
+    "title": "COVID-19 Research Products",
+    "parent": "",
+    "kind": "",
+    "count": 6
+  }
+]

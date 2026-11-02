@@ -1,4 +1,5 @@
 import { exactAimsModel, searchAimsProducts, aimsProductHref } from "@/lib/aims/catalog";
+import { exactAffinityProduct, searchAffinityProducts, affinityProductHref } from "@/lib/affinityimmuno/catalog";
 import Link from "next/link";
 import { exactSeedburoProducts, searchSeedburoProducts, seedburoPrimarySku, seedburoProductHref } from "@/lib/seedburo/catalog";
 import { redirect } from "next/navigation";
@@ -144,6 +145,7 @@ const BRAND_ALIASES: Record<string, { key: string; label: string }> = {
   cellfreesciences: { key: "cellfreesciences", label: "CellFree Sciences" },
   plaslabs: { key: "plaslabs", label: "PLAS-LABS" },
   affinityimmuno: { key: "affinityimmuno", label: "Affinity Immuno" },
+  affinity: { key: "affinityimmuno", label: "AffinityImmuno" },
   dogen: { key: "dogen", label: "DoGen" },
 };
 
@@ -407,11 +409,13 @@ export default async function SearchPage({
   const catalogNumber = normalizeCatalogNumber(q);
   const exactSeedburo = exactSeedburoProducts(catalogNumber);
   const exactAims = exactAimsModel(catalogNumber);
+  const exactAffinity = exactAffinityProduct(catalogNumber);
+  if ((!selectedBrand || selectedBrand === "affinityimmuno") && exactAffinity) redirect(affinityProductHref(exactAffinity));
   if (selectedBrand === "aims" && exactAims) redirect(exactAims.href);
   if (selectedBrand === "seedburo" && exactSeedburo.length === 1) {
     redirect(`${seedburoProductHref(exactSeedburo[0])}#model-${encodeURIComponent(catalogNumber)}`);
   }
-  if (selectedBrand !== "seedburo" && selectedBrand !== "aims" && (isCatalogNumberCandidate(catalogNumber) || exactAims)) {
+  if (!["seedburo", "aims", "affinityimmuno"].includes(selectedBrand) && (isCatalogNumberCandidate(catalogNumber) || exactAims)) {
     const [exactDocs, stagedProduct, stagedService] = await Promise.all([
       sanityCdnClient.fetch<ExactCatalogMatch[]>(FIND_EXACT_CATALOG_NUMBER, { catalogNumber }, PUBLIC_CATALOG_CACHE),
       getAbmStagedRecord("product", catalogNumber),
@@ -483,7 +487,7 @@ export default async function SearchPage({
 
   const safeMatch = q.replace(/\*/g, "");
   const match = `*${safeMatch}*`;
-  const [liveRows, stagedChunks] = ["seedburo", "aims"].includes(selectedBrand) ? [[], []] : await Promise.all([
+  const [liveRows, stagedChunks] = ["seedburo", "aims", "affinityimmuno"].includes(selectedBrand) ? [[], []] : await Promise.all([
     sanityCdnClient.fetch<LiveSearchRow[]>(LIVE_SEARCH_QUERY, { match }, PUBLIC_CATALOG_CACHE),
     sanityCdnClient.fetch<StagedSearchChunk[]>(
       ABM_STAGED_SEARCH_QUERY,
@@ -494,6 +498,10 @@ export default async function SearchPage({
 
   const results: SearchResult[] = [];
   if (exactMissingVectorResult) results.push(exactMissingVectorResult);
+
+  for (const product of searchAffinityProducts(q)) {
+    results.push({id:`affinity:${product.sku}`,title:product.title,sku:product.sku,description:product.summary || undefined,brandKey:"affinityimmuno",brandLabel:"AffinityImmuno",href:affinityProductHref(product),kind:"Product",direct:true,score:scoreMatch(product.title,product.sku,q)+3});
+  }
 
   for (const row of Array.isArray(liveRows) ? liveRows : []) {
     const title = stringValue(row.title);

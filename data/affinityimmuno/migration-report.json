@@ -1,0 +1,133 @@
+{
+  "sourceFilename": "2026_AffinityImmuno ELISA and Antibody products ITSBio.xlsx",
+  "sourceSha256": "98ee873234e1a8c4e4a130bc7fe9a523edbf33677814e9b4fb3d2e394646022e",
+  "products": 217,
+  "elisas": 19,
+  "antibodies": 198,
+  "duplicatesRemoved": [
+    {
+      "sku": "EL-141-73196",
+      "sheet": "ELISAs",
+      "row": 22
+    },
+    {
+      "sku": "EL-141-878",
+      "sheet": "ELISAs",
+      "row": 23
+    }
+  ],
+  "verifiedPages": 209,
+  "uniqueImageProducts": 7,
+  "documentProducts": 19,
+  "conflicts": [
+    {
+      "sku": "EL-141-73196",
+      "field": "Application",
+      "workbook": "Quantification of antibodies to G-CSF",
+      "website": "Measure anti-GCSF antibodies"
+    },
+    {
+      "sku": "EL-141-73196",
+      "field": "Storage",
+      "workbook": "-20C, 1 year",
+      "website": "Stable at -20°C"
+    },
+    {
+      "sku": "EL-141-878",
+      "field": "Application",
+      "workbook": "Quantification of antibodies to hGH",
+      "website": "Measure anti-hGH antibodies"
+    },
+    {
+      "sku": "EL-141-878",
+      "field": "Storage",
+      "workbook": "-20C, 1 year",
+      "website": "Stable at -20°C"
+    },
+    {
+      "sku": "EL-1611-202",
+      "field": "Assay principle",
+      "resolution": "Omitted unrelated Trastuzumab sentence from Tocilizumab entry; original retained in workbook-input.json"
+    },
+    {
+      "sku": "EL-141-PEG-hIGM",
+      "field": "Storage",
+      "workbook": "-20C, 1 year",
+      "website": "Stable at -20°C for 1 year"
+    },
+    {
+      "sku": "EL-141-PEG-hIGG",
+      "field": "Storage",
+      "workbook": "-20C, 1 year",
+      "website": "Stable at -20°C for 1 year"
+    },
+    {
+      "sku": "EL-141-PEG-mIGG",
+      "field": "Storage",
+      "workbook": "-20C, 1 year",
+      "website": "Stable at -20°C for 1 year"
+    },
+    {
+      "sku": "EL-141-PEG-mIGM",
+      "field": "Storage",
+      "workbook": "-20C, 1 year",
+      "website": "Stable at -20°C for 1 year"
+    },
+    {
+      "sku": "ab-131-126",
+      "field": "Clone",
+      "workbook": "2.4300000000000002",
+      "website": "2.43"
+    }
+  ],
+  "errors": [
+    {
+      "sku": "EL-1611-32214",
+      "sourcePage": "https://affinityimmuno.com/product/sars-cov-2-surrogate-virus-neutralizing-test-svnt-spike-protein-ace2-ligand-binding-assay-covid-19-svntcatalog-el-1611-32214/",
+      "status": 404,
+      "reason": "No current page with matching Cat.No; workbook retained"
+    },
+    {
+      "sku": "ab-131-437",
+      "sourcePage": "https://affinityimmuno.com/product/ab-131-437-human-igg3-isotype-control/",
+      "status": 404,
+      "reason": "No current page with matching Cat.No; workbook retained"
+    },
+    {
+      "sku": "ab-131-294",
+      "sourcePage": "https://affinityimmuno.com/product/affinity-purified-sars-cov-2-spike-s2-domain-antibody/",
+      "status": 404,
+      "reason": "No current page with matching Cat.No; workbook retained"
+    },
+    {
+      "sku": "ab-131-294-gold",
+      "sourcePage": "https://affinityimmuno.com/product/gold-conjugated-affinity-purified-sars-cov-2-spike-s2-domain-antibody/",
+      "status": 404,
+      "reason": "No current page with matching Cat.No; workbook retained"
+    },
+    {
+      "sku": "ab-131-294-hrp",
+      "sourcePage": "https://affinityimmuno.com/product/hrp-conjugated-affinity-purified-sars-cov-2-spike-s2-domain-antibody/",
+      "status": 404,
+      "reason": "No current page with matching Cat.No; workbook retained"
+    },
+    {
+      "sku": "ab-131-295-PAIR",
+      "sourcePage": "https://affinityimmuno.com/product/covid-19-spike-capture-and-detection-hrp-conjugate-elisa-pair-with-calibrator/",
+      "status": 404,
+      "reason": "No current page with matching Cat.No; workbook retained"
+    },
+    {
+      "sku": "ab-131-296",
+      "sourcePage": "https://affinityimmuno.com/product/affinity-purified-sars-cov-2-covid-19-2019-ncov-nucleocapsid-antibody/",
+      "status": 404,
+      "reason": "No current page with matching Cat.No; workbook retained"
+    },
+    {
+      "sku": "ab-131-430",
+      "sourcePage": "https://affinityimmuno.com/product/mouse-igg1-isotype-control-2/",
+      "status": 200,
+      "reason": "No current page with matching Cat.No; workbook retained"
+    }
+  ]
+}

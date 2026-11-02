@@ -3,6 +3,7 @@
 import Link from "next/link";
 import seedburoNavigation from "@/data/seedburo/navigation.json";
 import aimsNavigation from "@/data/aims/navigation.json";
+import affinityNavigation from "@/data/affinityimmuno/navigation.json";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { ABM_GENERAL_MENU_ITEMS } from "@/lib/abm/general-navigation";
 
@@ -64,6 +65,7 @@ const CLEAVER_CATEGORY_HREFS: Record<string, string> = {
 };
 
 function productCategoryHref(brand: Brand, category: string) {
+  if (brand.key === "affinity") return affinityNavigation.flatMap(section=>section.links).find(item=>item.label===category)?.href || brand.href;
   if (brand.key === "aims") return aimsNavigation.flatMap((section) => section.links).find((item) => item.label === category)?.href || brand.href;
   if (brand.key === "seedburo") {
     const match = seedburoNavigation.categories.find((item) => item.title === category);
@@ -343,9 +345,9 @@ const BRANDS: Brand[] = [
     name: "Affinity Immuno",
     area: "Immunoassays",
     description: "Immunoassay products and antibody solutions for life science and diagnostic research workflows.",
-    href: "/products#brands",
+    href: "/products/affinity",
     searchKey: "affinityimmuno",
-    categories: ["ELISA", "Antibodies", "COVID-19", "IgEasY"],
+    categories: affinityNavigation.flatMap(section=>section.links.map(item=>item.label)),
     theme: THEMES.affinity,
   },
   {

@@ -69,6 +69,7 @@ const nextConfig: NextConfig = {
     });
 
     return [
+      { source: "/products/affinityimmuno/:path*", destination: "/products/affinity/:path*", permanent: true },
       {
         source: "/products/kent/laboratory-animal-handling",
         has: [{ type: "query", key: "view", value: "products" }],

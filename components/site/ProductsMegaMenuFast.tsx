@@ -3,6 +3,7 @@
 import Link from "next/link";
 import seedburoNavigation from "@/data/seedburo/navigation.json";
 import aimsNavigation from "@/data/aims/navigation.json";
+import affinityNavigation from "@/data/affinityimmuno/navigation.json";
 import { useEffect, useMemo, useRef, useState } from "react";
 
 type MenuLink = { label: string; href: string };
@@ -169,9 +170,9 @@ const BRANDS: BrandMenu[] = [
     name: "Affinity Immuno",
     area: "Immunoassays",
     description: "Immunoassay products and antibody solutions for life science and diagnostic research.",
-    href: "/products#brands",
+    href: "/products/affinity",
     searchKey: "affinityimmuno",
-    categories: ["ELISA", "Antibodies", "COVID-19", "IgEasY"],
+    sections: affinityNavigation,
     dotClass: "bg-cyan-500",
     accentClass: "text-sky-700",
   },

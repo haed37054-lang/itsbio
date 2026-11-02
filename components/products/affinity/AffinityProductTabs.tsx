@@ -24,8 +24,8 @@ export default function AffinityProductTabs({ tabs }: { tabs: Tab[] }) {
   };
 
   return (
-    <div ref={root} className="mt-8 overflow-hidden border border-neutral-200 bg-white">
-      <div className="border-b border-neutral-200 bg-neutral-100">
+    <div ref={root} className="mt-8 overflow-hidden border border-cyan-200 bg-white">
+      <div className="border-b border-cyan-200 bg-cyan-50">
         <div role="tablist" aria-label="Product information" className="scrollbar-hidden flex overflow-x-auto">
           {tabs.map((tab, index) => (
             <button
@@ -48,7 +48,7 @@ export default function AffinityProductTabs({ tabs }: { tabs: Tab[] }) {
                 select(tabs[next].id);
                 root.current?.querySelectorAll<HTMLButtonElement>('[role="tab"]')[next]?.focus();
               }}
-              className={`inline-flex h-12 shrink-0 items-center justify-center border-r border-neutral-200 px-5 text-sm font-semibold transition focus-visible:outline-2 focus-visible:outline-offset-[-3px] focus-visible:outline-slate-900 ${active === tab.id ? "bg-[#f2632f] text-white" : "bg-neutral-100 text-neutral-700 hover:bg-white hover:text-[#dc5a2b]"}`}
+              className={`inline-flex h-12 shrink-0 items-center justify-center border-r border-cyan-200 px-5 text-sm font-semibold transition focus-visible:outline-2 focus-visible:outline-offset-[-3px] focus-visible:outline-cyan-800 ${active === tab.id ? "bg-cyan-800 text-white" : "bg-cyan-50 text-cyan-900 hover:bg-cyan-100 hover:text-cyan-950"}`}
             >
               {tab.label}
             </button>

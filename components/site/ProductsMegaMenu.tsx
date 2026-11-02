@@ -342,12 +342,17 @@ const BRANDS: Brand[] = [
   },
   {
     key: "affinity",
-    name: "Affinity Immuno",
+    name: "AffinityImmuno",
     area: "Immunoassays",
     description: "Immunoassay products and antibody solutions for life science and diagnostic research workflows.",
     href: "/products/affinity",
     searchKey: "affinityimmuno",
     categories: affinityNavigation.flatMap(section=>section.links.map(item=>item.label)),
+    groups: affinityNavigation.map((section) => ({
+      label: section.label,
+      href: section.links[0].href,
+      items: section.links.slice(1),
+    })),
     theme: THEMES.affinity,
   },
   {
@@ -513,20 +518,20 @@ export default function ProductsMegaMenu() {
                 {activeBrand.groups ? (
                   <div className="mt-5">
                     <div className="mb-4">
-                      <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400">ABM product families</div>
+                      <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400">{activeBrand.name} product families</div>
                       <div className="mt-1 text-sm text-slate-500">Start with a major family, then choose a product area.</div>
                     </div>
 
                     <div className="grid gap-x-8 gap-y-8 xl:grid-cols-2">
                       {activeBrand.groups.map((group) => (
-                        <section key={group.label} className="min-w-0 border-t-[3px] border-orange-500 pt-3">
+                        <section key={group.label} className={`min-w-0 border-t-[3px] pt-3 ${activeBrand.key === "affinity" ? "border-cyan-500" : "border-orange-500"}`}>
                           <Link
                             href={group.href}
                             onClick={closeMenu}
-                            className="group/family mt-1.5 inline-flex items-center gap-3 text-[20px] font-semibold leading-tight tracking-[-0.03em] text-[#071d43] transition hover:text-orange-700"
+                            className={`group/family mt-1.5 inline-flex items-center gap-3 text-[20px] font-semibold leading-tight tracking-[-0.03em] text-[#071d43] transition ${theme.hoverText}`}
                           >
                             {group.label}
-                            <ArrowIcon className="h-4 w-4 text-orange-500 transition group-hover/family:translate-x-1" />
+                            <ArrowIcon className={`h-4 w-4 transition group-hover/family:translate-x-1 ${activeBrand.key === "affinity" ? "text-cyan-500" : "text-orange-500"}`} />
                           </Link>
 
                           <div className="mt-3 grid grid-cols-2 gap-x-5">
@@ -535,9 +540,9 @@ export default function ProductsMegaMenu() {
                                 key={item.href}
                                 href={item.href}
                                 onClick={closeMenu}
-                                className="group/item flex min-h-8 items-start gap-2 border-b border-slate-100 py-1.5 text-[11.5px] leading-4 text-slate-600 transition hover:border-orange-100 hover:text-orange-700"
+                                className={`group/item flex min-h-8 items-start gap-2 border-b border-slate-100 py-1.5 text-[11.5px] leading-4 text-slate-600 transition ${activeBrand.key === "affinity" ? "hover:border-cyan-100 hover:text-sky-700" : "hover:border-orange-100 hover:text-orange-700"}`}
                               >
-                                <span className="mt-[6px] h-1 w-1 shrink-0 rounded-full bg-orange-400" />
+                                <span className={`mt-[6px] h-1 w-1 shrink-0 rounded-full ${activeBrand.key === "affinity" ? "bg-cyan-400" : "bg-orange-400"}`} />
                                 <span>{item.label}</span>
                               </Link>
                             ))}
@@ -593,10 +598,10 @@ export default function ProductsMegaMenu() {
                             key={group.label}
                             href={group.href}
                             onClick={closeMenu}
-                            className="group/family-side flex items-center justify-between border-b border-orange-100 pb-2 text-[12px] font-semibold text-slate-700 transition hover:text-orange-700"
+                            className={`group/family-side flex items-center justify-between border-b pb-2 text-[12px] font-semibold text-slate-700 transition ${activeBrand.key === "affinity" ? "border-cyan-100 hover:text-sky-700" : "border-orange-100 hover:text-orange-700"}`}
                           >
                             <span>{group.label}</span>
-                            <ArrowIcon className="h-3.5 w-3.5 text-orange-400 transition group-hover/family-side:translate-x-0.5" />
+                            <ArrowIcon className={`h-3.5 w-3.5 transition group-hover/family-side:translate-x-0.5 ${activeBrand.key === "affinity" ? "text-cyan-400" : "text-orange-400"}`} />
                           </Link>
                         ))}
                       </div>

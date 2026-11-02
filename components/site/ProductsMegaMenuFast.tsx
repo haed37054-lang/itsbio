@@ -167,7 +167,7 @@ const BRANDS: BrandMenu[] = [
   },
   {
     key: "affinity",
-    name: "Affinity Immuno",
+    name: "AffinityImmuno",
     area: "Immunoassays",
     description: "Immunoassay products and antibody solutions for life science and diagnostic research.",
     href: "/products/affinity",

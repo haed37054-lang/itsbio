@@ -1,7 +1,8 @@
 import catalog from "@/data/affinityimmuno/catalog.json";
 import categories from "@/data/affinityimmuno/categories.json";
+import referenceMedia from "@/data/affinityimmuno/reference-media.json";
 
-export type AffinityImage = { url: string; sourceUrl: string; alt: string; width: number; height: number };
+export type AffinityImage = { url: string; sourceUrl: string; alt: string; width: number; height: number; reference?: boolean };
 export type AffinityProduct = {
   sku: string; slug: string; title: string; kind: "elisa" | "antibody";
   target: string; summary: string; unit: string; host: string; targetSpecies: string;
@@ -12,7 +13,10 @@ export type AffinityProduct = {
   relatedSkus: string[]; sourceUrl: string; sourceVerified: boolean;
   sourceRows: { sheet: string; row: number }[];
 };
-export const AFFINITY_PRODUCTS = catalog as unknown as AffinityProduct[];
+export const AFFINITY_PRODUCTS: AffinityProduct[] = (catalog as unknown as AffinityProduct[]).map(product => ({
+  ...product,
+  images: [referenceMedia[product.kind], ...product.images],
+}));
 export const AFFINITY_CATEGORIES = categories;
 export const affinityProductHref = (product: Pick<AffinityProduct, "slug">) => `/products/affinity/item/${encodeURIComponent(product.slug)}`;
 export const affinityCategoryHref = (slug: string) => `/products/affinity/${slug}`;

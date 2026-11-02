@@ -16,7 +16,7 @@ node scripts/collect-affinity-catalog.mjs
 node scripts/audit-affinity-catalog.mjs
 ```
 
-The collector caches source responses under ignored `.cache/affinity/`. Delete only the relevant cache entry when a current source requires a deliberate refresh. Product pages are accepted only when the returned Cat.No matches the workbook SKU. Manufacturer generic/placeholder images are excluded; available product figures and PDF files are mirrored byte-for-byte into `public/affinityimmuno/` and validated before being linked.
+The collector caches source responses under ignored `.cache/affinity/`. Delete only the relevant cache entry when a current source requires a deliberate refresh. Product pages are accepted only when the returned Cat.No matches the workbook SKU. Manufacturer antibody and ELISA kit packshots are retained in `reference-media.json` and displayed across their corresponding product families, as on the manufacturer site. Product-specific figures remain in each catalog record. Packshots, figures and PDF files are mirrored byte-for-byte into `public/affinityimmuno/` and validated before being linked. The source logo is mirrored from `https://affinityimmuno.com/images/logo.png`.
 
 ## Source limitations
 

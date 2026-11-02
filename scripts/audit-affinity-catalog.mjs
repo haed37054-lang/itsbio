@@ -18,6 +18,17 @@ assert.deepEqual(new Set(products.map(p=>p.sku)),expected);
 const paths=new Set(products.map(p=>`/products/affinity/item/${p.slug}`));
 for(const c of categories){assert.equal(c.count,products.filter(p=>p.categories.includes(c.slug)).length);assert(c.count>0);paths.add(`/products/affinity/${c.slug}`);}
 const files=new Set();
+const referenceMedia=await read('data/affinityimmuno/reference-media.json');
+for(const kind of ['antibody','elisa']){
+  const image=referenceMedia[kind];
+  const metadata=await sharp(`public${image.url}`).metadata();
+  assert.equal(metadata.width,image.width);
+  assert.equal(metadata.height,image.height);
+  assert.equal(image.reference,true);
+  assert(image.sourceUrl.startsWith('https://affinityimmuno.com/images/'));
+  files.add(image.url);
+}
+await sharp('public/partners/affinityimmuno-logo.png').metadata();
 let bodyImages=0,inlineLinks=0;
 for(const p of products){
   assert(p.title && p.target && p.unit && p.specifications.length>0,p.sku);

@@ -62,7 +62,7 @@ const BRANDS: Brand[] = [
   {
     key: "aims",
     name: "AIMS Lab Products",
-    shortName: "AIMS",
+    shortName: "AIMS Lab Products",
     eyebrow: "LABORATORY ANIMAL EQUIPMENT",
     description: "Surgery and procedure boards, warming equipment, CO₂ systems and rodent restraints.",
     logo: "/partners/aims-lab-logo.png",

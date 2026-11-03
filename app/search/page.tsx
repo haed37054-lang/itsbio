@@ -138,7 +138,7 @@ const BRAND_ALIASES: Record<string, { key: string; label: string }> = {
   kentscientific: { key: "kent", label: "Kent Scientific" },
   kentscientifics: { key: "kent", label: "Kent Scientific" },
   itschem: { key: "itschem", label: "ITSChem" },
-  aims: { key: "aims", label: "AIMS" },
+  aims: { key: "aims", label: "AIMS Lab Products" },
   seedburo: { key: "seedburo", label: "SeedBuro" },
   bioplastics: { key: "bioplastics", label: "BIOplastics" },
   cleaver: { key: "cleaverscientific", label: "Cleaver Scientific" },

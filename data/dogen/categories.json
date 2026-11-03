@@ -1,0 +1,17 @@
+[
+  {
+    "id": "01",
+    "slug": "cell-viability-cytotoxicity-assay",
+    "title": "Cell Viability / Cytotoxicity Assay"
+  },
+  {
+    "id": "02",
+    "slug": "protein-analysis",
+    "title": "Protein Analysis"
+  },
+  {
+    "id": "03",
+    "slug": "assay-kit",
+    "title": "Assay Kit"
+  }
+]

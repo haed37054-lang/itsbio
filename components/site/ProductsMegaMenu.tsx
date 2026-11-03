@@ -3,6 +3,7 @@
 import Link from "next/link";
 import seedburoNavigation from "@/data/seedburo/navigation.json";
 import { AIMS_FAMILIES } from "@/lib/aims/families";
+import dogenCategories from "@/data/dogen/categories.json";
 import affinityNavigation from "@/data/affinityimmuno/navigation.json";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { ABM_GENERAL_MENU_ITEMS } from "@/lib/abm/general-navigation";
@@ -66,6 +67,10 @@ const CLEAVER_CATEGORY_HREFS: Record<string, string> = {
 };
 
 function productCategoryHref(brand: Brand, category: string) {
+  if (brand.key === "dogen") {
+    const entry = dogenCategories.find(({ title }) => title === category);
+    return entry ? `/products/dogen/${entry.slug}` : brand.href;
+  }
   if (brand.key === "itschem") return ITS_AGAROSE.href;
   if (brand.key === "affinity") return affinityNavigation.flatMap(section=>section.links).find(item=>item.label===category)?.href || brand.href;
   if (brand.key === "seedburo") {
@@ -362,9 +367,9 @@ const BRANDS: Brand[] = [
     name: "DoGen",
     area: "Cell & Protein Research",
     description: "Research solutions for cell-based assays and protein biochemistry applications.",
-    href: "/products#brands",
+    href: "/products/dogen",
     searchKey: "dogen",
-    categories: ["Cell Based Assay", "Protein Biochemistry"],
+    categories: dogenCategories.map(({ title }) => title),
     theme: THEMES.dogen,
   },
 ];

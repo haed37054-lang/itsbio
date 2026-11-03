@@ -1,0 +1,1441 @@
+[
+  {
+    "slug": "ez-cytox",
+    "title": "EZ-Cytox",
+    "summary": "cell viability, proliferation, cytotoxicity assay kit",
+    "category": "cell-viability-cytotoxicity-assay",
+    "group": "Cell Viability / Proliferation /Cytotoxicity Assay",
+    "sourceUrl": "https://www.dogenbio.com/product/view/01/38",
+    "image": "https://www.dogenbio.com/uploads/product/1740472564_817f444ff6468c98b1bf.jpg",
+    "optionLabels": [
+      "Assay",
+      "Qty."
+    ],
+    "models": [
+      {
+        "sku": "EZ-500",
+        "label": "",
+        "values": [
+          "500 test",
+          "5㎖ x 1 bottles"
+        ]
+      },
+      {
+        "sku": "EZ-1000",
+        "label": "",
+        "values": [
+          "1000 tests",
+          "5㎖ x 2 bottles"
+        ]
+      },
+      {
+        "sku": "EZ-3000",
+        "label": "",
+        "values": [
+          "3000 tests",
+          "5㎖ x 6 bottles"
+        ]
+      },
+      {
+        "sku": "EZ-5000",
+        "label": "",
+        "values": [
+          "5000 tests",
+          "25㎖ x 2 bottles"
+        ]
+      },
+      {
+        "sku": "EZ-BULK150",
+        "label": "",
+        "values": [
+          "10000 tests",
+          "25㎖ x 4 bottles"
+        ]
+      }
+    ],
+    "descriptionHtml": "\n\t\t\t\t\t<h3>Description</h3><p><b><span><span><span>    <span> </span></span><span> </span><span><span><span>MTT 보다 빠르고</span> 간편하게! MTS, XTT 보다 정확</span>하게 </span></span></span></b><b><span>Cell viability, proliferation, cytotoxicity를 측정하는 kit</span></b></p><p><span><span>   <span> </span><span> ※</span></span></span><span> </span><span>EZ-Cytox는 MTT assay를 대체할 수 있는 제품으로 WST(Water Soluble Tetrazolium Salt)를 사용하여 MTT 보다 쉽고</span><span> </span></p><p><span><span>     </span></span><span>  </span><span><span>간편한 방법으로 </span></span><span>cell viability, proliferation, cytotoxicity를 정확하게 </span><span><span>측정할 수 있는 제품. </span> </span></p><p><b><span>  <span>⊙</span></span></b><b><span> Storage Condition : </span></b><span>4</span><span>℃, Protect from light.</span></p><p><span>  <span>⊙</span></span><b><span> Sample Type : </span></b><span>Animal Cell (Adherent cell과 Suspension cell 모두 측정 가능)</span></p><p><span>  <span>⊙</span></span><b><span> Detection Method : </span></b><span>Colorimetric - Absorbance at 450 nm (420 ~ 480 nm)</span></p><h3>Advantages</h3><p><span><b><span>  </span></b></span><b><span> </span></b><img src=\"/dogen/ff63ab6b0a5f8cf5e9f5.webp\" alt=\"EZ-Cytox figure 1\" width=\"1334\" height=\"486\" loading=\"lazy\" decoding=\"async\" /></p><p><span>  ⊙</span><b><span> </span><span>Data </span></b></p><p><b><span>  </span></b><img src=\"/dogen/2d4eb6912b91a07aaca5.webp\" alt=\"EZ-Cytox figure 2\" width=\"561\" height=\"330\" loading=\"lazy\" decoding=\"async\" /><img src=\"/dogen/8eb4a40b96ff15cdc352.webp\" alt=\"EZ-Cytox figure 3\" width=\"563\" height=\"316\" loading=\"lazy\" decoding=\"async\" /></p>\t\t\t\t",
+    "documents": [
+      {
+        "url": "https://www.dogenbio.com/product/download/38/2",
+        "label": "Protocol(KOR.)"
+      },
+      {
+        "url": "https://www.dogenbio.com/product/download/38/3",
+        "label": "Protocol(ENG.)"
+      },
+      {
+        "url": "https://www.dogenbio.com/product/download/38/4",
+        "label": "MSDS"
+      }
+    ]
+  },
+  {
+    "slug": "ez-cytox-plus",
+    "title": "EZ-Cytox Plus",
+    "summary": "High sensitivity cell viability, proliferation, cytotoxicity assay kit",
+    "category": "cell-viability-cytotoxicity-assay",
+    "group": "Cell Viability / Proliferation /Cytotoxicity Assay",
+    "sourceUrl": "https://www.dogenbio.com/product/view/01/37",
+    "image": "https://www.dogenbio.com/uploads/product/1740473322_865eff5881894b574469.jpg",
+    "optionLabels": [
+      "Assay",
+      "Qty."
+    ],
+    "models": [
+      {
+        "sku": "EZ-3000P",
+        "label": "",
+        "values": [
+          "3000 tests",
+          "5㎖ x 6 bottles"
+        ]
+      }
+    ],
+    "descriptionHtml": "\n\t\t\t\t\t<h3>Description</h3><p><b><span><span>     <span> </span><span>MTT 보다 빠르고 간편하게! MTS, XTT 보다 정확하게 </span></span></span></b><b><span>Cell viability, proliferation, cytotoxicity를 측정하는 kit</span></b></p><p><span><span>     <span> <span>※ </span></span></span></span><span>EZ-Cytox Plus는 기존 제품보다 감도가 높은 제품으로, 크기가 적은 세포나 대사활동이 느려 오랜 시간 </span></p><p><span><span>         배양을 해야하는 실험에 사용.</span></span><span>  </span></p><p><b><span>  ⊙</span></b><b><span><span> Storage Condition :</span> </span></b><span>4</span><span>℃, Protect from light.</span></p><p><span>  ⊙</span><b><span><span> Sample Type :</span> </span></b><span>Animal Cell (Adherent cell과 Suspension cell 모두 측정 가능)</span></p><p><span>  ⊙</span><b><span><span> Detection Method :</span> </span></b><span>Colorimetric - Absorbance at 450 nm (420 ~ 480 nm)</span></p><h3>Advantages</h3><p><img src=\"/dogen/2d2795cd94d17d19a9b3.webp\" alt=\"EZ-Cytox Plus figure 1\" width=\"1339\" height=\"478\" loading=\"lazy\" decoding=\"async\" /></p><p><b><span>  <span>⊙</span></span></b><b><span> Data</span></b><b><span><span>   </span></span></b><b><span></span></b></p><p><b><span>  </span></b><b><span><span><img src=\"https://www.dogenbio.com/smart_editor/upload/202503131012491173532131.jpg\" alt=\"EZ-Cytox Plus figure 2\" loading=\"lazy\" decoding=\"async\" /> </span></span></b></p>\t\t\t\t",
+    "documents": [
+      {
+        "url": "https://www.dogenbio.com/product/download/37/2",
+        "label": "Protocol(KOR.)"
+      },
+      {
+        "url": "https://www.dogenbio.com/product/download/37/3",
+        "label": "Protocol(ENG.)"
+      },
+      {
+        "url": "https://www.dogenbio.com/product/download/37/4",
+        "label": "MSDS"
+      }
+    ]
+  },
+  {
+    "slug": "ez-ldh-assay-kit",
+    "title": "EZ-LDH Assay kit",
+    "summary": "Cell cytotoxicity assay kit",
+    "category": "cell-viability-cytotoxicity-assay",
+    "group": "Cell Cytotoxicity Assay",
+    "sourceUrl": "https://www.dogenbio.com/product/view/01/36",
+    "image": "https://www.dogenbio.com/uploads/product/1740473481_c89ed43d3b3648f112df.jpg",
+    "optionLabels": [
+      "Assay"
+    ],
+    "models": [
+      {
+        "sku": "DG-LDH500",
+        "label": "",
+        "values": [
+          "500 tests"
+        ]
+      },
+      {
+        "sku": "DG-LDH1000",
+        "label": "",
+        "values": [
+          "1000 tests"
+        ]
+      }
+    ],
+    "descriptionHtml": "\n\t\t\t\t\t<h3>Description</h3><p><b><span><span>     <span> </span></span></span></b><span><span><b>세포 배양액(cell culture media)를 이용하여 보다 정확한</b></span></span><span><span><b>cytotoxicity를 측정할 수 있는 kit</b></span></span></p><p><span><span>     <span> ※ </span></span></span><span>EZ-LDH는 WST를 사용하여 apoptosis 혹은 necrosis 등에 의하여 죽거나 손상된 세포에서 방출되는 </span></p><p><span>        Lactate dehydrogenase</span><span>(LDH)의 양을 고감도로 측정함으로써 cytotoxicity/cytolysis를 간단하고 정확하게 </span></p><p><span>        측정 가능.</span></p><p><span><span>      ※ </span></span><span>Cytotoxicity는 cell viability test를 통하여 간접적으로 측정할 수 있지만, 더 sensitive하고, 정확한 측정을 </span></p><p><span>        위해서는 cell death</span><span> 또는 cell damage와 관련된 효소(LDH)를 이용한 방법으로 실험하는 것이 더 좋음.</span><span>  </span></p><p><b><span>  ⊙</span></b><span><b><span><span> Storage Condition : </span>-</span></b>20</span><span>℃(WST Subatrae 만 냉동 보관, 나머지 4</span><span>℃ 보관 가능)</span></p><p><span>  ⊙</span><span><b><span> Sample Type : </span></b>Cell media</span></p><p><span>  ⊙</span><b><span><span> Detection Method :</span> </span></b><span>Colorimetric - Absorbance at 450 nm (420 ~ 480 nm)</span></p><h3>Advantages</h3><p><b><span> </span></b><img src=\"/dogen/1951c89aaaf9b2c33195.webp\" alt=\"EZ-LDH Assay kit figure 1\" width=\"1293\" height=\"483\" loading=\"lazy\" decoding=\"async\" /><b><span> </span></b></p><p><b><span>  ⊙</span></b><b><span> Data</span></b><b><span></span></b></p><p><b><span>  </span></b><b><span><span><span> </span></span></span></b><img src=\"/dogen/15797a133254b608c47b.webp\" alt=\"EZ-LDH Assay kit figure 2\" width=\"576\" height=\"665\" loading=\"lazy\" decoding=\"async\" /><b><span><span> </span></span></b></p><div><b><span><br /></span></b></div>\t\t\t\t",
+    "documents": [
+      {
+        "url": "https://www.dogenbio.com/product/download/36/2",
+        "label": "Protocol(KOR.)"
+      },
+      {
+        "url": "https://www.dogenbio.com/product/download/36/3",
+        "label": "Protocol(ENG.)"
+      },
+      {
+        "url": "https://www.dogenbio.com/product/download/36/4",
+        "label": "MSDS"
+      }
+    ]
+  },
+  {
+    "slug": "ez-western-kit",
+    "title": "EZ-Western Kit",
+    "summary": "DG-W100, 250, 500",
+    "category": "protein-analysis",
+    "group": "EZ-Western Series(ECL Substrate Kit)",
+    "sourceUrl": "https://www.dogenbio.com/product/view/02/35",
+    "image": "https://www.dogenbio.com/uploads/product/1740474106_8d7b564c86cf1e6df35e.jpg",
+    "optionLabels": [
+      "Volume"
+    ],
+    "models": [
+      {
+        "sku": "DG-W100",
+        "label": "",
+        "values": [
+          "100 ㎖ (A:50 ㎖ + B:50 ㎖)"
+        ]
+      },
+      {
+        "sku": "DG-W250",
+        "label": "",
+        "values": [
+          "250 ㎖ (A:125 ㎖ + B:125 ㎖)"
+        ]
+      },
+      {
+        "sku": "DG-W500",
+        "label": "",
+        "values": [
+          "500 ㎖ (A:125 ㎖ x 2 + B:125 ㎖ x 2 )"
+        ]
+      }
+    ],
+    "descriptionHtml": "\n\t\t\t\t\t<h3>Description</h3><p><b><span><span>    <span> ※ </span></span></span></b><span><span>DoGENBio의 ECL solution series 중 가장 basic 단계의 </span></span><span><span>solution.</span></span></p><p><span><span>      </span></span><b><span><span>※</span></span></b><b><span><span><span><span> </span></span></span></span></b><span>단백질 sample 및 항체가 충분한 경우 또는 목적 단백질의 </span><span>존재여부를 경제적으로 검출할 경우 사용.</span></p><p><b><span>  ⊙</span></b><span><b><span> Storage Condition : </span></b><span>4</span></span><span>℃</span></p><p><span>  ⊙</span><span><b><span> Sensitivity : </span></b><span>Nano-gram ~ Pico gram</span></span></p><p><span>  ⊙</span><span><b><span> Signal Duration Time : </span></b><span>약 1 ~ 2 시간</span></span></p><p><span><b><span> </span><span> </span></b><b><span>⊙</span></b></span><span><b><span> Membrane : </span></b><span>Nitrocellulose Membrane(NC), PVDF</span></span></p><p><b><span> <span> </span></span></b><span><b>⊙</b></span><span><b><span> Detection :<span> </span></span></b><span>CCD Imager, X-ray Film</span> </span></p><p><b><span>  ⊙</span></b><b><span> Data</span></b><b><span><span><span>  </span></span></span></b></p><p><img src=\"/dogen/4f71f91dba3af9b0b390.webp\" alt=\"EZ-Western Kit figure 1\" width=\"602\" height=\"366\" loading=\"lazy\" decoding=\"async\" /></p>\t\t\t\t",
+    "documents": [
+      {
+        "url": "https://www.dogenbio.com/product/download/35/2",
+        "label": "Protocol(KOR.)"
+      },
+      {
+        "url": "https://www.dogenbio.com/product/download/35/3",
+        "label": "Protocol(ENG.)"
+      },
+      {
+        "url": "https://www.dogenbio.com/product/download/35/4",
+        "label": "MSDS"
+      }
+    ]
+  },
+  {
+    "slug": "ez-western-lumi-pico-kit",
+    "title": "EZ-Western Lumi Pico Kit",
+    "summary": "DG-WP100, 250, 500",
+    "category": "protein-analysis",
+    "group": "EZ-Western Series(ECL Substrate Kit)",
+    "sourceUrl": "https://www.dogenbio.com/product/view/02/34",
+    "image": "https://www.dogenbio.com/uploads/product/1740474645_3062992778d64bcaa5cc.jpg",
+    "optionLabels": [
+      "Volume"
+    ],
+    "models": [
+      {
+        "sku": "DG-WP100",
+        "label": "",
+        "values": [
+          "100 ㎖ (A:50 ㎖ + B:50 ㎖)"
+        ]
+      },
+      {
+        "sku": "DG-WP250",
+        "label": "",
+        "values": [
+          "250 ㎖ (A:125 ㎖ + B:125 ㎖)"
+        ]
+      },
+      {
+        "sku": "DG-WP500",
+        "label": "",
+        "values": [
+          "500 ㎖ (A:125 ㎖ x 2 + B:125 ㎖ x 2 )"
+        ]
+      }
+    ],
+    "descriptionHtml": "\n\t\t\t\t\t<h3>Description</h3><p><span><span><b><span>    </span></b><span> </span></span></span><b><span><span>※</span></span></b><span><span><span> </span></span></span><span>일반적으로 사용할 수 있는 ECL Solution</span></p><p><span><span>     </span></span><b><span><span>※</span></span></b><b><span><span><span><span> </span></span></span></span></b><span>타사 ECL 제품보다 적은 양의 항체를 이용하여 실험 가능.</span></p><p><b><span>  ⊙</span></b><span><b><span><span> Storage Condition :</span> </span></b>4</span><span>℃</span></p><p><span>  ⊙</span><span><b><span> Sensitivity : </span></b>Low Pico gram</span></p><p><span>  ⊙</span><span><b><span><span> Signal Duration Time :</span> </span></b>약 2 ~ 3 시간</span></p><p><span><b><span> </span><span> </span></b><b><span>⊙</span></b></span><span><b><span><span> Membrane :</span> </span></b>Nitrocellulose Membrane(NC), PVDF</span></p><p><b><span> <span> </span></span></b><span><b>⊙</b></span><span><b><span> Detection : </span></b>CCD Imager, X-ray Film<br /></span></p><p><b><span>  ⊙</span></b><b><span> Data</span></b></p><p><b><span><span><span>  </span></span></span></b><img src=\"/dogen/499c5deb75063a9607f7.webp\" alt=\"EZ-Western Lumi Pico Kit figure 1\" width=\"603\" height=\"380\" loading=\"lazy\" decoding=\"async\" /><b><span><span> </span></span></b></p>\t\t\t\t",
+    "documents": [
+      {
+        "url": "https://www.dogenbio.com/product/download/34/2",
+        "label": "Protocol(KOR.)"
+      },
+      {
+        "url": "https://www.dogenbio.com/product/download/34/3",
+        "label": "Protocol(ENG.)"
+      },
+      {
+        "url": "https://www.dogenbio.com/product/download/34/4",
+        "label": "MSDS"
+      }
+    ]
+  },
+  {
+    "slug": "ez-western-lumi-pico-alpha-kit",
+    "title": "EZ-Western Lumi Pico Alpha Kit",
+    "summary": "DG-WPAL120, 250",
+    "category": "protein-analysis",
+    "group": "EZ-Western Series(ECL Substrate Kit)",
+    "sourceUrl": "https://www.dogenbio.com/product/view/02/33",
+    "image": "https://www.dogenbio.com/uploads/product/1740475378_49018cec9a545f82f0e7.jpg",
+    "optionLabels": [
+      "Volume"
+    ],
+    "models": [
+      {
+        "sku": "DG-WPAL120",
+        "label": "",
+        "values": [
+          "120 ㎖ (A:60 ㎖ + B:60 ㎖)"
+        ]
+      },
+      {
+        "sku": "DG-WPAL250",
+        "label": "",
+        "values": [
+          "250 ㎖ (A:125 ㎖ + B:125 ㎖)"
+        ]
+      }
+    ],
+    "descriptionHtml": "\n\t\t\t\t\t<h3>Description</h3><p><span><span><b><span>    </span></b><span> </span></span></span><b><span><span>※</span></span></b><span><span><span> </span></span></span><span>이미지장비(LAS, Chemi-doc 등) 전용 ECL Solution</span></p><p><span><span>     </span></span><b><span><span>※ </span></span></b><span>빠른 단백질 검출과 오랜 지속 시간을 가지는 제품.</span></p><p><b><span>  ⊙</span></b><span><b><span><span> Storage Condition :</span> </span></b>4</span><span>℃</span></p><p><span>  ⊙</span><span><b><span><span> Sensitivity :</span> </span></b>Very Low Pico gram</span></p><p><span>  ⊙</span><span><b><span><span> Signal Duration Time :</span> </span></b>약 1 ~ 2 시간</span></p><p><span><b><span> </span><span> </span></b><b><span>⊙</span></b></span><span><b><span> Membrane : </span></b>Nitrocellulose Membrane(NC), PVDF</span></p><p><b><span> <span> </span></span></b><span><b>⊙</b></span><span><b><span> Detection : </span></b>CCD Imager, X-ray Film<br /></span></p><p><b><span>  ⊙</span></b><b><span> Data</span></b></p><p><b><span><span><span>  </span></span></span></b><img src=\"/dogen/8f260d04c5267248a658.webp\" alt=\"EZ-Western Lumi Pico Alpha Kit figure 1\" width=\"592\" height=\"388\" loading=\"lazy\" decoding=\"async\" /></p>\t\t\t\t",
+    "documents": [
+      {
+        "url": "https://www.dogenbio.com/product/download/33/2",
+        "label": "Protocol(KOR.)"
+      },
+      {
+        "url": "https://www.dogenbio.com/product/download/33/3",
+        "label": "Protocol(ENG.)"
+      },
+      {
+        "url": "https://www.dogenbio.com/product/download/33/4",
+        "label": "MSDS"
+      }
+    ]
+  },
+  {
+    "slug": "ez-western-lumi-la-kit",
+    "title": "EZ-Western Lumi La Kit",
+    "summary": "DG-WD100, 200",
+    "category": "protein-analysis",
+    "group": "EZ-Western Series(ECL Substrate Kit)",
+    "sourceUrl": "https://www.dogenbio.com/product/view/02/32",
+    "image": "https://www.dogenbio.com/uploads/product/1740475455_234e9e2a727dc01be40a.jpg",
+    "optionLabels": [
+      "Volume"
+    ],
+    "models": [
+      {
+        "sku": "DG-WD100",
+        "label": "",
+        "values": [
+          "100 ㎖ (A:50 ㎖ + B:50 ㎖)"
+        ]
+      },
+      {
+        "sku": "DG-WD200",
+        "label": "",
+        "values": [
+          "200 ㎖ (A:100 ㎖ + B:100 ㎖)"
+        ]
+      }
+    ],
+    "descriptionHtml": "\n\t\t\t\t\t<h3>Description</h3><p><span><span><b><span>    </span></b><span> </span></span></span><b><span><span>※</span></span></b><span><span><span> </span></span></span><span>Mid femtogram의 단백질검출이 가능할 만큼 민감성이 </span><span>뛰어남.</span></p><p><span><span>     </span></span><b><span><span>※</span></span></b><b><span><span><span><span> </span></span></span></span></b><span>Solution처리 후, 오랜 시간 동안 detection이 가능.</span></p><p><b><span>  ⊙</span></b><span><b><span><span> Storage Condition :</span> </span></b>4</span><span>℃</span></p><p><span>  ⊙</span><span><b><span> Sensitivity :</span><span> </span></b>Low Pico gram ~ Mid Femto gram</span></p><p><span>  ⊙</span><span><b><span><span> Signal Duration Time :</span> </span></b>약 24 ~ 26 시간</span></p><p><span><b><span> </span><span> </span></b><b><span>⊙</span></b></span><span><b><span> Membrane : </span></b>Nitrocellulose Membrane(NC), PVDF</span></p><p><b><span> <span> </span></span></b><span><b>⊙</b></span><span><b><span><span> Detection :</span> </span></b>CCD Imager, X-ray Film<br /></span></p><p><b><span>  ⊙</span></b><b><span> Data</span></b></p><p><b><span><span><span>  </span></span></span></b><img src=\"/dogen/cb71b4da2dc40f583574.webp\" alt=\"EZ-Western Lumi La Kit figure 1\" width=\"602\" height=\"390\" loading=\"lazy\" decoding=\"async\" /><b><span><span> </span></span></b></p>\t\t\t\t",
+    "documents": [
+      {
+        "url": "https://www.dogenbio.com/product/download/32/2",
+        "label": "Protocol(KOR.)"
+      },
+      {
+        "url": "https://www.dogenbio.com/product/download/32/3",
+        "label": "Protocol(ENG.)"
+      },
+      {
+        "url": "https://www.dogenbio.com/product/download/32/4",
+        "label": "MSDS"
+      }
+    ]
+  },
+  {
+    "slug": "ez-western-lumi-femto-kit",
+    "title": "EZ-Western Lumi Femto Kit",
+    "summary": "DG-WF100, 200",
+    "category": "protein-analysis",
+    "group": "EZ-Western Series(ECL Substrate Kit)",
+    "sourceUrl": "https://www.dogenbio.com/product/view/02/31",
+    "image": "https://www.dogenbio.com/uploads/product/1740475532_bffb77f842b154de3911.jpg",
+    "optionLabels": [
+      "Volume"
+    ],
+    "models": [
+      {
+        "sku": "DG-WF100",
+        "label": "",
+        "values": [
+          "100 ㎖ (A:50 ㎖ + B:50 ㎖)"
+        ]
+      },
+      {
+        "sku": "DG-WF200",
+        "label": "",
+        "values": [
+          "200 ㎖ (A:100 ㎖ + B:100 ㎖)"
+        ]
+      }
+    ],
+    "descriptionHtml": "\n\t\t\t\t\t<h3>Description</h3><p><span><span><b><span>    </span></b><span> </span></span></span><b><span><span>※</span></span></b><span><span><span> </span></span></span><span>DoGENBio의 ECL solution series 중 가장 민감도가 뛰어남.</span></p><p><span><span>      </span></span><b><span><span>※</span></span></b><b><span><span><span><span> </span></span></span></span></b><span><span>Low femtogram의 단백질까지 detection이 가능.</span> </span></p><p><b><span>  ⊙</span></b><span><b><span> Storage Condition :<span> </span></span></b><span>4</span></span><span>℃</span></p><p><span>  ⊙</span><span><b><span> Sensitivity : </span></b><span>Low Femto gram</span></span></p><p><span>  ⊙</span><span><b><span> Signal Duration Time : </span></b><span>약 1 ~ 2 시간</span></span></p><p><span><b><span> </span><span> </span></b><b><span>⊙</span></b></span><span><b><span> Membrane : </span></b><span>Nitrocellulose Membrane(NC), PVDF</span></span></p><p><b><span> <span> </span></span></b><span><b>⊙</b></span><span><b><span> Detection : </span></b><span>CCD Imager, X-ray Film</span> </span></p><p><b><span>  ⊙</span></b><b><span> Data</span></b><b><span><span><span>  </span></span></span></b></p><p><img src=\"/dogen/543cc188b2d7ff666708.webp\" alt=\"EZ-Western Lumi Femto Kit figure 1\" width=\"599\" height=\"366\" loading=\"lazy\" decoding=\"async\" /><b><span><span> </span></span></b></p>\t\t\t\t",
+    "documents": [
+      {
+        "url": "https://www.dogenbio.com/product/download/31/2",
+        "label": "Protocol(KOR.)"
+      },
+      {
+        "url": "https://www.dogenbio.com/product/download/31/3",
+        "label": "Protocol(ENG.)"
+      },
+      {
+        "url": "https://www.dogenbio.com/product/download/31/4",
+        "label": "MSDS"
+      }
+    ]
+  },
+  {
+    "slug": "3-color-regular-range-protein-marker",
+    "title": "3-Color Regular Range Protein Marker",
+    "summary": "Pre-stained Protein Marker ( Green, Blue, Red - 3color )",
+    "category": "protein-analysis",
+    "group": "EZ-Perfect Marker(Pre-stained Protein Marker)",
+    "sourceUrl": "https://www.dogenbio.com/product/view/02/30",
+    "image": "https://www.dogenbio.com/uploads/product/1740531909_a9fe0f2c13ecfbe57ea4.jpg",
+    "optionLabels": [
+      "Volume"
+    ],
+    "models": [
+      {
+        "sku": "DG-PMC245",
+        "label": "3-Color Regular Range Protein Marker (10-245 kDa)",
+        "values": [
+          "250㎕ x 2"
+        ]
+      }
+    ],
+    "descriptionHtml": "\n\t\t\t\t\t<h3>Description</h3><p><span><span><b><span>    </span></b><span> </span></span></span><b><span><span>※</span></span></b><span><span><span> </span></span></span><span>SDS-PAGE와 Western blotting에 사용되는 pre stained </span><span>protein marker</span></p><p><span>     </span><b><span><span>※</span></span></b><span><span><span> </span></span></span><span>Ready to use 형태로 끓이거나 추가 조작 없이 바로 사용 </span><span>가능.</span></p><p><span>     </span><b><span><span>※</span></span></b><span><span><span> </span></span></span><span>높은 퀄리티의 단백질들을 재조합하여 만들어졌으며, 정확한 </span><span>사이즈를 가짐.</span></p><p><span><span>     </span></span><b><span><span>※</span></span></b><b><span><span><span><span> </span></span></span></span></b><span><span>Sharp한 밴드 모양으로 인해 식별이 용이함</span>.</span></p><p><b><span>  ⊙</span></b><span><b><span> Storage Condition : </span></b><span>-20</span></span><span>℃</span></p><p><span>  ⊙</span><span><b><span> Application : </span></b><span>SDS-PAGE, Western Blot, CBB/Silver Staining</span></span></p><p><span>  ⊙</span><span><b><span> Loading Volume : </span></b><span>Mini gel - 3~5 ㎕/well (0.75 or 1.0 mm thick)</span></span></p><p><span>                                   <span> </span><span>Large gel - 10~15 </span></span><span>㎕/well </span><span>(0.75 or 1.0 mm thick)​</span></p><p><span><b> <span> </span></b></span><b><span>⊙</span></b><b><span> Data</span></b><b><span><span>  </span></span></b></p><p><img src=\"/dogen/ce1141f53060a0e5f45b.webp\" alt=\"3-Color Regular Range Protein Marker figure 1\" width=\"166\" height=\"544\" loading=\"lazy\" decoding=\"async\" /></p>\t\t\t\t",
+    "documents": [
+      {
+        "url": "https://www.dogenbio.com/product/download/30/2",
+        "label": "Protocol(KOR.)"
+      },
+      {
+        "url": "https://www.dogenbio.com/product/download/30/3",
+        "label": "Protocol(ENG.)"
+      }
+    ]
+  },
+  {
+    "slug": "3-color-broad-range-protein-marker-plus",
+    "title": "3-Color Broad Range Protein Marker PLUS",
+    "summary": "Pre-stained Protein Marker ( Green, Blue, Red - 3color )",
+    "category": "protein-analysis",
+    "group": "EZ-Perfect Marker(Pre-stained Protein Marker)",
+    "sourceUrl": "https://www.dogenbio.com/product/view/02/29",
+    "image": "https://www.dogenbio.com/uploads/product/1740531959_8688a6f1e35f24d5d2d6.jpg",
+    "optionLabels": [
+      "Volume"
+    ],
+    "models": [
+      {
+        "sku": "DG-PMP245",
+        "label": "3-Color Broad Range Protein Marker PLUS, (5-245kDa)",
+        "values": [
+          "250㎕ x 2"
+        ]
+      }
+    ],
+    "descriptionHtml": "\n\t\t\t\t\t<h3>Description</h3><p><span><span><b><span>  <span>  </span></span></b></span></span><b><span><span>※</span></span></b><span><span><span> </span></span></span><span>SDS-PAGE와 Western blotting에 사용되는 pre stained </span><span>protein marker</span></p><p><span>     </span><b><span><span>※</span></span></b><span><span><span> </span></span></span><span>Ready to use 형태로 끓이거나 추가 조작 없이 바로 사용 </span><span>가능.</span></p><p><span>     </span><b><span><span>※</span></span></b><span><span><span> </span></span></span><span>높은 퀄리티의 단백질들을 재조합하여 만들어졌으며, 정확한 </span><span>사이즈를 가짐.</span></p><p><span><span>     </span></span><b><span><span>※</span></span></b><b><span><span><span><span> </span></span></span></span></b><span><span>Sharp한 밴드 모양으로 인해 식별이 용이함.</span> </span></p><p><b><span>  ⊙</span></b><span><b><span> Storage Condition : </span></b><span>-20</span></span><span>℃</span></p><p><span>  ⊙</span><span><b><span> Application : </span></b><span>SDS-PAGE, Western Blot, CBB/Silver Staining</span></span></p><p><span>  ⊙</span><span><b><span> Loading Volume :<span> </span></span></b><span>Mini gel - 3~5 ㎕/well (0.75 or 1.0 mm thick)</span></span></p><p><span>                        <span>              </span><span>  </span><span>L</span><span>arge gel - 10~15 </span></span><span>㎕/well </span><span>(0.75 or 1.0 mm thick)</span></p><p><span><b> <span> </span></b></span><b><span>⊙</span></b><b><span> Data</span></b><b><span><span> </span></span></b></p><p><b><span><span> </span></span></b><img src=\"/dogen/f11cdd12184a918d56bc.webp\" alt=\"3-Color Broad Range Protein Marker PLUS figure 1\" width=\"144\" height=\"542\" loading=\"lazy\" decoding=\"async\" /><b><span><span>  </span></span></b></p>\t\t\t\t",
+    "documents": [
+      {
+        "url": "https://www.dogenbio.com/product/download/29/2",
+        "label": "Protocol(KOR.)"
+      },
+      {
+        "url": "https://www.dogenbio.com/product/download/29/3",
+        "label": "Protocol(ENG.)"
+      }
+    ]
+  },
+  {
+    "slug": "ez-western-blot-stripping-buffer",
+    "title": "EZ-Western Blot Stripping Buffer",
+    "summary": "DG-WSB500, 500 mL",
+    "category": "protein-analysis",
+    "group": "EZ-Western Stripping Buffer",
+    "sourceUrl": "https://www.dogenbio.com/product/view/02/28",
+    "image": "https://www.dogenbio.com/uploads/product/1740533002_c9b9bfd60f5ca1a367f5.jpg",
+    "optionLabels": [
+      "Volume"
+    ],
+    "models": [
+      {
+        "sku": "DG-WSB500",
+        "label": "",
+        "values": [
+          "500ml"
+        ]
+      }
+    ],
+    "descriptionHtml": "\n\t\t\t\t\t<h3>Description</h3><p><b><span><span>     <span> ※</span></span></span></b><span><span> </span></span><span>Western Blotting 중 Transfer-membrane (NC, PVDF)에 </span><span>붙어 있는 1차/2차 항체(Primary/Secondary antibodies)를 </span><span>제거하는데 사용.</span></p><p><span>      </span><b><span><span>※</span></span></b><span> 제한된 샘플을 이용한 실험이나, 동일한 분자량을 가진 </span><span>단백질을 확인할 때 추가적인 전기영동 및 blotting 실험을 </span><span>하지 않고 확인 가능.</span></p><p><span><span>      </span></span><b><span><span>※</span></span></b><span> </span><span>EZ- Western Stripping Buffer는 affinity chromatography의 </span><span>원리를 이용하여 단백질 (antigen)의 변성과 손실을 최소화 </span><span>하면서 </span><span> </span></p><p><span>          항원-항체 결합을 효과적으로 분리할 수 있는 제품</span><span>.</span></p><p><b><span>  ⊙</span></b><span><b><span> Storage Condition : <span>4</span></span></b></span><span>℃(사용 전 충분히 warm up 후 사용하세요.</span><span>)</span></p><p><span>  ⊙</span><span><b><span> Application : </span></b><span>Western Blot</span></span></p><p><span>  ⊙</span><b><span> </span></b><b><span>Data</span></b><b><span><span> </span></span></b></p><p><b><span><span>  </span></span></b><img src=\"/dogen/a8a9211060aea823bd78.webp\" alt=\"EZ-Western Blot Stripping Buffer figure 1\" width=\"592\" height=\"302\" loading=\"lazy\" decoding=\"async\" /><b><span><span>      </span></span></b><b><span><span>  </span></span></b></p>\t\t\t\t",
+    "documents": [
+      {
+        "url": "https://www.dogenbio.com/product/download/28/2",
+        "label": "Protocol(KOR.)"
+      },
+      {
+        "url": "https://www.dogenbio.com/product/download/28/3",
+        "label": "Protocol(ENG.)"
+      },
+      {
+        "url": "https://www.dogenbio.com/product/download/28/4",
+        "label": "MSDS"
+      }
+    ]
+  },
+  {
+    "slug": "ez-western-membrane-tray",
+    "title": "EZ-Western Membrane Tray",
+    "summary": "Western Blot 실험에서 membrane의 항체 반응과 washing에 사용",
+    "category": "protein-analysis",
+    "group": "EZ-Western Membrane Tray",
+    "sourceUrl": "https://www.dogenbio.com/product/view/02/27",
+    "image": "https://www.dogenbio.com/uploads/product/1740533147_17e3059b14a857532df4.jpg",
+    "optionLabels": [
+      "Volume"
+    ],
+    "models": [
+      {
+        "sku": "DG-WMT8",
+        "label": "",
+        "values": [
+          "8 EA (10 X 6 X 2 cm)"
+        ]
+      }
+    ],
+    "descriptionHtml": "\n\t\t\t\t\t<h3>Description</h3><p><b><span><span>    <span> </span></span></span></b><b><span><span>※</span></span></b><span><span> </span></span><span>Western Blot 실험에서 membrane의 항체 반응과 washing에 </span><span>사용.</span></p><p><span>     </span><b><span><span>※</span></span></b><span> Mini-gel 크기의 Membrane 사용 시 항체의 경제적 사용 가능.</span></p><p><span><span>     </span></span><b><span><span>※</span></span></b><span> </span><span>뚜껑이 있어 먼지나 이물질로부터 보호 가능</span><span>.</span></p><p><b><span>  ⊙</span></b><span><b> Storage Condition : </b><span>RT</span></span></p><p><span>  ⊙</span><span><b><span> Application :<span> </span></span></b><span>Western Blot, CBB Staining</span></span></p>\t\t\t\t",
+    "documents": []
+  },
+  {
+    "slug": "ez-bca-protein-quantification-kit",
+    "title": "EZ-BCA Protein Quantification Kit",
+    "summary": "EZ-BCA Protein Quantification Kit는 bicinchoninic acid (BCA)를 이용하여 총 단백질의 비색 검출 및 정량이 가능한 제품",
+    "category": "protein-analysis",
+    "group": "Protein Quantification Kit",
+    "sourceUrl": "https://www.dogenbio.com/product/view/02/26",
+    "image": "https://www.dogenbio.com/uploads/product/1740533330_dd69d487d7adb6f5f9cc.jpg",
+    "optionLabels": [
+      "Volume"
+    ],
+    "models": [
+      {
+        "sku": "DG-BCA500",
+        "label": "",
+        "values": [
+          "BCA Reagent A 500 mLBCA Reagent B 25 mLBCA Standard 1 mL X 10"
+        ]
+      }
+    ],
+    "descriptionHtml": "\n\t\t\t\t\t<h3>Description</h3><p><b><span><span>     <span> </span></span></span></b><b><span><span>※</span></span></b><span><span> </span></span><span>EZ-BCA Protein Quantification Kit는 bicinchoninic </span><span>acid (BCA)를 이용하여 총 단백질의 비색 검출 및 </span></p><p><span>        정량이 </span><span>가능한 제품.</span></p><p><span>      </span><b><span><span>※</span></span></b><span> BCA를 이용한 단백질 정량은 단백질의 종류에 따른 차이가 </span><span>적어 0.02 ~ 2 ㎎/㎖의 넓은 범위에서 </span></p><p><span>        사용 가능하며, </span><span>계면활성제에 의한 영향을 받지 않음.</span></p><p><b><span>  ⊙</span></b><span><b><span> Storage Condition : </span></b><span>RT(Reagent A, B), 4</span></span><span>℃(Standard Solution)</span></p><p><span>  ⊙</span><span><b><span> Detection Absorbance : </span></b><span>562 nm</span></span></p><p><span>  ⊙</span><span><b><span> Detection Range :<span> </span></span></b><span>0.02 ~ 2 </span></span><span>㎎/㎖</span></p><p><span>  ⊙</span><b><span> </span></b><b><span>Data</span></b><b><span><span><span>  </span></span></span></b></p><p><b><span><span><span> </span></span></span></b><img src=\"/dogen/fc5ada558dd62f612b57.webp\" alt=\"EZ-BCA Protein Quantification Kit figure 1\" width=\"499\" height=\"308\" loading=\"lazy\" decoding=\"async\" /></p>\t\t\t\t",
+    "documents": [
+      {
+        "url": "https://www.dogenbio.com/product/download/26/2",
+        "label": "Protocol(KOR.)"
+      },
+      {
+        "url": "https://www.dogenbio.com/product/download/26/3",
+        "label": "Protocol(ENG.)"
+      },
+      {
+        "url": "https://www.dogenbio.com/product/download/26/4",
+        "label": "MSDS"
+      }
+    ]
+  },
+  {
+    "slug": "ez-bradford-assay-dye-reagent",
+    "title": "EZ-Bradford Assay Dye Reagent",
+    "summary": "Coomassie Brilliant Blue(G-250)를 이용한 단백질 정량 Kit",
+    "category": "protein-analysis",
+    "group": "Protein Quantification Kit",
+    "sourceUrl": "https://www.dogenbio.com/product/view/02/25",
+    "image": "https://www.dogenbio.com/uploads/product/1740533433_1358c3b7805bd239c08b.jpg",
+    "optionLabels": [
+      "Volume"
+    ],
+    "models": [
+      {
+        "sku": "DG-BRA500",
+        "label": "",
+        "values": [
+          "500 mL"
+        ]
+      }
+    ],
+    "descriptionHtml": "\n\t\t\t\t\t<h3>Description</h3><p><b><span><span>     <span> </span></span></span></b><b><span><span>※</span></span></b><span><span> </span></span><span>EZ-Bradford Assay Dye Reagent는 Coomassie </span><span>Brilliant Blue G-250 dye와 아미노산의 결합력을 통한 </span><span>색 변화를 </span></p><p><span>         측정하는 단백질 농도 측정 제품.</span></p><p><span>   <span>  </span> <span> </span></span><b><span><span>※</span></span></b><span> 낮은 농도에서 높은 민감도를 가지며, 0.01 ~ 1.4 ㎎/㎖의 </span><span>범위에서 측정 가능.</span></p><p><span>       </span><b><span><span>※</span></span></b><span> </span><span>비 단백질 성분에 대한 방해가 적은 편이며, 발색반응이 </span><span>5분 이내에 완료되어 쉽고 빠르게 측정 가능.</span></p><p><b><span>  ⊙</span></b><span><b><span> Storage Condition : </span></b><span>4</span></span><span>℃</span></p><p><span>  ⊙</span><span><b><span> Detection Absorbance :<span> </span></span></b><span>595/450 nm</span></span></p><p><span>  ⊙</span><span><b><span> Detection Range :<span> </span></span></b><span>0.01 ~ 1.4 </span></span><span>㎎/㎖</span></p><p><span>  ⊙</span><b><span> </span></b><b><span>Data</span></b><b><span><span><span>  </span></span></span></b></p><p><b><span><span><span> </span></span></span></b><img src=\"/dogen/95fca51211facdc52567.webp\" alt=\"EZ-Bradford Assay Dye Reagent figure 1\" width=\"571\" height=\"363\" loading=\"lazy\" decoding=\"async\" /><b><span><span> </span></span></b></p>\t\t\t\t",
+    "documents": [
+      {
+        "url": "https://www.dogenbio.com/product/download/25/2",
+        "label": "Protocol(KOR.)"
+      },
+      {
+        "url": "https://www.dogenbio.com/product/download/25/3",
+        "label": "Protocol(ENG.)"
+      },
+      {
+        "url": "https://www.dogenbio.com/product/download/25/4",
+        "label": "MSDS"
+      }
+    ]
+  },
+  {
+    "slug": "ez-gel-staining-solution",
+    "title": "EZ-Gel Staining solution",
+    "summary": "EZ (CBB) Gel Stain Solution",
+    "category": "protein-analysis",
+    "group": "EZ-Gel Staining Solution(CBB Gel Staining Solution)",
+    "sourceUrl": "https://www.dogenbio.com/product/view/02/24",
+    "image": "https://www.dogenbio.com/uploads/product/1740533512_9ba9380d6467ba087890.jpg",
+    "optionLabels": [
+      "Volume"
+    ],
+    "models": [
+      {
+        "sku": "DG-GS1000",
+        "label": "",
+        "values": [
+          "1000 mL"
+        ]
+      }
+    ],
+    "descriptionHtml": "\n\t\t\t\t\t<h3>Description</h3><p><b><span><span>    </span></span></b><b><span><span>※</span></span></b><span><span> </span></span><span>단백질 전기영동 후(SDS-PAGE), polyacrylamide gel 상의 </span><span>단백질을 염색하는 제품.</span></p><p><span>   <span> </span></span><b><span><span>※</span></span></b><span> Destain Solution 없이 D.W washing으로 밴드 확인 가능.</span></p><p><span>    </span><b><span><span>※</span></span></b><span> </span><span>장시간 염색에도 over stain 되지 않음.</span></p><p><span>    </span><b><span><span>※</span></span></b><span> </span><span>염색 후 아미노산 염기서열 분석(Mass, MALDI-TOF 등) 가능.</span></p><p><b><span>  ⊙</span></b><span><b><span> Storage Condition : </span></b><span>4</span></span><span>℃</span></p><p><span>  ⊙</span><span><b><span> Application : </span></b><span>SDS-PAGE, 2D 전기영동 등 poly-acrylamide gel에 사용 가능</span></span></p><p><span> <span> </span></span><span>⊙</span><b><span> </span></b><b><span>Data</span></b><b><span><span>   </span></span></b></p><p><img src=\"/dogen/61ba96952bf26deafa3d.webp\" alt=\"EZ-Gel Staining solution figure 1\" width=\"603\" height=\"348\" loading=\"lazy\" decoding=\"async\" /><b><span><span><br /> </span></span></b><b><span><span> </span></span></b></p>\t\t\t\t",
+    "documents": [
+      {
+        "url": "https://www.dogenbio.com/product/download/24/2",
+        "label": "Protocol(KOR.)"
+      },
+      {
+        "url": "https://www.dogenbio.com/product/download/24/3",
+        "label": "Protocol(ENG.)"
+      },
+      {
+        "url": "https://www.dogenbio.com/product/download/24/4",
+        "label": "MSDS"
+      }
+    ]
+  },
+  {
+    "slug": "ez-superoxide-dismutase-sod-assay-kit",
+    "title": "EZ-Superoxide Dismutase(SOD) Assay Kit",
+    "summary": "Oxidative stress assay kit",
+    "category": "assay-kit",
+    "group": "Oxidative Stress Assay Kit",
+    "sourceUrl": "https://www.dogenbio.com/product/view/03/23",
+    "image": "https://www.dogenbio.com/uploads/product/1740534401_22092ade446eb6eb54a6.jpg",
+    "optionLabels": [
+      "Assay"
+    ],
+    "models": [
+      {
+        "sku": "DG-SOD400",
+        "label": "",
+        "values": [
+          "400 tests"
+        ]
+      }
+    ],
+    "descriptionHtml": "\n\t\t\t\t\t<h3>Description</h3><p><span><span><b><span>   <span> </span></span></b><span> </span></span></span><b><span><span>※</span></span></b><span><span><span> </span></span></span><span>Superoxide dismutase (SOD)는 세포의 대사활동 중 발생하는 </span><span>Superoxide anion을 H<sub><span>2</span></sub>O<sub><span>2</span></sub>와 O<sub><span>2</span></sub><sup><span>-</span></sup> 로 </span><span>변환시키는 효소임</span></p><p><span>      </span><b><span><span>※</span></span></b><span><span><span> </span></span></span><span>SOD는 초과산화물(superoxide) 라디칼을 과산화수소로 전환시킴</span></p><p><span>      </span><b><span><span>※</span></span></b><span><span><span> </span></span></span><span>WST를 이용한 흡광 측정(λ = 450 nm)을 통해 낮은 농도의 SOD 활성도를 </span><span>신속, 정확하게 측정할 수 있음</span></p><p><span><span>  </span></span><b><span>⊙</span></b><span><b><span> Storage Condition : </span></b><span>4</span></span><span>℃</span></p><p><span>  ⊙</span><span><b><span> Detection Method : </span></b><span>Colorimetric / 450 nm(420 ~ 480 nm)</span></span></p><p><span>  ⊙</span><span><b><span> Sample type :<span> </span></span></b><span>Tissue, Plasma, Serum and Biological Fluids, Cell Lysates</span></span></p><p><span>  </span><span>⊙</span><span><b><span> Kit Componets </span></b></span></p><p><span><b>                       </b></span><span>• WST Solution : 4 ㎖</span></p><p><span>                       </span><span>• Buffer Solution : 50 ㎖ X 2</span></p><p><span>                       </span><span>• Xanthine Oxidase : 70 ㎕</span></p><p><span>                       </span><span>• Dilution Solution : 50 ㎖</span></p><p><span><b> <span> </span></b></span><b><span>⊙</span></b><b><span> Data</span></b></p><p><b><span><span><span> </span></span></span></b><img src=\"/dogen/8a96b2ffc49df4b630f8.webp\" alt=\"EZ-Superoxide Dismutase(SOD) Assay Kit figure 1\" width=\"494\" height=\"312\" loading=\"lazy\" decoding=\"async\" /></p>\t\t\t\t",
+    "documents": [
+      {
+        "url": "https://www.dogenbio.com/product/download/23/2",
+        "label": "Protocol(KOR.)"
+      },
+      {
+        "url": "https://www.dogenbio.com/product/download/23/3",
+        "label": "Protocol(ENG.)"
+      },
+      {
+        "url": "https://www.dogenbio.com/product/download/23/4",
+        "label": "MSDS"
+      }
+    ]
+  },
+  {
+    "slug": "ez-glutathione-gsh-gssg-total-assay-kit",
+    "title": "EZ-Glutathione(GSH/GSSG, Total) Assay Kit",
+    "summary": "(GSH/GSSG, Total) Colorimetric / Oxidative Stress assay kit",
+    "category": "assay-kit",
+    "group": "Oxidative Stress Assay Kit",
+    "sourceUrl": "https://www.dogenbio.com/product/view/03/22",
+    "image": "https://www.dogenbio.com/uploads/product/1740534956_03da79e1c77d9740d08d.jpg",
+    "optionLabels": [
+      "Assay"
+    ],
+    "models": [
+      {
+        "sku": "DG-GLU200",
+        "label": "",
+        "values": [
+          "200 tests"
+        ]
+      }
+    ],
+    "descriptionHtml": "\n\t\t\t\t\t<h3>Description</h3><p><span><span><b><span>    </span></b><span> ※</span></span></span><span><span><span> </span></span></span><span><span>글루타치온(GSH/GSSG)은 동식물 조직, 세균, 효모 등에서 발견되는 </span></span><span>대표적인 티올(thiol) 화합물임</span></p><p><span>     </span><span>※</span><span><span><span> </span></span></span><span><span>세포에서 산화적 스트레스가 증가하면, GSSG의 축적으로 인해 GSH</span></span><span>/GSSG 비율이 감소.</span></p><p><span>     </span><span>※</span><span><span><span> </span></span></span><span><span>GSSG의 양과 GSH/GSSG 비율은 산화적 스트레스의 중요한 지표로, </span></span><span>항산화 작용을 정확하게 평가할 수 있음.</span></p><p><span><span>  </span></span><b><span>⊙</span></b><span><b><span> Storage Condition :<span> </span></span></b><span>4</span></span><span>℃</span></p><p><span> <span> ⊙</span></span><span><b><span> Detection Method : </span></b><span>Colorimetric / 412 nm</span></span></p><p><span>  ⊙</span><span><b><span> Sample type :<span> </span></span></b><span>Tissue, Plasma, Serum and Biological Fluids, Cell Lysates</span></span></p><p><span>  </span><span>⊙</span><span><b><span> Kit Componets </span></b></span></p><p><span><b>                  </b></span><span>• Assay Buffer I : 60 ㎖</span></p><p><span>                       </span><span>• Assay Buffer II : 60 ㎖</span></p><p><span>                       </span><span>• Standard (GSSG) : 2 </span><span>㎖ X 2</span></p><p><span>                       </span><span>• Enzyme (Glutathione Reductase) : 2 ㎖ X 2</span></p><p><span>                       </span><span>• NADPH (Lyophilized powder) : 2 vials</span></p><p><span>                       </span><span>• Chromogen (DTNB) : 5 ㎖ X 2</span></p><p><span>                       </span><span>• Masking Reagent (M2VP) : 2 ㎖ X 2</span></p><p><span><b> <span> </span></b></span><b><span>⊙</span></b><b><span> Data</span></b><b><span><span><span>  </span></span></span></b></p><p><b><span><span><span> </span></span></span></b><img src=\"/dogen/8023f980f8f272553f33.webp\" alt=\"EZ-Glutathione(GSH/GSSG, Total) Assay Kit figure 1\" width=\"502\" height=\"323\" loading=\"lazy\" decoding=\"async\" /></p>\t\t\t\t",
+    "documents": [
+      {
+        "url": "https://www.dogenbio.com/product/download/22/2",
+        "label": "Protocol(KOR.)"
+      },
+      {
+        "url": "https://www.dogenbio.com/product/download/22/3",
+        "label": "Protocol(ENG.)"
+      },
+      {
+        "url": "https://www.dogenbio.com/product/download/22/4",
+        "label": "MSDS"
+      }
+    ]
+  },
+  {
+    "slug": "ez-catalase-assay-kit",
+    "title": "EZ-Catalase Assay Kit",
+    "summary": "Oxidative Stress assay kit",
+    "category": "assay-kit",
+    "group": "Oxidative Stress Assay Kit",
+    "sourceUrl": "https://www.dogenbio.com/product/view/03/21",
+    "image": "https://www.dogenbio.com/uploads/product/1740535051_ec0c6c8f06bf2fb1206e.jpg",
+    "optionLabels": [
+      "Assay"
+    ],
+    "models": [
+      {
+        "sku": "DG-CAT400",
+        "label": "",
+        "values": [
+          "400 tests"
+        ]
+      }
+    ],
+    "descriptionHtml": "\n\t\t\t\t\t<h3>Description</h3><p><span><span><b><span> <span>   </span></span></b><span>  </span></span></span><span>※ </span><span><span>Catalase는 모든 호기성 생물체(동식물)에서 발견되는 Heme 관련 </span></span><span>산화 환원 단백질임</span></p><p><span>      </span><span>※</span><span><span><span> </span></span></span><span><span>체내의 H<sub><span>2</span></sub>O<sub><span>2</span></sub> 분해에 관여하는 Catalase의 양을 측정함</span></span></p><p><span>      </span><span>※</span><span><span><span> </span></span></span><span><span>Oxi-Probe와 HRP를 이용하기에 흡광 (λ = 532 nm) 및 형광 </span></span><span>(Ex/Em = 540/590 nm) 모두 측정 가능함</span></p><p><span><span>  </span></span><b><span>⊙</span></b><span><b><span> Storage Condition :<span> </span></span></b><span>-20</span></span><span>℃</span></p><p><span>  ⊙</span><span><b><span> Detection Method : </span></b><span>Colorimetric - 560 nm </span></span></p><p><span>                            <span>               Fluorometric - Ex. 530 ~ 560 nm / Em. 580 ~ 590 nm</span></span></p><p><span>                                                   (Optimal Ex/Em = 540/590 nm) </span></p><p><span>  ⊙</span><span><b><span> Sample type :<span> </span></span></b><span>Tissue, Plasma, Serum and Biological Fluids, Cell Lysates</span></span></p><p><span>  </span><span>⊙</span><span><b><span> Kit Componets </span></b></span></p><p><span><b>                       </b></span><span>• Oxi-Probe : 2 vials</span></p><p><span>                       </span><span>• DMSO(Dimethylsulfoxide), anhydrous : 500 </span><span>㎕</span></p><p><span>                       </span><span>• HRP(Horseradish Peroxidase, 20 U) : 1 vial</span></p><p><span>                       </span><span>• Hydrogen Peroxide(0.88 M) : 500 </span><span>㎕</span></p><p><span>                       • 5X Reaction Buffer(pH7.5, 0.5 M) : </span><span>20 ㎖</span></p><p><span>                       • Catalase(100 U) : </span><span>1 vial</span></p><p><span><b> <span> </span></b></span><b><span>⊙</span></b><b><span> Data</span></b><b><span><span><span>  </span></span></span></b></p><p><b><span><span><span> </span></span></span></b><img src=\"/dogen/fe3aa13a7015a121d59d.webp\" alt=\"EZ-Catalase Assay Kit figure 1\" width=\"487\" height=\"281\" loading=\"lazy\" decoding=\"async\" /></p>\t\t\t\t",
+    "documents": [
+      {
+        "url": "https://www.dogenbio.com/product/download/21/2",
+        "label": "Protocol(KOR.)"
+      },
+      {
+        "url": "https://www.dogenbio.com/product/download/21/3",
+        "label": "Protocol(ENG.)"
+      },
+      {
+        "url": "https://www.dogenbio.com/product/download/21/4",
+        "label": "MSDS"
+      }
+    ]
+  },
+  {
+    "slug": "ez-hydrogen-peroxide-peroxidase-assay-kit",
+    "title": "EZ-Hydrogen Peroxide/Peroxidase Assay Kit",
+    "summary": "Oxidative Stress assay kit",
+    "category": "assay-kit",
+    "group": "Oxidative Stress Assay Kit",
+    "sourceUrl": "https://www.dogenbio.com/product/view/03/20",
+    "image": "https://www.dogenbio.com/uploads/product/1740535162_8d8f606d7cfb16ac9467.jpg",
+    "optionLabels": [
+      "Assay"
+    ],
+    "models": [
+      {
+        "sku": "DG-PER500",
+        "label": "",
+        "values": [
+          "500 tests"
+        ]
+      }
+    ],
+    "descriptionHtml": "\n\t\t\t\t\t<h3>Description</h3><p><span><span><b><span>    </span></b><span>  </span></span></span><span>※</span><span><span><span> </span></span></span><span><span>Hydrogen Peroxide/Peroxidase는 산화적 스트레스 및 항산화 반응과 </span></span><span>관련된 화합물임.</span></p><p><span>      </span><span>※</span><span><span><span> </span></span></span><span><span>실험 샘플(세포나 조직 등)이 가지고 있는 H<sub><span>2</span></sub>O<sub><span>2</span></sub> 뿐만 아니라, 효소 관련 </span></span><span>반응을 통해 발생하는 H<sub><span>2</span></sub>O<sub><span>2</span></sub> 검출에도 사용 가능.</span></p><p><span>      </span><span>※</span><span><span><span> </span></span></span><span><span>EZ-Hydrogen Peroxide/Peroxidase Assay Kit는 흡광(λ = 560 nm) </span></span><span>또는 형광(Ex/Em = 540/590 nm)으로 신속하고 정확하게 </span><span>측정할 수 </span><span>있음.</span></p><p><span><span>  </span></span><b><span>⊙</span></b><span><b><span> Storage Condition ; </span></b><span>-20</span></span><span>℃</span></p><p><span>  ⊙</span><span><b><span> Detection Method ; </span></b><span>Colorimetric - 560 nm </span></span></p><p><span>                                       <span>  Fluorometric - Ex. 530 ~ 560 nm / Em. 580 ~ 590 nm</span></span></p><p><span>                                                    (Optimal Ex/Em = 540/590 nm) </span></p><p><span>  ⊙</span><span><b><span> Sample type ; </span></b><span>Tissue, Plasma, Serum and Biological Fluids, Cell Lysates</span></span></p><p><span>  </span><span>⊙</span><span><b><span> Kit Com<span>ponets </span></span></b></span></p><p><span><b>                       </b></span><span>• Oxi-Probe : 5 vials</span></p><p><span>                       </span><span>• DMSO(Dimethylsulfoxide), anhydrous : 700 </span><span>㎕</span></p><p><span>                       </span><span>• HRP(Horseradish Peroxidase, 10 U) : 1 vial</span></p><p><span>                       </span><span>• Hydrogen Peroxide(0.88 M) : 200 </span><span>㎕</span></p><p><span>                       • 5X Reaction Buffer(pH7.4, 0.25 M) : </span><span>28 ㎖</span></p><p><span><b> <span> </span></b></span><b><span>⊙</span></b><b><span> Data</span></b><b><span><span><span>   </span></span></span></b></p><p><img src=\"/dogen/03538840283caa47ffe3.webp\" alt=\"EZ-Hydrogen Peroxide/Peroxidase Assay Kit figure 1\" width=\"545\" height=\"310\" loading=\"lazy\" decoding=\"async\" /><img src=\"/dogen/e4857f7cb7195dc06f82.webp\" alt=\"EZ-Hydrogen Peroxide/Peroxidase Assay Kit figure 2\" width=\"522\" height=\"283\" loading=\"lazy\" decoding=\"async\" /><b><span><span></span></span></b></p>\t\t\t\t",
+    "documents": [
+      {
+        "url": "https://www.dogenbio.com/product/download/20/2",
+        "label": "Protocol(KOR.)"
+      },
+      {
+        "url": "https://www.dogenbio.com/product/download/20/3",
+        "label": "Protocol(ENG.)"
+      },
+      {
+        "url": "https://www.dogenbio.com/product/download/20/4",
+        "label": "MSDS"
+      }
+    ]
+  },
+  {
+    "slug": "ez-lipid-peroxidation-tbars-assay-kit",
+    "title": "EZ-Lipid Peroxidation(TBARS) Assay Kit",
+    "summary": "Oxidative Stress assay kit",
+    "category": "assay-kit",
+    "group": "Oxidative Stress Assay Kit",
+    "sourceUrl": "https://www.dogenbio.com/product/view/03/19",
+    "image": "https://www.dogenbio.com/uploads/product/1740535263_f0ff4d6e472bbb0fbca8.jpg",
+    "optionLabels": [
+      "Assay"
+    ],
+    "models": [
+      {
+        "sku": "DG-TBA200",
+        "label": "",
+        "values": [
+          "200 tests"
+        ]
+      }
+    ],
+    "descriptionHtml": "\n\t\t\t\t\t<h3>Description</h3><p><span><span><b><span>   <span> </span></span></b><span> </span></span></span><span>※</span><span><span><span> </span></span></span><span><span>Thiobarbituric Acid Reactive Substance (TBARS)는 Lipid pero</span></span><span>xidation의 정도를 평가하는 중요한 지표임.</span></p><p><span>      </span><span>※</span><span><span><span> </span></span></span><span><span>MDA(말론디알데히드)와 thiobarbituric acid (TBA)가 반응하여 형성되는 </span></span><span>MDA-TBA Adduct를 측정하여 lipid peroxidation 정도를 평가.</span></p><p><span>      </span><span>※</span><span><span><span> </span></span></span><span><span>EZ-Lipid Peroxidation (TBARS) Assay Kit는 흡광(λ = 532 nm)을 </span></span><span>통해 신속하고 정확하게 측정할 수 있음.</span></p><p><span><span>  </span></span><b><span>⊙</span></b><span><b><span> Storage Condition : </span></b><span>4</span></span><span>℃</span></p><p><span>  ⊙</span><span><b><span> Detection Method : </span></b><span>Colorimetric / 540 nm(530 ~ 540 nm)</span></span></p><p><span>  ⊙</span><span><b><span> Sample type : </span></b><span>Tissue, Plasma, Serum and Biological Fluids, Cell Lysates</span></span></p><p><span>  </span><span>⊙</span><span><b><span> Kit Componets </span></b></span></p><p><span><b>                       </b></span><span>• Indicator : 2 vials</span></p><p><span>                       </span><span>• Acid Reagent : 20 ㎖ X 2</span></p><p><span>                       </span><span>• 100X BHT : 100 ㎕</span></p><p><span>                       </span><span>• MDA standard(10 mM) : 100 </span><span>㎕</span></p><p><span><b> <span> </span></b></span><b><span>⊙</span></b><b><span> Data</span></b><b><span><span><span>   </span></span></span></b></p><p><img src=\"/dogen/ab5556d7cfccef7ed66f.webp\" alt=\"EZ-Lipid Peroxidation(TBARS) Assay Kit figure 1\" width=\"528\" height=\"290\" loading=\"lazy\" decoding=\"async\" /></p>\t\t\t\t",
+    "documents": [
+      {
+        "url": "https://www.dogenbio.com/product/download/19/2",
+        "label": "Protocol(KOR.)"
+      },
+      {
+        "url": "https://www.dogenbio.com/product/download/19/3",
+        "label": "Protocol(ENG.)"
+      },
+      {
+        "url": "https://www.dogenbio.com/product/download/19/4",
+        "label": "MSDS"
+      }
+    ]
+  },
+  {
+    "slug": "ez-total-antioxidant-capacity-tac-assay-kit",
+    "title": "EZ-Total Antioxidant Capacity (TAC) Assay Kit",
+    "summary": "Oxidative Stress assay kit",
+    "category": "assay-kit",
+    "group": "Oxidative Stress Assay Kit",
+    "sourceUrl": "https://www.dogenbio.com/product/view/03/18",
+    "image": "https://www.dogenbio.com/uploads/product/1740535360_fbbf84a64f741b64fd66.jpg",
+    "optionLabels": [
+      "Assay"
+    ],
+    "models": [
+      {
+        "sku": "DG-TAC200",
+        "label": "",
+        "values": [
+          "200 tests"
+        ]
+      }
+    ],
+    "descriptionHtml": "\n\t\t\t\t\t<h3>Description</h3><p><span><span><b><span>    </span></b><span>  ※</span></span></span><span><span><span> </span></span></span><span><span>Trolox는 표준 항산화 물질로 자주 사용되며, 다른 항산화 물질들은 </span></span><span>Trolox의 양에 대해 비교 측정될 수 있음.</span></p><p><span>      </span><span>※</span><span><span><span> </span></span></span><span><span>항산화 물질은 Cu2<sup><span>+</span></sup>를 Cu+로 산화시키는 원리를 이용하여 측정.</span></span></p><p><span>      </span><span>※</span><span><span><span> </span></span></span><span><span>EZ-Total Antioxidant Capacity (TAC) Assay Kit는 흡광(λ = 450 nm)</span></span><span>을 통해 신속하고 정확하게 항산화 능력을 측정할 수 있음.</span></p><p><span><span>  </span></span><b><span>⊙</span></b><span><b><span> Storage Condition : </span></b><span>4</span></span><span>℃</span></p><p><span>  ⊙</span><span><b><span> Detection Method : </span></b><span>Colorimetric / 450 nm</span></span></p><p><span>  ⊙</span><span><b><span> Sample type : </span></b><span>Tissue, Plasma, Serum and Biological Fluids, Cell Lysates</span></span></p><p><span>  </span><span>⊙</span><span><b><span> Kit Componets </span></b></span></p><p><span><b>                       </b></span><span>• Trolox Standard(10 mM) : 2 vials</span></p><p><span>                       </span><span>• Copper Reagent : 20 ㎖</span></p><p><span>                       </span><span>• Reaction Buffer : </span><span>20 ㎖</span></p><p><span> </span><span><b> <span> </span></b></span><b><span>⊙</span></b><b><span> Data</span></b><b><span><span>   </span></span></b></p><p><img src=\"/dogen/afa4ab69f3757ecbef67.webp\" alt=\"EZ-Total Antioxidant Capacity (TAC) Assay Kit figure 1\" width=\"519\" height=\"288\" loading=\"lazy\" decoding=\"async\" /></p>\t\t\t\t",
+    "documents": [
+      {
+        "url": "https://www.dogenbio.com/product/download/18/2",
+        "label": "Protocol(KOR.)"
+      },
+      {
+        "url": "https://www.dogenbio.com/product/download/18/3",
+        "label": "Protocol(ENG.)"
+      },
+      {
+        "url": "https://www.dogenbio.com/product/download/18/4",
+        "label": "MSDS"
+      }
+    ]
+  },
+  {
+    "slug": "ez-dpph-antioxidant-assay-kit",
+    "title": "EZ-DPPH Antioxidant Assay Kit",
+    "summary": "Oxidative stress assay kit",
+    "category": "assay-kit",
+    "group": "Oxidative Stress Assay Kit",
+    "sourceUrl": "https://www.dogenbio.com/product/view/03/17",
+    "image": "https://www.dogenbio.com/uploads/product/1740535753_fab5d5987ea61180460a.jpg",
+    "optionLabels": [
+      "Assay"
+    ],
+    "models": [
+      {
+        "sku": "DG-DPH400",
+        "label": "",
+        "values": [
+          "400 tests"
+        ]
+      }
+    ],
+    "descriptionHtml": "\n\t\t\t\t\t<h3>Description</h3><p><span><span><b><span>    </span></b><span>  </span></span></span><span>※</span><span><span><span> </span></span></span><span><span>동·식물에 포함되어 있는 여러 종류의 항산화제는 다양한 질병의 위험을 </span></span><span>감소시킬 수 있음.</span></p><p><span>      </span><span>※</span><span><span><span> </span></span></span><span><span>자유 라디칼로 잘 알려진 DPPH를 이용하여 항산화 능력을 빠르고 </span></span><span>간편하게 확인할 수 있음.</span></p><p><span>      </span><span>※</span><span><span><span> </span></span></span><span><span>EZ-DPPH Antioxidant Assay Kit는 흡광(λ = 517 nm) 측정을 통해 </span></span><span>신속하고 정확하게 항산화 능력을 측정할 수 있음.</span></p><p><span><span>  </span></span><b><span>⊙</span></b><span><b><span> Storage Condition ; </span></b><span>4</span></span><span>℃</span></p><p><span>  ⊙</span><span><b><span> Detection Method ; </span></b><span>Colorimetric / 517 nm</span></span></p><p><span>  ⊙</span><span><b><span> Sample type ; </span></b><span>Tissue, Plasma, Serum and Biological Fluids, Cell Lysates</span></span></p><p><span>  </span><span>⊙</span><span><b><span> Kit Componets </span></b></span></p><p><span><b>                       </b></span><span>• DPPH Reagent : 4 vials</span></p><p><span>                       </span><span>• DPPH Assay Buffer : 20 ㎖ X 2</span></p><p><span>                       </span><span>• Trolox Standard : </span><span>4 vials</span></p><p><span> </span><span><b> <span> </span></b></span><b><span>⊙</span></b><b><span> Data</span></b><b><span><span>  </span></span></b></p><p><b><span><span> </span></span></b><img src=\"/dogen/7bb441a00de5a1eed010.webp\" alt=\"EZ-DPPH Antioxidant Assay Kit figure 1\" width=\"501\" height=\"290\" loading=\"lazy\" decoding=\"async\" /><img src=\"/dogen/d32cc03ab3df53bc4a2a.webp\" alt=\"EZ-DPPH Antioxidant Assay Kit figure 2\" width=\"495\" height=\"297\" loading=\"lazy\" decoding=\"async\" /></p><p><b><span><span><br /> </span></span></b></p>\t\t\t\t",
+    "documents": [
+      {
+        "url": "https://www.dogenbio.com/product/download/17/2",
+        "label": "Protocol(KOR.)"
+      },
+      {
+        "url": "https://www.dogenbio.com/product/download/17/3",
+        "label": "Protocol(ENG.)"
+      },
+      {
+        "url": "https://www.dogenbio.com/product/download/17/4",
+        "label": "MSDS"
+      }
+    ]
+  },
+  {
+    "slug": "ez-abts-antioxidant-assay-kit",
+    "title": "EZ-ABTS Antioxidant Assay Kit",
+    "summary": "Oxidative stress assay kit",
+    "category": "assay-kit",
+    "group": "Oxidative Stress Assay Kit",
+    "sourceUrl": "https://www.dogenbio.com/product/view/03/16",
+    "image": "https://www.dogenbio.com/uploads/product/1740535841_e5562ccb3b104b548271.jpg",
+    "optionLabels": [
+      "Assay"
+    ],
+    "models": [
+      {
+        "sku": "DG-ABT400",
+        "label": "",
+        "values": [
+          "400 tests"
+        ]
+      }
+    ],
+    "descriptionHtml": "\n\t\t\t\t\t<h3>Description</h3><p><span><span><b><span>    </span></b><span> </span></span></span><span>※</span><span><span><span> </span></span></span><span><span>ABTS는 양이온 라디칼 형태로, DPPH 방법에 비해 pH의 영향을 </span></span><span>덜 받으며, 지용성 및 수용성 물질의 소거 활성을 모두 </span><span>측정할 수 있음.</span></p><p><span>      </span><span>※</span><span><span><span> </span></span></span><span><span>항산화 물질의 종류에 따라 ABTS와 DPPH 라디칼과의 결합 정도가 </span></span><span>달라 항산화 능력에 차이가 나타나기 때문에, </span></p><p><span>          두 방법 모두로 </span><span>측정하는 </span><span>것이 권장됨.</span></p><p><span>      </span><span>※</span><span><span><span> </span></span></span><span><span>EZ-ABTS Antioxidant Assay Kit는 흡광(λ = 732 nm)을 통해 신속하고 </span></span><span>정확하게 항산화 능력을 측정할 수 있음.</span></p><p><span><span>  </span></span><b><span>⊙</span></b><span><b><span> Storage Condition : </span></b><span>4</span></span><span>℃</span></p><p><span>  ⊙</span><span><b><span> Detection Method : </span></b><span>Colorimetric / 732 nm</span></span></p><p><span>  ⊙</span><span><b><span> Sample type : </span></b><span>Tissue, Plasma, Serum and Biological Fluids, Cell Lysates</span></span></p><p><span>  </span><span>⊙</span><span><b><span> Kit Componets </span></b></span></p><p><span><b>                       </b></span><span>• ABTS Reagent : 4 vials</span></p><p><span>                       </span><span>• 2X Assay Buffer : 25 ㎖ X 2</span></p><p><span>                       </span><span>• Trolox Standard(1 mM) : </span><span>4 vials</span></p><p><span> </span><span><b> <span> </span></b></span><b><span>⊙</span></b><b><span> Data</span></b><b><span><span><span>   </span></span></span></b></p><p><img src=\"/dogen/6983a796775a2c4a4c1d.webp\" alt=\"EZ-ABTS Antioxidant Assay Kit figure 1\" width=\"497\" height=\"303\" loading=\"lazy\" decoding=\"async\" /></p>\t\t\t\t",
+    "documents": [
+      {
+        "url": "https://www.dogenbio.com/product/download/16/2",
+        "label": "Protocol(KOR.)"
+      },
+      {
+        "url": "https://www.dogenbio.com/product/download/16/3",
+        "label": "Protocol(ENG.)"
+      },
+      {
+        "url": "https://www.dogenbio.com/product/download/16/4",
+        "label": "MSDS"
+      }
+    ]
+  },
+  {
+    "slug": "ez-glutathione-peroxidase-gpx-assay-kit",
+    "title": "EZ-Glutathione peroxidase (GPx) Assay Kit",
+    "summary": "Oxidative stress assay kit",
+    "category": "assay-kit",
+    "group": "Oxidative Stress Assay Kit",
+    "sourceUrl": "https://www.dogenbio.com/product/view/03/15",
+    "image": "https://www.dogenbio.com/uploads/product/1740535969_6b562a7f53f385fab6ec.jpg",
+    "optionLabels": [
+      "Assay"
+    ],
+    "models": [
+      {
+        "sku": "DG-GPX100",
+        "label": "",
+        "values": [
+          "100 tests"
+        ]
+      }
+    ],
+    "descriptionHtml": "\n\t\t\t\t\t<h3>Description</h3><p><span><span><b><span>    </span></b><span>  </span></span></span><span>※</span><span><span><span> </span></span></span><span><span>Glutathione peroxidase (GPx)는 과산화물로부터 세포를 보호하는 </span></span><span>주요 항산화 효소임.</span></p><p><span>      </span><span>※</span><span><span><span> </span></span></span><span><span>GPx는 과산화물을 환원시키면서 시료 속의 NADPH를 소모하므로, </span></span><span>NADPH의 감소량을 통해 GPx의 활성을 확인할 수 있음.</span></p><p><span>      </span><span>※</span><span><span><span> </span></span></span><span><span>EZ-Glutathione peroxidase (GPx) Assay Kit는 흡광(λ = 340 nm) </span></span><span>측정법을 이용하여 GPx의 활성을 신속하고 정확하게 측정할 수 있음.</span></p><p><span><span>  </span></span><b><span>⊙</span></b><span><b><span> Storage Condition : </span></b><span>-20</span></span><span>℃</span></p><p><span>  ⊙</span><span><b><span> Detection Method : </span></b><span>Colorimetric / 340 nm</span></span></p><p><span>  ⊙</span><span><b><span> Sample type : </span></b><span>Tissue, Plasma, Serum and Biological Fluids, Cell Lysates</span></span></p><p><span>  </span><span>⊙</span><span><b><span> Kit Componets </span></b></span></p><p><span><b>                       </b></span><span>• 2X Cumene Hydroperoxide : 5 </span><span>㎖</span></p><p><span>                       </span><span>• Glutathione Reductase : </span><span>1 vial</span></p><p><span>                       </span><span>• Glutathione Peroxidase(GPx) : 1</span><span> vial</span></p><p><span>                       • NADPH(40 mM) : 1 vial<br /></span></p><p><span>                       </span><span>• Glutathione : 1 vial</span></p><p><span>                       </span><span>• GPx Assay Buffer(pH7.0) : 30 </span><span>㎖ X 2</span></p><p><span> </span><span><b> <span> </span></b></span><b><span>⊙</span></b><b><span> Data</span></b><b><span><span><span>  </span></span></span></b></p><p><b><span><span><span> </span></span></span></b><img src=\"/dogen/2dda22e51ee6c3db0d9e.webp\" alt=\"EZ-Glutathione peroxidase (GPx) Assay Kit figure 1\" width=\"498\" height=\"290\" loading=\"lazy\" decoding=\"async\" /></p>\t\t\t\t",
+    "documents": [
+      {
+        "url": "https://www.dogenbio.com/product/download/15/2",
+        "label": "Protocol(KOR.)"
+      },
+      {
+        "url": "https://www.dogenbio.com/product/download/15/3",
+        "label": "Protocol(ENG.)"
+      },
+      {
+        "url": "https://www.dogenbio.com/product/download/15/4",
+        "label": "MSDS"
+      }
+    ]
+  },
+  {
+    "slug": "ez-nad-nadh-assay-kit",
+    "title": "EZ-NAD/NADH Assay Kit",
+    "summary": "Metabolism Assay Kit",
+    "category": "assay-kit",
+    "group": "Metabolism Assay Kit",
+    "sourceUrl": "https://www.dogenbio.com/product/view/03/40",
+    "image": "https://www.dogenbio.com/uploads/product/1782784438_727c5ee2e7e59d9c6524.jpg",
+    "optionLabels": [
+      "Assay"
+    ],
+    "models": [
+      {
+        "sku": "DG-NAD100",
+        "label": "",
+        "values": [
+          "100 test"
+        ]
+      }
+    ],
+    "descriptionHtml": "\n\t\t\t\t\t<h3>Description</h3><p><b><span>    </span></b><span>  ※<b><span> </span></b>Alcohol dehydrogenase (ADH) </span><span>반응을 이용해</span><span> ethanol</span><span>을</span><span> acetaldehyde</span><span>로 전환하면서</span><span> NAD+</span><span>를</span><span> NADH</span><span>로 환원시키고</span><span>, NADH</span><span>가\n산화되면서</span><span> </span></p><p><span>          발생하는 수소원자와</span><span> WST-8</span><span>이 반응하여</span><span> WST-8 formazan</span><span>을 형성하게 됨</span><span>.</span></p><p><b><span>    </span></b><span>  ※<b><span> </span></b></span><span>이때 생성된</span><span> NADH</span><span>의\n양은 반응에 참여한 기질의 양과</span><span> 1:1</span><span>로 비례함</span><span>.</span></p><p><span>      ※<b><span> </span></b>EZ-NAD/NADH\nAssay Kit</span><span>는 총</span><span> NAD (NAD+</span><span>와</span><span> NADH</span><span>의\n총합</span><span>) </span><span>수치와</span><span> NADH </span><span>수치를 각각 쉽게 측정 가능</span><span>.</span></p><p><span><br /></span></p><p><span>  <b><span>⊙ Storage Condition\n: </span></b>-20℃ (</span><span>개봉 후</span><span> 2</span><span>개월 내 사용 권장</span><span>)</span></p><p><b><span>  ⊙ Detection Method : </span></b><span>Colorimetric - 450 nm </span></p><p><b><span>  ⊙ Sample type : </span></b><span>Serum and Tissue, Cell lysate</span></p><p><span>  <b><span>⊙ Kit Componets </span></b></span></p><p><b><span>         \n             </span></b><span>•\nNAD/NADH Extraction Buffer : 25 </span><span>㎖</span><span> X 2</span></p><p><span>           \n           • NAD Assay Buffer : 8 </span><span>㎖</span><span> X 2</span></p><p><span>           \n           • NAD Enzyme Mix : 1\nvial</span></p><p><span>           \n           • NAD/NADH Probe : 1 </span><span>㎖</span><span></span></p><p><span>           \n           • Stop Solution : 1 </span><span>㎖</span><span></span></p><p><span>           \n           • NADH Standard (1\nmM) : 1 vial</span></p><p><b><span>  ⊙ Data  </span></b></p><p>       <img src=\"/dogen/858b6c68a36a622c4590.webp\" alt=\"EZ-NAD/NADH Assay Kit figure 1\" width=\"552\" height=\"325\" loading=\"lazy\" decoding=\"async\" /><b><span></span></b></p>\t\t\t\t",
+    "documents": [
+      {
+        "url": "https://www.dogenbio.com/product/download/40/2",
+        "label": "Protocol(KOR.)"
+      },
+      {
+        "url": "https://www.dogenbio.com/product/download/40/3",
+        "label": "Protocol(ENG.)"
+      },
+      {
+        "url": "https://www.dogenbio.com/product/download/40/4",
+        "label": "MSDS"
+      }
+    ]
+  },
+  {
+    "slug": "ez-lactate-assay-kit-l",
+    "title": "EZ-Lactate Assay Kit (L-)",
+    "summary": "Metabolism Assay Kit",
+    "category": "assay-kit",
+    "group": "Metabolism Assay Kit",
+    "sourceUrl": "https://www.dogenbio.com/product/view/03/14",
+    "image": "https://www.dogenbio.com/uploads/product/1740536723_98a3bfbb4750b62c36bc.jpg",
+    "optionLabels": [
+      "Assay"
+    ],
+    "models": [
+      {
+        "sku": "DG-LAC100",
+        "label": "",
+        "values": [
+          "100 tests"
+        ]
+      }
+    ],
+    "descriptionHtml": "\n\t\t\t\t\t<h3>Description</h3><p><span><span><b><span>    </span></b><span>  </span></span></span><span>※</span><span><span><span> </span></span></span><span><span>Lactate는 대사 과정에서 중요한 역할을 하며, 당뇨병, 젖산산증 등 </span></span><span>다양한 질병과 관련이 있는 대사 산물임.</span></p><p><span>      </span><span>※</span><span><span><span> </span></span></span><span><span>Lactate는 세포의 대사 활동 중 생성되며, L-type을 주로 측정하여 </span></span><span>해당 물질의 양을 평가.</span></p><p><span>      </span><span>※</span><span><span><span> </span></span></span><span><span>EZ-Lactate Assay Kit는 흡광(λ = 570 nm) </span></span><span>측정법을 통해 신속하고 </span><span><span>정확하게 Lactate의 양을 </span></span></p><p><span><span>        측정할 수 있음.</span></span></p><p><span><span>  </span></span><b><span>⊙</span></b><span><b><span> Storage Condition : </span></b><span>-20</span></span><span>℃</span></p><p><span>  ⊙</span><span><b><span> Detection Method : </span></b><span>Colorimetric - 570 nm /</span></span><span> Fluorometric - </span><span>Ex/Em = 535/595 nm</span></p><p><span>  ⊙</span><span><b><span> Sample type : </span></b><span>Tissue, Plasma, Serum and Biological Fluids, Cell Lysates</span></span></p><p><span>  </span><span>⊙</span><span><b><span> Kit Componets </span></b></span></p><p><span><b>                       </b></span><span>• Lactate Assay Buffer : 25 </span><span>㎖</span></p><p><span>                       </span><span>• Lactate Enzyme Mix(Lyophilized) : </span><span>1 vial</span></p><p><span>                       </span><span>• Lactate Probe : 200 </span><span>㎕</span></p><p><span>                       </span><span>• L(+)-Lactate Standard(100 mM) : 100 </span><span>㎕</span></p><p><span><b> <span> </span></b></span><b><span>⊙</span></b><b><span> Data</span></b><b><span><span><span>  </span></span></span></b></p><p><b><span><span><span> </span></span></span></b><img src=\"/dogen/daedb06448345ed10e6a.webp\" alt=\"EZ-Lactate Assay Kit (L-) figure 1\" width=\"468\" height=\"251\" loading=\"lazy\" decoding=\"async\" /></p>\t\t\t\t",
+    "documents": [
+      {
+        "url": "https://www.dogenbio.com/product/download/14/2",
+        "label": "Protocol(KOR.)"
+      },
+      {
+        "url": "https://www.dogenbio.com/product/download/14/3",
+        "label": "Protocol(ENG.)"
+      },
+      {
+        "url": "https://www.dogenbio.com/product/download/14/4",
+        "label": "MSDS"
+      }
+    ]
+  },
+  {
+    "slug": "ez-acetylcholinesterase-assay-kit",
+    "title": "EZ-Acetylcholinesterase Assay Kit",
+    "summary": "Metabolism Assay Kit",
+    "category": "assay-kit",
+    "group": "Metabolism Assay Kit",
+    "sourceUrl": "https://www.dogenbio.com/product/view/03/13",
+    "image": "https://www.dogenbio.com/uploads/product/1740536845_dbc1d2320b1f0bd6cdd1.jpg",
+    "optionLabels": [
+      "Assay"
+    ],
+    "models": [
+      {
+        "sku": "DG-ACE100",
+        "label": "",
+        "values": [
+          "100 tests"
+        ]
+      }
+    ],
+    "descriptionHtml": "\n\t\t\t\t\t<h3>Description</h3><p><span><span><b><span>    </span></b><span>  </span></span></span><span>※</span><span><span><span> </span></span></span><span><span>Acetylcholinesterase (AChE)는 신경 전달 물질인 Acetylcholine을 </span></span><span>분해하는 serine protease로, 신경계에서 중요한 역할을 함.</span></p><p><span>      </span><span>※</span><span><span><span> </span></span></span><span><span>AChE는 Acetylcholine을 가수분해하여 신경 전달을 종료시키며, </span></span><span>이러한 효소의 활성을 측정하는 데 사용됨.</span></p><p><span>      </span><span>※</span><span><span><span> </span></span></span><span><span>EZ-Acetylcholinesterase Assay Kit는 흡광(λ = 570 nm)을 통해 </span></span><span>신속하고 정확하게 AChE의 활성을 측정할 수 있음.</span></p><p><span><span>  </span></span><b><span>⊙</span></b><span><b><span> Storage Condition :<span> </span></span></b><span>-20</span></span><span>℃</span></p><p><span>  ⊙</span><span><b><span> Detection Method : </span></b><span>Colorimetric - 570 nm </span></span></p><p><span>  ⊙</span><span><b><span> Sample type : </span></b><span>Tissue, Plasma, Serum and Biological Fluids, Cell Lysates</span></span></p><p><span>  </span><span>⊙</span><span><b><span> Kit Componets </span></b></span></p><p><span><b>                       </b></span><span>• AChE Assay Buffer : 25 </span><span>㎖</span></p><p><span>                       </span><span>• AChE Enzyme Mix(Lyophilized) : </span><span>1 vial</span></p><p><span>                       • AChE Substrate : 5</span><span> vial</span><span></span></p><p><span>                       </span><span>• </span><span>AChE</span><span> Probe : 200 </span><span>㎕</span></p><p><span>                       </span><span>• </span><span>AChE</span><span> Standard(50 mM) : 100 </span><span>㎕</span></p><p><span><b> <span> </span></b></span><b><span>⊙</span></b><b><span> Data</span></b><b><span><span><span>  </span></span></span></b></p><p><b><span><span><span> </span></span></span></b><img src=\"/dogen/9ca919faab567ee7f7e5.webp\" alt=\"EZ-Acetylcholinesterase Assay Kit figure 1\" width=\"456\" height=\"271\" loading=\"lazy\" decoding=\"async\" /></p>\t\t\t\t",
+    "documents": [
+      {
+        "url": "https://www.dogenbio.com/product/download/13/2",
+        "label": "Protocol(KOR.)"
+      },
+      {
+        "url": "https://www.dogenbio.com/product/download/13/3",
+        "label": "Protocol(ENG.)"
+      },
+      {
+        "url": "https://www.dogenbio.com/product/download/13/4",
+        "label": "MSDS"
+      }
+    ]
+  },
+  {
+    "slug": "ez-ascorbic-acid-assay-kit",
+    "title": "EZ-Ascorbic Acid Assay Kit",
+    "summary": "Metabolism Assay Kit",
+    "category": "assay-kit",
+    "group": "Metabolism Assay Kit",
+    "sourceUrl": "https://www.dogenbio.com/product/view/03/12",
+    "image": "https://www.dogenbio.com/uploads/product/1740536933_f9e65e7d5295501192d8.jpg",
+    "optionLabels": [
+      "Assay"
+    ],
+    "models": [
+      {
+        "sku": "DG-ASC100",
+        "label": "",
+        "values": [
+          "100 tests"
+        ]
+      }
+    ],
+    "descriptionHtml": "\n\t\t\t\t\t<h3>Description</h3><p><span><span><b><span>    </span></b><span>  </span></span></span><span>※</span><span><span><span> </span></span></span><span><span>다양한 식품 및 생물 시료에 포함된 Ascorbic Acid (비타민 C)는 강력한 </span></span><span>항산화제로 Fe<sup><span>3+</span></sup>를 Fe<sup><span>2+</span></sup>로 환원시키는 작용을 함.</span></p><p><span>      </span><span>※</span><span><span><span> </span></span></span><span><span>환원된 Fe<sup><span>2+</span></sup>가 probe와 결합하면서 발생하는 발색 반응을 통해 항산화 </span></span><span>활성을 측정함.</span></p><p><span>      </span><span>※</span><span><span><span> </span></span></span><span><span>EZ-Ascorbic Acid Assay Kit는 흡광(λ = 593 nm)을 통해 신속하고 </span></span><span>정확하게 Ascorbic Acid의 항산화 능력을 측정할 수 있음.</span></p><p><span><span>  </span></span><b><span>⊙</span></b><span><b><span> Storage Condition : </span></b><span>-20</span></span><span>℃</span></p><p><span>  ⊙</span><span><b><span> Detection Method :<span> </span></span></b><span>Colorimetric - 593 nm </span></span></p><p><span>  ⊙</span><span><b><span> Sample type : </span></b><span>Plasma, Serum and Biological Fluids</span></span></p><p><span>  </span><span>⊙</span><span><b><span> Kit Componets </span></b></span></p><p><span><b>                       </b></span><span>• Ascorbic Acid Assay Buffer : 25 </span><span>㎖</span></p><p><span>                       </span><span>• </span><span>Ascorbic Acid</span><span> Enzyme Mix(Lyophilized) : </span><span>2 vial</span></p><p><span>                       </span><span>• </span><span>Catalyst</span><span> : </span><span>1 </span><span>㎖</span></p><p><span>                       • </span><span>Ascorbic Acid</span><span> Probe : 1 ㎖</span><span></span></p><p><span>                       • </span><span>Ascorbic Acid</span><span> Standard(10 mM) : 100 </span><span>vial</span><span>            </span></p><div><span><b><span> </span><span> </span></b></span><b><span>⊙</span></b><b><span> Data</span></b><b><span><span><span>   </span></span></span></b></div><div><img src=\"/dogen/624f642bbdc793de2567.webp\" alt=\"EZ-Ascorbic Acid Assay Kit figure 1\" width=\"467\" height=\"269\" loading=\"lazy\" decoding=\"async\" /></div>\t\t\t\t",
+    "documents": [
+      {
+        "url": "https://www.dogenbio.com/product/download/12/2",
+        "label": "Protocol(KOR.)"
+      },
+      {
+        "url": "https://www.dogenbio.com/product/download/12/3",
+        "label": "Protocol(ENG.)"
+      },
+      {
+        "url": "https://www.dogenbio.com/product/download/12/4",
+        "label": "MSDS"
+      }
+    ]
+  },
+  {
+    "slug": "ez-atp-assay-kit",
+    "title": "EZ-ATP Assay Kit",
+    "summary": "Metabolism Assay Kit",
+    "category": "assay-kit",
+    "group": "Metabolism Assay Kit",
+    "sourceUrl": "https://www.dogenbio.com/product/view/03/11",
+    "image": "https://www.dogenbio.com/uploads/product/1740537005_a92fefc902dd06a09519.jpg",
+    "optionLabels": [
+      "Assay"
+    ],
+    "models": [
+      {
+        "sku": "DG-ATP100",
+        "label": "",
+        "values": [
+          "100 tests"
+        ]
+      }
+    ],
+    "descriptionHtml": "\n\t\t\t\t\t<h3>Description</h3><p><span><span><b><span>    </span></b><span>  </span></span></span><span>※</span><span><span><span> </span></span></span><span>ATP는 살아있는 생명체의 주요 에너지원으로, 세포 대사에 필수적임.</span></p><p><span>      </span><span>※</span><span><span><span> </span></span></span><span><span>ATP는 글리세롤에 인산을 추가하여 Glycerol-6-phosphate를 생성하며, </span></span><span>이 반응을 기반으로 ATP의 농도를 측정할 수 있음.</span></p><p><span>      </span><span>※</span><span><span><span> </span></span></span><span><span>EZ-ATP Assay Kit는 흡광(λ = 570 nm) 또는 형광(Ex/Em = 535/595 nm) </span></span><span>측정법을 이용하여 신속하고 정확하게 ATP 농도를 </span></p><p><span>        측정할 수 있음.</span></p><p><span><span>  </span></span><b><span>⊙</span></b><span><b><span> Storage Condition : </span></b><span>-20</span></span><span>℃</span></p><p><span>  ⊙</span><span><b><span> Detection Method : </span></b><span>Colorimetric - 570 nm /</span></span><span> Fluorometric - </span><span>Ex/Em = 535/595 nm</span></p><p><span>  ⊙</span><span><b><span> Sample type : </span></b><span>Tissue, Plasma, Serum and Biological Fluids, Cell Lysates, Urine</span></span></p><p><span>  </span><span>⊙</span><span><b><span> Kit Componets </span></b></span></p><p><span><b>                       </b></span><span>• ATP Assay Buffer : 25 </span><span>㎖</span></p><p><span>                       </span><span>• </span><span>ATP</span><span> Enzyme Mix(Lyophilized) : </span><span>1 vial</span></p><p><span>                       • </span><span>ATP</span><span> Converter : </span><span>200 </span><span>㎕</span></p><p><span>                       </span><span>• ATP Probe : 200 </span><span>㎕</span></p><p><span>                       </span><span>• ATP Standard(100 mM) : 100 </span><span>㎕</span></p><p><span><b> <span> </span></b></span><b><span>⊙</span></b><b><span> Data</span></b><b><span><span><span>   </span></span></span></b></p><p><img src=\"/dogen/a456f3a6b5c1f8045b90.webp\" alt=\"EZ-ATP Assay Kit figure 1\" width=\"468\" height=\"273\" loading=\"lazy\" decoding=\"async\" /></p>\t\t\t\t",
+    "documents": [
+      {
+        "url": "https://www.dogenbio.com/product/download/11/2",
+        "label": "Protocol(KOR.)"
+      },
+      {
+        "url": "https://www.dogenbio.com/product/download/11/3",
+        "label": "Protocol(ENG.)"
+      },
+      {
+        "url": "https://www.dogenbio.com/product/download/11/4",
+        "label": "MSDS"
+      }
+    ]
+  },
+  {
+    "slug": "ez-free-fatty-acid-assay-kit",
+    "title": "EZ-Free Fatty Acid Assay Kit",
+    "summary": "Metabolism Assay Kit",
+    "category": "assay-kit",
+    "group": "Metabolism Assay Kit",
+    "sourceUrl": "https://www.dogenbio.com/product/view/03/10",
+    "image": "https://www.dogenbio.com/uploads/product/1740537119_36eba070e8c2289139c3.jpg",
+    "optionLabels": [
+      "Assay"
+    ],
+    "models": [
+      {
+        "sku": "DG-FFA100",
+        "label": "",
+        "values": [
+          "100 tests"
+        ]
+      }
+    ],
+    "descriptionHtml": "\n\t\t\t\t\t<h3>Description</h3><p><span><span><b><span>     </span></b><span> </span></span></span><span>※</span><span><span><span> </span></span></span><span><span>Free Fatty Acids (FFA)는 체내 에너지원으로 사용되는 중요한 지방산임.</span></span></p><p><span>      </span><span>※</span><span><span><span> </span></span></span><span><span>EZ-Free Fatty Acid Assay Kit는 효소 기반의 흡광(λ = 570 nm) 또는 </span></span><span>형광(Ex/Em = 535/595 nm) 방법을 통해여 긴 사슬 </span></p><p><span>         지방산을 신속하고 </span><span>정확하게 측정할 수 있음.</span></p><p><span><span>  </span></span><b><span>⊙</span></b><span><b><span> Storage Condition : </span></b><span>-20</span></span><span>℃</span></p><p><span>  ⊙</span><span><b><span> Detection Method : </span></b><span>Colorimetric - 570 nm /</span></span><span> Fluorometric - </span><span>Ex/Em = 535/595 nm</span></p><p><span>  ⊙</span><span><b><span> Sample type : </span></b><span>Tissue, Plasma, Serum and Biological Fluids, Cell Lysates</span></span></p><p><span>  </span><span>⊙</span><span><b><span> Kit Componets </span></b></span></p><p><span><b>                        </b></span><span>• Fatty Acid Assay Buffer : 25 </span><span>㎖</span></p><p><span>                       • </span><span>Fatty Acid</span><span> Enzyme Mix(Lyophilized) : </span><span>1 vial</span><span></span></p><p><span>                       • ACS Reagent(Lyophilized) : </span><span>1 vial</span><span></span></p><p><span>                       • Cofactor Mixture(Lyophilized) : </span><span>1 vial</span><span></span></p><p><span>                       </span><span>• Enhancer : </span><span>200 </span><span>㎕</span></p><p><span>                       </span><span>• </span><span>Fatty Acid</span><span> Probe : 200 </span><span>㎕</span></p><p><span>                       </span><span>• </span><span>Fatty Acid</span><span> Standard(1 mM) : 300 </span><span>㎕</span></p><p><span><b> <span> </span></b></span><b><span>⊙</span></b><b><span> Data</span></b><b><span><span><span>  </span></span></span></b></p><p><b><span><span><span> </span></span></span></b><img src=\"/dogen/0e4a2b5e48f9b8af6954.webp\" alt=\"EZ-Free Fatty Acid Assay Kit figure 1\" width=\"451\" height=\"280\" loading=\"lazy\" decoding=\"async\" /></p>\t\t\t\t",
+    "documents": [
+      {
+        "url": "https://www.dogenbio.com/product/download/10/2",
+        "label": "Protocol(KOR.)"
+      },
+      {
+        "url": "https://www.dogenbio.com/product/download/10/3",
+        "label": "Protocol(ENG.)"
+      },
+      {
+        "url": "https://www.dogenbio.com/product/download/10/4",
+        "label": "MSDS"
+      }
+    ]
+  },
+  {
+    "slug": "ez-free-glycerol-assay-kit",
+    "title": "EZ-Free Glycerol Assay Kit",
+    "summary": "Metabolism Assay Kit",
+    "category": "assay-kit",
+    "group": "Metabolism Assay Kit",
+    "sourceUrl": "https://www.dogenbio.com/product/view/03/9",
+    "image": "https://www.dogenbio.com/uploads/product/1740537236_bee6bcb374345bcf80c6.jpg",
+    "optionLabels": [
+      "Assay"
+    ],
+    "models": [
+      {
+        "sku": "DG-FGC100",
+        "label": "",
+        "values": [
+          "100 tests"
+        ]
+      }
+    ],
+    "descriptionHtml": "\n\t\t\t\t\t<h3>Description</h3><p><span><span><b><span>     </span></b><span> </span></span></span><span>※</span><span><span><span> </span></span></span><span><span>Glycerol (글리세롤)은 지방을 저장하는 Triglyceride의 주성분으로, </span></span><span>간 및 근육에 저장되는 에너지원임.</span></p><p><span>      </span><span>※</span><span><span><span> </span></span></span><span><span>EZ-Free Glycerol Assay Kit는 다양한 시료에서 흡광(λ = 570 nm) 및 </span></span><span>형광(Ex/Em = 535/590 nm) 방법을 통해 </span></p><p><span>        신속하고 정확하게 free </span><span>glycerol의 농도를 측정할 수 있음.</span></p><p><span><span>  </span></span><b><span>⊙</span></b><span><b><span> Storage Condition :<span> </span></span></b><span>-20</span></span><span>℃</span></p><p><span>  ⊙</span><span><b><span> Detection Method : </span></b><span>Colorimetric - 570 nm /</span></span><span> Fluorometric - </span><span>Ex/Em = 535/595 nm</span></p><p><span>  ⊙</span><span><b><span> Sample type : </span></b><span>Tissue, Plasma, Serum and Biological Fluids, Cell Lysates</span></span></p><p><span>  </span><span>⊙</span><span><b><span> Kit Componets </span></b></span></p><p><span><b>                       </b></span><span>• Glycerol Assay Buffer : 25 </span><span>㎖</span></p><p><span>                       </span><span>• </span><span>Glycerol</span><span> Enzyme Mix(Lyophilized) : </span><span>1 vial</span></p><p><span>                       </span><span>• </span><span>Glycerol</span><span> Probe : 200 </span><span>㎕</span></p><p><span>                       </span><span>• </span><span>Glycerol</span><span> Standard(100 mM) : 100 </span><span>㎕</span></p><p><span><b> <span> </span></b></span><b><span>⊙</span></b><b><span> Data</span></b><b><span><span><span>  </span></span></span></b></p><p><b><span><span><span> </span></span></span></b><img src=\"/dogen/e8f40266860e2bfdef82.webp\" alt=\"EZ-Free Glycerol Assay Kit figure 1\" width=\"463\" height=\"282\" loading=\"lazy\" decoding=\"async\" /></p>\t\t\t\t",
+    "documents": [
+      {
+        "url": "https://www.dogenbio.com/product/download/9/2",
+        "label": "Protocol(KOR.)"
+      },
+      {
+        "url": "https://www.dogenbio.com/product/download/9/3",
+        "label": "Protocol(ENG.)"
+      },
+      {
+        "url": "https://www.dogenbio.com/product/download/9/4",
+        "label": "MSDS"
+      }
+    ]
+  },
+  {
+    "slug": "ez-glucose-assay-kit",
+    "title": "EZ-Glucose Assay Kit",
+    "summary": "Metabolism Assay Kit",
+    "category": "assay-kit",
+    "group": "Metabolism Assay Kit",
+    "sourceUrl": "https://www.dogenbio.com/product/view/03/8",
+    "image": "https://www.dogenbio.com/uploads/product/1740537326_c2455b0da4984d178bf0.jpg",
+    "optionLabels": [
+      "Assay"
+    ],
+    "models": [
+      {
+        "sku": "DG-GCS100",
+        "label": "",
+        "values": [
+          "100 tests"
+        ]
+      }
+    ],
+    "descriptionHtml": "\n\t\t\t\t\t<h3>Description</h3><p><span><span><b><span>    </span></b><span>  </span></span></span><span>※</span><span><span><span> </span></span></span><span><span>Glucose (포도당)은 생물학적 연료원으로, ATP를 생성하는 주요 에너지 </span></span><span>분자임.</span></p><p><span>      </span><span>※</span><span><span><span> </span></span></span><span><span>EZ-Glucose Assay Kit는 포도당만 선택적으로 신속하고 간단하게 </span></span><span>측정 가능하여, 단백질 발현과 발효 과정에서 </span></p><p><span>        일어나는 포도당 소비를 </span><span>확인할 수 있음.</span></p><p><span>      </span><span>※</span><span><span><span> </span></span></span><span><span>EZ-Glucose Assay Kit는 흡광(λ = 570 nm) 또는 형광(Ex/Em = </span></span><span>535/595 nm) 방법을 통해 신속하고 정확하게 </span></p><p><span>        Glucose 농도를 측정 </span><span>할 수 있음.</span></p><p><span><span>  </span></span><b><span>⊙</span></b><span><b><span> Storage Condition :<span> </span></span></b><span>-20</span></span><span>℃</span></p><p><span>  ⊙</span><span><b><span> Detection Method :<span> </span></span></b><span>Colorimetric - 570 nm /</span></span><span> Fluorometric - </span><span>Ex/Em = 535/595 nm</span></p><p><span>  ⊙</span><span><b><span> Sample type : </span></b><span>Tissue, Plasma, Serum and Biological Fluids, Cell Lysates, Urine</span></span></p><p><span>  </span><span>⊙</span><span><b><span> Kit Componets </span></b></span></p><p><span><b>                       </b></span><span>• Glucose Assay Buffer : 25 </span><span>㎖</span></p><p><span>                       </span><span>• </span><span>Glucose</span><span> Enzyme Mix(Lyophilized) : </span><span>1 vial</span></p><p><span>                       </span><span>• </span><span>Glucose</span><span> Probe : 200 </span><span>㎕</span></p><p><span>                       </span><span>• </span><span>Glucose</span><span> Standard(100 mM) : 100 </span><span>㎕</span></p><p><span><b> <span> </span></b></span><b><span>⊙</span></b><b><span> Data</span></b><b><span><span><span>  </span></span></span></b></p><p><b><span><span><span> </span></span></span></b><img src=\"/dogen/a93aadac7481aa36da21.webp\" alt=\"EZ-Glucose Assay Kit figure 1\" width=\"461\" height=\"272\" loading=\"lazy\" decoding=\"async\" /></p>\t\t\t\t",
+    "documents": [
+      {
+        "url": "https://www.dogenbio.com/product/download/8/2",
+        "label": "Protocol(KOR.)"
+      },
+      {
+        "url": "https://www.dogenbio.com/product/download/8/3",
+        "label": "Protocol(ENG.)"
+      },
+      {
+        "url": "https://www.dogenbio.com/product/download/8/4",
+        "label": "MSDS"
+      }
+    ]
+  },
+  {
+    "slug": "ez-hdl-ldl-vldl-assay-kit",
+    "title": "EZ-HDL, LDL/VLDL Assay Kit",
+    "summary": "Metabolism Assay Kit",
+    "category": "assay-kit",
+    "group": "Metabolism Assay Kit",
+    "sourceUrl": "https://www.dogenbio.com/product/view/03/7",
+    "image": "https://www.dogenbio.com/uploads/product/1740537415_18451f69261339c11293.jpg",
+    "optionLabels": [
+      "Assay"
+    ],
+    "models": [
+      {
+        "sku": "DG-CHO100",
+        "label": "",
+        "values": [
+          "100 tests"
+        ]
+      }
+    ],
+    "descriptionHtml": "\n\t\t\t\t\t<h3>Description</h3><p><span><span><b><span>    </span></b><span>  </span></span></span><span>※</span><span><span><span> </span></span></span><span><span>HDL (고밀도 지질단백질)과 LDL (저밀도 지질단백질)은 심혈관 질환과 </span></span><span>관련된 중요한 콜레스테롤 지표임.</span></p><p><span>      </span><span>※</span><span><span><span> </span></span></span><span><span>EZ-HDL, LDL/VLDL Assay Kit는 혈청 샘플에서 LDL과 VLDL (초저밀도 </span></span><span>지질단백질)을 분리한 후, 간단하고 정확한 </span></p><p><span>        방법으로 HDL과LDL/VLDL </span><span>농도를 측정함.</span></p><p><span>      </span><span>※</span><span><span><span> </span></span></span><span><span>EZ-HDL, LDL/VLDL Assay Kit 키트는 흡광(λ = 570 nm) 또는 형광 </span></span><span>(Ex/Em = 535/595 nm)에서 신속하고 정확하게 </span></p><p><span>        HDL과 LDL/VLDL을 </span><span>농도를 측정할 수 있음.</span></p><p><span><span>  </span></span><b><span>⊙</span></b><span><b><span> Storage Condition :<span> </span></span></b><span>-20</span></span><span>℃</span></p><p><span>  ⊙</span><span><b><span> Detection Method :<span> </span></span></b><span>Colorimetric - 570 nm /</span></span><span> Fluorometric - </span><span>Ex/Em = 535/595 nm</span></p><p><span>  ⊙</span><span><b><span> Sample type : </span></b><span>Tissue, Plasma, Serum and Biological Fluids, Cell Lysates, Urine</span></span></p><p><span>  </span><span>⊙</span><span><b><span> Kit Componets </span></b></span></p><p><span><b>                       </b></span><span>• Cholesterol Assay Buffer : 25 </span><span>㎖</span></p><p><span>                       • 2X LDL/VLDL Buffer : 10 </span><span>㎖</span><span></span></p><p><span>                       </span><span>• </span><span>Cholesterol</span><span> Enzyme Mix(Lyophilized) : </span><span>1 vial</span></p><p><span>                       • </span><span>Cholesterol</span><span> Esterase(Lyophilized) : </span><span>1 vial</span><span></span></p><p><span>                       </span><span>• </span><span>Cholesterol</span><span> Probe : 200 </span><span>㎕</span></p><p><span>                       </span><span>• </span><span>Cholesterol</span><span> Standard(100 mM) : 100 </span><span>㎕</span></p><p><span><b> <span> </span></b></span><b><span>⊙</span></b><b><span> Data</span></b><b><span><span><span>  </span></span></span></b></p><p><b><span><span><span> </span></span></span></b><img src=\"/dogen/8f2e98b7ae0b95f3c541.webp\" alt=\"EZ-HDL, LDL/VLDL Assay Kit figure 1\" width=\"454\" height=\"255\" loading=\"lazy\" decoding=\"async\" /></p>\t\t\t\t",
+    "documents": [
+      {
+        "url": "https://www.dogenbio.com/product/download/7/2",
+        "label": "Protocol(KOR.)"
+      },
+      {
+        "url": "https://www.dogenbio.com/product/download/7/3",
+        "label": "Protocol(ENG.)"
+      },
+      {
+        "url": "https://www.dogenbio.com/product/download/7/4",
+        "label": "MSDS"
+      }
+    ]
+  },
+  {
+    "slug": "ez-total-cholesterol-assay-kit",
+    "title": "EZ-Total Cholesterol Assay Kit",
+    "summary": "Metabolism Assay Kit",
+    "category": "assay-kit",
+    "group": "Metabolism Assay Kit",
+    "sourceUrl": "https://www.dogenbio.com/product/view/03/6",
+    "image": "https://www.dogenbio.com/uploads/product/1740537554_dd9baecb2780506ce25a.jpg",
+    "optionLabels": [
+      "Assay"
+    ],
+    "models": [
+      {
+        "sku": "DG-TSC100",
+        "label": "",
+        "values": [
+          "100 tests"
+        ]
+      }
+    ],
+    "descriptionHtml": "\n\t\t\t\t\t<h3>Description</h3><p><span><span><b><span>    </span></b><span>  </span></span></span><span>※</span><span><span><span> </span></span></span><span><span>혈액 중 총 Cholesterol 양은 심혈관 질환의 주요 지표로 사용됨.</span></span></p><p><span>      </span><span>※</span><span><span><span> </span></span></span><span><span>Total cholesterol(콜레스테롤과 콜레스테릴 에스터) 값은 Cholesterol </span></span><span>esterase가 존재하는 반응에서 측정하며, </span></p><p><span>         Cholesteryl ester 값은 </span><span>free cholesterol을 측정한 후 차감하여 구할 수 있음.</span></p><p><span>      </span><span>※</span><span><span><span> </span></span></span><span><span>흡광(λ = 570 nm) 및 형광(Ex/Em = 535/595 nm)에서 신속하고 </span></span><span>정확하게 total 및 free cholesterol 농도를 분석할 수 있음.</span></p><p><span><span>  </span></span><b><span>⊙</span></b><span><b><span> Storage Condition : </span></b><span>-20</span></span><span>℃</span></p><p><span>  ⊙</span><span><b><span> Detection Method : </span></b><span>Colorimetric - 570 nm /</span></span><span> Fluorometric - </span><span>Ex/Em = 535/595 nm</span></p><p><span>  ⊙</span><span><b><span> Sample type : </span></b><span>Tissue, Plasma, Serum and Biological Fluids, Cell Lysates, Urine</span></span></p><p><span>  </span><span>⊙</span><span><b><span> Kit Componets </span></b></span></p><p><span><b>                       </b></span><span>• Cholesterol Assay Buffer : 25 </span><span>㎖</span></p><p><span>                       </span><span>• </span><span>Cholesterol</span><span> Enzyme Mix(Lyophilized) : </span><span>1 vial</span></p><p><span>                       • </span><span>Cholesterol</span><span> Esterase(Lyophilized) : </span><span>1 vial</span></p><p><span>                       </span><span>• </span><span>Cholesterol</span><span> Probe : 200 </span><span>㎕</span></p><p><span>                       </span><span>• </span><span>Cholesterol</span><span> Standard(100 mM) : 100 </span><span>㎕</span></p><p><span><b> <span> </span></b></span><b><span>⊙</span></b><b><span> Data</span></b><b><span><span><span>  </span></span></span></b></p><p><b><span><span><span> </span></span></span></b><img src=\"/dogen/523c4fe6dfd25bf73259.webp\" alt=\"EZ-Total Cholesterol Assay Kit figure 1\" width=\"461\" height=\"258\" loading=\"lazy\" decoding=\"async\" /></p>\t\t\t\t",
+    "documents": [
+      {
+        "url": "https://www.dogenbio.com/product/download/6/2",
+        "label": "Protocol(KOR.)"
+      },
+      {
+        "url": "https://www.dogenbio.com/product/download/6/3",
+        "label": "Protocol(ENG.)"
+      },
+      {
+        "url": "https://www.dogenbio.com/product/download/6/4",
+        "label": "MSDS"
+      }
+    ]
+  },
+  {
+    "slug": "ez-triglyceride-quantification-assay-kit",
+    "title": "EZ-Triglyceride Quantification Assay Kit",
+    "summary": "Metabolism Assay Kit",
+    "category": "assay-kit",
+    "group": "Metabolism Assay Kit",
+    "sourceUrl": "https://www.dogenbio.com/product/view/03/5",
+    "image": "https://www.dogenbio.com/uploads/product/1740537826_89435441112c040fe210.jpg",
+    "optionLabels": [
+      "Assay"
+    ],
+    "models": [
+      {
+        "sku": "DG-TGC100",
+        "label": "",
+        "values": [
+          "100 tests"
+        ]
+      }
+    ],
+    "descriptionHtml": "\n\t\t\t\t\t<h3>Description</h3><p><span><span><b><span>    </span></b><span>  </span></span></span><span>※</span><span><span><span> </span></span></span><span><span>Triglyceride (TG)는 식물성 기름, 동물성 지방, LDL 및 VLDL의 </span></span><span>주요 성분이며, 에너지원과 지방산 운반에 중요한 역할을 함.</span></p><p><span>      </span><span>※</span><span><span><span> </span></span></span><span><span>EZ-Triglyceride Quantification Kit는 다양한 시료에서 Triglyceride, </span></span><span>Monoglyceride, Diglyceride 농도를 정확하고 쉽게 측정할 수 있음.</span></p><p><span>      </span><span>※</span><span><span><span> </span></span></span><span><span>흡광(λ = 570 nm) 및 형광(Ex/Em = 535/595 nm)에서 신속하고 </span></span><span>정확하게 Triglyceride 농도를 분석할 수 있음.</span></p><p><span><span>  </span></span><b><span>⊙</span></b><span><b><span> Storage Condition :<span> </span></span></b><span>-20</span></span><span>℃</span></p><p><span>  ⊙</span><span><b><span> Detection Method : </span></b><span>Colorimetric - 570 nm /</span></span><span> Fluorometric - </span><span>Ex/Em = 535/595 nm</span></p><p><span>  ⊙</span><span><b><span> Sample type : </span></b><span>Tissue, Plasma, Serum and Biological Fluids, Cell Lysates, Urine</span></span></p><p><span>  </span><span>⊙</span><span><b><span> Kit Componets </span></b></span></p><p><span><b>                       </b></span><span>• Triglyceride Assay Buffer : 25 </span><span>㎖</span></p><p><span>                       </span><span>• </span><span>Triglyceride</span><span> Enzyme Mix(Lyophilized) : </span><span>1 vial</span></p><p><span>                       • </span><span>Lipase</span><span>(Lyophilized) : </span><span>1 vial</span><span></span></p><p><span>                       </span><span>• </span><span>Triglyceride</span><span> Probe : 200 </span><span>㎕</span></p><p><span>                       </span><span>• </span><span>Triglyceride</span><span> Standard(1 mM) : 300 </span><span>㎕</span></p><p><span><b> <span> </span></b></span><b><span>⊙</span></b><b><span> Data</span></b><b><span><span><span>  </span></span></span></b></p><p><b><span><span><span> </span></span></span></b><img src=\"/dogen/08b1fbd3154d590767de.webp\" alt=\"EZ-Triglyceride Quantification Assay Kit figure 1\" width=\"459\" height=\"270\" loading=\"lazy\" decoding=\"async\" /></p>\t\t\t\t",
+    "documents": [
+      {
+        "url": "https://www.dogenbio.com/product/download/5/2",
+        "label": "Protocol(KOR.)"
+      },
+      {
+        "url": "https://www.dogenbio.com/product/download/5/3",
+        "label": "Protocol(ENG.)"
+      },
+      {
+        "url": "https://www.dogenbio.com/product/download/5/4",
+        "label": "MSDS"
+      }
+    ]
+  },
+  {
+    "slug": "ez-nitric-oxide-assay-kit",
+    "title": "EZ-Nitric Oxide Assay Kit",
+    "summary": "Metabolism Assay Kit",
+    "category": "assay-kit",
+    "group": "Metabolism Assay Kit",
+    "sourceUrl": "https://www.dogenbio.com/product/view/03/4",
+    "image": "https://www.dogenbio.com/uploads/product/1740537916_4231a6fbc382c3f4a580.jpg",
+    "optionLabels": [
+      "Assay"
+    ],
+    "models": [
+      {
+        "sku": "DG-NO500",
+        "label": "",
+        "values": [
+          "500 tests"
+        ]
+      }
+    ],
+    "descriptionHtml": "\n\t\t\t\t\t<h3>Description</h3><p><span><span><b><span>    </span></b><span>  </span></span></span><span>※</span><span><span><span> </span></span></span><span><span>Nitric Oxide (NO)는 신경 전달, 혈관 조절, 면역 반응 등에서 중요한 </span></span><span>역할을 함.</span></p><p><span>      </span><span>※</span><span><span><span> </span></span></span><span><span>NO는 아질산염(NO2<sup><span>-</span></sup>)으로 변환되며, 그리스 시약과 반응하여 붉은색을 </span></span><span>나타냄.</span></p><p><span>      </span><span>※</span><span><span><span> </span></span></span><span><span>EZ-Nitric Oxide Assay Kit는 흡광(λ = 540 nm)에서 신속하고 정확하게 </span></span><span>NO2<sup><span>-</span></sup> 농도를 측정할 수 있음.</span></p><p><span><span>  </span></span><b><span>⊙</span></b><span><b><span> Storage Condition : </span></b><span>4</span></span><span>℃</span></p><p><span>  ⊙</span><span><b><span> Detection Method : </span></b><span>Colorimetric - 540 nm </span></span></p><p><span>  ⊙</span><span><b><span> Sample type : </span></b><span>Tissue, Plasma, Serum and Biological Fluids, Cell Lysates, Urine</span></span></p><p><span>  </span><span>⊙</span><span><b><span> Kit Componets </span></b></span></p><p><span><b>                       </b></span><span>• Griess Reagent A : 25 </span><span>㎖</span></p><p><span>                       </span><span>• </span><span>Griess Reagent B</span><span> : </span><span>25 </span><span>㎖</span></p><p><span>                       </span><span>• Nitrite Standard(2 mM) : 500 </span><span>㎕ X 2 vials</span></p><p><span><b> <span> </span></b></span><b><span>⊙</span></b><b><span> Data</span></b><b><span><span><span>   </span></span></span></b></p><p><img src=\"/dogen/1a9c664369b90e43d839.webp\" alt=\"EZ-Nitric Oxide Assay Kit figure 1\" width=\"487\" height=\"289\" loading=\"lazy\" decoding=\"async\" /></p>\t\t\t\t",
+    "documents": [
+      {
+        "url": "https://www.dogenbio.com/product/download/4/2",
+        "label": "Protocol(KOR.)"
+      },
+      {
+        "url": "https://www.dogenbio.com/product/download/4/3",
+        "label": "Protocol(ENG.)"
+      },
+      {
+        "url": "https://www.dogenbio.com/product/download/4/4",
+        "label": "MSDS"
+      }
+    ]
+  },
+  {
+    "slug": "ez-total-collagen-assay-kit",
+    "title": "EZ-Total Collagen Assay Kit",
+    "summary": "Metabolism Assay Kit",
+    "category": "assay-kit",
+    "group": "Metabolism Assay Kit",
+    "sourceUrl": "https://www.dogenbio.com/product/view/03/3",
+    "image": "https://www.dogenbio.com/uploads/product/1740538026_d2b07abd25f7ebb7fb7d.jpg",
+    "optionLabels": [
+      "Assay"
+    ],
+    "models": [
+      {
+        "sku": "DG-COL100",
+        "label": "",
+        "values": [
+          "100 tests"
+        ]
+      }
+    ],
+    "descriptionHtml": "\n\t\t\t\t\t<h3>Description</h3><p><span><span><b><span>     </span></b><span> </span></span></span><span>※</span><span><span><span> </span></span></span><span><span>콜라겐은 Hydroxyproline을 풍부하게 함유하는 단백질로 세포 외</span></span><span>기질과 결합 조직의 주성분임.</span></p><p><span>      </span><span>※</span><span><span><span> </span></span></span><span><span>EZ-Total Collagen Assay Kit는 샘플에서 Hydroxyproline을 정확하게 </span></span><span>측정하여 콜라겐의 양을 분석함.</span></p><p><span>      </span><span>※</span><span><span><span> </span></span></span><span><span>Hydroxyproline은 chloramine-T와 Ehrlich’s reagent와 반응하여</span></span><span>발색된 색변화를 흡광 (λ = 560 nm)에서 측정하여 </span><span>콜라겐 농도를 확인함.</span></p><p><span><span>  </span></span><b><span>⊙</span></b><span><b><span> Storage Condition : </span></b><span>-20</span></span><span>℃</span></p><p><span>  ⊙</span><span><b><span> Detection Method :<span> </span></span></b><span>Colorimetric - 560 nm </span></span></p><p><span>  ⊙</span><span><b><span> Sample type : </span></b><span>Tissue, Protein, Urine</span></span></p><p><span>  </span><span>⊙</span><span><b><span> Kit Componets </span></b></span></p><p><span><b>                       </b></span><span>• 2X DMAB Concentrate : 5 </span><span>㎖</span></p><p><span>                       </span><span>• Oxidation Buffer : </span><span>10 </span><span>㎖</span></p><p><span>                       • Chloramine T Reagent : 600 </span><span>㎕</span><span></span></p><p><span>                       </span><span>• Perchloric acid/isopropanel Solution : </span><span>5 </span><span>㎖</span></p><p><span>                       </span><span>• Collagen Standard(2 ㎎/</span><span>㎖</span><span>) : 50 </span><span>㎕ X 2</span></p><p><span><b> <span> </span></b></span><b><span>⊙</span></b><b><span> Data</span></b><b><span><span><span>   </span></span></span></b></p><p><img src=\"/dogen/4e2c1099045cf834d676.webp\" alt=\"EZ-Total Collagen Assay Kit figure 1\" width=\"500\" height=\"294\" loading=\"lazy\" decoding=\"async\" /></p>\t\t\t\t",
+    "documents": [
+      {
+        "url": "https://www.dogenbio.com/product/download/3/2",
+        "label": "Protocol(KOR.)"
+      },
+      {
+        "url": "https://www.dogenbio.com/product/download/3/3",
+        "label": "Protocol(ENG.)"
+      },
+      {
+        "url": "https://www.dogenbio.com/product/download/3/4",
+        "label": "MSDS"
+      }
+    ]
+  },
+  {
+    "slug": "ez-ethanol-assay-kit",
+    "title": "EZ-Ethanol Assay Kit",
+    "summary": "Metabolism Assay Kit",
+    "category": "assay-kit",
+    "group": "Metabolism Assay Kit",
+    "sourceUrl": "https://www.dogenbio.com/product/view/03/2",
+    "image": "https://www.dogenbio.com/uploads/product/1782780584_89a460e3495e76582155.jpg",
+    "optionLabels": [
+      "Assay"
+    ],
+    "models": [
+      {
+        "sku": "DG-ETH100",
+        "label": "",
+        "values": [
+          "100 tests"
+        ]
+      }
+    ],
+    "descriptionHtml": "\n\t\t\t\t\t<h3>Description</h3><p><span><span><b><span>    </span></b><span>  </span></span></span><span>※</span><span><span><span> </span></span></span><span>에탄올의 정량 측정은 기초 연구</span><span>, </span><span>약물 개발</span><span>, </span><span>임상 연구 및 발효 고정 등에서 활용됨</span><span>.</span></p><p><span>      </span><span>※</span><span><span><span> </span></span></span><span>EZ-Ethanol Assay Kit</span><span>는<span> Alcohol dehydrogenase</span>로 인해<span> ethanol</span>이<span> acetaldehyde</span>로 전환하면서<span> </span></span></p><p><span><span>           NAD+</span>를<span> NADH</span>로 환원시키고<span> NADH</span>가 산화되면서 발생하는 수소원자와<span> WST-8</span>이 반응하여<span> WST-8 formazan</span>을 형성합니다<span>. </span></span></p><p><span>          이를 흡광도<span> 450 nm</span>에서 측정하여<span> Ethanol</span>의 농도를 확인함<span>.</span></span></p><p><span><span>  </span></span><b><span>⊙</span></b><span><b><span> Storage Condition : </span></b><span>-20</span></span><span>℃(개봉 후 2개월 내 사용 권장)</span></p><p><span>  ⊙</span><span><b><span> Detection Method : </span></b><span>Colorimetric - 450 nm </span></span></p><p><span>  ⊙</span><span><b><span> Sample type : </span></b></span><span>Biological fluids, Beverage, Serum, Plasma or Urine</span></p><p><span>  </span><span>⊙</span><span><b><span> Kit Componets </span></b></span></p><p><span><b>                       </b></span><span>• </span><span>Ethanol Assay Buffer : 15</span><span> </span><span>㎖</span></p><p><span>                       </span><span>• </span><span>Ethanol Stop Solution</span><span> : </span><span>15</span><span> </span><span>㎖ </span><span>1 vial</span></p><p><span>                       </span><span>• </span><span>Ethanol Enzyme Mix</span><span> : </span><span>1 vial</span><span> 200 </span><span>㎕</span></p><p><span>                       </span><span>• </span><span>Ethanol Converter</span><span> : </span><span>1 vial </span></p><p><span>                       • </span><span>Ethanol Probe</span><span> : </span><span></span><span>1</span><span> </span><span>㎖</span></p><p><span>                       • </span><span>Ethanol Standard (1 %)</span><span> : </span><span></span><span>500 </span><span>㎕</span></p><p><span><b> <span> </span></b></span><b><span>⊙</span></b><b><span> Data</span></b><b><span><span>  </span></span></b></p><p><b><span><span>       </span></span></b><img src=\"/dogen/eaf9f7f0eda1042d9000.webp\" alt=\"EZ-Ethanol Assay Kit figure 1\" width=\"566\" height=\"365\" loading=\"lazy\" decoding=\"async\" /></p>\t\t\t\t",
+    "documents": [
+      {
+        "url": "https://www.dogenbio.com/product/download/2/2",
+        "label": "Protocol(KOR.)"
+      },
+      {
+        "url": "https://www.dogenbio.com/product/download/2/3",
+        "label": "Protocol(ENG.)"
+      },
+      {
+        "url": "https://www.dogenbio.com/product/download/2/4",
+        "label": "MSDS"
+      }
+    ]
+  }
+]

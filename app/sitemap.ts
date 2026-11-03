@@ -1,4 +1,5 @@
 import { AIMS_PRODUCTS, AIMS_CATEGORIES, aimsProductHref } from "@/lib/aims/catalog";
+import { DOGEN_CATEGORIES, DOGEN_PRODUCTS, dogenCategoryHref, dogenProductHref } from "@/lib/dogen/catalog";
 import { ANIMAL_ID_PRODUCTS, animalIdProductHref } from "@/lib/animalid/catalog";
 import { AFFINITY_PRODUCTS, AFFINITY_CATEGORIES, affinityProductHref, affinityCategoryHref } from "@/lib/affinityimmuno/catalog";
 import type { MetadataRoute } from "next";
@@ -53,6 +54,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   for (const product of CLEAVER_INVENTORY) entries.push({ url: absoluteSiteUrl(cleaverProductHref(product)), changeFrequency: "monthly", priority: 0.7 });
   for (const category of AIMS_CATEGORIES) entries.push({url:absoluteSiteUrl(`/products/aims/${category.slug}`),changeFrequency:"monthly",priority:0.65});
   for (const product of AIMS_PRODUCTS) entries.push({ url: absoluteSiteUrl(aimsProductHref(product.slug)), changeFrequency: "monthly", priority: 0.7 });
+  for (const category of DOGEN_CATEGORIES) entries.push({ url: absoluteSiteUrl(dogenCategoryHref(category.slug)), changeFrequency: "monthly", priority: 0.65 });
+  for (const product of DOGEN_PRODUCTS) entries.push({ url: absoluteSiteUrl(dogenProductHref(product.slug)), changeFrequency: "monthly", priority: 0.7 });
   for (const product of ANIMAL_ID_PRODUCTS) entries.push({ url: absoluteSiteUrl(animalIdProductHref(product.slug)), changeFrequency: "monthly", priority: 0.7 });
   for (const product of AFFINITY_PRODUCTS) entries.push({ url: absoluteSiteUrl(affinityProductHref(product)), changeFrequency: "monthly", priority: 0.7 });
   for (const category of AFFINITY_CATEGORIES) entries.push({ url: absoluteSiteUrl(affinityCategoryHref(category.slug)), changeFrequency: "monthly", priority: 0.6 });

@@ -124,8 +124,9 @@ const BRANDS: Brand[] = [
     shortName: "DoGen",
     eyebrow: "CELL & PROTEIN RESEARCH",
     description: "Research solutions for cell-based assays and protein biochemistry applications.",
+    logo: "/partners/dogen-logo.png",
     href: "/products/dogen",
-    tags: ["Cell Based Assay", "Protein Biochemistry"],
+    tags: ["Cell Viability / Cytotoxicity", "Protein Analysis", "Assay Kit"],
   },
 ];
 

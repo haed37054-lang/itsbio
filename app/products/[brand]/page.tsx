@@ -93,16 +93,6 @@ const BRANDS: Record<string, BrandInfo> = {
     soft: "#ecfeff",
     categories: ["ELISA", "Antibodies", "COVID-19", "IgEasY"],
   },
-  dogen: {
-    name: "DoGen",
-    searchKey: "dogen",
-    eyebrow: "CELL & PROTEIN RESEARCH",
-    description: "Research solutions for cell-based assays and protein biochemistry applications.",
-    accent: "#b91c1c",
-    deep: "#450a0a",
-    soft: "#fef2f2",
-    categories: ["Cell Based Assay", "Protein Biochemistry"],
-  },
 };
 
 export function generateStaticParams() {

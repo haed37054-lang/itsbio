@@ -9,6 +9,7 @@ const nextConfig: NextConfig = {
     qualities: [75, 85, 90],
     remotePatterns: [
       { protocol: "https", hostname: "animalid.com", pathname: "/wp-content/uploads/**" },
+      { protocol: "https", hostname: "www.dogenbio.com", pathname: "/uploads/product/**" },
       { protocol: "https", hostname: "cdn.shopify.com", pathname: "/s/files/1/0070/8041/1191/**" },
       { protocol: "https", hostname: "seedburo.com", pathname: "/cdn/shop/**" },
       {

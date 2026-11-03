@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useRef, useState } from "react";
 
-type GalleryImage = { url: string; width: number; height: number };
+type GalleryImage = { url: string };
 export default function AimsGallery({ images, title, application = false, accent = "sky", compact = false }: { images: GalleryImage[]; title: string; application?: boolean; accent?: "sky" | "red"; compact?: boolean }) {
   const [index, setIndex] = useState(0);
   const dialog = useRef<HTMLDialogElement>(null);

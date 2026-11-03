@@ -1,4 +1,5 @@
 import { AIMS_PRODUCTS, exactAimsModel, searchAimsProducts, aimsProductHref } from "@/lib/aims/catalog";
+import { dogenProductHref, exactDogenModel, searchDogenProducts } from "@/lib/dogen/catalog";
 import { ANIMAL_ID_PRODUCTS, exactAnimalIdModel, searchAnimalIdProducts, animalIdProductHref } from "@/lib/animalid/catalog";
 import { ITS_AGAROSE, itsAgarosePackageHref } from "@/lib/itschem/agarose";
 import { exactAffinityProduct, exactAffinityProducts, searchAffinityProducts, affinityProductHref } from "@/lib/affinityimmuno/catalog";
@@ -151,6 +152,7 @@ const BRAND_ALIASES: Record<string, { key: string; label: string }> = {
   affinityimmuno: { key: "affinityimmuno", label: "Affinity Immuno" },
   affinity: { key: "affinityimmuno", label: "AffinityImmuno" },
   dogen: { key: "dogen", label: "DoGen" },
+  dogenbio: { key: "dogen", label: "DoGen" },
 };
 
 function normalizeCatalogNumber(value: string) {
@@ -419,6 +421,7 @@ export default async function SearchPage({
   }
   const exactSeedburo = exactSeedburoProducts(catalogNumber);
   const exactAims = exactAimsModel(catalogNumber);
+  const exactDogen = exactDogenModel(catalogNumber);
   const exactAnimalId = exactAnimalIdModel(catalogNumber);
   const exactAffinity = exactAffinityProduct(catalogNumber);
   const affinityMatches = exactAffinityProducts(catalogNumber);
@@ -431,7 +434,8 @@ export default async function SearchPage({
   if (selectedBrand === "seedburo" && exactSeedburo.length === 1) {
     redirect(`${seedburoProductHref(exactSeedburo[0])}#model-${encodeURIComponent(catalogNumber)}`);
   }
-  if (!["seedburo", "aims", "affinityimmuno", "itschem"].includes(selectedBrand) && (isCatalogNumberCandidate(catalogNumber) || exactAims || exactAnimalId)) {
+  if (selectedBrand === "dogen" && exactDogen) redirect(exactDogen.href);
+  if (!["seedburo", "aims", "affinityimmuno", "itschem", "dogen"].includes(selectedBrand) && (isCatalogNumberCandidate(catalogNumber) || exactAims || exactAnimalId || exactDogen)) {
     const [exactDocs, stagedProduct, stagedService] = await Promise.all([
       sanityCdnClient.fetch<ExactCatalogMatch[]>(FIND_EXACT_CATALOG_NUMBER, { catalogNumber }, PUBLIC_CATALOG_CACHE),
       getAbmStagedRecord("product", catalogNumber),
@@ -498,13 +502,14 @@ export default async function SearchPage({
     if (!selectedBrand) exactTargets.push(...exactSeedburo.map((product) => `${seedburoProductHref(product)}#model-${encodeURIComponent(catalogNumber)}`));
     if (!selectedBrand && exactAims) exactTargets.push(exactAims.href);
     if (!selectedBrand && exactAnimalId) exactTargets.push(exactAnimalId.href);
+    if (!selectedBrand && exactDogen) exactTargets.push(exactDogen.href);
     const uniqueTargets = [...new Set(exactTargets)];
     if (uniqueTargets.length === 1) redirect(uniqueTargets[0]);
   }
 
   const safeMatch = q.replace(/\*/g, "");
   const match = `*${safeMatch}*`;
-  const [liveRows, stagedChunks] = ["seedburo", "aims", "affinityimmuno", "itschem"].includes(selectedBrand) ? [[], []] : await Promise.all([
+  const [liveRows, stagedChunks] = ["seedburo", "aims", "affinityimmuno", "itschem", "dogen"].includes(selectedBrand) ? [[], []] : await Promise.all([
     sanityCdnClient.fetch<LiveSearchRow[]>(LIVE_SEARCH_QUERY, { match }, PUBLIC_CATALOG_CACHE),
     sanityCdnClient.fetch<StagedSearchChunk[]>(
       ABM_STAGED_SEARCH_QUERY,
@@ -515,6 +520,15 @@ export default async function SearchPage({
 
   const results: SearchResult[] = [];
   if (exactMissingVectorResult) results.push(exactMissingVectorResult);
+  for (const product of searchDogenProducts(q)) {
+    const match = exactDogen?.product.slug === product.slug ? exactDogen : undefined;
+    const sku = match?.model.sku || product.models[0].sku;
+    results.push({
+      id: `dogen:${product.slug}`, title: product.title, sku, description: product.summary,
+      brandKey: "dogen", brandLabel: "DoGen", href: match?.href || dogenProductHref(product.slug),
+      kind: "Product", direct: true, score: scoreMatch(product.title, sku, q) + 3,
+    });
+  }
   const agaroseSearchText = normalizeText(`ITSChem ${ITS_AGAROSE.title} agarose gel electrophoresis 아가로스 정제`);
   if (normalizeText(q).split(/\s+/).every((word) => agaroseSearchText.includes(word))) {
     results.push({

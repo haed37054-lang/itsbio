@@ -7,7 +7,7 @@ const PARTNERS = [
   { name: "BIOplastics", src: "/partners/bioplastics-logo.png", href: "https://www.bioplastics.com/", external: true },
   { name: "CellFree Sciences", src: "/partners/cellfreesciences-logo.png", href: "https://www.cfsciences.com/eg/", external: true },
   { name: "Cleaver Scientific", src: "/partners/Cleaverscientific-logo.png", href: "https://www.thistlescientific.co.uk/", external: true },
-  { name: "ITSChem", src: "/partners/itschem-logo.png", href: "/contact", external: false },
+  { name: "ITSChem", src: "/partners/itschem-logo.png", href: "/products/itschem", external: false },
   { name: "Kent Scientific", src: "/partners/KentScientific-logo.png", href: "/products/kent", external: false },
   { name: "PLAS-LABS", src: "/partners/plaslabs-logo.png", href: "https://plas-labs.com/", external: true },
   { name: "Seedburo", src: "/partners/Seedburo-logo.png", href: "https://seedburo.com/", external: true },

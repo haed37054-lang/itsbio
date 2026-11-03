@@ -97,10 +97,10 @@ const BRANDS: BrandItem[] = [
     name: "ITSChem",
     title: "ITSChem",
     eyebrow: "RESEARCH MATERIALS",
-    description: "Specialty research materials and responsive laboratory supply support.",
+    description: "ItsAgarose Tablets for gel electrophoresis.",
     logo: "/partners/itschem-logo.png",
-    href: "/contact",
-    tags: ["Research Materials", "Laboratory", "Support"],
+    href: "/products/itschem",
+    tags: ["Agarose Tablets", "Gel Electrophoresis"],
   },
   {
     key: "plaslabs",

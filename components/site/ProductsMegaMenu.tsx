@@ -6,6 +6,7 @@ import aimsNavigation from "@/data/aims/navigation.json";
 import affinityNavigation from "@/data/affinityimmuno/navigation.json";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { ABM_GENERAL_MENU_ITEMS } from "@/lib/abm/general-navigation";
+import { ITS_AGAROSE } from "@/lib/itschem/agarose";
 
 type BrandTheme = {
   gradient: string;
@@ -65,6 +66,7 @@ const CLEAVER_CATEGORY_HREFS: Record<string, string> = {
 };
 
 function productCategoryHref(brand: Brand, category: string) {
+  if (brand.key === "itschem") return ITS_AGAROSE.href;
   if (brand.key === "affinity") return affinityNavigation.flatMap(section=>section.links).find(item=>item.label===category)?.href || brand.href;
   if (brand.key === "aims") return aimsNavigation.flatMap((section) => section.links).find((item) => item.label === category)?.href || brand.href;
   if (brand.key === "seedburo") {
@@ -274,10 +276,10 @@ const BRANDS: Brand[] = [
     key: "itschem",
     name: "ITSChem",
     area: "Research Materials",
-    description: "Specialty research materials and responsive laboratory sourcing support for scientific and industrial workflows.",
-    href: "/products#brands",
+    description: "ItsAgarose Tablets for gel electrophoresis.",
+    href: ITS_AGAROSE.href,
     searchKey: "itschem",
-    categories: ["Research Materials", "Laboratory Supply", "Specialty Materials", "Sourcing Support"],
+    categories: [ITS_AGAROSE.title],
     theme: THEMES.itschem,
   },
   {

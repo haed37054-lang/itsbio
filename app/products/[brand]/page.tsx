@@ -72,17 +72,6 @@ const BRANDS: Record<string, BrandInfo> = {
     soft: "#eff6ff",
     categories: ["pEU Vector", "Protein Expression Kits", "Reagents"],
   },
-  itschem: {
-    name: "ITSChem",
-    searchKey: "itschem",
-    eyebrow: "RESEARCH MATERIALS",
-    description: "Specialty research materials and responsive laboratory sourcing support for scientific and industrial workflows.",
-    logo: "/partners/itschem-logo.png",
-    accent: "#e11d48",
-    deep: "#881337",
-    soft: "#fff1f2",
-    categories: ["Research Materials", "Laboratory Supply", "Specialty Materials", "Sourcing Support"],
-  },
   plaslabs: {
     name: "PLAS-LABS",
     searchKey: "plaslabs",

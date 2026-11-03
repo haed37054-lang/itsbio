@@ -44,15 +44,25 @@ const sectionHeading = "border-b border-slate-200 pb-3 text-2xl font-semibold tr
 export default function ItsChemPage() {
   return (
     <>
-      <section aria-label="ITSChem" className="relative overflow-hidden border-b border-rose-200/70 bg-gradient-to-r from-white to-rose-50">
-        <div className="mx-auto flex min-h-44 max-w-[1320px] items-center justify-between gap-6 px-6 py-8">
-          <div className="border-l-4 border-rose-700 pl-5">
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-rose-800">ITS BIO · Research Materials</p>
-            <p className="mt-2 text-3xl font-semibold tracking-tight text-slate-950 md:text-4xl">ITSChem</p>
-            <p className="mt-2 text-sm text-slate-600">Agarose tablets for gel electrophoresis</p>
+      <section aria-label="ITSChem" className="relative overflow-hidden border-b border-rose-200/70 bg-rose-50">
+        <div className="absolute inset-0 bg-[linear-gradient(110deg,#ffffff_0%,#fff8fa_58%,#ffeef3_100%)]" aria-hidden="true" />
+        <div className="pointer-events-none absolute -right-[9%] -top-[55%] h-[440px] w-[440px] rounded-full bg-rose-600/10 md:right-[2%]" aria-hidden="true" />
+        <div className="pointer-events-none absolute -bottom-[85%] right-[15%] h-[430px] w-[430px] rounded-full border-[70px] border-rose-600/[0.055]" aria-hidden="true" />
+        <div className="pointer-events-none absolute right-0 top-0 h-full w-[7px] bg-rose-600" aria-hidden="true" />
+
+        <div className="relative mx-auto grid min-h-[220px] max-w-[1320px] items-center gap-8 px-6 py-10 md:min-h-[280px] md:grid-cols-[minmax(0,1fr)_360px] md:py-14">
+          <div className="max-w-3xl">
+            <p className="flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.2em] text-rose-800">
+              <span className="h-px w-8 bg-rose-600" aria-hidden="true" />
+              ITS BIO
+            </p>
+            <p className="mt-4 max-w-[820px] text-3xl font-semibold leading-[1.12] tracking-[-0.035em] text-slate-950 md:text-[44px]">ITSChem</p>
+            <p className="mt-4 max-w-2xl text-sm leading-6 text-slate-600 md:text-[15px]">Agarose tablets for gel electrophoresis</p>
           </div>
-          <div className="hidden rounded-xl border border-rose-100 bg-white px-8 py-5 sm:block">
-            <Image src="/partners/itschem-logo.png" alt="ITSChem" width={160} height={72} priority className="h-16 w-40 object-contain" />
+          <div className="hidden justify-self-end md:block">
+            <div className="flex h-[126px] w-[330px] items-center justify-center rounded-[22px] border border-rose-200 bg-white px-8 shadow-[0_18px_50px_rgba(159,18,57,0.10)]">
+              <Image src="/partners/itschem-logo.png" alt="ITSChem" width={240} height={100} priority className="h-auto max-h-[82px] w-auto max-w-[255px] object-contain" />
+            </div>
           </div>
         </div>
       </section>

@@ -549,10 +549,10 @@ export default async function SearchPage({
     const exact = exactAimsModel(q);
     const matched = exact?.product.slug === product.slug ? exact : undefined;
     results.push({
-      id: `aims:${product.slug}`, title: matched && matched.model.sku !== product.sku ? `${matched.model.title} (ATS-3 upgrade)` : `${product.sku} ${product.title}`,
-      sku: matched?.model.sku || product.sku, description: matched?.model.description || product.summary,
-      brandKey: "aims", brandLabel: "AIMS", href: matched?.href || aimsProductHref(product.slug),
-      kind: "Product", direct: true, score: scoreMatch(product.title, matched?.model.sku || product.sku, q) + 3,
+      id: `aims:${product.slug}`, title: product.title,
+      sku: matched?.model?.sku || product.sku, description: matched?.model?.description || product.summary,
+      brandKey: "aims", brandLabel: "AIMS Lab Products", href: matched?.href || aimsProductHref(product.slug),
+      kind: "Product", direct: true, score: scoreMatch(product.title, matched?.model?.sku || product.sku, q) + 3,
     });
   }
 

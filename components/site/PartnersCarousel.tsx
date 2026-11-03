@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const PARTNERS = [
   { name: "Applied Biological Materials", src: "/partners/abm-logo-1.png", href: "/products/abm", external: false },
-  { name: "AIMS", src: "/partners/aims-logo.png", href: "https://animalid.com/", external: true },
+  { name: "AIMS Lab Products", src: "/partners/aims-lab-logo.png", href: "/products/aims", external: false },
   { name: "BIOplastics", src: "/partners/bioplastics-logo.png", href: "https://www.bioplastics.com/", external: true },
   { name: "CellFree Sciences", src: "/partners/cellfreesciences-logo.png", href: "https://www.cfsciences.com/eg/", external: true },
   { name: "Cleaver Scientific", src: "/partners/Cleaverscientific-logo.png", href: "https://www.thistlescientific.co.uk/", external: true },

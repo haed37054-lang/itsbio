@@ -27,7 +27,7 @@ export default async function AimsProductPage({params}:{params:Promise<{slug:str
   return <>
     <AimsHero compact />
     <main className="mx-auto max-w-[1320px] px-6 pb-16">
-      <div className="my-7"><Breadcrumb items={[{label:'Home',href:'/'},{label:'Products',href:'/products'},{label:'AIMS Lab Products',href:'/products/aims'},{label:p.sku||p.title}]} /></div>
+      <div className="my-7"><Breadcrumb items={[{label:'Home',href:'/'},{label:'Products',href:'/products'},{label:'AIMS',href:'/products/aims'},{label:'Lab Products',href:'/products/aims#lab-products'},{label:p.sku||p.title}]} /></div>
       <div className="grid items-start gap-8 lg:grid-cols-[240px_minmax(0,1fr)]">
         <AimsSidebar active={activeCategory} />
         <article className="min-w-0">

@@ -2,8 +2,7 @@
 
 import Link from "next/link";
 import seedburoNavigation from "@/data/seedburo/navigation.json";
-import aimsNavigation from "@/data/aims/navigation.json";
-import animalIdNavigation from "@/data/animalid/navigation.json";
+import { AIMS_FAMILIES } from "@/lib/aims/families";
 import affinityNavigation from "@/data/affinityimmuno/navigation.json";
 import { useEffect, useMemo, useRef, useState } from "react";
 
@@ -113,25 +112,14 @@ const BRANDS: BrandMenu[] = [
   },
   {
     key: "aims",
-    name: "AIMS Lab Products",
-    area: "Laboratory Animal Equipment",
-    description: "Surgery and procedure boards, warming equipment, CO₂ systems and rodent restraints.",
+    name: "AIMS",
+    area: "Laboratory Animal Products",
+    description: "Laboratory animal equipment and tattoo identification systems.",
     href: "/products/aims",
     searchKey: "aims",
-    sections: aimsNavigation,
+    sections: AIMS_FAMILIES.map(({ label, href, items }) => ({ label, links: [{ label: `Browse ${label}`, href }, ...items] })),
     dotClass: "bg-red-600",
     accentClass: "text-red-700",
-  },
-  {
-    key: "animalid",
-    name: "AIMS Animal ID",
-    area: "Laboratory Animal Identification",
-    description: "Tattoo identification systems and upgrade packages for laboratory animals.",
-    href: "/products/animalid",
-    searchKey: "animalid",
-    sections: animalIdNavigation,
-    dotClass: "bg-sky-600",
-    accentClass: "text-sky-700",
   },
   {
     key: "seedburo",

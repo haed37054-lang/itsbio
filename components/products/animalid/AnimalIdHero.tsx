@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function AnimalIdHero() {
   return (
-    <section aria-label="AIMS Animal ID product catalog" className="relative overflow-hidden border-b border-sky-200 bg-sky-50">
+    <section aria-label="AIMS Animal Identification catalog" className="relative overflow-hidden border-b border-sky-200 bg-sky-50">
       <div className="absolute inset-0 bg-[linear-gradient(110deg,#ffffff_0%,#f7fcff_58%,#eaf7ff_100%)]" aria-hidden="true" />
       <div className="pointer-events-none absolute -right-[9%] -top-[55%] h-[440px] w-[440px] rounded-full bg-sky-500/10 md:right-[2%]" aria-hidden="true" />
       <div className="pointer-events-none absolute -bottom-[85%] right-[15%] h-[430px] w-[430px] rounded-full border-[70px] border-sky-500/[0.055]" aria-hidden="true" />
@@ -11,9 +11,9 @@ export default function AnimalIdHero() {
         <div className="max-w-3xl">
           <p className="flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.2em] text-sky-800">
             <span className="h-px w-8 bg-sky-600" aria-hidden="true" />
-            ITS BIO
+            ITS BIO · AIMS
           </p>
-          <h1 className="mt-4 text-3xl font-semibold leading-[1.12] tracking-[-0.035em] text-slate-950 md:text-[44px]">AIMS Animal ID</h1>
+          <h1 className="mt-4 text-3xl font-semibold leading-[1.12] tracking-[-0.035em] text-slate-950 md:text-[44px]">Animal Identification</h1>
           <p className="mt-4 max-w-2xl text-sm leading-6 text-slate-600 md:text-[15px]">Tattoo identification systems for laboratory rodents, neonates and larger animals.</p>
         </div>
         <div className="hidden justify-self-end md:block">

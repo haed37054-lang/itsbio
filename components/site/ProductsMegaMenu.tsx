@@ -2,8 +2,7 @@
 
 import Link from "next/link";
 import seedburoNavigation from "@/data/seedburo/navigation.json";
-import aimsNavigation from "@/data/aims/navigation.json";
-import animalIdNavigation from "@/data/animalid/navigation.json";
+import { AIMS_FAMILIES } from "@/lib/aims/families";
 import affinityNavigation from "@/data/affinityimmuno/navigation.json";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { ABM_GENERAL_MENU_ITEMS } from "@/lib/abm/general-navigation";
@@ -69,8 +68,6 @@ const CLEAVER_CATEGORY_HREFS: Record<string, string> = {
 function productCategoryHref(brand: Brand, category: string) {
   if (brand.key === "itschem") return ITS_AGAROSE.href;
   if (brand.key === "affinity") return affinityNavigation.flatMap(section=>section.links).find(item=>item.label===category)?.href || brand.href;
-  if (brand.key === "aims") return aimsNavigation.flatMap((section) => section.links).find((item) => item.label === category)?.href || brand.href;
-  if (brand.key === "animalid") return animalIdNavigation.flatMap((section) => section.links).find((item) => item.label === category)?.href || brand.href;
   if (brand.key === "seedburo") {
     const match = seedburoNavigation.categories.find((item) => item.title === category);
     if (match) return `/products/seedburo/${match.handle}`;
@@ -127,17 +124,6 @@ const THEMES: Record<string, BrandTheme> = {
     hoverBorder: "hover:border-red-200",
     button: "bg-red-600 hover:bg-red-700",
     dot: "bg-red-500",
-  },
-  animalid: {
-    gradient: "from-sky-700 via-sky-600 to-sky-500",
-    softBg: "bg-sky-50/55",
-    activeBg: "bg-sky-50",
-    border: "border-sky-200",
-    text: "text-sky-700",
-    hoverText: "hover:text-sky-700",
-    hoverBorder: "hover:border-sky-200",
-    button: "bg-sky-700 hover:bg-sky-800",
-    dot: "bg-sky-500",
   },
   seedburo: {
     gradient: "from-green-700 via-green-600 to-green-500",
@@ -297,24 +283,14 @@ const BRANDS: Brand[] = [
   },
   {
     key: "aims",
-    name: "AIMS Lab Products",
-    area: "Laboratory Animal Equipment",
-    description: "Surgery and procedure boards, warming equipment, CO₂ systems and rodent restraints.",
+    name: "AIMS",
+    area: "Laboratory Animal Products",
+    description: "Laboratory animal equipment and tattoo identification systems.",
     href: "/products/aims",
     searchKey: "aims",
-    categories: aimsNavigation.flatMap((section) => section.links.map((item) => item.label)),
-    groups: aimsNavigation.map(section => ({label: section.label, href: section.links[0].href, items: section.links.slice(1)})),
+    categories: [],
+    groups: AIMS_FAMILIES.map(({ label, href, items }) => ({ label, href, items: [...items] })),
     theme: THEMES.aims,
-  },
-  {
-    key: "animalid",
-    name: "AIMS Animal ID",
-    area: "Laboratory Animal Identification",
-    description: "Tattoo identification systems and upgrade packages for laboratory animals.",
-    href: "/products/animalid",
-    searchKey: "animalid",
-    categories: animalIdNavigation.flatMap((section) => section.links.map((item) => item.label)),
-    theme: THEMES.animalid,
   },
   {
     key: "seedburo",

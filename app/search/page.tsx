@@ -1,5 +1,5 @@
-import { exactAimsModel, searchAimsProducts, aimsProductHref } from "@/lib/aims/catalog";
-import { exactAnimalIdModel, searchAnimalIdProducts, animalIdProductHref } from "@/lib/animalid/catalog";
+import { AIMS_PRODUCTS, exactAimsModel, searchAimsProducts, aimsProductHref } from "@/lib/aims/catalog";
+import { ANIMAL_ID_PRODUCTS, exactAnimalIdModel, searchAnimalIdProducts, animalIdProductHref } from "@/lib/animalid/catalog";
 import { ITS_AGAROSE, itsAgarosePackageHref } from "@/lib/itschem/agarose";
 import { exactAffinityProduct, exactAffinityProducts, searchAffinityProducts, affinityProductHref } from "@/lib/affinityimmuno/catalog";
 import Link from "next/link";
@@ -53,6 +53,7 @@ type SearchResult = {
   description?: string;
   brandKey: string;
   brandLabel: string;
+  productFamily?: "Lab Products" | "Animal Identification";
   href: string;
   kind: "Product" | "Service";
   direct: boolean;
@@ -139,8 +140,8 @@ const BRAND_ALIASES: Record<string, { key: string; label: string }> = {
   kentscientific: { key: "kent", label: "Kent Scientific" },
   kentscientifics: { key: "kent", label: "Kent Scientific" },
   itschem: { key: "itschem", label: "ITSChem" },
-  aims: { key: "aims", label: "AIMS Lab Products" },
-  animalid: { key: "animalid", label: "AIMS Animal ID" },
+  aims: { key: "aims", label: "AIMS" },
+  animalid: { key: "aims", label: "AIMS" },
   seedburo: { key: "seedburo", label: "SeedBuro" },
   bioplastics: { key: "bioplastics", label: "BIOplastics" },
   cleaver: { key: "cleaverscientific", label: "Cleaver Scientific" },
@@ -302,6 +303,7 @@ function ResultCard({ result }: { result: SearchResult }) {
     <article className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:border-orange-200 hover:shadow-md">
       <div className="flex flex-wrap items-center gap-2">
         <span className="rounded-full bg-slate-100 px-2.5 py-1 text-xs font-semibold text-slate-600">{result.kind}</span>
+        {result.productFamily ? <span className="rounded-full bg-slate-100 px-2.5 py-1 text-xs font-semibold text-slate-600">{result.productFamily}</span> : null}
         {result.sku ? <span className="text-xs font-semibold text-slate-500">Catalog #: {result.sku}</span> : null}
       </div>
       <h3 className="mt-3 text-lg font-semibold leading-7 text-slate-950">{result.title}</h3>
@@ -401,7 +403,8 @@ export default async function SearchPage({
   const resolvedSearchParams = await Promise.resolve(searchParams);
   const qRaw = (resolvedSearchParams?.q || "").trim();
   const q = qRaw.replace(/\s+/g, " ").trim();
-  const selectedBrand = normalizeBrandToken((resolvedSearchParams?.brand || "").trim());
+  const requestedBrand = normalizeBrandToken((resolvedSearchParams?.brand || "").trim());
+  const selectedBrand = requestedBrand === "animalid" ? "aims" : requestedBrand;
   const selectedScope = normalizeCrisprSearchScope((resolvedSearchParams?.scope || "").trim());
   const requestedPage = clampInt(resolvedSearchParams?.page);
 
@@ -421,12 +424,14 @@ export default async function SearchPage({
   const affinityMatches = exactAffinityProducts(catalogNumber);
   if (!selectedBrand && affinityMatches.length > 1) redirect(`/search?q=${encodeURIComponent(q)}&brand=affinityimmuno`);
   if ((!selectedBrand || selectedBrand === "affinityimmuno") && exactAffinity) redirect(affinityProductHref(exactAffinity));
-  if (selectedBrand === "aims" && exactAims) redirect(exactAims.href);
-  if (selectedBrand === "animalid" && exactAnimalId) redirect(exactAnimalId.href);
+  if (selectedBrand === "aims") {
+    if (exactAims && !exactAnimalId) redirect(exactAims.href);
+    if (exactAnimalId && !exactAims) redirect(exactAnimalId.href);
+  }
   if (selectedBrand === "seedburo" && exactSeedburo.length === 1) {
     redirect(`${seedburoProductHref(exactSeedburo[0])}#model-${encodeURIComponent(catalogNumber)}`);
   }
-  if (!["seedburo", "aims", "animalid", "affinityimmuno", "itschem"].includes(selectedBrand) && (isCatalogNumberCandidate(catalogNumber) || exactAims || exactAnimalId)) {
+  if (!["seedburo", "aims", "affinityimmuno", "itschem"].includes(selectedBrand) && (isCatalogNumberCandidate(catalogNumber) || exactAims || exactAnimalId)) {
     const [exactDocs, stagedProduct, stagedService] = await Promise.all([
       sanityCdnClient.fetch<ExactCatalogMatch[]>(FIND_EXACT_CATALOG_NUMBER, { catalogNumber }, PUBLIC_CATALOG_CACHE),
       getAbmStagedRecord("product", catalogNumber),
@@ -499,7 +504,7 @@ export default async function SearchPage({
 
   const safeMatch = q.replace(/\*/g, "");
   const match = `*${safeMatch}*`;
-  const [liveRows, stagedChunks] = ["seedburo", "aims", "animalid", "affinityimmuno", "itschem"].includes(selectedBrand) ? [[], []] : await Promise.all([
+  const [liveRows, stagedChunks] = ["seedburo", "aims", "affinityimmuno", "itschem"].includes(selectedBrand) ? [[], []] : await Promise.all([
     sanityCdnClient.fetch<LiveSearchRow[]>(LIVE_SEARCH_QUERY, { match }, PUBLIC_CATALOG_CACHE),
     sanityCdnClient.fetch<StagedSearchChunk[]>(
       ABM_STAGED_SEARCH_QUERY,
@@ -550,25 +555,26 @@ export default async function SearchPage({
     });
   }
 
-  for (const product of searchAimsProducts(q)) {
-    const exact = exactAimsModel(q);
-    const matched = exact?.product.slug === product.slug ? exact : undefined;
+  const isAimsBrandQuery = normalizeText(q) === "aims";
+  for (const product of isAimsBrandQuery ? AIMS_PRODUCTS : searchAimsProducts(q)) {
+    const matched = exactAims?.product.slug === product.slug ? exactAims : undefined;
     results.push({
       id: `aims:${product.slug}`, title: product.title,
       sku: matched?.model?.sku || product.sku, description: matched?.model?.description || product.summary,
-      brandKey: "aims", brandLabel: "AIMS Lab Products", href: matched?.href || aimsProductHref(product.slug),
+      brandKey: "aims", brandLabel: "AIMS", productFamily: "Lab Products",
+      href: matched?.href || aimsProductHref(product.slug),
       kind: "Product", direct: true, score: scoreMatch(product.title, matched?.model?.sku || product.sku, q) + 3,
     });
   }
 
-  for (const product of searchAnimalIdProducts(q)) {
+  for (const product of isAimsBrandQuery ? ANIMAL_ID_PRODUCTS : searchAnimalIdProducts(q)) {
     const match = exactAnimalId?.product.slug === product.slug ? exactAnimalId : undefined;
     const sku = match?.model.sku || product.sku;
     const title = match?.model.title || product.title;
     results.push({
       id: `animalid:${product.slug}`, title, sku,
       description: match?.model.description || product.summary,
-      brandKey: "animalid", brandLabel: "AIMS Animal ID",
+      brandKey: "aims", brandLabel: "AIMS", productFamily: "Animal Identification",
       href: match?.href || animalIdProductHref(product.slug),
       kind: "Product", direct: true, score: scoreMatch(title, sku, q) + 3,
     });
@@ -664,7 +670,7 @@ export default async function SearchPage({
 
   const deduped = new Map<string, SearchResult>();
   for (const result of scopedResults.sort((a, b) => b.score - a.score)) {
-    const key = `${result.brandKey}:${normalizeText(result.sku || result.title)}:${result.kind}${result.brandKey === "affinityimmuno" ? ":" + result.href : ""}`;
+    const key = `${result.brandKey}:${normalizeText(result.sku || result.title)}:${result.kind}${result.productFamily ? ":" + result.productFamily : ""}${result.brandKey === "affinityimmuno" ? ":" + result.href : ""}`;
     const existing = deduped.get(key);
     if (!existing || result.score > existing.score || (result.direct && !existing.direct)) deduped.set(key, result);
   }

@@ -161,7 +161,7 @@ export default function ItsChemPage() {
             <ul className="mt-4 grid gap-3 sm:grid-cols-3">
               {relatedProducts.map((product) => (
                 <li key={product.sku}>
-                  <Link href={`/search?q=${product.sku}&brand=abm`} className="block rounded-lg border border-slate-200 p-4 transition hover:border-rose-300 hover:bg-rose-50/40">
+                  <Link href={`/products/abm/staged/product/${product.sku}`} prefetch={false} className="block rounded-lg border border-slate-200 p-4 transition hover:border-rose-300 hover:bg-rose-50/40">
                     <span className="block text-xs font-semibold text-rose-800">{product.sku}</span>
                     <span className="mt-1 block text-sm font-semibold text-slate-900">{product.title}</span>
                     <span className="mt-1 block text-sm text-slate-600">1 mL</span>

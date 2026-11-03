@@ -71,6 +71,16 @@ const BRANDS: BrandItem[] = [
     external: false,
   },
   {
+    key: "animalid",
+    name: "AIMS Animal ID",
+    title: "AIMS Animal ID",
+    eyebrow: "LABORATORY ANIMAL IDENTIFICATION",
+    description: "Tattoo identification systems and upgrade packages for laboratory animals.",
+    logo: "/partners/aims-logo.png",
+    href: "/products/animalid",
+    tags: ["ATS-3", "NEO-9", "ATS-3L"],
+  },
+  {
     key: "bioplastics",
     name: "BIOplastics",
     title: "BIOplastics",

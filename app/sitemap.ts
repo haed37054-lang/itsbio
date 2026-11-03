@@ -1,4 +1,5 @@
 import { AIMS_PRODUCTS, AIMS_CATEGORIES, aimsProductHref } from "@/lib/aims/catalog";
+import { ANIMAL_ID_PRODUCTS, animalIdProductHref } from "@/lib/animalid/catalog";
 import { AFFINITY_PRODUCTS, AFFINITY_CATEGORIES, affinityProductHref, affinityCategoryHref } from "@/lib/affinityimmuno/catalog";
 import type { MetadataRoute } from "next";
 import { SEEDBURO_PRODUCTS, SEEDBURO_COLLECTIONS, seedburoProductHref, seedburoCollectionHref } from "@/lib/seedburo/catalog";
@@ -13,7 +14,7 @@ type SlugRow = { slug?: string; updatedAt?: string };
 
 const CORE_ROUTES = [
   "/", "/products", "/products/abm", "/products/kent", "/about", "/contact", "/quote", "/notice", "/promotions", "/privacy", "/terms",
-  "/products/cleaver", "/products/seedburo", "/products/aims", "/products/bioplastics", "/products/cellfree", "/products/itschem", "/products/plaslabs", "/products/affinity", "/products/dogen",
+  "/products/cleaver", "/products/seedburo", "/products/aims", "/products/animalid", "/products/bioplastics", "/products/cellfree", "/products/itschem", "/products/plaslabs", "/products/affinity", "/products/dogen",
 ];
 
 export const revalidate = 3600;
@@ -52,6 +53,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   for (const product of CLEAVER_INVENTORY) entries.push({ url: absoluteSiteUrl(cleaverProductHref(product)), changeFrequency: "monthly", priority: 0.7 });
   for (const category of AIMS_CATEGORIES) entries.push({url:absoluteSiteUrl(`/products/aims/${category.slug}`),changeFrequency:"monthly",priority:0.65});
   for (const product of AIMS_PRODUCTS) entries.push({ url: absoluteSiteUrl(aimsProductHref(product.slug)), changeFrequency: "monthly", priority: 0.7 });
+  for (const product of ANIMAL_ID_PRODUCTS) entries.push({ url: absoluteSiteUrl(animalIdProductHref(product.slug)), changeFrequency: "monthly", priority: 0.7 });
   for (const product of AFFINITY_PRODUCTS) entries.push({ url: absoluteSiteUrl(affinityProductHref(product)), changeFrequency: "monthly", priority: 0.7 });
   for (const category of AFFINITY_CATEGORIES) entries.push({ url: absoluteSiteUrl(affinityCategoryHref(category.slug)), changeFrequency: "monthly", priority: 0.6 });
   for (const product of SEEDBURO_PRODUCTS) entries.push({ url: absoluteSiteUrl(seedburoProductHref(product)), changeFrequency: "monthly", priority: 0.7 });

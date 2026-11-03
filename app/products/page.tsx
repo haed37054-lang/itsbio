@@ -70,6 +70,16 @@ const BRANDS: Brand[] = [
     tags: ["Surgery Boards", "Warming Equipment", "CO₂ Systems"],
   },
   {
+    key: "animalid",
+    name: "AIMS Animal ID",
+    shortName: "AIMS Animal ID",
+    eyebrow: "LABORATORY ANIMAL IDENTIFICATION",
+    description: "Tattoo identification systems and upgrade packages for laboratory animals.",
+    logo: "/partners/aims-logo.png",
+    href: "/products/animalid",
+    tags: ["ATS-3", "NEO-9", "ATS-3L"],
+  },
+  {
     key: "bioplastics",
     name: "BIOplastics",
     shortName: "BIOplastics",

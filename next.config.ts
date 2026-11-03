@@ -55,7 +55,6 @@ const nextConfig: NextConfig = {
       const existingCategory = `/products/kent/anesthesia/${leaf}`;
 
       return [
-      ...["ats-3", "neo-9", "ats-3l"].map(slug => ({source: `/products/aims/item/${slug}`, destination: "/products/aims", permanent: false})),
         {
           source: `/products/kent/anesthesia/anesthesia-accessories/${leaf}`,
           destination: existingCategory,
@@ -70,7 +69,11 @@ const nextConfig: NextConfig = {
     });
 
     return [
-      ...["ats-3", "neo-9", "ats-3l"].map(slug => ({source: `/products/aims/item/${slug}`, destination: "/products/aims", permanent: false})),
+      ...["ats-3", "neo-9", "ats-3l"].map((slug) => ({
+        source: `/products/aims/item/${slug}`,
+        destination: `/products/animalid/item/${slug}`,
+        permanent: false,
+      })),
       { source: "/products/affinityimmuno/:path*", destination: "/products/affinity/:path*", permanent: true },
       {
         source: "/products/kent/laboratory-animal-handling",

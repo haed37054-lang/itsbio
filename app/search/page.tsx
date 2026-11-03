@@ -1,4 +1,5 @@
 import { exactAimsModel, searchAimsProducts, aimsProductHref } from "@/lib/aims/catalog";
+import { exactAnimalIdModel, searchAnimalIdProducts, animalIdProductHref } from "@/lib/animalid/catalog";
 import { ITS_AGAROSE, itsAgarosePackageHref } from "@/lib/itschem/agarose";
 import { exactAffinityProduct, exactAffinityProducts, searchAffinityProducts, affinityProductHref } from "@/lib/affinityimmuno/catalog";
 import Link from "next/link";
@@ -139,6 +140,7 @@ const BRAND_ALIASES: Record<string, { key: string; label: string }> = {
   kentscientifics: { key: "kent", label: "Kent Scientific" },
   itschem: { key: "itschem", label: "ITSChem" },
   aims: { key: "aims", label: "AIMS Lab Products" },
+  animalid: { key: "animalid", label: "AIMS Animal ID" },
   seedburo: { key: "seedburo", label: "SeedBuro" },
   bioplastics: { key: "bioplastics", label: "BIOplastics" },
   cleaver: { key: "cleaverscientific", label: "Cleaver Scientific" },
@@ -414,15 +416,17 @@ export default async function SearchPage({
   }
   const exactSeedburo = exactSeedburoProducts(catalogNumber);
   const exactAims = exactAimsModel(catalogNumber);
+  const exactAnimalId = exactAnimalIdModel(catalogNumber);
   const exactAffinity = exactAffinityProduct(catalogNumber);
   const affinityMatches = exactAffinityProducts(catalogNumber);
   if (!selectedBrand && affinityMatches.length > 1) redirect(`/search?q=${encodeURIComponent(q)}&brand=affinityimmuno`);
   if ((!selectedBrand || selectedBrand === "affinityimmuno") && exactAffinity) redirect(affinityProductHref(exactAffinity));
   if (selectedBrand === "aims" && exactAims) redirect(exactAims.href);
+  if (selectedBrand === "animalid" && exactAnimalId) redirect(exactAnimalId.href);
   if (selectedBrand === "seedburo" && exactSeedburo.length === 1) {
     redirect(`${seedburoProductHref(exactSeedburo[0])}#model-${encodeURIComponent(catalogNumber)}`);
   }
-  if (!["seedburo", "aims", "affinityimmuno", "itschem"].includes(selectedBrand) && (isCatalogNumberCandidate(catalogNumber) || exactAims)) {
+  if (!["seedburo", "aims", "animalid", "affinityimmuno", "itschem"].includes(selectedBrand) && (isCatalogNumberCandidate(catalogNumber) || exactAims || exactAnimalId)) {
     const [exactDocs, stagedProduct, stagedService] = await Promise.all([
       sanityCdnClient.fetch<ExactCatalogMatch[]>(FIND_EXACT_CATALOG_NUMBER, { catalogNumber }, PUBLIC_CATALOG_CACHE),
       getAbmStagedRecord("product", catalogNumber),
@@ -488,13 +492,14 @@ export default async function SearchPage({
 
     if (!selectedBrand) exactTargets.push(...exactSeedburo.map((product) => `${seedburoProductHref(product)}#model-${encodeURIComponent(catalogNumber)}`));
     if (!selectedBrand && exactAims) exactTargets.push(exactAims.href);
+    if (!selectedBrand && exactAnimalId) exactTargets.push(exactAnimalId.href);
     const uniqueTargets = [...new Set(exactTargets)];
     if (uniqueTargets.length === 1) redirect(uniqueTargets[0]);
   }
 
   const safeMatch = q.replace(/\*/g, "");
   const match = `*${safeMatch}*`;
-  const [liveRows, stagedChunks] = ["seedburo", "aims", "affinityimmuno", "itschem"].includes(selectedBrand) ? [[], []] : await Promise.all([
+  const [liveRows, stagedChunks] = ["seedburo", "aims", "animalid", "affinityimmuno", "itschem"].includes(selectedBrand) ? [[], []] : await Promise.all([
     sanityCdnClient.fetch<LiveSearchRow[]>(LIVE_SEARCH_QUERY, { match }, PUBLIC_CATALOG_CACHE),
     sanityCdnClient.fetch<StagedSearchChunk[]>(
       ABM_STAGED_SEARCH_QUERY,
@@ -553,6 +558,19 @@ export default async function SearchPage({
       sku: matched?.model?.sku || product.sku, description: matched?.model?.description || product.summary,
       brandKey: "aims", brandLabel: "AIMS Lab Products", href: matched?.href || aimsProductHref(product.slug),
       kind: "Product", direct: true, score: scoreMatch(product.title, matched?.model?.sku || product.sku, q) + 3,
+    });
+  }
+
+  for (const product of searchAnimalIdProducts(q)) {
+    const match = exactAnimalId?.product.slug === product.slug ? exactAnimalId : undefined;
+    const sku = match?.model.sku || product.sku;
+    const title = match?.model.title || product.title;
+    results.push({
+      id: `animalid:${product.slug}`, title, sku,
+      description: match?.model.description || product.summary,
+      brandKey: "animalid", brandLabel: "AIMS Animal ID",
+      href: match?.href || animalIdProductHref(product.slug),
+      kind: "Product", direct: true, score: scoreMatch(title, sku, q) + 3,
     });
   }
 

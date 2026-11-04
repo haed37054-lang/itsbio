@@ -1,4 +1,4 @@
-import { CELLFREE_CATEGORIES, type CellFreeCategory } from "./navigation";
+import { CELLFREE_CATEGORIES, DIALYSIS_KIT_SLUG, type CellFreeCategory } from "./navigation";
 
 type Document = { label: string; url: string };
 type Component = [name: string, concentration: string, volume: string, quantity: string];
@@ -7,7 +7,7 @@ type Option = {
   sku: string;
   name: string;
   size: string;
-  facts?: Fact[];
+  description?: string;
   composition?: { title: string; rows: Component[] }[];
   documents?: Document[];
 };
@@ -59,19 +59,19 @@ const coreComponents = (extract: string): Component[] => [
   ...transcriptionComponents("240 µL"),
 ];
 
-function dialysisOption(sku: string, extract: string, application: string): Option {
+function dialysisOption(sku: string, extract: string, description: string): Option {
   return {
     sku,
     name: `${extract} Dialysis Core Kit`,
     size: "1 set",
-    facts: [["Wheat germ extract", extract], ["Application", application]],
+    description,
     composition: [
       { title: "Core kit · Transcription reagents", rows: transcriptionComponents("120 µL") },
       { title: "Core kit · Translation reagents", rows: [[extract, "240 OD", "1 mL", "1"], creatineKinase, ...sgcComponents("600 µL")] },
       { title: "Included transcription reagent set", rows: transcriptionComponents("240 µL") },
       { title: "External dialysis buffer reagents", rows: sgcComponents("7 mL") },
     ],
-    documents: [sds(`2019_${extract}_Dialysis_Kit_SDS_v1.pdf`)],
+    documents: [{ ...sds(`2019_${extract}_Dialysis_Kit_SDS_v1.pdf`), label: `Safety data sheet (SDS) · ${sku}` }],
   };
 }
 
@@ -137,7 +137,7 @@ export const CELLFREE_PRODUCTS: CellFreeProduct[] = [
     related: ["wepro7240-core-kit", "split-pcr-primers"],
   },
   {
-    slug: "wepro7240-dialysis-core-kit",
+    slug: DIALYSIS_KIT_SLUG,
     title: "WEPRO7240 Series Dialysis Core Kit",
     category: "expression-kits",
     summary: "Reagents for wheat germ cell-free expression using dialysis. Choose standard, GST-tag or His-tag formulations for the planned expression and purification workflow.",
@@ -146,13 +146,12 @@ export const CELLFREE_PRODUCTS: CellFreeProduct[] = [
     workflow: image("kit/wepro7240series-dialysis-core-kit_img1_en_.png"),
     overview: [
       { title: "Features and applications", text: "Dialysis can increase yield compared with the bilayer method, particularly for soluble targets. Use the kit to scale up production or obtain enough protein from one batch for multiple assays. Reaction volume depends on the dialysis device." },
-      { title: "Kit lineup", text: "CFS-D7 is the general-purpose formulation. CFS-D7G and CFS-D7H use extracts precleared to reduce background binding during GST and His affinity purification, respectively." },
       { title: "Required separately", text: "Supply an expression template and a suitable dialysis device. The manual uses a 0.5 mL Slide-A-Lyzer MINI for 50 µL reactions and a 3 mL cassette for 3 mL reactions, both with a 10 kDa molecular weight cutoff." },
     ],
     options: [
-      dialysisOption("CFS-D7", "WEPRO7240", "General-purpose protein synthesis"),
-      dialysisOption("CFS-D7G", "WEPRO7240G", "GST-tagged protein expression and glutathione affinity purification"),
-      dialysisOption("CFS-D7H", "WEPRO7240H", "His-tagged protein expression and nickel affinity purification"),
+      dialysisOption("CFS-D7", "WEPRO7240", "General-purpose kit for synthesizing a wide range of proteins."),
+      dialysisOption("CFS-D7G", "WEPRO7240G", "Provides higher purity for GST-tagged fusion proteins than the standard kit. The extract is precleared to reduce background binding to glutathione resin."),
+      dialysisOption("CFS-D7H", "WEPRO7240H", "Provides higher purity for His-tagged fusion proteins than the standard kit. The extract is precleared to reduce background binding to nickel resin."),
     ],
     facts: [
       ["Kit capacity", "2 × 3 mL or 60 × 50 µL"],

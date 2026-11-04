@@ -28,7 +28,6 @@ export default async function PlasLabsProductPage({ params }: Props) {
     return (
       <PlasLabsFrame active={product.category} productSlug={slug} title={title}>
         <h2 className="text-3xl font-semibold tracking-tight text-slate-950">{title}</h2>
-        <p className="mt-3 text-sm leading-7 text-slate-600">Compare the three series by chamber, door, and vent configuration.</p>
         <ul aria-label="Compact Glove Box series" className="mt-6 grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
           {series.map((entry) => (
             <li key={entry.slug}>
@@ -46,7 +45,7 @@ export default async function PlasLabsProductPage({ params }: Props) {
           ))}
         </ul>
         <section aria-labelledby="compact-shared-details" className="mt-8 border-t border-slate-200 pt-6">
-          <h3 id="compact-shared-details" className="mb-4 text-2xl font-semibold tracking-tight text-slate-950">Product Details</h3>
+          <h3 id="compact-shared-details" className="mb-4 text-2xl font-semibold tracking-tight text-slate-950">Standard Features of the &quot;Compact&quot; Glove Boxes:</h3>
           <div className="plaslabs-details overflow-x-auto" dangerouslySetInnerHTML={{ __html: product.html }} />
         </section>
       </PlasLabsFrame>

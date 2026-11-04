@@ -2,11 +2,12 @@ import { load, type CheerioAPI } from "cheerio";
 import type { AnyNode, Element } from "domhandler";
 import type { PlasLabsProduct } from "@/lib/plaslabs/catalog";
 
-function leadingPhotos($: CheerioAPI, cell: Element) {
+function leadingPhotos($: CheerioAPI, cell: Element, heading?: Element) {
   return $(cell).find("img").toArray().filter((photo) => {
     for (let node: AnyNode | null = photo; node && node !== cell; node = node.parent) {
+      if (heading && node.parent === heading) continue;
       for (let previous = node.prev; previous; previous = previous.prev) {
-        if ($(previous).text().trim()) return false;
+        if (previous !== heading && $(previous).text().trim()) return false;
       }
     }
     return true;
@@ -49,7 +50,13 @@ function alignDetailGrids($: CheerioAPI) {
   for (const grid of $(".plas-grid").toArray()) {
     const columns = $(grid).children('div[class*="plas-span-"]').toArray();
     const cells = columns.filter((cell) => $(cell).text().trim() || $(cell).find("img, table").length);
-    const photos = cells.map((cell) => leadingPhotos($, cell));
+    const headings = cells.map((cell) => $(cell).children().filter((_, element) =>
+      $(element).text().trim() || $(element).find("img, table").length,
+    ).first());
+    const leading = cells.map((cell) => leadingPhotos($, cell));
+    const titled = cells.length > 1 && leading.every((group) => !group.length) &&
+      headings.every((heading) => heading.is("h2, h3, h4") && heading.text().trim());
+    const photos = titled ? cells.map((cell, index) => leadingPhotos($, cell, headings[index][0])) : leading;
     const comparison = $(grid).closest(".plas-specifications").length > 0;
     const hasPhotoRow = cells.length > 1 && (photos.every((group) => group.length > 0) ||
       (comparison && photos.some((group) => group.length > 0) &&
@@ -57,6 +64,10 @@ function alignDetailGrids($: CheerioAPI) {
     if (!hasPhotoRow) continue;
 
     $(grid).addClass("plas-photo-grid");
+    if (titled) {
+      $(grid).addClass("plas-titled-photo-grid");
+      $(columns.filter((column) => !cells.includes(column))).remove();
+    }
     for (const [index, cell] of cells.entries()) {
       const column = $(cell);
       const media = $("<figure>").addClass("plas-grid-photo");
@@ -74,10 +85,19 @@ function alignDetailGrids($: CheerioAPI) {
           $(node).remove();
         }
       });
-      column.prepend(media);
+      if (titled) {
+        const heading = headings[index];
+        column.addClass("plas-titled-photo-card");
+        heading.after(media);
+        const nodes = column.contents().toArray();
+        const body = $("<div>").addClass("plas-titled-photo-body").append(nodes.slice(nodes.indexOf(media[0]) + 1));
+        media.after(body);
+      } else {
+        column.prepend(media);
+      }
     }
 
-    if (!comparison) continue;
+    if (!comparison || titled) continue;
     const layouts = cells.map((cell) => specificationFields($, cell));
     const first = layouts[0];
     if (!first || layouts.some((layout) =>

@@ -170,6 +170,27 @@
   margin-top: 0;
 }
 
+.plaslabs-details .plas-titled-photo-grid {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+}
+
+.plaslabs-details .plas-titled-photo-grid > .plas-titled-photo-card {
+  display: grid;
+  grid-column: auto;
+  grid-row: span 3;
+  grid-template-rows: subgrid;
+}
+
+.plaslabs-details .plas-titled-photo-card > :is(h2, h3, h4),
+.plaslabs-details .plas-titled-photo-card > .plas-grid-photo,
+.plaslabs-details .plas-titled-photo-body > :first-child {
+  margin: 0;
+}
+
+.plaslabs-details .plas-titled-photo-card > .plas-grid-photo {
+  height: clamp(9rem, 23cqi, 14rem);
+}
+
 .plaslabs-details .plas-model {
   display: grid;
   grid-row: span var(--plas-model-rows);

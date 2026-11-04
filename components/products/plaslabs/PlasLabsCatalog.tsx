@@ -1,10 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
-import { PLASLABS_CATEGORIES, PLASLABS_ROOT, plasLabsCategoryHref, plasLabsProductHref, searchPlasLabsProducts } from "@/lib/plaslabs/catalog";
+import { COMPACT_GLOVE_BOXES, PLASLABS_CATEGORIES, PLASLABS_ROOT, plasLabsCategoryHref, plasLabsProductHref, searchPlasLabsProducts } from "@/lib/plaslabs/catalog";
 import PlasLabsFrame from "./PlasLabsFrame";
 
 export default function PlasLabsCatalog({ category, query = "" }: { category?: (typeof PLASLABS_CATEGORIES)[number]; query?: string }) {
-  const products = searchPlasLabsProducts(query, category?.slug);
+  const results = searchPlasLabsProducts(query, category?.slug);
+  const products = query ? results : results.filter(
+    ({ slug }) => !COMPACT_GLOVE_BOXES.series.some((series) => series.slug === slug),
+  );
   const action = category ? plasLabsCategoryHref(category.slug) : PLASLABS_ROOT;
   return (
     <PlasLabsFrame active={category?.slug} title={category?.title || "PLAS-LABS"}>
@@ -32,8 +35,10 @@ export default function PlasLabsCatalog({ category, query = "" }: { category?: (
                 </div>
                 <div className="flex flex-1 flex-col gap-2 p-4">
                   {product.models[0] && <p className="text-xs font-semibold text-slate-600">{product.models[0]}{product.models.length > 1 ? ` + ${product.models.length - 1} more` : ""}</p>}
-                  <h3 className="font-semibold text-slate-950 group-hover:underline">{product.title}</h3>
-                  {product.summary && <p className="line-clamp-2 text-sm leading-6 text-slate-600">{product.summary}</p>}
+                  <h3 className="font-semibold text-slate-950 group-hover:underline">{product.slug === COMPACT_GLOVE_BOXES.slug ? COMPACT_GLOVE_BOXES.title : product.title}</h3>
+                  {product.slug === COMPACT_GLOVE_BOXES.slug ? (
+                    <p className="text-sm leading-6 text-slate-600">{COMPACT_GLOVE_BOXES.series.map(({ title }) => title).join(" · ")}</p>
+                  ) : product.summary && <p className="line-clamp-2 text-sm leading-6 text-slate-600">{product.summary}</p>}
                   <span className="mt-auto pt-2 text-sm font-semibold text-slate-800">View details <span aria-hidden="true">→</span></span>
                 </div>
               </Link>

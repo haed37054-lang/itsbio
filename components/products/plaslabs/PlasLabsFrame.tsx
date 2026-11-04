@@ -2,16 +2,20 @@ import type { ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Breadcrumb from "@/components/site/Breadcrumb";
-import { PLASLABS_CATEGORIES, PLASLABS_ROOT, plasLabsCategoryHref } from "@/lib/plaslabs/catalog";
+import { COMPACT_GLOVE_BOXES, PLASLABS_CATEGORIES, PLASLABS_ROOT, plasLabsCategoryHref, plasLabsProductHref } from "@/lib/plaslabs/catalog";
 
-export default function PlasLabsFrame({ active, title, children }: { active?: string; title: string; children: ReactNode }) {
+export default function PlasLabsFrame({ active, productSlug, title, children }: { active?: string; productSlug?: string; title: string; children: ReactNode }) {
   const category = PLASLABS_CATEGORIES.find(({ slug }) => slug === active);
+  const compact = COMPACT_GLOVE_BOXES;
+  const currentSeries = compact.series.find(({ slug }) => slug === productSlug);
+  const compactActive = productSlug === compact.slug || Boolean(currentSeries);
   const crumbs = [
     { label: "Home", href: "/" },
     { label: "Products", href: "/products" },
     { label: "PLAS-LABS", href: PLASLABS_ROOT },
     ...(category && category.title !== title ? [{ label: category.title, href: plasLabsCategoryHref(category.slug) }] : []),
-    ...(title === "PLAS-LABS" ? [] : [{ label: title }]),
+    ...(currentSeries ? [{ label: compact.title, href: plasLabsProductHref(compact.slug) }] : []),
+    ...(title === "PLAS-LABS" ? [] : [{ label: currentSeries?.title || title }]),
   ];
 
   return (
@@ -44,9 +48,34 @@ export default function PlasLabsFrame({ active, title, children }: { active?: st
             <nav aria-label="PLAS-LABS product categories" className="flex gap-1 overflow-x-auto p-3 lg:block lg:space-y-1">
               {[{ slug: "", title: "All products" }, ...PLASLABS_CATEGORIES].map(({ slug, title: label }) => {
                 const selected = (active || "") === slug;
-                return <Link key={slug} href={slug ? plasLabsCategoryHref(slug) : PLASLABS_ROOT}
-                  aria-current={selected ? (category && title !== category.title ? "location" : "page") : undefined}
-                  className={`block shrink-0 whitespace-nowrap rounded-lg px-3 py-2.5 text-sm lg:whitespace-normal ${selected ? "bg-slate-100 font-semibold text-slate-950" : "text-slate-600 hover:bg-slate-50 hover:text-slate-950"}`}>{label}</Link>;
+                return (
+                  <div key={slug} className="shrink-0">
+                    <Link href={slug ? plasLabsCategoryHref(slug) : PLASLABS_ROOT}
+                      aria-current={selected ? (category && title !== category.title ? "location" : "page") : undefined}
+                      className={`block whitespace-nowrap rounded-lg px-3 py-2.5 text-sm lg:whitespace-normal ${selected ? "bg-slate-100 font-semibold text-slate-950" : "text-slate-600 hover:bg-slate-50 hover:text-slate-950"}`}>{label}</Link>
+                    {selected && slug === compact.category && (
+                      <div className="mt-1 hidden border-l border-slate-200 pl-2 lg:ml-4 lg:block">
+                        <Link href={plasLabsProductHref(compact.slug)}
+                          aria-current={productSlug === compact.slug ? "page" : currentSeries ? "location" : undefined}
+                          className={`block rounded-md px-2 py-2 text-sm hover:bg-slate-50 ${compactActive ? "font-semibold text-slate-950" : "text-slate-600"}`}>
+                          {compact.title}
+                        </Link>
+                        {compactActive && (
+                          <ul className="ml-2 border-l border-slate-200 pl-2">
+                            {compact.series.map((series) => (
+                              <li key={series.slug}>
+                                <Link href={plasLabsProductHref(series.slug)} aria-current={currentSeries?.slug === series.slug ? "page" : undefined}
+                                  className={`block rounded-md px-2 py-1.5 text-sm ${currentSeries?.slug === series.slug ? "bg-slate-100 font-semibold text-slate-950" : "text-slate-600 hover:bg-slate-50"}`}>
+                                  {series.title}
+                                </Link>
+                              </li>
+                            ))}
+                          </ul>
+                        )}
+                      </div>
+                    )}
+                  </div>
+                );
               })}
             </nav>
           </aside>

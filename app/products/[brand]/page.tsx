@@ -50,17 +50,6 @@ const BRANDS: Record<string, BrandInfo> = {
     soft: "#f0f9ff",
     categories: ["Lab Animal Identification System", "AIMS Accessories"],
   },
-  bioplastics: {
-    name: "BIOplastics",
-    searchKey: "bioplastics",
-    eyebrow: "PCR & qPCR CONSUMABLES",
-    description: "Precision laboratory plastic consumables for consistent PCR, qPCR, and molecular diagnostic workflows.",
-    logo: "/partners/bioplastics-logo.png",
-    accent: "#f59e0b",
-    deep: "#92400e",
-    soft: "#fffbeb",
-    categories: ["Single Tubes", "Tube Strips", "Tube Strips with Caps", "Plates", "Cap Strips, Mats & Seals"],
-  },
   cellfree: {
     name: "CellFree Sciences",
     searchKey: "cellfreesciences",

@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { BIOPLASTICS_CATEGORIES, BIOPLASTICS_ROOT, bioplasticsCategoryHref } from "@/lib/bioplastics/navigation";
 import { CELLFREE_CATEGORIES, CELLFREE_ROOT, cellFreeCategoryHref } from "@/lib/cellfree/navigation";
 import seedburoNavigation from "@/data/seedburo/navigation.json";
 import { AIMS_FAMILIES } from "@/lib/aims/families";
@@ -138,9 +139,9 @@ const BRANDS: BrandMenu[] = [
     name: "BIOplastics",
     area: "PCR & qPCR Consumables",
     description: "Precision laboratory plastic consumables for PCR, qPCR, and molecular workflows.",
-    href: "/products#brands",
+    href: BIOPLASTICS_ROOT,
     searchKey: "bioplastics",
-    categories: ["Single Tubes", "Tube Strips", "Tube Strips with Caps", "Plates", "Cap Strips, Mats & Seals"],
+    sections: [{ label: "Product categories", links: BIOPLASTICS_CATEGORIES.map(({ key, label }) => ({ label, href: bioplasticsCategoryHref(key) })) }],
     dotClass: "bg-amber-400",
     accentClass: "text-amber-700",
   },

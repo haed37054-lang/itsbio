@@ -1,4 +1,6 @@
 import { exactCellFreeOption, searchCellFreeProducts } from "@/lib/cellfree/catalog";
+import { findBioplasticsProduct, searchBioplasticsProducts } from "@/lib/bioplastics/catalog";
+import { bioplasticsProductHref } from "@/lib/bioplastics/navigation";
 import { cellFreeProductHref } from "@/lib/cellfree/navigation";
 import { AIMS_PRODUCTS, exactAimsModel, searchAimsProducts, aimsProductHref } from "@/lib/aims/catalog";
 import { plasLabsProductHref, searchPlasLabsProducts } from "@/lib/plaslabs/catalog";
@@ -426,6 +428,7 @@ export default async function SearchPage({
   const exactAims = exactAimsModel(catalogNumber);
   const exactDogen = exactDogenModel(catalogNumber);
   const exactCellFree = exactCellFreeOption(catalogNumber);
+  const exactBioplastics = findBioplasticsProduct(catalogNumber);
   const exactAnimalId = exactAnimalIdModel(catalogNumber);
   const exactAffinity = exactAffinityProduct(catalogNumber);
   const affinityMatches = exactAffinityProducts(catalogNumber);
@@ -440,7 +443,9 @@ export default async function SearchPage({
   }
   if (selectedBrand === "dogen" && exactDogen) redirect(exactDogen.href);
   if (selectedBrand === "cellfreesciences" && exactCellFree) redirect(cellFreeProductHref(exactCellFree.product.slug, exactCellFree.option.sku));
-  if (!["seedburo", "aims", "affinityimmuno", "itschem", "dogen", "plaslabs", "cellfreesciences"].includes(selectedBrand) && (isCatalogNumberCandidate(catalogNumber) || exactAims || exactAnimalId || exactDogen || exactCellFree)) {
+  if (selectedBrand === "bioplastics" && exactBioplastics) redirect(bioplasticsProductHref(exactBioplastics.sku));
+  const localCatalogBrand = ["seedburo", "aims", "affinityimmuno", "itschem", "dogen", "plaslabs", "cellfreesciences", "bioplastics"].includes(selectedBrand);
+  if (!localCatalogBrand && (isCatalogNumberCandidate(catalogNumber) || exactAims || exactAnimalId || exactDogen || exactCellFree || exactBioplastics)) {
     const [exactDocs, stagedProduct, stagedService] = await Promise.all([
       sanityCdnClient.fetch<ExactCatalogMatch[]>(FIND_EXACT_CATALOG_NUMBER, { catalogNumber }, PUBLIC_CATALOG_CACHE),
       getAbmStagedRecord("product", catalogNumber),
@@ -509,13 +514,14 @@ export default async function SearchPage({
     if (!selectedBrand && exactAnimalId) exactTargets.push(exactAnimalId.href);
     if (!selectedBrand && exactDogen) exactTargets.push(exactDogen.href);
     if (!selectedBrand && exactCellFree) exactTargets.push(cellFreeProductHref(exactCellFree.product.slug, exactCellFree.option.sku));
+    if (!selectedBrand && exactBioplastics) exactTargets.push(bioplasticsProductHref(exactBioplastics.sku));
     const uniqueTargets = [...new Set(exactTargets)];
     if (uniqueTargets.length === 1) redirect(uniqueTargets[0]);
   }
 
   const safeMatch = q.replace(/\*/g, "");
   const match = `*${safeMatch}*`;
-  const [liveRows, stagedChunks] = ["seedburo", "aims", "affinityimmuno", "itschem", "dogen", "plaslabs", "cellfreesciences"].includes(selectedBrand) ? [[], []] : await Promise.all([
+  const [liveRows, stagedChunks] = localCatalogBrand ? [[], []] : await Promise.all([
     sanityCdnClient.fetch<LiveSearchRow[]>(LIVE_SEARCH_QUERY, { match }, PUBLIC_CATALOG_CACHE),
     sanityCdnClient.fetch<StagedSearchChunk[]>(
       ABM_STAGED_SEARCH_QUERY,
@@ -526,6 +532,15 @@ export default async function SearchPage({
 
   const results: SearchResult[] = [];
   if (exactMissingVectorResult) results.push(exactMissingVectorResult);
+  if (!selectedBrand || selectedBrand === "bioplastics") {
+    for (const product of searchBioplasticsProducts(q)) {
+      results.push({
+        id: `bioplastics:${product.sku}`, title: product.title, sku: product.sku, description: product.pack,
+        brandKey: "bioplastics", brandLabel: "BIOplastics", href: bioplasticsProductHref(product.sku),
+        kind: "Product", direct: true, score: scoreMatch(product.title, product.sku, q) + 3,
+      });
+    }
+  }
   if (!selectedBrand || selectedBrand === "cellfreesciences") {
     for (const product of searchCellFreeProducts(q)) {
       const matched = exactCellFree?.product.slug === product.slug ? exactCellFree.option : undefined;

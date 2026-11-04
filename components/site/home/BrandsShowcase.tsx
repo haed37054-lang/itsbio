@@ -77,9 +77,9 @@ const BRANDS: BrandItem[] = [
     eyebrow: "MOLECULAR DIAGNOSTICS",
     description: "Laboratory plastic consumables engineered for consistent PCR and qPCR workflows.",
     logo: "/partners/bioplastics-logo.png",
-    href: "https://www.bioplastics.com/",
+    href: "/products/bioplastics",
     tags: ["PCR Plastics", "qPCR", "Consumables"],
-    external: true,
+    external: false,
   },
   {
     key: "cfs",

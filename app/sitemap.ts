@@ -1,4 +1,6 @@
 import { CELLFREE_PRODUCTS } from "@/lib/cellfree/catalog";
+import { BIOPLASTICS_PRODUCTS } from "@/lib/bioplastics/catalog";
+import { bioplasticsProductHref } from "@/lib/bioplastics/navigation";
 import { cellFreeProductHref } from "@/lib/cellfree/navigation";
 import { PLASLABS_CATEGORIES, PLASLABS_PRODUCTS, plasLabsCategoryHref, plasLabsProductHref } from "@/lib/plaslabs/catalog";
 import { AIMS_PRODUCTS, AIMS_CATEGORIES, aimsProductHref } from "@/lib/aims/catalog";
@@ -59,6 +61,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   for (const product of AIMS_PRODUCTS) entries.push({ url: absoluteSiteUrl(aimsProductHref(product.slug)), changeFrequency: "monthly", priority: 0.7 });
   for (const category of PLASLABS_CATEGORIES) entries.push({ url: absoluteSiteUrl(plasLabsCategoryHref(category.slug)), changeFrequency: "monthly", priority: 0.65 });
   for (const product of CELLFREE_PRODUCTS) entries.push({ url: absoluteSiteUrl(cellFreeProductHref(product.slug)), changeFrequency: "monthly", priority: 0.7 });
+  for (const product of BIOPLASTICS_PRODUCTS) entries.push({ url: absoluteSiteUrl(bioplasticsProductHref(product.sku)), changeFrequency: "monthly", priority: 0.7 });
   for (const product of PLASLABS_PRODUCTS) entries.push({ url: absoluteSiteUrl(plasLabsProductHref(product.slug)), changeFrequency: "monthly", priority: 0.7 });
   for (const category of DOGEN_CATEGORIES) entries.push({ url: absoluteSiteUrl(dogenCategoryHref(category.slug)), changeFrequency: "monthly", priority: 0.65 });
   for (const product of DOGEN_PRODUCTS) entries.push({ url: absoluteSiteUrl(dogenProductHref(product.slug)), changeFrequency: "monthly", priority: 0.7 });

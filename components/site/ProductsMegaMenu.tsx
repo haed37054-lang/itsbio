@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { BIOPLASTICS_CATEGORIES, BIOPLASTICS_ROOT, bioplasticsCategoryHref } from "@/lib/bioplastics/navigation";
 import { CELLFREE_CATEGORIES, CELLFREE_ROOT, cellFreeCategoryHref } from "@/lib/cellfree/navigation";
 import seedburoNavigation from "@/data/seedburo/navigation.json";
 import { AIMS_FAMILIES } from "@/lib/aims/families";
@@ -69,6 +70,10 @@ const CLEAVER_CATEGORY_HREFS: Record<string, string> = {
 };
 
 function productCategoryHref(brand: Brand, category: string) {
+  if (brand.key === "bioplastics") {
+    const entry = BIOPLASTICS_CATEGORIES.find(({ label }) => label === category);
+    return entry ? bioplasticsCategoryHref(entry.key) : BIOPLASTICS_ROOT;
+  }
   if (brand.key === "cellfree") {
     const entry = CELLFREE_CATEGORIES.find(({ label }) => label === category);
     return entry ? cellFreeCategoryHref(entry.key) : CELLFREE_ROOT;
@@ -322,9 +327,9 @@ const BRANDS: Brand[] = [
     name: "BIOplastics",
     area: "PCR & qPCR Consumables",
     description: "Precision laboratory plastic consumables for consistent PCR, qPCR, and molecular diagnostic workflows.",
-    href: "/products#brands",
+    href: BIOPLASTICS_ROOT,
     searchKey: "bioplastics",
-    categories: ["Single Tubes", "Tube Strips", "Tube Strips with Caps", "Plates", "Cap Strips, Mats & Seals"],
+    categories: BIOPLASTICS_CATEGORIES.map(({ label }) => label),
     theme: THEMES.bioplastics,
   },
   {

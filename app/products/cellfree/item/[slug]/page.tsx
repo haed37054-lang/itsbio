@@ -54,6 +54,9 @@ export default async function CellFreeProductPage({ params }: Props) {
       {!!product.components?.length && (
         <SpecificationTable title="Product composition" headers={componentHeaders} rows={product.components} />
       )}
+      {product.consumables && (
+        <SpecificationTable title={`Plastic consumables · ${product.consumables.sku}`} headers={["Consumable", "Quantity"]} rows={product.consumables.rows} />
+      )}
       {variantTables.map((entry) => (
         <section key={entry.sku} id={cellFreeSkuAnchor(entry.sku)} className="scroll-mt-28 rounded-xl border border-slate-200 p-4 sm:p-5">
           <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
@@ -71,7 +74,7 @@ export default async function CellFreeProductPage({ params }: Props) {
       )}
     </div>
   );
-  const hasSpecifications = facts.length || product.components?.length || variantTables.length || product.vectors?.length;
+  const hasSpecifications = facts.length || product.components?.length || product.consumables?.rows.length || variantTables.length || product.vectors?.length;
 
   return (
     <CellFreeFrame category={product.category} title={product.title}>

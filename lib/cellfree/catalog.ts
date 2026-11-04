@@ -24,6 +24,7 @@ export type CellFreeProduct = {
   options: Option[];
   facts?: Fact[];
   components?: Component[];
+  consumables?: { sku: string; rows: [name: string, quantity: string][] };
   vectors?: [name: string, position: string, cleavage: string][];
   documents?: Document[];
   related?: string[];
@@ -84,7 +85,7 @@ export const CELLFREE_PRODUCTS: CellFreeProduct[] = [
     category: "expression-kits",
     summary: "Premixed wheat germ reagents for small-scale, coupled transcription and translation. Use it to screen whether a target protein expresses before scaling up.",
     sourceUrl: page("kit/137-kit/products-for-research-coupled-kit/444-premium-one-expression-kit"),
-    image: image("kit/Premium_ONE_Expression_Kit_1.png"),
+    image: image("kit/Premium_ONE_Expression_Kit_3.png"),
     workflow: workflowImage("kit/Premium_ONE_Expression_kit_en_img2_2.png", 800, 875),
     overview: [
       { title: "Template preparation", text: "Start from an expression vector or a linear DNA template. The kit includes sense primers and a PCR protocol for testing expression of different protein fragments." },
@@ -111,7 +112,7 @@ export const CELLFREE_PRODUCTS: CellFreeProduct[] = [
     category: "expression-kits",
     summary: "General-purpose wheat germ expression kit for screening multiple proteins at small scale or scaling up production of a selected protein.",
     sourceUrl: page("kit/139-kit/products-for-research-core-kit/458-wepro7240-core-kit"),
-    image: image("kit/WEPRO7240_Core_Kit.png"),
+    image: image("kit/WEPRO7240_Core_Kit_2.png"),
     workflow: coreWorkflow,
     overview: [coreApplications, { title: "Detection", text: "Use SDS-PAGE with Coomassie staining to check expression. Assess solubility, activity and purification as needed for the target." }],
     options: [{ sku: "CFS-C7", name: "WEPRO7240 Core Kit", size: "1 set" }],
@@ -126,7 +127,7 @@ export const CELLFREE_PRODUCTS: CellFreeProduct[] = [
     category: "expression-kits",
     summary: "Wheat germ expression kit with the WEPRO7240H extract for producing His-tagged proteins and preparing them for affinity purification.",
     sourceUrl: page("kit/139-kit/products-for-research-core-kit/469-wepro7240h-core-kit"),
-    image: image("kit/WEPRO7240H_Core_Kit.png"),
+    image: image("kit/WEPRO7240H_Core_Kit_2.png"),
     workflow: coreWorkflow,
     overview: [
       { title: "His-tag purification", text: "The WEPRO7240H extract reduces background from wheat germ proteins that bind during His-tag affinity purification. Use SDS-PAGE with Coomassie staining to check expression." },
@@ -217,6 +218,17 @@ export const CELLFREE_PRODUCTS: CellFreeProduct[] = [
       ["pEU-E01-DYKDDDDK-MCS-N3", "N-terminus", "—"],
       ["pEU-E01-DHFR", "Positive control", "—"],
     ],
+    documents: [
+      { label: "pEU Vector Set instruction manual", url: sourceAsset("vector/CFS_vectors_27-8-2019MH.pdf") },
+      { label: "pEU Vector Set safety data sheet (SDS)", url: sourceAsset("vector/2019_pEU_Vector_Set_SDS.pdf") },
+      { label: "Untagged pEU-E01-MCS vector map", url: "https://www.cfsciences.com/images/vector/pEU-E01-MCS_map_v2.pdf" },
+      { label: "His-tag N-terminal vector maps", url: sourceAsset("vector/pEU-E01-His-TEV-MCS_map_v4.pdf") },
+      { label: "His-tag C-terminal vector maps", url: sourceAsset("vector/pEU-E01-MCS-TEV-His_map_v3.pdf") },
+      { label: "GST-tag N-terminal vector maps", url: sourceAsset("vector/pEU-E01-GST-PS-MCS_map_v3.pdf") },
+      { label: "GST-tag C-terminal vector maps", url: sourceAsset("vector/pEU-E01-MCS-PS-GST_map_v4.pdf") },
+      { label: "DYKDDDDK-tag vector maps", url: "https://www.cfsciences.com/images/vector/pEU-E01-DYKDDDDK-MCS_map_v2.pdf" },
+      { label: "pEU-E01-MCS full sequence · manufacturer manual appendix C", url: sourceAsset("kit/ProteoLiposome_PLUS_Expression_Kit_E_ver_1.1.pdf#page=27") },
+    ],
     related: ["split-pcr-primers", "premium-one-expression-kit"],
   },
   {
@@ -238,12 +250,29 @@ export const CELLFREE_PRODUCTS: CellFreeProduct[] = [
     summary: "Classroom kit for demonstrating transcription and translation from DNA. Students can observe protein production using green fluorescent protein.",
     sourceUrl: page("kit/111-teaching/teaching-kit/327-2018-04-05-15-46-34"),
     image: image("Protein_Expression_Reagent_Kit.jpg"),
+    workflow: workflowImage("kyouzai/Protein_Expression_Reagent_Kit_img2_en.png", 1450, 1950),
+    overview: [{ title: "Classroom experiment", text: "Students follow DNA transcription and translation and use GFP fluorescence to observe protein synthesis. The kit supplies reagents for 20 students working in 10 pairs." }],
     options: [
       { sku: "CFS-EDU", name: "Protein Expression Reagent Kit", size: "1 set" },
-      { sku: "CFS-EDU-N", name: "Kit without plastic consumables", size: "1 set" },
+      { sku: "CFS-EDU-N", name: "Protein Expression Reagent Kit without plastic consumables", size: "1 set" },
     ],
     facts: [frozen, ["Separate reagent outside Japan", "Quant-iT RiboGreen RNA Reagent (R11491)"]],
-    documents: [manual("Teaching_kit_E_ver.2.1.pdf")],
+    components: [
+      ["Distilled water", "—", "1,200 µL", "1"],
+      ["Transcription buffer", "—", "200 µL", "1"],
+      ["Ribonucleotides", "—", "100 µL", "1"],
+      ["RNase", "10 mg/mL", "35 µL", "1"],
+      ["RNase inhibitor", "10,000 U/mL", "68 µL", "1"],
+      ["RNA polymerase", "10,000 U/mL", "99 µL", "1"],
+      ["Plasmid DNA", "1 mg/mL", "66 µL", "1"],
+      ["Wheat germ extract", "—", "330 µL", "1"],
+      ["Translation buffer with amino acids", "—", "1,050 µL", "5"],
+    ],
+    consumables: {
+      sku: "CFS-EDU",
+      rows: [["1.5 mL microtube", "170"], ["Plastic pipette tip (2–200 µL)", "4 × 96"], ["Clear flat-bottom tube with cap", "22"]],
+    },
+    documents: [manual("Teaching_kit_E_ver.2.1.pdf"), sds("2018_Protein_Expression_Reagent_Kit_SDS_v2.pdf")],
   },
   {
     slug: "protemist-dt-ii",
@@ -252,13 +281,23 @@ export const CELLFREE_PRODUCTS: CellFreeProduct[] = [
     summary: "Automated bilayer wheat germ system that can run transcription, translation and affinity purification for up to six samples in a single run.",
     sourceUrl: page("synthesizing/92-synthesizing-2/335-protemist-dt2"),
     image: image("service/ProtemistDT2.png"),
+    overview: [
+      { title: "Availability", text: "CellFree Sciences states that Protemist DTⅡ will be discontinued when its remaining stock is sold." },
+      { title: "Automation and screening", text: "The system runs transcription, translation and affinity purification with temperature control for heat-sensitive targets. It also supports screening up to 24 crude samples. CellFree Sciences reports approximately 900 µg of purified GFP from a 6 mL example reaction." },
+    ],
     options: [{ sku: "CFS-DTⅡ", name: "Protemist DTⅡ", size: "1 set" }],
     facts: [
       ["Expression with purification", "1–6 samples at 6 mL each"],
       ["Expression only", "1–24 samples at 1.2 mL each"],
+      ["Reaction volumes", "6 mL with purification. 1.2 mL or 6 mL for transcription and translation."],
+      ["Control PC", "Core 2 Duo T7100 (1.8 GHz) or higher, 60 GB storage, 512 MB RAM, English-language Windows XP and a 14.1-inch monitor"],
+      ["Installation temperature", "15–30 °C"],
+      ["Installation humidity", "≤75%, non-condensing"],
       ["Dimensions", "700 × 790 × 500 mm (W × H × D)"],
       ["Weight", "100 kg"],
       ["Power supply", "AC 100–240 V"],
+      ["Line voltage tolerance", "±10%"],
+      ["Power consumption", "≤350 VA"],
     ],
     documents: [
       { label: "Quick manual", url: sourceAsset("synthesizer/Protemist_DT_II_quick_manual_E_ver.1.9.pdf") },
@@ -272,7 +311,18 @@ export const CELLFREE_PRODUCTS: CellFreeProduct[] = [
     summary: "Custom wheat germ cell-free protein expression. The service can include expression screening, solubility assessment and affinity purification of the target.",
     sourceUrl: page("entrustment"),
     options: [],
-    facts: [["Affinity purification", "GST-tag or His-tag"], ["Request details", "Provide the target protein and intended application when requesting a quote."]],
+    overview: [
+      { title: "Expression, solubility and purification testing", text: "Submit an inquiry and receive an estimate. After the order and sample are received, CellFree Sciences prepares a template in its wheat germ expression vector, runs the tests and delivers an evaluation report with the sample." },
+      { title: "Scaled-up production", text: "CellFree Sciences prepares a separate estimate based on the test results. After the order, it scales production to the requested amount and delivers the product with a production report. Customers can specify buffer and protein concentration requirements." },
+    ],
+    facts: [
+      ["Affinity purification", "GST-tag or His-tag"],
+      ["Membrane proteins", "The service excludes solubility testing for membrane proteins."],
+      ["Activity assessment", "The customer evaluates activity of the delivered target protein."],
+      ["Estimated lead time", "At least one month each for template generation, screening and scale-up, per the manufacturer’s service schedule."],
+      ["Research use", "Custom proteins are supplied for research use."],
+      ["Request details", "Provide the target protein and intended application when requesting a quote."],
+    ],
   },
 ];
 

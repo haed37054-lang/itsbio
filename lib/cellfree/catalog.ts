@@ -21,10 +21,11 @@ export type CellFreeProduct = {
 };
 
 const source = "https://www.cfsciences.com/eg";
-const image = (path: string) => `${source}/images/${path}`;
+const sourceAsset = (path: string) => `${source}/images/${path}`;
+const image = (path: string) => `/images/cellfree/${path.split("/").at(-1)?.replace(/\.[^.]+$/, ".webp")}`;
 const page = (path: string) => `${source}/products/${path}`;
-const manual = (path: string) => ({ label: "Instruction manual", url: image(`kit/${path}`) });
-const sds = (path: string) => ({ label: "Safety data sheet (SDS)", url: image(`sds/${path}`) });
+const manual = (path: string) => ({ label: "Instruction manual", url: sourceAsset(`kit/${path}`) });
+const sds = (path: string) => ({ label: "Safety data sheet (SDS)", url: sourceAsset(`sds/${path}`) });
 const coreManual = manual("W7240_Core_Kit_Manual_v10_26-7-2019MH.pdf");
 const frozen: [string, string] = ["Storage", "−80 °C"];
 const coreComponents = (extract: string): Component[] => [
@@ -199,8 +200,8 @@ export const CELLFREE_PRODUCTS: CellFreeProduct[] = [
       ["Power supply", "AC 100–240 V"],
     ],
     documents: [
-      { label: "Quick manual", url: image("synthesizer/Protemist_DT_II_quick_manual_E_ver.1.9.pdf") },
-      { label: "Reagent manual", url: image("synthesizer/Protemist_DT_II_reagent_manual_ver.2.5.pdf") },
+      { label: "Quick manual", url: sourceAsset("synthesizer/Protemist_DT_II_quick_manual_E_ver.1.9.pdf") },
+      { label: "Reagent manual", url: sourceAsset("synthesizer/Protemist_DT_II_reagent_manual_ver.2.5.pdf") },
     ],
   },
   {

@@ -30,3 +30,110 @@
 .plaslabs-details table { border-collapse: collapse; margin-block: 0.75rem; }
 .plaslabs-details :is(th, td) { border: 1px solid #e2e8f0; padding: 0.5rem 0.75rem; text-align: start; }
 .plaslabs-details th { background: #f8fafc; color: #0f172a; }
+
+.plaslabs-details > section {
+  display: flow-root;
+  margin-block: 1.5rem;
+}
+
+.plaslabs-details :is(.plas-features, .plas-specifications, .plas-electrical, .plas-quote) {
+  border-top: 1px solid #e2e8f0;
+  padding-top: 1rem;
+}
+
+.plaslabs-details .plas-overview {
+  margin-top: 0;
+}
+
+.plaslabs-details .plas-image-link > img {
+  max-width: 100%;
+}
+
+.plaslabs-details .plas-overview img {
+  max-height: 320px;
+}
+
+.plaslabs-details .plas-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  align-items: start;
+  gap: 1rem 1.25rem;
+}
+
+.plaslabs-details .plas-grid > div {
+  min-width: 0;
+}
+
+.plaslabs-details .plas-specifications .plas-grid img {
+  max-width: 100%;
+  max-height: 150px;
+  margin: 0;
+}
+
+.plaslabs-details .plas-specifications .plas-grid h2 {
+  font-size: 1.125rem;
+}
+
+.plaslabs-details .plas-label {
+  color: #b91c1c;
+}
+
+.plaslabs-details .plas-quote a[href^="/quote?"] {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  background: #0f172a;
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+@media (min-width: 640px) {
+  .plaslabs-details .plas-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .plaslabs-details .plas-grid > :is(.plas-span-8, .plas-span-9, .plas-span-10, .plas-span-12) {
+    grid-column: span 2;
+  }
+
+  .plaslabs-details :is(.plas-float-right, .plas-float-left) > img {
+    margin: 0;
+  }
+
+  .plaslabs-details .plas-float-right {
+    float: right;
+    max-width: min(40%, 360px);
+    margin: 0 0 1rem 1.5rem;
+  }
+
+  .plaslabs-details .plas-float-left {
+    float: left;
+    max-width: min(40%, 360px);
+    margin: 0 1.5rem 1rem 0;
+  }
+
+  .plaslabs-details .plas-features > div > div > ul {
+    columns: 2;
+    column-gap: 2rem;
+  }
+
+  .plaslabs-details .plas-features li {
+    break-inside: avoid;
+  }
+}
+
+@media (min-width: 1280px) {
+  .plaslabs-details .plas-grid {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+
+  .plaslabs-details .plas-grid > .plas-span-2 { grid-column: span 2; }
+  .plaslabs-details .plas-grid > .plas-span-3 { grid-column: span 3; }
+  .plaslabs-details .plas-grid > .plas-span-4 { grid-column: span 4; }
+  .plaslabs-details .plas-grid > .plas-span-6 { grid-column: span 6; }
+  .plaslabs-details .plas-grid > .plas-span-8 { grid-column: span 8; }
+  .plaslabs-details .plas-grid > .plas-span-9 { grid-column: span 9; }
+  .plaslabs-details .plas-grid > .plas-span-10 { grid-column: span 10; }
+  .plaslabs-details .plas-grid > .plas-span-12 { grid-column: span 12; }
+}

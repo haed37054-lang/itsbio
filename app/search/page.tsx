@@ -695,7 +695,8 @@ export default async function SearchPage({
 
   const deduped = new Map<string, SearchResult>();
   for (const result of scopedResults.sort((a, b) => b.score - a.score)) {
-    const key = `${result.brandKey}:${normalizeText(result.sku || result.title)}:${result.kind}${result.productFamily ? ":" + result.productFamily : ""}${result.brandKey === "affinityimmuno" ? ":" + result.href : ""}`;
+    const separateProductPages = result.brandKey === "affinityimmuno" || result.brandKey === "plaslabs";
+    const key = `${result.brandKey}:${normalizeText(result.sku || result.title)}:${result.kind}${result.productFamily ? ":" + result.productFamily : ""}${separateProductPages ? ":" + result.href : ""}`;
     const existing = deduped.get(key);
     if (!existing || result.score > existing.score || (result.direct && !existing.direct)) deduped.set(key, result);
   }

@@ -8,6 +8,7 @@ import { CELLFREE_PRODUCTS } from "@/lib/cellfree/catalog";
 import { CELLFREE_CATEGORIES, cellFreeProductHref } from "@/lib/cellfree/navigation";
 
 type Props = { params: Promise<{ slug: string }>; searchParams: Promise<{ sku?: string | string[] }> };
+const componentHeaders = ["Component", "Concentration", "Volume", "Quantity"];
 
 export const dynamicParams = false;
 export function generateStaticParams() {
@@ -30,11 +31,13 @@ export default async function CellFreeProductPage({ params, searchParams }: Prop
   const quote = new URLSearchParams({ product: option?.name ?? product.title });
   if (option) quote.set("catNo", option.sku);
 
+  const facts = [...(option?.facts ?? []), ...(product.facts ?? [])];
+  const documents = [...(product.documents ?? []), ...(option?.documents ?? [])];
   const specifications = (
     <div className="space-y-6">
-      {!!product.facts?.length && (
+      {facts.length > 0 && (
         <dl className="divide-y divide-slate-100 rounded-xl border border-slate-200 px-4">
-          {product.facts.map(([label, value]) => (
+          {facts.map(([label, value]) => (
             <div key={label} className="grid gap-1 py-3 text-sm sm:grid-cols-[12rem_minmax(0,1fr)] sm:gap-4">
               <dt className="font-semibold text-slate-900">{label}</dt><dd className="text-slate-600">{value}</dd>
             </div>
@@ -42,23 +45,39 @@ export default async function CellFreeProductPage({ params, searchParams }: Prop
         </dl>
       )}
       {!!product.components?.length && (
-        <SpecificationTable title="Product composition" headers={["Component", "Concentration", "Volume", "Quantity"]} rows={product.components} />
+        <SpecificationTable title="Product composition" headers={componentHeaders} rows={product.components} />
       )}
+      {option?.composition?.map(({ title, rows }) => (
+        <SpecificationTable key={title} title={title} headers={componentHeaders} rows={rows} />
+      ))}
       {!!product.vectors?.length && (
         <SpecificationTable title="Vector set composition" headers={["Vector", "Tag position", "Protease recognition site"]} rows={product.vectors} />
       )}
     </div>
   );
   const tabs = [{ id: "specifications", label: "Specifications", content: specifications }];
+  if (product.overview?.length) tabs.push({
+    id: "overview", label: "Overview",
+    content: (
+      <div className="space-y-6">
+        {product.overview.map(({ title, text }) => (
+          <section key={title}>
+            <h3 className="mb-2 text-lg font-semibold text-slate-950">{title}</h3>
+            <p className="text-sm leading-7 text-slate-600">{text}</p>
+          </section>
+        ))}
+      </div>
+    ),
+  });
   if (product.workflow) tabs.push({
     id: "workflow", label: "Workflow",
     content: <Image src={product.workflow} alt={`${product.title} workflow`} width={900} height={600} sizes="(min-width: 1024px) 850px, 90vw" className="h-auto max-w-full" />,
   });
-  if (product.documents?.length) tabs.push({
+  if (documents.length) tabs.push({
     id: "documents", label: "Documents",
     content: (
       <ul className="divide-y divide-slate-100 rounded-xl border border-slate-200 px-4">
-        {product.documents.map(({ label, url }) => (
+        {documents.map(({ label, url }) => (
           <li key={url} className="py-3"><a href={url} target="_blank" rel="noopener noreferrer" className="text-sm font-semibold text-blue-900 underline underline-offset-4">{label} (PDF) <span aria-hidden>↗</span></a></li>
         ))}
       </ul>

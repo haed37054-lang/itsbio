@@ -1,8 +1,16 @@
 import { CELLFREE_CATEGORIES, type CellFreeCategory } from "./navigation";
 
-type Option = { sku: string; name: string; size: string };
 type Document = { label: string; url: string };
 type Component = [name: string, concentration: string, volume: string, quantity: string];
+type Fact = [label: string, value: string];
+type Option = {
+  sku: string;
+  name: string;
+  size: string;
+  facts?: Fact[];
+  composition?: { title: string; rows: Component[] }[];
+  documents?: Document[];
+};
 
 export type CellFreeProduct = {
   slug: string;
@@ -12,8 +20,9 @@ export type CellFreeProduct = {
   sourceUrl: string;
   image?: string;
   workflow?: string;
+  overview?: { title: string; text: string }[];
   options: Option[];
-  facts?: [label: string, value: string][];
+  facts?: Fact[];
   components?: Component[];
   vectors?: [name: string, position: string, cleavage: string][];
   documents?: Document[];
@@ -27,16 +36,44 @@ const page = (path: string) => `${source}/products/${path}`;
 const manual = (path: string) => ({ label: "Instruction manual", url: sourceAsset(`kit/${path}`) });
 const sds = (path: string) => ({ label: "Safety data sheet (SDS)", url: sourceAsset(`sds/${path}`) });
 const coreManual = manual("W7240_Core_Kit_Manual_v10_26-7-2019MH.pdf");
-const frozen: [string, string] = ["Storage", "−80 °C"];
+const frozen: Fact = ["Storage", "−80 °C"];
+const bufferPreparation: Fact = ["1× SUB-AMIX SGC preparation", "Use equal amounts of S1–S4 to prepare the working solution. Dilute each component into water to avoid precipitation."];
+const coreCapacity: Fact = ["Kit capacity", "4 × 6 mL, 20 × 1.2 mL, or 96 × 226 µL"];
+const coreApplications = {
+  title: "Recommended applications",
+  text: "Use for parallel soluble protein expression, screening, crystallography, interaction or functional assays, and co-expression of protein complexes. Choose a reaction scale based on the number of samples and the amount of protein required.",
+};
+const sgcComponents = (volume: string): Component[] =>
+  [1, 2, 3, 4].map((n) => [`SUB-AMIX SGC S${n}`, "40×", volume, "1"]);
+const transcriptionComponents = (bufferVolume: string): Component[] => [
+  ["SP6 RNA polymerase", "80 U/µL", "15 µL", "1"],
+  ["RNase inhibitor", "80 U/µL", "15 µL", "1"],
+  ["NTP Mix", "25 mM", "120 µL", "1"],
+  ["5× Transcription Buffer LM", "5×", bufferVolume, "1"],
+];
+const creatineKinase: Component = ["Creatine kinase", "20 mg/mL", "20 µL", "1"];
 const coreComponents = (extract: string): Component[] => [
   [extract, "240 OD", "1 mL", "1"],
-  ...[1, 2, 3, 4].map((n): Component => [`SUB-AMIX SGC S${n}`, "40×", "600 µL", "1"]),
-  ["Creatine kinase", "20 mg/mL", "20 µL", "1"],
-  ["NTP Mix", "25 mM", "120 µL", "1"],
-  ["5× Transcription Buffer LM", "5×", "240 µL", "1"],
-  ["RNase inhibitor", "80K unit/mL", "15 µL", "1"],
-  ["SP6 RNA polymerase", "80K unit/mL", "15 µL", "1"],
+  ...sgcComponents("600 µL"),
+  creatineKinase,
+  ...transcriptionComponents("240 µL"),
 ];
+
+function dialysisOption(sku: string, extract: string, application: string): Option {
+  return {
+    sku,
+    name: `${extract} Dialysis Core Kit`,
+    size: "1 set",
+    facts: [["Wheat germ extract", extract], ["Application", application]],
+    composition: [
+      { title: "Core kit · Transcription reagents", rows: transcriptionComponents("120 µL") },
+      { title: "Core kit · Translation reagents", rows: [[extract, "240 OD", "1 mL", "1"], creatineKinase, ...sgcComponents("600 µL")] },
+      { title: "Included transcription reagent set", rows: transcriptionComponents("240 µL") },
+      { title: "External dialysis buffer reagents", rows: sgcComponents("7 mL") },
+    ],
+    documents: [sds(`2019_${extract}_Dialysis_Kit_SDS_v1.pdf`)],
+  };
+}
 
 export const CELLFREE_PRODUCTS: CellFreeProduct[] = [
   {
@@ -47,6 +84,11 @@ export const CELLFREE_PRODUCTS: CellFreeProduct[] = [
     sourceUrl: page("kit/137-kit/products-for-research-coupled-kit/444-premium-one-expression-kit"),
     image: image("kit/Premium_ONE_Expression_Kit_1.png"),
     workflow: image("kit/Premium_ONE_Expression_kit_en_img2_2.png"),
+    overview: [
+      { title: "Template preparation", text: "Start from an expression vector or a linear DNA template. The kit includes sense primers and a PCR protocol for testing expression of different protein fragments." },
+      { title: "Expression and detection", text: "The premixed WEPRO TT reagent couples transcription and translation. Fluorescent lysine labeling or Western blotting can detect suitable targets after a two-hour reaction. For SDS-PAGE with Coomassie staining, the manufacturer indicates 12–24 hours depending on protein yield." },
+      { title: "Recommended applications", text: "Screen a target for expression in the wheat germ system or prepare small quantities for testing and analysis." },
+    ],
     options: [{ sku: "CFS-EDX-ONE", name: "Premium ONE Expression Kit", size: "24 reactions" }],
     facts: [["Reaction volume", "55 µL"], ["Fluorescent labeling reagent", "Supplied for up to 8 reactions"], frozen],
     components: [
@@ -68,10 +110,12 @@ export const CELLFREE_PRODUCTS: CellFreeProduct[] = [
     summary: "General-purpose wheat germ expression kit for screening multiple proteins at small scale or scaling up production of a selected protein.",
     sourceUrl: page("kit/139-kit/products-for-research-core-kit/458-wepro7240-core-kit"),
     image: image("kit/WEPRO7240_Core_Kit.png"),
+    workflow: image("kit/WEPRO7240_Expression_Kit_img_en.png"),
+    overview: [coreApplications, { title: "Detection", text: "Use SDS-PAGE with Coomassie staining to check expression. Assess solubility, activity and purification as needed for the target." }],
     options: [{ sku: "CFS-C7", name: "WEPRO7240 Core Kit", size: "1 set" }],
-    facts: [frozen],
+    facts: [coreCapacity, frozen, bufferPreparation],
     components: coreComponents("WEPRO7240"),
-    documents: [coreManual],
+    documents: [coreManual, sds("2019_WEPRO7240_Core_Kit_SDS_v1.pdf")],
     related: ["wepro7240h-core-kit", "wepro7240-dialysis-core-kit"],
   },
   {
@@ -82,8 +126,12 @@ export const CELLFREE_PRODUCTS: CellFreeProduct[] = [
     sourceUrl: page("kit/139-kit/products-for-research-core-kit/469-wepro7240h-core-kit"),
     image: image("kit/WEPRO7240H_Core_Kit.png"),
     workflow: image("kit/WEPRO7240_Expression_Kit_img_en.png"),
+    overview: [
+      { title: "His-tag purification", text: "The WEPRO7240H extract reduces background from wheat germ proteins that bind during His-tag affinity purification. Use SDS-PAGE with Coomassie staining to check expression." },
+      coreApplications,
+    ],
     options: [{ sku: "CFS-C7H", name: "WEPRO7240H Core Kit", size: "1 set" }],
-    facts: [["Affinity tag", "His-tag"], frozen],
+    facts: [["Affinity tag", "His-tag"], coreCapacity, frozen, bufferPreparation],
     components: coreComponents("WEPRO7240H"),
     documents: [coreManual, sds("2019_WEPRO7240H_Core_Kit_SDS.pdf")],
     related: ["wepro7240-core-kit", "split-pcr-primers"],
@@ -95,14 +143,26 @@ export const CELLFREE_PRODUCTS: CellFreeProduct[] = [
     summary: "Reagents for wheat germ cell-free expression using dialysis. Choose standard, GST-tag or His-tag formulations for the planned expression and purification workflow.",
     sourceUrl: page("kit/139-kit/products-for-research-core-kit/626-wepro7240series-dialysis-core-kit"),
     image: image("kit/WEPRO7240_Core_Kit_2.png"),
-    options: [
-      { sku: "CFS-D7", name: "WEPRO7240 Dialysis Core Kit", size: "1 set" },
-      { sku: "CFS-D7G", name: "WEPRO7240G Dialysis Core Kit", size: "1 set" },
-      { sku: "CFS-D7H", name: "WEPRO7240H Dialysis Core Kit", size: "1 set" },
+    workflow: image("kit/wepro7240series-dialysis-core-kit_img1_en_.png"),
+    overview: [
+      { title: "Features and applications", text: "Dialysis can increase yield compared with the bilayer method, particularly for soluble targets. Use the kit to scale up production or obtain enough protein from one batch for multiple assays. Reaction volume depends on the dialysis device." },
+      { title: "Kit lineup", text: "CFS-D7 is the general-purpose formulation. CFS-D7G and CFS-D7H use extracts precleared to reduce background binding during GST and His affinity purification, respectively." },
+      { title: "Required separately", text: "Supply an expression template and a suitable dialysis device. The manual uses a 0.5 mL Slide-A-Lyzer MINI for 50 µL reactions and a 3 mL cassette for 3 mL reactions, both with a 10 kDa molecular weight cutoff." },
     ],
-    facts: [["Reaction formats", "2 × 3 mL or 60 × 50 µL"], ["Dialysis device", "Required separately"], frozen],
+    options: [
+      dialysisOption("CFS-D7", "WEPRO7240", "General-purpose protein synthesis"),
+      dialysisOption("CFS-D7G", "WEPRO7240G", "GST-tagged protein expression and glutathione affinity purification"),
+      dialysisOption("CFS-D7H", "WEPRO7240H", "His-tagged protein expression and nickel affinity purification"),
+    ],
+    facts: [
+      ["Kit capacity", "2 × 3 mL or 60 × 50 µL"],
+      ["Test-then-scale protocol", "Up to 20 × 50 µL screening reactions, followed by up to 2 × 3 mL preparative reactions"],
+      ["Dialysis device", "Required separately"],
+      frozen,
+      bufferPreparation,
+    ],
     documents: [manual("W7240_Dialysis_Core-Kit_Manual_v2.0-E.pdf")],
-    related: ["wepro7240-core-kit", "wepro7240h-core-kit"],
+    related: ["wepro7240-core-kit", "wepro7240h-core-kit", "peu-vector-set"],
   },
   {
     slug: "wepro7240",

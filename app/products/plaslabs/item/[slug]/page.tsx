@@ -1,8 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import AimsGallery from "@/components/products/aims/AimsGallery";
 import PlasLabsFrame from "@/components/products/plaslabs/PlasLabsFrame";
-import { COMPACT_GLOVE_BOXES, PLASLABS_PRODUCTS, plasLabsProductHref } from "@/lib/plaslabs/catalog";
+import { COMPACT_GLOVE_BOXES, PLASLABS_CATEGORIES, PLASLABS_PRODUCTS, plasLabsProductHref } from "@/lib/plaslabs/catalog";
+import { getPlasLabsDetailLayout } from "@/lib/plaslabs/detail-layout";
 import "./plaslabs-details.css";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -51,14 +53,28 @@ export default async function PlasLabsProductPage({ params }: Props) {
     );
   }
 
+  const { images, leadHtml, quoteHref, detailsHtml } = getPlasLabsDetailLayout(product);
+  const category = PLASLABS_CATEGORIES.find((entry) => entry.slug === product.category);
+
   return (
     <PlasLabsFrame active={product.category} productSlug={slug} title={product.title}>
       <article data-quote-context={slug === "stream-table-activities" ? undefined : "product"}
         data-product-name={product.title} data-cat-no={product.models.length === 1 ? product.models[0] : undefined}>
-        <h2 className="text-3xl font-semibold tracking-tight text-slate-950">{product.title}</h2>
-        {product.subtitle && <p className="mt-1 text-base text-slate-700">{product.subtitle}</p>}
-        {product.html && (
-          <div className="plaslabs-details mt-5 overflow-x-auto" dangerouslySetInnerHTML={{ __html: product.html }} />
+        <div className={images.length ? "grid items-start gap-7 xl:grid-cols-2" : undefined}>
+          {images.length > 0 && <AimsGallery images={images} title={product.title} compact />}
+          <div className="min-w-0">
+            {images.length > 0 && category && (
+              <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-slate-600">{category.title}</p>
+            )}
+            <h2 className="text-3xl font-semibold tracking-tight text-slate-950">{product.title}</h2>
+            {product.subtitle && <p className="mt-2 text-base text-slate-700">{product.subtitle}</p>}
+            {leadHtml && <div className="mt-4 text-sm leading-7 text-slate-600" dangerouslySetInnerHTML={{ __html: leadHtml }} />}
+            {slug === "830-series" && <a href="https://plas-labs.com/warranty" className="mt-3 block w-fit text-sm font-medium text-slate-700 underline">2-year warranty</a>}
+            {quoteHref && <Link href={quoteHref} className="mt-5 inline-flex rounded-lg bg-slate-900 px-4 py-2.5 text-sm font-semibold text-white hover:bg-slate-700">Request a Quote</Link>}
+          </div>
+        </div>
+        {detailsHtml && (
+          <div className="plaslabs-details mt-8 overflow-x-auto" dangerouslySetInnerHTML={{ __html: detailsHtml }} />
         )}
       </article>
     </PlasLabsFrame>

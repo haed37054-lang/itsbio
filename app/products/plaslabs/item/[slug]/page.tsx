@@ -69,7 +69,6 @@ export default async function PlasLabsProductPage({ params }: Props) {
             <h2 className="text-3xl font-semibold tracking-tight text-slate-950">{product.title}</h2>
             {product.subtitle && <p className="mt-2 text-base text-slate-700">{product.subtitle}</p>}
             {leadHtml && <div className="mt-4 text-sm leading-7 text-slate-600" dangerouslySetInnerHTML={{ __html: leadHtml }} />}
-            {slug === "830-series" && <a href="https://plas-labs.com/warranty" className="mt-3 block w-fit text-sm font-medium text-slate-700 underline">2-year warranty</a>}
             {quoteHref && <Link href={quoteHref} className="mt-5 inline-flex rounded-lg bg-slate-900 px-4 py-2.5 text-sm font-semibold text-white hover:bg-slate-700">Request a Quote</Link>}
           </div>
         </div>

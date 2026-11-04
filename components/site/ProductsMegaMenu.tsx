@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { CELLFREE_CATEGORIES, CELLFREE_ROOT, cellFreeCategoryHref } from "@/lib/cellfree/navigation";
 import seedburoNavigation from "@/data/seedburo/navigation.json";
 import { AIMS_FAMILIES } from "@/lib/aims/families";
 import plasLabsCategories from "@/data/plaslabs/categories.json";
@@ -68,6 +69,10 @@ const CLEAVER_CATEGORY_HREFS: Record<string, string> = {
 };
 
 function productCategoryHref(brand: Brand, category: string) {
+  if (brand.key === "cellfree") {
+    const entry = CELLFREE_CATEGORIES.find(({ label }) => label === category);
+    return entry ? cellFreeCategoryHref(entry.key) : CELLFREE_ROOT;
+  }
   if (brand.key === "plaslabs") {
     const entry = plasLabsCategories.find(({ title }) => title === category);
     return entry ? `${brand.href}/${entry.slug}` : brand.href;
@@ -337,9 +342,9 @@ const BRANDS: Brand[] = [
     name: "CellFree Sciences",
     area: "Protein Expression",
     description: "Wheat-germ cell-free protein expression systems, vectors, reagents, kits, and services for advanced protein research.",
-    href: "/products#brands",
+    href: CELLFREE_ROOT,
     searchKey: "cellfreesciences",
-    categories: ["pEU Vector", "Protein Expression Kits", "Reagents"],
+    categories: CELLFREE_CATEGORIES.map(({ label }) => label),
     theme: THEMES.cellfree,
   },
   {

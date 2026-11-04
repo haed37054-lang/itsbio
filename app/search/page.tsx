@@ -1,3 +1,5 @@
+import { exactCellFreeOption, searchCellFreeProducts } from "@/lib/cellfree/catalog";
+import { cellFreeProductHref } from "@/lib/cellfree/navigation";
 import { AIMS_PRODUCTS, exactAimsModel, searchAimsProducts, aimsProductHref } from "@/lib/aims/catalog";
 import { plasLabsProductHref, searchPlasLabsProducts } from "@/lib/plaslabs/catalog";
 import { dogenProductHref, exactDogenModel, searchDogenProducts } from "@/lib/dogen/catalog";
@@ -423,6 +425,7 @@ export default async function SearchPage({
   const exactSeedburo = exactSeedburoProducts(catalogNumber);
   const exactAims = exactAimsModel(catalogNumber);
   const exactDogen = exactDogenModel(catalogNumber);
+  const exactCellFree = exactCellFreeOption(catalogNumber);
   const exactAnimalId = exactAnimalIdModel(catalogNumber);
   const exactAffinity = exactAffinityProduct(catalogNumber);
   const affinityMatches = exactAffinityProducts(catalogNumber);
@@ -436,7 +439,8 @@ export default async function SearchPage({
     redirect(`${seedburoProductHref(exactSeedburo[0])}#model-${encodeURIComponent(catalogNumber)}`);
   }
   if (selectedBrand === "dogen" && exactDogen) redirect(exactDogen.href);
-  if (!["seedburo", "aims", "affinityimmuno", "itschem", "dogen", "plaslabs"].includes(selectedBrand) && (isCatalogNumberCandidate(catalogNumber) || exactAims || exactAnimalId || exactDogen)) {
+  if (selectedBrand === "cellfreesciences" && exactCellFree) redirect(cellFreeProductHref(exactCellFree.product.slug, exactCellFree.option.sku));
+  if (!["seedburo", "aims", "affinityimmuno", "itschem", "dogen", "plaslabs", "cellfreesciences"].includes(selectedBrand) && (isCatalogNumberCandidate(catalogNumber) || exactAims || exactAnimalId || exactDogen || exactCellFree)) {
     const [exactDocs, stagedProduct, stagedService] = await Promise.all([
       sanityCdnClient.fetch<ExactCatalogMatch[]>(FIND_EXACT_CATALOG_NUMBER, { catalogNumber }, PUBLIC_CATALOG_CACHE),
       getAbmStagedRecord("product", catalogNumber),
@@ -504,13 +508,14 @@ export default async function SearchPage({
     if (!selectedBrand && exactAims) exactTargets.push(exactAims.href);
     if (!selectedBrand && exactAnimalId) exactTargets.push(exactAnimalId.href);
     if (!selectedBrand && exactDogen) exactTargets.push(exactDogen.href);
+    if (!selectedBrand && exactCellFree) exactTargets.push(cellFreeProductHref(exactCellFree.product.slug, exactCellFree.option.sku));
     const uniqueTargets = [...new Set(exactTargets)];
     if (uniqueTargets.length === 1) redirect(uniqueTargets[0]);
   }
 
   const safeMatch = q.replace(/\*/g, "");
   const match = `*${safeMatch}*`;
-  const [liveRows, stagedChunks] = ["seedburo", "aims", "affinityimmuno", "itschem", "dogen", "plaslabs"].includes(selectedBrand) ? [[], []] : await Promise.all([
+  const [liveRows, stagedChunks] = ["seedburo", "aims", "affinityimmuno", "itschem", "dogen", "plaslabs", "cellfreesciences"].includes(selectedBrand) ? [[], []] : await Promise.all([
     sanityCdnClient.fetch<LiveSearchRow[]>(LIVE_SEARCH_QUERY, { match }, PUBLIC_CATALOG_CACHE),
     sanityCdnClient.fetch<StagedSearchChunk[]>(
       ABM_STAGED_SEARCH_QUERY,
@@ -521,6 +526,17 @@ export default async function SearchPage({
 
   const results: SearchResult[] = [];
   if (exactMissingVectorResult) results.push(exactMissingVectorResult);
+  if (!selectedBrand || selectedBrand === "cellfreesciences") {
+    for (const product of searchCellFreeProducts(q)) {
+      const matched = exactCellFree?.product.slug === product.slug ? exactCellFree.option : undefined;
+      const sku = matched?.sku ?? product.options[0]?.sku;
+      results.push({
+        id: `cellfree:${product.slug}`, title: product.title, sku, description: product.summary,
+        brandKey: "cellfreesciences", brandLabel: "CellFree Sciences", href: cellFreeProductHref(product.slug, matched?.sku),
+        kind: product.category === "services" ? "Service" : "Product", direct: true, score: scoreMatch(product.title, sku, q) + 3,
+      });
+    }
+  }
   if (!selectedBrand || selectedBrand === "plaslabs") {
     for (const product of searchPlasLabsProducts(q)) {
       const sku = product.models.find((model) => model.toLowerCase() === catalogNumber.toLowerCase()) || product.models[0];

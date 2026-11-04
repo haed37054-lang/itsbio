@@ -88,9 +88,8 @@ const BRANDS: BrandItem[] = [
     eyebrow: "PROTEIN EXPRESSION",
     description: "Wheat-germ cell-free protein expression products, systems and research services.",
     logo: "/partners/cellfreesciences-logo.png",
-    href: "https://www.cfsciences.com/eg/",
+    href: "/products/cellfree",
     tags: ["Cell-free Expression", "Protein Synthesis", "Services"],
-    external: true,
   },
   {
     key: "itschem",

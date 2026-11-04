@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { CELLFREE_CATEGORIES, CELLFREE_ROOT, cellFreeCategoryHref } from "@/lib/cellfree/navigation";
 import seedburoNavigation from "@/data/seedburo/navigation.json";
 import { AIMS_FAMILIES } from "@/lib/aims/families";
 import affinityNavigation from "@/data/affinityimmuno/navigation.json";
@@ -148,9 +149,9 @@ const BRANDS: BrandMenu[] = [
     name: "CellFree Sciences",
     area: "Protein Expression",
     description: "Wheat-germ cell-free protein expression systems, vectors, reagents, kits, and services.",
-    href: "/products#brands",
+    href: CELLFREE_ROOT,
     searchKey: "cellfreesciences",
-    categories: ["pEU Vector", "Protein Expression Kits", "Reagents"],
+    sections: [{ label: "Products & services", links: CELLFREE_CATEGORIES.map(({ key, label }) => ({ label, href: cellFreeCategoryHref(key) })) }],
     dotClass: "bg-blue-900",
     accentClass: "text-blue-900",
   },

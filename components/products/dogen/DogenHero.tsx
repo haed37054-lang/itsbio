@@ -16,7 +16,10 @@ export default function DogenHero() {
           <p className="mt-4 max-w-2xl text-sm leading-6 text-slate-600 md:text-[15px]">Cell viability and cytotoxicity assays, protein analysis reagents, and assay kits.</p>
         </div>
         <div className="hidden h-[126px] w-[330px] items-center justify-center justify-self-end rounded-[22px] border border-red-200 bg-white px-8 shadow-sm md:flex">
-          <Image src="/partners/dogen-logo.png" alt="DoGenBio" width={140} height={36} priority className="h-auto w-[220px] max-w-full object-contain" />
+          {/* The official PDF image includes a rule above and text below the wordmark. */}
+          <div className="aspect-[415/110] w-[220px] max-w-full overflow-hidden">
+            <Image src="/partners/dogen-banner-logo.jpg" alt="DoGenBio" width={415} height={126} unoptimized priority className="h-auto w-full -translate-y-[3%]" />
+          </div>
         </div>
       </div>
     </section>

@@ -8,6 +8,7 @@ const nextConfig: NextConfig = {
   images: {
     qualities: [75, 85, 90],
     remotePatterns: [
+      { protocol: "https", hostname: "plas-labs.com", pathname: "/application/files/**" },
       { protocol: "https", hostname: "animalid.com", pathname: "/wp-content/uploads/**" },
       { protocol: "https", hostname: "www.dogenbio.com", pathname: "/uploads/product/**" },
       { protocol: "https", hostname: "cdn.shopify.com", pathname: "/s/files/1/0070/8041/1191/**" },

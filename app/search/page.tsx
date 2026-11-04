@@ -1,4 +1,5 @@
 import { AIMS_PRODUCTS, exactAimsModel, searchAimsProducts, aimsProductHref } from "@/lib/aims/catalog";
+import { plasLabsProductHref, searchPlasLabsProducts } from "@/lib/plaslabs/catalog";
 import { dogenProductHref, exactDogenModel, searchDogenProducts } from "@/lib/dogen/catalog";
 import { ANIMAL_ID_PRODUCTS, exactAnimalIdModel, searchAnimalIdProducts, animalIdProductHref } from "@/lib/animalid/catalog";
 import { ITS_AGAROSE, itsAgarosePackageHref } from "@/lib/itschem/agarose";
@@ -435,7 +436,7 @@ export default async function SearchPage({
     redirect(`${seedburoProductHref(exactSeedburo[0])}#model-${encodeURIComponent(catalogNumber)}`);
   }
   if (selectedBrand === "dogen" && exactDogen) redirect(exactDogen.href);
-  if (!["seedburo", "aims", "affinityimmuno", "itschem", "dogen"].includes(selectedBrand) && (isCatalogNumberCandidate(catalogNumber) || exactAims || exactAnimalId || exactDogen)) {
+  if (!["seedburo", "aims", "affinityimmuno", "itschem", "dogen", "plaslabs"].includes(selectedBrand) && (isCatalogNumberCandidate(catalogNumber) || exactAims || exactAnimalId || exactDogen)) {
     const [exactDocs, stagedProduct, stagedService] = await Promise.all([
       sanityCdnClient.fetch<ExactCatalogMatch[]>(FIND_EXACT_CATALOG_NUMBER, { catalogNumber }, PUBLIC_CATALOG_CACHE),
       getAbmStagedRecord("product", catalogNumber),
@@ -509,7 +510,7 @@ export default async function SearchPage({
 
   const safeMatch = q.replace(/\*/g, "");
   const match = `*${safeMatch}*`;
-  const [liveRows, stagedChunks] = ["seedburo", "aims", "affinityimmuno", "itschem", "dogen"].includes(selectedBrand) ? [[], []] : await Promise.all([
+  const [liveRows, stagedChunks] = ["seedburo", "aims", "affinityimmuno", "itschem", "dogen", "plaslabs"].includes(selectedBrand) ? [[], []] : await Promise.all([
     sanityCdnClient.fetch<LiveSearchRow[]>(LIVE_SEARCH_QUERY, { match }, PUBLIC_CATALOG_CACHE),
     sanityCdnClient.fetch<StagedSearchChunk[]>(
       ABM_STAGED_SEARCH_QUERY,
@@ -520,6 +521,16 @@ export default async function SearchPage({
 
   const results: SearchResult[] = [];
   if (exactMissingVectorResult) results.push(exactMissingVectorResult);
+  if (!selectedBrand || selectedBrand === "plaslabs") {
+    for (const product of searchPlasLabsProducts(q)) {
+      const sku = product.models.find((model) => model.toLowerCase() === catalogNumber.toLowerCase()) || product.models[0];
+      results.push({
+        id: `plaslabs:${product.slug}`, title: product.title, sku, description: product.summary,
+        brandKey: "plaslabs", brandLabel: "PLAS-LABS", href: plasLabsProductHref(product.slug),
+        kind: "Product", direct: true, score: scoreMatch(product.title, sku, q) + 3,
+      });
+    }
+  }
   for (const product of searchDogenProducts(q)) {
     const match = exactDogen?.product.slug === product.slug ? exactDogen : undefined;
     const sku = match?.model.sku || product.models[0].sku;

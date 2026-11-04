@@ -3,6 +3,7 @@
 import Link from "next/link";
 import seedburoNavigation from "@/data/seedburo/navigation.json";
 import { AIMS_FAMILIES } from "@/lib/aims/families";
+import plasLabsCategories from "@/data/plaslabs/categories.json";
 import dogenCategories from "@/data/dogen/categories.json";
 import affinityNavigation from "@/data/affinityimmuno/navigation.json";
 import { useEffect, useMemo, useRef, useState } from "react";
@@ -67,6 +68,10 @@ const CLEAVER_CATEGORY_HREFS: Record<string, string> = {
 };
 
 function productCategoryHref(brand: Brand, category: string) {
+  if (brand.key === "plaslabs") {
+    const entry = plasLabsCategories.find(({ title }) => title === category);
+    return entry ? `${brand.href}/${entry.slug}` : brand.href;
+  }
   if (brand.key === "dogen") {
     const entry = dogenCategories.find(({ title }) => title === category);
     return entry ? `/products/dogen/${entry.slug}` : brand.href;
@@ -342,9 +347,9 @@ const BRANDS: Brand[] = [
     name: "PLAS-LABS",
     area: "Controlled Environments",
     description: "Controlled-atmosphere enclosures and handling systems for sensitive laboratory and animal research workflows.",
-    href: "/products#brands",
+    href: "/products/plaslabs",
     searchKey: "plaslabs",
-    categories: ["Glove Boxes", "Glove Box Accessories", "Custom Glove Boxes", "Animal Care & Research", "PCR Chambers", "Desiccators", "Ventilated Balance Enclosures", "Lab CO2 / Vacuum Chambers", "Tissue Culture Hoods", "Stream Tables"],
+    categories: plasLabsCategories.map(({ title }) => title),
     theme: THEMES.plaslabs,
   },
   {

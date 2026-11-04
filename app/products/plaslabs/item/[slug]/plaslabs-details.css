@@ -1,0 +1,32 @@
+.plaslabs-details {
+  color: #475569;
+  font-size: 0.9375rem;
+  line-height: 1.75;
+  overflow-wrap: anywhere;
+}
+
+.plaslabs-details :is(h2, h3, h4) {
+  margin: 1.5rem 0 0.5rem;
+  color: #0f172a;
+  font-weight: 650;
+  line-height: 1.35;
+}
+
+.plaslabs-details h2 { font-size: 1.25rem; }
+.plaslabs-details :is(h3, h4) { font-size: 1.05rem; }
+.plaslabs-details p { margin: 0.5rem 0; }
+.plaslabs-details :is(ul, ol) { margin: 0.5rem 0; padding-inline-start: 1.5rem; }
+.plaslabs-details ul { list-style: disc; }
+.plaslabs-details ol { list-style: decimal; }
+.plaslabs-details a { color: #1e3a5f; text-decoration: underline; }
+.plaslabs-details img {
+  width: auto;
+  height: auto;
+  max-width: min(100%, 420px);
+  max-height: 340px;
+  object-fit: contain;
+  margin-block: 0.75rem;
+}
+.plaslabs-details table { border-collapse: collapse; margin-block: 0.75rem; }
+.plaslabs-details :is(th, td) { border: 1px solid #e2e8f0; padding: 0.5rem 0.75rem; text-align: start; }
+.plaslabs-details th { background: #f8fafc; color: #0f172a; }

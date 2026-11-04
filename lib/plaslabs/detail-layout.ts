@@ -1,5 +1,100 @@
-import { load } from "cheerio";
+import { load, type CheerioAPI } from "cheerio";
+import type { AnyNode, Element } from "domhandler";
 import type { PlasLabsProduct } from "@/lib/plaslabs/catalog";
+
+function leadingPhotos($: CheerioAPI, cell: Element) {
+  return $(cell).find("img").toArray().filter((photo) => {
+    for (let node: AnyNode | null = photo; node && node !== cell; node = node.parent) {
+      for (let previous = node.prev; previous; previous = previous.prev) {
+        if ($(previous).text().trim()) return false;
+      }
+    }
+    return true;
+  });
+}
+
+function specificationFields($: CheerioAPI, model: Element) {
+  const column = $(model);
+  const heading = column.children("h2, h3, h4").first();
+  if (!heading.length || column.contents().toArray().some((node) => node.type === "text" && node.data.trim())) return;
+
+  function rows(node: Element): Element[] {
+    const children = $(node).children().toArray();
+    const hasText = $(node).contents().toArray().some((child) => child.type === "text" && child.data.trim());
+    if (children.length && !hasText && children.every((child) => child.name === "div" || child.name === "p")) {
+      return children.flatMap(rows);
+    }
+    return [node];
+  }
+
+  const content = heading.nextAll().toArray().flatMap(rows);
+  if (content.some((node) => $(node).find("img, table, ul, ol").length)) return;
+
+  const fields: { label: string; nodes: Element[] }[] = [];
+  let field = { label: "", nodes: [] as Element[] };
+  for (const node of content) {
+    const label = $(node).find(".plas-label").first().text().trim();
+    if (label && !label.startsWith("(") && $(node).text().trim().startsWith(label)) {
+      if (field.nodes.length) fields.push(field);
+      field = { label: label.replace(/[:\s]+$/g, "").toLowerCase(), nodes: [] };
+    }
+    field.nodes.push(node);
+  }
+  if (field.nodes.length) fields.push(field);
+  if (fields.filter(({ label }) => label).length < 2) return;
+  return { heading, fields };
+}
+
+function alignDetailGrids($: CheerioAPI) {
+  for (const grid of $(".plas-grid").toArray()) {
+    const columns = $(grid).children('div[class*="plas-span-"]').toArray();
+    const cells = columns.filter((cell) => $(cell).text().trim() || $(cell).find("img, table").length);
+    const photos = cells.map((cell) => leadingPhotos($, cell));
+    const comparison = $(grid).closest(".plas-specifications").length > 0;
+    const hasPhotoRow = cells.length > 1 && (photos.every((group) => group.length > 0) ||
+      (comparison && photos.some((group) => group.length > 0) &&
+        cells.every((cell) => $(cell).children("h2, h3, h4").length > 0)));
+    if (!hasPhotoRow) continue;
+
+    $(grid).addClass("plas-photo-grid");
+    for (const [index, cell] of cells.entries()) {
+      const column = $(cell);
+      const media = $("<figure>").addClass("plas-grid-photo");
+      for (const image of photos[index]) {
+        const link = $(image).parent("a");
+        media.append(link.length && !link.text().trim() ? link : $(image));
+      }
+      column.children("p, div, h2, h3, h4").filter((_, block) =>
+        !$(block).text().trim() && !$(block).find("img, table, ul, ol").length,
+      ).remove();
+      column.children("p, div, h2, h3, h4").each((_, block) => {
+        for (const node of $(block).contents().toArray()) {
+          if (node.type === "text" && !node.data.trim()) continue;
+          if (node.type !== "tag" || node.name !== "br") break;
+          $(node).remove();
+        }
+      });
+      column.prepend(media);
+    }
+
+    if (!comparison) continue;
+    const layouts = cells.map((cell) => specificationFields($, cell));
+    const first = layouts[0];
+    if (!first || layouts.some((layout) =>
+      !layout || layout.fields.map(({ label }) => label).join("|") !== first.fields.map(({ label }) => label).join("|"),
+    )) continue;
+
+    $(grid).addClass("plas-model-grid");
+    for (const [index, cell] of cells.entries()) {
+      const layout = layouts[index];
+      if (!layout) continue;
+      const column = $(cell).addClass("plas-model").attr("style", `--plas-model-rows: ${layout.fields.length + 2}`);
+      layout.heading.addClass("plas-model-name");
+      layout.heading.nextAll().remove();
+      for (const { nodes } of layout.fields) column.append($("<div>").addClass("plas-model-field").append(nodes));
+    }
+  }
+}
 
 export function getPlasLabsDetailLayout(product: PlasLabsProduct) {
   const $ = load(product.html, {}, false);
@@ -32,30 +127,9 @@ export function getPlasLabsDetailLayout(product: PlasLabsProduct) {
     $(".plas-features p").filter((_, element) => $(element).text().trim() === "830-Filter and pop-valve")
       .attr("id", "830-FILTER")
       .after('<ul class="plas-replacement-parts"><li><a href="/products/plaslabs/item/filtration">Reorder HEPA canister</a></li><li><a href="/products/plaslabs/item/pressure-valves">Reorder Pressure Relief valve</a></li></ul>');
-
-    const specs = $(".plas-specifications .plas-grid").first().addClass("plas-model-grid");
-    for (const element of specs.children(".plas-span-3").toArray()) {
-      const model = $(element).addClass("plas-model");
-      const photo = model.children("h2").first();
-      photo.replaceWith($("<figure>").append(photo.find("img")));
-      const title = model.children("h2").first();
-      title.replaceWith($("<h3>").text(title.text().trim()));
-
-      const fields = $("<dl>");
-      let field = $("<div>");
-      for (const detail of model.children("div").toArray()) {
-        const row = $(detail);
-        if (row.find(".plas-label").length) {
-          field = $("<div>").append($("<dt>").text(row.text().trim()));
-          fields.append(field);
-        } else {
-          field.append($("<dd>").text(row.text().replace(/\s+/g, " ").trim()));
-        }
-        row.remove();
-      }
-      model.append(fields);
-    }
   }
+
+  alignDetailGrids($);
 
   if (!overview.text().trim() && !overview.find("img").length) overview.remove();
 

@@ -51,7 +51,7 @@ function alignDetailGrids($: CheerioAPI) {
     const columns = $(grid).children('div[class*="plas-span-"]').toArray();
     const cells = columns.filter((cell) => $(cell).text().trim() || $(cell).find("img, table").length);
     const headings = cells.map((cell) => $(cell).children().filter((_, element) =>
-      $(element).text().trim() || $(element).find("img, table").length,
+      Boolean($(element).text().trim() || $(element).find("img, table").length),
     ).first());
     const leading = cells.map((cell) => leadingPhotos($, cell));
     const titled = cells.length > 1 && leading.every((group) => !group.length) &&

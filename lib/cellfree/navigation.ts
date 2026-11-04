@@ -1,5 +1,4 @@
 export const CELLFREE_ROOT = "/products/cellfree";
-export const DIALYSIS_KIT_SLUG = "wepro7240-dialysis-core-kit";
 
 export const CELLFREE_CATEGORIES = [
   { key: "expression-kits", label: "Protein Expression Kits" },
@@ -19,6 +18,9 @@ export function cellFreeCategoryHref(key: CellFreeCategory) {
 
 export function cellFreeProductHref(slug: string, sku?: string) {
   const path = `${CELLFREE_ROOT}/item/${slug}`;
-  if (!sku) return path;
-  return slug === DIALYSIS_KIT_SLUG ? `${path}#${sku.toLowerCase()}` : `${path}?sku=${encodeURIComponent(sku)}`;
+  return sku ? `${path}#${encodeURIComponent(cellFreeSkuAnchor(sku))}` : path;
+}
+
+export function cellFreeSkuAnchor(sku: string) {
+  return sku.toLowerCase();
 }

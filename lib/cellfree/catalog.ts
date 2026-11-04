@@ -1,4 +1,4 @@
-import { CELLFREE_CATEGORIES, DIALYSIS_KIT_SLUG, type CellFreeCategory } from "./navigation";
+import { CELLFREE_CATEGORIES, type CellFreeCategory } from "./navigation";
 
 type Document = { label: string; url: string };
 type Component = [name: string, concentration: string, volume: string, quantity: string];
@@ -19,7 +19,7 @@ export type CellFreeProduct = {
   summary: string;
   sourceUrl: string;
   image?: string;
-  workflow?: string;
+  workflow?: { src: string; width: number; height: number };
   overview?: { title: string; text: string }[];
   options: Option[];
   facts?: Fact[];
@@ -32,6 +32,8 @@ export type CellFreeProduct = {
 const source = "https://www.cfsciences.com/eg";
 const sourceAsset = (path: string) => `${source}/images/${path}`;
 const image = (path: string) => `/images/cellfree/${path.split("/").at(-1)?.replace(/\.[^.]+$/, ".webp")}`;
+const workflowImage = (path: string, width: number, height: number) => ({ src: image(path), width, height });
+const coreWorkflow = workflowImage("kit/WEPRO7240_Expression_Kit_img_en.png", 1450, 1120);
 const page = (path: string) => `${source}/products/${path}`;
 const manual = (path: string) => ({ label: "Instruction manual", url: sourceAsset(`kit/${path}`) });
 const sds = (path: string) => ({ label: "Safety data sheet (SDS)", url: sourceAsset(`sds/${path}`) });
@@ -83,7 +85,7 @@ export const CELLFREE_PRODUCTS: CellFreeProduct[] = [
     summary: "Premixed wheat germ reagents for small-scale, coupled transcription and translation. Use it to screen whether a target protein expresses before scaling up.",
     sourceUrl: page("kit/137-kit/products-for-research-coupled-kit/444-premium-one-expression-kit"),
     image: image("kit/Premium_ONE_Expression_Kit_1.png"),
-    workflow: image("kit/Premium_ONE_Expression_kit_en_img2_2.png"),
+    workflow: workflowImage("kit/Premium_ONE_Expression_kit_en_img2_2.png", 800, 875),
     overview: [
       { title: "Template preparation", text: "Start from an expression vector or a linear DNA template. The kit includes sense primers and a PCR protocol for testing expression of different protein fragments." },
       { title: "Expression and detection", text: "The premixed WEPRO TT reagent couples transcription and translation. Fluorescent lysine labeling or Western blotting can detect suitable targets after a two-hour reaction. For SDS-PAGE with Coomassie staining, the manufacturer indicates 12–24 hours depending on protein yield." },
@@ -110,7 +112,7 @@ export const CELLFREE_PRODUCTS: CellFreeProduct[] = [
     summary: "General-purpose wheat germ expression kit for screening multiple proteins at small scale or scaling up production of a selected protein.",
     sourceUrl: page("kit/139-kit/products-for-research-core-kit/458-wepro7240-core-kit"),
     image: image("kit/WEPRO7240_Core_Kit.png"),
-    workflow: image("kit/WEPRO7240_Expression_Kit_img_en.png"),
+    workflow: coreWorkflow,
     overview: [coreApplications, { title: "Detection", text: "Use SDS-PAGE with Coomassie staining to check expression. Assess solubility, activity and purification as needed for the target." }],
     options: [{ sku: "CFS-C7", name: "WEPRO7240 Core Kit", size: "1 set" }],
     facts: [coreCapacity, frozen, bufferPreparation],
@@ -125,7 +127,7 @@ export const CELLFREE_PRODUCTS: CellFreeProduct[] = [
     summary: "Wheat germ expression kit with the WEPRO7240H extract for producing His-tagged proteins and preparing them for affinity purification.",
     sourceUrl: page("kit/139-kit/products-for-research-core-kit/469-wepro7240h-core-kit"),
     image: image("kit/WEPRO7240H_Core_Kit.png"),
-    workflow: image("kit/WEPRO7240_Expression_Kit_img_en.png"),
+    workflow: coreWorkflow,
     overview: [
       { title: "His-tag purification", text: "The WEPRO7240H extract reduces background from wheat germ proteins that bind during His-tag affinity purification. Use SDS-PAGE with Coomassie staining to check expression." },
       coreApplications,
@@ -137,13 +139,13 @@ export const CELLFREE_PRODUCTS: CellFreeProduct[] = [
     related: ["wepro7240-core-kit", "split-pcr-primers"],
   },
   {
-    slug: DIALYSIS_KIT_SLUG,
+    slug: "wepro7240-dialysis-core-kit",
     title: "WEPRO7240 Series Dialysis Core Kit",
     category: "expression-kits",
     summary: "Reagents for wheat germ cell-free expression using dialysis. Choose standard, GST-tag or His-tag formulations for the planned expression and purification workflow.",
     sourceUrl: page("kit/139-kit/products-for-research-core-kit/626-wepro7240series-dialysis-core-kit"),
     image: image("kit/WEPRO7240_Core_Kit_2.png"),
-    workflow: image("kit/wepro7240series-dialysis-core-kit_img1_en_.png"),
+    workflow: workflowImage("kit/wepro7240series-dialysis-core-kit_img1_en_.png", 800, 1296),
     overview: [
       { title: "Features and applications", text: "Dialysis can increase yield compared with the bilayer method, particularly for soluble targets. Use the kit to scale up production or obtain enough protein from one batch for multiple assays. Reaction volume depends on the dialysis device." },
       { title: "Required separately", text: "Supply an expression template and a suitable dialysis device. The manual uses a 0.5 mL Slide-A-Lyzer MINI for 50 µL reactions and a 3 mL cassette for 3 mL reactions, both with a 10 kDa molecular weight cutoff." },
@@ -224,7 +226,7 @@ export const CELLFREE_PRODUCTS: CellFreeProduct[] = [
     summary: "Primer set for building linear DNA expression templates in two PCR steps. The workflow adds an SP6 promoter, an E01 enhancer and a 3′ UTR for wheat germ expression.",
     sourceUrl: page("split-pcr-primers-set"),
     image: image("kit/Split_PCR_Primers_set.png"),
-    workflow: image("kit/Overview_of_the_Split_Primer_PCR_Method.png"),
+    workflow: workflowImage("kit/Overview_of_the_Split_Primer_PCR_Method.png", 801, 468),
     options: [{ sku: "CFS-SPCR-01", name: "Split PCR Primers set", size: "1 set" }],
     facts: [["Included primers", "SPU, deSP6E01, deSP6E01His6"], ["Tagged templates", "deSP6E01His6 supports His-tagged fusion proteins."]],
     related: ["wepro7240h-core-kit", "peu-vector-set"],

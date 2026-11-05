@@ -2,17 +2,10 @@ import Image from "next/image";
 import Link from "next/link";
 import BioplasticsFrame from "@/components/products/bioplastics/BioplasticsFrame";
 import { searchBioplasticsProducts } from "@/lib/bioplastics/catalog";
+import { BIOPLASTICS_DOCUMENTS } from "@/lib/bioplastics/documents";
 import { BIOPLASTICS_CATEGORIES, BIOPLASTICS_ROOT, bioplasticsProductHref } from "@/lib/bioplastics/navigation";
 
 export const metadata = { title: "BIOplastics Products" };
-
-const documents = [
-  ["Firm Deck catalog", "FirmDeckProducts.pdf"],
-  ["(q)PCR sealing options", "qPCR_Closure_options.pdf"],
-  ["Work rack systems", "Work_rack_systems.pdf"],
-  ["DeBox family", "DeBoxFamily.pdf"],
-  ["Filtertips", "filtertips.pdf"],
-];
 
 export default async function BioplasticsCatalogPage({ searchParams }: {
   searchParams: Promise<{ category?: string | string[]; q?: string | string[] }>;
@@ -56,8 +49,8 @@ export default async function BioplasticsCatalogPage({ searchParams }: {
         <section className="mt-8 border-t border-slate-200 pt-6">
           <h3 className="text-xl font-semibold text-slate-950">Technical documents</h3>
           <ul className="mt-3 grid gap-2 sm:grid-cols-2">
-            {documents.map(([label, file]) => (
-              <li key={file}><a href={`https://www.bioplastics.com/downloads/${file}`} target="_blank" rel="noopener noreferrer" className="text-sm font-semibold text-amber-900 underline underline-offset-4">{label} (PDF)</a></li>
+            {BIOPLASTICS_DOCUMENTS.map(({ label, url }) => (
+              <li key={url}><a href={url} target="_blank" rel="noopener noreferrer" className="text-sm font-semibold text-amber-900 underline underline-offset-4">{label} (PDF)</a></li>
             ))}
           </ul>
         </section>

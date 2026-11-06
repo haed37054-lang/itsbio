@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import KentProductDetailClient from "@/components/products/KentProductDetailClient";
 import Breadcrumb from "@/components/site/Breadcrumb";
 import kentCurrentTaxonomy from "@/data/kent-current-taxonomy.json";
+import kentContentAdditions from "@/data/kent-content-additions.json";
 import { getKentOfficialProductOverride } from "@/lib/kent/official-product-overrides";
 import {
   deriveKentSourceContent,
@@ -382,16 +383,26 @@ function universalProductContent(product: any, title: string) {
     ? [{ _key: "kent-derived-overview", type: "rich-text", title: `About ${title}`, html: aboutHtml }]
     : [];
 
-  return {
-    leadHtml: bestLead(candidates),
-    sections: mergeSections([primarySections, explicit, secondarySections, aboutSection, supplementals]),
-  };
+  const addition = kentContentAdditions[product?.slug as keyof typeof kentContentAdditions];
+  const verifiedAddition = addition && product?.sourceUrl?.replace(/\/$/, "") === addition.sourceUrl.replace(/\/$/, "") ? addition : undefined;
+  let leadHtml = bestLead(candidates);
+  const sections = mergeSections([primarySections, explicit, secondarySections, aboutSection, supplementals]);
+  if (verifiedAddition) {
+    const existing = signature([leadHtml, ...sections.map(section => section.html || "")].join(" "));
+    if (!existing.includes(signature(verifiedAddition.notice))) {
+      leadHtml += `<p><em>${verifiedAddition.notice}</em></p>`;
+    }
+    for (const section of verifiedAddition.sections) {
+      if (!existing.includes(signature(section.html))) sections.push(section);
+    }
+  }
+  return { leadHtml, sections };
 }
 
 export default async function KentProductDetailPage({
   params,
 }: {
-  params: Promise<{ slug: string[] }> | { slug: string[] };
+  params: Promise<{ slug: string[] }>;
 }) {
   const resolved = await Promise.resolve(params as any);
   const slugParts = Array.isArray(resolved?.slug) ? resolved.slug.filter(Boolean) : [];

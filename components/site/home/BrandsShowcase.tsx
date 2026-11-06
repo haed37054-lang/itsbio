@@ -44,9 +44,9 @@ const BRANDS: BrandItem[] = [
     eyebrow: "LABORATORY EQUIPMENT",
     description: "Electrophoresis, gel documentation and practical equipment for life science laboratories.",
     logo: "/partners/Cleaverscientific-logo.png",
-    href: "https://www.thistlescientific.co.uk/",
+    href: "/products/cleaver",
     tags: ["Electrophoresis", "Imaging", "Lab Equipment"],
-    external: true,
+    external: false,
   },
   {
     key: "seedburo",
@@ -108,9 +108,9 @@ const BRANDS: BrandItem[] = [
     eyebrow: "CONTROLLED ENVIRONMENTS",
     description: "Controlled-atmosphere enclosures and handling systems for sensitive research workflows.",
     logo: "/partners/plaslabs-logo.png",
-    href: "https://plas-labs.com/",
+    href: "/products/plaslabs",
     tags: ["Glove Boxes", "Enclosures", "Animal Care"],
-    external: true,
+    external: false,
   },
 ];
 

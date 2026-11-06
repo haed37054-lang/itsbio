@@ -405,7 +405,7 @@ function Pagination({
 export default async function SearchPage({
   searchParams,
 }: {
-  searchParams?: Promise<{ q?: string; brand?: string; page?: string; scope?: string }> | { q?: string; brand?: string; page?: string; scope?: string };
+  searchParams?: Promise<{ q?: string; brand?: string; page?: string; scope?: string }>;
 }) {
   const resolvedSearchParams = await Promise.resolve(searchParams);
   const qRaw = (resolvedSearchParams?.q || "").trim();

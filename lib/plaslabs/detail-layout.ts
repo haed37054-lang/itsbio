@@ -1,6 +1,8 @@
 import { load, type CheerioAPI } from "cheerio";
 import type { AnyNode, Element } from "domhandler";
 import type { PlasLabsProduct } from "@/lib/plaslabs/catalog";
+import { PLASLABS_PRODUCTS, plasLabsProductHref } from "@/lib/plaslabs/catalog";
+import { localizeManufacturerLinks } from "@/lib/manufacturer-links";
 
 function leadingPhotos($: CheerioAPI, cell: Element, heading?: Element) {
   return $(cell).find("img").toArray().filter((photo) => {
@@ -117,7 +119,8 @@ function alignDetailGrids($: CheerioAPI) {
 }
 
 export function getPlasLabsDetailLayout(product: PlasLabsProduct) {
-  const $ = load(product.html, {}, false);
+  const html = localizeManufacturerLinks(product.html, product.sourceUrl, PLASLABS_PRODUCTS.map(entry => ({ sourceUrl: entry.sourceUrl, href: plasLabsProductHref(entry.slug) })));
+  const $ = load(html, {}, false);
   const overview = $(".plas-overview").first();
   const overviewPhotos = new Set(overview.find("img").map((_, image) => $(image).attr("src")).get());
   const images = product.images.filter((url) => overviewPhotos.has(url)).map((url) => ({ url }));

@@ -1,0 +1,20 @@
+import assert from "node:assert/strict";
+import { createRequire } from "node:module";
+import { load } from "cheerio";
+
+const require = createRequire(import.meta.url);
+const { localizeManufacturerLinks } = require("../lib/manufacturer-links.ts");
+const routes = [{ sourceUrl: "https://seedburo.com/products/example", href: "/products/seedburo/item/example" }];
+const input = '<p>Original text <a href="https://seedburo-com.myshopify.com/products/example#specs" target="_blank">Model</a> <a href="https://seedburo.com/customize">customization</a> <a href="https://seedburo.com/files/manual.pdf">Manual</a><a href="/quote?product=Example">Quote</a><a href="/contact">Contact</a></p><table><tr><td>Specification</td><td>10 mm</td></tr></table><a href="https://seedburo.com/files/example.jpg"><img src="/images/example.jpg" alt="Example"></a>';
+const result = localizeManufacturerLinks(input, routes[0].sourceUrl, routes, ["seedburo-com.myshopify.com"]);
+const $ = load(result);
+assert.equal($("a").first().attr("href"), "/products/seedburo/item/example#specs");
+assert.equal($("a").first().attr("target"), undefined);
+assert.equal($("a[href*=customize]").length, 0);
+assert.equal($("body").text(), load(input)("body").text());
+assert.equal($("a[href$='manual.pdf']").length, 1);
+assert.equal($("a[href^='/quote?']").length, 1);
+assert.equal($("a[href='/contact']").length, 1);
+assert.equal($("table td").length, 2);
+assert.equal($("a[href$='example.jpg'] img").attr("src"), "/images/example.jpg");
+console.log("PASS: internal product and inquiry links, source text, tables, images and downloads preserved; manufacturer page links removed.");

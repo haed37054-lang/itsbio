@@ -10,13 +10,13 @@ export default function CellFreeFrame({ category, title, children }: { category?
     <>
       <section aria-label="CellFree Sciences catalog" className="relative overflow-hidden border-b border-blue-100 bg-gradient-to-r from-white to-blue-50">
         <div aria-hidden className="pointer-events-none absolute -right-24 -top-48 h-[430px] w-[430px] rounded-full border-[65px] border-blue-200/35" />
-        <div className="relative mx-auto grid min-h-[220px] max-w-[1320px] items-center gap-8 px-6 py-10 md:min-h-[280px] md:grid-cols-[minmax(0,1fr)_320px]">
+        <div className="relative mx-auto grid min-h-[220px] max-w-[1320px] items-center gap-8 px-6 py-10 md:min-h-[280px] md:grid-cols-[minmax(0,1fr)_360px] md:py-14">
           <div>
             <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-blue-900">ITS BIO</p>
             <h1 className="mt-4 text-3xl font-semibold tracking-tight text-slate-950 md:text-[44px]">CellFree Sciences</h1>
             <p className="mt-4 max-w-xl text-sm leading-6 text-slate-600 md:text-base">Wheat germ cell-free protein expression kits, reagents, instruments and research services.</p>
           </div>
-          <div className="hidden h-[126px] items-center justify-center rounded-[22px] border border-blue-100 bg-white px-8 shadow-sm md:flex">
+          <div className="hidden h-[126px] w-[330px] items-center justify-center justify-self-end rounded-[22px] border border-blue-100 bg-white px-8 shadow-sm md:flex">
             <Image src="/partners/cellfreesciences-logo.png" alt="CellFree Sciences" width={240} height={100} className="h-auto max-w-full" preload />
           </div>
         </div>

@@ -426,14 +426,14 @@ export default async function SearchPage({
   const bioplasticsMatches = !selectedBrand || selectedBrand === "bioplastics"
     ? exactBioplastics ? [exactBioplastics] : searchBioplasticsProducts(q)
     : [];
-  let remoteSearchUnavailable = false;
+  let exactSearchUnavailable = false;
 
   async function searchRemote<T>(run: (signal?: AbortSignal) => Promise<T>): Promise<T | undefined> {
     if (!bioplasticsMatches.length || selectedScope) return run();
     try {
       return await run(AbortSignal.timeout(BIOPLASTICS_REMOTE_SEARCH_TIMEOUT));
     } catch {
-      remoteSearchUnavailable = true;
+      return undefined;
     }
   }
   const agarosePackage = ITS_AGAROSE.packages.find((option) => option.sku === catalogNumber.toUpperCase());
@@ -471,6 +471,7 @@ export default async function SearchPage({
         : new Set<string>();
       return { exactDocs, stagedProduct, stagedService, exactDetailSkus };
     });
+    exactSearchUnavailable = !exactMatches;
     if (exactMatches) {
       const { exactDocs, stagedProduct, stagedService, exactDetailSkus } = exactMatches;
       const exactTargets: string[] = [];
@@ -540,14 +541,16 @@ export default async function SearchPage({
 
   const safeMatch = q.replace(/\*/g, "");
   const match = `*${safeMatch}*`;
-  const [liveRows, stagedChunks] = localCatalogBrand || remoteSearchUnavailable ? [[], []] : await searchRemote(signal => Promise.all([
+  const remoteResults = localCatalogBrand || exactSearchUnavailable ? undefined : await searchRemote(signal => Promise.all([
     sanityCdnClient.fetch<LiveSearchRow[]>(LIVE_SEARCH_QUERY, { match }, { ...PUBLIC_CATALOG_CACHE, signal }),
     sanityCdnClient.fetch<StagedSearchChunk[]>(
       ABM_STAGED_SEARCH_QUERY,
       { version: ABM_REBUILD_VERSION, match },
       { ...PUBLIC_CATALOG_CACHE, signal },
     ),
-  ])) ?? [[], []];
+  ]));
+  const [liveRows, stagedChunks] = remoteResults ?? [[], []];
+  const remoteSearchUnavailable = !localCatalogBrand && !remoteResults;
 
   const results: SearchResult[] = [];
   if (exactMissingVectorResult) results.push(exactMissingVectorResult);

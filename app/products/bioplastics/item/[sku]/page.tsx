@@ -2,7 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import BioplasticsFrame from "@/components/products/bioplastics/BioplasticsFrame";
-import { BIOPLASTICS_INSTRUMENTS, BIOPLASTICS_PRODUCTS, findBioplasticsProduct } from "@/lib/bioplastics/catalog";
+import { BIOPLASTICS_PRODUCTS, findBioplasticsProduct } from "@/lib/bioplastics/catalog";
+import { BIOPLASTICS_INSTRUMENTS } from "@/lib/bioplastics/instruments";
 import { bioplasticsProductHref } from "@/lib/bioplastics/navigation";
 import { bioplasticsProductDocuments } from "@/lib/bioplastics/documents";
 
@@ -50,7 +51,7 @@ export default async function BioplasticsProductPage({ params }: Props) {
   const documents = bioplasticsProductDocuments(product);
 
   return (
-    <BioplasticsFrame category={product.category} title={product.sku}>
+    <BioplasticsFrame category={product.category} group={product.groupCode} title={product.sku}>
       <article>
         <div className={product.image ? "grid items-center gap-7 md:grid-cols-[minmax(0,2fr)_minmax(0,3fr)]" : undefined}>
           {product.image && (

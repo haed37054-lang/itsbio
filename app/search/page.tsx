@@ -27,6 +27,7 @@ import { PUBLIC_CATALOG_CACHE, sanityCdnClient } from "@/lib/sanity/sanity.clien
 export const revalidate = 300;
 
 const PAGE_SIZE = 12;
+const BIOPLASTICS_REMOTE_SEARCH_TIMEOUT = 1500;
 
 type ExactCatalogMatch = {
   _id: string;
@@ -405,21 +406,36 @@ function Pagination({
 export default async function SearchPage({
   searchParams,
 }: {
-  searchParams?: Promise<{ q?: string; brand?: string; page?: string; scope?: string }>;
+  searchParams?: Promise<Record<string, string | string[] | undefined>>;
 }) {
   const resolvedSearchParams = await Promise.resolve(searchParams);
-  const qRaw = (resolvedSearchParams?.q || "").trim();
+  const qRaw = stringValue(resolvedSearchParams?.q);
   const q = qRaw.replace(/\s+/g, " ").trim();
-  const requestedBrand = normalizeBrandToken((resolvedSearchParams?.brand || "").trim());
+  const requestedBrand = normalizeBrandToken(stringValue(resolvedSearchParams?.brand));
   const selectedBrand = requestedBrand === "animalid" ? "aims" : requestedBrand;
-  const selectedScope = normalizeCrisprSearchScope((resolvedSearchParams?.scope || "").trim());
-  const requestedPage = clampInt(resolvedSearchParams?.page);
+  const selectedScope = normalizeCrisprSearchScope(stringValue(resolvedSearchParams?.scope));
+  const requestedPage = clampInt(stringValue(resolvedSearchParams?.page));
 
   if (!q) redirect("/products");
 
   let exactMissingVectorResult: SearchResult | null = null;
 
   const catalogNumber = normalizeCatalogNumber(q);
+  const exactBioplastics = !selectedBrand || selectedBrand === "bioplastics" ? findBioplasticsProduct(catalogNumber) : undefined;
+  if (selectedBrand === "bioplastics" && exactBioplastics) redirect(bioplasticsProductHref(exactBioplastics.sku));
+  const bioplasticsMatches = !selectedBrand || selectedBrand === "bioplastics"
+    ? exactBioplastics ? [exactBioplastics] : searchBioplasticsProducts(q)
+    : [];
+  let remoteSearchUnavailable = false;
+
+  async function searchRemote<T>(run: (signal?: AbortSignal) => Promise<T>): Promise<T | undefined> {
+    if (!bioplasticsMatches.length || selectedScope) return run();
+    try {
+      return await run(AbortSignal.timeout(BIOPLASTICS_REMOTE_SEARCH_TIMEOUT));
+    } catch {
+      remoteSearchUnavailable = true;
+    }
+  }
   const agarosePackage = ITS_AGAROSE.packages.find((option) => option.sku === catalogNumber.toUpperCase());
   if ((!selectedBrand || selectedBrand === "itschem") && agarosePackage) {
     redirect(itsAgarosePackageHref(agarosePackage.sku));
@@ -428,7 +444,6 @@ export default async function SearchPage({
   const exactAims = exactAimsModel(catalogNumber);
   const exactDogen = exactDogenModel(catalogNumber);
   const exactCellFree = exactCellFreeOption(catalogNumber);
-  const exactBioplastics = findBioplasticsProduct(catalogNumber);
   const exactAnimalId = exactAnimalIdModel(catalogNumber);
   const exactAffinity = exactAffinityProduct(catalogNumber);
   const affinityMatches = exactAffinityProducts(catalogNumber);
@@ -443,103 +458,105 @@ export default async function SearchPage({
   }
   if (selectedBrand === "dogen" && exactDogen) redirect(exactDogen.href);
   if (selectedBrand === "cellfreesciences" && exactCellFree) redirect(cellFreeProductHref(exactCellFree.product.slug, exactCellFree.option.sku));
-  if (selectedBrand === "bioplastics" && exactBioplastics) redirect(bioplasticsProductHref(exactBioplastics.sku));
   const localCatalogBrand = ["seedburo", "aims", "affinityimmuno", "itschem", "dogen", "plaslabs", "cellfreesciences", "bioplastics"].includes(selectedBrand);
   if (!localCatalogBrand && (isCatalogNumberCandidate(catalogNumber) || exactAims || exactAnimalId || exactDogen || exactCellFree || exactBioplastics)) {
-    const [exactDocs, stagedProduct, stagedService] = await Promise.all([
-      sanityCdnClient.fetch<ExactCatalogMatch[]>(FIND_EXACT_CATALOG_NUMBER, { catalogNumber }, PUBLIC_CATALOG_CACHE),
-      getAbmStagedRecord("product", catalogNumber),
-      getAbmStagedRecord("service", catalogNumber),
-    ]);
+    const exactMatches = await searchRemote(async signal => {
+      const [exactDocs, stagedProduct, stagedService] = await Promise.all([
+        sanityCdnClient.fetch<ExactCatalogMatch[]>(FIND_EXACT_CATALOG_NUMBER, { catalogNumber }, { ...PUBLIC_CATALOG_CACHE, signal }),
+        getAbmStagedRecord("product", catalogNumber, signal),
+        getAbmStagedRecord("service", catalogNumber, signal),
+      ]);
+      const exactDetailSkus = stagedProduct
+        ? await getAbmStagedDetailPresence("product", [stagedProduct.sku], signal)
+        : new Set<string>();
+      return { exactDocs, stagedProduct, stagedService, exactDetailSkus };
+    });
+    if (exactMatches) {
+      const { exactDocs, stagedProduct, stagedService, exactDetailSkus } = exactMatches;
+      const exactTargets: string[] = [];
+      const kentTargets = (Array.isArray(exactDocs) ? exactDocs : [])
+        .filter((doc) => normalizeBrandToken(String(doc.brandKey || "")).startsWith("kent"))
+        .map(exactCatalogHref)
+        .filter(Boolean);
+      exactTargets.push(...kentTargets);
 
-    const exactTargets: string[] = [];
-    const kentTargets = (Array.isArray(exactDocs) ? exactDocs : [])
-      .filter((doc) => normalizeBrandToken(String(doc.brandKey || "")).startsWith("kent"))
-      .map(exactCatalogHref)
-      .filter(Boolean);
-    exactTargets.push(...kentTargets);
+      const cleaverTargets = (Array.isArray(exactDocs) ? exactDocs : [])
+        .filter((doc) => normalizeBrandToken(String(doc.brandKey || "")).startsWith("cleaver"))
+        .map(exactCatalogHref)
+        .filter(Boolean);
+      exactTargets.push(...cleaverTargets);
+      if (!cleaverTargets.length) {
+        const localCleaver = findLocalCleaverProduct(catalogNumber);
+        if (localCleaver) exactTargets.push(cleaverProductHref(localCleaver));
+      }
 
-    const cleaverTargets = (Array.isArray(exactDocs) ? exactDocs : [])
-      .filter((doc) => normalizeBrandToken(String(doc.brandKey || "")).startsWith("cleaver"))
-      .map(exactCatalogHref)
-      .filter(Boolean);
-    exactTargets.push(...cleaverTargets);
-    if (!cleaverTargets.length) {
-      const localCleaver = findLocalCleaverProduct(catalogNumber);
-      if (localCleaver) exactTargets.push(cleaverProductHref(localCleaver));
+      const effectiveStagedProduct = stagedProduct
+        ? { ...stagedProduct, hasDetail: exactDetailSkus.has(stagedProduct.sku) }
+        : undefined;
+      const exactMissingVectorUrl = effectiveStagedProduct
+        ? verifiedMissingAbmVectorUrl(effectiveStagedProduct)
+        : "";
+
+      if (effectiveStagedProduct && !exactMissingVectorUrl) {
+        exactTargets.push(stagedRecordPath("product", effectiveStagedProduct));
+      }
+      if (stagedService) exactTargets.push(stagedRecordPath("service", stagedService));
+
+      if (effectiveStagedProduct && exactMissingVectorUrl) {
+        exactMissingVectorResult = {
+          id: `abm-missing-vector:${effectiveStagedProduct.sku || effectiveStagedProduct.url}`,
+          title: effectiveStagedProduct.title,
+          sku: effectiveStagedProduct.sku || undefined,
+          description: effectiveStagedProduct.previewSummary,
+          brandKey: "abm",
+          brandLabel: "ABM",
+          href: exactMissingVectorUrl,
+          kind: "Product",
+          direct: true,
+          external: true,
+          score: 130,
+        };
+      }
+
+      if (!stagedProduct && !stagedService) {
+        exactTargets.push(
+          ...(Array.isArray(exactDocs) ? exactDocs : [])
+            .filter((doc) => normalizeBrandToken(String(doc.brandKey || "")) === "abm")
+            .map(exactCatalogHref)
+            .filter(Boolean),
+        );
+      }
+
+      if (!selectedBrand) exactTargets.push(...exactSeedburo.map((product) => `${seedburoProductHref(product)}#model-${encodeURIComponent(catalogNumber)}`));
+      if (!selectedBrand && exactAims) exactTargets.push(exactAims.href);
+      if (!selectedBrand && exactAnimalId) exactTargets.push(exactAnimalId.href);
+      if (!selectedBrand && exactDogen) exactTargets.push(exactDogen.href);
+      if (!selectedBrand && exactCellFree) exactTargets.push(cellFreeProductHref(exactCellFree.product.slug, exactCellFree.option.sku));
+      if (!selectedBrand && exactBioplastics) exactTargets.push(bioplasticsProductHref(exactBioplastics.sku));
+      const uniqueTargets = [...new Set(exactTargets)];
+      if (uniqueTargets.length === 1) redirect(uniqueTargets[0]);
     }
-
-    const exactDetailSkus = stagedProduct
-      ? await getAbmStagedDetailPresence("product", [stagedProduct.sku])
-      : new Set<string>();
-    const effectiveStagedProduct = stagedProduct
-      ? { ...stagedProduct, hasDetail: exactDetailSkus.has(stagedProduct.sku) }
-      : undefined;
-    const exactMissingVectorUrl = effectiveStagedProduct
-      ? verifiedMissingAbmVectorUrl(effectiveStagedProduct)
-      : "";
-
-    if (effectiveStagedProduct && !exactMissingVectorUrl) {
-      exactTargets.push(stagedRecordPath("product", effectiveStagedProduct));
-    }
-    if (stagedService) exactTargets.push(stagedRecordPath("service", stagedService));
-
-    if (effectiveStagedProduct && exactMissingVectorUrl) {
-      exactMissingVectorResult = {
-        id: `abm-missing-vector:${effectiveStagedProduct.sku || effectiveStagedProduct.url}`,
-        title: effectiveStagedProduct.title,
-        sku: effectiveStagedProduct.sku || undefined,
-        description: effectiveStagedProduct.previewSummary,
-        brandKey: "abm",
-        brandLabel: "ABM",
-        href: exactMissingVectorUrl,
-        kind: "Product",
-        direct: true,
-        external: true,
-        score: 130,
-      };
-    }
-
-    if (!stagedProduct && !stagedService) {
-      exactTargets.push(
-        ...(Array.isArray(exactDocs) ? exactDocs : [])
-          .filter((doc) => normalizeBrandToken(String(doc.brandKey || "")) === "abm")
-          .map(exactCatalogHref)
-          .filter(Boolean),
-      );
-    }
-
-    if (!selectedBrand) exactTargets.push(...exactSeedburo.map((product) => `${seedburoProductHref(product)}#model-${encodeURIComponent(catalogNumber)}`));
-    if (!selectedBrand && exactAims) exactTargets.push(exactAims.href);
-    if (!selectedBrand && exactAnimalId) exactTargets.push(exactAnimalId.href);
-    if (!selectedBrand && exactDogen) exactTargets.push(exactDogen.href);
-    if (!selectedBrand && exactCellFree) exactTargets.push(cellFreeProductHref(exactCellFree.product.slug, exactCellFree.option.sku));
-    if (!selectedBrand && exactBioplastics) exactTargets.push(bioplasticsProductHref(exactBioplastics.sku));
-    const uniqueTargets = [...new Set(exactTargets)];
-    if (uniqueTargets.length === 1) redirect(uniqueTargets[0]);
   }
 
   const safeMatch = q.replace(/\*/g, "");
   const match = `*${safeMatch}*`;
-  const [liveRows, stagedChunks] = localCatalogBrand ? [[], []] : await Promise.all([
-    sanityCdnClient.fetch<LiveSearchRow[]>(LIVE_SEARCH_QUERY, { match }, PUBLIC_CATALOG_CACHE),
+  const [liveRows, stagedChunks] = localCatalogBrand || remoteSearchUnavailable ? [[], []] : await searchRemote(signal => Promise.all([
+    sanityCdnClient.fetch<LiveSearchRow[]>(LIVE_SEARCH_QUERY, { match }, { ...PUBLIC_CATALOG_CACHE, signal }),
     sanityCdnClient.fetch<StagedSearchChunk[]>(
       ABM_STAGED_SEARCH_QUERY,
       { version: ABM_REBUILD_VERSION, match },
-      PUBLIC_CATALOG_CACHE,
+      { ...PUBLIC_CATALOG_CACHE, signal },
     ),
-  ]);
+  ])) ?? [[], []];
 
   const results: SearchResult[] = [];
   if (exactMissingVectorResult) results.push(exactMissingVectorResult);
-  if (!selectedBrand || selectedBrand === "bioplastics") {
-    for (const product of searchBioplasticsProducts(q)) {
-      results.push({
-        id: `bioplastics:${product.sku}`, title: product.title, sku: product.sku, description: product.pack,
-        brandKey: "bioplastics", brandLabel: "BIOplastics", href: bioplasticsProductHref(product.sku),
-        kind: "Product", direct: true, score: scoreMatch(product.title, product.sku, q) + 3,
-      });
-    }
+  for (const product of bioplasticsMatches) {
+    results.push({
+      id: `bioplastics:${product.sku}`, title: product.title, sku: product.sku, description: product.pack,
+      brandKey: "bioplastics", brandLabel: "BIOplastics", href: bioplasticsProductHref(product.sku),
+      kind: "Product", direct: true, score: scoreMatch(product.title, product.sku, catalogNumber) + 3,
+    });
   }
   if (!selectedBrand || selectedBrand === "cellfreesciences") {
     for (const product of searchCellFreeProducts(q)) {
@@ -780,6 +797,12 @@ export default async function SearchPage({
             </form>
           </div>
         </div>
+
+        {remoteSearchUnavailable && (
+          <p role="status" className="mt-4 text-sm text-slate-600">
+            Some catalogs are temporarily unavailable. Available results are shown below.
+          </p>
+        )}
 
         {groups.length ? (
           <>

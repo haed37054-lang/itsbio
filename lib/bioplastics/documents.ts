@@ -16,9 +16,9 @@ export const BIOPLASTICS_DOCUMENTS = [
 export function bioplasticsProductDocuments(product: BioplasticsProduct) {
   const labels: string[] = [];
   if (product.sku === "157200") labels.push("Alu-Seal instructions", "(q)PCR sealing options");
-  if (product.group === "0.1/0.2 ml PCR Tubes") labels.push("Single attached caps family");
-  if (product.sku === "K1271FD") labels.push("Firm Deck catalog");
-  if (product.group === "384 Well Plates") labels.push("384-well plate family");
+  if (product.groupCodes?.includes("PCR05") || product.group === "0.1/0.2 ml PCR Tubes") labels.push("Single attached caps family");
+  if (product.sku === "K1271FD" || /Firm Deck/i.test([product.title, product.group, ...(product.groups || [])].join(" "))) labels.push("Firm Deck catalog");
+  if (product.groupCodes?.includes("PCR50") || product.group === "384 Well Plates") labels.push("384-well plate family");
   if (product.category === "filter-tips") labels.push("Filtertips");
   if (product.category === "racks-boxes") labels.push("Work rack systems");
   if (product.category === "debox") labels.push("DeBox family");

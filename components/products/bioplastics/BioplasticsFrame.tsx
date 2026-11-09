@@ -3,11 +3,12 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import Breadcrumb from "@/components/site/Breadcrumb";
 import {
-  BIOPLASTICS_CATEGORIES, BIOPLASTICS_ROOT, bioplasticsCategoryHref, type BioplasticsCategory,
+  BIOPLASTICS_CATEGORIES, BIOPLASTICS_GROUPS, BIOPLASTICS_ROOT, bioplasticsCategoryHref, bioplasticsGroupHref, type BioplasticsCategory,
 } from "@/lib/bioplastics/navigation";
 
-export default function BioplasticsFrame({ category, title, children }: {
+export default function BioplasticsFrame({ category, group, title, children }: {
   category?: BioplasticsCategory;
+  group?: string;
   title?: string;
   children: ReactNode;
 }) {
@@ -48,6 +49,9 @@ export default function BioplasticsFrame({ category, title, children }: {
                 </Link>
               ))}
             </nav>
+            {category && <nav aria-label="BIOplastics product groups" className="hidden max-h-[55vh] overflow-y-auto border-t border-slate-100 p-3 lg:block">
+              {BIOPLASTICS_GROUPS.filter(item => item.category === category).map(item => <Link key={item.code} href={bioplasticsGroupHref(category, item.code)} aria-current={item.code === group ? "location" : undefined} className={`block rounded-lg px-3 py-2 text-xs leading-5 ${item.code === group ? "bg-amber-50 font-semibold text-amber-950" : "text-slate-600 hover:bg-slate-50"}`}>{item.label}</Link>)}
+            </nav>}
           </aside>
           <div className="min-w-0">{children}</div>
         </div>

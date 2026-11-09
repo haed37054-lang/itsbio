@@ -1,5 +1,4 @@
 import data from "@/data/bioplastics/catalog.json";
-import fitTables from "@/data/bioplastics/instruments.json";
 import { BIOPLASTICS_CATEGORIES, type BioplasticsCategory } from "./navigation";
 
 type Pair = [string, string];
@@ -9,6 +8,9 @@ export type BioplasticsProduct = {
   category: BioplasticsCategory;
   group: string;
   family: string;
+  groupCode?: string;
+  groupCodes?: string[];
+  groups?: string[];
   configuration: string;
   pack: string;
   overview: string;
@@ -20,21 +22,26 @@ export type BioplasticsProduct = {
   fitKey?: string;
 };
 
-type InstrumentRow = [manufacturer: string, instrument: string, block: string, markers: string[]];
-
 export const BIOPLASTICS_PRODUCTS = data as unknown as BioplasticsProduct[];
-export const BIOPLASTICS_INSTRUMENTS = fitTables as unknown as Record<string, InstrumentRow[]>;
+function normalizeSearch(value: string) {
+  return value.normalize("NFKC").replace(/[‐‑‒–—―−]/g, "-").toLowerCase().trim();
+}
+
+const bySku = new Map(BIOPLASTICS_PRODUCTS.map(product => [normalizeSearch(product.sku), product]));
+const categoryLabels = new Map(BIOPLASTICS_CATEGORIES.map(({ key, label }) => [key, label]));
+const searchIndex = BIOPLASTICS_PRODUCTS.map(product => ({
+  product,
+  text: normalizeSearch(["BIOplastics", categoryLabels.get(product.category), product.sku,
+    product.title, product.group, ...(product.groups ?? []), product.family, product.pack].join(" ")),
+}));
 
 export function findBioplasticsProduct(sku: string) {
-  return BIOPLASTICS_PRODUCTS.find((product) => product.sku.toLowerCase() === sku.toLowerCase().trim());
+  return bySku.get(normalizeSearch(sku));
 }
 
 export function searchBioplasticsProducts(query: string, category?: BioplasticsCategory) {
-  const terms = query.toLowerCase().trim().split(/\s+/).filter(Boolean);
-  return BIOPLASTICS_PRODUCTS.filter((product) => {
-    if (category && product.category !== category) return false;
-    const label = BIOPLASTICS_CATEGORIES.find(({ key }) => key === product.category)?.label;
-    const searchable = ["BIOplastics", label, product.sku, product.title, product.group, product.family, product.pack].join(" ").toLowerCase();
-    return terms.every((term) => searchable.includes(term));
-  });
+  const terms = normalizeSearch(query).split(/\s+/).filter(Boolean);
+  return searchIndex
+    .filter(({ product, text }) => (!category || product.category === category) && terms.every(term => text.includes(term)))
+    .map(({ product }) => product);
 }

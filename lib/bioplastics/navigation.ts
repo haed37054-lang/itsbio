@@ -1,4 +1,7 @@
+import groups from "@/data/bioplastics/groups.json";
+
 export const BIOPLASTICS_ROOT = "/products/bioplastics";
+export const BIOPLASTICS_GROUPS = groups;
 
 export const BIOPLASTICS_CATEGORIES = [
   { key: "qpcr", label: "(q)PCR Products" },
@@ -17,4 +20,8 @@ export function bioplasticsCategoryHref(key: BioplasticsCategory) {
 
 export function bioplasticsProductHref(sku: string) {
   return `${BIOPLASTICS_ROOT}/item/${encodeURIComponent(sku.toLowerCase())}`;
+}
+
+export function bioplasticsGroupHref(category: string, group: string) {
+  return `${BIOPLASTICS_ROOT}?${new URLSearchParams({ category, group })}`;
 }

@@ -703,7 +703,7 @@ function officialCellRecord(key: string): AbmStagedRecord | undefined {
   };
 }
 
-export async function getAbmStagedRecord(kind: AbmStagedRecord["kind"], key: string) {
+export async function getAbmStagedRecord(kind: AbmStagedRecord["kind"], key: string, signal?: AbortSignal) {
   const decodedKey = decodeURIComponent(key);
   if (kind === "product") {
     const expressionSystemRecord = verifiedExpressionSystemProduct(decodedKey);
@@ -716,7 +716,7 @@ export async function getAbmStagedRecord(kind: AbmStagedRecord["kind"], key: str
     version: ABM_REBUILD_VERSION,
     kind,
     key: decodedKey,
-  }, PUBLIC_CATALOG_CACHE);
+  }, { ...PUBLIC_CATALOG_CACHE, signal });
   if (kind === "product" && staged && isNonProductCatalogTool(staged)) return null;
   return staged;
 }
@@ -826,6 +826,7 @@ function hasUsableStagedDetail(record: StagedDetailPresenceRecord) {
 export async function getAbmStagedDetailPresence(
   kind: AbmStagedRecord["kind"],
   catalogNumbers: readonly string[],
+  signal?: AbortSignal,
 ) {
   const keys = [...new Set(
     catalogNumbers
@@ -839,7 +840,7 @@ export async function getAbmStagedDetailPresence(
   const chunks = await sanityClient.fetch<Array<{ records?: StagedDetailPresenceRecord[] }>>(
     STAGED_DETAIL_PRESENCE_QUERY,
     { version: ABM_REBUILD_VERSION, kind, keys },
-    PUBLIC_CATALOG_CACHE,
+    { ...PUBLIC_CATALOG_CACHE, signal },
   );
 
   const usable = new Set(

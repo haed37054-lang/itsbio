@@ -1,0 +1,514 @@
+[
+  {
+    "code": "PCR05",
+    "label": "0.1/0.2 ml PCR Tubes",
+    "category": "qpcr",
+    "path": [
+      "(q)PCR Products",
+      "0.1/0.2 ml PCR Tubes"
+    ]
+  },
+  {
+    "code": "PCR10",
+    "label": "0.5 ml PCR Tubes",
+    "category": "qpcr",
+    "path": [
+      "(q)PCR Products",
+      "0.5 ml PCR Tubes"
+    ]
+  },
+  {
+    "code": "PCR12",
+    "label": "3-Tube Strips",
+    "category": "qpcr",
+    "path": [
+      "(q)PCR Products",
+      "3-Tube Strips"
+    ]
+  },
+  {
+    "code": "PCR13",
+    "label": "4-Tube Strips",
+    "category": "qpcr",
+    "path": [
+      "(q)PCR Products",
+      "4-Tube Strips"
+    ]
+  },
+  {
+    "code": "PCR15",
+    "label": "8-Tube Strips",
+    "category": "qpcr",
+    "path": [
+      "(q)PCR Products",
+      "8-Tube Strips"
+    ]
+  },
+  {
+    "code": "PCR20",
+    "label": "12-Tube Strips",
+    "category": "qpcr",
+    "path": [
+      "(q)PCR Products",
+      "12-Tube Strips"
+    ]
+  },
+  {
+    "code": "PCR22",
+    "label": "4-Cap Strips",
+    "category": "qpcr",
+    "path": [
+      "(q)PCR Products",
+      "4-Cap Strips"
+    ]
+  },
+  {
+    "code": "PCR25",
+    "label": "8-Cap Strips",
+    "category": "qpcr",
+    "path": [
+      "(q)PCR Products",
+      "8-Cap Strips"
+    ]
+  },
+  {
+    "code": "PCR30",
+    "label": "12-Cap Strips",
+    "category": "qpcr",
+    "path": [
+      "(q)PCR Products",
+      "12-Cap Strips"
+    ]
+  },
+  {
+    "code": "PCR31",
+    "label": "Shell Frame Grids",
+    "category": "qpcr",
+    "path": [
+      "(q)PCR Products",
+      "Shell Frame Grids"
+    ]
+  },
+  {
+    "code": "PCR32",
+    "label": "Plates 96 Mat Tear-Off Strip Family",
+    "category": "qpcr",
+    "path": [
+      "(q)PCR Products",
+      "Plates 96 Mat Tear-Off Strip Family"
+    ]
+  },
+  {
+    "code": "PCR35",
+    "label": "Plates 96 x 0.2 ml",
+    "category": "qpcr",
+    "path": [
+      "(q)PCR Products",
+      "Plates 96 x 0.2 ml"
+    ]
+  },
+  {
+    "code": "PCR40",
+    "label": "Plates 48 x 0.2 ml",
+    "category": "qpcr",
+    "path": [
+      "(q)PCR Products",
+      "Plates 48 x 0.2 ml"
+    ]
+  },
+  {
+    "code": "PCR45",
+    "label": "Plates 24 x 0.2 ml",
+    "category": "qpcr",
+    "path": [
+      "(q)PCR Products",
+      "Plates 24 x 0.2 ml"
+    ]
+  },
+  {
+    "code": "PCR50",
+    "label": "384 Well Plates",
+    "category": "qpcr",
+    "path": [
+      "(q)PCR Products",
+      "384 Well Plates"
+    ]
+  },
+  {
+    "code": "PCR55",
+    "label": "Seals",
+    "category": "qpcr",
+    "path": [
+      "(q)PCR Products",
+      "Seals"
+    ]
+  },
+  {
+    "code": "PCR56",
+    "label": "Cap Plates",
+    "category": "qpcr",
+    "path": [
+      "(q)PCR Products",
+      "Cap Plates"
+    ]
+  },
+  {
+    "code": "PCR60",
+    "label": "Accesoires",
+    "category": "qpcr",
+    "path": [
+      "(q)PCR Products",
+      "Accesoires"
+    ]
+  },
+  {
+    "code": "FT010",
+    "label": "SSNC Filtertips 5µl",
+    "category": "filter-tips",
+    "path": [
+      "Filtertips",
+      "SSNC Filtertips 5µl"
+    ]
+  },
+  {
+    "code": "FT020",
+    "label": "SSNC Filtertips 10µl",
+    "category": "filter-tips",
+    "path": [
+      "Filtertips",
+      "SSNC Filtertips 10µl"
+    ]
+  },
+  {
+    "code": "FT030",
+    "label": "SSNC Filtertips 20µl",
+    "category": "filter-tips",
+    "path": [
+      "Filtertips",
+      "SSNC Filtertips 20µl"
+    ]
+  },
+  {
+    "code": "FT040",
+    "label": "SSNC Filtertips 50µl",
+    "category": "filter-tips",
+    "path": [
+      "Filtertips",
+      "SSNC Filtertips 50µl"
+    ]
+  },
+  {
+    "code": "FT050",
+    "label": "SSNC Filtertips 100µl",
+    "category": "filter-tips",
+    "path": [
+      "Filtertips",
+      "SSNC Filtertips 100µl"
+    ]
+  },
+  {
+    "code": "FT060",
+    "label": "SSNC Filtertips 150µl",
+    "category": "filter-tips",
+    "path": [
+      "Filtertips",
+      "SSNC Filtertips 150µl"
+    ]
+  },
+  {
+    "code": "FT070",
+    "label": "SSNC Filtertips 200µl",
+    "category": "filter-tips",
+    "path": [
+      "Filtertips",
+      "SSNC Filtertips 200µl"
+    ]
+  },
+  {
+    "code": "FT110",
+    "label": "SSNC Filtertips 1000µl",
+    "category": "filter-tips",
+    "path": [
+      "Filtertips",
+      "SSNC Filtertips 1000µl"
+    ]
+  },
+  {
+    "code": "TR020",
+    "label": "Regular tips / 10µl",
+    "category": "pipette-tips",
+    "path": [
+      "Pipette tips",
+      "Regular tips",
+      "10µl"
+    ]
+  },
+  {
+    "code": "TR050",
+    "label": "Regular tips / 100µl",
+    "category": "pipette-tips",
+    "path": [
+      "Pipette tips",
+      "Regular tips",
+      "100µl"
+    ]
+  },
+  {
+    "code": "TR070",
+    "label": "Regular tips / 200µl",
+    "category": "pipette-tips",
+    "path": [
+      "Pipette tips",
+      "Regular tips",
+      "200µl"
+    ]
+  },
+  {
+    "code": "TR090",
+    "label": "Regular tips / 300µl",
+    "category": "pipette-tips",
+    "path": [
+      "Pipette tips",
+      "Regular tips",
+      "300µl"
+    ]
+  },
+  {
+    "code": "TR110",
+    "label": "Regular tips / 1000µl",
+    "category": "pipette-tips",
+    "path": [
+      "Pipette tips",
+      "Regular tips",
+      "1000µl"
+    ]
+  },
+  {
+    "code": "TL020",
+    "label": "Low adhesion tips / 10µl",
+    "category": "pipette-tips",
+    "path": [
+      "Pipette tips",
+      "Low adhesion tips",
+      "10µl"
+    ]
+  },
+  {
+    "code": "MT100",
+    "label": "Microcentrifuge tubes / Volume 0.5ml",
+    "category": "tubes",
+    "path": [
+      "Tubes",
+      "Microcentrifuge tubes",
+      "Volume 0.5ml"
+    ]
+  },
+  {
+    "code": "MT120",
+    "label": "Microcentrifuge tubes / Volume 1.5ml",
+    "category": "tubes",
+    "path": [
+      "Tubes",
+      "Microcentrifuge tubes",
+      "Volume 1.5ml"
+    ]
+  },
+  {
+    "code": "MT130",
+    "label": "Microcentrifuge tubes / Volume 2.0ml",
+    "category": "tubes",
+    "path": [
+      "Tubes",
+      "Microcentrifuge tubes",
+      "Volume 2.0ml"
+    ]
+  },
+  {
+    "code": "LT100",
+    "label": "Low adhesion tubes / Volume 0.5ml",
+    "category": "tubes",
+    "path": [
+      "Tubes",
+      "Low adhesion tubes",
+      "Volume 0.5ml"
+    ]
+  },
+  {
+    "code": "LT120",
+    "label": "Low adhesion tubes / Volume 1.5ml",
+    "category": "tubes",
+    "path": [
+      "Tubes",
+      "Low adhesion tubes",
+      "Volume 1.5ml"
+    ]
+  },
+  {
+    "code": "LT130",
+    "label": "Low adhesion tubes / Volume 2.0ml",
+    "category": "tubes",
+    "path": [
+      "Tubes",
+      "Low adhesion tubes",
+      "Volume 2.0ml"
+    ]
+  },
+  {
+    "code": "ST100",
+    "label": "Screw cap tubes / Volume 0.5ml",
+    "category": "tubes",
+    "path": [
+      "Tubes",
+      "Screw cap tubes",
+      "Volume 0.5ml"
+    ]
+  },
+  {
+    "code": "ST120",
+    "label": "Screw cap tubes / Volume 1.5ml",
+    "category": "tubes",
+    "path": [
+      "Tubes",
+      "Screw cap tubes",
+      "Volume 1.5ml"
+    ]
+  },
+  {
+    "code": "ST130",
+    "label": "Screw cap tubes / Volume 2.0ml",
+    "category": "tubes",
+    "path": [
+      "Tubes",
+      "Screw cap tubes",
+      "Volume 2.0ml"
+    ]
+  },
+  {
+    "code": "ST999",
+    "label": "Screw cap tubes / Screw Caps",
+    "category": "tubes",
+    "path": [
+      "Tubes",
+      "Screw cap tubes",
+      "Screw Caps"
+    ]
+  },
+  {
+    "code": "TT115",
+    "label": "Titer tubes / Volume 0.5 ml",
+    "category": "tubes",
+    "path": [
+      "Tubes",
+      "Titer tubes",
+      "Volume 0.5 ml"
+    ]
+  },
+  {
+    "code": "SOR10",
+    "label": "Racks for PCR",
+    "category": "racks-boxes",
+    "path": [
+      "Racks & Boxes",
+      "Racks for PCR"
+    ]
+  },
+  {
+    "code": "SOR20",
+    "label": "Work Rack S Systems",
+    "category": "racks-boxes",
+    "path": [
+      "Racks & Boxes",
+      "Work Rack S Systems"
+    ]
+  },
+  {
+    "code": "SOR30",
+    "label": "Work Rack S Stand Alone",
+    "category": "racks-boxes",
+    "path": [
+      "Racks & Boxes",
+      "Work Rack S Stand Alone"
+    ]
+  },
+  {
+    "code": "SOR40",
+    "label": "Work Rack F Systems",
+    "category": "racks-boxes",
+    "path": [
+      "Racks & Boxes",
+      "Work Rack F Systems"
+    ]
+  },
+  {
+    "code": "SOR50",
+    "label": "Work Rack F Stand Alone",
+    "category": "racks-boxes",
+    "path": [
+      "Racks & Boxes",
+      "Work Rack F Stand Alone"
+    ]
+  },
+  {
+    "code": "SOR60",
+    "label": "Storage (cryo) Boxes",
+    "category": "racks-boxes",
+    "path": [
+      "Racks & Boxes",
+      "Storage (cryo) Boxes"
+    ]
+  },
+  {
+    "code": "BOX01",
+    "label": "DeBox Small footprint",
+    "category": "debox",
+    "path": [
+      "DeBox",
+      "DeBox Small footprint"
+    ]
+  },
+  {
+    "code": "BOX02",
+    "label": "DeBox Medium Footprint",
+    "category": "debox",
+    "path": [
+      "DeBox",
+      "DeBox Medium Footprint"
+    ]
+  },
+  {
+    "code": "BOX03",
+    "label": "DeBox Large footprint",
+    "category": "debox",
+    "path": [
+      "DeBox",
+      "DeBox Large footprint"
+    ]
+  },
+  {
+    "code": "BOX04",
+    "label": "DeBox Extra large Footprint",
+    "category": "debox",
+    "path": [
+      "DeBox",
+      "DeBox Extra large Footprint"
+    ]
+  },
+  {
+    "code": "BOX11",
+    "label": "DeBox-In  Small Footprint",
+    "category": "debox",
+    "path": [
+      "DeBox",
+      "DeBox-In  Small Footprint"
+    ]
+  },
+  {
+    "code": "BOX12",
+    "label": "DeBox-In  Medium Footprint",
+    "category": "debox",
+    "path": [
+      "DeBox",
+      "DeBox-In  Medium Footprint"
+    ]
+  }
+]

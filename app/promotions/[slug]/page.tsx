@@ -280,6 +280,11 @@ export default async function PromotionDetailPage({
       {/* CONTENT */}
       <section className="mx-auto max-w-6xl px-6 pb-16 pt-10 md:pt-12">
         <header className="max-w-4xl">
+          {brochure ? (
+            <span className="mb-2.5 inline-flex rounded-full bg-orange-50 px-2.5 py-1 text-[11px] font-semibold text-orange-800">
+              {brochure.campaignLabel}
+            </span>
+          ) : null}
           <h2 className="text-xl font-semibold tracking-tight text-slate-900 md:text-3xl">
             {doc.title}
           </h2>

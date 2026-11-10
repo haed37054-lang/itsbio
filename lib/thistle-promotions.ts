@@ -6,6 +6,7 @@ const brochurePdf = "thistle-scientific-special-offer-2026.pdf";
 export const thistlePromotions = brochures.map(({ cover, pages, ...promotion }) => ({
   ...promotion,
   _id: promotion.slug,
+  campaignLabel: "ThistleScientific 할인행사",
   coverPath: `${assetDirectory}/${cover}`,
   dateText: `${promotion.endDate.replaceAll("-", ".")}까지`,
   attachments: [{

@@ -8,6 +8,7 @@ import { thistlePromotions } from "@/lib/thistle-promotions";
 type PromotionDoc = {
   _id: string;
   title: string;
+  campaignLabel?: string;
   summary?: string;
   publishedAt?: string;
   order?: number;
@@ -83,9 +84,10 @@ export default async function PromotionsPage({ searchParams }: { searchParams?: 
   const pageParam = clampInt(sp.page, 1, 1, 999);
   const filter = qSafe ? `&& (title match "*${qSafe}*")` : "";
   const searchTerms = qRaw.toLowerCase().split(/\s+/);
-  const brochures = thistlePromotions.filter((promotion) =>
-    searchTerms.every((term) => promotion.title.toLowerCase().includes(term)),
-  );
+  const brochures = thistlePromotions.filter(({ campaignLabel, title }) => {
+    const searchText = `${campaignLabel} ${title}`.toLowerCase();
+    return searchTerms.every((term) => searchText.includes(term));
+  });
 
   const TOTAL_QUERY = `count(*[_type=="promotion" && coalesce(isActive,true)==true ${filter}])`;
   const total = brochures.length + await sanityCdnClient.fetch<number>(TOTAL_QUERY, {}, PUBLIC_CATALOG_CACHE);
@@ -156,6 +158,11 @@ export default async function PromotionsPage({ searchParams }: { searchParams?: 
                       {imgUrl ? <img src={imgUrl} alt="" width={480} height={300} className="h-full w-full object-cover" loading="lazy" /> : null}
                     </div>
                     <div className="min-w-0">
+                      {p.campaignLabel ? (
+                        <span className="mb-1.5 inline-flex rounded-full bg-orange-50 px-2.5 py-1 text-[11px] font-semibold text-orange-800">
+                          {p.campaignLabel}
+                        </span>
+                      ) : null}
                       <h3 className="break-words text-base font-semibold leading-snug text-slate-950 group-hover:text-orange-800 sm:text-lg">{p.title}</h3>
                       {p.summary ? <p className="mt-1 line-clamp-2 text-sm leading-5 text-slate-600">{p.summary}</p> : null}
                     </div>

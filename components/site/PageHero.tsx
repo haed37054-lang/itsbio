@@ -153,24 +153,14 @@ function HeroVisual({ variant }: { variant: HeroVariant }) {
 
 export default function PageHero({ eyebrow, title, description, variant, cta }: PageHeroProps) {
   const accent = VARIANT_ACCENTS[variant];
-  const isPromotions = variant === "promotions";
-  const background = isPromotions
-    ? "bg-linear-to-br from-orange-950 via-orange-800 to-orange-700"
-    : "bg-[#071d43]";
-  const topLine = isPromotions
-    ? "from-orange-500 via-orange-300 to-orange-200"
-    : "from-orange-500 via-orange-300 to-sky-400";
-  const ctaColor = isPromotions
-    ? "bg-white text-orange-900 hover:bg-orange-100"
-    : "bg-orange-500 text-white hover:bg-orange-400";
 
   return (
-    <section className={`relative isolate overflow-hidden border-b border-slate-900/10 text-white ${background}`}>
+    <section className="relative isolate overflow-hidden border-b border-slate-900/10 bg-[#071d43] text-white">
       <div className="pointer-events-none absolute -right-24 -top-48 h-[560px] w-[560px] rounded-full bg-orange-500/20 blur-3xl" />
-      <div className={`pointer-events-none absolute -left-32 bottom-[-260px] h-[520px] w-[520px] rounded-full blur-3xl ${isPromotions ? "bg-orange-400/15" : "bg-blue-500/20"}`} />
+      <div className="pointer-events-none absolute -left-32 bottom-[-260px] h-[520px] w-[520px] rounded-full bg-blue-500/20 blur-3xl" />
       <div className="pointer-events-none absolute right-[17%] top-10 h-56 w-56 rounded-full border border-white/10" />
       <div className="pointer-events-none absolute inset-0 opacity-[0.12] [background-image:radial-gradient(#fff_1px,transparent_1px)] [background-size:28px_28px] [mask-image:linear-gradient(to_right,transparent,black_42%,black_92%,transparent)]" />
-      <div className={`absolute inset-x-0 top-0 h-1 bg-gradient-to-r ${topLine}`} />
+      <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-orange-500 via-orange-300 to-sky-400" />
 
       <div className="relative mx-auto grid min-h-[330px] max-w-6xl items-center gap-8 px-6 py-12 md:min-h-[360px] lg:grid-cols-[1.04fr_.96fr] lg:py-0">
         <div className="relative z-10 max-w-[650px]">
@@ -184,7 +174,7 @@ export default function PageHero({ eyebrow, title, description, variant, cta }: 
           <p className="mt-5 max-w-xl text-[15px] leading-7 text-white/70 md:text-base">{description}</p>
           <div className="mt-7 flex flex-wrap items-center gap-3">
             {cta ? (
-              <Link href={cta.href} className={`inline-flex h-11 items-center gap-5 rounded-full px-6 text-sm font-semibold shadow-lg shadow-orange-950/20 transition hover:-translate-y-0.5 ${ctaColor}`}>
+              <Link href={cta.href} className="inline-flex h-11 items-center gap-5 rounded-full bg-orange-500 px-6 text-sm font-semibold text-white shadow-lg shadow-orange-950/20 transition hover:-translate-y-0.5 hover:bg-orange-400">
                 {cta.label}<span aria-hidden>→</span>
               </Link>
             ) : null}

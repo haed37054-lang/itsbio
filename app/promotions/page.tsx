@@ -11,7 +11,6 @@ type PromotionDoc = {
   summary?: string;
   publishedAt?: string;
   order?: number;
-  ctaLabel?: string;
   cover?: any;
   coverPath?: string;
   dateText?: string;
@@ -101,7 +100,7 @@ export default async function PromotionsPage({ searchParams }: { searchParams?: 
     *[_type=="promotion" && coalesce(isActive,true)==true ${filter}]
       | order(defined(order) desc, order desc, publishedAt desc, _createdAt desc)
       [${cmsStart}...${cmsEnd}]{
-        _id, title, summary, publishedAt, order, ctaLabel, dateText, startDate, endDate,
+        _id, title, summary, publishedAt, order, dateText, startDate, endDate,
         "slug": slug.current,
         "cover": coalesce(image, gallery[0])
       }
@@ -163,9 +162,8 @@ export default async function PromotionsPage({ searchParams }: { searchParams?: 
                     <span className="col-start-2 row-start-2 text-xs font-semibold text-orange-800 lg:col-start-3 lg:row-start-1 lg:text-sm">
                       {promotionDateLabel(p)}
                     </span>
-                    <span className="col-start-3 row-span-2 row-start-1 inline-flex items-center gap-2 whitespace-nowrap text-sm font-semibold text-orange-800 lg:col-start-4 lg:row-span-1">
-                      <span className="hidden sm:inline">{p.ctaLabel || "View details"}</span>
-                      <span aria-hidden="true" className="text-lg transition-transform group-hover:translate-x-0.5">→</span>
+                    <span aria-hidden="true" className="col-start-3 row-span-2 row-start-1 text-lg text-orange-800 transition-transform group-hover:translate-x-0.5 lg:col-start-4 lg:row-span-1">
+                      →
                     </span>
                   </Link>
                 </li>

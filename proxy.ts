@@ -1,6 +1,10 @@
 import { NextResponse, type NextRequest } from "next/server";
 
+import legacyWordPressCategories from "@/data/legacy-wordpress-categories.json";
+
+// Category IDs come from the original WordPress import and point to verified current pages.
 const LEGACY_PAGES = new Map([
+  ...Object.entries(legacyWordPressCategories),
   ["80", "/notice"],
   ["99", "/promotions"],
   ["113", "/about#ceo-message"],

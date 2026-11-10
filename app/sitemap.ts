@@ -1,3 +1,4 @@
+import legacyWordPressCategories from "@/data/legacy-wordpress-categories.json";
 import kentCurrentTaxonomy from "@/data/kent-current-taxonomy.json";
 import { ABM_PRODUCT_GROUPS } from "@/lib/abm/catalog-taxonomy";
 import { thistlePromotions } from "@/lib/thistle-promotions";
@@ -94,6 +95,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   for (const path of ["/products/seedburo/all-products", "/products/seedburo/categories"]) entries.push({ url: absoluteSiteUrl(path), changeFrequency: "monthly", priority: 0.6 });
   for (const row of notices) if (row.slug) entries.push({ url: absoluteSiteUrl(`/notice/${encodeURIComponent(row.slug)}`), lastModified: row.updatedAt, changeFrequency: "monthly", priority: 0.5 });
   for (const row of [...promotions, ...thistlePromotions.map(({ slug, publishedAt }) => ({ slug, updatedAt: publishedAt }))]) if (row.slug) entries.push({ url: absoluteSiteUrl(`/promotions/${encodeURIComponent(row.slug)}`), lastModified: row.updatedAt, changeFrequency: "weekly", priority: 0.6 });
+
+  const listedUrls = new Set(entries.map(({ url }) => url));
+  for (const destination of Object.values(legacyWordPressCategories)) {
+    const [path] = destination.split("#", 1);
+    const url = absoluteSiteUrl(path);
+    if (listedUrls.has(url)) continue;
+    listedUrls.add(url);
+    entries.push({ url });
+  }
 
   return entries;
 }

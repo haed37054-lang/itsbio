@@ -905,7 +905,7 @@ function mergeNonEmpty<T extends Record<string, unknown>>(base: T, extra: Record
   return out;
 }
 
-function isInvalidCollectedDetail(staged: Record<string, unknown>) {
+export function isInvalidCollectedDetail(staged: Record<string, unknown>) {
   const sourceUrl = String(staged.sourceUrl || "").trim();
   const title = String(staged.title || "").trim();
   let missingPageUrl = false;

@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
@@ -2249,6 +2250,16 @@ function renderLandingBlocks(blocks: ContentBlock[], theme: Theme) {
   }
 
   return out.length ? <>{out}</> : null;
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ path?: string[] }> }): Promise<Metadata> {
+  const { path = [] } = await params;
+  if (path.length > 0) return {};
+  return {
+    title: "Kent Scientific 제품 및 동물실험 장비",
+    description: "Explore Kent Scientific anesthesia, ventilation, physiological monitoring, and laboratory animal handling equipment from ITS BIO in Korea.",
+    alternates: { canonical: "/products/kent" },
+  };
 }
 
 export default async function KentProductsPathPage({

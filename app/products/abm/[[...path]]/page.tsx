@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 // app/products/abm/[[...path]]/page.tsx
 import Image from "next/image";
 import Link from "next/link";
@@ -690,6 +691,25 @@ function renderContentBlocks(
 }
 
 /** -------------------- Page -------------------- */
+
+export async function generateMetadata({ params }: { params: Promise<{ path?: string[] }> }): Promise<Metadata> {
+  const { path = [] } = await params;
+  if (path.length === 0) {
+    return {
+      title: "Applied Biological Materials (ABM) 제품",
+      description: "Browse ABM cell lines, enzymes, genetic research reagents, vectors, and laboratory materials supplied by ITS BIO in Korea.",
+      alternates: { canonical: "/products/abm" },
+    };
+  }
+
+  const group = path.length === 1 && ABM_PRODUCT_GROUPS.find(({ slug }) => slug === path[0]);
+  if (!group) return {};
+  return {
+    title: group.slug === "cellular-materials" ? "Cell Biology & Cellular Materials | ABM" : `${group.title} | ABM`,
+    description: group.description,
+    alternates: { canonical: group.href },
+  };
+}
 
 export default async function AbmProductsPathPage({
   params,

@@ -1,8 +1,16 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 
 import BrandsShowcase from "@/components/site/home/BrandsShowcase";
 import { getNoticePage, getPromotionPage, type NoticePost, type PromotionPost } from "@/lib/editorial-posts";
 import { urlFor } from "@/lib/sanity/image";
+
+export const metadata: Metadata = {
+  title: { absolute: "ITS BIO 이츠바이오 | 생명과학 연구용 제품 및 실험장비" },
+  description: "이츠바이오는 ABM, Kent Scientific 등 생명과학 연구용 시약, 세포주 및 동물실험 장비를 국내에 공급합니다. 제품명과 Cat.No.로 제품을 찾을 수 있습니다.",
+  alternates: { canonical: "/" },
+  verification: { google: "XahSFa1hvkNGWIkAtZjXg0nTubB66Lq5-IlhWnFQmNc" },
+};
 
 function formatDate(value: string) {
   return new Date(value).toISOString().slice(0, 10).replaceAll("-", ".");

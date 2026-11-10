@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+import { cache } from "react";
 import { notFound, permanentRedirect } from "next/navigation";
 
 import Breadcrumb from "@/components/site/Breadcrumb";
@@ -16,9 +18,32 @@ import {
   getAbmStagedDetail,
   isManagedAbmImageUrl,
   isTrustedSpecialCellReferenceImageUrl,
+  stagedRecordPath,
 } from "@/lib/abm/rebuild-staging";
 
 export const revalidate = 300;
+
+type DetailParams = Promise<{ kind: string; key: string }>;
+const getStagedDetail = cache(getAbmStagedDetail);
+
+export async function generateMetadata({ params }: { params: DetailParams }): Promise<Metadata> {
+  const { kind, key } = await params;
+  if (kind !== "product" && kind !== "service") return {};
+
+  const record = await getStagedDetail(kind, decodeURIComponent(key));
+  if (!record) return { robots: { index: false } };
+
+  const name = record.title || record.sku || "ABM";
+  const sku = record.sku?.trim();
+  const title = sku && !name.toLowerCase().includes(sku.toLowerCase()) ? `${name} (${sku})` : name;
+  const description = (record.description || record.overview || "").replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
+
+  return {
+    title: `${title} | ABM`,
+    description: description.slice(0, 170) || `View ${name} from Applied Biological Materials at ITS BIO, Korea.`,
+    alternates: { canonical: stagedRecordPath(kind, record) },
+  };
+}
 
 // ABM's iPSC Reporter products each have a distinct canonical Vector Design
 // Studio map. Keep exact local SVG copies in the existing product gallery so
@@ -68,19 +93,19 @@ export default async function AbmStagedDetailPage({
   params,
   searchParams,
 }: {
-  params: Promise<{ kind: string; key: string }>;
+  params: DetailParams;
   searchParams?: Promise<{ name?: string; category?: string; unit?: string; from?: string }>;
 }) {
   const [{ kind, key }, fallback] = await Promise.all([params, searchParams]);
   if (kind !== "product" && kind !== "service") notFound();
   const decodedKey = decodeURIComponent(key);
   const [stagedRecord, productSidebar] = await Promise.all([
-    getAbmStagedDetail(kind, decodedKey),
+    getStagedDetail(kind, decodedKey),
     kind === "product" ? getAbmProductSidebar(decodedKey) : Promise.resolve(null),
   ]);
   if (!stagedRecord) {
     const counterpartKind = kind === "product" ? "service" : "product";
-    const counterpartRecord = await getAbmStagedDetail(counterpartKind, decodedKey);
+    const counterpartRecord = await getStagedDetail(counterpartKind, decodedKey);
     if (counterpartRecord) {
       permanentRedirect(`/products/abm/staged/${counterpartKind}/${encodeURIComponent(decodedKey)}`);
     }

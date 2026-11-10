@@ -1,8 +1,15 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Breadcrumb from "@/components/site/Breadcrumb";
 import PageHero from "@/components/site/PageHero";
 import { getPromotionPage, type PromotionPost } from "@/lib/editorial-posts";
 import { urlFor } from "@/lib/sanity/image";
+
+export const metadata: Metadata = {
+  title: "프로모션 및 할인 행사",
+  description: "이츠바이오의 생명과학 시약 및 실험장비 할인 행사와 브랜드별 프로모션을 확인하세요.",
+  alternates: { canonical: "/promotions" },
+};
 
 type SP = { q?: string; page?: string };
 

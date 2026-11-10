@@ -1,6 +1,13 @@
+import type { Metadata } from "next";
 import Breadcrumb from "@/components/site/Breadcrumb";
 import PageHero from "@/components/site/PageHero";
 import PartnersCarousel from "@/components/site/PartnersCarousel";
+
+export const metadata: Metadata = {
+  title: "회사 소개 및 대표 인사말",
+  description: "생명과학 연구용 제품을 공급하는 이츠바이오의 회사 소개, 대표 인사말 및 협력 브랜드를 확인하세요.",
+  alternates: { canonical: "/about" },
+};
 
 export default function AboutPage() {
   return (

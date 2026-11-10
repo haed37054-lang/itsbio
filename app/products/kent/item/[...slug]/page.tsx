@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+import { cache } from "react";
 import { notFound } from "next/navigation";
 
 import KentProductDetailClient from "@/components/products/KentProductDetailClient";
@@ -399,15 +401,10 @@ function universalProductContent(product: any, title: string) {
   return { leadHtml, sections };
 }
 
-export default async function KentProductDetailPage({
-  params,
-}: {
-  params: Promise<{ slug: string[] }>;
-}) {
-  const resolved = await Promise.resolve(params as any);
-  const slugParts = Array.isArray(resolved?.slug) ? resolved.slug.filter(Boolean) : [];
-  const slug = slugParts.join("/");
-  if (!slug || !CURRENT_KENT_PRODUCT_SLUGS.has(slug.toLowerCase())) notFound();
+type DetailProps = { params: Promise<{ slug: string[] }> };
+
+const getKentProduct = cache(async (slug: string) => {
+  if (!CURRENT_KENT_PRODUCT_SLUGS.has(slug.toLowerCase())) return null;
 
   const bundle = await sanityCdnClient.fetch(ITEM_PAGE_QUERY, {
     brandKey: BRAND_KEY,
@@ -416,10 +413,35 @@ export default async function KentProductDetailPage({
   }, PUBLIC_CATALOG_CACHE);
   const brand = bundle?.brand;
   const product = bundle?.product;
-  if (!brand?._id || !product?._id) notFound();
+  if (!brand?._id || !product?._id) return null;
 
-  const official = product?.sourceProductId ? null : getKentOfficialProductOverride(slug);
-  const title = official?.title || stripBrandSuffix(product?.title || "");
+  const official = product.sourceProductId ? null : getKentOfficialProductOverride(slug);
+  const title = official?.title || stripBrandSuffix(product.title || "");
+  return { bundle, brand, product, official, title };
+});
+
+export async function generateMetadata({ params }: DetailProps): Promise<Metadata> {
+  const { slug: parts } = await params;
+  const data = await getKentProduct(parts.join("/"));
+  if (!data) return {};
+
+  const { product, title: name } = data;
+  const sku = cleanText(product.sku);
+  const title = sku && !name.toLowerCase().includes(sku.toLowerCase()) ? `${name} (${sku})` : name;
+  const canonicalSlug = product.slug.split("/").map(encodeURIComponent).join("/");
+  return {
+    title: `${title} | Kent Scientific`,
+    description: cleanText(product.summary).slice(0, 170) || `View ${name} from Kent Scientific at ITS BIO, Korea.`,
+    alternates: { canonical: `/products/kent/item/${canonicalSlug}` },
+  };
+}
+
+export default async function KentProductDetailPage({ params }: DetailProps) {
+  const { slug: parts } = await params;
+  const slug = parts.filter(Boolean).join("/");
+  const data = await getKentProduct(slug);
+  if (!data) notFound();
+  const { bundle, brand, product, official, title } = data;
   const categoryPath: string[] = Array.isArray(product?.categoryPath) ? product.categoryPath : [];
   const categoryPathTitles: string[] = Array.isArray(product?.categoryPathTitles) ? product.categoryPathTitles : [];
   const categoryLabel = stripBrandSuffix(categoryPathTitles.at(-1) || humanizeSegment(categoryPath.at(-1) || ""));

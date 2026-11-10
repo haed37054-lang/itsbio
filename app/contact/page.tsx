@@ -1,6 +1,13 @@
+import type { Metadata } from "next";
 import Breadcrumb from "@/components/site/Breadcrumb";
 import PageHero from "@/components/site/PageHero";
 import KakaoOfficeMap from "@/components/site/KakaoOfficeMap";
+
+export const metadata: Metadata = {
+  title: "제품 문의 및 고객 지원",
+  description: "이츠바이오에 제품 자료, 견적, 납기 및 기술 문의를 남기거나 서울 사무실 연락처를 확인하세요.",
+  alternates: { canonical: "/contact" },
+};
 
 const OFFICE = {
   addressKr: "서울특별시 강서구 양천로 551-17 (가양동 449-4) 한화비즈메트로 A동 812호",

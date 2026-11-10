@@ -49,9 +49,9 @@ export default async function NoticePage({ searchParams }: { searchParams?: Prom
   const sp = (await searchParams) ?? {};
   const qRaw = (sp.q ?? "").trim();
   const page = Math.max(1, Number(sp.page ?? "1") || 1);
-  const { pinnedItems, normalItems, normalTotal, globalNormalTotal } = await getNoticePage(qRaw, page);
-  const totalPages = Math.max(1, Math.ceil(normalTotal / NOTICE_PAGE_SIZE));
-  const baseNo = globalNormalTotal - (page - 1) * NOTICE_PAGE_SIZE;
+  const { items, total } = await getNoticePage(qRaw, page);
+  const totalPages = Math.max(1, Math.ceil(total / NOTICE_PAGE_SIZE));
+  const baseNo = total - (page - 1) * NOTICE_PAGE_SIZE;
   const makeHref = (p: number) => {
     const params = new URLSearchParams();
     if (qRaw) params.set("q", qRaw);
@@ -79,7 +79,7 @@ export default async function NoticePage({ searchParams }: { searchParams?: Prom
             <div className="text-sm font-semibold text-slate-900">All notices</div>
             <div className="mt-1 text-sm text-slate-600">
               {qRaw ? <>Results for <span className="font-semibold text-slate-900">“{qRaw}”</span> · </> : <>Total </>}
-              <span className="font-semibold text-slate-900">{normalTotal + pinnedItems.length}</span>
+              <span className="font-semibold text-slate-900">{total}</span>
             </div>
           </div>
 
@@ -91,29 +91,20 @@ export default async function NoticePage({ searchParams }: { searchParams?: Prom
 
         <div className="mt-8 border-t border-slate-200">
           <ul className="divide-y divide-slate-200">
-            {pinnedItems.map((it) => {
-              const dateText = fmtDate(it.publishedAt ?? it._createdAt);
-              return (
-                <li key={it._id} className="group">
-                  <Link href={`/notice/${it.slug}`} className="relative flex items-center gap-5 py-4 pl-3">
-                    <AccentBar />
-                    <div className="flex w-20 shrink-0 items-center justify-center"><span className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-orange-200 bg-orange-50 text-[11px] font-semibold text-orange-700">공지</span></div>
-                    <div className="min-w-0 flex-1"><span className="inline-flex min-w-0 items-center text-base font-semibold text-slate-900"><span className="line-clamp-1">{it.title}</span><TitleHoverThumb thumb={it.thumbnail} title={it.title} /></span></div>
-                    <RowMeta author={authorText} date={dateText} />
-                    <ArrowRight className="h-5 w-5 shrink-0 text-slate-300 transition group-hover:translate-x-1 group-hover:text-orange-500" />
-                  </Link>
-                </li>
-              );
-            })}
-
-            {normalItems.map((it, i) => {
+            {items.map((it, i) => {
               const noText = String(baseNo - i).padStart(2, "0");
               const dateText = fmtDate(it.publishedAt ?? it._createdAt);
               return (
                 <li key={it._id} className="group">
                   <Link href={`/notice/${it.slug}`} className="relative flex items-center gap-5 py-4 pl-3">
                     <AccentBar />
-                    <div className="flex w-20 shrink-0 items-center justify-center"><span className="inline-flex h-8 min-w-8 items-center justify-center rounded-full border border-slate-200 bg-white px-2 text-[11px] font-semibold tabular-nums text-slate-600">{noText}</span></div>
+                    <div className="flex w-20 shrink-0 items-center justify-center">
+                      {it.isPinned ? (
+                        <span className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-orange-200 bg-orange-50 text-[11px] font-semibold text-orange-700">공지</span>
+                      ) : (
+                        <span className="inline-flex h-8 min-w-8 items-center justify-center rounded-full border border-slate-200 bg-white px-2 text-[11px] font-semibold tabular-nums text-slate-600">{noText}</span>
+                      )}
+                    </div>
                     <div className="min-w-0 flex-1"><span className="inline-flex min-w-0 items-center text-base font-semibold text-slate-900"><span className="line-clamp-1">{it.title}</span><TitleHoverThumb thumb={it.thumbnail} title={it.title} /></span></div>
                     <RowMeta author={authorText} date={dateText} />
                     <ArrowRight className="h-5 w-5 shrink-0 text-slate-300 transition group-hover:translate-x-1 group-hover:text-orange-500" />
@@ -122,7 +113,7 @@ export default async function NoticePage({ searchParams }: { searchParams?: Prom
               );
             })}
 
-            {pinnedItems.length === 0 && normalItems.length === 0 ? <li className="py-14 text-center"><div className="text-sm font-semibold text-slate-900">No results</div><div className="mt-2 text-sm text-slate-600">다른 검색어로 다시 시도해보세요.</div></li> : null}
+            {items.length === 0 ? <li className="py-14 text-center"><div className="text-sm font-semibold text-slate-900">No results</div><div className="mt-2 text-sm text-slate-600">다른 검색어로 다시 시도해보세요.</div></li> : null}
           </ul>
         </div>
 

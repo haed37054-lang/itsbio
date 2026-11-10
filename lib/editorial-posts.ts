@@ -65,12 +65,13 @@ export async function getPromotionPage(search = "", page = 1) {
 export const NOTICE_PAGE_SIZE = 10;
 const FORCED_PINNED_IDS = ["legacy-notice-33", "legacy-notice-32", "legacy-notice-26"];
 const NOTICE_FILTER = `_type == "notice" && coalesce(isActive, true) == true && defined(slug.current) && ($q == "" || title match $q)`;
+const NOTICE_PINNED = `isPinned == true || _id in ${JSON.stringify(FORCED_PINNED_IDS)}`;
 const NOTICE_PAGE = `{
   "items": *[${NOTICE_FILTER}]
-    | order(coalesce(dateTime(publishedAt), dateTime(_createdAt)) desc, _createdAt desc, _id asc)[$start...$end]{
+    | order((${NOTICE_PINNED}) desc, coalesce(dateTime(publishedAt), dateTime(_createdAt)) desc, _createdAt desc, _id asc)[$start...$end]{
       _id, title, "slug": slug.current, _createdAt, thumbnail,
       "publishedAt": select(defined(dateTime(publishedAt)) => publishedAt),
-      "isPinned": coalesce(isPinned, false) || _id in ${JSON.stringify(FORCED_PINNED_IDS)}
+      "isPinned": ${NOTICE_PINNED}
     },
   "total": count(*[${NOTICE_FILTER}])
 }`;

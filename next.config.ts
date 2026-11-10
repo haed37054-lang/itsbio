@@ -71,6 +71,11 @@ const nextConfig: NextConfig = {
     });
 
     return [
+      {
+        source: "/promotions/thistle-special-offer-2026/thistle-scientific-special-offer-2026-:section(omnipette-pipettes|lab-equipment|horizontal-electrophoresis|vertical-electrophoresis).pdf",
+        destination: "/promotions/thistle-special-offer-2026/thistle-scientific-special-offer-2026.pdf",
+        permanent: true,
+      },
       ...["ats-3", "neo-9", "ats-3l"].map((slug) => ({
         source: `/products/aims/item/${slug}`,
         destination: `/products/animalid/item/${slug}`,

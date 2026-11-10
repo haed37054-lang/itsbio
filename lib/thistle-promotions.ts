@@ -1,16 +1,17 @@
 import brochures from "@/data/thistle-special-offer-2026.json";
 
 const assetDirectory = "/promotions/thistle-special-offer-2026";
+const brochurePdf = "thistle-scientific-special-offer-2026.pdf";
 
-export const thistlePromotions = brochures.map(({ cover, pdf, pages, ...promotion }) => ({
+export const thistlePromotions = brochures.map(({ cover, pages, ...promotion }) => ({
   ...promotion,
   _id: promotion.slug,
   coverPath: `${assetDirectory}/${cover}`,
   dateText: `${promotion.endDate.replaceAll("-", ".")}까지`,
   attachments: [{
     asset: {
-      url: `${assetDirectory}/${pdf}`,
-      originalFilename: pdf,
+      url: `${assetDirectory}/${brochurePdf}`,
+      originalFilename: brochurePdf,
       mimeType: "application/pdf",
     },
   }],

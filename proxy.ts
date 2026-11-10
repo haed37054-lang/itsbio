@@ -1,10 +1,10 @@
 import { NextResponse, type NextRequest } from "next/server";
 
-import legacyWordPressCategories from "@/data/legacy-wordpress-categories.json";
+import legacyWordPressRedirects from "@/data/legacy-wordpress-redirects.json";
 
-// Category IDs come from the original WordPress import and point to verified current pages.
+// WordPress IDs were matched to the current catalog and notice records.
 const LEGACY_PAGES = new Map([
-  ...Object.entries(legacyWordPressCategories),
+  ...Object.entries(legacyWordPressRedirects.pages),
   ["80", "/notice"],
   ["99", "/promotions"],
   ["113", "/about#ceo-message"],
@@ -12,26 +12,37 @@ const LEGACY_PAGES = new Map([
   ["249", "/products/abm/cellular-materials"],
   ["347", "/products/kent"],
 ]);
+const LEGACY_NOTICES = new Map(Object.entries(legacyWordPressRedirects.notices));
+const LEGACY_SUGGESTIONS = new Map(Object.entries(legacyWordPressRedirects.suggestions));
 
 export function proxy(request: NextRequest) {
-  const pageId = request.nextUrl.searchParams.get("page_id");
-  const path = pageId && LEGACY_PAGES.get(pageId);
+  const query = new URLSearchParams(request.nextUrl.search);
+  const pageId = query.get("page_id")?.replace(/\/$/, "");
+  if (!pageId || !/^\d+$/.test(pageId)) return NextResponse.next();
 
+  const noticeId = pageId === "80" ? query.get("vid") : null;
+  const path = noticeId ? LEGACY_NOTICES.get(noticeId) : LEGACY_PAGES.get(pageId);
   if (path) {
     const destination = new URL(path, request.url);
-    destination.search = request.nextUrl.search;
-    destination.searchParams.delete("page_id");
+    query.delete("page_id");
+    if (noticeId) {
+      query.delete("vid");
+      query.delete("mod");
+    }
+    for (const key of destination.searchParams.keys()) query.delete(key);
+    for (const [key, value] of query) destination.searchParams.append(key, value);
     return NextResponse.redirect(destination, 308);
   }
 
-  if (pageId === "165") {
-    return new NextResponse(
-      '<!doctype html><html lang="ko"><meta charset="utf-8"><title>페이지를 찾을 수 없습니다 | ITS BIO</title><h1>페이지를 찾을 수 없습니다</h1><p><a href="/">ITS BIO 홈</a> · <a href="/products">제품 보기</a></p></html>',
-      { status: 404, headers: { "Content-Type": "text/html; charset=utf-8" } },
-    );
-  }
+  const suggestion = LEGACY_SUGGESTIONS.get(pageId);
+  const catalogLink = suggestion
+    ? `<a href="${suggestion.replaceAll("&", "&amp;")}">관련 제품 보기</a>`
+    : '<a href="/products">제품 보기</a>';
 
-  return NextResponse.next();
+  return new NextResponse(
+    `<!doctype html><html lang="ko"><meta charset="utf-8"><title>페이지를 찾을 수 없습니다 | ITS BIO</title><h1>페이지를 찾을 수 없습니다</h1><p><a href="/">ITS BIO 홈</a> · ${catalogLink}</p></html>`,
+    { status: 404, headers: { "Content-Type": "text/html; charset=utf-8" } },
+  );
 }
 
 export const config = {

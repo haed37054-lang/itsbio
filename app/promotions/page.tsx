@@ -125,10 +125,10 @@ export default async function PromotionsPage({ searchParams }: { searchParams?: 
 
       <div className="mx-auto max-w-6xl px-6"><div className="mt-6 flex justify-end"><Breadcrumb /></div></div>
 
-      <main id="promotions-list" className="mx-auto max-w-6xl px-6 pb-16 pt-10">
+      <main id="promotions-list" className="mx-auto max-w-6xl scroll-mt-24 px-6 pb-16 pt-10">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <div className="text-sm font-semibold text-slate-900">Current promotions</div>
+            <h2 className="text-xl font-semibold tracking-tight text-slate-900 sm:text-2xl">Current promotions</h2>
             <div className="mt-2 text-sm text-slate-600">
               {qRaw ? <><span className="font-semibold text-slate-900">“{qRaw}”</span> · </> : null}
               <span className="font-semibold text-slate-900">{total}</span> results · {showingFrom}–{showingTo}
@@ -136,36 +136,45 @@ export default async function PromotionsPage({ searchParams }: { searchParams?: 
           </div>
 
           <form action="/promotions" method="GET" className="flex w-full gap-2 sm:w-auto">
-            <input name="q" defaultValue={qRaw} placeholder="Search promotions..." className="h-11 w-full min-w-0 flex-1 rounded-full border border-slate-200 bg-white px-5 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-orange-300 focus:ring-4 focus:ring-orange-50 sm:w-[330px]" />
+            <input name="q" aria-label="Search promotions" defaultValue={qRaw} placeholder="Search promotions..." className="h-11 w-full min-w-0 flex-1 rounded-full border border-slate-200 bg-white px-5 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-orange-300 focus:ring-4 focus:ring-orange-50 sm:w-[330px]" />
             <button type="submit" className="h-11 shrink-0 rounded-full bg-orange-600 px-6 text-sm font-semibold text-white transition hover:bg-orange-700">Search</button>
             {qRaw ? <Link href="/promotions" className="inline-flex h-11 shrink-0 items-center justify-center rounded-full border border-slate-200 bg-white px-5 text-sm font-semibold text-slate-700 transition hover:bg-slate-50">Clear</Link> : null}
           </form>
         </div>
 
-        <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {promotions.map((p) => {
-            const href = p.slug ? `/promotions/${p.slug}` : "/promotions";
-            const imgUrl = p.coverPath ?? (p.cover ? urlFor(p.cover).width(1200).height(750).fit("crop").auto("format").url() : "");
-            return (
-              <Link key={p._id} href={href} className="group overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-[0_10px_26px_rgba(15,23,42,0.08)] transition-all duration-300 hover:-translate-y-1 hover:border-orange-200 hover:shadow-[0_18px_44px_rgba(15,23,42,0.14)]">
-                <div className="relative aspect-[16/10] bg-slate-100">
-                  {imgUrl ? <img src={imgUrl} alt={p.title} className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]" loading="lazy" /> : <div className="h-full w-full bg-gradient-to-br from-slate-100 to-orange-50" />}
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/55 via-slate-950/10 to-transparent" />
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <div className="text-lg font-semibold text-white">{p.title}</div>
-                    {p.summary ? <div className="mt-1 line-clamp-2 text-sm text-white/90">{p.summary}</div> : null}
-                  </div>
-                </div>
-                <div className="flex items-center justify-between gap-3 px-5 py-4">
-                  <div className="text-xs font-medium text-slate-500">{promotionDateLabel(p)}</div>
-                  <div className="text-sm font-semibold text-orange-700">{p.ctaLabel || "View →"}</div>
-                </div>
-              </Link>
-            );
-          })}
-        </div>
-
-        {promotions.length === 0 ? <div className="mt-10 rounded-3xl border border-slate-200 bg-slate-50 px-6 py-14 text-center text-sm text-slate-500">No promotions matched this search.</div> : null}
+        {promotions.length > 0 ? (
+          <ul role="list" className="mt-6 divide-y divide-slate-200 border-y border-slate-200">
+            {promotions.map((p) => {
+              const href = p.slug ? `/promotions/${p.slug}` : "/promotions";
+              const imgUrl = p.coverPath ?? (p.cover ? urlFor(p.cover).width(480).height(300).fit("crop").auto("format").url() : "");
+              return (
+                <li key={p._id}>
+                  <Link
+                    href={href}
+                    className="group grid grid-cols-[4.5rem_minmax(0,1fr)_auto] items-center gap-x-3 gap-y-1 px-2 py-4 transition-colors hover:bg-orange-50/70 focus-visible:bg-orange-50 focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-orange-600 sm:grid-cols-[8rem_minmax(0,1fr)_auto] sm:gap-x-5 sm:px-4 lg:grid-cols-[10rem_minmax(0,1fr)_auto_auto] lg:gap-x-7"
+                  >
+                    <div aria-hidden="true" className="row-span-2 aspect-[16/10] self-start overflow-hidden rounded-lg bg-orange-50 sm:self-center lg:row-span-1">
+                      {imgUrl ? <img src={imgUrl} alt="" width={480} height={300} className="h-full w-full object-cover" loading="lazy" /> : null}
+                    </div>
+                    <div className="min-w-0">
+                      <h3 className="break-words text-base font-semibold leading-snug text-slate-950 group-hover:text-orange-800 sm:text-lg">{p.title}</h3>
+                      {p.summary ? <p className="mt-1 line-clamp-2 text-sm leading-5 text-slate-600">{p.summary}</p> : null}
+                    </div>
+                    <span className="col-start-2 row-start-2 text-xs font-semibold text-orange-800 lg:col-start-3 lg:row-start-1 lg:text-sm">
+                      {promotionDateLabel(p)}
+                    </span>
+                    <span className="col-start-3 row-span-2 row-start-1 inline-flex items-center gap-2 whitespace-nowrap text-sm font-semibold text-orange-800 lg:col-start-4 lg:row-span-1">
+                      <span className="hidden sm:inline">{p.ctaLabel || "View details"}</span>
+                      <span aria-hidden="true" className="text-lg transition-transform group-hover:translate-x-0.5">→</span>
+                    </span>
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        ) : (
+          <div className="mt-10 rounded-3xl border border-slate-200 bg-slate-50 px-6 py-14 text-center text-sm text-slate-500">No promotions matched this search.</div>
+        )}
 
         {totalPages > 1 ? (
           <nav className="mt-12 flex flex-wrap items-center justify-center gap-2" aria-label="Pagination">

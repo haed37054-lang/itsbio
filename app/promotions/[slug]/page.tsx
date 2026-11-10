@@ -3,8 +3,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 
-import NeedAssistance from "@/components/site/NeedAssistance";
 import Breadcrumb from "@/components/site/Breadcrumb";
+import PageHero from "@/components/site/PageHero";
 
 import { PUBLIC_CATALOG_CACHE, sanityCdnClient } from "@/lib/sanity/sanity.client";
 import { urlFor } from "@/lib/sanity/image";
@@ -264,27 +264,13 @@ export default async function PromotionDetailPage({
 
   return (
     <main className="bg-white">
-      {/* HERO: Promotions 메인과 동일 */}
-      <section className="relative">
-        <div className="relative h-[220px] w-full overflow-hidden md:h-[280px]">
-          <Image src="/hero-e.png" alt="Promotions" fill priority className="object-cover" />
-          <div className="absolute inset-0 bg-black/35" />
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-950/45 via-transparent to-transparent" />
-          <div className="absolute inset-0">
-            <div className="mx-auto flex h-full max-w-6xl items-center px-6">
-              <div>
-                <div className="text-xs font-semibold tracking-wide text-white/80">ITS BIO</div>
-                <h1 className="mt-2 text-3xl font-semibold tracking-tight text-white md:text-4xl">
-                  Promotions
-                </h1>
-                <p className="mt-2 max-w-2xl text-sm leading-6 text-white/80 md:text-base">
-                  Latest offers, events, and announcements from ITS BIO.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="PROMOTIONS"
+        title="Promotions"
+        description="Latest offers, events, and announcements from ITS BIO."
+        variant="promotions"
+        cta={{ label: "Back to promotions", href: "/promotions" }}
+      />
 
       {/* Breadcrumb: Home / Promotions까지만 */}
       <div className="mx-auto mt-6 flex max-w-6xl justify-end px-4">
@@ -294,9 +280,9 @@ export default async function PromotionDetailPage({
       {/* CONTENT */}
       <section className="mx-auto max-w-6xl px-6 pb-16 pt-10 md:pt-12">
         <header className="max-w-4xl">
-          <h1 className="text-xl font-semibold tracking-tight text-slate-900 md:text-3xl">
+          <h2 className="text-xl font-semibold tracking-tight text-slate-900 md:text-3xl">
             {doc.title}
-          </h1>
+          </h2>
 
           <div className="mt-3 text-sm text-slate-500">
             <span className="font-medium text-slate-700">{authorText}</span>

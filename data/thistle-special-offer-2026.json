@@ -10,8 +10,7 @@
     "pages": [
       {
         "number": 1,
-        "image": "thistle-2026-page-01.webp",
-        "caption": "OMNIPETTE 단일·멀티채널 피펫과 스탠드·스타터 팩"
+        "image": "thistle-2026-page-01.webp"
       }
     ]
   },
@@ -26,13 +25,11 @@
     "pages": [
       {
         "number": 2,
-        "image": "thistle-2026-page-02.webp",
-        "caption": "ezeeSPIN 미니 원심분리기, VORTEXM2, EZEE-3DRM, EZEEshaker"
+        "image": "thistle-2026-page-02.webp"
       },
       {
         "number": 3,
-        "image": "thistle-2026-page-03.webp",
-        "caption": "ISTIR 교반기, 핫플레이트, microBLOCK, MINI INCUBATOR"
+        "image": "thistle-2026-page-03.webp"
       }
     ]
   },
@@ -47,13 +44,11 @@
     "pages": [
       {
         "number": 4,
-        "image": "thistle-2026-page-04.webp",
-        "caption": "multiSUB 수평 젤 시스템과 시스템 패키지"
+        "image": "thistle-2026-page-04.webp"
       },
       {
         "number": 5,
-        "image": "thistle-2026-page-05.webp",
-        "caption": "runVIEW MINI, duoVIEW MINI, safeVIEW MINI2"
+        "image": "thistle-2026-page-05.webp"
       }
     ]
   },
@@ -68,18 +63,15 @@
     "pages": [
       {
         "number": 6,
-        "image": "thistle-2026-page-06.webp",
-        "caption": "omniPAGE Mini, proPAGE, proPAGE Blotter, omniPAGE Mini Wide"
+        "image": "thistle-2026-page-06.webp"
       },
       {
         "number": 7,
-        "image": "thistle-2026-page-07.webp",
-        "caption": "omniPAGE MAXI WAVE·MAXI PLUS, Large Format, 수직 시스템 패키지, Gradient Mixers"
+        "image": "thistle-2026-page-07.webp"
       },
       {
         "number": 8,
-        "image": "thistle-2026-page-08.webp",
-        "caption": "전원공급장치, 블롯 전송 시스템, Dot & Slot"
+        "image": "thistle-2026-page-08.webp"
       }
     ]
   }

@@ -14,10 +14,9 @@ export const thistlePromotions = brochures.map(({ cover, pdf, pages, ...promotio
       mimeType: "application/pdf",
     },
   }],
-  gallery: pages.map(({ number, image, caption }) => ({
+  gallery: pages.map(({ number, image }) => ({
     _key: String(number),
     localPath: `${assetDirectory}/${image}`,
     alt: `${promotion.title} 브로슈어 ${number}쪽`,
-    caption: `${number}쪽 · ${caption}`,
   })),
 }));

@@ -3,6 +3,7 @@ import Breadcrumb from "@/components/site/Breadcrumb";
 import PageHero from "@/components/site/PageHero";
 import { PUBLIC_CATALOG_CACHE, sanityCdnClient } from "@/lib/sanity/sanity.client";
 import { urlFor } from "@/lib/sanity/image";
+import { thistlePromotions } from "@/lib/thistle-promotions";
 
 type PromotionDoc = {
   _id: string;
@@ -12,6 +13,7 @@ type PromotionDoc = {
   order?: number;
   ctaLabel?: string;
   cover?: any;
+  coverPath?: string;
   dateText?: string;
   startDate?: string;
   endDate?: string;
@@ -81,25 +83,32 @@ export default async function PromotionsPage({ searchParams }: { searchParams?: 
   const qSafe = qRaw ? escapeForGROQ(qRaw) : "";
   const pageParam = clampInt(sp.page, 1, 1, 999);
   const filter = qSafe ? `&& (title match "*${qSafe}*")` : "";
+  const searchTerms = qRaw.toLowerCase().split(/\s+/);
+  const brochures = thistlePromotions.filter((promotion) =>
+    searchTerms.every((term) => promotion.title.toLowerCase().includes(term)),
+  );
 
   const TOTAL_QUERY = `count(*[_type=="promotion" && coalesce(isActive,true)==true ${filter}])`;
-  const total = await sanityCdnClient.fetch<number>(TOTAL_QUERY, {}, PUBLIC_CATALOG_CACHE);
+  const total = brochures.length + await sanityCdnClient.fetch<number>(TOTAL_QUERY, {}, PUBLIC_CATALOG_CACHE);
   const totalPages = Math.max(1, Math.ceil(total / PAGE_SIZE));
   const currentPage = Math.min(pageParam, totalPages);
   const start = (currentPage - 1) * PAGE_SIZE;
   const end = start + PAGE_SIZE;
+  const cmsStart = Math.max(0, start - brochures.length);
+  const cmsEnd = Math.max(0, end - brochures.length);
 
   const PROMOTIONS_QUERY = `
     *[_type=="promotion" && coalesce(isActive,true)==true ${filter}]
       | order(defined(order) desc, order desc, publishedAt desc, _createdAt desc)
-      [${start}...${end}]{
+      [${cmsStart}...${cmsEnd}]{
         _id, title, summary, publishedAt, order, ctaLabel, dateText, startDate, endDate,
         "slug": slug.current,
         "cover": coalesce(image, gallery[0])
       }
   `;
 
-  const promotions = await sanityCdnClient.fetch<PromotionDoc[]>(PROMOTIONS_QUERY, {}, PUBLIC_CATALOG_CACHE);
+  const cmsPromotions = await sanityCdnClient.fetch<PromotionDoc[]>(PROMOTIONS_QUERY, {}, PUBLIC_CATALOG_CACHE);
+  const promotions: PromotionDoc[] = [...brochures.slice(start, end), ...cmsPromotions];
   const showingFrom = total === 0 ? 0 : start + 1;
   const showingTo = Math.min(start + promotions.length, total);
   const { pages, showFirst, showLast, showLeftEllipsis, showRightEllipsis } = getPageWindow(currentPage, totalPages);
@@ -136,7 +145,7 @@ export default async function PromotionsPage({ searchParams }: { searchParams?: 
         <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {promotions.map((p) => {
             const href = p.slug ? `/promotions/${p.slug}` : "/promotions";
-            const imgUrl = p.cover ? urlFor(p.cover).width(1200).height(750).fit("crop").auto("format").url() : "";
+            const imgUrl = p.coverPath ?? (p.cover ? urlFor(p.cover).width(1200).height(750).fit("crop").auto("format").url() : "");
             return (
               <Link key={p._id} href={href} className="group overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-[0_10px_26px_rgba(15,23,42,0.08)] transition-all duration-300 hover:-translate-y-1 hover:border-orange-200 hover:shadow-[0_18px_44px_rgba(15,23,42,0.14)]">
                 <div className="relative aspect-[16/10] bg-slate-100">

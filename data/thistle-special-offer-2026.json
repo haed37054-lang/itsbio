@@ -1,0 +1,86 @@
+[
+  {
+    "slug": "thistle-scientific-special-offer-2026-omnipette-pipettes",
+    "title": "Thistle Scientific 특가 ① OMNIPETTE 피펫",
+    "summary": "단일 채널·8채널·12채널 피펫, 스탠드, 스타터 팩",
+    "publishedAt": "2026-11-10T04:25:39.481614+00:00",
+    "endDate": "2027-01-29",
+    "cover": "thistle-scientific-special-offer-2026-omnipette-pipettes-cover.webp",
+    "pdf": "thistle-scientific-special-offer-2026-omnipette-pipettes.pdf",
+    "pages": [
+      {
+        "number": 1,
+        "image": "thistle-2026-page-01.webp",
+        "caption": "OMNIPETTE 단일·멀티채널 피펫과 스탠드·스타터 팩"
+      }
+    ]
+  },
+  {
+    "slug": "thistle-scientific-special-offer-2026-lab-equipment",
+    "title": "Thistle Scientific 특가 ② 실험실 장비",
+    "summary": "ezeeSPIN 미니 원심분리기, 믹서·셰이커, 교반기·핫플레이트, microBLOCK, 미니 인큐베이터",
+    "publishedAt": "2026-11-10T04:25:38.481614+00:00",
+    "endDate": "2027-01-29",
+    "cover": "thistle-scientific-special-offer-2026-lab-equipment-cover.webp",
+    "pdf": "thistle-scientific-special-offer-2026-lab-equipment.pdf",
+    "pages": [
+      {
+        "number": 2,
+        "image": "thistle-2026-page-02.webp",
+        "caption": "ezeeSPIN 미니 원심분리기, VORTEXM2, EZEE-3DRM, EZEEshaker"
+      },
+      {
+        "number": 3,
+        "image": "thistle-2026-page-03.webp",
+        "caption": "ISTIR 교반기, 핫플레이트, microBLOCK, MINI INCUBATOR"
+      }
+    ]
+  },
+  {
+    "slug": "thistle-scientific-special-offer-2026-horizontal-electrophoresis",
+    "title": "Thistle Scientific 특가 ③ 수평 전기영동·젤 관찰 장비",
+    "summary": "multiSUB 수평 젤 시스템·패키지, runVIEW MINI, duoVIEW MINI, safeVIEW MINI2",
+    "publishedAt": "2026-11-10T04:25:37.481614+00:00",
+    "endDate": "2027-01-29",
+    "cover": "thistle-scientific-special-offer-2026-horizontal-electrophoresis-cover.webp",
+    "pdf": "thistle-scientific-special-offer-2026-horizontal-electrophoresis.pdf",
+    "pages": [
+      {
+        "number": 4,
+        "image": "thistle-2026-page-04.webp",
+        "caption": "multiSUB 수평 젤 시스템과 시스템 패키지"
+      },
+      {
+        "number": 5,
+        "image": "thistle-2026-page-05.webp",
+        "caption": "runVIEW MINI, duoVIEW MINI, safeVIEW MINI2"
+      }
+    ]
+  },
+  {
+    "slug": "thistle-scientific-special-offer-2026-vertical-electrophoresis",
+    "title": "Thistle Scientific 특가 ④ 수직 전기영동·전원공급·블롯 장비",
+    "summary": "omniPAGE·proPAGE, 수직 전기영동 패키지, 전원공급장치, 블롯 전송 시스템",
+    "publishedAt": "2026-11-10T04:25:36.481614+00:00",
+    "endDate": "2027-01-29",
+    "cover": "thistle-scientific-special-offer-2026-vertical-electrophoresis-cover.webp",
+    "pdf": "thistle-scientific-special-offer-2026-vertical-electrophoresis.pdf",
+    "pages": [
+      {
+        "number": 6,
+        "image": "thistle-2026-page-06.webp",
+        "caption": "omniPAGE Mini, proPAGE, proPAGE Blotter, omniPAGE Mini Wide"
+      },
+      {
+        "number": 7,
+        "image": "thistle-2026-page-07.webp",
+        "caption": "omniPAGE MAXI WAVE·MAXI PLUS, Large Format, 수직 시스템 패키지, Gradient Mixers"
+      },
+      {
+        "number": 8,
+        "image": "thistle-2026-page-08.webp",
+        "caption": "전원공급장치, 블롯 전송 시스템, Dot & Slot"
+      }
+    ]
+  }
+]

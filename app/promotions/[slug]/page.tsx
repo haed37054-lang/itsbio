@@ -8,10 +8,22 @@ import Breadcrumb from "@/components/site/Breadcrumb";
 
 import { PUBLIC_CATALOG_CACHE, sanityCdnClient } from "@/lib/sanity/sanity.client";
 import { urlFor } from "@/lib/sanity/image";
+import { thistlePromotions } from "@/lib/thistle-promotions";
 
 import { PortableText } from "@portabletext/react";
+import type { PortableTextBlock } from "@portabletext/types";
 
 export const revalidate = 300;
+
+type PromotionDetail = {
+  _id: string;
+  title: string;
+  publishedAt?: string;
+  _createdAt?: string;
+  gallery?: any[];
+  attachments?: any[];
+  content?: PortableTextBlock[];
+};
 
 const DETAIL_QUERY = `
 *[_type=="promotion" && slug.current==$slug][0]{
@@ -228,10 +240,13 @@ export default async function PromotionDetailPage({
   const slug = p?.slug;
   if (!slug) return notFound();
 
-  const doc = await sanityCdnClient.fetch(DETAIL_QUERY, { slug }, PUBLIC_CATALOG_CACHE);
+  const brochureIndex = thistlePromotions.findIndex((promotion) => promotion.slug === slug);
+  const brochure = thistlePromotions[brochureIndex];
+  const doc: PromotionDetail | null = brochure
+    ?? await sanityCdnClient.fetch<PromotionDetail | null>(DETAIL_QUERY, { slug }, PUBLIC_CATALOG_CACHE);
   if (!doc) return notFound();
 
-  const dateIso = (doc.publishedAt ?? doc._createdAt) as string | undefined;
+  const dateIso = doc.publishedAt ?? doc._createdAt;
   const dateText = fmtDate(dateIso);
   const authorText = "itsbio";
 
@@ -239,7 +254,10 @@ export default async function PromotionDetailPage({
   const gallery: any[] = Array.isArray(doc.gallery) ? doc.gallery : [];
 
   // prev/next (notice와 동일 방식)
-  const [prevDoc, nextDoc] = await Promise.all([
+  const [prevDoc, nextDoc] = brochure ? [
+    thistlePromotions[brochureIndex + 1],
+    thistlePromotions[brochureIndex - 1],
+  ] : await Promise.all([
     dateIso ? sanityCdnClient.fetch(PREV_QUERY, { slug, dt: dateIso }, PUBLIC_CATALOG_CACHE) : null,
     dateIso ? sanityCdnClient.fetch(NEXT_QUERY, { slug, dt: dateIso }, PUBLIC_CATALOG_CACHE) : null,
   ]);
@@ -285,6 +303,13 @@ export default async function PromotionDetailPage({
             {dateText ? <span className="text-slate-400"> · {dateText}</span> : null}
           </div>
 
+          {brochure ? (
+            <div className="mt-4 space-y-2 text-sm text-slate-700">
+              <p>{brochure.summary}</p>
+              <p className="font-semibold text-orange-700">행사 기간 · {brochure.dateText}</p>
+            </div>
+          ) : null}
+
           {/* 첨부파일: 새 탭으로 열기 */}
           {attachments.length > 0 ? (
             <section className="mt-6">
@@ -329,9 +354,9 @@ export default async function PromotionDetailPage({
           <section className="mt-8">
             <div className="mx-auto max-w-4xl space-y-6">
               {gallery.map((g: any, i: number) => {
-                const imgUrl = g?.asset
+                const imgUrl = g?.localPath ?? (g?.asset
                   ? urlFor(g).width(2000).fit("max").auto("format").url()
-                  : null;
+                  : null);
                 if (!imgUrl) return null;
 
                 return (
@@ -342,11 +367,12 @@ export default async function PromotionDetailPage({
                     <Image
                       src={imgUrl}
                       alt={g?.alt ?? doc.title}
-                      width={1600}
-                      height={900}
+                      width={g?.localPath ? 1571 : 1600}
+                      height={g?.localPath ? 2222 : 900}
                       className="w-full h-auto"
                       sizes="(max-width: 768px) 100vw, 896px"
                       priority={i === 0}
+                      unoptimized={Boolean(g?.localPath)}
                     />
                     {g?.caption ? (
                       <figcaption className="px-5 py-3 text-sm text-slate-600">

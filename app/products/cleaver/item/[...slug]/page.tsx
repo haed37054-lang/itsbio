@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { notFound, redirect } from "next/navigation";
+import { notFound, permanentRedirect } from "next/navigation";
 
 import CleaverHeroBanner from "@/components/products/CleaverHeroBanner";
 import CleaverProductGallery from "@/components/products/CleaverProductGallery";
@@ -11,32 +11,12 @@ import {
   classifyCleaverProduct,
   cleaverCategoryTitles,
   cleaverDisplayTitle,
-  slugifyCleaver,
 } from "@/lib/cleaver/catalog";
-import { getCleaverProduct } from "@/lib/cleaver/sanity";
+import { cleaverCanonicalProductHref, getCleaverProduct } from "@/lib/cleaver/sanity";
 
 export const revalidate = 300;
 
 type PageProps = { params: Promise<{ slug: string[] }> };
-
-function manufacturerProductSlug(sourceUrl: string | undefined, sourceTitle: string | undefined) {
-  if (sourceUrl) {
-    try {
-      const url = new URL(sourceUrl);
-      const parts = url.pathname.split("/").filter(Boolean);
-      const productIndex = parts.findIndex((part) => part.toLowerCase() === "product");
-      if (productIndex >= 0 && parts[productIndex + 1]) return decodeURIComponent(parts[productIndex + 1]);
-    } catch {
-      // Fall through to the manufacturer title when a legacy URL is malformed.
-    }
-  }
-  return sourceTitle ? slugifyCleaver(sourceTitle) : "";
-}
-
-function canonicalProductPath(product: { sourceUrl?: string; cleaverSourceTitle?: string; slug: string }) {
-  const manufacturerSlug = manufacturerProductSlug(product.sourceUrl, product.cleaverSourceTitle);
-  return `/products/cleaver/item/${encodeURIComponent(manufacturerSlug || product.slug)}`;
-}
 
 function manufacturerOriginalUrl(url: string) {
   try {
@@ -114,6 +94,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const sourceFidelity = Boolean(product.cleaverSourceTitle);
   return {
     title: sourceFidelity ? `${displayTitle} | ${CLEAVER_BRAND_NAME}` : `${displayTitle} | ${product.sku} | ${CLEAVER_BRAND_NAME}`,
+    alternates: { canonical: cleaverCanonicalProductHref(product) },
     description: product.summary || `${displayTitle} from Cleaver Scientific. Request product information and a quote from ITS BIO.`,
   };
 }
@@ -125,11 +106,11 @@ export default async function CleaverProductDetailPage({ params }: PageProps) {
   if (!product) notFound();
 
   const sourceFidelity = Boolean(product.cleaverSourceTitle);
-  const canonicalPath = canonicalProductPath(product);
+  const canonicalPath = cleaverCanonicalProductHref(product);
   const canonicalSlug = decodeURIComponent(canonicalPath.split("/").at(-1) || "");
 
-  if (sourceFidelity && requestedSlug !== canonicalSlug) {
-    redirect(canonicalPath);
+  if (sourceFidelity && decodeURIComponent(requestedSlug) !== canonicalSlug) {
+    permanentRedirect(canonicalPath);
   }
 
   const displayTitle = cleaverDisplayTitle(product);

@@ -2254,7 +2254,15 @@ function renderLandingBlocks(blocks: ContentBlock[], theme: Theme) {
 
 export async function generateMetadata({ params }: { params: Promise<{ path?: string[] }> }): Promise<Metadata> {
   const { path = [] } = await params;
-  if (path.length > 0) return {};
+  if (path.length > 0) {
+    const category = resolveCurrentKentCategory(path.at(-1) === "all-products" ? path.slice(0, -1) : path);
+    if (!category?.count) return {};
+    const canonicalPath = findCanonicalCategoryPath(category.categoryPath, []) || category.categoryPath;
+    return {
+      title: `${category.title} | Kent Scientific`,
+      alternates: { canonical: buildCategoryHref(canonicalPath) },
+    };
+  }
   return {
     title: "Kent Scientific 제품 및 동물실험 장비",
     description: "Explore Kent Scientific anesthesia, ventilation, physiological monitoring, and laboratory animal handling equipment from ITS BIO in Korea.",

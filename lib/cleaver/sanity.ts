@@ -5,11 +5,13 @@ import {
   CLEAVER_INVENTORY,
   CLEAVER_PAGE_SIZE,
   cleaverCategoryTitles,
+  cleaverProductHref,
+  slugifyCleaver,
   findLocalCleaverProduct,
   type CleaverProduct,
 } from "@/lib/cleaver/catalog";
 import { getVerifiedCleaverSourceFixture } from "@/lib/cleaver/source-fixtures";
-import { sanityCdnClient } from "@/lib/sanity/sanity.client";
+import { PUBLIC_CATALOG_CACHE, sanityCdnClient } from "@/lib/sanity/sanity.client";
 
 const CLEAVER_CATALOG_CACHE = { next: { revalidate: 30 } } as const;
 
@@ -141,6 +143,13 @@ function manufacturerProductSlugFromUrl(value?: string) {
   }
 }
 
+export function cleaverCanonicalProductHref(product: Pick<CleaverProduct, "slug" | "sourceUrl" | "cleaverSourceTitle">) {
+  const sourceSlug = product.cleaverSourceTitle
+    ? manufacturerProductSlugFromUrl(product.sourceUrl) || slugifyCleaver(product.cleaverSourceTitle)
+    : "";
+  return cleaverProductHref({ slug: sourceSlug || product.slug });
+}
+
 function findFixtureBackedProductBySourceSlug(value: string): CleaverProduct | null {
   const normalized = decodeURIComponent(value).trim().toLowerCase();
   if (!normalized) return null;
@@ -170,7 +179,7 @@ function findMappedProductBySourceSlug(value: string): CleaverProduct | null {
   for (const localProduct of CLEAVER_INVENTORY) {
     const identity = sourceIdentityForSku(localProduct.sku);
     if (!identity) continue;
-    const sourceSlug = String(identity.sourceSlug || manufacturerProductSlugFromUrl(identity.sourceUrl)).trim().toLowerCase();
+    const sourceSlug = String(manufacturerProductSlugFromUrl(identity.sourceUrl) || identity.sourceSlug || "").trim().toLowerCase();
     if (sourceSlug !== normalized) continue;
     const merged = applySourceIdentity(localProduct);
     if (preferredSku && normalizedSku(localProduct.sku) === preferredSku) return merged;
@@ -246,6 +255,24 @@ function sourceBackedProduct(product: CleaverProduct) {
   const fixture = getVerifiedCleaverSourceFixture(product.sku || "");
   if (fixture) merged = applyVerifiedFixture(merged, fixture);
   return merged;
+}
+
+export async function getCleaverSitemapProductPaths() {
+  const rows = await sanityCdnClient.fetch<CleaverProduct[]>(`
+    *[${CLEAVER_FILTER} && defined(slug.current)]{
+      "slug": slug.current, sku, sourceUrl, cleaverSourceTitle
+    }
+  `, {}, PUBLIC_CATALOG_CACHE);
+  const localBySku = new Map(CLEAVER_INVENTORY.map((product) => [normalizedSku(product.sku), product]));
+  const products = new Map([...localBySku].filter(([, { sku }]) =>
+    sourceIdentityForSku(sku) || getVerifiedCleaverSourceFixture(sku)
+  ));
+  for (const row of rows) {
+    const sku = normalizedSku(row.sku);
+    if (localBySku.has(sku) && !products.has(sku)) continue;
+    products.set(sku || row.slug, row);
+  }
+  return [...new Set([...products.values()].map(sourceBackedProduct).map(cleaverCanonicalProductHref))];
 }
 
 function localProductPage(path: string[], query: string, requestedPage: number): ProductPage {

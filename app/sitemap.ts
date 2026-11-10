@@ -10,13 +10,14 @@ import { PLASLABS_CATEGORIES, PLASLABS_PRODUCTS, plasLabsCategoryHref, plasLabsP
 import { AIMS_PRODUCTS, AIMS_CATEGORIES, aimsProductHref } from "@/lib/aims/catalog";
 import { DOGEN_CATEGORIES, DOGEN_PRODUCTS, dogenCategoryHref, dogenProductHref } from "@/lib/dogen/catalog";
 import { ANIMAL_ID_PRODUCTS, animalIdProductHref } from "@/lib/animalid/catalog";
-import { AFFINITY_PRODUCTS, AFFINITY_CATEGORIES, affinityProductHref, affinityCategoryHref } from "@/lib/affinityimmuno/catalog";
+import { AFFINITY_ALL_PRODUCTS, AFFINITY_CATEGORIES, affinityProductHref, affinityCategoryHref } from "@/lib/affinityimmuno/catalog";
 import type { MetadataRoute } from "next";
 import { SEEDBURO_PRODUCTS, SEEDBURO_COLLECTIONS, seedburoProductHref, seedburoCollectionHref } from "@/lib/seedburo/catalog";
 
 import { OFFICIAL_ABM_CELL_MODEL_PRODUCTS } from "@/lib/abm/cell-model-data";
-import { ABM_REBUILD_VERSION, isInvalidCollectedDetail, stagedRecordPath, type AbmStagedRecord } from "@/lib/abm/rebuild-staging";
-import { CLEAVER_CATEGORIES, CLEAVER_INVENTORY, cleaverProductHref } from "@/lib/cleaver/catalog";
+import { ABM_REBUILD_VERSION, getAbmStagedRecords, isInvalidCollectedDetail, stagedRecordPath, type AbmStagedRecord } from "@/lib/abm/rebuild-staging";
+import { CLEAVER_CATEGORIES } from "@/lib/cleaver/catalog";
+import { getCleaverSitemapProductPaths } from "@/lib/cleaver/sanity";
 import { absoluteSiteUrl } from "@/lib/site-url";
 import { PUBLIC_CATALOG_CACHE, sanityCdnClient } from "@/lib/sanity/sanity.client";
 
@@ -39,11 +40,12 @@ const CORE_ROUTES = [
 export const revalidate = 3600;
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const [abmProducts, abmServices, abmDetails, kentProducts, notices, promotions] = await Promise.all([
-    sanityCdnClient.fetch<AbmStagedRecord[]>(`*[_type == "abmRebuildChunk" && version == $version && kind == "product"].records[]{ kind, sku, title, url }`, { version: ABM_REBUILD_VERSION }, PUBLIC_CATALOG_CACHE),
+  const [abmProducts, abmServices, abmDetails, kentProducts, cleaverProductPaths, notices, promotions] = await Promise.all([
+    getAbmStagedRecords("product"),
     sanityCdnClient.fetch<AbmStagedRecord[]>(`*[_type == "abmRebuildChunk" && version == $version && kind == "service"].records[]{ kind, sku, title, url }`, { version: ABM_REBUILD_VERSION }, PUBLIC_CATALOG_CACHE),
     sanityCdnClient.fetch<AbmDetailRow[]>(ABM_PRODUCT_DETAILS, { version: ABM_REBUILD_VERSION }, PUBLIC_CATALOG_CACHE),
     sanityCdnClient.fetch<SlugRow[]>(`*[_type == "product" && (!defined(isActive) || isActive == true) && (brandSlug == "kent" || brand->slug.current == "kent") && lower(slug.current) in $slugs]{ "slug": slug.current, "updatedAt": _updatedAt }`, { slugs: kentCurrentTaxonomy.products.map(({ slug }) => slug.toLowerCase()) }, PUBLIC_CATALOG_CACHE),
+    getCleaverSitemapProductPaths(),
     sanityCdnClient.fetch<SlugRow[]>(`*[_type == "notice" && (!defined(isActive) || isActive == true) && defined(slug.current)]{ "slug": slug.current, "updatedAt": _updatedAt }`, {}, PUBLIC_CATALOG_CACHE),
     sanityCdnClient.fetch<SlugRow[]>(`*[_type == "promotion" && (!defined(isActive) || isActive == true) && defined(slug.current)]{ "slug": slug.current, "updatedAt": _updatedAt }`, {}, PUBLIC_CATALOG_CACHE),
   ]);
@@ -73,14 +75,25 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     entries.push({ url: absoluteSiteUrl(path), changeFrequency: "monthly", priority: 0.7 });
   }
 
+  for (const { categoryPath, count } of kentCurrentTaxonomy.categories) {
+    if (count <= 0) continue;
+    const [root, section, leaf] = categoryPath;
+    const canonicalPath = root === "anesthesia" && section === "anesthesia-accessories" && /^anesthesia-accessories-for-(somnoflo|somnosuite|vetflo)$/.test(leaf || "")
+      ? [root, leaf]
+      : categoryPath;
+    entries.push({ url: absoluteSiteUrl(`/products/kent/${canonicalPath.map(encodeURIComponent).join("/")}`) });
+  }
   for (const row of kentProducts) if (row.slug) entries.push({ url: absoluteSiteUrl(`/products/kent/item/${row.slug.split("/").map(encodeURIComponent).join("/")}`), lastModified: row.updatedAt, changeFrequency: "monthly", priority: 0.7 });
   for (const category of CLEAVER_CATEGORIES) {
     entries.push({ url: absoluteSiteUrl(`/products/cleaver/${category.slug}`), changeFrequency: "monthly", priority: 0.7 });
     for (const child of category.children) entries.push({ url: absoluteSiteUrl(`/products/cleaver/${category.slug}/${child.slug}`), changeFrequency: "monthly", priority: 0.7 });
   }
-  for (const product of CLEAVER_INVENTORY) entries.push({ url: absoluteSiteUrl(cleaverProductHref(product)), changeFrequency: "monthly", priority: 0.7 });
+  for (const path of cleaverProductPaths) entries.push({ url: absoluteSiteUrl(path), changeFrequency: "monthly", priority: 0.7 });
   for (const category of AIMS_CATEGORIES) entries.push({url:absoluteSiteUrl(`/products/aims/${category.slug}`),changeFrequency:"monthly",priority:0.65});
-  for (const product of AIMS_PRODUCTS) entries.push({ url: absoluteSiteUrl(aimsProductHref(product.slug)), changeFrequency: "monthly", priority: 0.7 });
+  const animalIdSlugs = new Set(ANIMAL_ID_PRODUCTS.map(({ slug }) => slug));
+  for (const product of AIMS_PRODUCTS) {
+    if (!animalIdSlugs.has(product.slug)) entries.push({ url: absoluteSiteUrl(aimsProductHref(product.slug)), changeFrequency: "monthly", priority: 0.7 });
+  }
   for (const category of PLASLABS_CATEGORIES) entries.push({ url: absoluteSiteUrl(plasLabsCategoryHref(category.slug)), changeFrequency: "monthly", priority: 0.65 });
   for (const product of CELLFREE_PRODUCTS) entries.push({ url: absoluteSiteUrl(cellFreeProductHref(product.slug)), changeFrequency: "monthly", priority: 0.7 });
   for (const product of BIOPLASTICS_PRODUCTS) entries.push({ url: absoluteSiteUrl(bioplasticsProductHref(product.sku)), changeFrequency: "monthly", priority: 0.7 });
@@ -88,7 +101,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   for (const category of DOGEN_CATEGORIES) entries.push({ url: absoluteSiteUrl(dogenCategoryHref(category.slug)), changeFrequency: "monthly", priority: 0.65 });
   for (const product of DOGEN_PRODUCTS) entries.push({ url: absoluteSiteUrl(dogenProductHref(product.slug)), changeFrequency: "monthly", priority: 0.7 });
   for (const product of ANIMAL_ID_PRODUCTS) entries.push({ url: absoluteSiteUrl(animalIdProductHref(product.slug)), changeFrequency: "monthly", priority: 0.7 });
-  for (const product of AFFINITY_PRODUCTS) entries.push({ url: absoluteSiteUrl(affinityProductHref(product)), changeFrequency: "monthly", priority: 0.7 });
+  for (const product of AFFINITY_ALL_PRODUCTS) entries.push({ url: absoluteSiteUrl(affinityProductHref(product)), changeFrequency: "monthly", priority: 0.7 });
   for (const category of AFFINITY_CATEGORIES) entries.push({ url: absoluteSiteUrl(affinityCategoryHref(category.slug)), changeFrequency: "monthly", priority: 0.6 });
   for (const product of SEEDBURO_PRODUCTS) entries.push({ url: absoluteSiteUrl(seedburoProductHref(product)), changeFrequency: "monthly", priority: 0.7 });
   for (const category of SEEDBURO_COLLECTIONS) entries.push({ url: absoluteSiteUrl(seedburoCollectionHref(category.handle)), changeFrequency: "monthly", priority: 0.6 });
@@ -104,5 +117,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     entries.push({ url });
   }
 
-  return entries;
+  return [...new Map(entries.map((entry) => [entry.url, entry])).values()];
 }

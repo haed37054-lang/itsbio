@@ -1,27 +1,10 @@
 import Link from "next/link";
 import Breadcrumb from "@/components/site/Breadcrumb";
 import PageHero from "@/components/site/PageHero";
-import { PUBLIC_CATALOG_CACHE, sanityCdnClient } from "@/lib/sanity/sanity.client";
+import { getPromotionPage, type PromotionPost } from "@/lib/editorial-posts";
 import { urlFor } from "@/lib/sanity/image";
-import { thistlePromotions } from "@/lib/thistle-promotions";
-
-type PromotionDoc = {
-  _id: string;
-  title: string;
-  campaignLabel?: string;
-  summary?: string;
-  publishedAt?: string;
-  order?: number;
-  cover?: any;
-  coverPath?: string;
-  dateText?: string;
-  startDate?: string;
-  endDate?: string;
-  slug?: string;
-};
 
 type SP = { q?: string; page?: string };
-const PAGE_SIZE = 9;
 
 function formatDot(dateIso?: string) {
   if (!dateIso) return "";
@@ -30,7 +13,7 @@ function formatDot(dateIso?: string) {
   return `${d.getFullYear()}.${String(d.getMonth() + 1).padStart(2, "0")}.${String(d.getDate()).padStart(2, "0")}`;
 }
 
-function promotionDateLabel(p: PromotionDoc) {
+function promotionDateLabel(p: PromotionPost) {
   if (p.dateText && p.dateText.trim().length) return p.dateText;
   if (p.startDate || p.endDate) {
     const a = formatDot(p.startDate);
@@ -40,10 +23,6 @@ function promotionDateLabel(p: PromotionDoc) {
     if (b) return `~ ${b}`;
   }
   return formatDot(p.publishedAt) || "Ongoing";
-}
-
-function escapeForGROQ(input: string) {
-  return input.replaceAll("\\", "\\\\").replaceAll('"', '\\"');
 }
 
 function clampInt(value: string | undefined, fallback: number, min: number, max: number) {
@@ -80,36 +59,8 @@ function getPageWindow(current: number, total: number) {
 export default async function PromotionsPage({ searchParams }: { searchParams?: Promise<SP> }) {
   const sp = (await searchParams) ?? {};
   const qRaw = (sp.q ?? "").trim();
-  const qSafe = qRaw ? escapeForGROQ(qRaw) : "";
   const pageParam = clampInt(sp.page, 1, 1, 999);
-  const filter = qSafe ? `&& (title match "*${qSafe}*")` : "";
-  const searchTerms = qRaw.toLowerCase().split(/\s+/);
-  const brochures = thistlePromotions.filter(({ campaignLabel, title }) => {
-    const searchText = `${campaignLabel} ${title}`.toLowerCase();
-    return searchTerms.every((term) => searchText.includes(term));
-  });
-
-  const TOTAL_QUERY = `count(*[_type=="promotion" && coalesce(isActive,true)==true ${filter}])`;
-  const total = brochures.length + await sanityCdnClient.fetch<number>(TOTAL_QUERY, {}, PUBLIC_CATALOG_CACHE);
-  const totalPages = Math.max(1, Math.ceil(total / PAGE_SIZE));
-  const currentPage = Math.min(pageParam, totalPages);
-  const start = (currentPage - 1) * PAGE_SIZE;
-  const end = start + PAGE_SIZE;
-  const cmsStart = Math.max(0, start - brochures.length);
-  const cmsEnd = Math.max(0, end - brochures.length);
-
-  const PROMOTIONS_QUERY = `
-    *[_type=="promotion" && coalesce(isActive,true)==true ${filter}]
-      | order(defined(order) desc, order desc, publishedAt desc, _createdAt desc)
-      [${cmsStart}...${cmsEnd}]{
-        _id, title, summary, publishedAt, order, dateText, startDate, endDate,
-        "slug": slug.current,
-        "cover": coalesce(image, gallery[0])
-      }
-  `;
-
-  const cmsPromotions = await sanityCdnClient.fetch<PromotionDoc[]>(PROMOTIONS_QUERY, {}, PUBLIC_CATALOG_CACHE);
-  const promotions: PromotionDoc[] = [...brochures.slice(start, end), ...cmsPromotions];
+  const { promotions, total, totalPages, currentPage, start } = await getPromotionPage(qRaw, pageParam);
   const showingFrom = total === 0 ? 0 : start + 1;
   const showingTo = Math.min(start + promotions.length, total);
   const { pages, showFirst, showLast, showLeftEllipsis, showRightEllipsis } = getPageWindow(currentPage, totalPages);

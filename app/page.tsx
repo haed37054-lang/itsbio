@@ -1,60 +1,10 @@
 import Link from "next/link";
 
 import BrandsShowcase from "@/components/site/home/BrandsShowcase";
-import { PUBLIC_CATALOG_CACHE, sanityCdnClient } from "@/lib/sanity/sanity.client";
+import { getNoticePage, getPromotionPage, type NoticePost, type PromotionPost } from "@/lib/editorial-posts";
 import { urlFor } from "@/lib/sanity/image";
 
-type PromotionDoc = {
-  _id: string;
-  title: string;
-  summary?: string;
-  publishedAt?: string;
-  slug?: string;
-  cover?: Parameters<typeof urlFor>[0];
-};
-
-type NoticeDoc = {
-  _id: string;
-  title: string;
-  slug?: string;
-  publishedAt?: string;
-  createdAt?: string;
-  isPinned?: boolean;
-};
-
-type PromotionItem = {
-  key: string;
-  title: string;
-  summary?: string;
-  href: string;
-  image: string;
-};
-
-const PROMOTIONS_QUERY = `
-  *[_type == "promotion" && coalesce(isActive, true) == true]
-    | order(defined(order) desc, order desc, coalesce(publishedAt, _createdAt) desc)
-    [0...3]{
-      _id,
-      title,
-      summary,
-      publishedAt,
-      "slug": slug.current,
-      "cover": coalesce(image, gallery[0])
-    }
-`;
-
-const NOTICES_QUERY = `
-  *[_type == "notice" && coalesce(isActive, true) == true]
-    | order(coalesce(isPinned, false) desc, coalesce(publishedAt, _createdAt) desc)
-    [0...5]{
-      _id,
-      title,
-      "slug": slug.current,
-      publishedAt,
-      "createdAt": _createdAt,
-      isPinned
-    }
-`;
+type HomeNotice = NoticePost & { pinned?: boolean };
 
 function formatDate(value?: string) {
   if (!value) return "";
@@ -75,17 +25,17 @@ function ArrowLink({ href, children }: { href: string; children: React.ReactNode
   );
 }
 
-function EditorialUpdates({ promotions, notices }: { promotions: PromotionDoc[]; notices: NoticeDoc[] }) {
-  const fromSanity: PromotionItem[] = promotions.map((promotion) => ({
+function EditorialUpdates({ promotions, notices }: { promotions: PromotionPost[]; notices: HomeNotice[] }) {
+  const items = promotions.map((promotion) => ({
     key: promotion._id,
     title: promotion.title,
+    campaignLabel: promotion.campaignLabel,
     summary: promotion.summary,
     href: promotion.slug ? `/promotions/${promotion.slug}` : "/promotions",
-    image: promotion.cover
+    image: promotion.coverPath ?? (promotion.cover
       ? urlFor(promotion.cover).width(1400).height(800).fit("crop").auto("format").url()
-      : "/home/promo-bundle.jpg",
+      : "/home/promo-bundle.jpg"),
   }));
-  const items = fromSanity.slice(0, 3);
   const [featured, ...secondary] = items;
 
   return (
@@ -117,6 +67,7 @@ function EditorialUpdates({ promotions, notices }: { promotions: PromotionDoc[];
                 </div>
                 <div className="flex items-start justify-between gap-5 border-b border-slate-200 py-5">
                   <div className="min-w-0">
+                    {featured.campaignLabel ? <p className="mb-1 text-xs font-semibold text-orange-700">{featured.campaignLabel}</p> : null}
                     <h3 className="line-clamp-1 text-base font-semibold text-slate-950 group-hover:text-orange-700 md:text-lg">
                       {featured.title}
                     </h3>
@@ -134,8 +85,9 @@ function EditorialUpdates({ promotions, notices }: { promotions: PromotionDoc[];
                     <span className="relative h-16 w-28 shrink-0 overflow-hidden border border-slate-100 bg-white sm:h-20 sm:w-36">
                       <img src={promotion.image} alt="" className="h-full w-full object-cover" />
                     </span>
-                    <span className="min-w-0 flex-1 line-clamp-2 text-sm font-medium leading-6 text-slate-800 group-hover:text-orange-700 md:text-base">
-                      {promotion.title}
+                    <span className="min-w-0 flex-1 text-sm font-medium leading-6 text-slate-800 group-hover:text-orange-700 md:text-base">
+                      {promotion.campaignLabel ? <span className="block text-xs font-semibold text-orange-700">{promotion.campaignLabel}</span> : null}
+                      <span className="line-clamp-2">{promotion.title}</span>
                     </span>
                     <span className="shrink-0 text-orange-600 transition group-hover:translate-x-1" aria-hidden>→</span>
                   </Link>
@@ -181,12 +133,12 @@ function EditorialUpdates({ promotions, notices }: { promotions: PromotionDoc[];
                   className="group grid min-h-[78px] grid-cols-[92px_1fr_auto] items-center gap-4 py-4"
                 >
                   <span className="text-xs tabular-nums text-slate-500 sm:text-sm">
-                    {formatDate(notice.publishedAt ?? notice.createdAt)}
+                    {formatDate(notice.publishedAt ?? notice._createdAt)}
                   </span>
                   <span className="min-w-0 text-sm font-medium leading-6 text-slate-800 group-hover:text-orange-700 md:text-[15px]">
-                    {index === 0 ? (
+                    {notice.pinned || index === 0 ? (
                       <span className="mr-2 inline-flex border border-orange-200 px-1.5 py-0.5 align-middle text-[10px] font-semibold leading-none text-orange-600">
-                        NEW
+                        {notice.pinned ? "공지" : "NEW"}
                       </span>
                     ) : null}
                     <span className="align-middle line-clamp-2">{notice.title}</span>
@@ -208,15 +160,16 @@ function EditorialUpdates({ promotions, notices }: { promotions: PromotionDoc[];
 }
 
 export default async function Home() {
-  const [promotions, notices] = await Promise.all([
-    sanityCdnClient.fetch<PromotionDoc[]>(PROMOTIONS_QUERY, {}, PUBLIC_CATALOG_CACHE),
-    sanityCdnClient.fetch<NoticeDoc[]>(NOTICES_QUERY, {}, PUBLIC_CATALOG_CACHE),
+  const [{ promotions }, { pinnedItems, normalItems }] = await Promise.all([
+    getPromotionPage(),
+    getNoticePage(),
   ]);
+  const notices = [...pinnedItems.map((notice) => ({ ...notice, pinned: true })), ...normalItems];
 
   return (
     <main className="bg-white">
       <BrandsShowcase />
-      <EditorialUpdates promotions={promotions} notices={notices} />
+      <EditorialUpdates promotions={promotions.slice(0, 4)} notices={notices.slice(0, 5)} />
     </main>
   );
 }

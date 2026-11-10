@@ -2,30 +2,12 @@ import Link from "next/link";
 import Image from "next/image";
 import Breadcrumb from "@/components/site/Breadcrumb";
 import PageHero from "@/components/site/PageHero";
-import { PUBLIC_CATALOG_CACHE, sanityCdnClient } from "@/lib/sanity/sanity.client";
+import { getNoticePage, NOTICE_PAGE_SIZE } from "@/lib/editorial-posts";
 import { urlFor } from "@/lib/sanity/image";
 
 export const revalidate = 300;
 
 type SP = { q?: string; page?: string };
-const PAGE_SIZE = 10;
-const FORCED_PINNED_IDS = ["legacy-notice-33", "legacy-notice-32", "legacy-notice-26"];
-const FORCED_PINNED_GROQ = JSON.stringify(FORCED_PINNED_IDS);
-
-const PINNED_QUERY = `
-*[_type == "notice" && (isPinned == true || _id in ${FORCED_PINNED_GROQ}) && (!defined($q) || $q == "" || title match $q)]
-| order(coalesce(order, 0) desc, coalesce(publishedAt, _createdAt) desc){
-  _id, title, "slug": slug.current, publishedAt, _createdAt, isPinned, order, thumbnail
-}`;
-
-const NORMAL_LIST_QUERY = `
-*[_type == "notice" && (isPinned != true) && !(_id in ${FORCED_PINNED_GROQ}) && (!defined($q) || $q == "" || title match $q)]
-| order(coalesce(publishedAt, _createdAt) desc)
-[$start...$end]{ _id, title, "slug": slug.current, publishedAt, _createdAt, thumbnail }`;
-
-const NORMAL_COUNT_QUERY = `count(*[_type == "notice" && (isPinned != true) && !(_id in ${FORCED_PINNED_GROQ}) && (!defined($q) || $q == "" || title match $q)])`;
-const GLOBAL_NORMAL_COUNT_QUERY = `count(*[_type == "notice" && (isPinned != true) && !(_id in ${FORCED_PINNED_GROQ})])`;
-
 function fmtDate(iso?: string) {
   if (!iso) return "";
   return new Date(iso).toISOString().slice(0, 10);
@@ -66,20 +48,10 @@ function PageLink({ href, label, disabled }: { href: string; label: string; disa
 export default async function NoticePage({ searchParams }: { searchParams?: Promise<SP> }) {
   const sp = (await searchParams) ?? {};
   const qRaw = (sp.q ?? "").trim();
-  const q = qRaw ? `*${qRaw}*` : "";
   const page = Math.max(1, Number(sp.page ?? "1") || 1);
-  const start = (page - 1) * PAGE_SIZE;
-  const end = start + PAGE_SIZE;
-
-  const [pinnedItems, normalItems, normalTotal, globalNormalTotal] = await Promise.all([
-    sanityCdnClient.fetch(PINNED_QUERY, { q }, PUBLIC_CATALOG_CACHE),
-    sanityCdnClient.fetch(NORMAL_LIST_QUERY, { q, start, end }, PUBLIC_CATALOG_CACHE),
-    sanityCdnClient.fetch(NORMAL_COUNT_QUERY, { q }, PUBLIC_CATALOG_CACHE),
-    sanityCdnClient.fetch(GLOBAL_NORMAL_COUNT_QUERY, {}, PUBLIC_CATALOG_CACHE),
-  ]);
-
-  const totalPages = Math.max(1, Math.ceil(Number(normalTotal) / PAGE_SIZE));
-  const baseNo = Number(globalNormalTotal) - (page - 1) * PAGE_SIZE;
+  const { pinnedItems, normalItems, normalTotal, globalNormalTotal } = await getNoticePage(qRaw, page);
+  const totalPages = Math.max(1, Math.ceil(normalTotal / NOTICE_PAGE_SIZE));
+  const baseNo = globalNormalTotal - (page - 1) * NOTICE_PAGE_SIZE;
   const makeHref = (p: number) => {
     const params = new URLSearchParams();
     if (qRaw) params.set("q", qRaw);
@@ -107,7 +79,7 @@ export default async function NoticePage({ searchParams }: { searchParams?: Prom
             <div className="text-sm font-semibold text-slate-900">All notices</div>
             <div className="mt-1 text-sm text-slate-600">
               {qRaw ? <>Results for <span className="font-semibold text-slate-900">“{qRaw}”</span> · </> : <>Total </>}
-              <span className="font-semibold text-slate-900">{Number(normalTotal) + (pinnedItems as any[]).length}</span>
+              <span className="font-semibold text-slate-900">{normalTotal + pinnedItems.length}</span>
             </div>
           </div>
 
@@ -119,7 +91,7 @@ export default async function NoticePage({ searchParams }: { searchParams?: Prom
 
         <div className="mt-8 border-t border-slate-200">
           <ul className="divide-y divide-slate-200">
-            {(pinnedItems as any[]).map((it) => {
+            {pinnedItems.map((it) => {
               const dateText = fmtDate(it.publishedAt ?? it._createdAt);
               return (
                 <li key={it._id} className="group">
@@ -134,7 +106,7 @@ export default async function NoticePage({ searchParams }: { searchParams?: Prom
               );
             })}
 
-            {(normalItems as any[]).map((it, i) => {
+            {normalItems.map((it, i) => {
               const noText = String(baseNo - i).padStart(2, "0");
               const dateText = fmtDate(it.publishedAt ?? it._createdAt);
               return (
@@ -150,7 +122,7 @@ export default async function NoticePage({ searchParams }: { searchParams?: Prom
               );
             })}
 
-            {(pinnedItems as any[]).length === 0 && (normalItems as any[]).length === 0 ? <li className="py-14 text-center"><div className="text-sm font-semibold text-slate-900">No results</div><div className="mt-2 text-sm text-slate-600">다른 검색어로 다시 시도해보세요.</div></li> : null}
+            {pinnedItems.length === 0 && normalItems.length === 0 ? <li className="py-14 text-center"><div className="text-sm font-semibold text-slate-900">No results</div><div className="mt-2 text-sm text-slate-600">다른 검색어로 다시 시도해보세요.</div></li> : null}
           </ul>
         </div>
 

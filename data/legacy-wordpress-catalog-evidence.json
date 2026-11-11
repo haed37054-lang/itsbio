@@ -188,28 +188,36 @@
     "source": "Kicker Grain Tester | ITSBio"
   },
   "4209": {
-    "path": "/products/seedburo/sieve-shakers-test-sieves-and-screens",
-    "kind": "catalog",
-    "title": "",
-    "source": []
+    "path": "/products/seedburo/item/hand-screen-shaker-24-screen-capacity-12-x-12",
+    "kind": "product",
+    "title": "Hand Screen Shaker TSV90-12",
+    "source": [],
+    "previousPath": "/products/seedburo/sieve-shakers-test-sieves-and-screens",
+    "matchEvidence": "Old TSV90-12 image and current TSV90-12 model agree."
   },
   "4221": {
-    "path": "/products/seedburo/sieve-shakers-test-sieves-and-screens",
-    "kind": "catalog",
+    "path": "/products/seedburo/item/ro-tap-testing-sieve-shaker",
+    "kind": "product",
     "title": "Ro-Tap Testing Sieve Shaker",
-    "source": []
+    "source": [],
+    "previousPath": "/products/seedburo/sieve-shakers-test-sieves-and-screens",
+    "matchEvidence": "Old RX29 image and Ro-Tap name match current RX-29 models."
   },
   "4236": {
-    "path": "/products/seedburo/sieve-shakers-test-sieves-and-screens",
-    "kind": "catalog",
-    "title": "",
-    "source": []
+    "path": "/products/seedburo/item/3435",
+    "kind": "product",
+    "title": "Hand Testing Screens 98-12Q",
+    "source": [],
+    "previousPath": "/products/seedburo/sieve-shakers-test-sieves-and-screens",
+    "matchEvidence": "Old 98-12Q image matches current 98-12Q option on the product family page."
   },
   "4243": {
-    "path": "/products/seedburo/sieve-shakers-test-sieves-and-screens",
-    "kind": "catalog",
-    "title": "",
-    "source": []
+    "path": "/products/seedburo/item/3272",
+    "kind": "product",
+    "title": "Screen Brush 8577",
+    "source": [],
+    "previousPath": "/products/seedburo/sieve-shakers-test-sieves-and-screens",
+    "matchEvidence": "Old R8577 image matches the current R8577 image and 8577 nylon brush option."
   },
   "4247": {
     "path": "/products/seedburo/sieve-shakers-test-sieves-and-screens",
@@ -254,10 +262,12 @@
     "source": "Seedburo 77 Count-A-Pak® Seed Totalizers | ITSBio"
   },
   "4637": {
-    "path": "/products/seedburo/seed-counting-and-analysis",
-    "kind": "catalog",
-    "title": "Seedburo 901 Count-A-Pak® Dual Chute & Seed Totalizers",
-    "source": []
+    "path": "/products/seedburo/item/3803",
+    "kind": "product",
+    "title": "Seedburo 901 Count-A-Pak Dual Chute & Seed Totalizers",
+    "source": [],
+    "previousPath": "/products/seedburo/seed-counting-and-analysis",
+    "matchEvidence": "Old title and Dual_Chute_-_Deep_Bowl_Centered image match current 901D models."
   },
   "4655": {
     "path": "/products/seedburo/seed-counting-and-analysis",
@@ -588,19 +598,23 @@
     "source": []
   },
   "5687": {
-    "path": "/products/plaslabs/glove-boxes",
-    "kind": "catalog",
-    "title": "",
-    "source": []
+    "path": "/products/plaslabs/item/810-series",
+    "kind": "product",
+    "title": "University Glove Box 810-SG10",
+    "source": [],
+    "previousPath": "/products/plaslabs/glove-boxes",
+    "matchEvidence": "Old 810_SG10_AE image matches current product image and 810-SG10 model."
   },
   "5780": {
-    "path": "/products/plaslabs/animal-care-research",
-    "kind": "catalog",
+    "path": "/products/plaslabs/item/rodent-restrainers",
+    "kind": "product",
     "title": "Surgery Boards & Rodent Restrainers",
     "source": [
       "5609",
       "5609"
-    ]
+    ],
+    "previousPath": "/products/plaslabs/animal-care-research",
+    "matchEvidence": "Current product includes Surgery Boards and Rodent Restrainers specifications."
   },
   "5807": {
     "path": "/products/plaslabs/animal-care-research",
@@ -635,14 +649,16 @@
     ]
   },
   "6175": {
-    "path": "/products/abm/general-materials/pcr-enzymes/qpcr",
-    "kind": "catalog",
-    "title": "BlasTaq™ 2X qPCR MasterMix",
+    "path": "/products/abm/item/blastaq-2x-qpcr-mastermix",
+    "kind": "product",
+    "title": "BlasTaq 2X qPCR MasterMix G891",
     "source": [
       "8202",
       "80-10",
       "80-10"
-    ]
+    ],
+    "previousPath": "/products/abm/general-materials/pcr-enzymes/qpcr",
+    "matchEvidence": "Old product name and G891 catalog number match the current product."
   },
   "6267": {
     "path": "/products/abm/genetic-materials/kits-for-viral-vectors",
@@ -735,10 +751,12 @@
     "source": "miRNA Detection and Quantification | ITSBio"
   },
   "7840": {
-    "path": "/products/affinity/elisas",
-    "kind": "catalog",
-    "title": "5 Kits – COVID-19 Spike Capture and Detection (HRP conjugate) ELISA pair with calibrator",
-    "source": []
+    "path": "/products/affinity/item/ab-131-295-pair",
+    "kind": "product",
+    "title": "5 Kits - COVID-19 Spike Capture and Detection (HRP conjugate) ELISA pair with calibrator",
+    "source": [],
+    "previousPath": "/products/affinity/elisas",
+    "matchEvidence": "Full product name matches the current catalog item."
   },
   "7881": {
     "path": "/products/affinity/antibodies",
@@ -2009,22 +2027,28 @@
     ]
   },
   "17864": {
-    "path": "/products/plaslabs/glove-boxes",
-    "kind": "catalog",
-    "title": "",
-    "source": []
+    "path": "/products/plaslabs/item/840-series",
+    "kind": "product",
+    "title": "Powder Handling Isolator 840-PH-10",
+    "source": [],
+    "previousPath": "/products/plaslabs/glove-boxes",
+    "matchEvidence": "Old 840_PH10_AE image identifies model 840-PH-10 listed on the current 840-Series product page."
   },
   "17891": {
-    "path": "/products/plaslabs/glove-boxes",
-    "kind": "catalog",
-    "title": "",
-    "source": []
+    "path": "/products/plaslabs/item/cp-series",
+    "kind": "product",
+    "title": "CP Series 830-CP/10",
+    "source": [],
+    "previousPath": "/products/plaslabs/glove-boxes",
+    "matchEvidence": "Old 830_CP10 image matches the current image and 830-CP/10 model."
   },
   "17997": {
-    "path": "/products/plaslabs/glove-box-accessories",
-    "kind": "catalog",
-    "title": "",
-    "source": []
+    "path": "/products/plaslabs/item/870-series",
+    "kind": "product",
+    "title": "Closed-Loop Containment Isolator 830-CLC",
+    "source": [],
+    "previousPath": "/products/plaslabs/glove-box-accessories",
+    "matchEvidence": "Old 830_CLC image identifies 830-CLC; current product page explicitly documents the smaller 830-CLC series. Corrects the former accessories-category destination."
   },
   "18190": {
     "path": "/products/cleaver/main-products/electrophoresis-systems",

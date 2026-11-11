@@ -843,13 +843,13 @@
     "source": "Custom iPSC Generation Service | ITSBio"
   },
   "10551": {
-    "path": "/products/abm/genetic-materials/specialized-vectors/ipsc-reporters",
+    "path": "/products/abm/genetic-materials/expression-ready-libraries/lentiviral-vectors-and-virus",
     "kind": "catalog",
     "title": "iPSC Reprogramming",
     "source": "iPSC Reprogramming | ITSBio"
   },
   "10562": {
-    "path": "/products/abm/cellular-materials/cell-library-collections/stem-cell-derived-cells",
+    "path": "/products/abm/cellular-materials/cell-library-collections",
     "kind": "catalog",
     "title": "Feeder Cells",
     "source": "iPSC Feeder Cells | ITSBio"
@@ -973,7 +973,7 @@
     ]
   },
   "10995": {
-    "path": "/products/abm/cellular-materials/cell-library-collections/stem-cell-derived-cells",
+    "path": "/products/abm/cellular-materials/cell-library-collections",
     "kind": "catalog",
     "title": "Zebrafish Testicular Feeder Cells (ZtA6-1)",
     "source": [
@@ -982,7 +982,7 @@
     ]
   },
   "11002": {
-    "path": "/products/abm/cellular-materials/cell-library-collections/stem-cell-derived-cells",
+    "path": "/products/abm/cellular-materials/cell-library-collections",
     "kind": "catalog",
     "title": "Zebrafish Testicular Feeder Cells (ZtA6-10)",
     "source": [
@@ -991,7 +991,7 @@
     ]
   },
   "11009": {
-    "path": "/products/abm/cellular-materials/cell-library-collections/stem-cell-derived-cells",
+    "path": "/products/abm/cellular-materials/cell-library-collections",
     "kind": "catalog",
     "title": "Zebrafish Testicular Feeder Cells (ZtA6-11)",
     "source": [
@@ -1000,7 +1000,7 @@
     ]
   },
   "11020": {
-    "path": "/products/abm/cellular-materials/cell-library-collections/stem-cell-derived-cells",
+    "path": "/products/abm/cellular-materials/cell-library-collections",
     "kind": "catalog",
     "title": "Zebrafish Testicular Feeder Cells (ZtA6-2)",
     "source": [
@@ -1009,7 +1009,7 @@
     ]
   },
   "11027": {
-    "path": "/products/abm/cellular-materials/cell-library-collections/stem-cell-derived-cells",
+    "path": "/products/abm/cellular-materials/cell-library-collections",
     "kind": "catalog",
     "title": "Zebrafish Testicular Feeder Cells (ZtA6-3)",
     "source": [
@@ -1018,7 +1018,7 @@
     ]
   },
   "11034": {
-    "path": "/products/abm/cellular-materials/cell-library-collections/stem-cell-derived-cells",
+    "path": "/products/abm/cellular-materials/cell-library-collections",
     "kind": "catalog",
     "title": "Zebrafish Testicular Feeder Cells (ZtA6-4)",
     "source": [
@@ -1027,7 +1027,7 @@
     ]
   },
   "11041": {
-    "path": "/products/abm/cellular-materials/cell-library-collections/stem-cell-derived-cells",
+    "path": "/products/abm/cellular-materials/cell-library-collections",
     "kind": "catalog",
     "title": "Zebrafish Testicular Feeder Cells (ZtA6-5)",
     "source": [
@@ -1036,7 +1036,7 @@
     ]
   },
   "11049": {
-    "path": "/products/abm/cellular-materials/cell-library-collections/stem-cell-derived-cells",
+    "path": "/products/abm/cellular-materials/cell-library-collections",
     "kind": "catalog",
     "title": "Zebrafish Testicular Feeder Cells (ZtA6-6)",
     "source": [
@@ -1045,7 +1045,7 @@
     ]
   },
   "11056": {
-    "path": "/products/abm/cellular-materials/cell-library-collections/stem-cell-derived-cells",
+    "path": "/products/abm/cellular-materials/cell-library-collections",
     "kind": "catalog",
     "title": "Zebrafish Testicular Feeder Cells (ZtA6-7)",
     "source": [
@@ -1054,7 +1054,7 @@
     ]
   },
   "11061": {
-    "path": "/products/abm/cellular-materials/cell-library-collections/stem-cell-derived-cells",
+    "path": "/products/abm/cellular-materials/cell-library-collections",
     "kind": "catalog",
     "title": "Zebrafish Testicular Feeder Cells (ZtA6-8)",
     "source": [
@@ -1063,7 +1063,7 @@
     ]
   },
   "11066": {
-    "path": "/products/abm/cellular-materials/cell-library-collections/stem-cell-derived-cells",
+    "path": "/products/abm/cellular-materials/cell-library-collections",
     "kind": "catalog",
     "title": "Zebrafish Testicular Feeder Cells (ZtA6-9)",
     "source": [
@@ -1072,7 +1072,7 @@
     ]
   },
   "11084": {
-    "path": "/products/abm/cellular-materials/cell-library-collections/stem-cell-derived-cells",
+    "path": "/products/abm/cellular-materials/cell-library-collections",
     "kind": "catalog",
     "title": "Immortalized Human Dermal Fibroblast-fetal Feeder Cells",
     "source": [
@@ -1127,7 +1127,7 @@
     ]
   },
   "11169": {
-    "path": "/products/abm/genetic-materials/specialized-vectors/ipsc-reporters",
+    "path": "/products/abm/genetic-materials/expression-ready-libraries/lentiviral-vectors-and-virus",
     "kind": "catalog",
     "title": "EOS Lentivirus (PL-SIN-EOS-C(3)-EiP)",
     "source": [
@@ -1139,7 +1139,7 @@
     ]
   },
   "11176": {
-    "path": "/products/abm/genetic-materials/specialized-vectors/ipsc-reporters",
+    "path": "/products/abm/genetic-materials/expression-ready-libraries/lentiviral-vectors-and-virus",
     "kind": "catalog",
     "title": "EOS Lentivirus (PL-SIN-EOS-S(4)-EiP)",
     "source": [
@@ -1226,7 +1226,7 @@
     ]
   },
   "11320": {
-    "path": "/products/abm/genetic-materials/specialized-vectors/ipsc-reporters",
+    "path": "/products/abm/genetic-materials/expression-ready-libraries/lentiviral-vectors-and-virus",
     "kind": "catalog",
     "title": "CMV Promoter Thomson Factors Lentivirus Set",
     "source": [
@@ -1235,7 +1235,7 @@
     ]
   },
   "11327": {
-    "path": "/products/abm/genetic-materials/specialized-vectors/ipsc-reporters",
+    "path": "/products/abm/genetic-materials/expression-ready-libraries/lentiviral-vectors-and-virus",
     "kind": "catalog",
     "title": "EF1α Polycistronic mThomson Factors Lentivirus",
     "source": [
@@ -1244,7 +1244,7 @@
     ]
   },
   "11334": {
-    "path": "/products/abm/genetic-materials/specialized-vectors/ipsc-reporters",
+    "path": "/products/abm/genetic-materials/expression-ready-libraries/lentiviral-vectors-and-virus",
     "kind": "catalog",
     "title": "EF1α Polycistronic mThomson Factors Lentivirus",
     "source": [
@@ -1253,7 +1253,7 @@
     ]
   },
   "11342": {
-    "path": "/products/abm/genetic-materials/specialized-vectors/ipsc-reporters",
+    "path": "/products/abm/genetic-materials/expression-ready-libraries/lentiviral-vectors-and-virus",
     "kind": "catalog",
     "title": "EF1α Polytronic Thomson Factor Lentivirus",
     "source": [
@@ -1262,7 +1262,7 @@
     ]
   },
   "11349": {
-    "path": "/products/abm/genetic-materials/specialized-vectors/ipsc-reporters",
+    "path": "/products/abm/genetic-materials/expression-ready-libraries/lentiviral-vectors-and-virus",
     "kind": "catalog",
     "title": "EF1α Polytronic Thomson Factor Lentivirus without GFP",
     "source": [
@@ -1271,7 +1271,7 @@
     ]
   },
   "11356": {
-    "path": "/products/abm/genetic-materials/specialized-vectors/ipsc-reporters",
+    "path": "/products/abm/genetic-materials/expression-ready-libraries/lentiviral-vectors-and-virus",
     "kind": "catalog",
     "title": "EF1α Promoter mThomson Factors Lentivirus Set",
     "source": [
@@ -1280,7 +1280,7 @@
     ]
   },
   "11361": {
-    "path": "/products/abm/genetic-materials/specialized-vectors/ipsc-reporters",
+    "path": "/products/abm/genetic-materials/expression-ready-libraries/lentiviral-vectors-and-virus",
     "kind": "catalog",
     "title": "EF1α Promoter Thomson Factors Lentivirus Set",
     "source": [
@@ -1289,7 +1289,7 @@
     ]
   },
   "11368": {
-    "path": "/products/abm/genetic-materials/specialized-vectors/ipsc-reporters",
+    "path": "/products/abm/genetic-materials/expression-ready-libraries/lentiviral-vectors-and-virus",
     "kind": "catalog",
     "title": "UbC Promoter Thomson Factors Lentivirus Set",
     "source": [
@@ -1298,7 +1298,7 @@
     ]
   },
   "11376": {
-    "path": "/products/abm/genetic-materials/specialized-vectors/ipsc-reporters",
+    "path": "/products/abm/genetic-materials/expression-ready-libraries/lentiviral-vectors-and-virus",
     "kind": "catalog",
     "title": "CMV Promoter KLF4 Lentivirus",
     "source": [
@@ -1307,7 +1307,7 @@
     ]
   },
   "11383": {
-    "path": "/products/abm/genetic-materials/specialized-vectors/ipsc-reporters",
+    "path": "/products/abm/genetic-materials/expression-ready-libraries/lentiviral-vectors-and-virus",
     "kind": "catalog",
     "title": "EF1α Promoter KLF4 Lentivirus",
     "source": [
@@ -1316,7 +1316,7 @@
     ]
   },
   "11388": {
-    "path": "/products/abm/genetic-materials/specialized-vectors/ipsc-reporters",
+    "path": "/products/abm/genetic-materials/expression-ready-libraries/lentiviral-vectors-and-virus",
     "kind": "catalog",
     "title": "Lenti-SFFV-KLF4 Virus",
     "source": [
@@ -1325,7 +1325,7 @@
     ]
   },
   "11393": {
-    "path": "/products/abm/genetic-materials/specialized-vectors/ipsc-reporters",
+    "path": "/products/abm/genetic-materials/expression-ready-libraries/lentiviral-vectors-and-virus",
     "kind": "catalog",
     "title": "PGK Promoter KLF4 Lentivirus",
     "source": [
@@ -1334,7 +1334,7 @@
     ]
   },
   "11400": {
-    "path": "/products/abm/genetic-materials/specialized-vectors/ipsc-reporters",
+    "path": "/products/abm/genetic-materials/expression-ready-libraries/lentiviral-vectors-and-virus",
     "kind": "catalog",
     "title": "UbC Promoter KLF4 Lentivirus",
     "source": [
@@ -1343,7 +1343,7 @@
     ]
   },
   "11407": {
-    "path": "/products/abm/genetic-materials/specialized-vectors/ipsc-reporters",
+    "path": "/products/abm/genetic-materials/expression-ready-libraries/lentiviral-vectors-and-virus",
     "kind": "catalog",
     "title": "CMV Promoter Lin28 Lentivirus",
     "source": [
@@ -1352,7 +1352,7 @@
     ]
   },
   "11415": {
-    "path": "/products/abm/genetic-materials/specialized-vectors/ipsc-reporters",
+    "path": "/products/abm/genetic-materials/expression-ready-libraries/lentiviral-vectors-and-virus",
     "kind": "catalog",
     "title": "EF1α Promoter Lin28 Lentivirus",
     "source": [
@@ -1361,7 +1361,7 @@
     ]
   },
   "11421": {
-    "path": "/products/abm/genetic-materials/specialized-vectors/ipsc-reporters",
+    "path": "/products/abm/genetic-materials/expression-ready-libraries/lentiviral-vectors-and-virus",
     "kind": "catalog",
     "title": "Lenti-SFFV-Lin28 Virus",
     "source": [
@@ -1370,7 +1370,7 @@
     ]
   },
   "11426": {
-    "path": "/products/abm/genetic-materials/specialized-vectors/ipsc-reporters",
+    "path": "/products/abm/genetic-materials/expression-ready-libraries/lentiviral-vectors-and-virus",
     "kind": "catalog",
     "title": "PGK Promoter Lin28 Lentivirus",
     "source": [
@@ -1379,7 +1379,7 @@
     ]
   },
   "11431": {
-    "path": "/products/abm/genetic-materials/specialized-vectors/ipsc-reporters",
+    "path": "/products/abm/genetic-materials/expression-ready-libraries/lentiviral-vectors-and-virus",
     "kind": "catalog",
     "title": "UbC Promoter Lin28 Lentivirus",
     "source": [
@@ -1388,7 +1388,7 @@
     ]
   },
   "11438": {
-    "path": "/products/abm/genetic-materials/specialized-vectors/ipsc-reporters",
+    "path": "/products/abm/genetic-materials/expression-ready-libraries/lentiviral-vectors-and-virus",
     "kind": "catalog",
     "title": "CMV Promoter Myc Lentivirus",
     "source": [
@@ -1397,7 +1397,7 @@
     ]
   },
   "11445": {
-    "path": "/products/abm/genetic-materials/specialized-vectors/ipsc-reporters",
+    "path": "/products/abm/genetic-materials/expression-ready-libraries/lentiviral-vectors-and-virus",
     "kind": "catalog",
     "title": "EF1α Promoter Myc Lentivirus",
     "source": [
@@ -1406,7 +1406,7 @@
     ]
   },
   "11450": {
-    "path": "/products/abm/genetic-materials/specialized-vectors/ipsc-reporters",
+    "path": "/products/abm/genetic-materials/expression-ready-libraries/lentiviral-vectors-and-virus",
     "kind": "catalog",
     "title": "Lenti-EF1α-Myc Virus",
     "source": [
@@ -1415,7 +1415,7 @@
     ]
   },
   "11455": {
-    "path": "/products/abm/genetic-materials/specialized-vectors/ipsc-reporters",
+    "path": "/products/abm/genetic-materials/expression-ready-libraries/lentiviral-vectors-and-virus",
     "kind": "catalog",
     "title": "Lenti-PGK-Myc-2A-KLF4 Virus",
     "source": [
@@ -1424,7 +1424,7 @@
     ]
   },
   "11460": {
-    "path": "/products/abm/genetic-materials/specialized-vectors/ipsc-reporters",
+    "path": "/products/abm/genetic-materials/expression-ready-libraries/lentiviral-vectors-and-virus",
     "kind": "catalog",
     "title": "Lenti-SFFV-Myc-2A-KLF4 Virus",
     "source": [
@@ -1433,7 +1433,7 @@
     ]
   },
   "11468": {
-    "path": "/products/abm/genetic-materials/specialized-vectors/ipsc-reporters",
+    "path": "/products/abm/genetic-materials/expression-ready-libraries/lentiviral-vectors-and-virus",
     "kind": "catalog",
     "title": "PGK Promoter Myc Lentivirus",
     "source": [
@@ -1442,7 +1442,7 @@
     ]
   },
   "11476": {
-    "path": "/products/abm/genetic-materials/specialized-vectors/ipsc-reporters",
+    "path": "/products/abm/genetic-materials/expression-ready-libraries/lentiviral-vectors-and-virus",
     "kind": "catalog",
     "title": "UbC Promoter Myc Lentivirus",
     "source": [
@@ -1451,7 +1451,7 @@
     ]
   },
   "11481": {
-    "path": "/products/abm/genetic-materials/specialized-vectors/ipsc-reporters",
+    "path": "/products/abm/genetic-materials/expression-ready-libraries/lentiviral-vectors-and-virus",
     "kind": "catalog",
     "title": "CMV Promoter Nanog Lentivirus",
     "source": [
@@ -1460,7 +1460,7 @@
     ]
   },
   "11488": {
-    "path": "/products/abm/genetic-materials/specialized-vectors/ipsc-reporters",
+    "path": "/products/abm/genetic-materials/expression-ready-libraries/lentiviral-vectors-and-virus",
     "kind": "catalog",
     "title": "EF1α Promoter Nanog Lentivirus",
     "source": [
@@ -1469,7 +1469,7 @@
     ]
   },
   "11495": {
-    "path": "/products/abm/genetic-materials/specialized-vectors/ipsc-reporters",
+    "path": "/products/abm/genetic-materials/expression-ready-libraries/lentiviral-vectors-and-virus",
     "kind": "catalog",
     "title": "Lenti-EF1α-Nanog Virus",
     "source": [
@@ -1478,7 +1478,7 @@
     ]
   },
   "11502": {
-    "path": "/products/abm/genetic-materials/specialized-vectors/ipsc-reporters",
+    "path": "/products/abm/genetic-materials/expression-ready-libraries/lentiviral-vectors-and-virus",
     "kind": "catalog",
     "title": "Lenti-SFFV-Nanog Virus",
     "source": [
@@ -1487,7 +1487,7 @@
     ]
   },
   "11509": {
-    "path": "/products/abm/genetic-materials/specialized-vectors/ipsc-reporters",
+    "path": "/products/abm/genetic-materials/expression-ready-libraries/lentiviral-vectors-and-virus",
     "kind": "catalog",
     "title": "PGK Promoter Nanog Lentivirus",
     "source": [
@@ -1496,7 +1496,7 @@
     ]
   },
   "11518": {
-    "path": "/products/abm/genetic-materials/specialized-vectors/ipsc-reporters",
+    "path": "/products/abm/genetic-materials/expression-ready-libraries/lentiviral-vectors-and-virus",
     "kind": "catalog",
     "title": "UbC Promoter Nanog Lentivirus",
     "source": [
@@ -1505,7 +1505,7 @@
     ]
   },
   "11523": {
-    "path": "/products/abm/genetic-materials/specialized-vectors/ipsc-reporters",
+    "path": "/products/abm/genetic-materials/expression-ready-libraries/lentiviral-vectors-and-virus",
     "kind": "catalog",
     "title": "CMV Promoter Oct4 Lentivirus",
     "source": [
@@ -1514,7 +1514,7 @@
     ]
   },
   "11552": {
-    "path": "/products/abm/genetic-materials/specialized-vectors/ipsc-reporters",
+    "path": "/products/abm/genetic-materials/expression-ready-libraries/lentiviral-vectors-and-virus",
     "kind": "catalog",
     "title": "EF1α Promoter Oct4 Lentivirus",
     "source": [
@@ -1523,7 +1523,7 @@
     ]
   },
   "11566": {
-    "path": "/products/abm/genetic-materials/specialized-vectors/ipsc-reporters",
+    "path": "/products/abm/genetic-materials/expression-ready-libraries/lentiviral-vectors-and-virus",
     "kind": "catalog",
     "title": "Lenti-EF1α-Oct4 Virus",
     "source": [
@@ -1532,7 +1532,7 @@
     ]
   },
   "11571": {
-    "path": "/products/abm/genetic-materials/specialized-vectors/ipsc-reporters",
+    "path": "/products/abm/genetic-materials/expression-ready-libraries/lentiviral-vectors-and-virus",
     "kind": "catalog",
     "title": "Lenti-EF1α-Oct4-2A-Sox2 Virus",
     "source": [
@@ -1541,7 +1541,7 @@
     ]
   },
   "11599": {
-    "path": "/products/abm/genetic-materials/specialized-vectors/ipsc-reporters",
+    "path": "/products/abm/genetic-materials/expression-ready-libraries/lentiviral-vectors-and-virus",
     "kind": "catalog",
     "title": "Lenti-PGK-Oct4 Virus",
     "source": [
@@ -1550,7 +1550,7 @@
     ]
   },
   "11605": {
-    "path": "/products/abm/genetic-materials/specialized-vectors/ipsc-reporters",
+    "path": "/products/abm/genetic-materials/expression-ready-libraries/lentiviral-vectors-and-virus",
     "kind": "catalog",
     "title": "Lenti-SFFV-Oct4-2A-Sox2 Virus",
     "source": [
@@ -1559,7 +1559,7 @@
     ]
   },
   "11610": {
-    "path": "/products/abm/genetic-materials/specialized-vectors/ipsc-reporters",
+    "path": "/products/abm/genetic-materials/expression-ready-libraries/lentiviral-vectors-and-virus",
     "kind": "catalog",
     "title": "Lenti-SFFV-Oct4-2A-Sox2-2A-KLF4 Virus",
     "source": [
@@ -1568,7 +1568,7 @@
     ]
   },
   "11615": {
-    "path": "/products/abm/genetic-materials/specialized-vectors/ipsc-reporters",
+    "path": "/products/abm/genetic-materials/expression-ready-libraries/lentiviral-vectors-and-virus",
     "kind": "catalog",
     "title": "PGK Promoter Oct4 Lentivirus",
     "source": [
@@ -1577,7 +1577,7 @@
     ]
   },
   "11622": {
-    "path": "/products/abm/genetic-materials/specialized-vectors/ipsc-reporters",
+    "path": "/products/abm/genetic-materials/expression-ready-libraries/lentiviral-vectors-and-virus",
     "kind": "catalog",
     "title": "UbC Promoter Oct4 Lentivirus",
     "source": [
@@ -1586,7 +1586,7 @@
     ]
   },
   "11632": {
-    "path": "/products/abm/genetic-materials/specialized-vectors/ipsc-reporters",
+    "path": "/products/abm/genetic-materials/expression-ready-libraries/lentiviral-vectors-and-virus",
     "kind": "catalog",
     "title": "CMV Promoter Sox2 Lentivirus",
     "source": [
@@ -1595,7 +1595,7 @@
     ]
   },
   "11637": {
-    "path": "/products/abm/genetic-materials/specialized-vectors/ipsc-reporters",
+    "path": "/products/abm/genetic-materials/expression-ready-libraries/lentiviral-vectors-and-virus",
     "kind": "catalog",
     "title": "EF1α Promoter Sox2 Lentivirus",
     "source": [
@@ -1604,7 +1604,7 @@
     ]
   },
   "11644": {
-    "path": "/products/abm/genetic-materials/specialized-vectors/ipsc-reporters",
+    "path": "/products/abm/genetic-materials/expression-ready-libraries/lentiviral-vectors-and-virus",
     "kind": "catalog",
     "title": "Lenti-EF1α-Sox2 Virus",
     "source": [
@@ -1613,7 +1613,7 @@
     ]
   },
   "11652": {
-    "path": "/products/abm/genetic-materials/specialized-vectors/ipsc-reporters",
+    "path": "/products/abm/genetic-materials/expression-ready-libraries/lentiviral-vectors-and-virus",
     "kind": "catalog",
     "title": "Lenti-PGK-Sox2 Virus",
     "source": [
@@ -1622,7 +1622,7 @@
     ]
   },
   "11659": {
-    "path": "/products/abm/genetic-materials/specialized-vectors/ipsc-reporters",
+    "path": "/products/abm/genetic-materials/expression-ready-libraries/lentiviral-vectors-and-virus",
     "kind": "catalog",
     "title": "Lenti-SFFV-Sox2 Virus",
     "source": [
@@ -1631,7 +1631,7 @@
     ]
   },
   "11664": {
-    "path": "/products/abm/genetic-materials/specialized-vectors/ipsc-reporters",
+    "path": "/products/abm/genetic-materials/expression-ready-libraries/lentiviral-vectors-and-virus",
     "kind": "catalog",
     "title": "PGK Promoter Sox2 Lentivirus",
     "source": [
@@ -1640,7 +1640,7 @@
     ]
   },
   "11674": {
-    "path": "/products/abm/genetic-materials/specialized-vectors/ipsc-reporters",
+    "path": "/products/abm/genetic-materials/expression-ready-libraries/lentiviral-vectors-and-virus",
     "kind": "catalog",
     "title": "UbC Promoter Sox2 Lentivirus",
     "source": [
@@ -1649,7 +1649,7 @@
     ]
   },
   "11681": {
-    "path": "/products/abm/genetic-materials/specialized-vectors/ipsc-reporters",
+    "path": "/products/abm/genetic-materials/expression-ready-libraries/lentiviral-vectors-and-virus",
     "kind": "catalog",
     "title": "CMV Promoter GFP Lentivirus",
     "source": [
@@ -1658,7 +1658,7 @@
     ]
   },
   "11689": {
-    "path": "/products/abm/genetic-materials/specialized-vectors/ipsc-reporters",
+    "path": "/products/abm/genetic-materials/expression-ready-libraries/lentiviral-vectors-and-virus",
     "kind": "catalog",
     "title": "EF1α Promoter GFP Lentivirus",
     "source": [
@@ -1667,7 +1667,7 @@
     ]
   },
   "11694": {
-    "path": "/products/abm/genetic-materials/specialized-vectors/ipsc-reporters",
+    "path": "/products/abm/genetic-materials/expression-ready-libraries/lentiviral-vectors-and-virus",
     "kind": "catalog",
     "title": "PGK Promoter GFP Lentivirus",
     "source": [
@@ -1676,7 +1676,7 @@
     ]
   },
   "11701": {
-    "path": "/products/abm/genetic-materials/specialized-vectors/ipsc-reporters",
+    "path": "/products/abm/genetic-materials/expression-ready-libraries/lentiviral-vectors-and-virus",
     "kind": "catalog",
     "title": "UbC Promoter GFP Lentivirus",
     "source": [
@@ -1685,7 +1685,7 @@
     ]
   },
   "11706": {
-    "path": "/products/abm/genetic-materials/specialized-vectors/ipsc-reporters",
+    "path": "/products/abm/genetic-materials/expression-ready-libraries/lentiviral-vectors-and-virus",
     "kind": "catalog",
     "title": "EF1α Promoter mKLF4 Lentivirus",
     "source": [
@@ -1694,7 +1694,7 @@
     ]
   },
   "11713": {
-    "path": "/products/abm/genetic-materials/specialized-vectors/ipsc-reporters",
+    "path": "/products/abm/genetic-materials/expression-ready-libraries/lentiviral-vectors-and-virus",
     "kind": "catalog",
     "title": "EF1α Promoter mLin28 Lentivirus",
     "source": [
@@ -1703,7 +1703,7 @@
     ]
   },
   "11720": {
-    "path": "/products/abm/genetic-materials/specialized-vectors/ipsc-reporters",
+    "path": "/products/abm/genetic-materials/expression-ready-libraries/lentiviral-vectors-and-virus",
     "kind": "catalog",
     "title": "EF1α Promoter mMyc Lentivirus",
     "source": [
@@ -1712,7 +1712,7 @@
     ]
   },
   "11726": {
-    "path": "/products/abm/genetic-materials/specialized-vectors/ipsc-reporters",
+    "path": "/products/abm/genetic-materials/expression-ready-libraries/lentiviral-vectors-and-virus",
     "kind": "catalog",
     "title": "EF1α Promoter mNanog Lentivirus",
     "source": [
@@ -1721,7 +1721,7 @@
     ]
   },
   "11733": {
-    "path": "/products/abm/genetic-materials/specialized-vectors/ipsc-reporters",
+    "path": "/products/abm/genetic-materials/expression-ready-libraries/lentiviral-vectors-and-virus",
     "kind": "catalog",
     "title": "EF1α Promoter mOct4 Lentivirus",
     "source": [
@@ -1730,7 +1730,7 @@
     ]
   },
   "11740": {
-    "path": "/products/abm/genetic-materials/specialized-vectors/ipsc-reporters",
+    "path": "/products/abm/genetic-materials/expression-ready-libraries/lentiviral-vectors-and-virus",
     "kind": "catalog",
     "title": "EF1α Promoter mSox2 Lentivirus",
     "source": [
@@ -1763,7 +1763,7 @@
     "source": "h-IMPACT Pathogen Testing | ITSBio"
   },
   "11941": {
-    "path": "/products/abm/cellular-materials/microbial-contamination",
+    "path": "/products/abm/services/cell-and-antibody-services/cell-biology-services",
     "kind": "catalog",
     "title": "Endotoxin Detection Service",
     "source": "Endotoxin Detection Service | ITSBio"
@@ -1793,7 +1793,7 @@
     "source": "Dual Luciferase Reporter Lentivectors | ITSBio"
   },
   "12166": {
-    "path": "/products/abm/general-materials/dna-rna-purification",
+    "path": "/products/abm/services/dna-and-cloning-services",
     "kind": "catalog",
     "title": "Plasmid Purification Service",
     "source": "Plasmid Purification Service | ITSBio"

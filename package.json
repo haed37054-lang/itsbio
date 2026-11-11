@@ -63,6 +63,7 @@
   "dependencies": {
     "@portabletext/react": "^6.0.2",
     "@sanity/image-url": "^2.0.3",
+    "@vercel/speed-insights": "2.1.0",
     "cheerio": "^1.2.0",
     "dotenv": "^17.2.3",
     "jsdom": "^28.0.0",

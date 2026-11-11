@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { Suspense } from "react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 
 import Header from "@/components/site/Header";
@@ -65,6 +66,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </div>
           <FloatingQuoteButton />
         </div>
+        <SpeedInsights />
       </body>
     </html>
   );

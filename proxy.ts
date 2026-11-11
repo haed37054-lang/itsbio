@@ -2,9 +2,11 @@ import { NextResponse, type NextRequest } from "next/server";
 
 import legacyWordPressRedirects from "@/data/legacy-wordpress-redirects.json";
 
-// WordPress IDs were matched to the current catalog and notice records.
+// Exact pages and reviewed catalog consolidations are maintained separately.
+// Unrecognized IDs still return a real 404; do not redirect arbitrary IDs home.
 const LEGACY_PAGES = new Map([
   ...Object.entries(legacyWordPressRedirects.pages),
+  ...Object.entries(legacyWordPressRedirects.catalogs),
   ["80", "/notice"],
   ["99", "/promotions"],
   ["113", "/about#ceo-message"],
@@ -13,7 +15,6 @@ const LEGACY_PAGES = new Map([
   ["347", "/products/kent"],
 ]);
 const LEGACY_NOTICES = new Map(Object.entries(legacyWordPressRedirects.notices));
-const LEGACY_SUGGESTIONS = new Map(Object.entries(legacyWordPressRedirects.suggestions));
 
 export function proxy(request: NextRequest) {
   const query = new URLSearchParams(request.nextUrl.search);
@@ -34,17 +35,16 @@ export function proxy(request: NextRequest) {
     return NextResponse.redirect(destination, 308);
   }
 
-  const suggestion = LEGACY_SUGGESTIONS.get(pageId);
-  const catalogLink = suggestion
-    ? `<a href="${suggestion.replaceAll("&", "&amp;")}">관련 제품 보기</a>`
-    : '<a href="/products">제품 보기</a>';
 
   return new NextResponse(
-    `<!doctype html><html lang="ko"><meta charset="utf-8"><title>페이지를 찾을 수 없습니다 | ITS BIO</title><h1>페이지를 찾을 수 없습니다</h1><p><a href="/">ITS BIO 홈</a> · ${catalogLink}</p></html>`,
+    `<!doctype html><html lang="ko"><meta charset="utf-8"><title>페이지를 찾을 수 없습니다 | ITS BIO</title><h1>페이지를 찾을 수 없습니다</h1><p><a href="/">ITS BIO 홈</a> · <a href="/products">제품 보기</a></p></html>`,
     { status: 404, headers: { "Content-Type": "text/html; charset=utf-8" } },
   );
 }
 
 export const config = {
-  matcher: [{ source: "/", has: [{ type: "query", key: "page_id" }] }],
+  matcher: [
+    { source: "/", has: [{ type: "query", key: "page_id" }] },
+    { source: "/index.php", has: [{ type: "query", key: "page_id" }] },
+  ],
 };

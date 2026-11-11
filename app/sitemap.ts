@@ -111,7 +111,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   for (const row of [...promotions, ...thistlePromotions.map(({ slug, publishedAt }) => ({ slug, updatedAt: publishedAt }))]) if (row.slug) entries.push({ url: absoluteSiteUrl(`/promotions/${encodeURIComponent(row.slug)}`), lastModified: row.updatedAt, changeFrequency: "weekly", priority: 0.6 });
 
   const listedUrls = new Set(entries.map(({ url }) => url));
-  for (const destination of Object.values(legacyWordPressRedirects.pages)) {
+  for (const destination of [...Object.values(legacyWordPressRedirects.pages), ...Object.values(legacyWordPressRedirects.catalogs)]) {
     const url = absoluteSiteUrl(destination.split(/[?#]/, 1)[0]);
     if (listedUrls.has(url)) continue;
     listedUrls.add(url);

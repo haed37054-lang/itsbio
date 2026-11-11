@@ -1,3 +1,5 @@
+import Link from "next/link";
+import type { Metadata } from "next";
 import * as cheerio from "cheerio";
 import { notFound } from "next/navigation";
 
@@ -160,13 +162,48 @@ const CRISPR_RESOURCE_STYLE = `
 @media(max-width:767px){.abm-crispr-resource-title{font-size:27px}.abm-crispr-resource-body{font-size:14px!important}.abm-crispr-resource-body p{font-size:14px!important}.abm-crispr-resource-body h2{font-size:22px!important}.abm-crispr-resource-body h3{font-size:19px!important}}
 `;
 
+
+const RESOURCE_TOPICS = [
+  ["CRISPR / Cas9", "/products/abm/genetic-materials/crispr"],
+  ["AAV、Lentivirus、Adenovirus", "/products/abm/genetic-materials/expression-systems"],
+  ["PCR、RT-PCR、qPCR", "/products/abm/general-materials/pcr-enzymes"],
+  ["Cell Lines", "/products/abm/cellular-materials/cell-library-collections"],
+  ["Cell Immortalization", "/products/abm/cellular-materials/cell-immortalization-reagents"],
+  ["Growth Factors & Cytokines", "/products/abm/cellular-materials/growth-factors-and-cytokines"],
+] as const;
+
+export async function generateMetadata({ searchParams }: { searchParams: Promise<{ u?: string }> }): Promise<Metadata> {
+  if ((await searchParams).u) return {};
+  return { title: "ABM 기술자료 및 학습 자료", description: "ABM 제품군별 문서·참고자료, CRISPR 학습 자료와 이츠바이오 기술 문의 안내입니다.", alternates: { canonical: "/products/abm/resource" } };
+}
+
+function ResourceIndex() {
+  return <>
+    <AbmHeroBanner title="Resources & Support" eyebrow="ABM" />
+    <main className="mx-auto max-w-[1320px] px-6 py-10">
+      <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "ABM", href: "/products/abm" }, { label: "Resources & Support" }]} />
+      <h1 className="mt-8 text-3xl font-semibold tracking-tight text-slate-950">ABM 자료 및 기술지원</h1>
+      <p lang="ko" className="mt-4 max-w-3xl text-sm leading-7 text-slate-600">제품군을 선택해 제품 상세 정보와 제공되는 문서·참고자료를 확인하세요. 필요한 자료나 제품에 관한 질문은 이츠바이오로 문의해 주세요.</p>
+      <h2 className="mt-10 border-b border-slate-200 pb-3 text-xl font-semibold text-slate-950">제품군별 자료</h2>
+      <ul className="divide-y divide-slate-200">{RESOURCE_TOPICS.map(([title, href]) => <li key={href}><Link href={href} className="block py-4 text-slate-800 underline-offset-4 hover:underline">{title}</Link></li>)}</ul>
+      <h2 className="mt-10 border-b border-slate-200 pb-3 text-xl font-semibold text-slate-950">CRISPR Learning Resources</h2>
+      <ul className="divide-y divide-slate-200">
+        <li><Link className="block py-4 text-slate-800 underline-offset-4 hover:underline" href={`/products/abm/resource?u=${encodeURIComponent(METHODS_SOURCE)}`}>CRISPR Cas9 – Methods and Tools</Link></li>
+        <li><Link className="block py-4 text-slate-800 underline-offset-4 hover:underline" href={`/products/abm/resource?u=${encodeURIComponent(DCAS9_SOURCE)}`}>CRISPR Cas9 – Gene Regulation with dCas9</Link></li>
+      </ul>
+      <Link lang="ko" href="/contact" className="mt-8 inline-block font-medium text-orange-700 underline underline-offset-4">이츠바이오 기술 문의</Link>
+    </main>
+  </>;
+}
+
 export default async function AbmResourcePage({
   searchParams,
 }: {
   searchParams: Promise<{ u?: string }> | { u?: string };
 }) {
   const resolvedSearch = await Promise.resolve(searchParams);
-  const sourceUrl = normalizeAbmResourcePageUrl(resolvedSearch?.u || "");
+  if (!resolvedSearch?.u) return <ResourceIndex />;
+  const sourceUrl = normalizeAbmResourcePageUrl(resolvedSearch.u);
   if (!sourceUrl) notFound();
 
   let title = "ABM Learning Resource";

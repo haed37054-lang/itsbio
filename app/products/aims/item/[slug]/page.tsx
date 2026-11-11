@@ -1,3 +1,5 @@
+import { productSearchMetadata } from "@/lib/product-search";
+import ProductSearchInfo from "@/components/products/ProductSearchInfo";
 import {notFound} from "next/navigation";
 import {load} from "cheerio";
 import Breadcrumb from "@/components/site/Breadcrumb";
@@ -9,7 +11,10 @@ import {AIMS_PRODUCTS,AIMS_CATEGORIES,getAimsProduct} from "@/lib/aims/catalog";
 
 export const dynamicParams=false;
 export function generateStaticParams(){return AIMS_PRODUCTS.map(p=>({slug:p.slug}));}
-export async function generateMetadata({params}:{params:Promise<{slug:string}>}){const p=getAimsProduct((await params).slug);return p?{title:`${p.sku?p.sku+' ':''}${p.title} | AIMS Lab Products`,description:p.summary}:{};}
+export async function generateMetadata({params}:{params:Promise<{slug:string}>}) {
+  const p = getAimsProduct((await params).slug);
+  return p ? productSearchMetadata({ name: p.title, brand: "AIMS", sku: p.sku, modelNumbers: [], description: p.summary, image: p.images[0]?.url, path: `/products/aims/item/${encodeURIComponent(p.slug)}` }) : {};
+}
 
 export default async function AimsProductPage({params}:{params:Promise<{slug:string}>}) {
   const p=getAimsProduct((await params).slug);if(!p)notFound();
@@ -32,6 +37,7 @@ export default async function AimsProductPage({params}:{params:Promise<{slug:str
         <AimsSidebar active={activeCategory} />
         <article className="min-w-0">
           <AimsProductOverview key={p.slug} product={{sku:p.sku,title:p.title,summary:p.summary,models:p.models,images:p.images}} />
+          <ProductSearchInfo info={{ name: p.title, brand: "AIMS", sku: p.sku, modelNumbers: [], description: p.summary, image: p.images[0]?.url, path: `/products/aims/item/${encodeURIComponent(p.slug)}` }} brandHref="/products/aims" />
           {hasDescription?<section id="overview" aria-labelledby="aims-details-title" className="mt-10 scroll-mt-28">
             <h2 id="aims-details-title" className="border-b border-slate-200 pb-3 text-2xl font-semibold tracking-tight text-slate-950">Product Details</h2>
             <div className="aims-content mt-5" dangerouslySetInnerHTML={{__html:descriptionHtml}} />

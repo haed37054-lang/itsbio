@@ -1,3 +1,5 @@
+import { productSearchMetadata } from "@/lib/product-search";
+import ProductSearchInfo from "@/components/products/ProductSearchInfo";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -25,7 +27,7 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: Props) {
   const { slug } = await params;
   const product = CELLFREE_PRODUCTS.find((entry) => entry.slug === slug);
-  return product ? { title: `${product.title} | CellFree Sciences`, description: product.summary, alternates: { canonical: cellFreeProductHref(slug) } } : {};
+  return product ? productSearchMetadata({ name: product.title, brand: "CellFree Sciences", sku: product.options.length === 1 ? product.options[0].sku : undefined, modelNumbers: product.options.map((option) => option.sku), description: product.summary, image: product.image, path: cellFreeProductHref(product.slug) }) : {};
 }
 
 export default async function CellFreeProductPage({ params }: Props) {
@@ -96,6 +98,7 @@ export default async function CellFreeProductPage({ params }: Props) {
             {!showLineup && <Link href={quoteHref(option?.name ?? product.title, option?.sku)} className={`mt-5 ${quoteClass}`}>Request a Quote</Link>}
           </div>
         </div>
+        <ProductSearchInfo info={{ name: product.title, brand: "CellFree Sciences", sku: product.options.length === 1 ? product.options[0].sku : undefined, modelNumbers: product.options.map((option) => option.sku), description: product.summary, image: product.image, path: cellFreeProductHref(product.slug) }} brandHref="/products/cellfree" />
         {!!product.overview?.length && (
           <DetailSection id="overview" title="Overview">
             <div className="space-y-6">

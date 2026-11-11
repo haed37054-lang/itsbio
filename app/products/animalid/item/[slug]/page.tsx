@@ -1,3 +1,5 @@
+import { productSearchMetadata } from "@/lib/product-search";
+import ProductSearchInfo from "@/components/products/ProductSearchInfo";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -12,7 +14,7 @@ export function generateStaticParams() { return ANIMAL_ID_PRODUCTS.map((product)
 export const dynamicParams = false;
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const product = getAnimalIdProduct((await params).slug);
-  return product ? { title: `${product.sku} ${product.title} | Animal Identification | AIMS`, description: product.summary } : {};
+  return product ? productSearchMetadata({ name: product.title, brand: "AIMS", sku: product.sku, modelNumbers: [], description: product.summary, image: product.images[0]?.url, path: animalIdProductHref(product.slug) }) : {};
 }
 
 export default async function AnimalIdProductPage({ params }: { params: Promise<{ slug: string }> }) {
@@ -30,6 +32,7 @@ export default async function AnimalIdProductPage({ params }: { params: Promise<
     <div className="my-7"><Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Products", href: "/products" }, { label: "AIMS", href: "/products/aims" }, { label: "Animal Identification", href: "/products/animalid" }, { label: product.sku }]} /></div>
     <nav aria-label="AIMS systems" className="mb-8 flex flex-wrap gap-2">{ANIMAL_ID_PRODUCTS.map((item) => <Link key={item.sku} href={animalIdProductHref(item.slug)} aria-current={item.slug === product.slug ? "page" : undefined} className={`rounded-full border px-4 py-2 text-sm font-medium ${item.slug === product.slug ? "border-sky-700 bg-sky-700 text-white" : "border-slate-200 text-slate-600 hover:border-sky-300"}`}>{item.sku}</Link>)}</nav>
     <AnimalIdProductOverview key={product.slug} product={{ sku: product.sku, title: product.title, summary: product.summary, audience: product.audience, models: product.models, images: product.images, specifications: product.specifications }} />
+    <ProductSearchInfo info={{ name: product.title, brand: "AIMS", sku: product.sku, modelNumbers: [], description: product.summary, image: product.images[0]?.url, path: animalIdProductHref(product.slug) }} brandHref="/products/aims" />
     <nav aria-label="Product sections" className="mt-10 flex flex-wrap gap-x-6 gap-y-3 border-y border-slate-200 py-5 text-sm font-medium text-sky-800">{sections.map(([id, label]) => <a key={id} href={`#${id}`} className="hover:underline">{label}</a>)}</nav>
     <section id="overview" className="scroll-mt-28 py-8">
       <h2 className="text-2xl font-semibold text-slate-950">Product Overview</h2>

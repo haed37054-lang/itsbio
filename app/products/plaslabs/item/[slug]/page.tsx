@@ -1,3 +1,5 @@
+import { productSearchMetadata } from "@/lib/product-search";
+import ProductSearchInfo from "@/components/products/ProductSearchInfo";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -17,7 +19,7 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: Props) {
   const { slug } = await params;
   const product = PLASLABS_PRODUCTS.find((entry) => entry.slug === slug);
-  return product ? { title: `${product.title} | PLAS-LABS`, description: product.summary } : {};
+  return product ? productSearchMetadata({ name: product.title, brand: "PLAS-LABS", sku: product.models.length === 1 ? product.models[0] : undefined, modelNumbers: product.models, description: product.summary, image: product.images[0], path: plasLabsProductHref(product.slug) }) : {};
 }
 
 export default async function PlasLabsProductPage({ params }: Props) {
@@ -45,6 +47,7 @@ export default async function PlasLabsProductPage({ params }: Props) {
             </li>
           ))}
         </ul>
+        <ProductSearchInfo info={{ name: product.title, brand: "PLAS-LABS", sku: product.models.length === 1 ? product.models[0] : undefined, modelNumbers: product.models, description: product.summary, image: product.images[0], path: plasLabsProductHref(product.slug) }} brandHref="/products/plaslabs" />
         <section aria-labelledby="compact-shared-details" className="mt-8 border-t border-slate-200 pt-6">
           <h3 id="compact-shared-details" className="mb-4 text-2xl font-semibold tracking-tight text-slate-950">Standard Features of the &quot;Compact&quot; Glove Boxes:</h3>
           <div className="plaslabs-details overflow-x-auto" dangerouslySetInnerHTML={{ __html: product.html }} />
@@ -72,6 +75,7 @@ export default async function PlasLabsProductPage({ params }: Props) {
             {quoteHref && <Link href={quoteHref} className="mt-5 inline-flex rounded-lg bg-slate-900 px-4 py-2.5 text-sm font-semibold text-white hover:bg-slate-700">Request a Quote</Link>}
           </div>
         </div>
+        <ProductSearchInfo info={{ name: product.title, brand: "PLAS-LABS", sku: product.models.length === 1 ? product.models[0] : undefined, modelNumbers: product.models, description: product.summary, image: product.images[0], path: plasLabsProductHref(product.slug) }} brandHref="/products/plaslabs" />
         {detailsHtml && (
           <div className="plaslabs-details mt-8 overflow-x-auto" dangerouslySetInnerHTML={{ __html: detailsHtml }} />
         )}

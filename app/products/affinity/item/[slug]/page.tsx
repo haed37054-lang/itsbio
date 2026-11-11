@@ -1,3 +1,5 @@
+import { productSearchMetadata } from "@/lib/product-search";
+import ProductSearchInfo from "@/components/products/ProductSearchInfo";
 import { localizeManufacturerLinks } from "@/lib/manufacturer-links";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -10,7 +12,10 @@ import { AFFINITY_ALL_PRODUCTS, getAffinityProduct, exactAffinityProduct, affini
 
 export const dynamicParams = false;
 export function generateStaticParams(){return AFFINITY_ALL_PRODUCTS.map(p=>({slug:p.slug}));}
-export async function generateMetadata({params}:{params:Promise<{slug:string}>}){const p=getAffinityProduct((await params).slug);return p?{title:`${p.sku} ${p.title} | AffinityImmuno`,description:p.summary}:{};}
+export async function generateMetadata({params}:{params:Promise<{slug:string}>}) {
+  const product = getAffinityProduct((await params).slug);
+  return product ? productSearchMetadata({ name: product.title, brand: "AffinityImmuno", sku: product.sku, modelNumbers: [], description: product.summary, image: product.images[0]?.url, path: affinityProductHref(product) }) : {};
+}
 export default async function AffinityProductPage({params}:{params:Promise<{slug:string}>}){
   const product=getAffinityProduct((await params).slug);if(!product)notFound();
   const category=product.kind==='elisa'?'elisas':'antibodies';
@@ -32,6 +37,7 @@ export default async function AffinityProductPage({params}:{params:Promise<{slug
   const related=product.relatedSkus.map(exactAffinityProduct).filter(p=>!!p);
   return <><AffinityHero /><main className="mx-auto max-w-[1320px] px-6 pb-16"><div className="my-7"><Breadcrumb items={[{label:"Home",href:"/"},{label:"Products",href:"/products"},{label:"AffinityImmuno",href:"/products/affinity"},{label:product.kind==='elisa'?"ELISA Kits":"Antibodies",href:`/products/affinity/${category}`},{label:product.sku}]} /></div><div className="grid items-start gap-8 lg:grid-cols-[240px_minmax(0,1fr)]"><AffinitySidebar active={category} /><article className="min-w-0" data-quote-context="product" data-product-name={product.title} data-cat-no={product.sku} data-product-model={product.unit}>
     <div className={product.images.length?"grid items-start gap-8 xl:grid-cols-2":""}>{product.images.length?<AimsGallery images={product.images} title={product.sku} />:null}<div className="min-w-0"><p className="text-xs font-semibold uppercase tracking-widest text-cyan-800">AffinityImmuno · {product.kind==='elisa'?"ELISA Kit":"Research Antibody"}</p><h2 className="mt-3 break-words text-2xl font-semibold leading-tight tracking-tight text-slate-950 md:text-3xl">{product.title}</h2><div className="mt-6 rounded-xl border border-cyan-200 bg-cyan-50/60 px-5 py-4"><p className="text-xs font-semibold uppercase tracking-wide text-cyan-800">Cat.No</p><p className="mt-2 break-all text-xl font-semibold text-slate-950">{product.sku}</p><p className="mt-2 text-sm text-slate-600">{product.unit}</p></div><dl className="mt-5 divide-y divide-slate-100 text-sm">{highlights.map(([label,value])=><div key={label} className="grid gap-1 py-3 sm:grid-cols-[135px_minmax(0,1fr)]"><dt className="font-medium text-slate-800">{label}</dt><dd className="break-words leading-6 text-slate-600">{value}</dd></div>)}</dl></div></div>
+    <ProductSearchInfo info={{ name: product.title, brand: "AffinityImmuno", sku: product.sku, modelNumbers: [], description: product.summary, image: product.images[0]?.url, path: affinityProductHref(product) }} brandHref="/products/affinity" />
     <AffinityProductTabs key={product.slug} tabs={tabs} />
     {related.length?<section className="border-t border-slate-200 py-8"><h2 className="text-2xl font-semibold text-slate-950">Related Products</h2><ul className="mt-5 space-y-3">{related.map(p=><li key={p.slug}><Link href={affinityProductHref(p)} className="text-sm text-cyan-900 underline">{p.sku} · {p.title}</Link></li>)}</ul></section>:null}
   </article></div></main></>;

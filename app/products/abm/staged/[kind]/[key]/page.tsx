@@ -1,3 +1,5 @@
+import { productSearchMetadata } from "@/lib/product-search";
+import ProductSearchInfo from "@/components/products/ProductSearchInfo";
 import type { Metadata } from "next";
 import { cache } from "react";
 import { notFound, permanentRedirect } from "next/navigation";
@@ -29,20 +31,10 @@ const getStagedDetail = cache(getAbmStagedDetail);
 export async function generateMetadata({ params }: { params: DetailParams }): Promise<Metadata> {
   const { kind, key } = await params;
   if (kind !== "product" && kind !== "service") return {};
-
   const record = await getStagedDetail(kind, decodeURIComponent(key));
   if (!record) return { robots: { index: false } };
-
-  const name = record.title || record.sku || "ABM";
-  const sku = record.sku?.trim();
-  const title = sku && !name.toLowerCase().includes(sku.toLowerCase()) ? `${name} (${sku})` : name;
-  const description = (record.description || record.overview || "").replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
-
-  return {
-    title: `${title} | ABM`,
-    description: description.slice(0, 170) || `View ${name} from Applied Biological Materials at ITS BIO, Korea.`,
-    alternates: { canonical: stagedRecordPath(kind, record) },
-  };
+  return productSearchMetadata({ name: record.title || record.sku || "ABM", brand: "ABM", sku: record.sku,
+    path: stagedRecordPath(kind, record), description: record.description || record.overview, kind });
 }
 
 // ABM's iPSC Reporter products each have a distinct canonical Vector Design
@@ -235,6 +227,7 @@ export default async function AbmStagedDetailPage({
           >
             <h1 className="max-w-4xl text-3xl font-bold leading-tight tracking-tight text-neutral-950">{title}</h1>
 
+            <p lang="ko" className="mt-3 text-sm text-neutral-600">제품 사양과 Cat.No.를 확인하고 이츠바이오에 국내 견적을 문의하세요.</p>
             <div className="mt-6 grid gap-8 border-t border-neutral-200 pt-7 md:grid-cols-[minmax(0,1fr)_400px]">
               {hasGallery ? (
                 <div className="min-h-[320px]">
@@ -337,6 +330,8 @@ export default async function AbmStagedDetailPage({
                 The reviewed record is available, but the official source does not provide additional detail sections for this item.
               </div>
             ) : null}
+            <ProductSearchInfo info={{ name: title, brand: "ABM", sku: record.sku, description: record.description || record.overview,
+              path: stagedRecordPath(kind, record), kind }} brandHref="/products/abm" />
           </section>
         </div>
       </main>

@@ -1,3 +1,5 @@
+import { productSearchMetadata } from "@/lib/product-search";
+import ProductSearchInfo from "@/components/products/ProductSearchInfo";
 import { notFound } from "next/navigation";
 import Breadcrumb from "@/components/site/Breadcrumb";
 import AimsGallery from "@/components/products/aims/AimsGallery";
@@ -17,7 +19,7 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: Props) {
   const { slug } = await params;
   const product = DOGEN_PRODUCTS.find((item) => item.slug === slug);
-  return product ? { title: `${product.title} | DoGen`, description: product.summary } : {};
+  return product ? productSearchMetadata({ name: product.title, brand: "DoGen", sku: product.models.length === 1 ? product.models[0].sku : undefined, modelNumbers: product.models.map((model) => model.sku), description: product.summary, image: product.image, path: `/products/dogen/item/${encodeURIComponent(product.slug)}` }) : {};
 }
 
 const documentLabels: Record<string, string> = {
@@ -70,6 +72,7 @@ export default async function DogenProductPage({ params }: Props) {
                 <DogenOptions title={product.title} models={product.models} labels={product.optionLabels} />
               </div>
             </div>
+            <ProductSearchInfo info={{ name: product.title, brand: "DoGen", sku: product.models.length === 1 ? product.models[0].sku : undefined, modelNumbers: product.models.map((model) => model.sku), description: product.summary, image: product.image, path: `/products/dogen/item/${encodeURIComponent(product.slug)}` }} brandHref="/products/dogen" />
             {product.documents.length ? (
               <ProductInformationTabs accent="red" tabs={[
                 { id: "details", label: "Product Details", content: details },

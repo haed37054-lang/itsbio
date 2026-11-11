@@ -1,13 +1,13 @@
+import { productSearchMetadata } from "@/lib/product-search";
+import ProductSearchInfo from "@/components/products/ProductSearchInfo";
 import Image from "next/image";
 import Link from "next/link";
 import Breadcrumb from "@/components/site/Breadcrumb";
 import AgarosePackageSelector from "@/components/products/itschem/AgarosePackageSelector";
 import { ITS_AGAROSE, itsAgarosePackageHref } from "@/lib/itschem/agarose";
 
-export const metadata = {
-  title: "ItsAgarose Tablets | ITSChem",
-  description: "ITSChem 0.5 g agarose tablets, preparation protocol, specifications and package sizes ITS0001 and ITS0002.",
-};
+export const metadata = productSearchMetadata({ name: ITS_AGAROSE.title, brand: "ITSChem", path: ITS_AGAROSE.href,
+  description: ITS_AGAROSE.summary, modelNumbers: ITS_AGAROSE.packages.map((pack) => pack.sku) });
 
 const bufferVolumes = [
   ["0.8%", 63, 125, 188],
@@ -181,6 +181,8 @@ export default function ItsChemPage() {
             </ul>
           </section>
         </article>
+        <ProductSearchInfo info={{ name: ITS_AGAROSE.title, brand: "ITSChem", path: ITS_AGAROSE.href,
+          description: ITS_AGAROSE.summary, modelNumbers: ITS_AGAROSE.packages.map((pack) => pack.sku) }} brandHref="/products" />
       </main>
     </>
   );

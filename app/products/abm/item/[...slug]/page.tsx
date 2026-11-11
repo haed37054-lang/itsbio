@@ -1,3 +1,6 @@
+import { cache } from "react";
+import { productSearchMetadata } from "@/lib/product-search";
+import ProductSearchInfo from "@/components/products/ProductSearchInfo";
 // app/products/abm/item/[...slug]/page.tsx
 import Image from "next/image";
 import Link from "next/link";
@@ -261,6 +264,17 @@ function HeroBanner({ brandTitle }: { brandTitle: string }) {
 
 /** -------------------- Page -------------------- */
 
+const getAbmItemBundle = cache((slug: string) => sanityCdnClient.fetch<AbmItemBundle>(ITEM_PAGE_QUERY, { brandKey: "abm", slug }, PUBLIC_CATALOG_CACHE));
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string[] }> }) {
+  const { slug } = await params;
+  const bundle = await getAbmItemBundle(slug.join("/"));
+  const product = bundle?.product;
+  if (!product?._id || !bundle.brand?._id) return {};
+  return productSearchMetadata({ name: stripBrandSuffix(product.title || ""), brand: "ABM", sku: product.sku,
+    path: `/products/abm/item/${product.slug.split("/").map(encodeURIComponent).join("/")}` });
+}
+
 export default async function AbmProductDetailPage({
   params,
   searchParams,
@@ -277,10 +291,7 @@ export default async function AbmProductDetailPage({
 
   if (!slug) notFound();
 
-  const bundle = await sanityCdnClient.fetch<AbmItemBundle>(ITEM_PAGE_QUERY, {
-    brandKey,
-    slug,
-  }, PUBLIC_CATALOG_CACHE);
+  const bundle = await getAbmItemBundle(slug);
 
   const brand = bundle?.brand;
   if (!brand?._id) notFound();
@@ -423,6 +434,7 @@ export default async function AbmProductDetailPage({
                   sourceUrl={openOriginalUrl}
                 />
               </div>
+              <ProductSearchInfo info={{ name: title, brand: "ABM", sku: catNo, path: `/products/abm/item/${product.slug.split("/").map(encodeURIComponent).join("/")}`, image: images[0]?.url }} brandHref="/products/abm" />
             </section>
           </div>
         </main>
@@ -502,6 +514,7 @@ export default async function AbmProductDetailPage({
                 </div>
               </div>
 
+              <ProductSearchInfo info={{ name: title, brand: "ABM", sku: catNo, path: `/products/abm/item/${product.slug.split("/").map(encodeURIComponent).join("/")}`, image: images[0]?.url }} brandHref="/products/abm" />
               <div className="h-10" />
             </section>
           </div>

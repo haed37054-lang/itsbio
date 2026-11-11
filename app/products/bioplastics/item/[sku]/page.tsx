@@ -1,3 +1,5 @@
+import { productSearchMetadata } from "@/lib/product-search";
+import ProductSearchInfo from "@/components/products/ProductSearchInfo";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -33,10 +35,7 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: Props) {
   const product = findBioplasticsProduct((await params).sku);
-  return product ? {
-    title: `${product.title} · ${product.sku} | BIOplastics`,
-    alternates: { canonical: bioplasticsProductHref(product.sku) },
-  } : {};
+  return product ? productSearchMetadata({ name: product.title, brand: "BIOplastics", sku: product.sku, modelNumbers: [], description: product.overview, image: product.image, path: bioplasticsProductHref(product.sku) }) : {};
 }
 
 export default async function BioplasticsProductPage({ params }: Props) {
@@ -148,6 +147,7 @@ export default async function BioplasticsProductPage({ params }: Props) {
             </ul>
           </section>
         )}
+        <ProductSearchInfo info={{ name: product.title, brand: "BIOplastics", sku: product.sku, modelNumbers: [], description: product.overview, image: product.image, path: bioplasticsProductHref(product.sku) }} brandHref="/products/bioplastics" />
       </article>
     </BioplasticsFrame>
   );

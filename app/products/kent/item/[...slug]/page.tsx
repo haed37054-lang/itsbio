@@ -1,3 +1,5 @@
+import { productSearchMetadata } from "@/lib/product-search";
+import ProductSearchInfo from "@/components/products/ProductSearchInfo";
 import type { Metadata } from "next";
 import { cache } from "react";
 import { notFound } from "next/navigation";
@@ -424,16 +426,9 @@ export async function generateMetadata({ params }: DetailProps): Promise<Metadat
   const { slug: parts } = await params;
   const data = await getKentProduct(parts.join("/"));
   if (!data) return {};
-
-  const { product, title: name } = data;
-  const sku = cleanText(product.sku);
-  const title = sku && !name.toLowerCase().includes(sku.toLowerCase()) ? `${name} (${sku})` : name;
-  const canonicalSlug = product.slug.split("/").map(encodeURIComponent).join("/");
-  return {
-    title: `${title} | Kent Scientific`,
-    description: cleanText(product.summary).slice(0, 170) || `View ${name} from Kent Scientific at ITS BIO, Korea.`,
-    alternates: { canonical: `/products/kent/item/${canonicalSlug}` },
-  };
+  const { product, official, title: name } = data;
+  return productSearchMetadata({ name, brand: "Kent Scientific", sku: cleanText(official?.sku || product.sku), description: cleanText(official?.summary || product.summary), image: normalizeImages(product, name)[0]?.url,
+    path: `/products/kent/item/${product.slug.split("/").map(encodeURIComponent).join("/")}` });
 }
 
 export default async function KentProductDetailPage({ params }: DetailProps) {
@@ -531,6 +526,8 @@ export default async function KentProductDetailPage({ params }: DetailProps) {
           optionGroups={official ? official.optionGroups || [] : product?.optionGroups || []}
           variants={official ? official.variants || [] : product?.variants || []}
         />
+        <ProductSearchInfo info={{ name: title, brand: "Kent Scientific", sku: official ? official.sku : product.sku,
+          description: official ? official.summary : cleanText(product.summary), path: `/products/kent/item/${product.slug.split("/").map(encodeURIComponent).join("/")}`, image: images[0]?.url }} brandHref="/products/kent" />
       </div>
     </main>
   );

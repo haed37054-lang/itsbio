@@ -1,3 +1,5 @@
+import { productSearchMetadata } from "@/lib/product-search";
+import ProductSearchInfo from "@/components/products/ProductSearchInfo";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound, permanentRedirect } from "next/navigation";
@@ -87,16 +89,10 @@ function preferredPhotos(image: string | undefined, images: string[] | undefined
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
-  const requestedSlug = slug.at(-1) || "";
-  const product = await getCleaverProduct(requestedSlug);
+  const product = await getCleaverProduct(slug.at(-1) || "");
   if (!product) return { title: "Product not found" };
-  const displayTitle = cleaverDisplayTitle(product);
-  const sourceFidelity = Boolean(product.cleaverSourceTitle);
-  return {
-    title: sourceFidelity ? `${displayTitle} | ${CLEAVER_BRAND_NAME}` : `${displayTitle} | ${product.sku} | ${CLEAVER_BRAND_NAME}`,
-    alternates: { canonical: cleaverCanonicalProductHref(product) },
-    description: product.summary || `${displayTitle} from Cleaver Scientific. Request product information and a quote from ITS BIO.`,
-  };
+  return productSearchMetadata({ name: cleaverDisplayTitle(product), brand: CLEAVER_BRAND_NAME, sku: product.sku,
+    path: cleaverCanonicalProductHref(product), description: product.summary, image: product.image });
 }
 
 export default async function CleaverProductDetailPage({ params }: PageProps) {
@@ -168,6 +164,8 @@ export default async function CleaverProductDetailPage({ params }: PageProps) {
           )}
         </div>
 
+        <ProductSearchInfo info={{ name: displayTitle, brand: CLEAVER_BRAND_NAME, sku: product.sku, description: product.summary,
+          path: canonicalPath, image: photos[0] }} brandHref="/products/cleaver" />
         <CleaverProductSections product={product} />
 
         {sourceFidelity ? null : <section className="mt-14 flex flex-col gap-5 rounded-2xl bg-[#f5f1f8] px-7 py-8 md:mt-20 md:flex-row md:items-center md:justify-between md:px-9"><div><h2 className="text-lg font-semibold text-slate-900">Need help selecting the right system?</h2><p className="mt-1 text-sm leading-6 text-slate-600">Our team can help with product specifications, compatibility, and quotations.</p></div><Link href="/contact" className="inline-flex h-11 shrink-0 items-center justify-center rounded-full bg-[#61247b] px-6 text-sm font-semibold text-white transition hover:bg-[#471659]">Contact our specialists</Link></section>}

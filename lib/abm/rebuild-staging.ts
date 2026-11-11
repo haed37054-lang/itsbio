@@ -88,7 +88,7 @@ function referenceList(items: Array<[string, string]>) {
  * reviewed official detail here so the Cat.No. does not silently degrade to
  * plain text while the Vector Design Studio link remains available separately.
  */
-const VERIFIED_EXPRESSION_SYSTEM_PRODUCTS: Record<string, AbmStagedDetail> = {
+export const VERIFIED_EXPRESSION_SYSTEM_PRODUCTS: Record<string, AbmStagedDetail> = {
   lv022: {
     kind: "product",
     sku: "LV022",
@@ -551,7 +551,7 @@ const STAGED_QUERY = `{
   )
 }`;
 
-function isNonProductCatalogTool(record: Pick<AbmStagedRecord, "sku" | "url">) {
+export function isNonProductCatalogTool(record: Pick<AbmStagedRecord, "sku" | "url">) {
   if (String(record.sku || "").trim().toLowerCase() === "coa") return true;
   try {
     return new URL(String(record.url || ""), "https://www.abmgood.com").pathname.toLowerCase().endsWith("/coa-library.html");

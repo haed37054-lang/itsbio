@@ -15,7 +15,7 @@ import type { MetadataRoute } from "next";
 import { SEEDBURO_PRODUCTS, SEEDBURO_COLLECTIONS, seedburoProductHref, seedburoCollectionHref } from "@/lib/seedburo/catalog";
 
 import { OFFICIAL_ABM_CELL_MODEL_PRODUCTS } from "@/lib/abm/cell-model-data";
-import { ABM_REBUILD_VERSION, getAbmStagedRecords, isInvalidCollectedDetail, stagedRecordPath, type AbmStagedRecord } from "@/lib/abm/rebuild-staging";
+import { ABM_REBUILD_VERSION, VERIFIED_EXPRESSION_SYSTEM_PRODUCTS, isNonProductCatalogTool, isInvalidCollectedDetail, stagedRecordPath, type AbmStagedRecord } from "@/lib/abm/rebuild-staging";
 import { CLEAVER_CATEGORIES } from "@/lib/cleaver/catalog";
 import { getCleaverSitemapProductPaths } from "@/lib/cleaver/sanity";
 import { absoluteSiteUrl } from "@/lib/site-url";
@@ -41,7 +41,7 @@ export const revalidate = 3600;
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const [abmProducts, abmServices, abmDetails, kentProducts, cleaverProductPaths, notices, promotions] = await Promise.all([
-    getAbmStagedRecords("product"),
+    sanityCdnClient.fetch<AbmStagedRecord[]>(`*[_type == "abmRebuildChunk" && version == $version && kind == "product"].records[lower(sku) != "coa"]{ kind, sku, title, url }`, { version: ABM_REBUILD_VERSION }, PUBLIC_CATALOG_CACHE),
     sanityCdnClient.fetch<AbmStagedRecord[]>(`*[_type == "abmRebuildChunk" && version == $version && kind == "service"].records[]{ kind, sku, title, url }`, { version: ABM_REBUILD_VERSION }, PUBLIC_CATALOG_CACHE),
     sanityCdnClient.fetch<AbmDetailRow[]>(ABM_PRODUCT_DETAILS, { version: ABM_REBUILD_VERSION }, PUBLIC_CATALOG_CACHE),
     sanityCdnClient.fetch<SlugRow[]>(`*[_type == "product" && (!defined(isActive) || isActive == true) && (brandSlug == "kent" || brand->slug.current == "kent") && lower(slug.current) in $slugs]{ "slug": slug.current, "updatedAt": _updatedAt }`, { slugs: kentCurrentTaxonomy.products.map(({ slug }) => slug.toLowerCase()) }, PUBLIC_CATALOG_CACHE),
@@ -59,7 +59,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   }));
 
   const abmRecords: AbmStagedRecord[] = [
-    ...abmProducts,
+    ...abmProducts.filter((record) => !isNonProductCatalogTool(record)),
+    ...Object.values(VERIFIED_EXPRESSION_SYSTEM_PRODUCTS),
     ...abmServices,
     ...OFFICIAL_ABM_CELL_MODEL_PRODUCTS.map((row) => ({ kind: "product" as const, sku: row.sku || "", title: row.title, url: row.url })),
     ...abmDetails.filter((row) => !isInvalidCollectedDetail(row)).map((row) => ({

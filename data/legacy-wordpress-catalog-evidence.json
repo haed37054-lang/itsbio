@@ -78,52 +78,70 @@
     "source": "Ear Punch | ITSBio"
   },
   "3617": {
-    "path": "/products/kent/rodent-identification/ear-tags",
-    "kind": "catalog",
-    "title": "",
+    "path": "/products/kent/item/stamped-ear-tags",
+    "kind": "product",
+    "title": "Stamped Ear Tags",
     "source": [
       "3607"
-    ]
+    ],
+    "sourcePage": "3607",
+    "matchEvidence": "Adjacent caption on archived product listing matches current product name. Trademark punctuation differences ignored; model information verified on current detail page.",
+    "previousPath": "/products/kent/rodent-identification/ear-tags"
   },
   "3628": {
-    "path": "/products/kent/rodent-identification/ear-tags",
-    "kind": "catalog",
-    "title": "",
+    "path": "/products/kent/item/laser-etched-ear-tags-one-sided",
+    "kind": "product",
+    "title": "Laser Etched Ear Tags, One Sided",
     "source": [
       "3607"
-    ]
+    ],
+    "sourcePage": "3607",
+    "matchEvidence": "Adjacent caption on archived product listing matches current product name. Trademark punctuation differences ignored; model information verified on current detail page.",
+    "previousPath": "/products/kent/rodent-identification/ear-tags"
   },
   "3632": {
-    "path": "/products/kent/rodent-identification/ear-tags",
-    "kind": "catalog",
-    "title": "",
+    "path": "/products/kent/item/laser-etched-ear-tags-two-sided",
+    "kind": "product",
+    "title": "Laser Etched Ear Tags, Two Sided",
     "source": [
       "3607"
-    ]
+    ],
+    "sourcePage": "3607",
+    "matchEvidence": "Adjacent caption on archived product listing matches current product name. Trademark punctuation differences ignored; model information verified on current detail page.",
+    "previousPath": "/products/kent/rodent-identification/ear-tags"
   },
   "3650": {
-    "path": "/products/kent/rodent-identification/rfid-transponder-system",
-    "kind": "catalog",
-    "title": "",
+    "path": "/products/kent/item/micro-transponder-with-lancet-for-direct-implantation",
+    "kind": "product",
+    "title": "Micro Transponder with Lancet for Direct Implantation",
     "source": [
       "3612"
-    ]
+    ],
+    "sourcePage": "3612",
+    "matchEvidence": "Adjacent caption on archived product listing matches current product name. Trademark punctuation differences ignored; model information verified on current detail page.",
+    "previousPath": "/products/kent/rodent-identification/rfid-transponder-system"
   },
   "3658": {
-    "path": "/products/kent/rodent-identification/rfid-transponder-system",
-    "kind": "catalog",
-    "title": "",
+    "path": "/products/kent/item/pistol-grip-implanter",
+    "kind": "product",
+    "title": "Pistol Grip Implanter",
     "source": [
       "3612"
-    ]
+    ],
+    "sourcePage": "3612",
+    "matchEvidence": "Adjacent caption on archived product listing matches current product name. Trademark punctuation differences ignored; model information verified on current detail page.",
+    "previousPath": "/products/kent/rodent-identification/rfid-transponder-system"
   },
   "3663": {
-    "path": "/products/kent/rodent-identification/rfid-transponder-system",
-    "kind": "catalog",
-    "title": "",
+    "path": "/products/kent/item/pocket-reader-with-usb-connection",
+    "kind": "product",
+    "title": "Pocket Reader with USB Connection",
     "source": [
       "3612"
-    ]
+    ],
+    "sourcePage": "3612",
+    "matchEvidence": "Adjacent caption on archived product listing matches current product name. Trademark punctuation differences ignored; model information verified on current detail page.",
+    "previousPath": "/products/kent/rodent-identification/rfid-transponder-system"
   },
   "3673": {
     "path": "/products/kent/rodent-identification/rfid-transponder-system",
@@ -134,52 +152,70 @@
     ]
   },
   "3677": {
-    "path": "/products/kent/rodent-identification/rfid-transponder-system",
-    "kind": "catalog",
-    "title": "",
+    "path": "/products/kent/item/bluetooth-low-energy-handheld-reader",
+    "kind": "product",
+    "title": "Bluetooth Low Energy Handheld Reader",
     "source": [
       "3612"
-    ]
+    ],
+    "sourcePage": "3612",
+    "matchEvidence": "Adjacent caption on archived product listing matches current product name. Trademark punctuation differences ignored; model information verified on current detail page.",
+    "previousPath": "/products/kent/rodent-identification/rfid-transponder-system"
   },
   "3680": {
-    "path": "/products/kent/rodent-identification/rfid-transponder-system",
-    "kind": "catalog",
-    "title": "",
+    "path": "/products/kent/item/mid-range-reader-usb",
+    "kind": "product",
+    "title": "Mid Range Reader USB",
     "source": [
       "3612"
-    ]
+    ],
+    "sourcePage": "3612",
+    "matchEvidence": "Adjacent caption on archived product listing matches current product name. Trademark punctuation differences ignored; model information verified on current detail page.",
+    "previousPath": "/products/kent/rodent-identification/rfid-transponder-system"
   },
   "3709": {
-    "path": "/products/kent/laboratory-animal-handling/animal-holders",
-    "kind": "catalog",
-    "title": "",
+    "path": "/products/kent/item/flat-bottom-rodent-holders",
+    "kind": "product",
+    "title": "Flat Bottom Rodent Holders",
     "source": [
       "3704"
-    ]
+    ],
+    "sourcePage": "3704",
+    "matchEvidence": "Adjacent caption on archived product listing matches current product name. Trademark punctuation differences ignored; model information verified on current detail page.",
+    "previousPath": "/products/kent/laboratory-animal-handling/animal-holders"
   },
   "3713": {
-    "path": "/products/kent/laboratory-animal-handling/animal-holders",
-    "kind": "catalog",
-    "title": "",
+    "path": "/products/kent/item/nose-cone-animal-holders-with-stand",
+    "kind": "product",
+    "title": "CODA® Monitor Animal Holders",
     "source": [
       "3704"
-    ]
+    ],
+    "sourcePage": "3704",
+    "matchEvidence": "Archived listing caption: Nose Cone Animal Holders with Stand; current product slug, source identity and model agree.",
+    "previousPath": "/products/kent/laboratory-animal-handling/animal-holders"
   },
   "3718": {
-    "path": "/products/kent/laboratory-animal-handling/animal-holders",
-    "kind": "catalog",
-    "title": "",
+    "path": "/products/kent/item/tube-rodent-holders",
+    "kind": "product",
+    "title": "Tube Rodent Holders",
     "source": [
       "3704"
-    ]
+    ],
+    "sourcePage": "3704",
+    "matchEvidence": "Adjacent caption on archived product listing matches current product name. Trademark punctuation differences ignored; model information verified on current detail page.",
+    "previousPath": "/products/kent/laboratory-animal-handling/animal-holders"
   },
   "3722": {
-    "path": "/products/kent/laboratory-animal-handling/animal-holders",
-    "kind": "catalog",
-    "title": "",
+    "path": "/products/kent/item/coda-animal-holders",
+    "kind": "product",
+    "title": "CODA® Animal Holders",
     "source": [
       "3704"
-    ]
+    ],
+    "sourcePage": "3704",
+    "matchEvidence": "Adjacent caption on archived product listing matches current product name. Trademark punctuation differences ignored; model information verified on current detail page.",
+    "previousPath": "/products/kent/laboratory-animal-handling/animal-holders"
   },
   "4203": {
     "path": "/products/seedburo/sieve-shakers-test-sieves-and-screens",
@@ -238,16 +274,22 @@
     "source": []
   },
   "4580": {
-    "path": "/products/seedburo/density-measurement",
-    "kind": "catalog",
-    "title": "",
-    "source": []
+    "path": "/products/seedburo/item/3186",
+    "kind": "product",
+    "title": "Pint Cup 104",
+    "source": [],
+    "matchEvidence": "Old 104-Pint-Cup image identifies catalog number 104; current Quart and Pint Cups product explicitly includes Pint Cup 104.",
+    "previousPath": "/products/seedburo/density-measurement",
+    "legacyImage": "104-Pint-Cup.jpg"
   },
   "4584": {
-    "path": "/products/seedburo/density-measurement",
-    "kind": "catalog",
-    "title": "",
-    "source": []
+    "path": "/products/seedburo/item/3188",
+    "kind": "product",
+    "title": "Half-Liter Cup 103",
+    "source": [],
+    "matchEvidence": "Old 103-Half-Liter-cup image identifies catalog number 103; current Metric Cups product explicitly includes Half Liter Cup 103.",
+    "previousPath": "/products/seedburo/density-measurement",
+    "legacyImage": "103-Half-Liter-cup.jpg"
   },
   "4588": {
     "path": "/products/seedburo/density-measurement",
@@ -1879,12 +1921,15 @@
     "source": "OneScribe T7 Transcription Kit | ITSBio"
   },
   "14462": {
-    "path": "/products/kent/rodent-identification/ear-tags",
-    "kind": "catalog",
-    "title": "",
+    "path": "/products/kent/item/ear-tag-applicator-with-spring-1",
+    "kind": "product",
+    "title": "Ear Tag Applicator for Laboratory Animals",
     "source": [
       "3607"
-    ]
+    ],
+    "sourcePage": "3607",
+    "matchEvidence": "Archived listing caption: Ear Tag Applicator; current product slug, source identity and model agree.",
+    "previousPath": "/products/kent/rodent-identification/ear-tags"
   },
   "15131": {
     "path": "/products/abm/general-materials/pcr-enzymes",
@@ -1995,36 +2040,48 @@
     "source": "Antibody Isotyping Kits | ITSBio"
   },
   "17542": {
-    "path": "/products/kent/laboratory-animal-handling/animal-holders",
-    "kind": "catalog",
-    "title": "",
+    "path": "/products/kent/item/mouse-handling-tunnels",
+    "kind": "product",
+    "title": "Mouse Handling Tunnels",
     "source": [
       "3704"
-    ]
+    ],
+    "sourcePage": "3704",
+    "matchEvidence": "Adjacent caption on archived product listing matches current product name. Trademark punctuation differences ignored; model information verified on current detail page.",
+    "previousPath": "/products/kent/laboratory-animal-handling/animal-holders"
   },
   "17580": {
-    "path": "/products/kent/rodent-identification/ear-tags",
-    "kind": "catalog",
-    "title": "",
+    "path": "/products/kent/item/la-pias-mouse-ear-tags",
+    "kind": "product",
+    "title": "La Pias Mouse Ear Tags",
     "source": [
       "3607"
-    ]
+    ],
+    "sourcePage": "3607",
+    "matchEvidence": "Adjacent caption on archived product listing matches current product name. Trademark punctuation differences ignored; model information verified on current detail page.",
+    "previousPath": "/products/kent/rodent-identification/ear-tags"
   },
   "17586": {
-    "path": "/products/kent/rodent-identification/ear-tags",
-    "kind": "catalog",
-    "title": "",
+    "path": "/products/kent/item/la-pias-rat-ear-tags",
+    "kind": "product",
+    "title": "La Pias Rat Ear Tags",
     "source": [
       "3607"
-    ]
+    ],
+    "sourcePage": "3607",
+    "matchEvidence": "Adjacent caption on archived product listing matches current product name. Trademark punctuation differences ignored; model information verified on current detail page.",
+    "previousPath": "/products/kent/rodent-identification/ear-tags"
   },
   "17593": {
-    "path": "/products/kent/rodent-identification/ear-tags",
-    "kind": "catalog",
-    "title": "",
+    "path": "/products/kent/item/la-pias-ear-tag-applicator",
+    "kind": "product",
+    "title": "La Pias Ear Tag Applicator for Laboratory Mouse Ear Tags",
     "source": [
       "3607"
-    ]
+    ],
+    "sourcePage": "3607",
+    "matchEvidence": "Archived listing caption: La Pias Ear Tag Applicator; current product slug, source identity and model agree.",
+    "previousPath": "/products/kent/rodent-identification/ear-tags"
   },
   "17864": {
     "path": "/products/plaslabs/item/840-series",

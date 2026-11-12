@@ -11,6 +11,7 @@ import NeedAssistance from "@/components/site/NeedAssistance";
 import FloatingQuoteButton from "@/components/site/FloatingQuoteButton";
 import AbmLinkResolverClient from "@/components/site/AbmLinkResolverClient";
 import NavigationLoadingOverlay from "@/components/site/NavigationLoadingOverlay";
+import GoogleAnalytics from "@/components/site/GoogleAnalytics";
 import { siteUrl } from "@/lib/site-url";
 
 const pretendard = localFont({
@@ -67,6 +68,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <FloatingQuoteButton />
         </div>
         <SpeedInsights />
+        <GoogleAnalytics />
       </body>
     </html>
   );

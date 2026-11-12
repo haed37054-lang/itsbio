@@ -53,7 +53,7 @@ export default function PrivacyPage() {
         <article className="py-10 md:py-14">
           <div className="rounded-3xl border border-slate-200 bg-slate-50 p-6 text-sm leading-7 text-slate-700 md:p-8">
             <p>주식회사 이츠바이오는 「개인정보 보호법」 제30조에 따라 이용자의 개인정보를 보호하고 관련 고충을 처리하기 위해 다음과 같이 개인정보처리방침을 공개합니다.</p>
-            <p className="mt-2 font-medium text-slate-900">시행일: 2026년 8월 24일</p>
+            <p className="mt-2 font-medium text-slate-900">시행일: 2026년 8월 24일 · 방문 통계 안내 추가: 2026년 11월 12일</p>
           </div>
 
           <div className="mt-8 space-y-8">
@@ -64,8 +64,14 @@ export default function PrivacyPage() {
               </section>
             ))}
 
+            <section>
+              <h2 className="text-xl font-semibold tracking-tight text-slate-950">9. 웹사이트 방문 통계</h2>
+              <p className="mt-3 text-sm leading-7 text-slate-700">회사는 방문자 수, 페이지 조회 및 유입 경로를 파악하고 웹사이트를 개선하기 위해 Google LLC의 Google Analytics 4를 사용합니다. 이 과정에서 쿠키 식별자, 방문한 페이지, 접속 시각, 브라우저·기기 정보 등 사이트 이용 정보가 Google로 전송되어 처리될 수 있습니다. 문의 양식에 입력한 이름, 이메일, 전화번호 및 문의 내용은 방문 통계 수집 항목으로 설정하지 않으며, 광고 개인 최적화와 Google 신호 데이터 수집은 사용하지 않습니다.</p>
+              <p className="mt-3 text-sm leading-7 text-slate-700">이용자는 브라우저의 쿠키 또는 추적 차단 설정으로 통계 수집을 제한할 수 있습니다. 자세한 처리 방식은 <a href="https://policies.google.com/technologies/partner-sites?hl=ko" target="_blank" rel="noopener noreferrer" className="font-medium text-orange-700 underline underline-offset-2">Google의 데이터 이용 안내</a>에서 확인할 수 있습니다.</p>
+            </section>
+
             <section className="rounded-3xl bg-[#071d43] p-6 text-white md:p-8">
-              <h2 className="text-xl font-semibold">9. 개인정보 보호책임자 및 문의처</h2>
+              <h2 className="text-xl font-semibold">10. 개인정보 보호책임자 및 문의처</h2>
               <dl className="mt-4 grid gap-2 text-sm leading-6 text-white/75 sm:grid-cols-[150px_1fr]">
                 <dt className="font-semibold text-white">담당 부서</dt><dd>이츠바이오 고객지원</dd>
                 <dt className="font-semibold text-white">이메일</dt><dd><a href="mailto:info@itsbio.co.kr" className="underline underline-offset-4">info@itsbio.co.kr</a></dd>
@@ -75,7 +81,7 @@ export default function PrivacyPage() {
             </section>
 
             <section>
-              <h2 className="text-xl font-semibold tracking-tight text-slate-950">10. 방침의 변경</h2>
+              <h2 className="text-xl font-semibold tracking-tight text-slate-950">11. 방침의 변경</h2>
               <p className="mt-3 text-sm leading-7 text-slate-700">이 방침이 변경되는 경우 시행 전에 웹사이트 공지사항을 통해 안내합니다. 서비스 이용 조건은 <Link href="/terms" className="font-medium text-orange-700 underline underline-offset-2">이용약관</Link>에서 확인할 수 있습니다.</p>
             </section>
           </div>

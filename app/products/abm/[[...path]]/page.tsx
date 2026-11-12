@@ -715,8 +715,8 @@ export default async function AbmProductsPathPage({
   params,
   searchParams,
 }: {
-  params: Promise<{ path?: string[] }> | { path?: string[] };
-  searchParams?: Promise<{ open?: string; q?: string; page?: string }> | { open?: string; q?: string; page?: string };
+  params: Promise<{ path?: string[] }>;
+  searchParams?: Promise<{ open?: string; q?: string; page?: string }>;
 }) {
   const resolved = await Promise.resolve(params as any);
   const sp = await Promise.resolve(searchParams as any);

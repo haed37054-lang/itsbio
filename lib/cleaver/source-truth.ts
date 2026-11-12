@@ -48,7 +48,7 @@ const MINI_WORKS_WITH = [
     packSize: "1 / Each",
     sourceUrl: "https://www.thistlescientific.com/product/multisub-mini-duo-with-mini-runview-gel-viewer/",
     imageUrl: "https://www.thistlescientific.com/wp-content/uploads/2024/11/RUNVIEWOLD37.WEB_.jpg",
-    internalHref: "/products/cleaver/item/multisub-mini-duo-with-mini-runview-gel-viewer",
+    internalHref: "/products/thistle/item/multisub-mini-duo-with-mini-runview-gel-viewer",
   },
   {
     title: "multiSUB Mini, Mini Horizontal Electrophoresis System",
@@ -56,7 +56,7 @@ const MINI_WORKS_WITH = [
     packSize: "1 / Each",
     sourceUrl: "https://www.thistlescientific.com/product/multisub-mini-mini-horizontal-electrophoresis-system/",
     imageUrl: "https://www.thistlescientific.com/wp-content/uploads/2024/11/MSMINI-4.WEB_.jpg",
-    internalHref: "/products/cleaver/item/multisub-mini-mini-horizontal-electrophoresis-system",
+    internalHref: "/products/thistle/item/multisub-mini-mini-horizontal-electrophoresis-system",
   },
 ];
 
@@ -123,7 +123,7 @@ const VERIFIED_PRODUCT_OVERRIDES: Record<string, Partial<CleaverProduct>> = {
         sku: "MSMINIONE",
         packSize: "1 / Each",
         sourceUrl: "https://www.thistlescientific.com/product/multisub-mini-one-all-in-one-horizontal-electrophoresis-system/",
-        internalHref: "/products/cleaver/item/multisub-mini-one-all-in-one-horizontal-electrophoresis-system",
+        internalHref: "/products/thistle/item/multisub-mini-one-all-in-one-horizontal-electrophoresis-system",
       },
     ],
     cleaverVideos: [],

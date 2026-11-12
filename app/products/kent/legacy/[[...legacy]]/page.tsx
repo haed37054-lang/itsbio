@@ -318,8 +318,8 @@ export default async function KentLegacyProxyPage({
   params,
   searchParams,
 }: {
-  params: Promise<{}> | {};
-  searchParams: Promise<{ u?: string }> | { u?: string };
+  params: Promise<{}>;
+  searchParams: Promise<{ u?: string }>;
 }) {
   const resolvedParams = await Promise.resolve(params as any);
   const resolvedSearch = await Promise.resolve(searchParams as any);

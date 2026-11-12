@@ -2,7 +2,7 @@
   {
     "slug": "main-products",
     "title": "Main Products",
-    "description": "Core Cleaver Scientific instruments, systems, reagents and teaching products.",
+    "description": "Core Thistle Scientific instruments, systems, reagents and teaching products.",
     "sourceUrl": "https://www.thistlescientific.com/product-category/",
     "children": [
       { "slug": "electrophoresis-systems", "title": "Electrophoresis Systems" },
@@ -15,7 +15,7 @@
   {
     "slug": "accessories",
     "title": "Accessories",
-    "description": "Accessories, compatible components, replacement parts and spares for Cleaver Scientific products.",
+    "description": "Accessories, compatible components, replacement parts and spares for Thistle Scientific products.",
     "sourceUrl": "https://www.thistlescientific.com/product-category/",
     "children": [
       { "slug": "electrophoresis-accessories", "title": "Electrophoresis Accessories" },

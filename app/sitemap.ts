@@ -34,7 +34,7 @@ const ABM_PRODUCT_DETAILS = `
 const CORE_ROUTES = [
   "/", "/products", "/products/abm", "/products/kent", "/about", "/contact", "/quote", "/notice", "/promotions", "/privacy", "/terms",
   ...ABM_PRODUCT_GROUPS.map(({ href }) => href),
-  "/products/cleaver", "/products/seedburo", "/products/aims", "/products/animalid", "/products/bioplastics", "/products/cellfree", "/products/itschem", "/products/plaslabs", "/products/affinity", "/products/dogen",
+  "/products/thistle", "/products/seedburo", "/products/aims", "/products/animalid", "/products/bioplastics", "/products/cellfree", "/products/itschem", "/products/plaslabs", "/products/affinity", "/products/dogen",
 ];
 
 export const revalidate = 3600;
@@ -86,8 +86,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   }
   for (const row of kentProducts) if (row.slug) entries.push({ url: absoluteSiteUrl(`/products/kent/item/${row.slug.split("/").map(encodeURIComponent).join("/")}`), lastModified: row.updatedAt, changeFrequency: "monthly", priority: 0.7 });
   for (const category of CLEAVER_CATEGORIES) {
-    entries.push({ url: absoluteSiteUrl(`/products/cleaver/${category.slug}`), changeFrequency: "monthly", priority: 0.7 });
-    for (const child of category.children) entries.push({ url: absoluteSiteUrl(`/products/cleaver/${category.slug}/${child.slug}`), changeFrequency: "monthly", priority: 0.7 });
+    entries.push({ url: absoluteSiteUrl(`/products/thistle/${category.slug}`), changeFrequency: "monthly", priority: 0.7 });
+    for (const child of category.children) entries.push({ url: absoluteSiteUrl(`/products/thistle/${category.slug}/${child.slug}`), changeFrequency: "monthly", priority: 0.7 });
   }
   for (const path of cleaverProductPaths) entries.push({ url: absoluteSiteUrl(path), changeFrequency: "monthly", priority: 0.7 });
   for (const category of AIMS_CATEGORIES) entries.push({url:absoluteSiteUrl(`/products/aims/${category.slug}`),changeFrequency:"monthly",priority:0.65});
@@ -112,7 +112,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const listedUrls = new Set(entries.map(({ url }) => url));
   for (const destination of [...Object.values(legacyWordPressRedirects.pages), ...Object.values(legacyWordPressRedirects.catalogs)]) {
-    const url = absoluteSiteUrl(destination.split(/[?#]/, 1)[0]);
+    const path = destination.split(/[?#]/, 1)[0].replace(/^\/products\/cleaver(?=\/|$)/, "/products/thistle");
+    const url = absoluteSiteUrl(path);
     if (listedUrls.has(url)) continue;
     listedUrls.add(url);
     entries.push({ url });

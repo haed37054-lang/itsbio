@@ -4,7 +4,7 @@ import Link from "next/link";
 import { cleaverProductSlug } from "@/lib/cleaver/catalog";
 
 const productHref = (title: string, sku: string) =>
-  `/products/cleaver/item/${encodeURIComponent(cleaverProductSlug(title, sku))}`;
+  `/products/thistle/item/${encodeURIComponent(cleaverProductSlug(title, sku))}`;
 
 const ITEMS = [
   {
@@ -29,7 +29,7 @@ const ITEMS = [
     title: "multiSUB Mini Combs",
     quantity: "2",
     image: "https://www.thistlescientific.com/wp-content/uploads/2024/11/MS7-10-1-1.WEB_-150x150.jpg",
-    href: "/products/cleaver?q=multiSUB+Mini+Comb",
+    href: "/products/thistle?q=multiSUB+Mini+Comb",
   },
   {
     title: "multiSUB Mini - Viewing Platform",

@@ -16,6 +16,7 @@ import {
   type CleaverProduct,
 } from "@/lib/cleaver/catalog";
 import { getFastCleaverProductPage as getCleaverProductPage } from "@/lib/cleaver/fast-catalog";
+import { absoluteSiteUrl } from "@/lib/site-url";
 
 export const revalidate = 86400;
 
@@ -35,13 +36,21 @@ function productImageSources(product: CleaverProduct) {
   return Array.from(new Set([product.image, ...(product.images || []), ...mapped].map((value) => String(value || "").trim()).filter(Boolean)));
 }
 
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+export async function generateMetadata({ params, searchParams }: PageProps): Promise<Metadata> {
   const { path = [] } = await params;
+  const search = await searchParams;
   const current = path.length ? cleaverCategory(path)?.current : undefined;
   const title = current ? `${current.title} | ${CLEAVER_BRAND_NAME}` : `${CLEAVER_BRAND_NAME} Laboratory Equipment`;
+  const description = `Thistle Scientific ${current?.title || "electrophoresis equipment, gel documentation, PCR thermal cyclers, centrifuges and laboratory products"}. 이츠바이오 국내 제품 정보·사양·견적 문의.`;
+  const page = Math.max(1, Number.parseInt(search?.page || "1", 10) || 1);
+  const url = absoluteSiteUrl(categoryHref(path, "", page));
   return {
     title,
-    description: `Explore ${current?.title || "electrophoresis equipment, gel documentation and laboratory products"} from Cleaver Scientific at ITS BIO.`,
+    description,
+    alternates: { canonical: url },
+    openGraph: { title, description, url, images: [{ url: absoluteSiteUrl("/partners/thistle-scientific-logo.png"), alt: CLEAVER_BRAND_NAME }] },
+    twitter: { card: "summary", title, description },
+    ...(search?.q ? { robots: { index: false, follow: true } } : {}),
   };
 }
 
@@ -55,14 +64,14 @@ function categoryHref(path: string[], query = "", page = 1) {
   if (query) search.set("q", query);
   if (page > 1) search.set("page", String(page));
   const queryString = search.toString();
-  return `/products/cleaver${suffix}${queryString ? `?${queryString}` : ""}`;
+  return `/products/thistle${suffix}${queryString ? `?${queryString}` : ""}`;
 }
 
 function CleaverSidebar({ activePath }: { activePath: string[] }) {
   return (
     <aside className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm lg:sticky lg:top-24">
-      <Link href="/products/cleaver" className="block border-b border-slate-200 bg-[#f5f0fb] px-5 py-4 text-base font-semibold text-[#61247b]">
-        Cleaver Scientific
+      <Link href="/products/thistle" className="block border-b border-slate-200 bg-[#f5f0fb] px-5 py-4 text-base font-semibold text-[#61247b]">
+        Thistle Scientific
       </Link>
       <nav className="max-h-[calc(100vh-170px)] space-y-1 overflow-y-auto p-2" aria-label="Cleaver product categories">
         {CLEAVER_CATEGORIES.map((category) => {
@@ -136,12 +145,17 @@ export default async function CleaverCatalogPage({ params, searchParams }: PageP
   const breadcrumbs = [
     { label: "Home", href: "/" },
     { label: "Products", href: "/products" },
-    { label: CLEAVER_BRAND_NAME, ...(path.length ? { href: "/products/cleaver" } : {}) },
+    { label: CLEAVER_BRAND_NAME, ...(path.length ? { href: "/products/thistle" } : {}) },
     ...cleaverCategoryTitles(path).map((label, index) => ({ label, ...(index < path.length - 1 ? { href: categoryHref(path.slice(0, index + 1)) } : {}) })),
   ];
 
   return (
     <main className="bg-white pb-20">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org", "@type": "CollectionPage",
+        name: heading, url: absoluteSiteUrl(categoryHref(path)),
+        about: { "@type": "Brand", name: CLEAVER_BRAND_NAME, url: absoluteSiteUrl("/products/thistle"), logo: absoluteSiteUrl("/partners/thistle-scientific-logo.png") },
+      }).replace(/</g, "\\u003c") }} />
       <CleaverHeroBanner />
 
       <div className="mx-auto max-w-[1320px] px-6">
@@ -152,6 +166,7 @@ export default async function CleaverCatalogPage({ params, searchParams }: PageP
             <div className="border-b border-slate-200 pb-6">
               <div className="text-xs font-bold uppercase tracking-[0.16em] text-[#8650a0]">{path.length ? "Product Category" : "Official Product Catalog"}</div>
               <h2 className="mt-2 text-3xl font-semibold tracking-tight text-slate-950">{heading}</h2>
+              {!path.length ? <a href="https://www.thistlescientific.com/wp-content/uploads/2026/08/Thistle-Export-catalogue-2026_V2.pdf" target="_blank" rel="noopener noreferrer" className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-[#61247b] underline underline-offset-4">Download 2026 Thistle Export Catalogue <span aria-hidden>↗</span></a> : null}
               {match && path.length === 1 ? <p className="mt-3 max-w-3xl text-sm leading-7 text-slate-600">{match.root.description}</p> : null}
               <form action={categoryHref(path)} className="mt-5 flex max-w-xl gap-2">
                 <input name="q" defaultValue={query} placeholder="Search product name or catalog number" aria-label="Search Cleaver products" className="h-11 min-w-0 flex-1 rounded-full border border-slate-300 px-4 text-sm outline-none focus:border-purple-400 focus:ring-4 focus:ring-purple-100" />

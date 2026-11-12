@@ -1,4 +1,5 @@
 import sourceMap from "@/data/cleaver-source-map.json";
+import { getThistle2026Product } from "@/lib/cleaver/launches";
 import { cleaverProductSlug, type CleaverProduct } from "@/lib/cleaver/catalog";
 import { mergeCleaverVideos, verifiedCleaverSourceVideos } from "@/lib/cleaver/source-fallbacks";
 import { getCleaverSourceTruthOverride } from "@/lib/cleaver/source-truth";
@@ -14,7 +15,7 @@ type SourceIdentity = {
 };
 
 const SOURCE_MAP = sourceMap as Record<string, SourceIdentity>;
-const internalHref = (title: string, sku: string) => `/products/cleaver/item/${encodeURIComponent(cleaverProductSlug(title, sku))}`;
+const internalHref = (title: string, sku: string) => `/products/thistle/item/${encodeURIComponent(cleaverProductSlug(title, sku))}`;
 
 const variations = [
   {
@@ -66,7 +67,7 @@ const combAccessory = {
   title: "multiSUB Mini Combs",
   packSize: "1 / Each",
   imageUrl: "https://www.thistlescientific.com/wp-content/uploads/2024/11/MS7-10-1-1.WEB_-150x150.jpg",
-  internalHref: "/products/cleaver?q=multiSUB+Mini+Comb",
+  internalHref: "/products/thistle?q=multiSUB+Mini+Comb",
 };
 
 const commonIncluded = [
@@ -156,6 +157,8 @@ const explicitFixtures: Record<string, Partial<CleaverProduct>> = Object.fromEnt
 );
 
 export function getVerifiedCleaverSourceFixture(sku: string) {
+  const launch = getThistle2026Product(sku);
+  if (launch) return launch;
   const key = sku.trim().toUpperCase();
   const explicit = explicitFixtures[key] || null;
   const identity = SOURCE_MAP[key];

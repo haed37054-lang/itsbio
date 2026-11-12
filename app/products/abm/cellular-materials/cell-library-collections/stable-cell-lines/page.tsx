@@ -2,7 +2,7 @@ import AbmSpecialCellCatalogClient from "@/components/products/AbmSpecialCellCat
 import { getSpecialAbmCellCatalog } from "@/lib/abm/special-cell-catalog";
 import { CellLibraryShell } from "../_cellLibraryShared";
 
-export default async function StableCellLinesPage({ searchParams }: { searchParams?: Promise<{ q?: string; page?: string }> | { q?: string; page?: string } }) {
+export default async function StableCellLinesPage({ searchParams }: { searchParams?: Promise<{ q?: string; page?: string }> }) {
   const sp = await Promise.resolve(searchParams as any);
   const query = String(sp?.q || "").trim();
   const records = await getSpecialAbmCellCatalog("stable");

@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     template: "%s | 이츠바이오 ITS BIO",
   },
   description: "ITS BIO supplies life science reagents, cell biology products, animal research systems, laboratory equipment, and responsive quotation support in Korea.",
-  keywords: ["ITS BIO", "이츠바이오", "ABM", "Kent Scientific", "life science", "cell biology", "animal research", "laboratory equipment"],
+  keywords: ["ITS BIO", "이츠바이오", "ABM", "Kent Scientific", "Thistle Scientific", "life science", "cell biology", "animal research", "laboratory equipment"],
   openGraph: {
     type: "website",
     locale: "ko_KR",

@@ -2273,7 +2273,7 @@ export async function generateMetadata({ params }: { params: Promise<{ path?: st
 export default async function KentProductsPathPage({
   params,
 }: {
-  params: Promise<{ path?: string[] }> | { path?: string[] };
+  params: Promise<{ path?: string[] }>;
 }) {
   const resolved = await Promise.resolve(params as { path?: string[] });
   const requestedPath = normalizePathSegments((resolved?.path ?? []) as string[]);

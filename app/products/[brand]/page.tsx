@@ -18,11 +18,11 @@ type BrandInfo = {
 
 const BRANDS: Record<string, BrandInfo> = {
   cleaver: {
-    name: "Cleaver Scientific",
-    searchKey: "cleaverscientific",
+    name: "Thistle Scientific",
+    searchKey: "thistlescientific",
     eyebrow: "LABORATORY EQUIPMENT",
-    description: "Electrophoresis, gel documentation, blotting, power supplies, and practical equipment for life science laboratories.",
-    logo: "/partners/Cleaverscientific-logo.png",
+    description: "Electrophoresis, gel documentation, PCR thermal cyclers, centrifuges and general laboratory equipment from Thistle Scientific.",
+    logo: "/partners/thistle-scientific-logo.png",
     accent: "#9333ea",
     deep: "#581c87",
     soft: "#faf5ff",
@@ -93,7 +93,7 @@ export default async function BrandPreparingPage({
   searchParams,
 }: {
   params: Promise<{ brand: string }>;
-  searchParams?: Promise<{ q?: string }> | { q?: string };
+  searchParams?: Promise<{ q?: string }>;
 }) {
   const { brand: brandKey } = await params;
   const brand = BRANDS[brandKey];

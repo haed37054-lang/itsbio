@@ -199,7 +199,7 @@ function ResourceIndex() {
 export default async function AbmResourcePage({
   searchParams,
 }: {
-  searchParams: Promise<{ u?: string }> | { u?: string };
+  searchParams: Promise<{ u?: string }>;
 }) {
   const resolvedSearch = await Promise.resolve(searchParams);
   if (!resolvedSearch?.u) return <ResourceIndex />;

@@ -71,6 +71,11 @@ const nextConfig: NextConfig = {
     });
 
     return [
+      ...["cleaver", "cleaverscientific", "thistlescientific"].map((brand) => ({
+        source: `/products/${brand}/:path*`,
+        destination: "/products/thistle/:path*",
+        permanent: true,
+      })),
       {
         source: "/promotions/thistle-special-offer-2026/thistle-scientific-special-offer-2026-:section(omnipette-pipettes|lab-equipment|horizontal-electrophoresis|vertical-electrophoresis).pdf",
         destination: "/promotions/thistle-special-offer-2026/thistle-scientific-special-offer-2026.pdf",

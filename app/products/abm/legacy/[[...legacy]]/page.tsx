@@ -55,8 +55,8 @@ function abmUrlCandidates(rawValue: string) {
 export default async function AbmLegacyResolverPage({
   searchParams,
 }: {
-  params: Promise<Record<string, never>> | Record<string, never>;
-  searchParams: Promise<{ u?: string }> | { u?: string };
+  params: Promise<{ legacy?: string[] }>;
+  searchParams: Promise<{ u?: string }>;
 }) {
   const resolvedSearch = await Promise.resolve(searchParams);
   const urls = abmUrlCandidates(resolvedSearch?.u || "");

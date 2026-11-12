@@ -25,7 +25,7 @@ export function localizeManufacturerLinks(html: string, sourceUrl: string, route
       link.attr("href", `${internal}${url.hash}`).removeAttr("target").removeAttr("rel");
     } else if (/\.(?:pdf|jpe?g|png|webp|gif|svg|mp4|webm|mov|zip|docx?|xlsx?|pptx?|txt|fasta|gbk?)(?:$|\?)/i.test(url.pathname) || /\/download\//i.test(url.pathname)) {
       link.attr("href", url.href);
-    } else if (!/^\/products\/(?:abm|kent|cleaver|seedburo|affinity|aims|animalid|itschem|dogen|plaslabs|cellfree|bioplastics)(?:\/|$)/i.test(href)) {
+    } else if (!/^\/products\/(?:abm|kent|cleaver|thistle|seedburo|affinity|aims|animalid|itschem|dogen|plaslabs|cellfree|bioplastics)(?:\/|$)/i.test(href)) {
       link.replaceWith(link.contents());
     }
   });

@@ -169,6 +169,7 @@ const BRAND_THEMES: Record<string, BrandTheme> = {
 
 function getBrandTheme(value: string) {
   const key = value ? normalizeBrandKey(value) : "all";
+  if (["thistle", "thistlescientific"].includes(key)) return BRAND_THEMES.cleaverscientific;
   return BRAND_THEMES[key] ?? BRAND_THEMES.all;
 }
 

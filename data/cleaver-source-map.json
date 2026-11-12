@@ -9412,9 +9412,9 @@
     "sourceUrl": "https://www.thistlescientific.com/product/vortexm2/",
     "sourceSlug": "vortexm2",
     "images": [
-      "https://www.thistlescientific.com/wp-content/uploads/2025/02/VORTEXM2.jpg",
-      "https://www.thistlescientific.com/wp-content/uploads/2025/02/VORTEX-2-small.jpg",
-      "https://www.thistlescientific.com/wp-content/uploads/2025/02/Vortex-Heads-small.jpg"
+      "/products/thistle/2026/342f207ebc4c627a.jpg",
+      "/products/thistle/2026/0d4ecc687df9de22.jpg",
+      "/products/thistle/2026/b934352222de7a49.jpg"
     ]
   },
   "VORTEXM2$": {
@@ -9422,9 +9422,9 @@
     "sourceUrl": "https://www.thistlescientific.com/product/vortexm2/",
     "sourceSlug": "vortexm2",
     "images": [
-      "https://www.thistlescientific.com/wp-content/uploads/2025/02/VORTEXM2.jpg",
-      "https://www.thistlescientific.com/wp-content/uploads/2025/02/VORTEX-2-small.jpg",
-      "https://www.thistlescientific.com/wp-content/uploads/2025/02/Vortex-Heads-small.jpg"
+      "/products/thistle/2026/342f207ebc4c627a.jpg",
+      "/products/thistle/2026/0d4ecc687df9de22.jpg",
+      "/products/thistle/2026/b934352222de7a49.jpg"
     ]
   },
   "VT-H1": {
@@ -9532,7 +9532,7 @@
     "sourceUrl": "https://www.thistlescientific.com/product/ezeeshaker-3-d-shaker-with-non-slip-mat/",
     "sourceSlug": "ezeeshaker-3-d-shaker-with-non-slip-mat",
     "images": [
-      "https://www.thistlescientific.com/wp-content/uploads/2025/02/3D-shaker.jpg"
+      "/products/thistle/2026/956d8657b75bd3f4.jpg"
     ]
   },
   "CSL3DSHAKER": {
@@ -9829,7 +9829,7 @@
     "sourceUrl": "https://www.thistlescientific.com/product/mini-incubator-17l-capacity/",
     "sourceSlug": "mini-incubator-17l-capacity",
     "images": [
-      "https://www.thistlescientific.com/wp-content/uploads/2025/02/MINI-INCBASIC.jpg"
+      "/products/thistle/2026/accddd0d2661c1f5.jpg"
     ]
   },
   "INCBASIC-SHELF": {
@@ -12459,6 +12459,165 @@
     "sourceSlug": "acrylic-tape-dispenser-for-identitape",
     "images": [
       "https://www.thistlescientific.com/wp-content/uploads/2025/03/identidispenser.WEB_.jpg"
+    ]
+  },
+  "DUVCAB": {
+    "sourceTitle": "Digital UV Sterilisation Cabinet",
+    "sourceUrl": "https://www.thistlescientific.com/product/duvcab/",
+    "sourceSlug": "duvcab",
+    "images": [
+      "/products/thistle/2026/cd003565cbed8667.jpg",
+      "/products/thistle/2026/e8931c53e7482c42.jpg"
+    ]
+  },
+  "DUVCAB$": {
+    "sourceTitle": "Digital UV Sterilisation Cabinet",
+    "sourceUrl": "https://www.thistlescientific.com/product/duvcab/",
+    "sourceSlug": "duvcab",
+    "images": [
+      "/products/thistle/2026/cd003565cbed8667.jpg",
+      "/products/thistle/2026/e8931c53e7482c42.jpg"
+    ]
+  },
+  "DUVCAB-TW4": {
+    "sourceTitle": "Digital UV Sterilisation Cabinet",
+    "sourceUrl": "https://www.thistlescientific.com/product/duvcab/",
+    "sourceSlug": "duvcab",
+    "images": [
+      "/products/thistle/2026/cd003565cbed8667.jpg",
+      "/products/thistle/2026/e8931c53e7482c42.jpg"
+    ]
+  },
+  "EZEECYCLER-TRI": {
+    "sourceTitle": "EZEEcycler TRI, Triple Block Thermal Cycler",
+    "sourceUrl": "https://www.thistlescientific.com/product/ezeecycler-tri-110-220v-with-uk-eu-plug/",
+    "sourceSlug": "ezeecycler-tri-110-220v-with-uk-eu-plug",
+    "images": [
+      "/products/thistle/2026/3fb0870cfd11abb3.png"
+    ]
+  },
+  "EZEEQUANT10": {
+    "sourceTitle": "EZEE Quantum 10 Centrifuge",
+    "sourceUrl": "https://www.thistlescientific.com/product/ezee-quantum-10-centrifuge/",
+    "sourceSlug": "ezee-quantum-10-centrifuge",
+    "images": [
+      "/products/thistle/2026/76a38ea6800d109d.jpg"
+    ]
+  },
+  "POWERPRO300-M2": {
+    "sourceTitle": "TOUCH SCREEN POWER Pro 300V 700mA 150W – 110/230V",
+    "sourceUrl": "https://www.thistlescientific.com/product/touch-screen-power-pro-300v-700ma-150w-110-230v/",
+    "sourceSlug": "touch-screen-power-pro-300v-700ma-150w-110-230v",
+    "images": [
+      "/products/thistle/2026/c34b6c6b0484bbce.jpg",
+      "/products/thistle/2026/f386defe65a083d4.jpg",
+      "/products/thistle/2026/38c6614c183bb547.jpg"
+    ]
+  },
+  "EZEECYCLER-GO": {
+    "sourceTitle": "EZEEcycler GO, Economical Gradient Thermal Cycler",
+    "sourceUrl": "https://www.thistlescientific.com/product/ezeecycler-go-110-220v-with-uk-eu-plug/",
+    "sourceSlug": "ezeecycler-go-110-220v-with-uk-eu-plug",
+    "images": [
+      "/products/thistle/2026/44f1cc201ecb0adf.jpg"
+    ]
+  },
+  "EZEECYCLER-PRO": {
+    "sourceTitle": "EZEEcycler PRO, Precision Thermal Cycler",
+    "sourceUrl": "https://www.thistlescientific.com/product/ezeecycler-pro-110-220v-with-uk-eu-plug/",
+    "sourceSlug": "ezeecycler-pro-110-220v-with-uk-eu-plug",
+    "images": [
+      "/products/thistle/2026/569341ed7509d2ce.png"
+    ]
+  },
+  "EZEEQUANT3": {
+    "sourceTitle": "EZEE Quantum 3 Centrifuge",
+    "sourceUrl": "https://www.thistlescientific.com/product/ezee-quantum-3-centrifuge/",
+    "sourceSlug": "ezee-quantum-3-centrifuge",
+    "images": [
+      "/products/thistle/2026/76a38ea6800d109d.jpg"
+    ]
+  },
+  "EZEEQUANT30": {
+    "sourceTitle": "EZEE Quantum 30 Centrifuge",
+    "sourceUrl": "https://www.thistlescientific.com/product/ezee-quantum-30-centrifuge/",
+    "sourceSlug": "ezee-quantum-30-centrifuge",
+    "images": [
+      "/products/thistle/2026/76a38ea6800d109d.jpg"
+    ]
+  },
+  "EZEEQUANT8": {
+    "sourceTitle": "EZEE Quantum 8 Centrifuge",
+    "sourceUrl": "https://www.thistlescientific.com/product/ezee-quantum-8-centrifuge/",
+    "sourceSlug": "ezee-quantum-8-centrifuge",
+    "images": [
+      "/products/thistle/2026/76a38ea6800d109d.jpg"
+    ]
+  },
+  "3DSHAKER-UK": {
+    "sourceTitle": "EZEEshaker 3-D shaker with non-slip mat",
+    "sourceUrl": "https://www.thistlescientific.com/product/ezeeshaker-3-d-shaker-with-non-slip-mat/",
+    "sourceSlug": "ezeeshaker-3-d-shaker-with-non-slip-mat",
+    "images": [
+      "/products/thistle/2026/956d8657b75bd3f4.jpg"
+    ]
+  },
+  "3DSHAKER$": {
+    "sourceTitle": "EZEEshaker 3-D shaker with non-slip mat",
+    "sourceUrl": "https://www.thistlescientific.com/product/ezeeshaker-3-d-shaker-with-non-slip-mat/",
+    "sourceSlug": "ezeeshaker-3-d-shaker-with-non-slip-mat",
+    "images": [
+      "/products/thistle/2026/956d8657b75bd3f4.jpg"
+    ]
+  },
+  "POWERPRO3AMP-M2": {
+    "sourceTitle": "TOUCH SCREEN POWER Pro 300V 3000mA 300W – 110/230V",
+    "sourceUrl": "https://www.thistlescientific.com/product/touch-screen-power-pro-300v-3000ma-300w-110-230v/",
+    "sourceSlug": "touch-screen-power-pro-300v-3000ma-300w-110-230v",
+    "images": [
+      "/products/thistle/2026/ba452b8777aced5d.jpg",
+      "/products/thistle/2026/3c644298c838b3e9.jpg"
+    ]
+  },
+  "POWERPRO500-M2": {
+    "sourceTitle": "TOUCH SCREEN POWER Pro 500V 800mA 300W-110/230V",
+    "sourceUrl": "https://www.thistlescientific.com/product/touch-screen-power-pro-500v-800ma-300w-110-230v/",
+    "sourceSlug": "touch-screen-power-pro-500v-800ma-300w-110-230v",
+    "images": [
+      "/products/thistle/2026/95272c62bcb9edbf.jpg",
+      "/products/thistle/2026/2d1189b928d4036a.jpg"
+    ]
+  },
+  "EZEEQUANT8R": {
+    "sourceTitle": "EZEE Quantum 8 Refrigerated Centrifuge",
+    "sourceUrl": "https://www.thistlescientific.com/product/ezee-quantum-8-refrigerated-centrifuge/",
+    "sourceSlug": "ezee-quantum-8-refrigerated-centrifuge",
+    "images": [
+      "/products/thistle/2026/748c3f4dc0ef1414.jpg"
+    ]
+  },
+  "EZEEQUANT10R": {
+    "sourceTitle": "EZEE Quantum 10 Refrigerated Centrifuge",
+    "sourceUrl": "https://www.thistlescientific.com/product/ezee-quantum-10-refrigerated-centrifuge/",
+    "sourceSlug": "ezee-quantum-10-refrigerated-centrifuge",
+    "images": [
+      "/products/thistle/2026/748c3f4dc0ef1414.jpg"
+    ]
+  },
+  "EZEEQUANT30R": {
+    "sourceTitle": "EZEE Quantum 30 Refrigerated Centrifuge",
+    "sourceUrl": "https://www.thistlescientific.com/product/ezee-quantum-30-refrigerated-centrifuge/",
+    "sourceSlug": "ezee-quantum-30-refrigerated-centrifuge",
+    "images": [
+      "/products/thistle/2026/748c3f4dc0ef1414.jpg"
+    ]
+  },
+  "EZEEQUANT40R": {
+    "sourceTitle": "EZEE Quantum 40 Refrigerated Centrifuge",
+    "sourceUrl": "https://www.thistlescientific.com/product/ezee-quantum-40-refrigerated-centrifuge/",
+    "sourceSlug": "ezee-quantum-40-refrigerated-centrifuge",
+    "images": [
+      "/products/thistle/2026/748c3f4dc0ef1414.jpg"
     ]
   }
 }

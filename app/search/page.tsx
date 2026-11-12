@@ -22,6 +22,7 @@ import {
 import { OFFICIAL_ABM_CELL_MODEL_PRODUCTS } from "@/lib/abm/cell-model-data";
 import { verifiedMissingAbmVectorUrl } from "@/lib/abm/vector-links";
 import { cleaverProductHref, findLocalCleaverProduct, searchLocalCleaverProducts } from "@/lib/cleaver/catalog";
+import { getThistle2026Product } from "@/lib/cleaver/launches";
 import { PUBLIC_CATALOG_CACHE, sanityCdnClient } from "@/lib/sanity/sanity.client";
 
 export const revalidate = 300;
@@ -86,9 +87,9 @@ const FIND_EXACT_CATALOG_NUMBER = `
   _type == "product"
   && (!defined(isActive) || isActive == true)
   && (
-    brandSlug in ["abm", "kent", "cleaver", "cleaverscientific"]
-    || brand->slug.current in ["abm", "kent", "cleaver", "cleaverscientific"]
-    || brand->themeKey in ["abm", "kent", "cleaver", "cleaverscientific"]
+    brandSlug in ["abm", "kent", "cleaver", "cleaverscientific", "thistle", "thistlescientific"]
+    || brand->slug.current in ["abm", "kent", "cleaver", "cleaverscientific", "thistle", "thistlescientific"]
+    || brand->themeKey in ["abm", "kent", "cleaver", "cleaverscientific", "thistle", "thistlescientific"]
   )
   && (
     lower(sku) == lower($catalogNumber)
@@ -150,8 +151,10 @@ const BRAND_ALIASES: Record<string, { key: string; label: string }> = {
   animalid: { key: "aims", label: "AIMS" },
   seedburo: { key: "seedburo", label: "SeedBuro" },
   bioplastics: { key: "bioplastics", label: "BIOplastics" },
-  cleaver: { key: "cleaverscientific", label: "Cleaver Scientific" },
-  cleaverscientific: { key: "cleaverscientific", label: "Cleaver Scientific" },
+  cleaver: { key: "thistlescientific", label: "Thistle Scientific" },
+  cleaverscientific: { key: "thistlescientific", label: "Thistle Scientific" },
+  thistle: { key: "thistlescientific", label: "Thistle Scientific" },
+  thistlescientific: { key: "thistlescientific", label: "Thistle Scientific" },
   cellfreesciences: { key: "cellfreesciences", label: "CellFree Sciences" },
   plaslabs: { key: "plaslabs", label: "PLAS-LABS" },
   affinityimmuno: { key: "affinityimmuno", label: "Affinity Immuno" },
@@ -211,8 +214,8 @@ function exactCatalogHref(doc: ExactCatalogMatch) {
   if (brandKey === "abm" || brandKey === "appliedbiologicalmaterials") {
     return `/products/abm/item/${encodeURIComponent(doc.slug)}`;
   }
-  if (brandKey === "cleaver" || brandKey === "cleaverscientific") {
-    return `/products/cleaver/item/${encodeURIComponent(doc.slug)}`;
+  if (["cleaver", "cleaverscientific", "thistle", "thistlescientific"].includes(brandKey)) {
+    return `/products/thistle/item/${encodeURIComponent(doc.slug)}`;
   }
   return "";
 }
@@ -265,7 +268,7 @@ function liveResultHref(row: LiveSearchRow, brandKey: string) {
   const slug = stringValue(row.slug);
   if (slug && brandKey === "abm") return { href: `/products/abm/item/${encodeURIComponent(slug)}`, direct: true };
   if (slug && brandKey === "kent") return { href: `/products/kent/item/${encodeURIComponent(slug)}`, direct: true };
-  if (slug && (brandKey === "cleaver" || brandKey === "cleaverscientific")) return { href: `/products/cleaver/item/${encodeURIComponent(slug)}`, direct: true };
+  if (slug && (["cleaver", "cleaverscientific", "thistle", "thistlescientific"].includes(brandKey))) return { href: `/products/thistle/item/${encodeURIComponent(slug)}`, direct: true };
 
   const title = stringValue(row.title);
   return {
@@ -411,11 +414,18 @@ export default async function SearchPage({
   const qRaw = (resolvedSearchParams?.q || "").trim();
   const q = qRaw.replace(/\s+/g, " ").trim();
   const requestedBrand = normalizeBrandToken((resolvedSearchParams?.brand || "").trim());
-  const selectedBrand = requestedBrand === "animalid" ? "aims" : requestedBrand;
+  const selectedBrand = requestedBrand === "animalid" ? "aims" : BRAND_ALIASES[requestedBrand]?.key || requestedBrand;
   const selectedScope = normalizeCrisprSearchScope((resolvedSearchParams?.scope || "").trim());
   const requestedPage = clampInt(resolvedSearchParams?.page);
 
   if (!q) redirect("/products");
+  if (["thistle", "thistlescientific", "cleaver", "cleaverscientific"].includes(normalizeBrandToken(q))) {
+    redirect("/products/thistle");
+  }
+  const launch = getThistle2026Product(q);
+  if (launch?.slug && (!selectedBrand || selectedBrand === "thistlescientific")) {
+    redirect(cleaverProductHref({ slug: launch.slug }));
+  }
 
   let exactMissingVectorResult: SearchResult | null = null;
 
@@ -460,7 +470,7 @@ export default async function SearchPage({
     exactTargets.push(...kentTargets);
 
     const cleaverTargets = (Array.isArray(exactDocs) ? exactDocs : [])
-      .filter((doc) => normalizeBrandToken(String(doc.brandKey || "")).startsWith("cleaver"))
+      .filter((doc) => ["cleaver", "cleaverscientific", "thistle", "thistlescientific"].includes(normalizeBrandToken(String(doc.brandKey || ""))))
       .map(exactCatalogHref)
       .filter(Boolean);
     exactTargets.push(...cleaverTargets);
@@ -654,8 +664,8 @@ export default async function SearchPage({
       title: row.title,
       sku: row.sku,
       description: row.categoryPathTitles.at(-1),
-      brandKey: "cleaverscientific",
-      brandLabel: "Cleaver Scientific",
+      brandKey: "thistlescientific",
+      brandLabel: "Thistle Scientific",
       href: cleaverProductHref(row),
       kind: "Product",
       direct: true,

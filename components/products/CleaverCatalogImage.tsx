@@ -52,7 +52,7 @@ export default function CleaverCatalogImage({ title, sources }: Props) {
     return (
       <div className="flex h-full w-full items-center justify-center p-6 text-center" role="img" aria-label={`${title} - official product image unavailable`}>
         <div>
-          <div className="text-[11px] font-semibold uppercase tracking-[0.14em] text-slate-400">Cleaver Scientific</div>
+          <div className="text-[11px] font-semibold uppercase tracking-[0.14em] text-slate-400">Thistle Scientific</div>
           <div className="mt-2 text-xs leading-5 text-slate-400">Official product image unavailable</div>
         </div>
       </div>

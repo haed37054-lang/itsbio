@@ -1,16 +1,19 @@
 import Image from "next/image";
 
 export default function CleaverHeroBanner({
-  title = "Cleaver Scientific Products",
+  title = "Thistle Scientific Products",
   eyebrow = "ITS BIO",
+  headingAs = "h1",
 }: {
   title?: string;
   eyebrow?: string;
+  headingAs?: "h1" | "h2";
 }) {
+  const Heading = headingAs;
   return (
     <section
       className="relative overflow-hidden border-b border-[#784594]/25 bg-[#fcf9fe]"
-      aria-label="Cleaver Scientific page hero"
+      aria-label="Thistle Scientific page hero"
     >
       <div className="absolute inset-0 bg-[linear-gradient(110deg,#ffffff_0%,#fcf9fe_58%,#f3ebf8_100%)]" />
       <div className="pointer-events-none absolute -right-[9%] -top-[55%] h-[440px] w-[440px] rounded-full bg-[#784594]/10 md:right-[2%]" aria-hidden="true" />
@@ -23,19 +26,19 @@ export default function CleaverHeroBanner({
             <span className="h-px w-8 bg-[#784594]" aria-hidden="true" />
             {eyebrow}
           </div>
-          <h1 className="mt-4 max-w-[820px] text-3xl font-semibold leading-[1.12] tracking-[-0.035em] text-slate-950 md:text-[44px]">
+          <Heading className="mt-4 max-w-[820px] text-3xl font-semibold leading-[1.12] tracking-[-0.035em] text-slate-950 md:text-[44px]">
             {title}
-          </h1>
+          </Heading>
           <p className="mt-4 max-w-2xl text-sm leading-6 text-slate-600 md:text-[15px]">
-            Electrophoresis systems, gel documentation, power supplies and laboratory equipment from Cleaver Scientific.
+            Thistle Scientific supplies electrophoresis systems, gel documentation, PCR thermal cyclers, centrifuges and laboratory equipment.
           </p>
         </div>
 
         <div className="hidden justify-self-end md:block">
           <div className="flex h-[126px] w-[330px] items-center justify-center rounded-[22px] border border-[#784594]/20 bg-white px-8 shadow-[0_18px_50px_rgba(92,46,115,0.10)]">
             <Image
-              src="/partners/Cleaverscientific-logo.png"
-              alt="Cleaver Scientific"
+              src="/partners/thistle-scientific-logo.png"
+              alt="Thistle Scientific"
               width={220}
               height={92}
               priority

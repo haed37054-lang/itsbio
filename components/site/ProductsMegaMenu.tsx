@@ -62,11 +62,11 @@ function categoryItems(baseHref: string, labels: string[]): CategoryItem[] {
 }
 
 const CLEAVER_CATEGORY_HREFS: Record<string, string> = {
-  "Electrophoresis Equipment": "/products/cleaver/main-products/electrophoresis-systems",
-  "Gel Documentation": "/products/cleaver/main-products/gel-documentation-imaging",
-  "Electrophoresis Reagents": "/products/cleaver/main-products/electrophoresis-reagents",
-  "General Laboratory Products": "/products/cleaver/main-products/general-laboratory-equipment",
-  "Teaching and Education": "/products/cleaver/main-products/teaching-education",
+  "Electrophoresis Equipment": "/products/thistle/main-products/electrophoresis-systems",
+  "Gel Documentation": "/products/thistle/main-products/gel-documentation-imaging",
+  "Electrophoresis Reagents": "/products/thistle/main-products/electrophoresis-reagents",
+  "General Laboratory Products": "/products/thistle/main-products/general-laboratory-equipment",
+  "Teaching and Education": "/products/thistle/main-products/teaching-education",
 };
 
 function productCategoryHref(brand: Brand, category: string) {
@@ -334,11 +334,11 @@ const BRANDS: Brand[] = [
   },
   {
     key: "cleaver",
-    name: "Cleaver Scientific",
+    name: "Thistle Scientific",
     area: "Laboratory Equipment",
-    description: "Practical equipment for electrophoresis, gel documentation, blotting, power supply, and clinical laboratory workflows.",
-    href: "/products/cleaver",
-    searchKey: "cleaverscientific",
+    description: "Electrophoresis, gel documentation, PCR thermal cyclers, centrifuges and general laboratory equipment from Thistle Scientific.",
+    href: "/products/thistle",
+    searchKey: "thistlescientific",
     categories: ["Electrophoresis Equipment", "Gel Documentation", "Electrophoresis Reagents", "General Laboratory Products", "Teaching and Education"],
     theme: THEMES.cleaver,
   },

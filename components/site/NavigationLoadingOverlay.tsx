@@ -14,7 +14,7 @@ type NavigationTheme = "default" | "kent" | "cleaver" | "seedburo" | "aims";
 
 function navigationThemeForPath(pathname: string): NavigationTheme {
   if (pathname === "/products/kent" || pathname.startsWith("/products/kent/")) return "kent";
-  if (pathname === "/products/cleaver" || pathname.startsWith("/products/cleaver/")) return "cleaver";
+  if (pathname === "/products/thistle" || pathname.startsWith("/products/thistle/")) return "cleaver";
   if (pathname === "/products/seedburo" || pathname.startsWith("/products/seedburo/")) return "seedburo";
   if (pathname === "/products/aims" || pathname.startsWith("/products/aims/")) return "aims";
   return "default";

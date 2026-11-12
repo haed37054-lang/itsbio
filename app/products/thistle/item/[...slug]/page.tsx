@@ -92,7 +92,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const product = await getCleaverProduct(slug.at(-1) || "");
   if (!product) return { title: "Product not found" };
   return productSearchMetadata({ name: cleaverDisplayTitle(product), brand: CLEAVER_BRAND_NAME, sku: product.sku,
-    path: cleaverCanonicalProductHref(product), description: product.summary, image: product.image });
+    modelNumbers: product.cleaverVariations?.map(({ sku }) => sku || "").filter(Boolean),
+    path: cleaverCanonicalProductHref(product), description: product.summary?.replace(/Cleaver Scientific/gi, CLEAVER_BRAND_NAME), image: product.image });
 }
 
 export default async function CleaverProductDetailPage({ params }: PageProps) {
@@ -119,14 +120,14 @@ export default async function CleaverProductDetailPage({ params }: PageProps) {
   const crumbs = [
     { label: "Home", href: "/" },
     { label: "Products", href: "/products" },
-    { label: CLEAVER_BRAND_NAME, href: "/products/cleaver" },
-    ...categoryPathTitles.map((label, index) => ({ label, href: `/products/cleaver/${categoryPath.slice(0, index + 1).join("/")}` })),
+    { label: CLEAVER_BRAND_NAME, href: "/products/thistle" },
+    ...categoryPathTitles.map((label, index) => ({ label, href: `/products/thistle/${categoryPath.slice(0, index + 1).join("/")}` })),
     { label: displayTitle },
   ];
 
   return (
     <main className="bg-white pb-20">
-      <CleaverHeroBanner title={displayTitle} eyebrow="Cleaver Scientific product" />
+      <CleaverHeroBanner title={displayTitle} eyebrow="Thistle Scientific product" headingAs="h2" />
       <section className="border-b border-slate-200 bg-[#fbfafc]"><div className="mx-auto max-w-[1260px] px-6 py-5 md:py-6"><Breadcrumb items={crumbs} /></div></section>
 
       <div className="mx-auto max-w-[1260px] px-6 pt-10 md:pt-14">
@@ -153,7 +154,7 @@ export default async function CleaverProductDetailPage({ params }: PageProps) {
             </section>
           ) : (
             <section className="py-2 lg:py-5">
-              <div className="flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.24em] text-[#8650a0]"><span className="h-px w-8 bg-[#8650a0]" />Cleaver Scientific</div>
+              <div className="flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.24em] text-[#8650a0]"><span className="h-px w-8 bg-[#8650a0]" />Thistle Scientific</div>
               <h1 data-product-name={displayTitle} className="mt-5 text-[32px] font-semibold leading-[1.12] tracking-tight text-slate-950 md:text-[44px]">{displayTitle}</h1>
               <div data-cat-no={product.sku} className="mt-6 inline-flex rounded-full bg-[#f4edf8] px-4 py-2 text-sm font-semibold text-[#61247b]">Catalog No. {product.sku}</div>
               {product.summary ? <p className="mt-7 text-[15px] leading-8 text-slate-600">{product.summary}</p> : null}
@@ -164,8 +165,9 @@ export default async function CleaverProductDetailPage({ params }: PageProps) {
           )}
         </div>
 
-        <ProductSearchInfo info={{ name: displayTitle, brand: CLEAVER_BRAND_NAME, sku: product.sku, description: product.summary,
-          path: canonicalPath, image: photos[0] }} brandHref="/products/cleaver" />
+        <ProductSearchInfo info={{ name: displayTitle, brand: CLEAVER_BRAND_NAME, sku: product.sku, description: product.summary?.replace(/Cleaver Scientific/gi, CLEAVER_BRAND_NAME),
+          modelNumbers: product.cleaverVariations?.map(({ sku }) => sku || "").filter(Boolean),
+          path: canonicalPath, image: photos[0] }} brandHref="/products/thistle" />
         <CleaverProductSections product={product} />
 
         {sourceFidelity ? null : <section className="mt-14 flex flex-col gap-5 rounded-2xl bg-[#f5f1f8] px-7 py-8 md:mt-20 md:flex-row md:items-center md:justify-between md:px-9"><div><h2 className="text-lg font-semibold text-slate-900">Need help selecting the right system?</h2><p className="mt-1 text-sm leading-6 text-slate-600">Our team can help with product specifications, compatibility, and quotations.</p></div><Link href="/contact" className="inline-flex h-11 shrink-0 items-center justify-center rounded-full bg-[#61247b] px-6 text-sm font-semibold text-white transition hover:bg-[#471659]">Contact our specialists</Link></section>}

@@ -47,25 +47,25 @@ export default function Header() {
 
   useEffect(() => {
     const timer = window.setTimeout(() => {
-      router.prefetch("/products/cleaver");
+      router.prefetch("/products/thistle");
 
-      if (pathname === "/products/cleaver" || pathname === "/products/cleaver/") {
-        router.prefetch("/products/cleaver/main-products");
-        router.prefetch("/products/cleaver/accessories");
-      } else if (pathname.startsWith("/products/cleaver/main-products")) {
+      if (pathname === "/products/thistle" || pathname === "/products/thistle/") {
+        router.prefetch("/products/thistle/main-products");
+        router.prefetch("/products/thistle/accessories");
+      } else if (pathname.startsWith("/products/thistle/main-products")) {
         [
-          "/products/cleaver/main-products/electrophoresis-systems",
-          "/products/cleaver/main-products/gel-documentation-imaging",
-          "/products/cleaver/main-products/general-laboratory-equipment",
-          "/products/cleaver/main-products/electrophoresis-reagents",
-          "/products/cleaver/main-products/teaching-education",
+          "/products/thistle/main-products/electrophoresis-systems",
+          "/products/thistle/main-products/gel-documentation-imaging",
+          "/products/thistle/main-products/general-laboratory-equipment",
+          "/products/thistle/main-products/electrophoresis-reagents",
+          "/products/thistle/main-products/teaching-education",
         ].forEach((href) => router.prefetch(href));
-      } else if (pathname.startsWith("/products/cleaver/accessories")) {
+      } else if (pathname.startsWith("/products/thistle/accessories")) {
         [
-          "/products/cleaver/accessories/electrophoresis-accessories",
-          "/products/cleaver/accessories/gel-documentation-accessories",
-          "/products/cleaver/accessories/general-laboratory-accessories",
-          "/products/cleaver/accessories/replacement-parts-spares",
+          "/products/thistle/accessories/electrophoresis-accessories",
+          "/products/thistle/accessories/gel-documentation-accessories",
+          "/products/thistle/accessories/general-laboratory-accessories",
+          "/products/thistle/accessories/replacement-parts-spares",
         ].forEach((href) => router.prefetch(href));
       }
     }, 450);
@@ -88,7 +88,7 @@ export default function Header() {
       }
 
       if (url.origin !== window.location.origin) return;
-      if (!/^\/products\/(cleaver|kent|seedburo|aims)(?:\/|$)/.test(url.pathname)) return;
+      if (!/^\/products\/(thistle|cleaver|kent|seedburo|aims)(?:\/|$)/.test(url.pathname)) return;
       if (anchor.target === "_blank" || anchor.hasAttribute("download")) return;
       if (url.pathname === window.location.pathname && url.search === window.location.search) return;
 

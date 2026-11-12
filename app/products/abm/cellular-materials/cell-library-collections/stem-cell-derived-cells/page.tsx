@@ -5,7 +5,7 @@ import { getSpecialAbmCellCatalog } from "@/lib/abm/special-cell-catalog";
 import { abmResourceImagePath } from "@/lib/abm/resource-links";
 import { CellLibraryShell, SearchBox, SectionTitle, SmallCard, Stat } from "../_cellLibraryShared";
 
-export default async function StemCellDerivedCellsPage({ searchParams }: { searchParams?: Promise<{ q?: string; page?: string }> | { q?: string; page?: string } }) {
+export default async function StemCellDerivedCellsPage({ searchParams }: { searchParams?: Promise<{ q?: string; page?: string }> }) {
   const sp = await Promise.resolve(searchParams as any);
   const query = String(sp?.q || "").trim();
   const records = await getSpecialAbmCellCatalog("stem");

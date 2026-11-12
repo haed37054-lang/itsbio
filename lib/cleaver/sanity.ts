@@ -1,6 +1,7 @@
 import { cache } from "react";
 
 import sourceMap from "@/data/cleaver-source-map.json";
+import { getThistle2026Product } from "@/lib/cleaver/launches";
 import {
   CLEAVER_INVENTORY,
   CLEAVER_PAGE_SIZE,
@@ -19,9 +20,9 @@ const CLEAVER_FILTER = `
   _type == "product"
   && (!defined(isActive) || isActive == true)
   && (
-    brandSlug in ["cleaver", "cleaverscientific"]
-    || brand->slug.current in ["cleaver", "cleaverscientific"]
-    || brand->themeKey in ["cleaver", "cleaverscientific"]
+    brandSlug in ["cleaver", "cleaverscientific", "thistle", "thistlescientific"]
+    || brand->slug.current in ["cleaver", "cleaverscientific", "thistle", "thistlescientific"]
+    || brand->themeKey in ["cleaver", "cleaverscientific", "thistle", "thistlescientific"]
   )
 `;
 
@@ -339,6 +340,11 @@ function manufacturerSourceUrls(slugOrSku: string) {
 
 export const getCleaverProduct = cache(async (slugOrSku: string): Promise<CleaverProduct | null> => {
   const decoded = decodeURIComponent(slugOrSku);
+  const launch = getThistle2026Product(decoded);
+  if (launch) {
+    const local = findLocalCleaverProduct(launch.sku || "");
+    if (local) return { ...local, ...launch } as CleaverProduct;
+  }
   const local = findLocalCleaverProduct(decoded);
   const fixtureBacked = local ? null : findFixtureBackedProductBySourceSlug(decoded);
   if (fixtureBacked) return fixtureBacked;

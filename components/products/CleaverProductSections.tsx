@@ -4,7 +4,7 @@ import sourceMap from "@/data/cleaver-source-map.json";
 import inventory from "@/data/cleaver-product-catalog.json";
 import { createCleaverRelationImageResolver } from "@/lib/cleaver/relation-images";
 import CleaverSourceImage from "@/components/products/CleaverSourceImage";
-import HtmlContent from "@/components/site/HtmlContent";
+import HtmlContent from "@/components/products/ThistleHtmlContent";
 import type { CleaverProduct } from "@/lib/cleaver/catalog";
 
 type IncludedCardProps = {

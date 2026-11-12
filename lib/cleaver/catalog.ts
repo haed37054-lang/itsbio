@@ -1,8 +1,9 @@
 import categories from "@/data/cleaver-categories.json";
 import inventory from "@/data/cleaver-product-catalog.json";
+import { THISTLE_2026_PRODUCTS } from "@/lib/cleaver/launches";
 
-export const CLEAVER_BRAND_KEY = "cleaver";
-export const CLEAVER_BRAND_NAME = "Cleaver Scientific";
+export const CLEAVER_BRAND_KEY = "thistle";
+export const CLEAVER_BRAND_NAME = "Thistle Scientific";
 export const CLEAVER_PAGE_SIZE = 24;
 
 export type CleaverCategory = {
@@ -163,7 +164,12 @@ export function cleaverCategoryTitles(path: string[]) {
   return match.root.slug === match.current.slug ? [match.root.title] : [match.root.title, match.current.title];
 }
 
-export const CLEAVER_INVENTORY: CleaverProduct[] = inventory.map((row) => {
+const launchRows = THISTLE_2026_PRODUCTS.flatMap((product, index) => product.modelSkus.map((sku) => ({
+  sku, title: product.title, order: -1000 + index,
+})));
+const launchSkus = new Set(launchRows.map(({ sku }) => sku.toUpperCase()));
+
+export const CLEAVER_INVENTORY: CleaverProduct[] = [...launchRows, ...inventory.filter(({ sku }) => !launchSkus.has(sku.toUpperCase()))].map((row) => {
   const categoryPath = classifyCleaverProduct(row.sku, row.title);
   return {
     _id: `cleaver-local-${slugifyCleaver(row.sku)}`,
@@ -177,7 +183,7 @@ export const CLEAVER_INVENTORY: CleaverProduct[] = inventory.map((row) => {
 });
 
 export function cleaverProductHref(product: Pick<CleaverProduct, "slug">) {
-  return `/products/cleaver/item/${encodeURIComponent(product.slug)}`;
+  return `/products/thistle/item/${encodeURIComponent(product.slug)}`;
 }
 
 export function findLocalCleaverProduct(value: string) {

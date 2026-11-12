@@ -86,7 +86,7 @@ export function createCleaverRelationImageResolver(
     return {
       imageUrl,
       internalHref: item.internalHref || relatedItem?.internalHref
-        || (resolvedIdentity?.sourceSlug ? `/products/cleaver/item/${resolvedIdentity.sourceSlug}` : undefined),
+        || (resolvedIdentity?.sourceSlug ? `/products/thistle/item/${resolvedIdentity.sourceSlug}` : undefined),
       status: imageUrl ? "resolved" : resolvedIdentity ? "source-without-image" : "unresolved",
     };
   }

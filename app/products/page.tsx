@@ -41,12 +41,13 @@ const BRANDS: Brand[] = [
   },
   {
     key: "cleaver",
-    name: "Cleaver Scientific",
-    shortName: "Cleaver Scientific",
+    liveCatalog: true,
+    name: "Thistle Scientific",
+    shortName: "Thistle Scientific",
     eyebrow: "LABORATORY EQUIPMENT",
-    description: "Electrophoresis, gel documentation, blotting, and practical equipment for life science laboratories.",
-    logo: "/partners/Cleaverscientific-logo.png",
-    href: "/products/cleaver",
+    description: "Electrophoresis, gel documentation, PCR thermal cyclers, centrifuges and general laboratory equipment from Thistle Scientific.",
+    logo: "/partners/thistle-scientific-logo.png",
+    href: "/products/thistle",
     tags: ["Electrophoresis", "Imaging", "Lab Equipment"],
   },
   {

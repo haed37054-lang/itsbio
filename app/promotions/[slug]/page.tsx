@@ -297,7 +297,7 @@ export default async function PromotionDetailPage({
           {brochure ? (
             <div className="mt-4 space-y-2 text-sm text-slate-700">
               <p>{brochure.summary}</p>
-              <p className="font-semibold text-orange-700">행사 기간 · {brochure.dateText}</p>
+              <p className="font-semibold text-orange-700">{brochure.dateText}</p>
             </div>
           ) : null}
 
@@ -306,7 +306,7 @@ export default async function PromotionDetailPage({
             <section className="mt-6">
               <div className="flex items-center gap-2 text-sm font-semibold text-slate-900">
                 <PaperclipIcon className="h-4 w-4 text-orange-600" />
-                첨부파일
+                Downloads
                 <span className="text-xs font-semibold text-slate-500">({attachments.length})</span>
               </div>
 
@@ -325,7 +325,7 @@ export default async function PromotionDetailPage({
                       target="_blank"
                       rel="noreferrer"
                       className="inline-flex max-w-full items-center gap-2 rounded-full border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 hover:bg-slate-50 transition"
-                      title="새 탭에서 열립니다."
+                      title="Opens in a new tab"
                     >
                       <FileTypePill mime={mime} name={name} />
                       <span className="max-w-[360px] truncate">{name}</span>

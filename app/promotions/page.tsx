@@ -6,8 +6,8 @@ import { getPromotionPage, type PromotionPost } from "@/lib/editorial-posts";
 import { urlFor } from "@/lib/sanity/image";
 
 export const metadata: Metadata = {
-  title: "프로모션 및 할인 행사",
-  description: "이츠바이오의 생명과학 시약 및 실험장비 할인 행사와 브랜드별 프로모션을 확인하세요.",
+  title: "Promotions & Special Offers",
+  description: "Explore current offers on life science reagents and laboratory equipment from ITS BIO and our partner brands.",
   alternates: { canonical: "/promotions" },
 };
 

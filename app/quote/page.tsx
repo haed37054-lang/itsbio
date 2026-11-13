@@ -42,6 +42,7 @@ export default function QuotePage() {
       phone: String(form.get("phone") ?? ""),
       product: String(form.get("product") ?? ""),
       catNo: String(form.get("catNo") ?? ""),
+      quantity: String(form.get("quantity") ?? ""),
       message: String(form.get("message") ?? ""),
       privacyAccepted: form.get("privacyAccepted") === "on",
       website: String(form.get("website") ?? ""),
@@ -114,6 +115,11 @@ export default function QuotePage() {
               </label>
             </div>
 
+            <label className="mt-3 block">
+              <span className={labelClass}>QUANTITY</span>
+              <input name="quantity" type="number" min={1} max={999999} step={1} inputMode="numeric" className={fieldClass} placeholder="e.g. 2 (optional)" />
+            </label>
+
             <textarea name="message" className="mt-3 min-h-[150px] w-full resize-y rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-orange-400 focus:ring-4 focus:ring-orange-50" placeholder="Message *" required />
             <input name="website" tabIndex={-1} autoComplete="off" aria-hidden className="hidden" />
 
@@ -137,3 +143,4 @@ export default function QuotePage() {
     </main>
   );
 }
+

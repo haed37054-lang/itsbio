@@ -147,6 +147,7 @@ export default function FloatingQuoteButton() {
       phone: String(form.get("phone") ?? ""),
       product: String(form.get("product") ?? ""),
       catNo: String(form.get("catNo") ?? ""),
+      quantity: String(form.get("quantity") ?? ""),
       configuration: String(form.get("configuration") ?? ""),
       message: String(form.get("message") ?? ""),
       privacyAccepted: form.get("privacyAccepted") === "on",
@@ -181,7 +182,9 @@ export default function FloatingQuoteButton() {
         `Phone: ${payload.phone}`,
         `Product name: ${payload.product}`,
         `Cat No: ${payload.catNo}`,
+        ...(payload.quantity ? [`Quantity: ${payload.quantity}`] : []),
         ...(payload.configuration ? [`Model / specification: ${payload.configuration}`] : []),
+        `Source page: ${payload.sourceUrl}`,
         "",
         payload.message,
       ].join("\n");
@@ -253,6 +256,10 @@ export default function FloatingQuoteButton() {
                   <p className="text-sm leading-6 text-slate-700">{configuration}</p>
                 </div> : null}
                 <input type="hidden" name="configuration" value={configuration} />
+                <label className="block w-full">
+                  <span className={labelClass}>QUANTITY</span>
+                  <input name="quantity" type="number" min={1} max={999999} step={1} inputMode="numeric" className={inputClass} placeholder="e.g. 2 (optional)" />
+                </label>
               </div>
 
               <textarea
@@ -324,3 +331,4 @@ export default function FloatingQuoteButton() {
     </>
   );
 }
+

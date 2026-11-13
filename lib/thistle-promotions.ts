@@ -6,9 +6,9 @@ const brochurePdf = "thistle-scientific-special-offer-2026.pdf";
 export const thistlePromotions = brochures.map(({ cover, pages, ...promotion }) => ({
   ...promotion,
   _id: promotion.slug,
-  campaignLabel: "ThistleScientific 할인행사",
+  campaignLabel: "Thistle Scientific Special Offers",
   coverPath: `${assetDirectory}/${cover}`,
-  dateText: `${promotion.endDate.replaceAll("-", ".")}까지`,
+  dateText: `Ends ${new Intl.DateTimeFormat("en-GB", { day: "numeric", month: "short", year: "numeric", timeZone: "UTC" }).format(new Date(promotion.endDate))}`,
   attachments: [{
     asset: {
       url: `${assetDirectory}/${brochurePdf}`,
@@ -19,6 +19,6 @@ export const thistlePromotions = brochures.map(({ cover, pages, ...promotion }) 
   gallery: pages.map(({ number, image }) => ({
     _key: String(number),
     localPath: `${assetDirectory}/${image}`,
-    alt: `${promotion.title} 브로슈어 ${number}쪽`,
+    alt: `${promotion.title} brochure, page ${number}`,
   })),
 }));

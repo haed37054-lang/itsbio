@@ -137,7 +137,7 @@ export function productSearchImage(image?: string | null): string | undefined {
 export function productSearchMetadata(info: ProductSearchInfo): Metadata {
   const identity = productSearchIdentity(info);
   const label = productSearchLabel(info.name);
-  const title = `${identity}${label && !identity.includes(label) ? ` · ${label}` : ""} | ${info.brand} | 이츠바이오`;
+  const title = `${identity}${label && !identity.includes(label) ? ` · ${label}` : ""} | ${info.brand} | ITS BIO 이츠바이오`;
   const description = productSearchDescription(info);
   const url = absoluteSiteUrl(info.path);
   const image = productSearchImage(info.image);

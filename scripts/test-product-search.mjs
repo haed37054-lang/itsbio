@@ -23,7 +23,7 @@ test("canonical URLs default to the official domain in every deployment environm
 
 test("exact product name and Cat.No. are retained in search results and canonical metadata", () => {
   const metadata = productSearchMetadata(breast);
-  assert.equal(metadata.title.absolute, "Human Breast FFPE Tissue Section (HS0048) | ABM | 이츠바이오");
+  assert.equal(metadata.title.absolute, "Human Breast FFPE Tissue Section (HS0048) | ABM | ITS BIO 이츠바이오");
   assert.equal(metadata.alternates.canonical, "https://itsbio.co.kr/products/abm/staged/product/HS0048");
   assert.equal(metadata.openGraph.url, metadata.alternates.canonical);
   assert.equal(metadata.twitter.description, metadata.description);

@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 
 import Breadcrumb from "@/components/site/Breadcrumb";
@@ -153,9 +152,8 @@ function chooseProductMap(rows: ProductRow[]) {
 
 function HeroBanner({ brandTitle }: { brandTitle: string }) {
   return (
-    <section className="relative">
+    <section className="relative" data-kent-hero>
       <div className="relative h-[220px] w-full overflow-hidden md:h-[280px]">
-        <Image src="/hero.png" alt="Products hero" fill priority className="object-cover" />
         <div className="absolute inset-0 bg-slate-950/35" />
         <div className={`${PAGE_SHELL} relative flex h-full items-center`}>
           <div>

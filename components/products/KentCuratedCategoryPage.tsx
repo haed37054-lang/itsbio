@@ -155,6 +155,7 @@ function HeroBanner({ brandTitle }: { brandTitle: string }) {
     <section className="relative" data-kent-hero>
       <div className="relative h-[220px] w-full overflow-hidden md:h-[280px]">
         <div className="absolute inset-0 bg-slate-950/35" />
+        <div className="pointer-events-none absolute inset-0" aria-hidden="true" />
         <div className={`${PAGE_SHELL} relative flex h-full items-center`}>
           <div>
             <div className="text-sm font-semibold uppercase tracking-[0.22em] text-white/80">Products</div>

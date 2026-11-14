@@ -93,6 +93,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!product) return { title: "Product not found" };
   return productSearchMetadata({ name: cleaverDisplayTitle(product), brand: CLEAVER_BRAND_NAME, sku: product.sku,
     modelNumbers: product.cleaverVariations?.map(({ sku }) => sku || "").filter(Boolean),
+    descriptionCandidates: [product.cleaverAtAGlance?.join(". "), product.highlights?.join(". "), product.overviewHtml],
     path: cleaverCanonicalProductHref(product), description: product.summary?.replace(/Cleaver Scientific/gi, CLEAVER_BRAND_NAME), image: product.image });
 }
 
@@ -166,6 +167,7 @@ export default async function CleaverProductDetailPage({ params }: PageProps) {
         </div>
 
         <ProductSearchInfo info={{ name: displayTitle, brand: CLEAVER_BRAND_NAME, sku: product.sku, description: product.summary?.replace(/Cleaver Scientific/gi, CLEAVER_BRAND_NAME),
+          descriptionCandidates: [product.cleaverAtAGlance?.join(". "), product.highlights?.join(". "), product.overviewHtml],
           modelNumbers: product.cleaverVariations?.map(({ sku }) => sku || "").filter(Boolean),
           path: canonicalPath, image: photos[0] }} brandHref="/products/thistle" />
         <CleaverProductSections product={product} />
@@ -175,3 +177,4 @@ export default async function CleaverProductDetailPage({ params }: PageProps) {
     </main>
   );
 }
+

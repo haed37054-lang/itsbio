@@ -8,6 +8,7 @@ export type ProductSearchInfo = {
   sku?: string | null;
   modelNumbers?: readonly string[];
   description?: string | null;
+  descriptionCandidates?: readonly (string | null | undefined)[];
   image?: string | null;
   kind?: "product" | "service";
 };
@@ -49,18 +50,74 @@ export function productSearchLabel(name: string): string {
 
 export function productSearchIdentity(info: ProductSearchInfo): string {
   const name = searchText(info.name);
-  const sku = searchText(info.sku);
-  return sku && !name.toLowerCase().includes(sku.toLowerCase()) ? `${name} (${sku})` : name;
+  const numbers = productSearchCatalogNumbers(info);
+  const sku = numbers.find((number) => number.toLowerCase() === searchText(info.sku).toLowerCase()) || (numbers.length === 1 ? numbers[0] : "");
+  const escaped = sku.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const alreadyNamed = sku && new RegExp(`(^|[^a-z0-9])${escaped}(?=$|[^a-z0-9])`, "i").test(name);
+  return sku && !alreadyNamed ? `${name} (${sku})` : name;
+}
+
+export function productSearchCatalogNumbers(info: ProductSearchInfo): string[] {
+  const seen = new Set<string>();
+  return [info.sku, ...(info.modelNumbers || [])].flatMap((value) => {
+    const number = searchText(value);
+    const key = number.toLowerCase();
+    if (!number || /^(?:[-–—]|n\/?a)$/i.test(number) || seen.has(key)) return [];
+    seen.add(key);
+    return [number];
+  });
+}
+
+// Reuse product copy; section headings and migration placeholders are not descriptions.
+export function productSearchExcerpt(...candidates: (string | null | undefined)[]): string {
+  for (const candidate of candidates) {
+    const html = String(candidate || "");
+    const descriptionCell = html.match(/<tr\b[^>]*>\s*<t[dh]\b[^>]*>\s*(?:<[^>]+>\s*)*Description\s*(?:<\/[^>]+>\s*)*<\/t[dh]>\s*<t[dh]\b[^>]*>([\s\S]*?)<\/t[dh]>/i)?.[1];
+    const text = searchText(descriptionCell || html.replace(/<h[1-6]\b[^>]*>[\s\S]*?<\/h[1-6]>/gi, " "));
+    if (!text || /^(?:performance|overview|description|specifications?|product information|features|at a glance)[.!:]?$/i.test(text)) continue;
+    if (/is listed by abm under|authoritative ABM inventory|reviewed detail is being migrated/i.test(text)) continue;
+    return text;
+  }
+  return "";
 }
 
 export function productSearchDescription(info: ProductSearchInfo): string {
   const identity = productSearchIdentity(info);
   const label = productSearchLabel(info.name);
-  const models = [...new Set((info.modelNumbers || []).map(searchText).filter(Boolean))];
-  const modelText = models.length ? ` 모델·Cat.No.: ${models.slice(0, 4).join(", ")}${models.length > 4 ? " 외" : ""}.` : "";
-  const description = `${info.brand} ${identity}${label ? ` · ${label}` : ""}. 이츠바이오 국내 ${info.kind === "service" ? "서비스" : "제품"} 정보·견적 문의.${modelText} ${searchText(info.description)}`;
+  const models = productSearchCatalogNumbers(info).filter((number) => number.toLowerCase() !== searchText(info.sku).toLowerCase());
+  const modelText = models.length ? ` Cat.No.: ${models.slice(0, 4).join(", ")}${models.length > 4 ? " 외" : ""}.` : "";
+  const summary = productSearchExcerpt(info.description, ...(info.descriptionCandidates || []));
+  const description = `${searchText(info.brand)} ${identity}${label ? ` · ${label}` : ""}.${modelText}${summary ? ` ${summary}` : ""} | 이츠바이오`;
   const chars = Array.from(description.trim());
   return chars.length > 240 ? `${chars.slice(0, 239).join("")}…` : description.trim();
+}
+
+export function productSearchStructuredData(info: ProductSearchInfo, brandHref: string) {
+  const image = productSearchImage(info.image);
+  const url = absoluteSiteUrl(info.path);
+  const identifiers = productSearchCatalogNumbers(info).map((value) => ({
+    "@type": "PropertyValue", propertyID: "Cat.No.", value,
+  }));
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage", "@id": `${url}#webpage`,
+        name: searchText(info.name), description: productSearchDescription(info), url,
+        breadcrumb: { "@id": `${url}#breadcrumb` },
+        ...(identifiers.length ? { identifier: identifiers } : {}),
+        ...(image ? { primaryImageOfPage: { "@type": "ImageObject", url: image } } : {}),
+      },
+      {
+        "@type": "BreadcrumbList", "@id": `${url}#breadcrumb`,
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: absoluteSiteUrl("/") },
+          { "@type": "ListItem", position: 2, name: brandHref === "/products" ? "Products" : searchText(info.brand), item: absoluteSiteUrl(brandHref) },
+          { "@type": "ListItem", position: 3, name: productSearchIdentity(info), item: url },
+        ],
+      },
+    ],
+  };
 }
 
 export function productQuoteHref(info: ProductSearchInfo): string {
@@ -92,3 +149,4 @@ export function productSearchMetadata(info: ProductSearchInfo): Metadata {
     twitter: { card: image ? "summary_large_image" : "summary", title, description, images: image ? [image] : [] },
   };
 }
+

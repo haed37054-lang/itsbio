@@ -1,4 +1,4 @@
-const FALLBACK_SITE_URL = "https://itsbio.vercel.app";
+const FALLBACK_SITE_URL = "https://itsbio.co.kr";
 
 export function siteUrl() {
   const configured = String(process.env.NEXT_PUBLIC_SITE_URL || FALLBACK_SITE_URL).trim();
@@ -13,3 +13,4 @@ export function siteUrl() {
 export function absoluteSiteUrl(path = "/") {
   return new URL(path, `${siteUrl()}/`).toString();
 }
+

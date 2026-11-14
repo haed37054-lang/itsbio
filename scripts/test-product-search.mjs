@@ -13,6 +13,14 @@ const { productSearchMetadata, productSearchStructuredData, productSearchCatalog
 );
 const breast = { name: "Human Breast FFPE Tissue Section", brand: "ABM", sku: "HS0048", path: "/products/abm/staged/product/HS0048", description: "This tissue was fixed in formalin immediately after excision and carefully embedded in paraffin." };
 
+test("canonical URLs default to the official domain in every deployment environment", () => {
+  const source = stripTypeScriptTypes(readFileSync(new URL("lib/site-url.ts", root), "utf8")).replace(/^export /gm, "");
+  for (const env of [{}, { NEXT_PUBLIC_SITE_URL: "invalid" }, { NEXT_PUBLIC_SITE_URL: "https://itsbio.co.kr" }]) {
+    const absoluteUrl = new Function("process", `${source}\nreturn absoluteSiteUrl;`)({ env });
+    assert.equal(absoluteUrl(breast.path), `https://itsbio.co.kr${breast.path}`);
+  }
+});
+
 test("exact product name and Cat.No. are retained in search results and canonical metadata", () => {
   const metadata = productSearchMetadata(breast);
   assert.equal(metadata.title.absolute, "Human Breast FFPE Tissue Section (HS0048) | ABM | 이츠바이오");

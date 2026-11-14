@@ -1,0 +1,104 @@
+.sidebar {
+  position: relative;
+  z-index: 30;
+  align-self: start;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 1px 2px rgb(15 23 42 / 0.05);
+}
+
+.brand {
+  display: block;
+  border-bottom: 1px solid #e2e8f0;
+  border-radius: 15px 15px 0 0;
+  background: var(--sidebar-soft);
+  padding: 16px 20px;
+  color: var(--sidebar-accent);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+}
+
+.navigation { padding: 8px; }
+.list, .branch { margin: 0; list-style: none; padding: 0; }
+.list > .row + .row { margin-top: 4px; }
+.row { position: relative; }
+.rowHead {
+  display: flex;
+  align-items: center;
+  border-radius: 12px;
+  color: #334155;
+}
+.link {
+  display: block;
+  flex: 1;
+  min-width: 0;
+  padding: 10px 12px;
+  border-radius: inherit;
+  font-size: 13px;
+  line-height: 20px;
+  overflow-wrap: anywhere;
+}
+.arrow {
+  flex: 0 0 28px;
+  padding-right: 10px;
+  text-align: center;
+  color: #94a3b8;
+  font-size: 18px;
+  line-height: 20px;
+}
+.rowHead:hover, .rowHead:focus-within { background: #f8fafc; color: var(--sidebar-accent); }
+.row[data-active-trail] > .rowHead, .link[aria-current="page"] {
+  background: var(--sidebar-soft);
+  color: var(--sidebar-accent);
+  font-weight: 600;
+}
+.link:focus-visible, .brand:focus-visible {
+  outline: 2px solid var(--sidebar-accent);
+  outline-offset: -2px;
+}
+.branch {
+  margin: 4px 0 8px 16px;
+  padding-left: 12px;
+  border-left: 1px dashed var(--sidebar-border);
+}
+.branch .link { padding: 8px 12px; font-size: 12px; }
+.branch .rowHead { border-radius: 8px; color: #475569; }
+.flyout { display: none; }
+.panel {
+  width: 264px;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  background: #fff;
+  padding: 6px;
+  box-shadow: 0 12px 32px rgb(15 23 42 / 0.14);
+}
+.panelTitle {
+  margin-bottom: 4px;
+  padding: 10px 12px;
+  border-bottom: 1px solid #f1f5f9;
+  color: var(--sidebar-accent);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 20px;
+}
+.panel .link { padding: 9px 12px; font-size: 13px; }
+
+@media (min-width: 1024px) {
+  .sidebar { position: sticky; top: 96px; }
+  .flyout {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    z-index: 40;
+    padding-left: 8px;
+  }
+  .row:hover > .flyout, .row:focus-within > .flyout { display: block; }
+}
+
+/* Touch users can navigate through the parent category; selected branches stay open. */
+@media (max-width: 1023px) {
+  .navigation { max-height: calc(100vh - 170px); overflow-y: auto; }
+  .arrow { transform: rotate(90deg); }
+}

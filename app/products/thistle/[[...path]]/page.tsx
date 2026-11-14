@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
+import BrandCategorySidebar from "@/components/products/BrandCategorySidebar";
 import CleaverCatalogImage from "@/components/products/CleaverCatalogImage";
 import CleaverHeroBanner from "@/components/products/CleaverHeroBanner";
 import Breadcrumb from "@/components/site/Breadcrumb";
@@ -68,34 +69,15 @@ function categoryHref(path: string[], query = "", page = 1) {
 }
 
 function CleaverSidebar({ activePath }: { activePath: string[] }) {
-  return (
-    <aside className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm lg:sticky lg:top-24">
-      <Link href="/products/thistle" className="block border-b border-slate-200 bg-[#f5f0fb] px-5 py-4 text-base font-semibold text-[#61247b]">
-        Thistle Scientific
-      </Link>
-      <nav className="max-h-[calc(100vh-170px)] space-y-1 overflow-y-auto p-2" aria-label="Cleaver product categories">
-        {CLEAVER_CATEGORIES.map((category) => {
-          const active = activePath[0] === category.slug;
-          return (
-            <div key={category.slug}>
-              <Link href={categoryHref([category.slug])} prefetch={false} className={`block rounded-xl px-3 py-2.5 text-[13px] transition ${active ? "bg-purple-50 font-semibold text-[#61247b]" : "text-slate-700 hover:bg-slate-50"}`}>
-                {category.title}
-              </Link>
-              {active ? (
-                <div className="mb-2 ml-4 space-y-0.5 border-l border-dashed border-purple-200 pl-3">
-                  {category.children.map((child) => (
-                    <Link key={child.slug} href={categoryHref([category.slug, child.slug])} prefetch={false} className={`block rounded-lg px-3 py-2 text-[12px] leading-5 transition ${activePath[1] === child.slug ? "bg-purple-50 font-semibold text-[#61247b]" : "text-slate-600 hover:bg-slate-50 hover:text-[#61247b]"}`}>
-                      {child.title}
-                    </Link>
-                  ))}
-                </div>
-              ) : null}
-            </div>
-          );
-        })}
-      </nav>
-    </aside>
-  );
+  const nodes = CLEAVER_CATEGORIES.map((category) => ({
+    label: category.title,
+    href: categoryHref([category.slug]),
+    children: category.children.map((child) => ({
+      label: child.title,
+      href: categoryHref([category.slug, child.slug]),
+    })),
+  }));
+  return <BrandCategorySidebar brand={CLEAVER_BRAND_NAME} brandHref="/products/thistle" nodes={nodes} activeHref={categoryHref(activePath)} />;
 }
 
 function ProductCard({ product }: { product: CleaverProduct }) {

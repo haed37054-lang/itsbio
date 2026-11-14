@@ -34,7 +34,7 @@ export async function generateMetadata({ params }: { params: DetailParams }): Pr
   const record = await getStagedDetail(kind, decodeURIComponent(key));
   if (!record) return { robots: { index: false } };
   return productSearchMetadata({ name: record.title || record.sku || "ABM", brand: "ABM", sku: record.sku,
-    path: stagedRecordPath(kind, record), description: record.description || record.overview, kind });
+    path: stagedRecordPath(kind, record), description: record.description, descriptionCandidates: [record.overview, record.specificationsHtml], kind });
 }
 
 // ABM's iPSC Reporter products each have a distinct canonical Vector Design
@@ -227,7 +227,6 @@ export default async function AbmStagedDetailPage({
           >
             <h1 className="max-w-4xl text-3xl font-bold leading-tight tracking-tight text-neutral-950">{title}</h1>
 
-            <p lang="ko" className="mt-3 text-sm text-neutral-600">제품 사양과 Cat.No.를 확인하고 이츠바이오에 국내 견적을 문의하세요.</p>
             <div className="mt-6 grid gap-8 border-t border-neutral-200 pt-7 md:grid-cols-[minmax(0,1fr)_400px]">
               {hasGallery ? (
                 <div className="min-h-[320px]">
@@ -330,7 +329,7 @@ export default async function AbmStagedDetailPage({
                 The reviewed record is available, but the official source does not provide additional detail sections for this item.
               </div>
             ) : null}
-            <ProductSearchInfo info={{ name: title, brand: "ABM", sku: record.sku, description: record.description || record.overview,
+            <ProductSearchInfo info={{ name: title, brand: "ABM", sku: record.sku, description: record.description, descriptionCandidates: [record.overview, record.specificationsHtml],
               path: stagedRecordPath(kind, record), kind }} brandHref="/products/abm" />
           </section>
         </div>
@@ -338,3 +337,4 @@ export default async function AbmStagedDetailPage({
     </div>
   );
 }
+

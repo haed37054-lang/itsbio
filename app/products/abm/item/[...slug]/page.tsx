@@ -272,6 +272,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const product = bundle?.product;
   if (!product?._id || !bundle.brand?._id) return {};
   return productSearchMetadata({ name: stripBrandSuffix(product.title || ""), brand: "ABM", sku: product.sku,
+    descriptionCandidates: [product.specsHtml, product.extraHtml, product.legacyHtml], image: normalizeImages(product, stripBrandSuffix(product.title || ""))[0]?.url,
     path: `/products/abm/item/${product.slug.split("/").map(encodeURIComponent).join("/")}` });
 }
 
@@ -434,7 +435,7 @@ export default async function AbmProductDetailPage({
                   sourceUrl={openOriginalUrl}
                 />
               </div>
-              <ProductSearchInfo info={{ name: title, brand: "ABM", sku: catNo, path: `/products/abm/item/${product.slug.split("/").map(encodeURIComponent).join("/")}`, image: images[0]?.url }} brandHref="/products/abm" />
+              <ProductSearchInfo info={{ name: title, brand: "ABM", sku: catNo, descriptionCandidates: [product.specsHtml, product.extraHtml, product.legacyHtml], path: `/products/abm/item/${product.slug.split("/").map(encodeURIComponent).join("/")}`, image: images[0]?.url }} brandHref="/products/abm" />
             </section>
           </div>
         </main>
@@ -514,7 +515,7 @@ export default async function AbmProductDetailPage({
                 </div>
               </div>
 
-              <ProductSearchInfo info={{ name: title, brand: "ABM", sku: catNo, path: `/products/abm/item/${product.slug.split("/").map(encodeURIComponent).join("/")}`, image: images[0]?.url }} brandHref="/products/abm" />
+              <ProductSearchInfo info={{ name: title, brand: "ABM", sku: catNo, descriptionCandidates: [product.specsHtml, product.extraHtml, product.legacyHtml], path: `/products/abm/item/${product.slug.split("/").map(encodeURIComponent).join("/")}`, image: images[0]?.url }} brandHref="/products/abm" />
               <div className="h-10" />
             </section>
           </div>
@@ -523,3 +524,4 @@ export default async function AbmProductDetailPage({
     </div>
   );
 }
+

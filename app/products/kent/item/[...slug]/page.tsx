@@ -428,6 +428,7 @@ export async function generateMetadata({ params }: DetailProps): Promise<Metadat
   if (!data) return {};
   const { product, official, title: name } = data;
   return productSearchMetadata({ name, brand: "Kent Scientific", sku: cleanText(official?.sku || product.sku), description: cleanText(official?.summary || product.summary), image: normalizeImages(product, name)[0]?.url,
+    modelNumbers: (official?.variants || product.variants || []).map((variant: { sku?: string }) => variant.sku || ""),
     path: `/products/kent/item/${product.slug.split("/").map(encodeURIComponent).join("/")}` });
 }
 
@@ -527,8 +528,10 @@ export default async function KentProductDetailPage({ params }: DetailProps) {
           variants={official ? official.variants || [] : product?.variants || []}
         />
         <ProductSearchInfo info={{ name: title, brand: "Kent Scientific", sku: official ? official.sku : product.sku,
+          modelNumbers: (official ? official.variants || [] : product.variants || []).map((variant: { sku?: string }) => variant.sku || ""),
           description: official ? official.summary : cleanText(product.summary), path: `/products/kent/item/${product.slug.split("/").map(encodeURIComponent).join("/")}`, image: images[0]?.url }} brandHref="/products/kent" />
       </div>
     </main>
   );
 }
+

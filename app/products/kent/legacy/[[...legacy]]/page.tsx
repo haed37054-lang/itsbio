@@ -1,5 +1,4 @@
 // app/products/kent/legacy/[[...legacy]]/page.tsx
-import Image from "next/image";
 import { notFound, redirect } from "next/navigation";
 import * as cheerio from "cheerio";
 
@@ -296,9 +295,8 @@ function extractLegacyArticle(fullHtml: string, url: string) {
 
 function HeroBanner({ title }: { title: string }) {
   return (
-    <section className="relative">
+    <section className="relative" data-kent-hero>
       <div className="relative h-[220px] w-full overflow-hidden md:h-[260px]">
-        <Image src="/hero.png" alt="Hero" fill priority className="object-cover" />
         <div className="absolute inset-0 bg-black/35" />
         <div className="absolute inset-0 bg-gradient-to-r from-slate-950/45 via-transparent to-transparent" />
         <div className="absolute inset-0">

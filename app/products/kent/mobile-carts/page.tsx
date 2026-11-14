@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 
 import Breadcrumb from "@/components/site/Breadcrumb";
@@ -73,9 +72,8 @@ const SIDE_NAV = [
 
 function HeroBanner() {
   return (
-    <section className="relative">
+    <section className="relative" data-kent-hero>
       <div className="relative h-[220px] w-full overflow-hidden md:h-[280px]">
-        <Image src="/hero.png" alt="Products hero" fill priority className="object-cover" />
         <div className="absolute inset-0 bg-black/35" />
         <div className="absolute inset-0 bg-gradient-to-r from-slate-950/45 via-transparent to-transparent" />
         <div className="absolute inset-0">

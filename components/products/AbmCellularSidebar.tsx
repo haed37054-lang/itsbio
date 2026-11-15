@@ -35,8 +35,8 @@ function FlyoutRows({
   if (!nodes.length) return null;
 
   return (
-    <div className="relative z-[9999] w-[272px] overflow-visible rounded-xl border border-orange-200 bg-white p-1.5 shadow-[0_20px_50px_rgba(15,23,42,0.24)]">
-      <div className="-mx-1.5 -mt-1.5 mb-1.5 rounded-t-xl bg-gradient-to-r from-orange-500 to-orange-400 px-4 py-2.5 text-[12px] font-bold tracking-[0.03em] text-white shadow-sm">
+    <div className="relative z-[9999] w-[272px] overflow-visible rounded-xl border border-slate-200 bg-white p-1.5 shadow-[0_12px_32px_rgba(15,23,42,0.14)]">
+      <div className="mb-1 border-b border-slate-100 px-3 py-2.5 text-[13px] font-semibold text-orange-600">
         {parentTitle}
       </div>
 
@@ -163,7 +163,7 @@ export default function AbmCellularSidebar({ activePath }: { activePath: string[
 
   return (
     <div className="relative z-[40] overflow-visible rounded-2xl border border-slate-200 bg-white shadow-sm">
-      <div className="border-b border-orange-100 bg-orange-50 px-5 py-4">
+      <div className="border-b border-slate-200 bg-white px-5 py-4">
         <div className="text-base font-semibold text-orange-600">All Products</div>
       </div>
 

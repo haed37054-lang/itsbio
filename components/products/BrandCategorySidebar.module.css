@@ -12,7 +12,7 @@
   display: block;
   border-bottom: 1px solid #e2e8f0;
   border-radius: 15px 15px 0 0;
-  background: var(--sidebar-soft);
+  background: #fff;
   padding: 16px 20px;
   color: var(--sidebar-accent);
   font-size: 16px;

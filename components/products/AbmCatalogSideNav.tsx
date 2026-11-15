@@ -65,8 +65,8 @@ export default function AbmCatalogSideNav({
 }) {
   return (
     <nav className="overflow-hidden rounded-sm border border-neutral-200 bg-white shadow-sm" aria-label="ABM Products and Services">
-      <div className="border-b border-neutral-200 bg-neutral-100 px-5 py-3">
-        <div className="text-xl font-bold text-[#dc5a2b]">All Products</div>
+      <div className="border-b border-slate-200 bg-white px-5 py-4">
+        <div className="text-base font-semibold text-[#dc5a2b]">All Products</div>
       </div>
 
       <div className="p-3">

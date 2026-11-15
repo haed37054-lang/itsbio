@@ -63,9 +63,9 @@ export default function AbmCategorySideNav({
     if (!nodes.length) return null;
 
     return (
-      <div className="w-[264px] overflow-visible rounded-xl border border-orange-200 bg-white p-1.5 shadow-[0_18px_44px_rgba(15,23,42,0.22)]">
+      <div className="w-[264px] overflow-visible rounded-xl border border-slate-200 bg-white p-1.5 shadow-[0_12px_32px_rgba(15,23,42,0.14)]">
         {parentTitle ? (
-          <div className="-mx-1.5 -mt-1.5 mb-1.5 rounded-t-xl bg-orange-500 px-4 py-2.5 text-[12px] font-bold tracking-[0.04em] text-white">
+          <div className={`mb-1 border-b border-slate-100 px-3 py-2.5 text-[13px] font-semibold ${theme.accentText}`}>
             {stripBrandSuffix(parentTitle)}
           </div>
         ) : null}
@@ -164,7 +164,7 @@ export default function AbmCategorySideNav({
 
   return (
     <div className="overflow-visible rounded-2xl border border-slate-200 bg-white shadow-sm">
-      <div className={`border-b border-orange-100 ${isKentMode ? "bg-blue-50" : "bg-orange-50"} px-5 py-4`}>
+      <div className="border-b border-slate-200 bg-white px-5 py-4">
         <div className={`text-base font-semibold ${theme.accentText}`}>{isKentMode ? stripBrandSuffix(activeRootTitle) : "All Products"}</div>
       </div>
 

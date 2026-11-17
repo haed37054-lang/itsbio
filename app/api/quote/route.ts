@@ -206,7 +206,7 @@ async function sendMailplugEmail({
     await command("DATA", [354], "data");
 
     const message = [
-      `From: ITS BIO <${username}>`,
+      `From: ITSBio <${username}>`,
       `To: ${to}`,
       `Reply-To: ${replyTo}`,
       `Subject: ${encodedSubject(subject)}`,
@@ -239,7 +239,7 @@ async function sendResendFallback({ to, replyTo, subject, text }: { to: string; 
 
   const resend = new Resend(apiKey);
   const { error } = await resend.emails.send({
-    from: process.env.QUOTE_FROM_EMAIL || "ITS BIO <onboarding@resend.dev>",
+    from: process.env.QUOTE_FROM_EMAIL || "ITSBio <onboarding@resend.dev>",
     to: [to],
     subject,
     text,

@@ -24,23 +24,23 @@ const pretendard = localFont({
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl()),
   title: {
-    default: "ITS BIO | Life Science & Animal Research Solutions",
-    template: "%s | 이츠바이오 ITS BIO",
+    default: "ITSBio | Life Science & Animal Research Solutions",
+    template: "%s | 이츠바이오 ITSBio",
   },
-  description: "ITS BIO supplies life science reagents, cell biology products, animal research systems, laboratory equipment, and responsive quotation support in Korea.",
-  keywords: ["ITS BIO", "이츠바이오", "ABM", "Kent Scientific", "Thistle Scientific", "life science", "cell biology", "animal research", "laboratory equipment"],
+  description: "ITSBio supplies life science reagents, cell biology products, animal research systems, laboratory equipment, and responsive quotation support in Korea.",
+  keywords: ["ITSBio", "이츠바이오", "ABM", "Kent Scientific", "Thistle Scientific", "life science", "cell biology", "animal research", "laboratory equipment"],
   openGraph: {
     type: "website",
     locale: "ko_KR",
-    siteName: "ITS BIO",
-    title: "ITS BIO | Life Science & Animal Research Solutions",
-    description: "Scientific products, research systems, sourcing support, and fast quotations from ITS BIO.",
+    siteName: "ITSBio",
+    title: "ITSBio | Life Science & Animal Research Solutions",
+    description: "Scientific products, research systems, sourcing support, and fast quotations from ITSBio.",
     url: "/",
   },
   twitter: {
     card: "summary",
-    title: "ITS BIO | Life Science & Animal Research Solutions",
-    description: "Scientific products, research systems, sourcing support, and fast quotations from ITS BIO.",
+    title: "ITSBio | Life Science & Animal Research Solutions",
+    description: "Scientific products, research systems, sourcing support, and fast quotations from ITSBio.",
   },
   robots: {
     index: true,

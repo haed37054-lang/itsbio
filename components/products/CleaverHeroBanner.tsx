@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function CleaverHeroBanner({
   title = "Thistle Scientific Products",
-  eyebrow = "ITS BIO",
+  eyebrow = "ITSBio",
   headingAs = "h1",
 }: {
   title?: string;
@@ -24,7 +24,7 @@ export default function CleaverHeroBanner({
         <div className="max-w-3xl">
           <div className="flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.2em] text-[#784594]">
             <span className="h-px w-8 bg-[#784594]" aria-hidden="true" />
-            {eyebrow}
+            {eyebrow.includes("ITSBio") ? <span className="normal-case">{eyebrow}</span> : eyebrow}
           </div>
           <Heading className="mt-4 max-w-[820px] text-3xl font-semibold leading-[1.12] tracking-[-0.035em] text-slate-950 md:text-[44px]">
             {title}

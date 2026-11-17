@@ -697,7 +697,7 @@ export async function generateMetadata({ params }: { params: Promise<{ path?: st
   if (path.length === 0) {
     return {
       title: "Applied Biological Materials (ABM) 제품",
-      description: "Browse ABM cell lines, enzymes, genetic research reagents, vectors, and laboratory materials supplied by ITS BIO in Korea.",
+      description: "Browse ABM cell lines, enzymes, genetic research reagents, vectors, and laboratory materials supplied by ITSBio in Korea.",
       alternates: { canonical: "/products/abm" },
     };
   }
@@ -999,7 +999,7 @@ export default async function AbmProductsPathPage({
             <main className="min-w-0">
               <h1 className="text-3xl font-bold tracking-tight text-neutral-900">ABM Products & Services</h1>
               <p className="mt-3 max-w-3xl leading-7 text-neutral-700">
-                Browse the official hierarchy for ABM Products and Services. Category landing content, resources, images, and reviewed detail pages remain inside ITS BIO.
+                Browse the official hierarchy for ABM Products and Services. Category landing content, resources, images, and reviewed detail pages remain inside ITSBio.
               </p>
 
               <section className="mt-10" aria-labelledby="abm-product-categories">

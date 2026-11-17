@@ -9,7 +9,7 @@ export default function AffinityHero() {
       <div className="pointer-events-none absolute right-0 top-0 h-full w-[7px] bg-[#29add0]" aria-hidden="true" />
       <div className="relative mx-auto grid min-h-[220px] max-w-[1320px] items-center gap-8 px-6 py-10 md:min-h-[280px] md:grid-cols-[minmax(0,1fr)_360px] md:py-14">
         <div className="max-w-3xl">
-          <div className="flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.2em] text-cyan-800"><span className="h-px w-8 bg-[#29add0]" aria-hidden="true" />ITS BIO</div>
+          <div className="flex items-center gap-3 text-[11px] font-bold tracking-[0.2em] text-cyan-800"><span className="h-px w-8 bg-[#29add0]" aria-hidden="true" />ITSBio</div>
           <h1 className="mt-4 max-w-[820px] text-3xl font-semibold leading-[1.12] tracking-[-0.035em] text-slate-950 md:text-[44px]">AffinityImmuno Products</h1>
           <p className="mt-4 max-w-2xl text-sm leading-6 text-slate-600 md:text-[15px]">ELISA kits, research antibodies, biosimilars and isotype controls from AffinityImmuno.</p>
         </div>

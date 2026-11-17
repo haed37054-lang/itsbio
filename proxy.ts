@@ -37,7 +37,7 @@ export function proxy(request: NextRequest) {
 
 
   return new NextResponse(
-    `<!doctype html><html lang="ko"><meta charset="utf-8"><title>페이지를 찾을 수 없습니다 | ITS BIO</title><h1>페이지를 찾을 수 없습니다</h1><p><a href="/">ITS BIO 홈</a> · <a href="/products">제품 보기</a></p></html>`,
+    `<!doctype html><html lang="ko"><meta charset="utf-8"><title>페이지를 찾을 수 없습니다 | ITSBio</title><h1>페이지를 찾을 수 없습니다</h1><p><a href="/">ITSBio 홈</a> · <a href="/products">제품 보기</a></p></html>`,
     { status: 404, headers: { "Content-Type": "text/html; charset=utf-8" } },
   );
 }

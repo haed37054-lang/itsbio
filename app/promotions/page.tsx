@@ -7,7 +7,7 @@ import { urlFor } from "@/lib/sanity/image";
 
 export const metadata: Metadata = {
   title: "Promotions & Special Offers",
-  description: "Explore current offers on life science reagents and laboratory equipment from ITS BIO and our partner brands.",
+  description: "Explore current offers on life science reagents and laboratory equipment from ITSBio and our partner brands.",
   alternates: { canonical: "/promotions" },
 };
 
@@ -77,7 +77,7 @@ export default async function PromotionsPage({ searchParams }: { searchParams?: 
       <PageHero
         eyebrow="PROMOTIONS"
         title="Featured offers from our scientific brands"
-        description="Explore current promotions, partner highlights, and limited-time opportunities across the ITS BIO portfolio."
+        description="Explore current promotions, partner highlights, and limited-time opportunities across the ITSBio portfolio."
         variant="promotions"
         cta={{ label: "View current offers", href: "#promotions-list" }}
       />

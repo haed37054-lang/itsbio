@@ -13,9 +13,9 @@ export default function AboutPage() {
   return (
     <main className="-mb-16 bg-white md:-mb-24">
       <PageHero
-        eyebrow="ABOUT ITS BIO"
+        eyebrow="ABOUT ITSBio"
         title="A trusted partner for better science"
-        description="ITS BIO supports researchers with reliable scientific products, responsive service, and practical sourcing expertise built around the needs of the research field."
+        description="ITSBio supports researchers with reliable scientific products, responsive service, and practical sourcing expertise built around the needs of the research field."
         variant="about"
         cta={{ label: "Contact our team", href: "/contact" }}
       />

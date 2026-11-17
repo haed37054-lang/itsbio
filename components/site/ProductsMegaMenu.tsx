@@ -481,7 +481,7 @@ export default function ProductsMegaMenu() {
               <div className="pointer-events-none absolute right-[23%] -bottom-24 h-44 w-44 rounded-full border border-white/10" />
               <div className="relative flex items-center justify-between gap-6">
                 <div>
-                  <div className="text-[10px] font-bold uppercase tracking-[0.22em] text-white/70">ITS BIO PRODUCT PORTFOLIO</div>
+                  <div className="text-[10px] font-bold tracking-[0.22em] text-white/70">ITSBio PRODUCT PORTFOLIO</div>
                   <div className="mt-1 text-[20px] font-semibold tracking-[-0.025em]">{activeBrand.name}</div>
                 </div>
                 <Link

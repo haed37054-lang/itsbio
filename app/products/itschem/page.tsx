@@ -54,7 +54,7 @@ export default function ItsChemPage() {
           <div className="max-w-3xl">
             <p className="flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.2em] text-rose-800">
               <span className="h-px w-8 bg-rose-600" aria-hidden="true" />
-              ITS BIO
+              ITSBio
             </p>
             <p className="mt-4 max-w-[820px] text-3xl font-semibold leading-[1.12] tracking-[-0.035em] text-slate-950 md:text-[44px]">ITSChem</p>
             <p className="mt-4 max-w-2xl text-sm leading-6 text-slate-600 md:text-[15px]">Agarose tablets for gel electrophoresis</p>

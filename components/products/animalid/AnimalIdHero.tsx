@@ -9,9 +9,9 @@ export default function AnimalIdHero() {
       <div className="pointer-events-none absolute right-0 top-0 h-full w-[7px] bg-sky-600" aria-hidden="true" />
       <div className="relative mx-auto grid min-h-[220px] max-w-[1320px] items-center gap-8 px-6 py-10 md:min-h-[280px] md:grid-cols-[minmax(0,1fr)_360px] md:py-14">
         <div className="max-w-3xl">
-          <p className="flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.2em] text-sky-800">
+          <p className="flex items-center gap-3 text-[11px] font-bold tracking-[0.2em] text-sky-800">
             <span className="h-px w-8 bg-sky-600" aria-hidden="true" />
-            ITS BIO · AIMS
+            ITSBio · AIMS
           </p>
           <h1 className="mt-4 text-3xl font-semibold leading-[1.12] tracking-[-0.035em] text-slate-950 md:text-[44px]">Animal Identification</h1>
           <p className="mt-4 max-w-2xl text-sm leading-6 text-slate-600 md:text-[15px]">Tattoo identification systems for laboratory rodents, neonates and larger animals.</p>

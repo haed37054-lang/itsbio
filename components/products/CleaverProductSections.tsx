@@ -100,7 +100,7 @@ function IncludedCard({ title, quantity, imageUrl, href }: IncludedCardProps) {
   );
 
   if (!href) return <div className="group/card block h-full w-full">{body}</div>;
-  return <Link href={href} className="group/card block h-full w-full" aria-label={`View ${title} in ITS BIO`}>{body}</Link>;
+  return <Link href={href} className="group/card block h-full w-full" aria-label={`View ${title} in ITSBio`}>{body}</Link>;
 }
 
 function youtubeEmbedUrl(value?: string) {

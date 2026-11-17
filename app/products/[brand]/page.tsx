@@ -130,7 +130,7 @@ export default async function BrandPreparingPage({
               ) : (
                 <div className="text-center text-4xl font-black tracking-[-0.04em] text-white">{brand.name}</div>
               )}
-              <span className="absolute bottom-6 right-7 rounded-full bg-white/10 px-4 py-2 text-[11px] font-bold uppercase tracking-[0.16em] text-white/70">ITS BIO partner</span>
+              <span className="absolute bottom-6 right-7 rounded-full bg-white/10 px-4 py-2 text-[11px] font-bold tracking-[0.16em] text-white/70">ITSBio partner</span>
             </div>
           </div>
         </div>
@@ -147,7 +147,7 @@ export default async function BrandPreparingPage({
           <div className="mb-8 rounded-[24px] border p-5 md:p-6" style={{ borderColor: `${brand.accent}40`, background: brand.soft }}>
             <div className="text-[11px] font-bold uppercase tracking-[0.18em]" style={{ color: brand.accent }}>Requested item</div>
             <div className="mt-2 text-lg font-semibold text-slate-950">{requestedItem}</div>
-            <p className="mt-2 text-sm leading-6 text-slate-600">The full product page is still being integrated. You can search ITS BIO or send this exact item to our team for confirmation.</p>
+            <p className="mt-2 text-sm leading-6 text-slate-600">The full product page is still being integrated. You can search ITSBio or send this exact item to our team for confirmation.</p>
           </div>
         ) : null}
 
@@ -156,7 +156,7 @@ export default async function BrandPreparingPage({
             <div className="text-xs font-bold uppercase tracking-[0.2em]" style={{ color: brand.accent }}>Catalog integration</div>
             <h2 className="mt-3 text-3xl font-semibold tracking-[-0.035em] text-[#071d43]">Brand catalog is being prepared</h2>
             <p className="mt-4 max-w-xl text-sm leading-7 text-slate-600">
-              We are moving this partner catalog into the same internal ITS BIO structure used for ABM and Kent. Until the catalog is complete, the brand remains fully available for quotation, sourcing, and product identification.
+              We are moving this partner catalog into the same internal ITSBio structure used for ABM and Kent. Until the catalog is complete, the brand remains fully available for quotation, sourcing, and product identification.
             </p>
 
             <form id="brand-search" action="/search" method="get" className="mt-7 rounded-[22px] border border-slate-200 bg-slate-50 p-4">
@@ -196,7 +196,7 @@ export default async function BrandPreparingPage({
             <h3 className="mt-2 text-xl font-semibold md:text-2xl">You do not need to wait for the catalog.</h3>
             <p className="mt-2 max-w-2xl text-sm leading-6 text-white/65">Send us the product name, catalog number, screenshot, or specification and we can identify the right item.</p>
           </div>
-          <Link href="/contact" className="inline-flex h-12 shrink-0 items-center justify-center rounded-full bg-white px-7 text-sm font-semibold" style={{ color: brand.deep }}>Contact ITS BIO <span className="ml-3" aria-hidden>→</span></Link>
+          <Link href="/contact" className="inline-flex h-12 shrink-0 items-center justify-center rounded-full bg-white px-7 text-sm font-semibold" style={{ color: brand.deep }}>Contact ITSBio <span className="ml-3" aria-hidden>→</span></Link>
         </div>
       </section>
     </main>

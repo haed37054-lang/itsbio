@@ -219,7 +219,7 @@ export default function FloatingQuoteButton() {
           >
             <div className="sticky top-0 z-10 flex items-start justify-between gap-4 border-b border-slate-100 bg-white/95 px-5 py-4 backdrop-blur md:px-6">
               <div>
-                <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-orange-600">ITS BIO</p>
+                <p className="text-[11px] font-bold tracking-[0.2em] text-orange-600">ITSBio</p>
                 <h2 className="mt-1 text-xl font-semibold tracking-tight text-slate-950">Request a Quote</h2>
                 <p className="mt-1 text-xs leading-5 text-slate-500">Send an inquiry without leaving this page.</p>
               </div>

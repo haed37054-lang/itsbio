@@ -12,7 +12,7 @@ export default function CellFreeFrame({ category, title, children }: { category?
         <div aria-hidden className="pointer-events-none absolute -right-24 -top-48 h-[430px] w-[430px] rounded-full border-[65px] border-blue-200/35" />
         <div className="relative mx-auto grid min-h-[220px] max-w-[1320px] items-center gap-8 px-6 py-10 md:min-h-[280px] md:grid-cols-[minmax(0,1fr)_360px] md:py-14">
           <div>
-            <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-blue-900">ITS BIO</p>
+            <p className="text-[11px] font-bold tracking-[0.2em] text-blue-900">ITSBio</p>
             <h1 className="mt-4 text-3xl font-semibold tracking-tight text-slate-950 md:text-[44px]">CellFree Sciences</h1>
             <p className="mt-4 max-w-xl text-sm leading-6 text-slate-600 md:text-base">Wheat germ cell-free protein expression kits, reagents, instruments and research services.</p>
           </div>

@@ -81,7 +81,7 @@ function extractResourcePage(sourceHtml: string, sourceUrl: string) {
 
   article.find(".abm-kb-right-title").first().remove();
 
-  // The read-time row is recreated by ITS BIO directly below the article title.
+  // The read-time row is recreated by ITSBio directly below the article title.
   // Remove only compact source elements whose entire text is the read-time label.
   if (readTime) {
     article.find("p,span,div").each((_, element) => {
@@ -274,7 +274,7 @@ export default async function AbmResourcePage({
               </div>
             ) : (
               <div className="mt-7 border-y border-neutral-200 py-8 text-sm leading-7 text-neutral-700">
-                This ABM learning resource is temporarily unavailable. Please contact ITS BIO for the source material.
+                This ABM learning resource is temporarily unavailable. Please contact ITSBio for the source material.
               </div>
             )}
           </article>

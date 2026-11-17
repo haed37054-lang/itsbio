@@ -763,7 +763,7 @@ export default async function SearchPage({
     <main className="min-h-[calc(100vh-76px)] bg-slate-50/70 px-6 py-12 md:py-16">
       <div className="mx-auto max-w-6xl">
         <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm md:p-8">
-          <p className="text-xs font-bold uppercase tracking-[0.22em] text-orange-600">ITS BIO Search</p>
+          <p className="text-xs font-bold tracking-[0.22em] text-orange-600">ITSBio Search</p>
           <div className="mt-2 flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
             <div>
               <h1 className="text-3xl font-semibold tracking-tight text-slate-950">Search results</h1>
@@ -871,7 +871,7 @@ export default async function SearchPage({
         ) : (
           <section className="mx-auto mt-8 max-w-2xl rounded-3xl border border-slate-200 bg-white px-6 py-14 text-center shadow-[0_20px_60px_rgba(15,23,42,0.07)] md:px-12">
             <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-orange-50 text-2xl font-semibold text-orange-600">?</div>
-            <p className="mt-6 text-xs font-bold uppercase tracking-[0.22em] text-orange-600">ITS BIO Search</p>
+            <p className="mt-6 text-xs font-bold tracking-[0.22em] text-orange-600">ITSBio Search</p>
             <h2 className="mt-2 text-3xl font-semibold tracking-tight text-slate-950">No matching product found</h2>
             <p className="mt-4 text-slate-600">
               We couldn&apos;t find a match for <span className="font-semibold text-slate-950">“{q}”</span>.

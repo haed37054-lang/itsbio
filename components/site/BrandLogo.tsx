@@ -5,12 +5,12 @@ export default function BrandLogo({ className = "" }: { className?: string }) {
   return (
     <Link
       href="/"
-      aria-label="ITS BIO home"
+      aria-label="ITSBio home"
       className={`inline-flex h-14 w-[116px] items-center ${className}`}
     >
       <Image
         src="/images/brand/itsbio-logo-original-en-v2.png"
-        alt="ITSBIO"
+        alt="ITSBio"
         width={136}
         height={85}
         priority

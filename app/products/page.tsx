@@ -189,7 +189,7 @@ export default function ProductsPage() {
             <div className="text-xs font-bold uppercase tracking-[0.22em] text-orange-600">Product search</div>
             <h2 className="mt-3 text-2xl font-semibold tracking-[-0.03em] text-[#071d43] md:text-3xl">Know what you are looking for?</h2>
             <p className="mt-3 max-w-lg text-sm leading-7 text-slate-600">
-              Search across the ITS BIO catalog by product name or catalog number. Similar products are separated by brand so you can choose the right match.
+              Search across the ITSBio catalog by product name or catalog number. Similar products are separated by brand so you can choose the right match.
             </p>
           </div>
 
@@ -213,7 +213,7 @@ export default function ProductsPage() {
             <h2 className="mt-2 text-3xl font-semibold tracking-[-0.035em] text-[#071d43] md:text-4xl">Explore by brand</h2>
           </div>
           <p className="max-w-xl text-sm leading-7 text-slate-600 md:text-right">
-            ABM and Kent catalogs are available now. Other brand catalogs are being prepared inside ITS BIO so every partner can be explored without leaving the site.
+            ABM and Kent catalogs are available now. Other brand catalogs are being prepared inside ITSBio so every partner can be explored without leaving the site.
           </p>
         </div>
 

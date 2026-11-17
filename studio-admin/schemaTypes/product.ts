@@ -93,7 +93,7 @@ const cleaverProductItemFields = [
   defineField({ name: "priceText", title: "Source Price", type: "string" }),
   defineField({ name: "sourceUrl", title: "Manufacturer Source URL", type: "url" }),
   defineField({ name: "imageUrl", title: "Source Image URL", type: "url" }),
-  defineField({ name: "internalHref", title: "ITS BIO Internal Path", type: "string" }),
+  defineField({ name: "internalHref", title: "ITSBio Internal Path", type: "string" }),
 ];
 
 export default defineType({
@@ -374,7 +374,7 @@ export default defineType({
       title: "Cleaver / Thistle - All Variations",
       type: "array",
       of: [defineField({ name: "cleaverVariation", title: "Variation", type: "object", fields: cleaverProductItemFields })],
-      description: "Manufacturer product-family variations, linked to ITS BIO product pages when an exact reviewed product exists.",
+      description: "Manufacturer product-family variations, linked to ITSBio product pages when an exact reviewed product exists.",
     }),
     defineField({
       name: "cleaverAccessories",

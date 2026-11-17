@@ -250,7 +250,7 @@ function HeroBanner({ brandTitle }: { brandTitle: string }) {
         <div className="absolute inset-0">
           <div className="mx-auto flex h-full max-w-6xl items-center px-6">
             <div>
-              <div className="text-xs font-semibold tracking-wide text-white/80">ITS BIO</div>
+              <div className="text-xs font-semibold tracking-wide text-white/80">ITSBio</div>
               <h1 className="mt-2 text-3xl font-semibold tracking-tight text-white md:text-4xl">
                 {stripCompanyNoise(brandTitle)} Product
               </h1>
@@ -412,12 +412,12 @@ export default async function AbmProductDetailPage({
                     </dl>
 
                     <div className={hasGallery ? "border-t border-orange-100 p-5" : "bg-orange-50/35 p-6 md:flex md:flex-col md:justify-center"}>
-                      <p className="mb-4 text-sm leading-6 text-slate-600">For availability, lead time, and technical questions, contact ITS BIO.</p>
+                      <p className="mb-4 text-sm leading-6 text-slate-600">For availability, lead time, and technical questions, contact ITSBio.</p>
                       <QuoteTriggerButton
                         product={quoteProduct}
                         className="inline-flex w-full items-center justify-center bg-[#f2632f] px-4 py-3 text-sm font-semibold text-white transition hover:bg-[#d95221]"
                       />
-                      <Link href="/contact" className="mt-3 inline-flex w-full items-center justify-center border border-[#f2632f] bg-white px-4 py-3 text-sm font-semibold text-[#dc5a2b] transition hover:bg-orange-50">Contact ITS BIO</Link>
+                      <Link href="/contact" className="mt-3 inline-flex w-full items-center justify-center border border-[#f2632f] bg-white px-4 py-3 text-sm font-semibold text-[#dc5a2b] transition hover:bg-orange-50">Contact ITSBio</Link>
                     </div>
                   </div>
                 </aside>

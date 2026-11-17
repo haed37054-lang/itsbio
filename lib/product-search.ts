@@ -137,7 +137,7 @@ export function productSearchImage(image?: string | null): string | undefined {
 export function productSearchMetadata(info: ProductSearchInfo): Metadata {
   const identity = productSearchIdentity(info);
   const label = productSearchLabel(info.name);
-  const title = `${identity}${label && !identity.includes(label) ? ` · ${label}` : ""} | ${info.brand} | ITS BIO 이츠바이오`;
+  const title = `${identity}${label && !identity.includes(label) ? ` · ${label}` : ""} | ${info.brand} | ITSBio 이츠바이오`;
   const description = productSearchDescription(info);
   const url = absoluteSiteUrl(info.path);
   const image = productSearchImage(info.image);
@@ -145,7 +145,7 @@ export function productSearchMetadata(info: ProductSearchInfo): Metadata {
     title: { absolute: title },
     description,
     alternates: { canonical: url },
-    openGraph: { type: "website", title, description, url, locale: "ko_KR", siteName: "ITS BIO 이츠바이오", images: image ? [{ url: image, alt: searchText(info.name) }] : [] },
+    openGraph: { type: "website", title, description, url, locale: "ko_KR", siteName: "ITSBio 이츠바이오", images: image ? [{ url: image, alt: searchText(info.name) }] : [] },
     twitter: { card: image ? "summary_large_image" : "summary", title, description, images: image ? [image] : [] },
   };
 }

@@ -81,7 +81,7 @@ export default function MultiSubMiniIncluded() {
               <Link
                 href={item.href}
                 className="group/card grid h-full w-full grid-rows-[150px_minmax(52px,auto)_24px] text-left sm:grid-rows-[165px_minmax(52px,auto)_24px] lg:grid-rows-[190px_minmax(52px,auto)_24px]"
-                aria-label={`View ${item.title} in ITS BIO`}
+                aria-label={`View ${item.title} in ITSBio`}
               >
                 <div className="relative h-full w-full overflow-hidden bg-white">
                   <Image

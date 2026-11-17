@@ -267,7 +267,7 @@ export default async function PromotionDetailPage({
       <PageHero
         eyebrow="PROMOTIONS"
         title="Promotions"
-        description="Latest offers, events, and announcements from ITS BIO."
+        description="Latest offers, events, and announcements from ITSBio."
         variant="promotions"
         cta={{ label: "Back to promotions", href: "/promotions" }}
       />

@@ -79,7 +79,7 @@ export default function NeedAssistance() {
       setForm({ name: "", company: "", field: "", phone: "", dept: "", email: "", stage: "", type: "", message: "" });
     } catch (error) {
       setResult("fail");
-      const subject = `[ITS BIO] ${form.type || "Website inquiry"} - ${form.name || "New inquiry"}`;
+      const subject = `[ITSBio] ${form.type || "Website inquiry"} - ${form.name || "New inquiry"}`;
       const body = [
         `Name: ${form.name}`,
         `Company: ${form.company}`,
@@ -171,7 +171,7 @@ export default function NeedAssistance() {
                 Terms
               </a>
               <span>｜</span>
-              <span>© {new Date().getFullYear()} ITS BIO. All rights reserved.</span>
+              <span>© {new Date().getFullYear()} ITSBio. All rights reserved.</span>
             </div>
           </div>
 

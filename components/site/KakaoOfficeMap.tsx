@@ -53,7 +53,7 @@ export default function KakaoOfficeMap({ latitude, longitude, address, mapUrl }:
             yAnchor: 2.15,
             content: `
               <div style="padding:8px 12px;border-radius:999px;background:#071d43;color:white;font-size:12px;font-weight:700;box-shadow:0 8px 24px rgba(15,23,42,.18);white-space:nowrap;border:1px solid rgba(255,255,255,.7)">
-                ITS BIO · Seoul Office
+                ITSBio · Seoul Office
               </div>
             `,
           });
@@ -107,7 +107,7 @@ export default function KakaoOfficeMap({ latitude, longitude, address, mapUrl }:
           <div className="absolute left-[24%] top-[10%] h-[80%] w-2 rotate-[18deg] rounded-full bg-white/80 shadow-sm" />
           <div className="relative z-10 mx-6 max-w-md rounded-[24px] border border-black/10 bg-white/95 p-6 text-center shadow-[0_18px_45px_rgba(15,23,42,.12)] backdrop-blur">
             <div className="mx-auto grid h-12 w-12 place-items-center rounded-full bg-[#fee500] text-xl font-black text-[#191919]">K</div>
-            <div className="mt-4 text-sm font-bold text-[#191919]">ITS BIO · Seoul Office</div>
+            <div className="mt-4 text-sm font-bold text-[#191919]">ITSBio · Seoul Office</div>
             <p className="mt-2 text-xs leading-6 text-slate-600">{address}</p>
             <a href={mapUrl} target="_blank" rel="noreferrer" className="mt-5 inline-flex h-10 items-center justify-center rounded-full bg-[#fee500] px-5 text-xs font-bold text-[#191919] transition hover:brightness-95">
               Kakao Map에서 위치 보기 →

@@ -216,7 +216,7 @@ export default async function NoticeDetailPage({
       <PageHero
         eyebrow="NOTICE"
         title="News & announcements"
-        description="Important company announcements, product updates, service information, and notices from ITS BIO."
+        description="Important company announcements, product updates, service information, and notices from ITSBio."
         variant="notice"
         cta={{ label: "Back to notice", href: "/notice" }}
       />

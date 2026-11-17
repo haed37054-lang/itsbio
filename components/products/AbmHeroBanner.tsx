@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function AbmHeroBanner({
   title = "ABM Products & Services",
-  eyebrow = "ITS BIO",
+  eyebrow = "ITSBio",
 }: {
   title?: string;
   eyebrow?: string;
@@ -21,7 +21,7 @@ export default function AbmHeroBanner({
         <div className="max-w-3xl">
           <div className="flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.2em] text-[#d65427]">
             <span className="h-px w-8 bg-[#ef6331]" aria-hidden="true" />
-            {eyebrow}
+            {eyebrow.includes("ITSBio") ? <span className="normal-case">{eyebrow}</span> : eyebrow}
           </div>
           <h1 className="mt-4 max-w-[820px] text-3xl font-semibold leading-[1.12] tracking-[-0.035em] text-slate-950 md:text-[44px]">
             {title}

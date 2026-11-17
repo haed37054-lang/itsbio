@@ -32,7 +32,7 @@ function ProductsVisual() {
       </div>
       <div className="absolute bottom-4 right-3 w-60 rotate-2 rounded-[28px] bg-white p-5 shadow-[0_26px_70px_rgba(0,0,0,.28)]">
         <div className="flex items-center justify-between">
-          <span className="text-xs font-bold tracking-[0.16em] text-[#123d76]">ITS BIO</span>
+          <span className="text-xs font-bold tracking-[0.16em] text-[#123d76]">ITSBio</span>
           <span className="h-2.5 w-2.5 rounded-full bg-orange-500" />
         </div>
         <div className="mt-5 h-3 w-32 rounded-full bg-slate-200" />
@@ -107,7 +107,7 @@ function ContactVisual() {
   return (
     <div className="relative h-[252px] w-full max-w-[470px]">
       <div className="absolute right-5 top-5 h-48 w-72 rounded-[32px] bg-white p-6 shadow-[0_26px_70px_rgba(0,0,0,.28)]">
-        <div className="text-xs font-bold tracking-[0.18em] text-[#123d76]">ITS BIO</div>
+        <div className="text-xs font-bold tracking-[0.18em] text-[#123d76]">ITSBio</div>
         <div className="mt-4 text-xl font-semibold text-slate-900">How can we help?</div>
         <div className="mt-6 grid grid-cols-3 gap-3 text-center text-[11px] font-medium text-slate-500">
           {['Email','Product','Support'].map((x) => <div key={x} className="rounded-xl bg-slate-50 px-2 py-3">{x}</div>)}
@@ -166,7 +166,7 @@ export default function PageHero({ eyebrow, title, description, variant, cta }: 
         <div className="relative z-10 max-w-[650px]">
           <div className="flex items-center gap-3">
             <span className="h-2.5 w-2.5 rounded-full" style={{ backgroundColor: accent.accent }} />
-            <div className="text-xs font-bold uppercase tracking-[0.24em] text-orange-300">{eyebrow}</div>
+            <div className="text-xs font-bold uppercase tracking-[0.24em] text-orange-300">{eyebrow.includes("ITSBio") ? <span className="normal-case">{eyebrow}</span> : eyebrow}</div>
           </div>
           <h1 className="mt-4 text-[38px] font-semibold leading-[1.06] tracking-[-0.045em] text-white sm:text-[44px] md:text-[52px]">
             {title}

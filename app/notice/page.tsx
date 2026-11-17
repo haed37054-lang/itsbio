@@ -66,7 +66,7 @@ export default async function NoticePage({ searchParams }: { searchParams?: Prom
       <PageHero
         eyebrow="NOTICE"
         title="News, updates, and important notices"
-        description="Stay informed with ITS BIO announcements, product updates, operational notices, and company news."
+        description="Stay informed with ITSBio announcements, product updates, operational notices, and company news."
         variant="notice"
         cta={{ label: "View all notices", href: "#notice-list" }}
       />

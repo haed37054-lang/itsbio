@@ -11,7 +11,8 @@ const source = stripTypeScriptTypes(readFileSync(new URL("../app/api/quote/route
   .replace('import { Resend } from "resend";', "const Resend = dependencies.Resend;")
   .replace(/^export /gm, "");
 
-function createHandler(fallback = false) {
+function createHandler(fallback = false, envOverrides = {}) {
+  const smtpCommands = [];
   const smtpMessages = [];
   const fallbackMessages = [];
   const tls = {
@@ -22,6 +23,7 @@ function createHandler(fallback = false) {
       socket.end = () => socket;
       socket.destroy = () => socket;
       socket.write = (command) => {
+        smtpCommands.push(command);
         let response;
         if (command.startsWith("EHLO")) response = "250-test\r\n250 AUTH PLAIN\r\n";
         else if (command.startsWith("AUTH PLAIN")) response = "235 Authenticated\r\n";
@@ -45,10 +47,10 @@ function createHandler(fallback = false) {
   }
   const handler = new Function("dependencies", "process", "console", `${source}\nreturn POST;`)(
     { tls, Resend },
-    { env: { MAILPLUG_SMTP_USER: "sender@example.test", MAILPLUG_SMTP_PASSWORD: "dummy", QUOTE_TO_EMAIL: "recipient@example.test", RESEND_API_KEY: "dummy" } },
+    { env: { MAILPLUG_SMTP_USER: "sender@example.test", MAILPLUG_SMTP_PASSWORD: "dummy", QUOTE_TO_EMAIL: "recipient@example.test", RESEND_API_KEY: "dummy", ...envOverrides } },
     { error() {} },
   );
-  return { handler, smtpMessages, fallbackMessages };
+  return { handler, smtpMessages, fallbackMessages, smtpCommands };
 }
 
 const common = { name: "Test", org: "Example Lab", email: "visitor@example.test", phone: "010-0000-0000", message: "Please quote this product.", privacyAccepted: true, sourceUrl: "https://itsbio.co.kr/products/example" };
@@ -102,3 +104,43 @@ test("privacy agreement remains required", async () => {
   assert.equal((await handler(request({ ...product, privacyAccepted: false }))).status, 400);
   assert.equal(smtpMessages.length, 0);
 });
+
+
+test("representative sender differs from SMTP login while retaining recipient and customer Reply-To", async () => {
+  const { handler, smtpMessages, smtpCommands } = createHandler();
+  assert.equal((await handler(request(product))).status, 200);
+  const auth = smtpCommands.find((command) => command.startsWith("AUTH PLAIN "));
+  assert.equal(Buffer.from(auth.slice("AUTH PLAIN ".length).trim(), "base64").toString(), "\0sender@example.test\0dummy");
+  assert.ok(smtpCommands.includes("MAIL FROM:<info@itsbio.co.kr>\r\n"));
+  assert.ok(smtpCommands.includes("RCPT TO:<recipient@example.test>\r\n"));
+  assert.ok(smtpMessages[0].startsWith("From: ITSBio <info@itsbio.co.kr>\r\n"));
+  assert.ok(smtpMessages[0].includes("Reply-To: visitor@example.test\r\n"));
+});
+
+test("configured representative sender applies to SMTP and fallback", async () => {
+  for (const fallback of [false, true]) {
+    const { handler, smtpMessages, fallbackMessages, smtpCommands } = createHandler(fallback, { MAILPLUG_FROM_EMAIL: "SUPPORT@example.test" });
+    assert.equal((await handler(request(product))).status, 200);
+    if (fallback) {
+      assert.equal(fallbackMessages[0].from, "ITSBio <support@example.test>");
+      assert.equal(fallbackMessages[0].replyTo, common.email);
+    } else {
+      assert.ok(smtpCommands.includes("MAIL FROM:<support@example.test>\r\n"));
+      assert.ok(smtpMessages[0].startsWith("From: ITSBio <support@example.test>\r\n"));
+    }
+  }
+});
+
+test("fallback defaults to the representative info address", async () => {
+  const { handler, fallbackMessages } = createHandler(true);
+  assert.equal((await handler(request(product))).status, 200);
+  assert.equal(fallbackMessages[0].from, "ITSBio <info@itsbio.co.kr>");
+});
+
+test("invalid sender configuration fails before any SMTP connection or fallback", async () => {
+  const { handler, smtpCommands, fallbackMessages } = createHandler(false, { MAILPLUG_FROM_EMAIL: "not-an-email" });
+  assert.equal((await handler(request(product))).status, 503);
+  assert.equal(smtpCommands.length, 0);
+  assert.equal(fallbackMessages.length, 0);
+});
+

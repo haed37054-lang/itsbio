@@ -11,6 +11,7 @@ const MAILPLUG_SMTP_HOST = "smtp.mailplug.co.kr";
 const MAILPLUG_SMTP_PORT = 465;
 const DEFAULT_SMTP_USER = "bclim@itsbio.co.kr";
 const DEFAULT_TO_EMAIL = "info@itsbio.co.kr";
+const DEFAULT_FROM_EMAIL = "info@itsbio.co.kr";
 const requestLog = new Map<string, number[]>();
 
 function clean(value: unknown, maxLength: number) {
@@ -144,6 +145,7 @@ function advertisedAuthMethods(ehlo: SmtpResponse) {
 async function sendMailplugEmail({
   username,
   password,
+  from,
   to,
   replyTo,
   subject,
@@ -151,6 +153,7 @@ async function sendMailplugEmail({
 }: {
   username: string;
   password: string;
+  from: string;
   to: string;
   replyTo: string;
   subject: string;
@@ -201,12 +204,12 @@ async function sendMailplugEmail({
       throw new MailplugSmtpError("auth-method", "Mailplug SMTP did not advertise a supported authentication method.");
     }
 
-    await command(`MAIL FROM:<${username}>`, [250], "sender");
+    await command(`MAIL FROM:<${from}>`, [250], "sender");
     await command(`RCPT TO:<${to}>`, [250, 251], "recipient");
     await command("DATA", [354], "data");
 
     const message = [
-      `From: ITSBio <${username}>`,
+      `From: ITSBio <${from}>`,
       `To: ${to}`,
       `Reply-To: ${replyTo}`,
       `Subject: ${encodedSubject(subject)}`,
@@ -233,13 +236,13 @@ async function sendMailplugEmail({
   }
 }
 
-async function sendResendFallback({ to, replyTo, subject, text }: { to: string; replyTo: string; subject: string; text: string }) {
+async function sendResendFallback({ from, to, replyTo, subject, text }: { from: string; to: string; replyTo: string; subject: string; text: string }) {
   const apiKey = process.env.RESEND_API_KEY;
   if (!apiKey) return false;
 
   const resend = new Resend(apiKey);
   const { error } = await resend.emails.send({
-    from: process.env.QUOTE_FROM_EMAIL || "ITSBio <onboarding@resend.dev>",
+    from: process.env.QUOTE_FROM_EMAIL || `ITSBio <${from}>`,
     to: [to],
     subject,
     text,
@@ -304,8 +307,10 @@ export async function POST(req: Request) {
     const smtpUser = oneLine(process.env.MAILPLUG_SMTP_USER || DEFAULT_SMTP_USER, 254).toLowerCase();
     const smtpPassword = String(process.env.MAILPLUG_SMTP_PASSWORD || "").replace(/\s+/g, "");
     const toEmail = oneLine(process.env.QUOTE_TO_EMAIL || DEFAULT_TO_EMAIL, 254).toLowerCase();
+    // A representative address may differ from the authenticated member account.
+    const fromEmail = oneLine(process.env.MAILPLUG_FROM_EMAIL || DEFAULT_FROM_EMAIL, 254).toLowerCase();
 
-    if (!validEmail(smtpUser) || !smtpPassword || !validEmail(toEmail)) {
+    if (!validEmail(smtpUser) || !smtpPassword || !validEmail(toEmail) || !validEmail(fromEmail)) {
       console.error("Quote email is not configured: Mailplug SMTP credentials are incomplete.");
       return Response.json({ ok: false, error: "The message service is temporarily unavailable because SMTP credentials are incomplete." }, { status: 503 });
     }
@@ -326,11 +331,11 @@ ${message}
     `.trim();
 
     try {
-      await sendMailplugEmail({ username: smtpUser, password: smtpPassword, to: toEmail, replyTo: email, subject, text });
+      await sendMailplugEmail({ username: smtpUser, password: smtpPassword, from: fromEmail, to: toEmail, replyTo: email, subject, text });
       return Response.json({ ok: true, provider: "mailplug" });
     } catch (mailplugError) {
       console.error("Mailplug quote delivery failed:", mailplugError instanceof Error ? mailplugError.message : mailplugError);
-      if (await sendResendFallback({ to: toEmail, replyTo: email, subject, text })) {
+      if (await sendResendFallback({ from: fromEmail, to: toEmail, replyTo: email, subject, text })) {
         return Response.json({ ok: true, provider: "resend-fallback" });
       }
       return Response.json({ ok: false, error: publicMailError(mailplugError, smtpUser) }, { status: 502 });

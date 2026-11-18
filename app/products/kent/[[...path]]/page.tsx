@@ -2415,7 +2415,10 @@ export default async function KentProductsPathPage({
   const productsInCategory = resolveListingProducts(pathArr, category, allProducts);
   const officialProductCount = currentCategory?.count ?? dedupeProducts(productsInCategory).length;
   const directChildren = getDirectChildren(allCategories, pathArr);
-  const pageType: PageType = showAllProducts
+  // Product listings can also have subcategories (for example CODA accessories).
+  // Keep their configured listing rather than replacing it with legacy landing HTML.
+  const hasConfiguredListing = String(category.pageType || "").trim().toLowerCase() === "listing";
+  const pageType: PageType = showAllProducts || hasConfiguredListing
     ? "listing"
     : currentCategory
       ? (directChildren.length > 0 ? "landing" : "listing")

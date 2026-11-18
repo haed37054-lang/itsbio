@@ -27,7 +27,11 @@ export default function ProductGalleryClient({
   title?: string;
   vectorMap?: VectorMap;
 }) {
-  const safeImages = (images || []).filter((x) => x?.url);
+  const [failedUrls, setFailedUrls] = React.useState<Set<string>>(() => new Set());
+  const safeImages = (images || []).filter((x) => x?.url && !failedUrls.has(x.url));
+  const handleImageError = (url: string) => {
+    setFailedUrls((previous) => previous.has(url) ? previous : new Set([...previous, url]));
+  };
   const media: MediaItem[] = [
     ...(vectorMap?.url ? [{ kind: "vector-map" as const, ...vectorMap }] : []),
     ...safeImages.map((image) => ({ kind: "image" as const, ...image })),
@@ -40,12 +44,13 @@ export default function ProductGalleryClient({
 
   if (!media.length) return null;
 
-  const active = media[Math.min(activeIdx, media.length - 1)];
+  const activeIndex = Math.min(activeIdx, media.length - 1);
+  const active = media[activeIndex];
   const isStaticVectorImage =
     active.kind === "image" && active.url.startsWith("/abm/vector-maps/");
 
   return (
-    <div className="w-full">
+    <div className="w-full" data-product-gallery>
       <div
         className={[
           "relative mx-auto aspect-square w-full max-w-[560px] overflow-hidden",
@@ -75,6 +80,7 @@ export default function ProductGalleryClient({
               className="h-full w-full scale-[1.055] object-contain"
               loading="eager"
               referrerPolicy="no-referrer"
+              onError={() => handleImageError(active.url)}
             />
           </div>
         ) : (
@@ -85,6 +91,7 @@ export default function ProductGalleryClient({
             className="absolute inset-0 h-full w-full object-contain"
             loading="eager"
             referrerPolicy="no-referrer"
+            onError={() => handleImageError(active.url)}
           />
         )}
       </div>
@@ -108,7 +115,7 @@ export default function ProductGalleryClient({
         <div className="mt-4">
           <div className="flex justify-center gap-3 overflow-x-auto pb-1">
             {media.map((item, i) => {
-              const selected = i === activeIdx;
+              const selected = i === activeIndex;
               return (
                 <button
                   key={`${item.kind}-${item.url}-${i}`}
@@ -136,6 +143,7 @@ export default function ProductGalleryClient({
                         className="h-full w-full scale-[1.055] object-contain"
                         loading="lazy"
                         referrerPolicy="no-referrer"
+                        onError={() => handleImageError(item.url)}
                       />
                     </div>
                   ) : (
@@ -146,6 +154,7 @@ export default function ProductGalleryClient({
                       className="h-full w-full object-contain"
                       loading="lazy"
                       referrerPolicy="no-referrer"
+                      onError={() => handleImageError(item.url)}
                     />
                   )}
                 </button>
@@ -154,7 +163,7 @@ export default function ProductGalleryClient({
           </div>
 
           <div className="mt-2 text-center text-xs text-neutral-500">
-            {activeIdx + 1} / {media.length}
+            {activeIndex + 1} / {media.length}
           </div>
         </div>
       ) : null}

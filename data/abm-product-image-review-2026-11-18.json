@@ -1,0 +1,28 @@
+{
+  "checkedAt": "2026-11-18",
+  "method": "Current official ABM product gallery; original image bytes downloaded through the existing ITSBio resource-image endpoint without resizing or re-encoding.",
+  "records": [
+    {
+      "sku": "T1186",
+      "sourceUrl": "https://www.abmgood.com/gp5d-cells-t1186.html",
+      "sourceImages": [
+        "https://www.abmgood.com/assets/product/upload/ytK1iDi21YYjrQZuyqD1OFEANAvzaHVphJj0dWHn.png"
+      ],
+      "images": [
+        "/images/abm/T1186-official.png"
+      ],
+      "sha256": "85c5e0580bfb1d82a2e64ab1973c76adfd95ceead46ad99d6732259f178ff8b3"
+    },
+    {
+      "sku": "T7063",
+      "sourceUrl": "https://www.abmgood.com/renca-cells-t7063.html",
+      "sourceImages": [
+        "https://www.abmgood.com/assets/product/upload/6mXbnxO83T5Yay6EaibYzMkWaGINAVMrMyJd9zQG.png"
+      ],
+      "images": [
+        "/images/abm/T7063-official.png"
+      ],
+      "sha256": "b3115eba4297e98eb1c2f11cfa2f1e7738a3b0f7dea231dec26c86c1c25e5eff"
+    }
+  ]
+}

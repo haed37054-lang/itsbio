@@ -2,6 +2,7 @@ import { PUBLIC_CATALOG_CACHE, sanityCdnClient, sanityClient } from "@/lib/sanit
 import { findOfficialAbmCellModelProduct } from "@/lib/abm/cell-model-data";
 import { findOfficialAbmCellDetail } from "@/lib/abm/cell-detail-data";
 import { applyReviewedAbmProductDetail } from "@/lib/abm/reviewed-product-details";
+import { applyReviewedAbmProductImages } from "@/lib/abm/product-image-review";
 
 export const ABM_REBUILD_VERSION = "2026-08-09-search-v5";
 
@@ -496,7 +497,7 @@ function applyVerifiedProductDetail(detail: AbmStagedDetail) {
       imageCreditLabel: "View official vector map",
     };
   }
-  return applyVerifiedIpscVectorMap(applyVerifiedSpecialCellDetail(detail));
+  return applyReviewedAbmProductImages(applyVerifiedIpscVectorMap(applyVerifiedSpecialCellDetail(detail)));
 }
 
 export function isManagedAbmImageUrl(value?: string) {

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import {
-  SEEDBURO_NAVIGATION, SEEDBURO_PRODUCTS, getSeedburoCollection,
+  SEEDBURO_NAVIGATION, getSeedburoCollection,
   seedburoCollectionHref, seedburoPrimarySku, seedburoProductHref,
   type SeedburoCollection, type SeedburoProduct,
 } from "@/lib/seedburo/catalog";
@@ -12,11 +12,11 @@ export function SeedburoSidebar({ active = "" }: { active?: string }) {
       <nav aria-label="Seedburo categories" className="overflow-hidden rounded-2xl border border-slate-200 bg-white">
         <Link href="/products/seedburo" className="block border-b border-slate-200 px-5 py-4 font-semibold text-green-800">Seedburo Equipment</Link>
         <div className="max-h-[calc(100vh-190px)] overflow-y-auto p-2">
-          <Link href="/products/seedburo/all-products" prefetch={false} aria-current={active === "all-products" ? "page" : undefined} className={`block rounded-xl px-3 py-2.5 text-sm ${active === "all-products" ? "bg-green-50 font-semibold text-green-800" : "text-slate-700 hover:bg-slate-50"}`}>All products <span className="float-right text-xs text-slate-400">{SEEDBURO_PRODUCTS.length.toLocaleString()}</span></Link>
+          <Link href="/products/seedburo/all-products" prefetch={false} aria-current={active === "all-products" ? "page" : undefined} className={`block rounded-xl px-3 py-2.5 text-sm ${active === "all-products" ? "bg-green-50 font-semibold text-green-800" : "text-slate-700 hover:bg-slate-50"}`}>All products</Link>
           {SEEDBURO_NAVIGATION.categories.map((item) => {
             const category = getSeedburoCollection(item.handle);
             if (!category) return null;
-            return <Link key={item.handle} href={seedburoCollectionHref(item.handle)} prefetch={false} aria-current={active === item.handle ? "page" : undefined} className={`flex items-start justify-between gap-2 rounded-xl px-3 py-2.5 text-sm ${active === item.handle ? "bg-green-50 font-semibold text-green-800" : "text-slate-700 hover:bg-slate-50"}`}><span>{item.title}</span><span className="mt-0.5 text-xs text-slate-400">{category.count}</span></Link>;
+            return <Link key={item.handle} href={seedburoCollectionHref(item.handle)} prefetch={false} aria-current={active === item.handle ? "page" : undefined} className={`block rounded-xl px-3 py-2.5 text-sm ${active === item.handle ? "bg-green-50 font-semibold text-green-800" : "text-slate-700 hover:bg-slate-50"}`}>{item.title}</Link>;
           })}
           <div className="mx-3 mb-2 mt-5 border-t border-slate-200 pt-4 text-[11px] font-semibold uppercase tracking-wider text-slate-400">Product phases</div>
           {SEEDBURO_NAVIGATION.phases.map((item) => <Link key={item.handle} href={seedburoCollectionHref(item.handle)} prefetch={false} className={`block rounded-xl px-3 py-2.5 text-sm ${active === item.handle ? "bg-green-50 font-semibold text-green-800" : "text-slate-700 hover:bg-slate-50"}`}>{item.title}</Link>)}

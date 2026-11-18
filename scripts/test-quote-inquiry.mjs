@@ -7,9 +7,12 @@ import { readFileSync } from "node:fs";
 import { stripTypeScriptTypes } from "node:module";
 import { test } from "node:test";
 
+const mailLogo = JSON.parse(readFileSync(new URL("../data/mail/itsbio-logo.json", import.meta.url), "utf8"));
+
 const source = stripTypeScriptTypes(readFileSync(new URL("../app/api/quote/route.ts", import.meta.url), "utf8"))
   .replace('import tls from "node:tls";', "const tls = dependencies.tls;")
   .replace('import { Resend } from "resend";', "const Resend = dependencies.Resend;")
+  .replace('import mailLogo from "@/data/mail/itsbio-logo.json";', "const mailLogo = dependencies.mailLogo;")
   .replace(/^export /gm, "");
 
 function createHandler(fallback = false, envOverrides = {}) {
@@ -47,7 +50,7 @@ function createHandler(fallback = false, envOverrides = {}) {
     emails = { send: async (message) => { fallbackMessages.push(message); return { error: null }; } };
   }
   const handler = new Function("dependencies", "process", "console", `${source}\nreturn POST;`)(
-    { tls, Resend },
+    { tls, Resend, mailLogo },
     { env: { MAILPLUG_SMTP_USER: "sender@example.test", MAILPLUG_SMTP_PASSWORD: "dummy", QUOTE_TO_EMAIL: "recipient@example.test", RESEND_API_KEY: "dummy", ...envOverrides } },
     { error() {} },
   );
@@ -59,15 +62,29 @@ const product = { ...common, product: "Example instrument", catNo: "EX-001", con
 const footer = { ...common, field: "Life Science", department: "Research", inquiryType: "Product inquiry" };
 const request = (body) => new Request("https://itsbio.co.kr/api/quote", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) });
 
-function smtpAlternatives(message) {
-  const boundary = message.match(/Content-Type: multipart\/alternative; boundary="([^"]+)"/i)?.[1];
-  assert.ok(boundary, "SMTP message must declare multipart/alternative");
-  return message.split(`--${boundary}`).slice(1, -1).map((part) => {
-    const [headers, encoded] = part.trim().split(/\r\n\r\n/);
+function smtpParts(message) {
+  assert.match(message, /Content-Type: multipart\/alternative;/i);
+  const parse = (part) => {
+    const split = part.indexOf("\r\n\r\n");
+    const headers = part.slice(0, split);
+    const body = part.slice(split + 4).trim();
+    const type = headers.match(/Content-Type: ([^;\r\n]+)/i)?.[1];
+    assert.ok(type, "Every MIME part must declare its content type");
+    if (type.startsWith("multipart/")) {
+      const boundary = headers.match(/boundary="([^"]+)"/i)?.[1];
+      assert.ok(boundary);
+      return body.split(`--${boundary}`).slice(1, -1).flatMap((child) => parse(child.trim()));
+    }
     assert.match(headers, /Content-Transfer-Encoding: base64/i);
-    for (const line of encoded.split("\r\n")) assert.ok(line.length <= 76, "MIME lines must fit 76 characters");
-    return { type: headers.match(/Content-Type: ([^;]+)/i)[1], content: Buffer.from(encoded, "base64").toString("utf8").replace(/\r\n/g, "\n") };
-  });
+    for (const line of body.split("\r\n")) assert.ok(line.length <= 76, "MIME lines must fit 76 characters");
+    const bytes = Buffer.from(body, "base64");
+    return [{ type, headers, bytes, content: bytes.toString("utf8").replace(/\r\n/g, "\n") }];
+  };
+  return parse(message);
+}
+
+function smtpAlternatives(message) {
+  return smtpParts(message).filter(({ type }) => type === "text/plain" || type === "text/html");
 }
 
 for (const fallback of [false, true]) {
@@ -82,7 +99,7 @@ for (const fallback of [false, true]) {
       assert.equal((await response.json()).provider, fallback ? "resend-fallback" : "mailplug");
       assert.equal(smtpMessages.length + fallbackMessages.length, 1);
       const text = fallback ? fallbackMessages[0].text : smtpAlternatives(smtpMessages[0])[0].content;
-      for (const value of [...expected, `Name: ${common.name}`, `Org: ${common.org}`, `Email: ${common.email}`, `Phone: ${common.phone}`, `Source page: ${common.sourceUrl}`, common.message]) {
+      for (const value of [...expected, `Name: ${common.name}`, `Org: ${common.org}`, `Email: ${common.email}`, `Phone: ${common.phone}`, common.message]) {
         assert.ok(text.includes(value), `Missing ${value}`);
       }
       assert.ok(!text.includes("undefined"));
@@ -197,7 +214,7 @@ test("empty optional fields and empty product section are omitted", async () => 
   }
 });
 
-test("untrusted values are escaped and unsafe source URLs are not linked", async () => {
+test("untrusted values are escaped and source URLs are omitted", async () => {
   const { handler, smtpMessages } = createHandler();
   assert.equal((await handler(request({ ...product, name: '<img src=x onerror="alert(1)">', product: "A&B <kit>", message: "<script>alert('x')</script>\n견적 부탁드립니다.", sourceUrl: "javascript:alert(1)" }))).status, 200);
   const [text, html] = smtpAlternatives(smtpMessages[0]).map(({ content }) => content);
@@ -206,7 +223,7 @@ test("untrusted values are escaped and unsafe source URLs are not linked", async
   assert.ok(html.includes("&lt;img src=x onerror=&quot;alert(1)&quot;&gt;"));
   assert.ok(html.includes("&lt;script&gt;alert(&#39;x&#39;)&lt;/script&gt;<br>견적 부탁드립니다."));
   assert.ok(!html.includes("<script>"));
-  assert.ok(!html.includes("<img"));
+  assert.equal((html.match(/<img\b/g) || []).length, 1, "Only the company logo may be an image");
   assert.ok(!html.includes('href="javascript:'));
 });
 
@@ -233,15 +250,65 @@ assert not message.defects, message.defects
 assert message.get_content_type() == 'multipart/alternative'
 assert message['Reply-To'] == 'visitor@example.test'
 parts = list(message.iter_parts())
-assert [part.get_content_type() for part in parts] == ['text/plain', 'text/html']
-for part in parts:
+assert [part.get_content_type() for part in parts] == ['text/plain', 'multipart/related']
+related = parts[1]
+assert related.get_param('type') == 'text/html'
+assert [part.get_content_type() for part in related.iter_parts()] == ['text/html', 'image/png']
+text_parts = [part for part in message.walk() if part.get_content_maintype() == 'text']
+for part in text_parts:
     assert not part.defects, part.defects
     assert part.get_content_charset() == 'utf-8'
     assert '임호준' in part.get_content()
     assert '견적과 납기 안내 부탁드립니다.' in part.get_content()
-assert '\\r\\n\\r\\n감사합니다.' in parts[0].get_content()
-assert '<br><br>감사합니다.' in parts[1].get_content()
+assert '\\r\\n\\r\\n감사합니다.' in text_parts[0].get_content()
+assert '<br><br>감사합니다.' in text_parts[1].get_content()
+logo = [part for part in message.walk() if part.get_content_type() == 'image/png'][0]
+assert logo.get_content_disposition() == 'inline'
+assert logo['Content-ID'] == '<itsbio-logo@itsbio.co.kr>'
+assert logo.get_payload(decode=True).startswith(bytes.fromhex('89504e470d0a1a0a'))
+assert 'cid:itsbio-logo@itsbio.co.kr' in text_parts[1].get_content()
 `], { input: smtpMessages[0].replace(/\r\n\.\r\n$/, "\r\n"), encoding: "utf8" });
   assert.equal(parser.status, 0, parser.stderr || parser.error?.message);
+});
+
+test("quote heading replaces the old heading and source page is absent from both formats", async () => {
+  for (const fallback of [false, true]) {
+    const { handler, smtpMessages, fallbackMessages } = createHandler(fallback);
+    assert.equal((await handler(request(product))).status, 200);
+    const parts = fallback ? [fallbackMessages[0].text, fallbackMessages[0].html] : smtpAlternatives(smtpMessages[0]).map(({ content }) => content);
+    for (const part of parts) {
+      assert.ok(part.includes("견적 문의"));
+      assert.ok(!part.includes("New website inquiry received"));
+      assert.ok(!part.includes("Source page"));
+      assert.ok(!part.includes(product.sourceUrl));
+    }
+    assert.match(parts[1], /<p style="margin:0;font-size:16px;line-height:1\.8;[^\"]*">Please quote this product\.<\/p>/);
+    assert.ok(!parts[1].includes("background-color:#f8fafc"));
+  }
+});
+
+test("both transports embed the exact website logo with matching CID", async () => {
+  const original = readFileSync(new URL(`../${mailLogo.sourceAsset}`, import.meta.url));
+  assert.deepEqual(Buffer.from(mailLogo.content, "base64"), original);
+  assert.equal(original.readUInt32BE(16), mailLogo.width);
+  assert.equal(original.readUInt32BE(20), mailLogo.height);
+  for (const fallback of [false, true]) {
+    const { handler, smtpMessages, fallbackMessages } = createHandler(fallback);
+    assert.equal((await handler(request(product))).status, 200);
+    if (fallback) {
+      const [attachment] = fallbackMessages[0].attachments;
+      assert.equal(attachment.contentId, mailLogo.contentId);
+      assert.equal(attachment.contentType, "image/png");
+      assert.deepEqual(Buffer.from(attachment.content, "base64"), original);
+      assert.ok(fallbackMessages[0].html.includes(`src="cid:${attachment.contentId}"`));
+    } else {
+      const parts = smtpParts(smtpMessages[0]);
+      const logo = parts.find(({ type }) => type === "image/png");
+      assert.ok(logo.headers.includes(`Content-ID: <${mailLogo.contentId}>`));
+      assert.match(logo.headers, /Content-Disposition: inline/);
+      assert.deepEqual(logo.bytes, original);
+      assert.ok(parts.find(({ type }) => type === "text/html").content.includes(`src="cid:${mailLogo.contentId}"`));
+    }
+  }
 });
 

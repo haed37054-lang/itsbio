@@ -150,8 +150,8 @@ function PillNavButton({
   dir: "prev" | "next";
 }) {
   const disabled = !href;
-  const wrap = "inline-flex items-center gap-3 rounded-full px-5 py-3 text-sm font-extrabold tracking-wide shadow-sm transition";
-  const iconCircle = "grid h-10 w-10 place-items-center rounded-full bg-white/95 ring-1 ring-white/60";
+  const wrap = "inline-flex items-center gap-2 rounded-full px-3 py-3 text-sm font-extrabold tracking-wide shadow-sm transition sm:gap-3 sm:px-5";
+  const iconCircle = "grid h-8 w-8 place-items-center rounded-full bg-white/95 ring-1 ring-white/60 sm:h-10 sm:w-10";
 
   if (disabled) {
     return (

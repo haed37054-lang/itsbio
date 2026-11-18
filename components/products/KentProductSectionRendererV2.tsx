@@ -791,7 +791,7 @@ function ProductSection({ section, index, videoCandidates, productTitle }: { sec
   return (
     <section
       id={`kent-section-${index}`}
-      className={["scroll-mt-24 py-12 md:py-[66px]", index > 0 ? "border-t border-[#dfe4e8]" : "", bucket === "features" ? "border-b-[4px] border-b-[#0b4f9c]" : "", bucket === "videos" ? "-mx-6 bg-[#f3f7fb] px-6 md:-mx-10 md:px-10 lg:-mx-12 lg:px-12" : "", notice ? "-mx-6 bg-[#fff8e8] px-6 md:-mx-10 md:px-10" : ""].join(" ")}
+      className={["scroll-mt-24 py-12 md:py-[66px]", index > 0 ? "border-t border-[#dfe4e8]" : "", bucket === "features" ? "border-b-[4px] border-b-[#0b4f9c]" : "", bucket === "videos" ? "-mx-6 bg-[#f3f7fb] px-6 md:px-10 lg:px-12" : "", notice ? "-mx-6 bg-[#fff8e8] px-6 md:px-10" : ""].join(" ")}
     >
       <h2 className={`mb-8 text-[28px] font-semibold leading-tight tracking-[-0.025em] md:text-[34px] ${notice ? "text-amber-900" : "text-[#0b4f9c]"}`}>{title}</h2>
       {body}

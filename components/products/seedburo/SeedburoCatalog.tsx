@@ -1,3 +1,4 @@
+import ResponsiveCategoryNav from "@/components/products/ResponsiveCategoryNav";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -8,7 +9,7 @@ import {
 
 export function SeedburoSidebar({ active = "" }: { active?: string }) {
   return (
-    <aside className="self-start lg:sticky lg:top-24">
+    <ResponsiveCategoryNav label="Seedburo"><aside className="self-start lg:sticky lg:top-24">
       <nav aria-label="Seedburo categories" className="overflow-hidden rounded-2xl border border-slate-200 bg-white">
         <Link href="/products/seedburo" className="block border-b border-slate-200 px-5 py-4 font-semibold text-green-800">Seedburo Equipment</Link>
         <div className="max-h-[calc(100vh-190px)] overflow-y-auto p-2">
@@ -23,7 +24,7 @@ export function SeedburoSidebar({ active = "" }: { active?: string }) {
           <Link href="/products/seedburo/categories" prefetch={false} className="mt-4 block border-t border-slate-200 px-3 py-3 text-sm font-semibold text-green-800">Browse all categories ›</Link>
         </div>
       </nav>
-    </aside>
+    </aside></ResponsiveCategoryNav>
   );
 }
 

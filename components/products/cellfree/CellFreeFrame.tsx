@@ -1,3 +1,4 @@
+import ResponsiveCategoryNav from "@/components/products/ResponsiveCategoryNav";
 import type { ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -31,7 +32,7 @@ export default function CellFreeFrame({ category, title, children }: { category?
           ]} />
         </div>
         <div className="grid grid-cols-1 items-start gap-8 lg:grid-cols-[240px_minmax(0,1fr)]">
-          <aside className="min-w-0 self-start rounded-2xl border border-slate-200 bg-white lg:sticky lg:top-24">
+          <ResponsiveCategoryNav label="CellFree Sciences"><aside className="min-w-0 self-start rounded-2xl border border-slate-200 bg-white lg:sticky lg:top-24">
             <Link href={CELLFREE_ROOT} className="block border-b border-slate-200 px-5 py-4 font-semibold text-slate-950">CellFree Sciences</Link>
             <nav aria-label="CellFree Sciences product categories" className="flex gap-1 overflow-x-auto p-3 lg:block lg:space-y-1">
               <Link href={CELLFREE_ROOT} aria-current={!category ? "page" : undefined} className={`block shrink-0 whitespace-nowrap rounded-lg px-3 py-2.5 text-sm ${!category ? "bg-blue-50 font-semibold text-blue-950" : "text-slate-600 hover:bg-slate-50"}`}>All products &amp; services</Link>
@@ -40,7 +41,7 @@ export default function CellFreeFrame({ category, title, children }: { category?
                   className={`block shrink-0 whitespace-nowrap rounded-lg px-3 py-2.5 text-sm lg:whitespace-normal ${key === category ? "bg-blue-50 font-semibold text-blue-950" : "text-slate-600 hover:bg-slate-50"}`}>{label}</Link>
               ))}
             </nav>
-          </aside>
+          </aside></ResponsiveCategoryNav>
           <div className="min-w-0">{children}</div>
         </div>
       </main>

@@ -1,3 +1,4 @@
+import ResponsiveCategoryNav from "@/components/products/ResponsiveCategoryNav";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
@@ -1766,6 +1767,7 @@ function KentSideNav({
   }
 
   return (
+    <ResponsiveCategoryNav label="Kent Scientific">
     <>
       <style>{`
         .scrollbar-hidden {
@@ -1832,6 +1834,7 @@ function KentSideNav({
         </div>
       </div>
     </>
+    </ResponsiveCategoryNav>
   );
 }
 

@@ -1,3 +1,4 @@
+import ResponsiveCategoryNav from "@/components/products/ResponsiveCategoryNav";
 import Link from "next/link";
 
 import abmCellularTaxonomy from "@/data/abm-cellular-taxonomy.json";
@@ -162,6 +163,7 @@ export default function AbmCellularSidebar({ activePath }: { activePath: string[
   const taxonomy = abmCellularTaxonomy as TaxonomyNode[];
 
   return (
+    <ResponsiveCategoryNav label="ABM">
     <div className="relative z-[40] overflow-visible rounded-2xl border border-slate-200 bg-white shadow-sm">
       <div className="border-b border-orange-100 bg-orange-50 px-5 py-4">
         <div className="text-base font-semibold text-orange-600">All Products</div>
@@ -204,5 +206,6 @@ export default function AbmCellularSidebar({ activePath }: { activePath: string[
         </div>
       </nav>
     </div>
+    </ResponsiveCategoryNav>
   );
 }

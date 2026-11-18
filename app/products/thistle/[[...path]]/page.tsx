@@ -1,3 +1,4 @@
+import ResponsiveCategoryNav from "@/components/products/ResponsiveCategoryNav";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -69,6 +70,7 @@ function categoryHref(path: string[], query = "", page = 1) {
 
 function CleaverSidebar({ activePath }: { activePath: string[] }) {
   return (
+    <ResponsiveCategoryNav label="Thistle Scientific">
     <aside className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm lg:sticky lg:top-24">
       <Link href="/products/thistle" className="block border-b border-slate-200 bg-[#f5f0fb] px-5 py-4 text-base font-semibold text-[#61247b]">
         Thistle Scientific
@@ -95,6 +97,7 @@ function CleaverSidebar({ activePath }: { activePath: string[] }) {
         })}
       </nav>
     </aside>
+    </ResponsiveCategoryNav>
   );
 }
 
@@ -160,16 +163,16 @@ export default async function CleaverCatalogPage({ params, searchParams }: PageP
 
       <div className="mx-auto max-w-[1320px] px-6">
         <div className="py-6"><Breadcrumb items={breadcrumbs} /></div>
-        <div className="grid gap-8 lg:grid-cols-[270px_minmax(0,1fr)] xl:grid-cols-[290px_minmax(0,1fr)]">
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-[270px_minmax(0,1fr)] xl:grid-cols-[290px_minmax(0,1fr)]">
           <CleaverSidebar activePath={path} />
-          <section>
+          <section className="min-w-0">
             <div className="border-b border-slate-200 pb-6">
               <div className="text-xs font-bold uppercase tracking-[0.16em] text-[#8650a0]">{path.length ? "Product Category" : "Official Product Catalog"}</div>
               <h2 className="mt-2 text-3xl font-semibold tracking-tight text-slate-950">{heading}</h2>
               {!path.length ? <a href="https://www.thistlescientific.com/wp-content/uploads/2026/08/Thistle-Export-catalogue-2026_V2.pdf" target="_blank" rel="noopener noreferrer" className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-[#61247b] underline underline-offset-4">Download 2026 Thistle Export Catalogue <span aria-hidden>↗</span></a> : null}
               {match && path.length === 1 ? <p className="mt-3 max-w-3xl text-sm leading-7 text-slate-600">{match.root.description}</p> : null}
               <form action={categoryHref(path)} className="mt-5 flex max-w-xl gap-2">
-                <input name="q" defaultValue={query} placeholder="Search product name or catalog number" aria-label="Search Cleaver products" className="h-11 min-w-0 flex-1 rounded-full border border-slate-300 px-4 text-sm outline-none focus:border-purple-400 focus:ring-4 focus:ring-purple-100" />
+                <input name="q" defaultValue={query} placeholder="Search product name or catalog number" aria-label="Search Thistle products" className="h-11 min-w-0 flex-1 rounded-full border border-slate-300 px-4 text-sm outline-none focus:border-purple-400 focus:ring-4 focus:ring-purple-100" />
                 <button className="h-11 rounded-full bg-[#61247b] px-5 text-sm font-semibold text-white hover:bg-[#471659]">Search</button>
               </form>
             </div>

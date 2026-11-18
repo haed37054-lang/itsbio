@@ -3,8 +3,9 @@
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import BrandLogo from "./BrandLogo";
-import ProductsMegaMenu from "./ProductsMegaMenu";
+import ProductsMegaMenu, { MobileProductNavigation } from "./ProductsMegaMenu";
 import SearchBox from "./SearchBox";
 
 function useClickOutside<T extends HTMLElement>(onOutside: () => void) {
@@ -24,6 +25,8 @@ function useClickOutside<T extends HTMLElement>(onOutside: () => void) {
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const menuButtonRef = useRef<HTMLButtonElement | null>(null);
+  const closeButtonRef = useRef<HTMLButtonElement | null>(null);
   const panelRef = useClickOutside<HTMLDivElement>(() => setMobileOpen(false));
   const pathname = usePathname();
   const router = useRouter();
@@ -39,11 +42,32 @@ export default function Header() {
   useEffect(() => {
     if (!mobileOpen) return;
     const prev = document.body.style.overflow;
+    const previousFocus = document.activeElement as HTMLElement | null;
     document.body.style.overflow = "hidden";
+    closeButtonRef.current?.focus();
+    const onTab = (event: KeyboardEvent) => {
+      if (event.key !== "Tab") return;
+      const controls = panelRef.current?.querySelectorAll<HTMLElement>('a[href], button:not(:disabled), input:not(:disabled), select, textarea, summary, [tabindex="0"]');
+      const visible = Array.from(controls || []).filter((el) => el.getClientRects().length > 0);
+      const first = visible[0];
+      const last = visible[visible.length - 1];
+      if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last?.focus(); }
+      else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first?.focus(); }
+    };
+    document.addEventListener("keydown", onTab);
     return () => {
       document.body.style.overflow = prev;
+      document.removeEventListener("keydown", onTab);
+      (previousFocus?.isConnected ? previousFocus : menuButtonRef.current)?.focus();
     };
-  }, [mobileOpen]);
+  }, [mobileOpen, panelRef]);
+
+  useEffect(() => {
+    const desktop = window.matchMedia("(min-width: 1280px)");
+    const closeOnDesktop = () => { if (desktop.matches) setMobileOpen(false); };
+    desktop.addEventListener("change", closeOnDesktop);
+    return () => desktop.removeEventListener("change", closeOnDesktop);
+  }, []);
 
   useEffect(() => {
     const timer = window.setTimeout(() => {
@@ -108,12 +132,14 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-slate-200 bg-white/95 backdrop-blur">
-      <div className="mx-auto flex h-[76px] max-w-7xl items-center gap-4 px-4 md:px-6">
+      <div className="mx-auto flex h-[76px] max-w-7xl items-center gap-2 px-4 sm:gap-4 md:px-6">
         <button
           type="button"
-          className="inline-flex h-10 w-10 items-center justify-center rounded-lg border bg-white md:hidden"
+          ref={menuButtonRef}
+          className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-lg border bg-white xl:hidden"
           aria-label="Open menu"
           aria-expanded={mobileOpen}
+          aria-controls="mobile-menu"
           onClick={() => setMobileOpen((v) => !v)}
         >
           <div className="grid gap-1">
@@ -125,7 +151,7 @@ export default function Header() {
 
         <BrandLogo className="shrink-0" />
 
-        <nav className="hidden items-center gap-7 text-[15px] font-medium text-slate-700 md:flex">
+        <nav className="hidden shrink-0 items-center gap-7 text-[15px] font-medium text-slate-700 xl:flex">
           <ProductsMegaMenu />
           <Link href="/promotions" className="transition hover:text-orange-600">Promotions</Link>
           <Link href="/notice" className="transition hover:text-orange-600">Notice</Link>
@@ -134,18 +160,19 @@ export default function Header() {
         </nav>
 
         <div className="ml-auto flex items-center gap-3">
-          <SearchBox className="hidden w-80 md:block xl:w-[420px]" />
+          <SearchBox className="hidden w-72 md:block xl:w-80 2xl:w-[420px]" />
           <Link
             href="/quote"
-            className="rounded-full bg-orange-600 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-orange-700 md:px-6"
+            aria-label="Request a Quote"
+            className="inline-flex min-h-11 shrink-0 items-center justify-center whitespace-nowrap rounded-full bg-orange-600 px-3 py-2.5 text-sm font-semibold text-white transition hover:bg-orange-700 sm:px-5"
           >
-            Request a Quote
+            <span className="sm:hidden">Quote</span><span className="hidden sm:inline">Request a Quote</span>
           </Link>
         </div>
       </div>
 
-      {mobileOpen && (
-        <div className="fixed inset-0 z-[60] md:hidden">
+      {mobileOpen && createPortal(
+        <div className="fixed inset-0 z-[200] xl:hidden">
           <div
             className="absolute inset-0 bg-white/70 backdrop-blur-sm"
             onClick={() => setMobileOpen(false)}
@@ -154,15 +181,17 @@ export default function Header() {
 
           <div
             ref={panelRef}
-            className="absolute left-0 top-0 h-full w-[min(86vw,360px)] bg-white shadow-2xl ring-1 ring-black/10"
+            id="mobile-menu"
+            className="absolute inset-y-0 left-0 flex w-[min(92vw,380px)] min-w-0 flex-col bg-white shadow-2xl ring-1 ring-black/10"
             role="dialog"
             aria-modal="true"
             aria-label="Mobile menu"
           >
-            <div className="flex h-[76px] items-center justify-between border-b px-4">
+            <div className="flex h-[76px] shrink-0 items-center justify-between border-b px-4">
               <BrandLogo />
               <button
                 type="button"
+                ref={closeButtonRef}
                 className="inline-flex h-10 w-10 items-center justify-center rounded-lg border bg-white"
                 aria-label="Close menu"
                 onClick={() => setMobileOpen(false)}
@@ -171,7 +200,7 @@ export default function Header() {
               </button>
             </div>
 
-            <div className="p-4">
+            <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain p-4 pb-[max(1rem,env(safe-area-inset-bottom))]">
               <SearchBox
                 className="w-full"
                 placeholder="Search by Product Name, Catalog No..."
@@ -187,11 +216,12 @@ export default function Header() {
                   Products
                 </Link>
                 <Link href="/promotions" className="block rounded-xl px-3 py-3 text-base text-slate-700 hover:bg-slate-50" onClick={() => setMobileOpen(false)}>Promotions</Link>
-                <Link href="/resources" className="block rounded-xl px-3 py-3 text-base text-slate-700 hover:bg-slate-50" onClick={() => setMobileOpen(false)}>Resources</Link>
                 <Link href="/notice" className="block rounded-xl px-3 py-3 text-base text-slate-700 hover:bg-slate-50" onClick={() => setMobileOpen(false)}>Notice</Link>
                 <Link href="/about" className="block rounded-xl px-3 py-3 text-base text-slate-700 hover:bg-slate-50" onClick={() => setMobileOpen(false)}>About</Link>
                 <Link href="/contact" className="block rounded-xl px-3 py-3 text-base text-slate-700 hover:bg-slate-50" onClick={() => setMobileOpen(false)}>Contact</Link>
               </nav>
+
+              <MobileProductNavigation onNavigate={() => setMobileOpen(false)} />
 
               <div className="mt-4 border-t pt-4">
                 <Link
@@ -204,7 +234,7 @@ export default function Header() {
               </div>
             </div>
           </div>
-        </div>
+        </div>, document.body
       )}
     </header>
   );

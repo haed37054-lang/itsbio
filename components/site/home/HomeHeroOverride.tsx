@@ -25,11 +25,11 @@ export default function HomeHeroOverride() {
           }}
         />
 
-        <div className="relative mx-auto flex min-h-[600px] max-w-7xl items-center px-6 py-16 md:min-h-[680px] md:py-20">
-          <div className="max-w-[920px]">
+        <div className="relative mx-auto flex min-h-[480px] max-w-7xl items-center px-5 py-12 sm:px-6 sm:py-16 md:min-h-[600px] md:py-20 lg:min-h-[680px]">
+          <div className="min-w-0 max-w-[920px]">
             <div className="text-base font-semibold tracking-[0.14em] text-orange-600 md:text-lg">ITSBio</div>
 
-            <h1 className="mt-5 max-w-[920px] text-[40px] font-semibold leading-[1.08] tracking-[-0.045em] text-[#071d43] sm:text-[46px] md:text-[50px] lg:text-[54px]">
+            <h1 className="mt-5 max-w-[920px] text-[clamp(1.9rem,8.5vw,2.35rem)] font-semibold leading-[1.12] tracking-[-0.045em] text-[#071d43] sm:text-[46px] md:text-[50px] lg:text-[54px]">
               <span className="block">Innovative Solutions for</span>
               <span className="mt-1 block">Life Science Research and Animal Care</span>
             </h1>

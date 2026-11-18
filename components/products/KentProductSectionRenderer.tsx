@@ -398,8 +398,8 @@ function ReviewCarousel({ items }: { items: KentSectionItem[] }) {
       <div className="relative">
         {items.length > pageSize ? (
           <>
-            <button type="button" onClick={() => move(-1)} aria-label="Previous testimonial" className="absolute -left-3 top-1/2 z-10 flex h-11 w-11 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-[#d7dde3] bg-white text-[25px] text-[#0b4f9c] shadow-sm transition hover:border-[#0b4f9c] hover:bg-[#0b4f9c] hover:text-white">‹</button>
-            <button type="button" onClick={() => move(1)} aria-label="Next testimonial" className="absolute -right-3 top-1/2 z-10 flex h-11 w-11 translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-[#d7dde3] bg-white text-[25px] text-[#0b4f9c] shadow-sm transition hover:border-[#0b4f9c] hover:bg-[#0b4f9c] hover:text-white">›</button>
+            <button type="button" onClick={() => move(-1)} aria-label="Previous testimonial" className="absolute left-2 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 sm:-left-3 sm:-translate-x-1/2 items-center justify-center rounded-full border border-[#d7dde3] bg-white text-[25px] text-[#0b4f9c] shadow-sm transition hover:border-[#0b4f9c] hover:bg-[#0b4f9c] hover:text-white">‹</button>
+            <button type="button" onClick={() => move(1)} aria-label="Next testimonial" className="absolute right-2 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 sm:-right-3 sm:translate-x-1/2 items-center justify-center rounded-full border border-[#d7dde3] bg-white text-[25px] text-[#0b4f9c] shadow-sm transition hover:border-[#0b4f9c] hover:bg-[#0b4f9c] hover:text-white">›</button>
           </>
         ) : null}
         <div className="grid gap-5 md:grid-cols-2">
@@ -740,7 +740,7 @@ function ProductSection({ section, index, videoCandidates, productTitle }: { sec
 
   if (bucket === "faqs") {
     return (
-      <section id={`kent-section-${index}`} className={`${index > 0 ? "mt-3" : ""} -mx-6 scroll-mt-24 overflow-hidden rounded-3xl bg-[#f4f7fa] md:-mx-10 lg:-mx-12`}>
+      <section id={`kent-section-${index}`} className={`${index > 0 ? "mt-3" : ""} -mx-6 scroll-mt-24 overflow-hidden rounded-3xl bg-[#f4f7fa]`}>
         <div className="h-2 bg-gradient-to-r from-[#084b94] via-[#0b66b8] to-[#4a9ada]" aria-hidden />
         <div className="px-6 py-12 md:px-10 md:py-16 lg:px-12">
           <FaqAccordion title={title} items={items} html={html} />
@@ -802,7 +802,7 @@ function ProductSection({ section, index, videoCandidates, productTitle }: { sec
   return (
     <section
       id={`kent-section-${index}`}
-      className={["scroll-mt-24 py-12 md:py-[68px]", index > 0 ? "border-t border-[#e1e7ec]" : "", bucket === "features" ? "-mx-6 bg-[#f5f9fd] px-6 md:-mx-10 md:px-10 lg:-mx-12 lg:px-12" : "", bucket === "videos" ? "-mx-6 bg-[#f3f7fb] px-6 md:-mx-10 md:px-10 lg:-mx-12 lg:px-12" : "", notice ? "-mx-6 bg-[#fff8e8] px-6 md:-mx-10 md:px-10" : ""].join(" ")}
+      className={["scroll-mt-24 py-12 md:py-[68px]", index > 0 ? "border-t border-[#e1e7ec]" : "", bucket === "features" ? "-mx-6 bg-[#f5f9fd] px-6 md:px-10 lg:px-12" : "", bucket === "videos" ? "-mx-6 bg-[#f3f7fb] px-6 md:px-10 lg:px-12" : "", notice ? "-mx-6 bg-[#fff8e8] px-6 md:px-10" : ""].join(" ")}
     >
       <div className="mb-9 flex items-start gap-4">
         <span className={`mt-1 h-10 w-1.5 shrink-0 rounded-full ${notice ? "bg-amber-600" : "bg-gradient-to-b from-[#0b66b8] to-[#084b94]"}`} aria-hidden />

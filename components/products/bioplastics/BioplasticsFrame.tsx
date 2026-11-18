@@ -1,3 +1,4 @@
+import ResponsiveCategoryNav from "@/components/products/ResponsiveCategoryNav";
 import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
@@ -37,7 +38,7 @@ export default function BioplasticsFrame({ category, title, children }: {
           ]} />
         </div>
         <div className="grid items-start gap-8 lg:grid-cols-[240px_minmax(0,1fr)]">
-          <aside className="min-w-0 rounded-2xl border border-slate-200 lg:sticky lg:top-24">
+          <ResponsiveCategoryNav label="BIOplastics"><aside className="min-w-0 rounded-2xl border border-slate-200 lg:sticky lg:top-24">
             <Link href={BIOPLASTICS_ROOT} className="block border-b border-slate-200 px-5 py-4 font-semibold text-slate-950">BIOplastics</Link>
             <nav aria-label="BIOplastics categories" className="flex gap-1 overflow-x-auto p-3 lg:block lg:space-y-1">
               {[{ key: undefined, label: "All products" }, ...BIOPLASTICS_CATEGORIES].map(({ key, label }) => (
@@ -48,7 +49,7 @@ export default function BioplasticsFrame({ category, title, children }: {
                 </Link>
               ))}
             </nav>
-          </aside>
+          </aside></ResponsiveCategoryNav>
           <div className="min-w-0">{children}</div>
         </div>
       </main>

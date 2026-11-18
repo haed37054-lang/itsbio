@@ -104,9 +104,9 @@ export default function NeedAssistance() {
     // - (필요하면) border/sep는 그대로 유지
     <section className="bg-slate-950 pb-16 md:pb-24 text-white">
       <div className="mx-auto max-w-7xl px-6 py-14 md:py-16">
-        <div className="grid gap-10 md:grid-cols-12">
+        <div className="grid gap-10 lg:grid-cols-12">
           {/* Left: columns */}
-          <div className="md:col-span-7">
+          <div className="min-w-0 lg:col-span-7">
             <div className="flex flex-wrap items-center gap-3">
               <div className="text-2xl font-bold tracking-tight">Need assistance?</div>
               <span className="h-2 w-2 rounded-full bg-orange-500" />
@@ -176,9 +176,9 @@ export default function NeedAssistance() {
           </div>
 
           {/* Right: online message form */}
-          <div className="md:col-span-5">
+          <div className="min-w-0 lg:col-span-5">
             <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
-              <div className="flex items-center justify-between">
+              <div className="flex flex-wrap items-center justify-between gap-2">
                 <div className="text-sm font-semibold text-white/90">Online Message</div>
                 <div className="text-xs text-white/50">Send to info@itsbio.co.kr</div>
               </div>

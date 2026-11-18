@@ -31,6 +31,22 @@ body {
   line-height: 1.6;
 }
 
+/* Keep product navigation compact on phones, while retaining desktop sidebars. */
+@media (min-width: 1024px) {
+  .responsive-category-nav { position: sticky; top: 6rem; }
+}
+
+@media (max-width: 1279px) {
+  /* A readable input size also avoids automatic zoom when focusing iOS forms. */
+  input:not([type="checkbox"]):not([type="radio"]):not([type="hidden"]),
+  select, textarea { font-size: 16px; }
+}
+
+@media (max-width: 1023px) {
+  .responsive-category-nav nav a,
+  .responsive-category-nav nav summary { min-height: 44px; }
+}
+
 /* ITS BIO is quote-based. Supplier prices never appear on public product pages. */
 .price,
 .pricing,

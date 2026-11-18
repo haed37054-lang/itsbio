@@ -389,6 +389,31 @@ const BRANDS: Brand[] = [
   },
 ];
 
+export function MobileProductNavigation({ onNavigate }: { onNavigate: () => void }) {
+  return (
+    <nav aria-label="Brands and product categories" className="mt-5 border-t border-slate-200 pt-4">
+      <p className="px-3 pb-2 text-xs font-semibold uppercase tracking-wider text-slate-500">Browse by brand</p>
+      {BRANDS.map((brand) => (
+        <details key={brand.key} className="group/brand border-b border-slate-100">
+          <summary className="flex min-h-12 cursor-pointer list-none items-center justify-between gap-3 rounded-lg px-3 py-3 text-sm font-semibold text-slate-800 hover:bg-slate-50 [&::-webkit-details-marker]:hidden">
+            <span>{brand.name}</span><span aria-hidden className="transition group-open/brand:rotate-180">⌄</span>
+          </summary>
+          <div className="space-y-1 pb-3 pl-3">
+            <Link href={brand.href} prefetch={false} onClick={onNavigate} className={`flex min-h-11 items-center rounded-lg px-3 py-2 text-sm font-semibold ${brand.theme.text}`}>Explore {brand.name} →</Link>
+            {brand.groups ? brand.groups.map((group) => (
+              <details key={group.href} className="group/family border-l border-slate-200 pl-2">
+                <summary className="flex min-h-11 cursor-pointer list-none items-center justify-between gap-2 px-3 py-2 text-sm font-medium text-slate-700 [&::-webkit-details-marker]:hidden"><span>{group.label}</span><span aria-hidden className="transition group-open/family:rotate-180">⌄</span></summary>
+                <Link href={group.href} prefetch={false} onClick={onNavigate} className="flex min-h-11 items-center px-3 py-2 text-sm font-semibold text-slate-800">Browse {group.label} →</Link>
+                {group.items.map((item) => <Link key={item.href} href={item.href} prefetch={false} onClick={onNavigate} className="flex min-h-11 items-center rounded-lg px-3 py-2 text-sm text-slate-600 hover:bg-slate-50">{item.label}</Link>)}
+              </details>
+            )) : brand.categories.map((category) => <Link key={category} href={productCategoryHref(brand, category)} prefetch={false} onClick={onNavigate} className="flex min-h-11 items-center rounded-lg px-3 py-2 text-sm text-slate-600 hover:bg-slate-50">{category}</Link>)}
+          </div>
+        </details>
+      ))}
+    </nav>
+  );
+}
+
 function ArrowIcon({ className = "h-4 w-4" }: { className?: string }) {
   return (
     <svg viewBox="0 0 20 20" className={className} fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">

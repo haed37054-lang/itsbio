@@ -1,3 +1,4 @@
+import ResponsiveCategoryNav from "@/components/products/ResponsiveCategoryNav";
 import Link from "next/link";
 
 import Breadcrumb from "@/components/site/Breadcrumb";
@@ -93,6 +94,7 @@ function HeroBanner() {
 
 function KentSideNav() {
   return (
+    <ResponsiveCategoryNav label="Kent Scientific">
     <div className="overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-sm">
       <div className="border-b border-neutral-200 px-5 py-4">
         <div className="text-base font-semibold text-blue-700">General Lab Equipment</div>
@@ -118,6 +120,7 @@ function KentSideNav() {
         </div>
       </div>
     </div>
+    </ResponsiveCategoryNav>
   );
 }
 

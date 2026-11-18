@@ -1,9 +1,11 @@
+import ResponsiveCategoryNav from "@/components/products/ResponsiveCategoryNav";
 import Link from "next/link";
 import categories from "@/data/dogen/categories.json";
 
 export default function DogenSidebar({ active }: { active?: string }) {
   const items = [{ slug: "", title: "All products" }, ...categories];
   return (
+    <ResponsiveCategoryNav label="DoGen">
     <aside className="self-start rounded-2xl border border-slate-200 bg-white lg:sticky lg:top-24">
       <Link href="/products/dogen" className="block border-b border-slate-200 px-5 py-4 font-semibold text-red-900">DoGen</Link>
       <nav aria-label="DoGen product categories" className="space-y-1 p-3">
@@ -17,5 +19,6 @@ export default function DogenSidebar({ active }: { active?: string }) {
         })}
       </nav>
     </aside>
+    </ResponsiveCategoryNav>
   );
 }

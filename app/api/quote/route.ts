@@ -137,6 +137,70 @@ function smtpBody(value: string) {
     .join("\r\n");
 }
 
+function mimeBase64(value: string) {
+  const canonical = value.replace(/\r\n|\r|\n/g, "\r\n");
+  return Buffer.from(canonical, "utf8").toString("base64").match(/.{1,76}/g)?.join("\r\n") || "";
+}
+
+function escapeHtml(value: string) {
+  const replacements: Record<string, string> = {
+    "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;",
+  };
+  return value.replace(/[&<>"']/g, (character) => replacements[character]);
+}
+
+type InquiryDetails = {
+  name: string; org: string; field: string; department: string; inquiryType: string;
+  email: string; phone: string; product: string; catNo: string; quantity: string;
+  configuration: string; message: string; sourceUrl: string;
+};
+
+function inquiryEmail(details: InquiryDetails) {
+  const contact = [
+    ["Name", details.name], ["Org", details.org], ["Field", details.field],
+    ["Department", details.department], ["Inquiry type", details.inquiryType],
+    ["Email", details.email], ["Phone", details.phone],
+  ].filter(([, value]) => value);
+  const product = [
+    ["Product name", details.product], ["Cat No", details.catNo],
+    ["Quantity", details.quantity], ["Model / specification", details.configuration],
+  ].filter(([, value]) => value);
+  const textSection = (title: string, rows: string[][]) =>
+    [title, ...rows.map(([label, value]) => `${label}: ${value}`)].join("\n\n");
+  const text = [
+    "New website inquiry received:",
+    textSection("Contact information", contact),
+    ...(product.length ? [textSection("Product information", product)] : []),
+    `Message:\n\n${details.message}`,
+    ...(details.sourceUrl ? [`Source page: ${details.sourceUrl}`] : []),
+  ].join("\n\n\n");
+
+  const htmlSection = (title: string, rows: string[][]) => `<tr><td style="padding:24px;border-top:1px solid #e2e8f0;">
+    <h2 style="margin:0 0 16px;font-size:15px;line-height:1.6;color:#475569;">${title}</h2>
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">${rows.map(([label, value]) => `<tr><td style="padding:0 0 12px;font-size:16px;line-height:1.6;overflow-wrap:anywhere;word-break:break-word;"><strong>${label}:</strong> ${label === "Email" ? `<a href="mailto:${escapeHtml(value)}" style="color:#0b5baa;text-decoration:underline;">${escapeHtml(value)}</a>` : escapeHtml(value)}</td></tr>`).join("")}</table>
+  </td></tr>`;
+  let source = escapeHtml(details.sourceUrl);
+  try {
+    const url = new URL(details.sourceUrl);
+    if (url.protocol === "https:" || url.protocol === "http:") {
+      source = `<a href="${escapeHtml(url.href)}" style="color:#0b5baa;text-decoration:underline;overflow-wrap:anywhere;word-break:break-word;">${source}</a>`;
+    }
+  } catch { /* Keep unrecognized source values as text. */ }
+
+  const html = `<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Website inquiry</title></head>
+<body style="margin:0;padding:0;background-color:#f5f6f8;color:#172033;font-family:Arial,'Malgun Gothic',sans-serif;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td align="center" style="padding:24px 12px;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:680px;background-color:#ffffff;border:1px solid #e2e8f0;">
+<tr><td style="padding:24px;"><p style="margin:0 0 8px;font-size:14px;line-height:1.6;font-weight:bold;color:#0b5baa;">ITSBio</p><h1 style="margin:0;font-size:22px;line-height:1.4;">New website inquiry received</h1></td></tr>
+${htmlSection("Contact information", contact)}
+${product.length ? htmlSection("Product information", product) : ""}
+<tr><td style="padding:24px;border-top:1px solid #e2e8f0;"><h2 style="margin:0 0 16px;font-size:15px;line-height:1.6;color:#475569;">Message</h2>
+<div style="padding:16px;border:1px solid #e2e8f0;background-color:#f8fafc;font-size:16px;line-height:1.8;overflow-wrap:anywhere;word-break:break-word;">${escapeHtml(details.message).replace(/\r\n|\r|\n/g, "<br>")}</div></td></tr>
+${details.sourceUrl ? `<tr><td style="padding:24px;border-top:1px solid #e2e8f0;font-size:14px;line-height:1.6;overflow-wrap:anywhere;word-break:break-word;"><strong>Source page:</strong><br>${source}</td></tr>` : ""}
+</table></td></tr></table></body></html>`;
+  return { text, html };
+}
+
 function advertisedAuthMethods(ehlo: SmtpResponse) {
   const match = ehlo.text.match(/(?:^|\n)250[- ]AUTH\s+([^\r\n]+)/i);
   return match ? match[1].toUpperCase().split(/\s+/).filter(Boolean) : [];
@@ -150,6 +214,7 @@ async function sendMailplugEmail({
   replyTo,
   subject,
   text,
+  html,
 }: {
   username: string;
   password: string;
@@ -158,6 +223,7 @@ async function sendMailplugEmail({
   replyTo: string;
   subject: string;
   text: string;
+  html: string;
 }) {
   const socket = tls.connect({
     host: MAILPLUG_SMTP_HOST,
@@ -208,6 +274,20 @@ async function sendMailplugEmail({
     await command(`RCPT TO:<${to}>`, [250, 251], "recipient");
     await command("DATA", [354], "data");
 
+    const boundary = `itsbio_${crypto.randomUUID()}`;
+    const alternative = [
+      `--${boundary}`,
+      "Content-Type: text/plain; charset=UTF-8",
+      "Content-Transfer-Encoding: base64",
+      "",
+      mimeBase64(text),
+      `--${boundary}`,
+      "Content-Type: text/html; charset=UTF-8",
+      "Content-Transfer-Encoding: base64",
+      "",
+      mimeBase64(html),
+      `--${boundary}--`,
+    ].join("\r\n");
     const message = [
       `From: ITSBio <${from}>`,
       `To: ${to}`,
@@ -215,10 +295,9 @@ async function sendMailplugEmail({
       `Subject: ${encodedSubject(subject)}`,
       `Date: ${new Date().toUTCString()}`,
       "MIME-Version: 1.0",
-      "Content-Type: text/plain; charset=UTF-8",
-      "Content-Transfer-Encoding: 8bit",
+      `Content-Type: multipart/alternative; boundary="${boundary}"`,
       "",
-      smtpBody(text),
+      smtpBody(alternative),
     ].join("\r\n");
 
     const accepted = nextResponse();
@@ -236,7 +315,7 @@ async function sendMailplugEmail({
   }
 }
 
-async function sendResendFallback({ from, to, replyTo, subject, text }: { from: string; to: string; replyTo: string; subject: string; text: string }) {
+async function sendResendFallback({ from, to, replyTo, subject, text, html }: { from: string; to: string; replyTo: string; subject: string; text: string; html: string }) {
   const apiKey = process.env.RESEND_API_KEY;
   if (!apiKey) return false;
 
@@ -246,6 +325,7 @@ async function sendResendFallback({ from, to, replyTo, subject, text }: { from: 
     to: [to],
     subject,
     text,
+    html,
     replyTo,
   });
 
@@ -316,26 +396,14 @@ export async function POST(req: Request) {
     }
 
     const subject = `[견적서] ${product || catNo || "General inquiry"} - ${name || "Unknown"}`;
-    const text = `
-New website inquiry received:
-
-Name: ${name}
-Org: ${org}
-${field ? `Field: ${field}\n` : ""}${department ? `Department: ${department}\n` : ""}${inquiryType ? `Inquiry type: ${inquiryType}\n` : ""}Email: ${email}
-Phone: ${phone}
-Product name: ${product}
-Cat No: ${catNo}
-${quantity ? `Quantity: ${quantity}\n` : ""}${configuration ? `Model / specification: ${configuration}\n` : ""}${sourceUrl ? `Source page: ${sourceUrl}\n` : ""}
-Message:
-${message}
-    `.trim();
+    const { text, html } = inquiryEmail({ name, org, field, department, inquiryType, email, phone, product, catNo, quantity, configuration, message, sourceUrl });
 
     try {
-      await sendMailplugEmail({ username: smtpUser, password: smtpPassword, from: fromEmail, to: toEmail, replyTo: email, subject, text });
+      await sendMailplugEmail({ username: smtpUser, password: smtpPassword, from: fromEmail, to: toEmail, replyTo: email, subject, text, html });
       return Response.json({ ok: true, provider: "mailplug" });
     } catch (mailplugError) {
       console.error("Mailplug quote delivery failed:", mailplugError instanceof Error ? mailplugError.message : mailplugError);
-      if (await sendResendFallback({ from: fromEmail, to: toEmail, replyTo: email, subject, text })) {
+      if (await sendResendFallback({ from: fromEmail, to: toEmail, replyTo: email, subject, text, html })) {
         return Response.json({ ok: true, provider: "resend-fallback" });
       }
       return Response.json({ ok: false, error: publicMailError(mailplugError, smtpUser) }, { status: 502 });

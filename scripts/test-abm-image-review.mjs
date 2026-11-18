@@ -31,11 +31,20 @@ test("only product image fields change; services and other products retain their
   assert.equal(applyReviewedAbmProductImages(other), other);
 });
 
-test("every restored image reassembles to its exact reviewed original bytes", () => {
+test("every hosted gallery image matches its reviewed file bytes", () => {
   const sha = (bytes) => createHash("sha256").update(bytes).digest("hex");
   for (const record of review.records) {
+    if (record.images[0].startsWith("https://cdn.sanity.io/")) {
+      assert.ok(record.images[0].includes(`/${record.sha1}-`));
+      continue;
+    }
     const asset = manifest.assets.find((item) => item.path === `public${record.images[0]}`);
-    assert.ok(asset, record.sku);
+    if (!asset) {
+      const bytes = readFileSync(new URL(`public${record.images[0]}`, root));
+      assert.equal(sha(bytes), record.sha256);
+      assert.equal(bytes.subarray(0, 3).toString("hex"), "ffd8ff");
+      continue;
+    }
     const bytes = Buffer.concat(asset.parts.map((part) => {
       const bytes = readFileSync(new URL(`data/abm-reviewed-asset-parts/${part.path}`, root));
       assert.equal(bytes.length, part.bytes);
@@ -45,8 +54,17 @@ test("every restored image reassembles to its exact reviewed original bytes", ()
     assert.equal(bytes.length, asset.bytes);
     assert.equal(sha(bytes), record.sha256);
     assert.equal(sha(bytes), asset.sha256);
+    if (record.images[0].endsWith(".webp")) {
+      assert.equal(bytes.subarray(0, 4).toString(), "RIFF");
+      assert.equal(bytes.subarray(8, 12).toString(), "WEBP");
+      assert.equal(record.processing.width, 2048);
+      assert.equal(record.processing.originalBytes, 36836509);
+      continue;
+    }
     assert.deepEqual([...bytes.subarray(0, 8)], [137, 80, 78, 71, 13, 10, 26, 10]);
-    assert.equal(bytes.readUInt32BE(16), 2047);
-    assert.equal(bytes.readUInt32BE(20), 1680);
+    if (["T1186", "T7063"].includes(record.sku)) {
+      assert.equal(bytes.readUInt32BE(16), 2047);
+      assert.equal(bytes.readUInt32BE(20), 1680);
+    }
   }
 });

@@ -5,6 +5,7 @@ import {
   type OfficialAbmCellModelProduct,
 } from "@/lib/abm/cell-model-data";
 import { isManagedAbmImageUrl } from "@/lib/abm/rebuild-staging";
+import { reviewedAbmProductImages } from "@/lib/abm/product-image-review";
 import { abmResourceImagePath } from "@/lib/abm/resource-links";
 import { PUBLIC_CATALOG_CACHE, sanityCdnClient } from "@/lib/sanity/sanity.client";
 
@@ -76,9 +77,9 @@ function normalize(value: unknown) {
   return clean(value).toLowerCase();
 }
 
-function managedPreview(product?: ExistingCellProduct) {
+function managedPreview(product?: ExistingCellProduct, sku = product?.sku) {
   const urls = [...(product?.assetUrls || []), ...(product?.imageUrls || [])];
-  return urls.find((url) => isManagedAbmImageUrl(url))
+  return reviewedAbmProductImages(sku)[0] || urls.find((url) => isManagedAbmImageUrl(url))
     || urls.map((url) => abmResourceImagePath(url)).find(Boolean);
 }
 
@@ -113,7 +114,7 @@ function officialProductRow(product: OfficialAbmCellModelProduct, existing?: Exi
     species: clean(product.species?.[0]),
     bioSystem: clean(product.bioSystems?.[0]),
     cellType: clean(product.cellTypes?.[0]),
-    previewImage: managedPreview(existing),
+    previewImage: managedPreview(existing, sku),
   };
 }
 

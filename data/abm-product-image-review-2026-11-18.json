@@ -1,0 +1,72 @@
+{
+  "checkedAt": "2026-11-18",
+  "method": "Current official ABM product galleries and previously credited cell-bank reference images. Original image bytes are retained unless a record explicitly documents a web display optimization. Existing source credits and reference captions are preserved.",
+  "records": [
+    {
+      "sku": "T1186",
+      "sourceUrl": "https://www.abmgood.com/gp5d-cells-t1186.html",
+      "sourceImages": [
+        "https://www.abmgood.com/assets/product/upload/ytK1iDi21YYjrQZuyqD1OFEANAvzaHVphJj0dWHn.png"
+      ],
+      "images": [
+        "/images/abm/T1186-official.png"
+      ],
+      "sha256": "85c5e0580bfb1d82a2e64ab1973c76adfd95ceead46ad99d6732259f178ff8b3"
+    },
+    {
+      "sku": "T7063",
+      "sourceUrl": "https://www.abmgood.com/renca-cells-t7063.html",
+      "sourceImages": [
+        "https://www.abmgood.com/assets/product/upload/6mXbnxO83T5Yay6EaibYzMkWaGINAVMrMyJd9zQG.png"
+      ],
+      "images": [
+        "/images/abm/T7063-official.png"
+      ],
+      "sha256": "b3115eba4297e98eb1c2f11cfa2f1e7738a3b0f7dea231dec26c86c1c25e5eff"
+    },
+    {
+      "sku": "T0418",
+      "sourceUrl": "https://www.abmgood.com/squamous-cell-carcinoma-cell-line-um-scc-122.html",
+      "sourceImages": [
+        "https://www.abmgood.com/assets/product/images/cells/T8061.png"
+      ],
+      "images": [
+        "https://cdn.sanity.io/images/9b5twpc8/production/47b787d6331333274cc981405d783441074e98af-2047x1680.png"
+      ],
+      "sha1": "47b787d6331333274cc981405d783441074e98af",
+      "note": "Exact SHA-1 match between the original patient-matched partner reference and an existing Sanity image. Existing T0418 caption and attribution are retained."
+    },
+    {
+      "sku": "T9997",
+      "sourceUrl": "https://cellbank.nibn.go.jp/~cellbank/en/search_res_det.cgi?ID=2072",
+      "sourceImages": [
+        "https://cellbank.nibn.go.jp/~cellbank/images/pictures/clp04057.jpg"
+      ],
+      "images": [
+        "/images/abm/T9997-reference.jpg"
+      ],
+      "sha256": "e8482f3e515164a76730bfdae2dabfddb1fdd117d5103ec600d028e56b9b45df",
+      "note": "Original JCRB Kasumi-1 reference JPEG, retaining the existing reference-image caption and source credit."
+    },
+    {
+      "sku": "T3172",
+      "sourceUrl": "https://www.abmgood.com/sirt1-knockout-stable-rko-cell-line.html",
+      "sourceImages": [
+        "https://www.abmgood.com/assets/product/upload/ryDG8vHK4Jcl40jD3nJAYkYDx5NdZipyIInJ87xI.png"
+      ],
+      "images": [
+        "/images/abm/T3172-official.webp"
+      ],
+      "sha256": "136167f24461c396fc172581f7788d3732efdaa205db8f228e76bd4fe7848e3d",
+      "processing": {
+        "format": "webp",
+        "width": 2048,
+        "quality": 90,
+        "processor": "Existing ITSBio Next.js image optimizer",
+        "originalBytes": 36836509,
+        "originalSha256": "3e86e734534315f6f10d14993d42cbe4c7becd818c8131f9d4d6ab8c77d7a0ce"
+      },
+      "note": "2048px web display copy of the official 36MB PNG, produced by the existing site image optimizer. The original source and checksum are recorded separately."
+    }
+  ]
+}

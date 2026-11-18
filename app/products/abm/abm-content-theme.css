@@ -160,3 +160,10 @@
   #abm-catalog-content main .abm-library-official h3,
   #abm-catalog-content main h3.text-2xl { font-size: 22px !important; }
 }
+.abm-product-media-layout:not(:has([data-product-gallery])) {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.abm-product-media-container:not(:has([data-product-gallery])) {
+  display: none;
+}

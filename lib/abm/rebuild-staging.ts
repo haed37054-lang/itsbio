@@ -2,6 +2,7 @@ import { PUBLIC_CATALOG_CACHE, sanityCdnClient, sanityClient } from "@/lib/sanit
 import { findOfficialAbmCellModelProduct } from "@/lib/abm/cell-model-data";
 import { findOfficialAbmCellDetail } from "@/lib/abm/cell-detail-data";
 import { applyReviewedAbmProductDetail } from "@/lib/abm/reviewed-product-details";
+import { applyReviewedAbmProductImages, reviewedAbmProductImages } from "@/lib/abm/product-image-review";
 
 export const ABM_REBUILD_VERSION = "2026-08-09-search-v5";
 
@@ -496,7 +497,7 @@ function applyVerifiedProductDetail(detail: AbmStagedDetail) {
       imageCreditLabel: "View official vector map",
     };
   }
-  return applyVerifiedIpscVectorMap(applyVerifiedSpecialCellDetail(detail));
+  return applyReviewedAbmProductImages(applyVerifiedIpscVectorMap(applyVerifiedSpecialCellDetail(detail)));
 }
 
 export function isManagedAbmImageUrl(value?: string) {
@@ -597,7 +598,10 @@ export async function getAbmStagedRecords(kind: AbmStagedRecord["kind"]): Promis
     ...Object.values(VERIFIED_EXPRESSION_SYSTEM_PRODUCTS).filter((record) =>
       !existingSkus.has(record.sku.toLowerCase())
     ),
-  ];
+  ].map((record) => {
+    const previewImage = reviewedAbmProductImages(record.sku)[0];
+    return previewImage ? { ...record, previewImage } : record;
+  });
 }
 
 const STAGED_CATALOG_NUMBERS_QUERY = `*[

@@ -1,4 +1,5 @@
 import { isManagedAbmImageUrl } from "@/lib/abm/rebuild-staging";
+import { reviewedAbmProductImages } from "@/lib/abm/product-image-review";
 import { PUBLIC_CATALOG_CACHE, sanityCdnClient } from "@/lib/sanity/sanity.client";
 
 const CELL_PRODUCT_IMAGES_QUERY = `*[
@@ -46,7 +47,7 @@ export async function withManagedAbmCellProductImages<T extends CellProductWithO
   return products.map((product) => {
     const managedPreview = isManagedAbmImageUrl(product.previewImage)
       ? product.previewImage
-      : previewsBySku.get(String(product.sku || "").trim().toLowerCase());
+      : reviewedAbmProductImages(product.sku)[0] || previewsBySku.get(String(product.sku || "").trim().toLowerCase());
 
     return managedPreview ? { ...product, previewImage: managedPreview } : product;
   });

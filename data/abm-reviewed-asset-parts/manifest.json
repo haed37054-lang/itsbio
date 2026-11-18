@@ -257,6 +257,113 @@
           "bytes": 121444
         }
       ]
+    },
+    {
+      "path": "public/images/abm/T1186-official.png",
+      "sourceUrl": "https://www.abmgood.com/assets/product/upload/ytK1iDi21YYjrQZuyqD1OFEANAvzaHVphJj0dWHn.png",
+      "sha256": "85c5e0580bfb1d82a2e64ab1973c76adfd95ceead46ad99d6732259f178ff8b3",
+      "bytes": 3194256,
+      "parts": [
+        {
+          "path": "image-integrity-T1186/000.part",
+          "sha256": "e0fcee2a657c6183678a755122d965aaeb82773326c7e53f5de945ba08cbb480",
+          "bytes": 512000
+        },
+        {
+          "path": "image-integrity-T1186/001.part",
+          "sha256": "a2a22560f4f52236f4bfaa903df1b9f1da513419e7c58e62a37f3044a7e92d46",
+          "bytes": 512000
+        },
+        {
+          "path": "image-integrity-T1186/002.part",
+          "sha256": "7fe9b7e1df86b0f7ce74cd6ba07b91a4a94d8da0dc3af883e259cebbe4d7acf1",
+          "bytes": 512000
+        },
+        {
+          "path": "image-integrity-T1186/003.part",
+          "sha256": "3cb18eee7016d83d821949b068a2b2d4011fbcd068e7d45c135841b357bb5b92",
+          "bytes": 512000
+        },
+        {
+          "path": "image-integrity-T1186/004.part",
+          "sha256": "e26864c0283a2b730a1bd03d24ee66fdd48e596efffb4c53e92d4bac847b218a",
+          "bytes": 512000
+        },
+        {
+          "path": "image-integrity-T1186/005.part",
+          "sha256": "8fba52a10104130f15b411aedd0fb060e0778166802c2ae0fcb85c2e75a3c278",
+          "bytes": 512000
+        },
+        {
+          "path": "image-integrity-T1186/006.part",
+          "sha256": "e99d8b735fd6d855aacb82180024ce1c3694e38950ac7aac1e6481488abea979",
+          "bytes": 122256
+        }
+      ]
+    },
+    {
+      "path": "public/images/abm/T7063-official.png",
+      "sourceUrl": "https://www.abmgood.com/assets/product/upload/6mXbnxO83T5Yay6EaibYzMkWaGINAVMrMyJd9zQG.png",
+      "sha256": "b3115eba4297e98eb1c2f11cfa2f1e7738a3b0f7dea231dec26c86c1c25e5eff",
+      "bytes": 2784360,
+      "parts": [
+        {
+          "path": "image-integrity-T7063/000.part",
+          "sha256": "7197f3548275f7a38ed135daa2c0be778b7a027b1b373e40f5cc7111998d3491",
+          "bytes": 512000
+        },
+        {
+          "path": "image-integrity-T7063/001.part",
+          "sha256": "c5c4bc2e20048121ee56955351e943d47010425cb2fa5cc3629f893f91a201a2",
+          "bytes": 512000
+        },
+        {
+          "path": "image-integrity-T7063/002.part",
+          "sha256": "dce844e82f3d6a9f043787931a18d4dd90bca78b714fdc555f4fc5f8d42005a0",
+          "bytes": 512000
+        },
+        {
+          "path": "image-integrity-T7063/003.part",
+          "sha256": "d0430ea4d44c4faa4c995cc3fed1524994c75cb4e8f3ce53f6e62adbfd38c00a",
+          "bytes": 512000
+        },
+        {
+          "path": "image-integrity-T7063/004.part",
+          "sha256": "6b29fe3d0cbff30ffa14bca1166f120fc57a9fe6d89f63d4af92107b58cdc912",
+          "bytes": 512000
+        },
+        {
+          "path": "image-integrity-T7063/005.part",
+          "sha256": "944de91e0a9d289efc8977efdcca7cc5535a696a7066f16bfa64d5853b359c9a",
+          "bytes": 224360
+        }
+      ]
+    },
+    {
+      "path": "public/images/abm/T3172-official.webp",
+      "sourceUrl": "https://www.abmgood.com/assets/product/upload/ryDG8vHK4Jcl40jD3nJAYkYDx5NdZipyIInJ87xI.png",
+      "sha256": "136167f24461c396fc172581f7788d3732efdaa205db8f228e76bd4fe7848e3d",
+      "bytes": 765604,
+      "processing": {
+        "format": "webp",
+        "width": 2048,
+        "quality": 90,
+        "processor": "Existing ITSBio Next.js image optimizer",
+        "originalBytes": 36836509,
+        "originalSha256": "3e86e734534315f6f10d14993d42cbe4c7becd818c8131f9d4d6ab8c77d7a0ce"
+      },
+      "parts": [
+        {
+          "path": "image-integrity-T3172/000.part",
+          "sha256": "1de6e58cdf1b1100388a73e7ee42adc9a31c8bd3eccbec250b46695bbad12bfd",
+          "bytes": 512000
+        },
+        {
+          "path": "image-integrity-T3172/001.part",
+          "sha256": "e3363ea7daa6663d97487499c5bdf09ecf435372b67fa52548144389721a04df",
+          "bytes": 253604
+        }
+      ]
     }
   ]
 }

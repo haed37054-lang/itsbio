@@ -227,9 +227,9 @@ export default async function AbmStagedDetailPage({
           >
             <h1 className="max-w-4xl text-3xl font-bold leading-tight tracking-tight text-neutral-950">{title}</h1>
 
-            <div className="mt-6 grid min-w-0 gap-8 border-t border-neutral-200 pt-7 md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] xl:grid-cols-[minmax(0,1fr)_360px] 2xl:grid-cols-[minmax(0,1fr)_400px]">
+            <div className="abm-product-media-layout mt-6 grid min-w-0 gap-8 border-t border-neutral-200 pt-7 md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] xl:grid-cols-[minmax(0,1fr)_360px] 2xl:grid-cols-[minmax(0,1fr)_400px]">
               {hasGallery ? (
-                <div className="min-h-[320px]">
+                <div className="abm-product-media-container min-h-[320px]">
                   <ProductGalleryClient
                     images={vectorMapId ? [] : verifiedVectorGallery}
                     title={title}
@@ -254,18 +254,7 @@ export default async function AbmStagedDetailPage({
                     </p>
                   ) : null}
                 </div>
-              ) : (
-                <div className="relative mx-auto flex aspect-square w-full max-w-[560px] items-center justify-center overflow-hidden bg-neutral-50 px-8 text-center">
-                  <div>
-                    <svg aria-hidden="true" viewBox="0 0 48 48" className="mx-auto h-12 w-12 text-neutral-300" fill="none">
-                      <rect x="5" y="7" width="38" height="34" rx="4" stroke="currentColor" strokeWidth="2" />
-                      <path d="m11 34 9-10 7 7 4-5 6 8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                      <circle cx="33" cy="17" r="3" stroke="currentColor" strokeWidth="2" />
-                    </svg>
-                    <p className="mt-4 text-sm font-medium text-neutral-500">Product image not provided by manufacturer</p>
-                  </div>
-                </div>
-              )}
+              ) : null}
 
               <aside className="self-start overflow-hidden rounded-xl border-2 border-[#f2632f] bg-white">
                 <div className="border-b border-orange-100 px-6 py-4">

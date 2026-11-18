@@ -1,0 +1,793 @@
+{
+  "checkedAt": "2026-11-18",
+  "scope": "Stored ABM product galleries and reviewed image fallbacks, plus Kent/Thistle managed gallery assets. This is not a claim that every product has a manufacturer photograph or that all inline/category media have been reviewed.",
+  "galleryUrlChecks": {
+    "abm": 5794,
+    "kentAndThistle": 1422,
+    "uniqueTotal": 7216,
+    "httpImageResponses": 5045,
+    "additionalBrowserDecoded": 2168,
+    "additionalBrowserFailed": 3,
+    "browserChecksCompleted": 2171,
+    "externalFailedUrlsRehostedOrReused": 3
+  },
+  "restoredOrStabilizedProducts": [
+    "T1186",
+    "T7063",
+    "T3172",
+    "T0418",
+    "T9997"
+  ],
+  "manufacturerMissingFiles": [
+    {
+      "url": "https://www.abmgood.com/assets/product/u/v/uv2e2-antibody.jpg",
+      "missing": true,
+      "readerStatus": 200,
+      "type": "text/plain; charset=utf-8",
+      "sample": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</h"
+    },
+    {
+      "url": "https://www.abmgood.com/assets/product/n/-/n-myc.jpg",
+      "missing": true,
+      "readerStatus": 200,
+      "type": "text/plain; charset=utf-8",
+      "sample": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</h"
+    },
+    {
+      "url": "https://www.abmgood.com/assets/product/o/s/osteopontin.jpg",
+      "missing": true,
+      "readerStatus": 200,
+      "type": "text/plain; charset=utf-8",
+      "sample": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</h"
+    },
+    {
+      "url": "https://www.abmgood.com/assets/product/p/a/pak6.jpg",
+      "missing": true,
+      "readerStatus": 200,
+      "type": "text/plain; charset=utf-8",
+      "sample": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</h"
+    },
+    {
+      "url": "https://www.abmgood.com/assets/product/p/a/pax2-western.jpg",
+      "missing": true,
+      "readerStatus": 200,
+      "type": "text/plain; charset=utf-8",
+      "sample": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</h"
+    },
+    {
+      "url": "https://www.abmgood.com/assets/product/r/a/ran.jpg",
+      "missing": true,
+      "readerStatus": 200,
+      "type": "text/plain; charset=utf-8",
+      "sample": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</h"
+    },
+    {
+      "url": "https://www.abmgood.com/assets/product/r/i/ripk2.jpg",
+      "missing": true,
+      "readerStatus": 200,
+      "type": "text/plain; charset=utf-8",
+      "sample": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</h"
+    },
+    {
+      "url": "https://www.abmgood.com/assets/product/s/m/smpdl3b.jpg",
+      "missing": true,
+      "readerStatus": 200,
+      "type": "text/plain; charset=utf-8",
+      "sample": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</h"
+    },
+    {
+      "url": "https://www.abmgood.com/assets/product/t/n/tnfrsf17.jpg",
+      "missing": true,
+      "readerStatus": 200,
+      "type": "text/plain; charset=utf-8",
+      "sample": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</h"
+    },
+    {
+      "url": "https://www.abmgood.com/assets/product/v/d/vdac1.jpg",
+      "missing": true,
+      "readerStatus": 200,
+      "type": "text/plain; charset=utf-8",
+      "sample": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</h"
+    },
+    {
+      "url": "https://www.abmgood.com/assets/product/r/b/rbbp6.jpg",
+      "missing": true,
+      "readerStatus": 200,
+      "type": "text/plain; charset=utf-8",
+      "sample": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</h"
+    },
+    {
+      "url": "https://www.abmgood.com/assets/product/v/d/vdp.jpg",
+      "missing": true,
+      "readerStatus": 200,
+      "type": "text/plain; charset=utf-8",
+      "sample": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</h"
+    },
+    {
+      "url": "https://www.abmgood.com/assets/product/p/a/pax6.jpg",
+      "missing": true,
+      "readerStatus": 200,
+      "type": "text/plain; charset=utf-8",
+      "sample": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</h"
+    },
+    {
+      "url": "https://www.abmgood.com/assets/product/t/o/top2b.jpg",
+      "missing": true,
+      "readerStatus": 200,
+      "type": "text/plain; charset=utf-8",
+      "sample": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</h"
+    },
+    {
+      "url": "https://www.abmgood.com/assets/product/p/l/plexin-b1.jpg",
+      "missing": true,
+      "readerStatus": 200,
+      "type": "text/plain; charset=utf-8",
+      "sample": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</h"
+    },
+    {
+      "url": "https://www.abmgood.com/assets/product/n/o/notch1.jpg",
+      "missing": true,
+      "readerStatus": 200,
+      "type": "text/plain; charset=utf-8",
+      "sample": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</h"
+    },
+    {
+      "url": "https://www.abmgood.com/assets/product/p/a/pawr.jpg",
+      "missing": true,
+      "readerStatus": 200,
+      "type": "text/plain; charset=utf-8",
+      "sample": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</h"
+    },
+    {
+      "url": "https://www.abmgood.com/assets/product/r/f/rfp2.jpg",
+      "missing": true,
+      "readerStatus": 200,
+      "type": "text/plain; charset=utf-8",
+      "sample": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</h"
+    },
+    {
+      "url": "https://www.abmgood.com/assets/product/p/d/pdcd6.jpg",
+      "missing": true,
+      "readerStatus": 200,
+      "type": "text/plain; charset=utf-8",
+      "sample": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</h"
+    },
+    {
+      "url": "https://www.abmgood.com/assets/product/m/t/mth1.jpg",
+      "missing": true,
+      "readerStatus": 200,
+      "type": "text/plain; charset=utf-8",
+      "sample": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</h"
+    },
+    {
+      "url": "https://www.abmgood.com/assets/product/k/a/kap1.jpg",
+      "missing": true,
+      "readerStatus": 200,
+      "type": "text/plain; charset=utf-8",
+      "sample": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</h"
+    },
+    {
+      "url": "https://www.abmgood.com/assets/product/k/l/klf15.jpg",
+      "missing": true,
+      "readerStatus": 200,
+      "type": "text/plain; charset=utf-8",
+      "sample": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</h"
+    },
+    {
+      "url": "https://www.abmgood.com/assets/product/k/l/klf4.jpg",
+      "missing": true,
+      "readerStatus": 200,
+      "type": "text/plain; charset=utf-8",
+      "sample": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</h"
+    },
+    {
+      "url": "https://www.abmgood.com/assets/product/k/l/klhl1.jpg",
+      "missing": true,
+      "readerStatus": 200,
+      "type": "text/plain; charset=utf-8",
+      "sample": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</h"
+    },
+    {
+      "url": "https://www.abmgood.com/assets/product/p/p/ppp6c.jpg",
+      "missing": true,
+      "readerStatus": 200,
+      "type": "text/plain; charset=utf-8",
+      "sample": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</h"
+    },
+    {
+      "url": "https://www.abmgood.com/assets/product/l/e/leptin-receptor.jpg",
+      "missing": true,
+      "readerStatus": 200,
+      "type": "text/plain; charset=utf-8",
+      "sample": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</h"
+    },
+    {
+      "url": "https://www.abmgood.com/assets/product/n/g/ngfr-p75.jpg",
+      "missing": true,
+      "readerStatus": 200,
+      "type": "text/plain; charset=utf-8",
+      "sample": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</h"
+    },
+    {
+      "url": "https://www.abmgood.com/assets/product/p/p/pp2a.jpg",
+      "missing": true,
+      "readerStatus": 200,
+      "type": "text/plain; charset=utf-8",
+      "sample": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</h"
+    },
+    {
+      "url": "https://www.abmgood.com/assets/product/p/r/prohibition.jpg",
+      "missing": true,
+      "readerStatus": 200,
+      "type": "text/plain; charset=utf-8",
+      "sample": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</h"
+    },
+    {
+      "url": "https://www.abmgood.com/assets/product/n/u/nucleophosmin.jpg",
+      "missing": true,
+      "readerStatus": 200,
+      "type": "text/plain; charset=utf-8",
+      "sample": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</h"
+    },
+    {
+      "url": "https://www.abmgood.com/assets/product/y/0/y058426.jpg",
+      "missing": true,
+      "readerStatus": 200,
+      "type": "text/plain; charset=utf-8",
+      "sample": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</h"
+    },
+    {
+      "url": "https://www.abmgood.com/assets/product/y/0/y059767-wb.jpg",
+      "missing": true,
+      "readerStatus": 200,
+      "type": "text/plain; charset=utf-8",
+      "sample": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</h"
+    },
+    {
+      "url": "https://www.abmgood.com/assets/product/y/0/y059767.jpg",
+      "missing": true,
+      "readerStatus": 200,
+      "type": "text/plain; charset=utf-8",
+      "sample": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</h"
+    },
+    {
+      "url": "https://www.abmgood.com/assets/product/y/0/y059767-ihc.jpg",
+      "missing": true,
+      "readerStatus": 200,
+      "type": "text/plain; charset=utf-8",
+      "sample": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</h"
+    },
+    {
+      "url": "https://www.abmgood.com/assets/product/y/0/y059780-wb.jpg",
+      "missing": true,
+      "readerStatus": 200,
+      "type": "text/plain; charset=utf-8",
+      "sample": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</h"
+    },
+    {
+      "url": "https://www.abmgood.com/assets/product/y/0/y059822-wb.jpg",
+      "missing": true,
+      "readerStatus": 200,
+      "type": "text/plain; charset=utf-8",
+      "sample": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</h"
+    },
+    {
+      "url": "https://www.abmgood.com/assets/product/y/0/y059824-wb.jpg",
+      "missing": true,
+      "readerStatus": 200,
+      "type": "text/plain; charset=utf-8",
+      "sample": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</h"
+    },
+    {
+      "url": "https://www.abmgood.com/assets/product/y/0/y059824-ihc.jpg",
+      "missing": true,
+      "readerStatus": 200,
+      "type": "text/plain; charset=utf-8",
+      "sample": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</h"
+    },
+    {
+      "url": "https://www.abmgood.com/assets/product/y/0/y059873-wb.jpg",
+      "missing": true,
+      "readerStatus": 200,
+      "type": "text/plain; charset=utf-8",
+      "sample": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</h"
+    },
+    {
+      "url": "https://www.abmgood.com/assets/product/y/0/y060109_1.jpg",
+      "missing": true,
+      "readerStatus": 200,
+      "type": "text/plain; charset=utf-8",
+      "sample": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</h"
+    },
+    {
+      "url": "https://www.abmgood.com/assets/product/y/0/y060167_1.jpg",
+      "missing": true,
+      "readerStatus": 200,
+      "type": "text/plain; charset=utf-8",
+      "sample": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</h"
+    },
+    {
+      "url": "https://www.abmgood.com/assets/product/y/0/y060167_2.jpg",
+      "missing": true,
+      "readerStatus": 200,
+      "type": "text/plain; charset=utf-8",
+      "sample": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</h"
+    },
+    {
+      "url": "https://www.abmgood.com/assets/product/y/0/y060536_1.jpg",
+      "missing": true,
+      "readerStatus": 200,
+      "type": "text/plain; charset=utf-8",
+      "sample": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</h"
+    },
+    {
+      "url": "https://www.abmgood.com/assets/product/y/0/y060968_1.jpg",
+      "missing": true,
+      "readerStatus": 0,
+      "verification": "Official file returned 404 through web retrieval"
+    },
+    {
+      "url": "https://www.abmgood.com/assets/product/y/0/y061432_1.jpg",
+      "missing": true,
+      "readerStatus": 0,
+      "verification": "Official file returned 404 through web retrieval"
+    },
+    {
+      "url": "https://www.abmgood.com/assets/product/y/0/y061446_1.jpg",
+      "missing": true,
+      "readerStatus": 0,
+      "verification": "Official file returned 404 through web retrieval"
+    },
+    {
+      "url": "https://www.abmgood.com/assets/product/y/0/y061446_2.jpg",
+      "missing": true,
+      "readerStatus": 0,
+      "verification": "Official file returned 404 through web retrieval"
+    },
+    {
+      "url": "https://www.abmgood.com/assets/product/y/0/y061477_1.jpg",
+      "missing": true,
+      "readerStatus": 0,
+      "verification": "Official file returned 404 through web retrieval"
+    },
+    {
+      "url": "https://www.abmgood.com/assets/product/y/0/y061992_1.jpg",
+      "missing": true,
+      "readerStatus": 0,
+      "verification": "Official file returned 404 through web retrieval"
+    },
+    {
+      "url": "https://www.abmgood.com/assets/product/6/5/65-4801.png",
+      "missing": true,
+      "readerStatus": 0,
+      "verification": "Official file returned 404 through web retrieval"
+    },
+    {
+      "url": "https://www.abmgood.com/assets/product/6/5/65-4801-2.png",
+      "missing": true,
+      "readerStatus": 0,
+      "verification": "Official file returned 404 through web retrieval"
+    },
+    {
+      "url": "https://www.abmgood.com/assets/product/n/f/nfl.jpg",
+      "missing": true,
+      "readerStatus": 0,
+      "verification": "Official file returned 404 through web retrieval"
+    }
+  ],
+  "manufacturerMissingImageProducts": [
+    {
+      "sku": "Y058001",
+      "sourceUrl": "https://www.abmgood.com/anti-ube2v2-antibody-y058001.html",
+      "images": [
+        "https://www.abmgood.com/assets/product/u/v/uv2e2-antibody.jpg"
+      ]
+    },
+    {
+      "sku": "Y058042",
+      "sourceUrl": "https://www.abmgood.com/anti-n-myc-antibody-y058042.html",
+      "images": [
+        "https://www.abmgood.com/assets/product/n/-/n-myc.jpg"
+      ]
+    },
+    {
+      "sku": "Y058043",
+      "sourceUrl": "https://www.abmgood.com/anti-osteopontin-antibody-y058043.html",
+      "images": [
+        "https://www.abmgood.com/assets/product/o/s/osteopontin.jpg"
+      ]
+    },
+    {
+      "sku": "Y058044",
+      "sourceUrl": "https://www.abmgood.com/anti-pak6-antibody-y058044.html",
+      "images": [
+        "https://www.abmgood.com/assets/product/p/a/pak6.jpg"
+      ]
+    },
+    {
+      "sku": "Y058045",
+      "sourceUrl": "https://www.abmgood.com/anti-pax2-antibody-y058045.html",
+      "images": [
+        "https://www.abmgood.com/assets/product/p/a/pax2-western.jpg"
+      ]
+    },
+    {
+      "sku": "Y058046",
+      "sourceUrl": "https://www.abmgood.com/anti-ran-antibody-y058046.html",
+      "images": [
+        "https://www.abmgood.com/assets/product/r/a/ran.jpg"
+      ]
+    },
+    {
+      "sku": "Y058047",
+      "sourceUrl": "https://www.abmgood.com/anti-ripk2-antibody-y058047.html",
+      "images": [
+        "https://www.abmgood.com/assets/product/r/i/ripk2.jpg"
+      ]
+    },
+    {
+      "sku": "Y058048",
+      "sourceUrl": "https://www.abmgood.com/anti-smpdl3b-antibody-y058048.html",
+      "images": [
+        "https://www.abmgood.com/assets/product/s/m/smpdl3b.jpg"
+      ]
+    },
+    {
+      "sku": "Y058051",
+      "sourceUrl": "https://www.abmgood.com/anti-tnf-rsf17-antibody-y058051.html",
+      "images": [
+        "https://www.abmgood.com/assets/product/t/n/tnfrsf17.jpg"
+      ]
+    },
+    {
+      "sku": "Y058053",
+      "sourceUrl": "https://www.abmgood.com/anti-vdac1-antibody-y058053.html",
+      "images": [
+        "https://www.abmgood.com/assets/product/v/d/vdac1.jpg"
+      ]
+    },
+    {
+      "sku": "Y058054",
+      "sourceUrl": "https://www.abmgood.com/anti-rbbp6-antibody-y058054.html",
+      "images": [
+        "https://www.abmgood.com/assets/product/r/b/rbbp6.jpg"
+      ]
+    },
+    {
+      "sku": "Y058055",
+      "sourceUrl": "https://www.abmgood.com/anti-vdp-antibody-y058055.html",
+      "images": [
+        "https://www.abmgood.com/assets/product/v/d/vdp.jpg"
+      ]
+    },
+    {
+      "sku": "Y058056",
+      "sourceUrl": "https://www.abmgood.com/anti-pax6-antibody-y058056.html",
+      "images": [
+        "https://www.abmgood.com/assets/product/p/a/pax6.jpg"
+      ]
+    },
+    {
+      "sku": "Y058061",
+      "sourceUrl": "https://www.abmgood.com/anti-top2b-antibody-y058061.html",
+      "images": [
+        "https://www.abmgood.com/assets/product/t/o/top2b.jpg"
+      ]
+    },
+    {
+      "sku": "Y058065",
+      "sourceUrl": "https://www.abmgood.com/anti-plexin-b1-antibody-y058065.html",
+      "images": [
+        "https://www.abmgood.com/assets/product/p/l/plexin-b1.jpg"
+      ]
+    },
+    {
+      "sku": "Y058066",
+      "sourceUrl": "https://www.abmgood.com/anti-notch1-antibody-y058066.html",
+      "images": [
+        "https://www.abmgood.com/assets/product/n/o/notch1.jpg"
+      ]
+    },
+    {
+      "sku": "Y058069",
+      "sourceUrl": "https://www.abmgood.com/anti-pawr-antibody-y058069.html",
+      "images": [
+        "https://www.abmgood.com/assets/product/p/a/pawr.jpg"
+      ]
+    },
+    {
+      "sku": "Y058070",
+      "sourceUrl": "https://www.abmgood.com/anti-rfp2-antibody-y058070.html",
+      "images": [
+        "https://www.abmgood.com/assets/product/r/f/rfp2.jpg"
+      ]
+    },
+    {
+      "sku": "Y058072",
+      "sourceUrl": "https://www.abmgood.com/anti-pdcd6-antibody-y058072.html",
+      "images": [
+        "https://www.abmgood.com/assets/product/p/d/pdcd6.jpg"
+      ]
+    },
+    {
+      "sku": "Y058078",
+      "sourceUrl": "https://www.abmgood.com/anti-mth1-antibody-y058078.html",
+      "images": [
+        "https://www.abmgood.com/assets/product/m/t/mth1.jpg"
+      ]
+    },
+    {
+      "sku": "Y058086",
+      "sourceUrl": "https://www.abmgood.com/anti-kap1-antibody-y058086.html",
+      "images": [
+        "https://www.abmgood.com/assets/product/k/a/kap1.jpg"
+      ]
+    },
+    {
+      "sku": "Y058087",
+      "sourceUrl": "https://www.abmgood.com/anti-klf15-antibody-y058087.html",
+      "images": [
+        "https://www.abmgood.com/assets/product/k/l/klf15.jpg"
+      ]
+    },
+    {
+      "sku": "Y058088",
+      "sourceUrl": "https://www.abmgood.com/anti-klf4-antibody-y058088.html",
+      "images": [
+        "https://www.abmgood.com/assets/product/k/l/klf4.jpg"
+      ]
+    },
+    {
+      "sku": "Y058089",
+      "sourceUrl": "https://www.abmgood.com/anti-klhl1-antibody-y058089.html",
+      "images": [
+        "https://www.abmgood.com/assets/product/k/l/klhl1.jpg"
+      ]
+    },
+    {
+      "sku": "Y058090",
+      "sourceUrl": "https://www.abmgood.com/anti-ppp6c-antibody-y058090.html",
+      "images": [
+        "https://www.abmgood.com/assets/product/p/p/ppp6c.jpg"
+      ]
+    },
+    {
+      "sku": "Y058092",
+      "sourceUrl": "https://www.abmgood.com/anti-leptin-receptor-antibody-y058092.html",
+      "images": [
+        "https://www.abmgood.com/assets/product/l/e/leptin-receptor.jpg"
+      ]
+    },
+    {
+      "sku": "Y058095",
+      "sourceUrl": "https://www.abmgood.com/anti-ngfr-p75-antibody-y058095.html",
+      "images": [
+        "https://www.abmgood.com/assets/product/n/g/ngfr-p75.jpg"
+      ]
+    },
+    {
+      "sku": "Y058100",
+      "sourceUrl": "https://www.abmgood.com/anti-pp2a-alpha-and-beta-antibody-y058100.html",
+      "images": [
+        "https://www.abmgood.com/assets/product/p/p/pp2a.jpg"
+      ]
+    },
+    {
+      "sku": "Y058102",
+      "sourceUrl": "https://www.abmgood.com/anti-prohibitin-antibody-y058102.html",
+      "images": [
+        "https://www.abmgood.com/assets/product/p/r/prohibition.jpg"
+      ]
+    },
+    {
+      "sku": "Y058103",
+      "sourceUrl": "https://www.abmgood.com/anti-nucleophosmin-antibody-y058103.html",
+      "images": [
+        "https://www.abmgood.com/assets/product/n/u/nucleophosmin.jpg"
+      ]
+    },
+    {
+      "sku": "Y058426",
+      "sourceUrl": "https://www.abmgood.com/anti-actl8-antibody-y058426.html",
+      "images": [
+        "https://www.abmgood.com/assets/product/y/0/y058426.jpg"
+      ]
+    },
+    {
+      "sku": "Y059767",
+      "sourceUrl": "https://www.abmgood.com/anti-trpv1-antibody-y059767.html",
+      "images": [
+        "https://www.abmgood.com/assets/product/y/0/y059767-wb.jpg",
+        "https://www.abmgood.com/assets/product/y/0/y059767.jpg",
+        "https://www.abmgood.com/assets/product/y/0/y059767-ihc.jpg"
+      ]
+    },
+    {
+      "sku": "Y059780",
+      "sourceUrl": "https://www.abmgood.com/anti-orai2-antibody-y059780.html",
+      "images": [
+        "https://www.abmgood.com/assets/product/y/0/y059780-wb.jpg"
+      ]
+    },
+    {
+      "sku": "Y059822",
+      "sourceUrl": "https://www.abmgood.com/anti-kv3.1b-antibody-y059822.html",
+      "images": [
+        "https://www.abmgood.com/assets/product/y/0/y059822-wb.jpg"
+      ]
+    },
+    {
+      "sku": "Y059824",
+      "sourceUrl": "https://www.abmgood.com/anti-kv3.3-antibody-y059824.html",
+      "images": [
+        "https://www.abmgood.com/assets/product/y/0/y059824-wb.jpg",
+        "https://www.abmgood.com/assets/product/y/0/y059824-ihc.jpg"
+      ]
+    },
+    {
+      "sku": "Y059873",
+      "sourceUrl": "https://www.abmgood.com/anti-kcne3-mirp2-antibody-y059873.html",
+      "images": [
+        "https://www.abmgood.com/assets/product/y/0/y059873-wb.jpg"
+      ]
+    },
+    {
+      "sku": "Y060109",
+      "sourceUrl": "https://www.abmgood.com/anti-caspase-3,-active-produced-in-rabbit-antibody-y060109.html",
+      "images": [
+        "https://www.abmgood.com/assets/product/y/0/y060109_1.jpg"
+      ]
+    },
+    {
+      "sku": "Y060167",
+      "sourceUrl": "https://www.abmgood.com/anti-mch-produced-in-rabbit-antibody-y060167.html",
+      "images": [
+        "https://www.abmgood.com/assets/product/y/0/y060167_1.jpg",
+        "https://www.abmgood.com/assets/product/y/0/y060167_2.jpg"
+      ]
+    },
+    {
+      "sku": "Y060968",
+      "sourceUrl": "https://www.abmgood.com/anti-p120ctn-produced-in-rabbit-antibody-y060968.html",
+      "images": [
+        "https://www.abmgood.com/assets/product/y/0/y060968_1.jpg"
+      ]
+    },
+    {
+      "sku": "Y061432",
+      "sourceUrl": "https://www.abmgood.com/anti-pmp70-produced-in-rabbit-antibody-y061432.html",
+      "images": [
+        "https://www.abmgood.com/assets/product/y/0/y061432_1.jpg"
+      ]
+    },
+    {
+      "sku": "Y061446",
+      "sourceUrl": "https://www.abmgood.com/anti-lamp1-produced-in-rabbit-antibody-y061446.html",
+      "images": [
+        "https://www.abmgood.com/assets/product/y/0/y061446_1.jpg",
+        "https://www.abmgood.com/assets/product/y/0/y061446_2.jpg"
+      ]
+    },
+    {
+      "sku": "Y061477",
+      "sourceUrl": "https://www.abmgood.com/anti-rab5-produced-in-rabbit-antibody-y061477.html",
+      "images": [
+        "https://www.abmgood.com/assets/product/y/0/y061477_1.jpg"
+      ]
+    },
+    {
+      "sku": "Y061992",
+      "sourceUrl": "https://www.abmgood.com/anti-jnk,-activated-diphosphorylated-jnk-produced-in-mouse-antibody-y061992.html",
+      "images": [
+        "https://www.abmgood.com/assets/product/y/0/y061992_1.jpg"
+      ]
+    },
+    {
+      "sku": "Y600450",
+      "sourceUrl": "https://www.abmgood.com/percp-cyanine5-5-anti-mouse-f4-80-antigen-bm8-1.html",
+      "images": [
+        "https://www.abmgood.com/assets/product/6/5/65-4801.png",
+        "https://www.abmgood.com/assets/product/6/5/65-4801-2.png"
+      ]
+    },
+    {
+      "sku": "CA13",
+      "sourceUrl": "https://www.abmgood.com/anti-nf-l-rabbit-polyclonal-antibody-ca-13.html",
+      "images": [
+        "https://www.abmgood.com/assets/product/n/f/nfl.jpg"
+      ]
+    }
+  ],
+  "manufacturerImageChecksStillUnverified": [
+    {
+      "sku": "Y060536",
+      "sourceUrl": "https://www.abmgood.com/anti-nanog-produced-in-mouse-antibody-y060536.html",
+      "images": [
+        "https://www.abmgood.com/assets/product/y/0/y060536_1.jpg",
+        "https://www.abmgood.com/assets/product/y/0/y060536_2.jpg"
+      ]
+    },
+    {
+      "sku": "Y060647",
+      "sourceUrl": "https://www.abmgood.com/anti-eif4e-produced-in-rabbit-antibody-y060647.html",
+      "images": [
+        "https://www.abmgood.com/assets/product/y/0/y060647_1.jpg"
+      ]
+    },
+    {
+      "sku": "Y060870",
+      "sourceUrl": "https://www.abmgood.com/anti-tubulin-produced-in-rabbit-antibody-y060870.html",
+      "images": [
+        "https://www.abmgood.com/assets/product/y/0/y060870_1.jpg"
+      ]
+    },
+    {
+      "sku": "Y061044",
+      "sourceUrl": "https://www.abmgood.com/anti-talin-produced-in-mouse-antibody-y061044.html",
+      "images": [
+        "https://www.abmgood.com/assets/product/y/0/y061044_1.jpg"
+      ]
+    },
+    {
+      "sku": "Y061100",
+      "sourceUrl": "https://www.abmgood.com/anti-szlig-actinin-sarcomeric-produced-in-mouse-antibody-y061100.html",
+      "images": [
+        "https://www.abmgood.com/assets/product/y/0/y061100_1.jpg",
+        "https://www.abmgood.com/assets/product/y/0/y061100_2.jpg",
+        "https://www.abmgood.com/assets/product/y/0/y061100_3.jpg"
+      ]
+    },
+    {
+      "sku": "Y061445",
+      "sourceUrl": "https://www.abmgood.com/anti-lamp2-produced-in-rabbit-antibody-y061445.html",
+      "images": [
+        "https://www.abmgood.com/assets/product/y/0/y061445_1.jpg"
+      ]
+    },
+    {
+      "sku": "Y061518",
+      "sourceUrl": "https://www.abmgood.com/anti-vdac-porin-produced-in-rabbit-antibody-y061518.html",
+      "images": [
+        "https://www.abmgood.com/assets/product/y/0/y061518_1.jpg"
+      ]
+    },
+    {
+      "sku": "Y062202",
+      "sourceUrl": "https://www.abmgood.com/anti-monoclonal-anti-phosphoserine-produced-in-mouse-antibody-y062202.html",
+      "images": [
+        "https://www.abmgood.com/assets/product/y/0/y062202_1.jpg"
+      ]
+    },
+    {
+      "sku": "Y600192",
+      "sourceUrl": "https://www.abmgood.com/fitc-anti-mouse-cd11c-n418.html",
+      "images": [
+        "https://www.abmgood.com/assets/product/3/5/35-0114.png"
+      ]
+    },
+    {
+      "sku": "G602",
+      "sourceUrl": "https://www.abmgood.com/bio-g602.html",
+      "images": [
+        "https://www.abmgood.com/assets/product/b/i/bio.jpg"
+      ]
+    }
+  ],
+  "specialCases": [
+    {
+      "sku": "A010",
+      "sourceUrl": "https://www.abmgood.com/ppromoter-vector-a010.html",
+      "status": "Official page uses interactive VDS map 168; static copy not obtained. The manufacturer VDS browser navigation failed and observing its error page was blocked by browser URL policy."
+    },
+    {
+      "sku": "TM205",
+      "sourceUrl": "https://www.abmgood.com/Specialized-Medium-and-Kits",
+      "status": "No current individual product image verified from this legacy source."
+    }
+  ],
+  "otherBrandsWithoutStoredGallery": {
+    "count": 111,
+    "status": "Requires manufacturer-source comparison; not classified as a site rendering failure."
+  },
+  "changes": "No broken-photo placeholder is displayed when a source is absent. Failed gallery media is removed and a valid next photo is selected. Reviewed reference-photo captions and original credits remain intact."
+}

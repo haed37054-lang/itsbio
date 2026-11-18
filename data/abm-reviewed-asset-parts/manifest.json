@@ -338,6 +338,32 @@
           "bytes": 224360
         }
       ]
+    },
+    {
+      "path": "public/images/abm/T3172-official.webp",
+      "sourceUrl": "https://www.abmgood.com/assets/product/upload/ryDG8vHK4Jcl40jD3nJAYkYDx5NdZipyIInJ87xI.png",
+      "sha256": "136167f24461c396fc172581f7788d3732efdaa205db8f228e76bd4fe7848e3d",
+      "bytes": 765604,
+      "processing": {
+        "format": "webp",
+        "width": 2048,
+        "quality": 90,
+        "processor": "Existing ITSBio Next.js image optimizer",
+        "originalBytes": 36836509,
+        "originalSha256": "3e86e734534315f6f10d14993d42cbe4c7becd818c8131f9d4d6ab8c77d7a0ce"
+      },
+      "parts": [
+        {
+          "path": "image-integrity-T3172/000.part",
+          "sha256": "1de6e58cdf1b1100388a73e7ee42adc9a31c8bd3eccbec250b46695bbad12bfd",
+          "bytes": 512000
+        },
+        {
+          "path": "image-integrity-T3172/001.part",
+          "sha256": "e3363ea7daa6663d97487499c5bdf09ecf435372b67fa52548144389721a04df",
+          "bytes": 253604
+        }
+      ]
     }
   ]
 }

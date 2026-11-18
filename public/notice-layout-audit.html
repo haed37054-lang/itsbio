@@ -1,0 +1,24 @@
+<!doctype html><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"><title>Notice layout audit</title><style>body{font:14px sans-serif;margin:16px}label,button{margin:8px}iframe{display:block;height:500px;border:1px solid #ddd;margin:12px 0}pre{white-space:pre-wrap}#frames{max-width:none}</style><h1>Notice layout audit</h1><label>Viewport width <input id="width" type="number" value="1366"></label><button id="run">Run audit</button><pre id="results">Ready</pre><div id="frames"></div><script>
+const slugs=["abm-august-newsletter-15", "abm-september-newsletter-16", "abm-october-newsletter-17", "abm-immortalized-feline-canine-cell-lines-now-available-18", "somnosuite-somnoflo-starter-kit-19", "abm-november-newsletter-20", "abm-crispr-technology-learning-resources-21", "abm-january-newsletter-22", "abm-crispr-cas9-sgrna-all-in-one-vector-virus-collection-23", "abm-february-newsletter-24", "abm-march-newsletter-25", "c-b-s-scientific-26", "abm-new-megafitm-pro-fidelity-dna-polymerase-released-27", "abm-improve-your-nucleic-acid-stains-with-abm-s-safe-redtm-28", "abm-safe-redtm-nucleic-acid-stain-is-ready-for-you-29", "abm-pcr-1-1-mycoplasma-8-30-30", "abm-pdac-vector-virus-31", "abm-onescript-hot-5x-rt-mastermix-cat-no-g590-32", "abm-cell-lines-special-offer-33", "unlocking-new-insights-into-viral-translation-er-stress-34"];
+const results=document.querySelector('#results'),frames=document.querySelector('#frames');
+document.querySelector('#run').onclick=async()=>{
+ results.textContent='Running';frames.replaceChildren();
+ const width=Number(document.querySelector('#width').value), rows=[];
+ for(let i=0;i<slugs.length;i+=4){await Promise.all(slugs.slice(i,i+4).map(async slug=>{
+ const f=document.createElement('iframe');f.style.width=width+'px';f.title=slug;frames.append(f);
+ try{
+ await new Promise((resolve,reject)=>{const t=setTimeout(()=>reject(Error('load timeout')),45000);f.onload=()=>{clearTimeout(t);resolve()};f.src='/notice/'+slug;});
+ const d=f.contentDocument,w=f.contentWindow;await d.fonts.ready;
+ const imgs=[...d.querySelectorAll('.legacy-notice-html img')];imgs.forEach(x=>x.loading='eager');
+ await Promise.all(imgs.map(x=>Promise.race([x.decode().catch(()=>null),new Promise(r=>setTimeout(r,10000))])));
+ const root=d.querySelector('.legacy-notice-html'),main=d.querySelector('main');if(!root)throw Error('No notice body');
+ const r=root.getBoundingClientRect(),nav=[...main.querySelectorAll('a')].find(x=>x.textContent==='Notice list').parentElement.getBoundingClientRect();
+ const descendants=[...root.querySelectorAll('*')].map(x=>x.getBoundingClientRect()).filter(x=>x.width&&x.height);
+ const lowest=Math.max(r.bottom,...descendants.map(x=>x.bottom));
+ const following=main.nextElementSibling.getBoundingClientRect();
+ rows.push({slug,viewport:w.innerWidth,clientWidth:d.documentElement.clientWidth,scrollWidth:d.documentElement.scrollWidth,articleBottom:r.bottom,lowestContent:lowest,navTop:nav.top,footerTop:following.top,mainBottom:main.getBoundingClientRect().bottom,contained:lowest<=r.bottom+1,navClear:nav.top>=lowest,footerClear:following.top>=main.getBoundingClientRect().bottom,images:imgs.length,brokenImages:imgs.filter(x=>x.complete&&!x.naturalWidth).map(x=>x.src),cards:root.querySelectorAll('.legacy-notice-card').length});
+ }catch(e){rows.push({slug,error:e.message})}
+ }));results.textContent=JSON.stringify({width,completed:rows.length,rows},null,2);}
+ results.dataset.complete='true';
+};
+</script>

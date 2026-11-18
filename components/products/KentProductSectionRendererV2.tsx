@@ -391,8 +391,8 @@ function ReviewCarousel({ items }: { items: KentSectionItem[] }) {
       <div className="relative">
         {items.length > pageSize ? (
           <>
-            <button type="button" onClick={() => move(-1)} aria-label="Previous testimonial" className="absolute left-2 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 sm:-left-3 sm:-translate-x-1/2 items-center justify-center rounded-full border border-[#d7dde3] bg-white text-[25px] text-[#0b4f9c] shadow-sm transition hover:border-[#0b4f9c] hover:bg-[#0b4f9c] hover:text-white">‹</button>
-            <button type="button" onClick={() => move(1)} aria-label="Next testimonial" className="absolute right-2 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 sm:-right-3 sm:translate-x-1/2 items-center justify-center rounded-full border border-[#d7dde3] bg-white text-[25px] text-[#0b4f9c] shadow-sm transition hover:border-[#0b4f9c] hover:bg-[#0b4f9c] hover:text-white">›</button>
+            <button type="button" onClick={() => move(-1)} aria-label="Previous testimonial" className="absolute left-2 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 lg:-left-3 lg:-translate-x-1/2 items-center justify-center rounded-full border border-[#d7dde3] bg-white text-[25px] text-[#0b4f9c] shadow-sm transition hover:border-[#0b4f9c] hover:bg-[#0b4f9c] hover:text-white">‹</button>
+            <button type="button" onClick={() => move(1)} aria-label="Next testimonial" className="absolute right-2 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 lg:-right-3 lg:translate-x-1/2 items-center justify-center rounded-full border border-[#d7dde3] bg-white text-[25px] text-[#0b4f9c] shadow-sm transition hover:border-[#0b4f9c] hover:bg-[#0b4f9c] hover:text-white">›</button>
           </>
         ) : null}
         <div className="grid gap-5 md:grid-cols-2">

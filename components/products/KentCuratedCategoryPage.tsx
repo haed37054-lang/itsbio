@@ -176,6 +176,7 @@ function SideNav({
   children: KentCuratedSidebarChild[];
 }) {
   return (
+    <ResponsiveCategoryNav label="Kent Scientific">
     <div className="overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-sm">
       <div className="border-b border-neutral-200 px-5 py-4">
         <div className="text-base font-semibold text-blue-700">General Lab Equipment</div>
@@ -186,7 +187,6 @@ function SideNav({
           {MENU_ITEMS.map(([label, slug]) => {
             const active = slug === activeRoot;
             return (
-    <ResponsiveCategoryNav label="Kent Scientific">
               <div key={slug}>
                 <Link
                   href={`/products/${BRAND_KEY}/${slug}`}

@@ -65,6 +65,7 @@ export default function AbmCatalogSideNav({
   activeServicePath?: string[];
 }) {
   return (
+    <ResponsiveCategoryNav label="ABM">
     <nav className="overflow-hidden rounded-sm border border-neutral-200 bg-white shadow-sm" aria-label="ABM Products and Services">
       <div className="border-b border-neutral-200 bg-neutral-100 px-5 py-3">
         <div className="text-xl font-bold text-[#dc5a2b]">All Products</div>
@@ -95,7 +96,6 @@ export default function AbmCatalogSideNav({
             const onTrail = serviceNodeActive(activeServicePath, path);
             const exact = activeServicePath.length === 1 && onTrail;
             return (
-    <ResponsiveCategoryNav label="ABM">
               <div key={group.slug}>
                 <Link
                   href={group.href}

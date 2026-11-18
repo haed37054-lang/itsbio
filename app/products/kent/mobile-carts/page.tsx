@@ -94,6 +94,7 @@ function HeroBanner() {
 
 function KentSideNav() {
   return (
+    <ResponsiveCategoryNav label="Kent Scientific">
     <div className="overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-sm">
       <div className="border-b border-neutral-200 px-5 py-4">
         <div className="text-base font-semibold text-blue-700">General Lab Equipment</div>
@@ -103,7 +104,6 @@ function KentSideNav() {
           {SIDE_NAV.map(([label, href]) => {
             const active = label === "Mobile Carts";
             return (
-    <ResponsiveCategoryNav label="Kent Scientific">
               <Link
                 key={href}
                 href={href}

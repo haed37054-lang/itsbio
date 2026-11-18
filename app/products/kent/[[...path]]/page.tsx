@@ -1767,6 +1767,7 @@ function KentSideNav({
   }
 
   return (
+    <ResponsiveCategoryNav label="Kent Scientific">
     <>
       <style>{`
         .scrollbar-hidden {
@@ -1795,7 +1796,6 @@ function KentSideNav({
                 const hasChildren = !!root.children?.length;
 
                 return (
-    <ResponsiveCategoryNav label="Kent Scientific">
                   <div key={p} className="group/root">
                     <Link
                       href={buildCategoryHref(root.path)}

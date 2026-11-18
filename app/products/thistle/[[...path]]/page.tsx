@@ -70,6 +70,7 @@ function categoryHref(path: string[], query = "", page = 1) {
 
 function CleaverSidebar({ activePath }: { activePath: string[] }) {
   return (
+    <ResponsiveCategoryNav label="Thistle Scientific">
     <aside className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm lg:sticky lg:top-24">
       <Link href="/products/thistle" className="block border-b border-slate-200 bg-[#f5f0fb] px-5 py-4 text-base font-semibold text-[#61247b]">
         Thistle Scientific
@@ -78,7 +79,6 @@ function CleaverSidebar({ activePath }: { activePath: string[] }) {
         {CLEAVER_CATEGORIES.map((category) => {
           const active = activePath[0] === category.slug;
           return (
-    <ResponsiveCategoryNav label="Thistle Scientific">
             <div key={category.slug}>
               <Link href={categoryHref([category.slug])} prefetch={false} className={`block rounded-xl px-3 py-2.5 text-[13px] transition ${active ? "bg-purple-50 font-semibold text-[#61247b]" : "text-slate-700 hover:bg-slate-50"}`}>
                 {category.title}

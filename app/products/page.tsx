@@ -184,7 +184,7 @@ export default function ProductsPage() {
       </div>
 
       <section className="mx-auto max-w-6xl px-6 pb-8 pt-10 md:pt-14">
-        <div className="grid gap-8 rounded-[30px] border border-slate-200 bg-[#fbfaf8] p-6 md:p-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-center lg:p-10">
+        <div className="grid grid-cols-1 gap-8 rounded-[30px] border border-slate-200 bg-[#fbfaf8] p-6 md:p-8 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:items-center lg:p-10">
           <div>
             <div className="text-xs font-bold uppercase tracking-[0.22em] text-orange-600">Product search</div>
             <h2 className="mt-3 text-2xl font-semibold tracking-[-0.03em] text-[#071d43] md:text-3xl">Know what you are looking for?</h2>
@@ -193,7 +193,7 @@ export default function ProductsPage() {
             </p>
           </div>
 
-          <form action="/search" method="get" className="flex flex-col gap-3 sm:flex-row">
+          <form action="/search" method="get" className="flex min-w-0 flex-col gap-3 sm:flex-row">
             <input
               name="q"
               required

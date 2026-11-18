@@ -1,5 +1,6 @@
 import tls from "node:tls";
 import { Resend } from "resend";
+import mailLogo from "@/data/mail/itsbio-logo.json";
 
 export const runtime = "nodejs";
 export const preferredRegion = "icn1";
@@ -152,7 +153,7 @@ function escapeHtml(value: string) {
 type InquiryDetails = {
   name: string; org: string; field: string; department: string; inquiryType: string;
   email: string; phone: string; product: string; catNo: string; quantity: string;
-  configuration: string; message: string; sourceUrl: string;
+  configuration: string; message: string;
 };
 
 function inquiryEmail(details: InquiryDetails) {
@@ -168,35 +169,25 @@ function inquiryEmail(details: InquiryDetails) {
   const textSection = (title: string, rows: string[][]) =>
     [title, ...rows.map(([label, value]) => `${label}: ${value}`)].join("\n\n");
   const text = [
-    "New website inquiry received:",
+    "ITSBio | 견적 문의",
     textSection("Contact information", contact),
     ...(product.length ? [textSection("Product information", product)] : []),
     `Message:\n\n${details.message}`,
-    ...(details.sourceUrl ? [`Source page: ${details.sourceUrl}`] : []),
   ].join("\n\n\n");
 
   const htmlSection = (title: string, rows: string[][]) => `<tr><td style="padding:24px;border-top:1px solid #e2e8f0;">
     <h2 style="margin:0 0 16px;font-size:15px;line-height:1.6;color:#475569;">${title}</h2>
     <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">${rows.map(([label, value]) => `<tr><td style="padding:0 0 12px;font-size:16px;line-height:1.6;overflow-wrap:anywhere;word-break:break-word;"><strong>${label}:</strong> ${label === "Email" ? `<a href="mailto:${escapeHtml(value)}" style="color:#0b5baa;text-decoration:underline;">${escapeHtml(value)}</a>` : escapeHtml(value)}</td></tr>`).join("")}</table>
   </td></tr>`;
-  let source = escapeHtml(details.sourceUrl);
-  try {
-    const url = new URL(details.sourceUrl);
-    if (url.protocol === "https:" || url.protocol === "http:") {
-      source = `<a href="${escapeHtml(url.href)}" style="color:#0b5baa;text-decoration:underline;overflow-wrap:anywhere;word-break:break-word;">${source}</a>`;
-    }
-  } catch { /* Keep unrecognized source values as text. */ }
-
-  const html = `<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Website inquiry</title></head>
+  const html = `<!doctype html><html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>견적 문의 | ITSBio</title></head>
 <body style="margin:0;padding:0;background-color:#f5f6f8;color:#172033;font-family:Arial,'Malgun Gothic',sans-serif;">
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td align="center" style="padding:24px 12px;">
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:680px;background-color:#ffffff;border:1px solid #e2e8f0;">
-<tr><td style="padding:24px;"><p style="margin:0 0 8px;font-size:14px;line-height:1.6;font-weight:bold;color:#0b5baa;">ITSBio</p><h1 style="margin:0;font-size:22px;line-height:1.4;">New website inquiry received</h1></td></tr>
+<tr><td style="padding:24px;"><img src="cid:${mailLogo.contentId}" alt="ITSBio" width="${mailLogo.width}" height="${mailLogo.height}" style="display:block;width:${mailLogo.width}px;height:${mailLogo.height}px;border:0;margin:0 0 16px;"><h1 style="margin:0;font-size:22px;line-height:1.4;">견적 문의</h1></td></tr>
 ${htmlSection("Contact information", contact)}
 ${product.length ? htmlSection("Product information", product) : ""}
 <tr><td style="padding:24px;border-top:1px solid #e2e8f0;"><h2 style="margin:0 0 16px;font-size:15px;line-height:1.6;color:#475569;">Message</h2>
-<div style="padding:16px;border:1px solid #e2e8f0;background-color:#f8fafc;font-size:16px;line-height:1.8;overflow-wrap:anywhere;word-break:break-word;">${escapeHtml(details.message).replace(/\r\n|\r|\n/g, "<br>")}</div></td></tr>
-${details.sourceUrl ? `<tr><td style="padding:24px;border-top:1px solid #e2e8f0;font-size:14px;line-height:1.6;overflow-wrap:anywhere;word-break:break-word;"><strong>Source page:</strong><br>${source}</td></tr>` : ""}
+<p style="margin:0;font-size:16px;line-height:1.8;overflow-wrap:anywhere;word-break:break-word;">${escapeHtml(details.message).replace(/\r\n|\r|\n/g, "<br>")}</p></td></tr>
 </table></td></tr></table></body></html>`;
   return { text, html };
 }
@@ -275,6 +266,7 @@ async function sendMailplugEmail({
     await command("DATA", [354], "data");
 
     const boundary = `itsbio_${crypto.randomUUID()}`;
+    const relatedBoundary = `itsbio_logo_${crypto.randomUUID()}`;
     const alternative = [
       `--${boundary}`,
       "Content-Type: text/plain; charset=UTF-8",
@@ -282,10 +274,21 @@ async function sendMailplugEmail({
       "",
       mimeBase64(text),
       `--${boundary}`,
+      `Content-Type: multipart/related; boundary="${relatedBoundary}"; type="text/html"`,
+      "",
+      `--${relatedBoundary}`,
       "Content-Type: text/html; charset=UTF-8",
       "Content-Transfer-Encoding: base64",
       "",
       mimeBase64(html),
+      `--${relatedBoundary}`,
+      `Content-Type: ${mailLogo.contentType}; name="${mailLogo.filename}"`,
+      "Content-Transfer-Encoding: base64",
+      `Content-ID: <${mailLogo.contentId}>`,
+      `Content-Disposition: inline; filename="${mailLogo.filename}"`,
+      "",
+      mailLogo.content.match(/.{1,76}/g)?.join("\r\n") || "",
+      `--${relatedBoundary}--`,
       `--${boundary}--`,
     ].join("\r\n");
     const message = [
@@ -327,6 +330,7 @@ async function sendResendFallback({ from, to, replyTo, subject, text, html }: { 
     text,
     html,
     replyTo,
+    attachments: [{ filename: mailLogo.filename, content: mailLogo.content, contentType: mailLogo.contentType, contentId: mailLogo.contentId }],
   });
 
   if (error) {
@@ -377,7 +381,6 @@ export async function POST(req: Request) {
     const quantity = rawQuantity ? String(quantityNumber) : "";
     const configuration = oneLine(body.configuration, 500);
     const message = clean(body.message, 5000);
-    const sourceUrl = oneLine(body.sourceUrl, 1000);
     const privacyAccepted = body.privacyAccepted === true;
 
     if (!validEmail(email) || !message || !privacyAccepted) {
@@ -396,7 +399,7 @@ export async function POST(req: Request) {
     }
 
     const subject = `[견적서] ${product || catNo || "General inquiry"} - ${name || "Unknown"}`;
-    const { text, html } = inquiryEmail({ name, org, field, department, inquiryType, email, phone, product, catNo, quantity, configuration, message, sourceUrl });
+    const { text, html } = inquiryEmail({ name, org, field, department, inquiryType, email, phone, product, catNo, quantity, configuration, message });
 
     try {
       await sendMailplugEmail({ username: smtpUser, password: smtpPassword, from: fromEmail, to: toEmail, replyTo: email, subject, text, html });

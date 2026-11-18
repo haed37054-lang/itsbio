@@ -1,3 +1,4 @@
+import ResponsiveCategoryNav from "@/components/products/ResponsiveCategoryNav";
 import Link from "next/link";
 import { ABM_SERVICE_GROUPS } from "@/lib/abm/catalog-taxonomy";
 import { findTreeNodeByPath, type CatLite, type TreeNode } from "@/lib/abm/sidebar-tree";
@@ -163,6 +164,7 @@ export default function AbmCategorySideNav({
   }
 
   return (
+    <ResponsiveCategoryNav label="ABM">
     <div className="overflow-visible rounded-2xl border border-slate-200 bg-white shadow-sm">
       <div className={`border-b border-orange-100 ${isKentMode ? "bg-blue-50" : "bg-orange-50"} px-5 py-4`}>
         <div className={`text-base font-semibold ${theme.accentText}`}>{isKentMode ? stripBrandSuffix(activeRootTitle) : "All Products"}</div>
@@ -223,6 +225,7 @@ export default function AbmCategorySideNav({
         ) : null}
       </nav>
     </div>
+    </ResponsiveCategoryNav>
   );
 }
 

@@ -1,3 +1,4 @@
+import ResponsiveCategoryNav from "@/components/products/ResponsiveCategoryNav";
 import Link from "next/link";
 import categories from "@/data/dogen/categories.json";
 
@@ -10,6 +11,7 @@ export default function DogenSidebar({ active }: { active?: string }) {
         {items.map(({ slug, title }) => {
           const selected = (active || "") === slug;
           return (
+    <ResponsiveCategoryNav label="DoGen">
             <Link key={slug} href={slug ? `/products/dogen/${slug}` : "/products/dogen"} aria-current={selected ? "page" : undefined} className={`block rounded-lg px-3 py-2.5 text-sm ${selected ? "bg-red-50 font-semibold text-red-900" : "text-slate-600 hover:bg-slate-50 hover:text-red-900"}`}>
               {title}
             </Link>
@@ -17,5 +19,6 @@ export default function DogenSidebar({ active }: { active?: string }) {
         })}
       </nav>
     </aside>
+    </ResponsiveCategoryNav>
   );
 }

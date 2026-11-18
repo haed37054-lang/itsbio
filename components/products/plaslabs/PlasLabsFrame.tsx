@@ -1,3 +1,4 @@
+import ResponsiveCategoryNav from "@/components/products/ResponsiveCategoryNav";
 import type { ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -43,7 +44,7 @@ export default function PlasLabsFrame({ active, productSlug, title, children }: 
       <main className="mx-auto max-w-[1320px] px-6 pb-16">
         <div className="my-7"><Breadcrumb items={crumbs} /></div>
         <div className="grid grid-cols-1 items-start gap-8 lg:grid-cols-[240px_minmax(0,1fr)]">
-          <aside className="min-w-0 self-start rounded-2xl border border-slate-200 bg-white lg:sticky lg:top-24">
+          <ResponsiveCategoryNav label="PLAS-LABS"><aside className="min-w-0 self-start rounded-2xl border border-slate-200 bg-white lg:sticky lg:top-24">
             <Link href={PLASLABS_ROOT} className="block border-b border-slate-200 px-5 py-4 font-semibold text-slate-950">PLAS-LABS</Link>
             <nav aria-label="PLAS-LABS product categories" className="flex gap-1 overflow-x-auto p-3 lg:block lg:space-y-1">
               {[{ slug: "", title: "All products" }, ...PLASLABS_CATEGORIES].map(({ slug, title: label }) => {
@@ -78,7 +79,7 @@ export default function PlasLabsFrame({ active, productSlug, title, children }: 
                 );
               })}
             </nav>
-          </aside>
+          </aside></ResponsiveCategoryNav>
           <div className="min-w-0">{children}</div>
         </div>
       </main>

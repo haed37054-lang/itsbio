@@ -186,7 +186,7 @@ export default async function AbmStagedDetailPage({
     return value && !/price|cost|amount|currency|cart|quantity|^cat\.?\s*no\.?$|^unit$|^service(?:\s+name)?$/.test(normalized);
   });
 
-  const infoRowClass = "grid grid-cols-[100px_1fr] gap-3 py-4 text-sm";
+  const infoRowClass = "grid grid-cols-[85px_minmax(0,1fr)] gap-3 py-4 text-sm [overflow-wrap:anywhere] sm:grid-cols-[100px_minmax(0,1fr)]";
 
   return (
     <div className="bg-white">
@@ -227,7 +227,7 @@ export default async function AbmStagedDetailPage({
           >
             <h1 className="max-w-4xl text-3xl font-bold leading-tight tracking-tight text-neutral-950">{title}</h1>
 
-            <div className="mt-6 grid gap-8 border-t border-neutral-200 pt-7 md:grid-cols-[minmax(0,1fr)_400px]">
+            <div className="mt-6 grid min-w-0 gap-8 border-t border-neutral-200 pt-7 md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] xl:grid-cols-[minmax(0,1fr)_360px] 2xl:grid-cols-[minmax(0,1fr)_400px]">
               {hasGallery ? (
                 <div className="min-h-[320px]">
                   <ProductGalleryClient

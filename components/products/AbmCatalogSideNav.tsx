@@ -1,3 +1,4 @@
+import ResponsiveCategoryNav from "@/components/products/ResponsiveCategoryNav";
 import Link from "next/link";
 
 import {
@@ -94,6 +95,7 @@ export default function AbmCatalogSideNav({
             const onTrail = serviceNodeActive(activeServicePath, path);
             const exact = activeServicePath.length === 1 && onTrail;
             return (
+    <ResponsiveCategoryNav label="ABM">
               <div key={group.slug}>
                 <Link
                   href={group.href}
@@ -117,5 +119,6 @@ export default function AbmCatalogSideNav({
         </div>
       </div>
     </nav>
+    </ResponsiveCategoryNav>
   );
 }

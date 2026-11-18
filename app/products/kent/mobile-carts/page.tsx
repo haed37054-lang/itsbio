@@ -1,3 +1,4 @@
+import ResponsiveCategoryNav from "@/components/products/ResponsiveCategoryNav";
 import Link from "next/link";
 
 import Breadcrumb from "@/components/site/Breadcrumb";
@@ -102,6 +103,7 @@ function KentSideNav() {
           {SIDE_NAV.map(([label, href]) => {
             const active = label === "Mobile Carts";
             return (
+    <ResponsiveCategoryNav label="Kent Scientific">
               <Link
                 key={href}
                 href={href}
@@ -118,6 +120,7 @@ function KentSideNav() {
         </div>
       </div>
     </div>
+    </ResponsiveCategoryNav>
   );
 }
 

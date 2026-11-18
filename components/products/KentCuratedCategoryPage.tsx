@@ -1,3 +1,4 @@
+import ResponsiveCategoryNav from "@/components/products/ResponsiveCategoryNav";
 import Link from "next/link";
 
 import Breadcrumb from "@/components/site/Breadcrumb";
@@ -185,6 +186,7 @@ function SideNav({
           {MENU_ITEMS.map(([label, slug]) => {
             const active = slug === activeRoot;
             return (
+    <ResponsiveCategoryNav label="Kent Scientific">
               <div key={slug}>
                 <Link
                   href={`/products/${BRAND_KEY}/${slug}`}
@@ -220,6 +222,7 @@ function SideNav({
         </div>
       </div>
     </div>
+    </ResponsiveCategoryNav>
   );
 }
 

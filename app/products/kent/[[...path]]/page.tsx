@@ -1,3 +1,4 @@
+import ResponsiveCategoryNav from "@/components/products/ResponsiveCategoryNav";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
@@ -1794,6 +1795,7 @@ function KentSideNav({
                 const hasChildren = !!root.children?.length;
 
                 return (
+    <ResponsiveCategoryNav label="Kent Scientific">
                   <div key={p} className="group/root">
                     <Link
                       href={buildCategoryHref(root.path)}
@@ -1832,6 +1834,7 @@ function KentSideNav({
         </div>
       </div>
     </>
+    </ResponsiveCategoryNav>
   );
 }
 

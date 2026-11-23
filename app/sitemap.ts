@@ -84,6 +84,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   }
   for (const category of abmCategories) {
     if (!Array.isArray(category.path) || category.path.some((part) => !part)) continue;
+    const categoryPath = category.path.join("/");
+    // These old CMS nodes redirect to a product detail or an in-page section.
+    if (["general-materials/gel-documentation/gel-imager", "general-materials/gel-documentation/dna-stains",
+      "genetic-materials/expression-ready-libraries/RNAi-shRNA-sirna-shrna-rnai-lentivirus"].includes(categoryPath)) continue;
     entries.push({ url: absoluteSiteUrl(`/products/abm/${category.path.map(encodeURIComponent).join("/")}`), changeFrequency: "monthly", priority: 0.6 });
   }
   // Reviewed General Materials pages can be served without a matching CMS record.

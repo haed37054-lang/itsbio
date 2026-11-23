@@ -314,12 +314,11 @@ export default function AbmCatalogPolishClient() {
           if (contextual !== href) anchor.setAttribute("href", contextual);
         });
         document.querySelectorAll<HTMLTableElement>(".itsbio-html table").forEach(normalizeAbmTable);
+        ensureDnaStainsAnchor(pathname);
+        // The content observer can run again as images and tables settle.
+        // Only navigate to the hash once; repeated scrollIntoView calls trap
+        // readers at SafeView when they try to explore the rest of the page.
         scrollToSection();
-
-        const target = ensureDnaStainsAnchor(pathname);
-        if (target && window.location.hash === "#safeview-dna-stains") {
-          requestAnimationFrame(() => target.scrollIntoView({ block: "start", behavior: "auto" }));
-        }
       });
     };
 

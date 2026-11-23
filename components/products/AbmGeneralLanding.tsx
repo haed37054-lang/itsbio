@@ -6,6 +6,35 @@ import { findRtProduct } from "@/lib/abm/rt-product-finder";
 type FinderProduct = { name: string; href: string; badges: string[]; reason: string; note: string };
 type Props = { html: string; className: string; finderProducts?: Record<string, FinderProduct> };
 const EMPTY_PRODUCTS: Record<string, FinderProduct> = {};
+const GEL_DOCUMENTATION = "/products/abm/general-materials/gel-documentation";
+const GEL_PRODUCTS = [
+  { name: "SafeView™ Classic", sku: "G108", quantity: "1.0 ml", group: "DNA Stains" },
+  { name: "Safe-Green™", sku: "G108-G", quantity: "1.0 ml", group: "DNA Stains" },
+  { name: "Safe-Red™", sku: "G108-R", quantity: "1.0 ml", group: "DNA Stains" },
+  { name: "Safe-Red™ Gel", sku: "G680", quantity: "1.0 ml", group: "DNA Stains" },
+  { name: "SafeViewER™ Imager", sku: "E1001", quantity: "1 Unit", group: "Gel Imager" },
+] as const;
+
+function GelDocumentationProducts() {
+  return (
+    <section className="abm-general-reviewed abm-general-gel-documentation mt-10" aria-labelledby="gel-documentation-products">
+      <h2 id="gel-documentation-products" className="text-2xl font-semibold">All Gel Documentation products</h2>
+      <div className="abm-table-scroll" role="region" aria-label="Gel Documentation products" tabIndex={0}>
+        <table className="abm-data-table">
+          <thead><tr><th scope="col">Product Name</th><th scope="col">Cat. No.</th><th scope="col">Quantity</th></tr></thead>
+          <tbody>{GEL_PRODUCTS.map(({ name, sku, quantity, group }, index) => {
+            const showGroup = index === 0 || GEL_PRODUCTS[index - 1].group !== group;
+            const href = `/products/abm/staged/product/${sku}?from=${encodeURIComponent(GEL_DOCUMENTATION)}`;
+            return [
+              showGroup ? <tr key={`group-${group}`} className="abm-table-section-row"><th colSpan={3} scope="colgroup">{group}</th></tr> : null,
+              <tr key={sku}><td><a href={href}>{name}</a></td><td><a href={href}>{sku}</a></td><td>{quantity}</td></tr>,
+            ];
+          })}</tbody>
+        </table>
+      </div>
+    </section>
+  );
+}
 
 /** Only reviewed build-time HTML enters this component. Supplier scripts and
  * integrations are removed by refresh-abm-general-landings.mjs. */
@@ -117,6 +146,7 @@ export default function AbmGeneralLanding({ html, className, finderProducts = EM
   return (
     <div onClick={openImage}>
       {reviewedContent}
+      {className === "abm-general-gel-documentation" ? <GelDocumentationProducts /> : null}
       <dialog ref={dialog} className="abm-general-image-dialog" aria-labelledby={titleId} onClose={() => setImage(null)}>
         <div className="abm-general-dialog-heading">
           <h2 id={titleId}>{image?.alt || "Official ABM image"}</h2>

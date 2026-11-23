@@ -3,6 +3,7 @@ import fs from "node:fs/promises";
 import crypto from "node:crypto";
 import React, { act } from "react";
 import { createRoot } from "react-dom/client";
+import { renderToStaticMarkup } from "react-dom/server";
 import { JSDOM } from "jsdom";
 const { findRtProduct } = await import("../lib/abm/rt-product-finder.ts");
 const { normalizeAbmGeneralSidebar, ABM_GENERAL_MENU_ITEMS } = await import("../lib/abm/general-navigation.ts");
@@ -63,6 +64,14 @@ for (const asset of data.assets) {
 }
 const ladders = new JSDOM(data.landings.find((item) => item.key === "dna-and-protein-ladders").html).window.document;
 assert.ok(new JSDOM(data.landings.find((item) => item.key === "gel-documentation").html).window.document.getElementById("safeview-dna-stains"));
+const gelLanding = data.landings.find((item) => item.key === "gel-documentation");
+const gelPage = new JSDOM(renderToStaticMarkup(React.createElement(AbmGeneralLanding, { html: gelLanding.html, className: gelLanding.className }))).window.document;
+assert.ok(gelPage.querySelector("#safeview-dna-stains"), "DNA Stains remains an in-page anchor");
+assert.match(gelPage.body.textContent, /Frequently Asked Questions/);
+assert.equal(gelPage.querySelectorAll("#gel-documentation-products + .abm-table-scroll tbody tr:not(.abm-table-section-row)").length, 5);
+for (const sku of ["G108", "G108-G", "G108-R", "G680", "E1001"]) {
+  assert.ok(gelPage.querySelector(`a[href^='/products/abm/staged/product/${sku}?from=']`), `${sku}: supplier product is linked`);
+}
 for (const sku of ["G016", "G193", "G106", "G248", "G624", "G623", "G523"]) assert.ok(ladders.querySelector(`a[href^='/products/abm/staged/product/${sku}?']`));
 
 // Each table's product name and catalog number must reach the same detail.

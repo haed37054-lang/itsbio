@@ -1,9 +1,12 @@
 import legacyWordPressRedirects from "@/data/legacy-wordpress-redirects.json";
 import kentCurrentTaxonomy from "@/data/kent-current-taxonomy.json";
 import { ABM_PRODUCT_GROUPS } from "@/lib/abm/catalog-taxonomy";
+import { ABM_GENERAL_MENU_ITEMS, normalizeAbmGeneralSidebar } from "@/lib/abm/general-navigation";
 import { thistlePromotions } from "@/lib/thistle-promotions";
 import { CELLFREE_PRODUCTS } from "@/lib/cellfree/catalog";
 import { BIOPLASTICS_PRODUCTS } from "@/lib/bioplastics/catalog";
+import { BIOPLASTICS_CATEGORIES, bioplasticsCategoryHref } from "@/lib/bioplastics/navigation";
+import { CELLFREE_CATEGORIES, cellFreeCategoryHref } from "@/lib/cellfree/navigation";
 import { bioplasticsProductHref } from "@/lib/bioplastics/navigation";
 import { cellFreeProductHref } from "@/lib/cellfree/navigation";
 import { PLASLABS_CATEGORIES, PLASLABS_PRODUCTS, plasLabsCategoryHref, plasLabsProductHref } from "@/lib/plaslabs/catalog";
@@ -40,10 +43,14 @@ const CORE_ROUTES = [
 export const revalidate = 3600;
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const [abmProducts, abmServices, abmDetails, kentProducts, cleaverProductPaths, notices, promotions] = await Promise.all([
+  const [abmProducts, abmServices, abmDetails, abmCategories, kentProducts, cleaverProductPaths, notices, promotions] = await Promise.all([
     sanityCdnClient.fetch<AbmStagedRecord[]>(`*[_type == "abmRebuildChunk" && version == $version && kind == "product"].records[lower(sku) != "coa"]{ kind, sku, title, url }`, { version: ABM_REBUILD_VERSION }, PUBLIC_CATALOG_CACHE),
     sanityCdnClient.fetch<AbmStagedRecord[]>(`*[_type == "abmRebuildChunk" && version == $version && kind == "service"].records[]{ kind, sku, title, url }`, { version: ABM_REBUILD_VERSION }, PUBLIC_CATALOG_CACHE),
     sanityCdnClient.fetch<AbmDetailRow[]>(ABM_PRODUCT_DETAILS, { version: ABM_REBUILD_VERSION }, PUBLIC_CATALOG_CACHE),
+    sanityCdnClient.fetch<Array<{ path: string[] }>>(`*[_type == "category" && (!defined(isActive) || isActive == true) &&
+      (brandSlug == "abm" || themeKey == "abm" || brand->themeKey == "abm" || brand->slug.current == "abm") &&
+      count(path) > 1 && path[0] in $roots]{path}`,
+      { roots: ["general-materials", "cellular-materials", "genetic-materials"] }, PUBLIC_CATALOG_CACHE),
     sanityCdnClient.fetch<SlugRow[]>(`*[_type == "product" && (!defined(isActive) || isActive == true) && (brandSlug == "kent" || brand->slug.current == "kent") && lower(slug.current) in $slugs]{ "slug": slug.current, "updatedAt": _updatedAt }`, { slugs: kentCurrentTaxonomy.products.map(({ slug }) => slug.toLowerCase()) }, PUBLIC_CATALOG_CACHE),
     getCleaverSitemapProductPaths(),
     sanityCdnClient.fetch<SlugRow[]>(`*[_type == "notice" && (!defined(isActive) || isActive == true) && defined(slug.current)]{ "slug": slug.current, "updatedAt": _updatedAt }`, {}, PUBLIC_CATALOG_CACHE),
@@ -75,6 +82,18 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     seenAbm.add(key);
     entries.push({ url: absoluteSiteUrl(path), changeFrequency: "monthly", priority: 0.7 });
   }
+  for (const category of abmCategories) {
+    if (!Array.isArray(category.path) || category.path.some((part) => !part)) continue;
+    entries.push({ url: absoluteSiteUrl(`/products/abm/${category.path.map(encodeURIComponent).join("/")}`), changeFrequency: "monthly", priority: 0.6 });
+  }
+  // Reviewed General Materials pages can be served without a matching CMS record.
+  for (const item of ABM_GENERAL_MENU_ITEMS) entries.push({ url: absoluteSiteUrl(item.href), changeFrequency: "monthly", priority: 0.6 });
+  for (const root of normalizeAbmGeneralSidebar([])) {
+    for (const child of root.children) {
+      if (!child.href || child.href.includes("#") || !child.href.startsWith(`/products/abm/${root.path.join("/")}/`)) continue;
+      entries.push({ url: absoluteSiteUrl(child.href), changeFrequency: "monthly", priority: 0.6 });
+    }
+  }
 
   for (const { categoryPath, count } of kentCurrentTaxonomy.categories) {
     if (count <= 0) continue;
@@ -97,7 +116,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   }
   for (const category of PLASLABS_CATEGORIES) entries.push({ url: absoluteSiteUrl(plasLabsCategoryHref(category.slug)), changeFrequency: "monthly", priority: 0.65 });
   for (const product of CELLFREE_PRODUCTS) entries.push({ url: absoluteSiteUrl(cellFreeProductHref(product.slug)), changeFrequency: "monthly", priority: 0.7 });
+  for (const category of CELLFREE_CATEGORIES) entries.push({ url: absoluteSiteUrl(cellFreeCategoryHref(category.key)), changeFrequency: "monthly", priority: 0.6 });
   for (const product of BIOPLASTICS_PRODUCTS) entries.push({ url: absoluteSiteUrl(bioplasticsProductHref(product.sku)), changeFrequency: "monthly", priority: 0.7 });
+  for (const category of BIOPLASTICS_CATEGORIES) entries.push({ url: absoluteSiteUrl(bioplasticsCategoryHref(category.key)), changeFrequency: "monthly", priority: 0.6 });
   for (const product of PLASLABS_PRODUCTS) entries.push({ url: absoluteSiteUrl(plasLabsProductHref(product.slug)), changeFrequency: "monthly", priority: 0.7 });
   for (const category of DOGEN_CATEGORIES) entries.push({ url: absoluteSiteUrl(dogenCategoryHref(category.slug)), changeFrequency: "monthly", priority: 0.65 });
   for (const product of DOGEN_PRODUCTS) entries.push({ url: absoluteSiteUrl(dogenProductHref(product.slug)), changeFrequency: "monthly", priority: 0.7 });

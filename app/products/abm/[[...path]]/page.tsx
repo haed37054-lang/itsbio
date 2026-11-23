@@ -17,6 +17,9 @@ import AbmTiterKitLanding, { TITER_KITS, TITER_PATH } from "@/components/product
 import { AbmPackagingVideo, AbmPackagingPublications } from "@/components/products/AbmPackagingMedia";
 import { stripUnwantedAbmNav } from "@/lib/abm/category-html";
 import { abmCategoryLabel } from "@/lib/abm/category-labels";
+import { ABM_GENERAL_MENU_ITEMS } from "@/lib/abm/general-navigation";
+import { catalogCategoryMetadata } from "@/lib/catalog-category-metadata";
+import { searchText } from "@/lib/product-search";
 import { restorePackagingMixesBlocks } from "@/lib/abm/packaging-mixes";
 import expressionLibraryLandings from "@/data/abm-expression-library-landings.json";
 import generalLandings from "@/data/abm-general-landings.json";
@@ -703,12 +706,25 @@ export async function generateMetadata({ params }: { params: Promise<{ path?: st
   }
 
   const group = path.length === 1 && ABM_PRODUCT_GROUPS.find(({ slug }) => slug === path[0]);
-  if (!group) return {};
-  return {
-    title: group.slug === "cellular-materials" ? "Cell Biology & Cellular Materials | ABM" : `${group.title} | ABM`,
-    description: group.description,
-    alternates: { canonical: group.href },
-  };
+  if (group) return catalogCategoryMetadata({
+    title: group.slug === "cellular-materials" ? "Cell Biology & Cellular Materials" : group.title,
+    brand: "ABM", path: group.href, description: group.description,
+  });
+  if (!ABM_ROOTS.includes(path[0] as (typeof ABM_ROOTS)[number])) return {};
+
+  const url = `/products/abm/${path.map(encodeURIComponent).join("/")}`;
+  const record = await sanityCdnClient.fetch<{ title?: string; summary?: string } | null>(
+    `*[_type == "category" && (!defined(isActive) || isActive == true) &&
+      (brandSlug == "abm" || themeKey == "abm" || brand->themeKey == "abm" || brand->slug.current == "abm") &&
+      array::join(path, "/") == $pathStr][0]{title, summary}`,
+    { pathStr: path.join("/") }, PUBLIC_CATALOG_CACHE,
+  );
+  const reviewed = generalLandings.landings.find((landing) => landing.root === path[0] && landing.key === path.slice(1).join("/"));
+  const menuTitle = path.length === 2 ? ABM_GENERAL_MENU_ITEMS.find((item) => item.href === url)?.label : undefined;
+  const title = abmCategoryLabel(url, menuTitle || stripBrandSuffix(record?.title || humanizeSegment(path.at(-1) || "")));
+  const description = record?.summary || (reviewed?.html.match(/<p\b[^>]*>([\s\S]*?)<\/p>/i)?.[1]
+    ? searchText(reviewed.html.match(/<p\b[^>]*>([\s\S]*?)<\/p>/i)![1]).slice(0, 200) : undefined);
+  return catalogCategoryMetadata({ title, brand: "ABM", path: url, description });
 }
 
 export default async function AbmProductsPathPage({

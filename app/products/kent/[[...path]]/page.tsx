@@ -2261,6 +2261,7 @@ export async function generateMetadata({ params }: { params: Promise<{ path?: st
     const canonicalPath = findCanonicalCategoryPath(category.categoryPath, []) || category.categoryPath;
     return {
       title: `${category.title} | Kent Scientific`,
+      description: `Explore ${category.title} from Kent Scientific, with product information and specifications supplied by ITSBio in Korea.`,
       alternates: { canonical: buildCategoryHref(canonicalPath) },
     };
   }

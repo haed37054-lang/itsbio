@@ -4,8 +4,24 @@ import Breadcrumb from "@/components/site/Breadcrumb";
 import SeedburoHero from "@/components/products/seedburo/SeedburoHero";
 import { SeedburoCategoryGrid, SeedburoPagination, SeedburoProductGrid, SeedburoSidebar } from "@/components/products/seedburo/SeedburoCatalog";
 import { SEEDBURO_COLLECTIONS, SEEDBURO_PRODUCTS, getSeedburoCollection, searchSeedburoProducts, seedburoCollectionProducts } from "@/lib/seedburo/catalog";
+import { catalogCategoryMetadata } from "@/lib/catalog-category-metadata";
 
-export default async function SeedburoCollectionPage({ params, searchParams }: { params: Promise<{ category: string }>; searchParams: Promise<{ q?: string; page?: string }> }) {
+type Props = { params: Promise<{ category: string }>; searchParams: Promise<{ q?: string; page?: string }> };
+
+export async function generateMetadata({ params, searchParams }: Props) {
+  const [{ category }, query] = await Promise.all([params, searchParams]);
+  const collection = getSeedburoCollection(category);
+  if (!collection && !["all-products", "categories"].includes(category)) return {};
+  const title = category === "categories" ? "Seedburo product categories" : category === "all-products" ? "All Seedburo products" : collection!.title;
+  const page = Number.parseInt(query.page || "1", 10);
+  const path = `/products/seedburo/${encodeURIComponent(category)}${!query.q && Number.isFinite(page) && page > 1 ? `?page=${page}` : ""}`;
+  return catalogCategoryMetadata({ title, brand: "Seedburo", path,
+    description: collection?.description || `Browse ${title} for seed, grain and agricultural quality testing at ITSBio.`,
+    noIndex: Boolean(query.q),
+  });
+}
+
+export default async function SeedburoCollectionPage({ params, searchParams }: Props) {
   const [{ category: handle }, query] = await Promise.all([params, searchParams]);
   const collection = getSeedburoCollection(handle);
   const all = handle === "all-products";

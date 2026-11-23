@@ -3,10 +3,20 @@ import Link from "next/link";
 import CellFreeFrame from "@/components/products/cellfree/CellFreeFrame";
 import { exactCellFreeOption, searchCellFreeProducts } from "@/lib/cellfree/catalog";
 import { CELLFREE_CATEGORIES, CELLFREE_ROOT, cellFreeCategoryHref, cellFreeProductHref } from "@/lib/cellfree/navigation";
-
-export const metadata = { title: "CellFree Sciences Products & Services" };
+import { catalogCategoryMetadata } from "@/lib/catalog-category-metadata";
 
 type Props = { searchParams: Promise<{ category?: string | string[]; q?: string | string[] }> };
+
+export async function generateMetadata({ searchParams }: Props) {
+  const { category, q } = await searchParams;
+  const entry = CELLFREE_CATEGORIES.find(({ key }) => key === category);
+  return catalogCategoryMetadata({ title: entry?.label || "Products & Services", brand: "CellFree Sciences",
+    path: entry ? cellFreeCategoryHref(entry.key) : CELLFREE_ROOT,
+    description: entry ? `Browse ${entry.label} from CellFree Sciences for protein research at ITSBio.`
+      : "Browse CellFree Sciences protein expression kits, vectors, reagents, equipment and services at ITSBio.",
+    noIndex: typeof q === "string" && Boolean(q.trim()),
+  });
+}
 
 export default async function CellFreeCatalogPage({ searchParams }: Props) {
   const params = await searchParams;

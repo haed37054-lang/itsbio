@@ -3,6 +3,7 @@ import PlasLabsCatalog from "@/components/products/plaslabs/PlasLabsCatalog";
 export const metadata = {
   title: "PLAS-LABS",
   description: "Browse PLAS-LABS glove boxes, laboratory enclosures, and animal care equipment.",
+  alternates: { canonical: "/products/plaslabs" },
 };
 
 export default async function PlasLabsPage({ searchParams }: { searchParams: Promise<{ q?: string | string[] }> }) {

@@ -5,7 +5,7 @@ import AnimalIdHero from "@/components/products/animalid/AnimalIdHero";
 import AnimalIdSupport from "@/components/products/animalid/AnimalIdSupport";
 import { ANIMAL_ID_PRODUCTS, animalIdProductHref } from "@/lib/animalid/catalog";
 
-export const metadata = { title: "Animal Identification | AIMS", description: "Compare ATS-3, NEO-9 and ATS-3L laboratory animal tattoo systems and ATS-3 upgrade packages." };
+export const metadata = { title: "Animal Identification | AIMS", description: "Compare ATS-3, NEO-9 and ATS-3L laboratory animal tattoo systems and ATS-3 upgrade packages.", alternates: { canonical: "/products/animalid" } };
 export default function AnimalIdPage() {
   const upgrades = ANIMAL_ID_PRODUCTS[0].models.slice(1);
   const comparisonRows = [

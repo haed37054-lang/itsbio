@@ -4,12 +4,22 @@ import BioplasticsFrame from "@/components/products/bioplastics/BioplasticsFrame
 import { searchBioplasticsProducts } from "@/lib/bioplastics/catalog";
 import { BIOPLASTICS_DOCUMENTS } from "@/lib/bioplastics/documents";
 import { BIOPLASTICS_CATEGORIES, BIOPLASTICS_ROOT, bioplasticsProductHref } from "@/lib/bioplastics/navigation";
+import { catalogCategoryMetadata } from "@/lib/catalog-category-metadata";
 
-export const metadata = { title: "BIOplastics Products" };
+type Props = { searchParams: Promise<{ category?: string | string[]; q?: string | string[] }> };
 
-export default async function BioplasticsCatalogPage({ searchParams }: {
-  searchParams: Promise<{ category?: string | string[]; q?: string | string[] }>;
-}) {
+export async function generateMetadata({ searchParams }: Props) {
+  const { category, q } = await searchParams;
+  const entry = BIOPLASTICS_CATEGORIES.find(({ key }) => key === category);
+  return catalogCategoryMetadata({ title: entry?.label || "BIOplastics Products", brand: "BIOplastics",
+    path: entry ? `${BIOPLASTICS_ROOT}?category=${entry.key}` : BIOPLASTICS_ROOT,
+    description: entry ? `Browse ${entry.label} from BIOplastics, including catalog numbers and specifications at ITSBio.`
+      : "Browse BIOplastics PCR consumables, pipette tips, tubes and laboratory supplies at ITSBio.",
+    noIndex: typeof q === "string" && Boolean(q.trim()),
+  });
+}
+
+export default async function BioplasticsCatalogPage({ searchParams }: Props) {
   const { category, q } = await searchParams;
   const current = BIOPLASTICS_CATEGORIES.find(({ key }) => key === category);
   const query = typeof q === "string" ? q.trim() : "";

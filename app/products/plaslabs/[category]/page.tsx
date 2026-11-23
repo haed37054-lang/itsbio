@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import PlasLabsCatalog from "@/components/products/plaslabs/PlasLabsCatalog";
 import { PLASLABS_CATEGORIES } from "@/lib/plaslabs/catalog";
+import { catalogCategoryMetadata } from "@/lib/catalog-category-metadata";
 
 type Props = {
   params: Promise<{ category: string }>;
@@ -12,10 +13,11 @@ export function generateStaticParams() {
   return PLASLABS_CATEGORIES.map(({ slug }) => ({ category: slug }));
 }
 
-export async function generateMetadata({ params }: Props) {
-  const { category } = await params;
+export async function generateMetadata({ params, searchParams }: Props) {
+  const [{ category }, { q }] = await Promise.all([params, searchParams]);
   const entry = PLASLABS_CATEGORIES.find(({ slug }) => slug === category);
-  return entry ? { title: `${entry.title} | PLAS-LABS`, description: entry.summary } : {};
+  return entry ? catalogCategoryMetadata({ title: entry.title, brand: "PLAS-LABS", path: `/products/plaslabs/${entry.slug}`,
+    description: entry.summary, noIndex: Boolean(q), }) : {};
 }
 
 export default async function PlasLabsCategoryPage({ params, searchParams }: Props) {
